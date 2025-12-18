@@ -1,6 +1,10 @@
 name: Update Data and Deploy
 
 on:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/update.yaml'
   schedule:
     - cron: '0 */6 * * *'  # Every 6 hours
   workflow_dispatch:  # Manual trigger
