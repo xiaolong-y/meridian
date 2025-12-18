@@ -46,11 +46,11 @@ metrics:
   - id: us.gdp_qoq
     name: "US GDP QoQ"
     source: fred
-    series_id: GDP
+    # A191RL1Q225SBEA = Real GDP growth rate, annualized (already a %)
+    series_id: A191RL1Q225SBEA
     frequency: quarterly
     unit: "%"
     decimals: 1
-    transform: qoq_percent
 
   - id: us.yield_curve
     name: "10Y-2Y Spread"
@@ -111,9 +111,10 @@ metrics:
     decimals: 0
 
   - id: global.dxy
-    name: "USD Index (DXY)"
+    name: "USD Trade Weighted"
     source: fred
-    series_id: DTWEXBGS
+    # DTWEXAFEGS = Trade Weighted USD vs Advanced Foreign Economies (closer to DXY)
+    series_id: DTWEXAFEGS
     frequency: daily
     unit: "index"
     decimals: 1

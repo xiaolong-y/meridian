@@ -36,7 +36,11 @@ from .storage.database import (
     cleanup_old_stories,
 )
 from .storage.models import MetricMeta
-from .transforms.calculations import calculate_change
+from .transforms.calculations import (
+    calculate_change,
+    calculate_yoy_percent,
+    calculate_qoq_percent,
+)
 from .generator.html import generate_dashboard
 
 # Configure logging
@@ -121,6 +125,26 @@ def fetch_metrics(metrics_config: dict) -> None:
 
         try:
             observations = connector.fetch_and_normalize(config)
+
+            # Apply transforms if specified
+            if config.transform and observations:
+                logger.info(f"  Applying transform: {config.transform}")
+
+                if config.transform == "yoy_percent":
+                    transformed = calculate_yoy_percent(observations)
+                    if transformed:
+                        logger.info(f"  YoY: {len(observations)} raw -> {len(transformed)} transformed")
+                        observations = transformed
+                    else:
+                        logger.warning(f"  YoY transform returned empty (need 13+ months)")
+
+                elif config.transform == "qoq_percent":
+                    transformed = calculate_qoq_percent(observations)
+                    if transformed:
+                        logger.info(f"  QoQ: {len(observations)} raw -> {len(transformed)} transformed")
+                        observations = transformed
+                    else:
+                        logger.warning(f"  QoQ transform returned empty (need 5+ quarters)")
 
             # Store observations
             for obs in observations:
