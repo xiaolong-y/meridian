@@ -1,6 +1,12 @@
 # Tech Feed Configuration
+# Fetching logic:
+# - Firebase feeds: Real-time top/best stories from HN (sorted by current ranking)
+# - Algolia feeds: Search with min_score filter, sorted by popularity (not date)
 
 feeds:
+  # ============================================
+  # MAIN FEEDS (Firebase - real-time rankings)
+  # ============================================
   - id: hn_top
     name: "Top Stories"
     source: hn_firebase
@@ -15,12 +21,17 @@ feeds:
     limit: 10
     refresh_minutes: 60
 
+  # ============================================
+  # TOPIC FEEDS (Algolia - search by popularity)
+  # ============================================
   - id: hn_ai
     name: "AI/ML"
     source: hn_algolia
-    query: "LLM"
+    query: "AI"
     tags: story
     time_range: week
+    min_score: 50        # Only stories with 50+ points
+    sort_by: popularity  # Sort by score, not date
     limit: 15
 
   - id: hn_data
@@ -29,14 +40,18 @@ feeds:
     query: "database"
     tags: story
     time_range: week
+    min_score: 30
+    sort_by: popularity
     limit: 10
 
   - id: hn_fintech
     name: "Finance & Trading"
     source: hn_algolia
-    query: "fintech"
+    query: "finance"
     tags: story
     time_range: month
+    min_score: 20
+    sort_by: popularity
     limit: 10
 
 display:

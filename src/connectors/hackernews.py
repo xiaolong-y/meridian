@@ -152,7 +152,9 @@ class HNAlgoliaConnector(BaseFeedConnector):
         if config.tags:
             params["tags"] = config.tags
 
-        # Add time filter
+        # Build numeric filters (time range + min score)
+        numeric_filters = []
+
         if config.time_range:
             import time
             now = int(time.time())
@@ -163,11 +165,21 @@ class HNAlgoliaConnector(BaseFeedConnector):
                 "year": 31536000,
             }
             if config.time_range in ranges:
-                params["numericFilters"] = f"created_at_i>{now - ranges[config.time_range]}"
+                numeric_filters.append(f"created_at_i>{now - ranges[config.time_range]}")
+
+        # Add minimum score filter for quality
+        if config.min_score:
+            numeric_filters.append(f"points>={config.min_score}")
+
+        if numeric_filters:
+            params["numericFilters"] = ",".join(numeric_filters)
 
         try:
-            # Use search_by_date for recent content
-            url = f"{self.BASE_URL}/search_by_date" if config.time_range else f"{self.BASE_URL}/search"
+            # Use /search for popularity sorting (default), /search_by_date for recency
+            if config.sort_by == "date":
+                url = f"{self.BASE_URL}/search_by_date"
+            else:
+                url = f"{self.BASE_URL}/search"  # Sorts by popularity/relevance
             response = requests.get(url, params=params, timeout=15)
             response.raise_for_status()
             data = response.json()

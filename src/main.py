@@ -213,6 +213,8 @@ def fetch_feeds(feeds_config: dict) -> None:
             query=feed.get("query"),
             tags=feed.get("tags"),
             time_range=feed.get("time_range"),
+            min_score=feed.get("min_score"),
+            sort_by=feed.get("sort_by"),
         )
 
         logger.info(f"Fetching feed {config.id}...")

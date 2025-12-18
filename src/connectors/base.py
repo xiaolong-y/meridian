@@ -45,6 +45,8 @@ class FeedConfig:
     query: Optional[str] = None      # HN Algolia
     tags: Optional[str] = None       # HN Algolia
     time_range: Optional[str] = None  # HN Algolia
+    min_score: Optional[int] = None  # HN Algolia: minimum points filter
+    sort_by: Optional[str] = None    # HN Algolia: "popularity" or "date"
 
 
 @dataclass
