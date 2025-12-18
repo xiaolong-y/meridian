@@ -79,14 +79,18 @@ def fetch_metrics(metrics_config: dict) -> None:
 
     def get_connector(source: str):
         if source not in connectors:
-            if source == "fred":
-                connectors[source] = FREDConnector()
-            elif source == "ecb":
-                connectors[source] = ECBConnector()
-            elif source == "worldbank":
-                connectors[source] = WorldBankConnector()
-            else:
-                return None
+            try:
+                if source == "fred":
+                    connectors[source] = FREDConnector()
+                elif source == "ecb":
+                    connectors[source] = ECBConnector()
+                elif source == "worldbank":
+                    connectors[source] = WorldBankConnector()
+                else:
+                    return None
+            except ValueError as e:
+                logger.warning(f"Skipping {source}: {e}")
+                connectors[source] = None
         return connectors.get(source)
 
     for metric in metrics_config.get("metrics", []):
