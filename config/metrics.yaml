@@ -131,6 +131,66 @@ metrics:
     unit: "%"
     decimals: 1
 
+  # ============================================
+  # CHINA (via World Bank)
+  # ============================================
+  - id: china.gdp_growth
+    name: "China GDP Growth"
+    source: worldbank
+    indicator: NY.GDP.MKTP.KD.ZG
+    country: CHN
+    frequency: annual
+    unit: "%"
+    decimals: 1
+
+  - id: china.cpi_yoy
+    name: "China CPI YoY"
+    source: worldbank
+    indicator: FP.CPI.TOTL.ZG
+    country: CHN
+    frequency: annual
+    unit: "%"
+    decimals: 1
+
+  # ============================================
+  # JAPAN (via FRED)
+  # ============================================
+  - id: japan.policy_rate
+    name: "BoJ Policy Rate"
+    source: fred
+    series_id: IRSTCB01JPM156N
+    frequency: monthly
+    unit: "%"
+    decimals: 2
+
+  - id: japan.cpi_yoy
+    name: "Japan CPI YoY"
+    source: fred
+    series_id: JPNCPIALLMINMEI
+    frequency: monthly
+    unit: "%"
+    decimals: 1
+    transform: yoy_percent
+
+  # ============================================
+  # CRYPTO (via FRED - Coinbase data)
+  # ============================================
+  - id: crypto.bitcoin
+    name: "Bitcoin"
+    source: fred
+    series_id: CBBTCUSD
+    frequency: daily
+    unit: "$"
+    decimals: 0
+
+  - id: crypto.ethereum
+    name: "Ethereum"
+    source: fred
+    series_id: CBETHUSD
+    frequency: daily
+    unit: "$"
+    decimals: 0
+
 # Display groupings for dashboard layout
 groups:
   - name: "US Economy"
@@ -139,5 +199,11 @@ groups:
   - name: "Eurozone"
     metrics: [eu.deposit_rate, eu.hicp_yoy, eu.unemployment]
 
+  - name: "Asia Pacific"
+    metrics: [china.gdp_growth, china.cpi_yoy, japan.policy_rate, japan.cpi_yoy]
+
   - name: "Global Markets"
     metrics: [global.brent, global.gold, global.dxy]
+
+  - name: "Crypto"
+    metrics: [crypto.bitcoin, crypto.ethereum]
