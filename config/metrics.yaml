@@ -122,13 +122,13 @@ metrics:
     decimals: 1
 
   # ============================================
-  # CHINA (GDP via World Bank, CPI via FRED/OECD)
+  # CHINA (via FRED/OECD - authoritative international source)
   # ============================================
   - id: china.gdp_growth
     name: "China GDP Growth"
-    source: worldbank
-    indicator: NY.GDP.MKTP.KD.ZG
-    country: CHN
+    source: fred
+    # OECD Main Economic Indicators - China GDP growth rate YoY
+    series_id: CHNGDPRAPSMEI
     frequency: annual
     unit: "%"
     decimals: 1

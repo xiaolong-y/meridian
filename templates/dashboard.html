@@ -185,6 +185,9 @@
       letter-spacing: -1.5px;
       font-family: 'IBM Plex Mono', monospace;
       line-height: 1;
+      display: flex;
+      align-items: center;
+      gap: 2px;
     }
 
     .metric-data {
@@ -265,10 +268,12 @@
       font-variant-numeric: tabular-nums;
     }
 
-    .story-score::before {
-      content: '\25B2';
-      font-size: 6px;
-      margin-top: 2px;
+    .heat-indicator {
+      margin-right: 2px;
+    }
+
+    .story-score .heat-indicator + ::before {
+      display: none;
     }
 
     .story-content {
@@ -300,10 +305,20 @@
     .story-meta {
       color: var(--muted);
       font-size: 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
 
-    .story-meta span {
-      margin-right: 6px;
+    .time-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 1px;
+    }
+
+    .meta-sep {
+      color: var(--muted);
+      opacity: 0.5;
     }
 
     /* Sidebar Feeds - Dense grid */
@@ -341,16 +356,10 @@
     .sidebar-score {
       color: var(--yellow);
       font-weight: 500;
-      min-width: 28px;
+      min-width: 32px;
       text-align: right;
       font-variant-numeric: tabular-nums;
       font-size: 9px;
-    }
-
-    .sidebar-score::before {
-      content: '\25B2';
-      font-size: 5px;
-      margin-right: 1px;
     }
 
     .sidebar-title {
@@ -459,7 +468,7 @@
   {# Macro Metrics Panels - Dense 2-column layout within each panel #}
   {% for group in metric_groups %}
   <section class="panel metrics-panel">
-    <div class="panel-title">{{ group.name }}</div>
+    <div class="panel-title">{{ group.name|section_icon }} {{ group.name }}</div>
     {% if group.metrics %}
       <div class="metric-grid{% if group.metrics|length <= 3 %} single-col{% endif %}">
       {% for m in group.metrics %}
@@ -467,7 +476,7 @@
         <div class="metric-info">
           <div class="metric-name">{{ m.name }}</div>
           {% if m.sparkline %}
-          <div class="sparkline">{{ m.sparkline }}</div>
+          <div class="sparkline">{{ m.direction_arrow }}{{ m.sparkline }}</div>
           {% endif %}
         </div>
         <div class="metric-data">
@@ -485,7 +494,7 @@
 
   {# Primary Stories Panel #}
   <section class="panel stories-panel">
-    <div class="panel-title">Tech Discussion</div>
+    <div class="panel-title">💻 Tech Discussion</div>
     {% set ns = namespace(primary_stories=[]) %}
     {% for feed in feeds %}
       {% if feed.id == primary_feed %}
@@ -496,7 +505,7 @@
     {% if ns.primary_stories %}
       {% for story in ns.primary_stories[:15] %}
       <div class="story">
-        <div class="story-score">{{ story.score }}</div>
+        <div class="story-score"><span class="heat-indicator">{{ story.heat_symbol }}</span>{{ story.score }}</div>
         <div class="story-content">
           <div class="story-title">
             <a href="{{ story.url or 'https://news.ycombinator.com/item?id=' ~ story.id }}" target="_blank" rel="noopener">
@@ -504,8 +513,10 @@
             </a>
           </div>
           <div class="story-meta">
-            {% if story.time_ago %}<span>{{ story.time_ago }}</span>{% endif %}
+            {% if story.time_ago %}<span class="time-indicator">{{ story.time_symbol }}{{ story.time_ago }}</span>{% endif %}
+            <span class="meta-sep">·</span>
             <span>{{ story.comments }} cmt</span>
+            <span class="meta-sep">·</span>
             <a href="https://news.ycombinator.com/item?id={{ story.id }}" target="_blank" rel="noopener">hn</a>
           </div>
         </div>
@@ -522,11 +533,11 @@
     {% for feed in feeds %}
       {% if feed.id in sidebar_feeds %}
       <section class="panel">
-        <div class="panel-title">{{ feed.name }}</div>
+        <div class="panel-title">{{ feed.name|section_icon }} {{ feed.name }}</div>
         {% if feed.stories %}
           {% for story in feed.stories[:8] %}
           <div class="sidebar-story">
-            <div class="sidebar-score">{{ story.score }}</div>
+            <div class="sidebar-score">{{ story.heat_symbol }}{{ story.score }}</div>
             <div class="sidebar-title">
               <a href="{{ story.url or 'https://news.ycombinator.com/item?id=' ~ story.id }}" target="_blank" rel="noopener">
                 {{ story.title|truncate(70) }}{% if story.domain %} <span class="domain">({{ story.domain|truncate(15, True, '') }})</span>{% endif %}
@@ -545,8 +556,8 @@
 </div>
 
 <footer>
-  <p>Data sources: FRED, ECB, World Bank, Hacker News |
-     <a href="https://github.com/your-repo/bloomberg-lite">GitHub</a></p>
+  <p>📊 Data: FRED · OECD · World Bank · ECB · HN |
+     <a href="https://github.com/xiaolong-y/bloomberg-lite">GitHub</a></p>
 </footer>
 
 </body>
