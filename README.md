@@ -47,7 +47,7 @@ Bloomberg-Lite is a **radical simplicity** approach to information aggregation. 
 - **US Economy**: Fed Funds Rate, CPI (YoY), Core CPI, Unemployment, GDP Growth, Yield Curve (10Y-2Y)
 - **Eurozone**: ECB Deposit Rate, HICP Inflation, Unemployment
 - **Asia Pacific**: China GDP Growth, China CPI, BoJ Policy Rate, Japan CPI
-- **Global Markets**: Brent Crude Oil, Gold, USD Trade-Weighted Index
+- **Global Markets**: Brent Crude Oil, USD Trade-Weighted Index
 - **Crypto**: Bitcoin (BTC/USD), Ethereum (ETH/USD) via FRED/Coinbase
 - **World**: Global GDP Growth (World Bank)
 
@@ -167,27 +167,29 @@ main.py (Orchestrator)
 - **Labor Market**: Unemployment Rate (UNRATE)
 - **Growth**: Real GDP (A191RL1Q225SBEA) - quarterly annualized
 - **Yield Curve**: 10Y-2Y Treasury Spread (T10Y2Y) - key recession indicator
-- **Commodities**: Brent Crude (DCOILBRENTEU), Gold (GOLDPMGBD228NLBM)
+- **Commodities**: Brent Crude (DCOILBRENTEU)
 - **Currency**: Trade-Weighted USD Index (DTWEXAFEGS)
+
+**Note:** Gold (GOLDPMGBD228NLBM) was removed as ICE Benchmark Administration discontinued the series in January 2022 following their LBMA Gold Price divestiture.
 
 **Why it matters:** FRED is the gold standard for US economic data. Maintained by the St. Louis Fed, it aggregates data from BLS, BEA, Treasury, and other official sources with rigorous quality control.
 
 ---
 
-### 2. ECB (European Central Bank)
-**Provider:** European Central Bank
-**API:** SDMX-JSON (Statistical Data and Metadata eXchange)
-**Authentication:** None required (public)
-**Documentation:** https://data.ecb.europa.eu/help/api/data
+### 2. FRED - Eurozone Data (ECB/OECD Sourced)
+**Provider:** Federal Reserve Bank of St. Louis (mirroring ECB/OECD data)
+**API:** FRED REST API
+**Authentication:** Free API key required
+**Documentation:** https://fred.stlouisfed.org/docs/api/fred/
 
 **What we fetch:**
-- **Monetary Policy**: ECB Deposit Facility Rate (FM/M.U2.EUR.4F.KR.DFR.LEV)
-- **Inflation**: Eurozone HICP All-Items Annual Rate (ICP/M.U2.N.000000.4.ANR)
-- **Labor Market**: Eurozone Unemployment Rate (STS/M.I9.S.UNEH.RTT000.4.000)
+- **Monetary Policy**: ECB Deposit Facility Rate (ECBDFR) - direct ECB policy rate
+- **Inflation**: Eurozone HICP (ICP/M.U2.N.000000.4.ANR via ECB SDMX)
+- **Labor Market**: Eurozone Unemployment Rate (LRHUTTTTEZM156S) - OECD harmonized
 
-**Why it matters:** The ECB is the central bank for the eurozone (19 EU countries using the euro). Its SDMX API provides harmonized statistics across member states, crucial for tracking the world's second-largest economy.
+**Why FRED over direct ECB API:** We switched from ECB SDMX to FRED-mirrored series due to ECB API instability (frequent 404 errors on series keys). FRED provides the same authoritative ECB/OECD data with better API reliability and consistent formatting.
 
-**Technical note:** SDMX uses hierarchical series keys (e.g., `M.U2.EUR.4F.KR.DFR.LEV` = Monthly, Euro Area, Euro currency, etc.). Our connector parses this structure and normalizes time periods (monthly, quarterly, annual) to YYYY-MM-DD format.
+**Why it matters:** The ECB oversees monetary policy for the eurozone (20 EU countries). Tracking ECB rates and eurozone inflation is essential for understanding the world's second-largest economy.
 
 ---
 
@@ -199,12 +201,28 @@ main.py (Orchestrator)
 
 **What we fetch:**
 - **World GDP Growth** (NY.GDP.MKTP.KD.ZG) for aggregate world economy (WLD)
-- **China GDP Growth** (NY.GDP.MKTP.KD.ZG, country=CHN) - Real GDP growth rate
-- **China CPI YoY** (FP.CPI.TOTL.ZG, country=CHN) - Consumer price inflation
 
-**Why it matters:** The World Bank provides cross-country comparable data on development indicators. We use it for global aggregate metrics and country-specific data (especially for China, where official statistics may be less accessible through other APIs).
+**Why it matters:** The World Bank provides cross-country comparable development indicators. We use it for the global economic growth aggregate.
 
-**Technical note:** World Bank data is primarily annual. The API returns `[metadata, data_array]` format; our connector extracts the data array and handles null values gracefully. For China specifically, World Bank data provides internationally standardized metrics useful for cross-country comparisons.
+**Technical note:** World Bank data is primarily annual. The API returns `[metadata, data_array]` format; our connector extracts the data array and handles null values gracefully.
+
+---
+
+### 4. FRED - China Metrics (OECD Sourced)
+**Provider:** Federal Reserve Bank of St. Louis (mirroring OECD data)
+**Series Origin:** Organisation for Economic Co-operation and Development (OECD)
+**Documentation:** https://fred.stlouisfed.org/docs/api/fred/
+
+**What we fetch:**
+- **China GDP Growth** (CHNGDPRAPSMEI) - OECD Main Economic Indicators, annual growth rate
+- **China CPI YoY** (CPALTT01CNM657N) - OECD monthly CPI growth rate (more timely than World Bank)
+
+**Why FRED/OECD over World Bank:** We switched China metrics from World Bank to FRED/OECD due to:
+1. **Reliability**: World Bank API frequently times out
+2. **Timeliness**: OECD provides monthly CPI (vs annual from World Bank)
+3. **Authoritative source**: OECD data derived from official national statistics with international standardization
+
+**Why it matters:** China is the world's second-largest economy and a key driver of global growth and commodity demand. OECD-sourced data provides internationally comparable metrics useful for cross-country analysis.
 
 ---
 
@@ -290,18 +308,17 @@ main.py (Orchestrator)
 
 ### Eurozone
 
-| Metric | Series Key | Frequency | Unit | Why It Matters |
-|--------|------------|-----------|------|----------------|
-| **ECB Deposit Rate** | M.U2.EUR.4F.KR.DFR.LEV | Monthly | % | The rate banks receive for overnight deposits at ECB. Sets the floor for euro area rates. |
-| **Eurozone HICP YoY** | M.U2.N.000000.4.ANR | Monthly | % | Harmonized Index of Consumer Prices. ECB's inflation target: "below but close to 2%". |
-| **Eurozone Unemployment** | M.I9.S.UNEH.RTT000.4.000 | Monthly | % | Labor market slack indicator. Lower = tighter labor market. |
+| Metric | Series ID | Source | Frequency | Unit | Why It Matters |
+|--------|-----------|--------|-----------|------|----------------|
+| **ECB Deposit Rate** | ECBDFR | FRED (ECB) | Daily | % | The rate banks receive for overnight deposits at ECB. Sets the floor for euro area rates. |
+| **Eurozone HICP YoY** | M.U2.N.000000.4.ANR | ECB SDMX | Monthly | % | Harmonized Index of Consumer Prices. ECB's inflation target: "below but close to 2%". |
+| **Eurozone Unemployment** | LRHUTTTTEZM156S | FRED (OECD) | Monthly | % | Labor market slack indicator. Lower = tighter labor market. |
 
 ### Global Markets
 
 | Metric | Series ID | Frequency | Unit | Multiplier | Why It Matters |
 |--------|-----------|-----------|------|------------|----------------|
 | **Brent Crude** | DCOILBRENTEU | Daily | $/bbl | 1.0 | Global oil benchmark (Europe & Asia use Brent; US uses WTI). Inflation signal. |
-| **Gold (London PM)** | GOLDPMGBD228NLBM | Daily | $/oz | 1.0 | Safe-haven asset. Inverse correlation with real rates. |
 | **USD Trade-Weighted** | DTWEXAFEGS | Daily | index | 1.0 | Broad dollar strength vs advanced economies (proxies DXY). |
 
 ### World
@@ -312,10 +329,10 @@ main.py (Orchestrator)
 
 ### Asia Pacific
 
-| Metric | Series ID / Indicator | Source | Frequency | Unit | Transform | Why It Matters |
-|--------|----------------------|--------|-----------|------|-----------|----------------|
-| **China GDP Growth** | NY.GDP.MKTP.KD.ZG (CHN) | World Bank | Annual | % | None | World's 2nd largest economy. Key driver of global growth and commodity demand. |
-| **China CPI YoY** | FP.CPI.TOTL.ZG (CHN) | World Bank | Annual | % | None | Inflation in world's largest population. Deflation risk indicator. |
+| Metric | Series ID | Source | Frequency | Unit | Transform | Why It Matters |
+|--------|-----------|--------|-----------|------|-----------|----------------|
+| **China GDP Growth** | CHNGDPRAPSMEI | FRED (OECD) | Annual | % | None | World's 2nd largest economy. Key driver of global growth and commodity demand. |
+| **China CPI YoY** | CPALTT01CNM657N | FRED (OECD) | Monthly | % | None | Inflation in world's largest population. Deflation risk indicator. |
 | **BoJ Policy Rate** | IRSTCB01JPM156N | FRED (OECD) | Monthly | % | None | Japan pioneered ZIRP/NIRP. Key for understanding unconventional monetary policy. |
 | **Japan CPI YoY** | JPNCPIALLMINMEI | FRED (OECD) | Monthly | % | yoy_percent | Japan's battle with deflation. BoJ targets 2% inflation sustainably. |
 
