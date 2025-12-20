@@ -38,10 +38,18 @@ metrics:
     unit: "%"
     decimals: 1
 
-  - id: us.real_rate
-    name: "US Real Rate"
+  - id: us.real_rate_1y
+    name: "US 1Y Real Rate"
     source: fred
-    series_id: REAINTRATREARAT10Y  # 10-Year Real Interest Rate
+    series_id: REAINTRATREARAT1YE  # 1-Year Real Interest Rate (Cleveland Fed)
+    frequency: monthly
+    unit: "%"
+    decimals: 2
+
+  - id: us.real_rate_10y
+    name: "US 10Y Real Rate"
+    source: fred
+    series_id: REAINTRATREARAT10Y  # 10-Year Real Interest Rate (Cleveland Fed)
     frequency: daily
     unit: "%"
     decimals: 2
@@ -180,9 +188,9 @@ metrics:
     decimals: 1
 
   - id: china.real_rate
-    name: "China Real Rate"
+    name: "China Real Rate (WB)"
     source: worldbank
-    indicator: FR.INR.RINR
+    indicator: FR.INR.RINR          # Lending rate minus inflation
     country: CHN
     frequency: annual
     unit: "%"
@@ -226,9 +234,9 @@ metrics:
     decimals: 1
 
   - id: japan.real_rate
-    name: "Japan Real Rate"
+    name: "Japan Real Rate (WB)"
     source: worldbank
-    indicator: FR.INR.RINR
+    indicator: FR.INR.RINR          # Lending rate minus inflation
     country: JPN
     frequency: annual
     unit: "%"
@@ -299,7 +307,7 @@ metrics:
 # Display groupings for dashboard layout
 groups:
   - name: "US Economy (FRED)"
-    metrics: [us.gdp_growth, us.inflation, us.unemployment, us.real_rate, us.fed_funds, us.gov_debt]
+    metrics: [us.gdp_growth, us.inflation, us.unemployment, us.real_rate_1y, us.real_rate_10y, us.fed_funds, us.gov_debt]
 
   - name: "US Outlook (IMF 2030)"
     metrics: [us.gdp_growth_proj, us.inflation_proj, us.unemployment_proj, us.gov_debt_proj, us.current_account_proj]
