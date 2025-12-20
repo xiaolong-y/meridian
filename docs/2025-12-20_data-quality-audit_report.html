@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meridian Data Quality Audit | Technical Report | 2025-12-20</title>
+
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --paper: #FFFCF0; --ink: #2D2B28; --muted: #6F6E69;
+    --line: #DAD8CE; --panel: #F2F0E5;
+    --blue: #205EA6; --cyan: #24837B; --green: #66800B;
+    --orange: #BC5215; --red: #AF3029; --purple: #5E409D;
+    --yellow: #AD8301; --magenta: #A02F6F;
+    --base: 11px; --lh: 1.45; --sp: 8px; --radius: 2px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #100F0F; --ink: #CECDC3; --muted: #878580;
+      --line: #403E3C; --panel: #1C1B1A;
+      --blue: #4385BE; --cyan: #3AA99F; --green: #879A39;
+      --orange: #DA702C; --red: #D14D41; --purple: #8B7EC8;
+      --yellow: #D0A215; --magenta: #CE5D97;
+    }
+  }
+
+  body {
+    font: var(--base)/var(--lh) 'IBM Plex Mono', ui-monospace, monospace;
+    background: var(--paper); color: var(--ink);
+    padding: var(--sp); max-width: 1400px; margin: 0 auto;
+  }
+
+  h1 { font-size: 1.15em; font-weight: 500; border-bottom: 1px solid var(--line); padding-bottom: 6px; margin-bottom: var(--sp); }
+  h2 { font-size: 1em; font-weight: 500; border-left: 3px solid var(--blue); padding-left: 6px; margin: var(--sp) 0 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+  h3 { font-size: 0.9em; font-weight: 500; color: var(--muted); margin: 6px 0 3px; }
+
+  section { margin-bottom: var(--sp); padding: var(--sp); background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: var(--sp); }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 900px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .grid, .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.9em; margin: 4px 0; }
+  th { text-align: left; padding: 3px 5px; border-bottom: 2px solid var(--line); color: var(--blue); font-weight: 400; }
+  td { padding: 3px 5px; border-bottom: 1px solid var(--line); }
+  tr:last-child td { border-bottom: none; }
+
+  pre { font-size: 0.82em; background: var(--paper); padding: 4px 6px; border: 1px solid var(--line); border-radius: var(--radius); overflow-x: auto; margin: 4px 0; white-space: pre-wrap; }
+  code { font-family: inherit; background: var(--paper); padding: 1px 3px; border-radius: var(--radius); }
+
+  .note { color: var(--muted); font-size: 0.82em; margin: 3px 0; }
+  .desc { font-size: 0.82em; margin: 4px 0; line-height: 1.35; }
+  .warn { color: var(--orange); } .err { color: var(--red); } .ok { color: var(--green); }
+
+  .tag { display: inline-block; padding: 1px 4px; border-radius: var(--radius); font-size: 0.73em; font-weight: 500; margin-left: 4px; border: 1px solid; vertical-align: middle; }
+  .tag.core { border-color: var(--blue); color: var(--blue); }
+  .tag.adv { border-color: var(--purple); color: var(--purple); }
+  .tag.eff { border-color: var(--green); color: var(--green); }
+  .tag.warn { border-color: var(--orange); color: var(--orange); }
+  .tag.new { border-color: var(--cyan); color: var(--cyan); }
+
+  ul, ol { margin: 3px 0 3px 16px; font-size: 0.9em; }
+  li { margin: 2px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { color: var(--cyan); text-decoration: underline; }
+
+  .summary-box { padding: 8px; background: var(--paper); border: 2px solid var(--line); border-radius: var(--radius); margin: 8px 0; }
+  .summary-box h3 { color: var(--blue); margin-bottom: 4px; }
+
+  .status-indicator { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .status-indicator.green { background: var(--green); }
+  .status-indicator.orange { background: var(--orange); }
+  .status-indicator.red { background: var(--red); }
+
+  @media print {
+    body { font-size: 9pt; padding: 0; }
+    section { break-inside: avoid; }
+  }
+  </style>
+</head>
+<body>
+
+<h1>Meridian Data Quality Audit <span class="tag core">Technical Report</span></h1>
+<p class="note">Generated: 2025-12-20 18:48 UTC | Dashboard: docs/index.html | Last Updated: 2025-12-20 17:46 UTC</p>
+
+<div class="grid grid-3">
+
+<section>
+  <h2>Executive Summary</h2>
+  <div class="summary-box">
+    <h3>Key Finding</h3>
+    <p class="desc">The dashboard data sources are <strong>functioning correctly</strong> but several metrics display <strong>semantically misleading values</strong> due to how "latest" is defined for each source type.</p>
+  </div>
+  <table>
+    <tr><th>Category</th><th>Status</th></tr>
+    <tr><td>Market Data (Yahoo, CoinGecko)</td><td><span class="ok">Correct</span></td></tr>
+    <tr><td>ECB Data (Inflation, Policy Rate)</td><td><span class="ok">Correct</span></td></tr>
+    <tr><td>IMF Data (GDP, Debt, Unemployment)</td><td><span class="warn">Showing 2030 Forecasts</span></td></tr>
+    <tr><td>World Bank (Real Interest Rates)</td><td><span class="warn">Data Lag (2-4 years)</span></td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Market Data Validation</h2>
+  <p class="desc">All market tickers validated against upstream APIs. Values match within expected tolerance.</p>
+  <table>
+    <tr><th>Metric</th><th>Dashboard</th><th>API Value</th><th>Status</th></tr>
+    <tr><td>Gold (GC=F)</td><td>$4,361.00</td><td>$4,361.40</td><td><span class="ok">OK</span></td></tr>
+    <tr><td>S&P 500 (^GSPC)</td><td>6834.0</td><td>6834.50</td><td><span class="ok">OK</span></td></tr>
+    <tr><td>Brent Crude (BZ=F)</td><td>$60.47</td><td>$60.47</td><td><span class="ok">OK</span></td></tr>
+    <tr><td>USD Index (DX-Y.NYB)</td><td>98.6</td><td>98.60</td><td><span class="ok">OK</span></td></tr>
+    <tr><td>Bitcoin</td><td>$88,120.00</td><td>$88,150.00</td><td><span class="ok">OK</span></td></tr>
+    <tr><td>Ethereum</td><td>$2,976.00</td><td>~$2,976</td><td><span class="ok">OK</span></td></tr>
+  </table>
+  <p class="note">Note: Gold at $4,361/oz is correct - prices have risen 65% YoY to record highs in 2025.</p>
+</section>
+
+<section>
+  <h2>ECB Data Validation</h2>
+  <p class="desc">ECB SDMX API returns current monthly data. All values match.</p>
+  <table>
+    <tr><th>Metric</th><th>Dashboard</th><th>ECB Value</th><th>Period</th><th>Status</th></tr>
+    <tr><td>HICP Inflation</td><td>2.1%</td><td>2.10%</td><td>2025-11</td><td><span class="ok">OK</span></td></tr>
+    <tr><td>Policy Rate (DFR)</td><td>2.0%</td><td>2.00%</td><td>2025-06-11</td><td><span class="ok">OK</span></td></tr>
+  </table>
+  <p class="desc">Delta values verified: HICP shows 0.00pp (2.10% to 2.10%), Policy Rate shows -0.25pp (2.25% to 2.00%).</p>
+</section>
+
+<section style="grid-column: 1 / -1;">
+  <h2>IMF Data Issue <span class="tag warn">Critical</span></h2>
+  <p class="desc">The IMF DataMapper API returns forecasts through 2030. The current implementation takes the "latest" year, which means <strong>2030 forecasts are displayed as current values</strong>.</p>
+
+  <table>
+    <tr><th>Metric</th><th>Dashboard Shows</th><th>Year Used</th><th>2024 Actual</th><th>Discrepancy</th></tr>
+    <tr><td>US GDP Growth</td><td>1.8%</td><td class="warn">2030</td><td>2.80%</td><td class="warn">-1.0pp</td></tr>
+    <tr><td>US Gov Debt/GDP</td><td>143.0%</td><td class="warn">2030</td><td>122.3%</td><td class="warn">+20.7pp</td></tr>
+    <tr><td>US Inflation</td><td>2.2%</td><td class="warn">2030</td><td>2.87%</td><td class="warn">-0.7pp</td></tr>
+    <tr><td>US Unemployment</td><td>3.7%</td><td class="warn">2030</td><td>4.07%</td><td class="warn">-0.4pp</td></tr>
+    <tr><td>US Current Account</td><td>-3.5%</td><td class="warn">2030</td><td>-3.07%</td><td class="warn">-0.4pp</td></tr>
+    <tr><td>China GDP Growth</td><td>3.4%</td><td class="warn">2030</td><td>4.75%</td><td class="warn">-1.4pp</td></tr>
+    <tr><td>EU GDP Growth</td><td>1.4%</td><td class="warn">2030</td><td>0.79%</td><td class="warn">+0.6pp</td></tr>
+  </table>
+
+  <h3>Recommended Fix</h3>
+  <pre>
+# In src/connectors/imf.py normalize() method, filter years:
+current_year = datetime.now().year
+for year, value in country_data.items():
+    if int(year) > current_year:
+        continue  # Skip future forecasts
+    ...
+</pre>
+</section>
+
+<section style="grid-column: 1 / -1;">
+  <h2>World Bank Data Lag <span class="tag warn">Warning</span></h2>
+  <p class="desc">World Bank real interest rate data lags significantly. Some countries have no recent data.</p>
+
+  <table>
+    <tr><th>Metric</th><th>Dashboard</th><th>Data Year</th><th>Lag</th><th>Impact</th></tr>
+    <tr><td>US Real Interest Rate</td><td>-1.1%</td><td class="warn">2021</td><td class="warn">4 years</td><td>Significantly outdated - Fed has raised rates substantially since 2021</td></tr>
+    <tr><td>China Real Rate</td><td>5.1%</td><td>2024</td><td>1 year</td><td><span class="ok">Acceptable</span></td></tr>
+    <tr><td>Japan Real Rate</td><td>1.1%</td><td class="err">No recent data</td><td>5+ years</td><td>Data source not available - consider alternative</td></tr>
+  </table>
+
+  <h3>Recommended Actions</h3>
+  <ul>
+    <li>Display the data year alongside each World Bank metric (e.g., "US Real Rate (2021): -1.1%")</li>
+    <li>Consider alternative sources: FRED for US real rates, BoJ for Japan</li>
+    <li>Add a data freshness indicator to the dashboard</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Validated Correct Metrics</h2>
+  <p class="desc">These metrics are displaying accurate, current data:</p>
+  <ul>
+    <li class="ok">S&P 500 - Real-time market data</li>
+    <li class="ok">Brent Crude - Real-time market data</li>
+    <li class="ok">Gold - Real-time market data</li>
+    <li class="ok">US Dollar Index - Real-time market data</li>
+    <li class="ok">Bitcoin - Near real-time crypto data</li>
+    <li class="ok">Ethereum - Near real-time crypto data</li>
+    <li class="ok">EU HICP Inflation - Monthly, current</li>
+    <li class="ok">EU Policy Rate - Daily, current</li>
+    <li class="ok">China Real Rate - 2024 data (acceptable lag)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Metrics Requiring Attention</h2>
+  <p class="desc">These metrics need code changes or alternative data sources:</p>
+  <table>
+    <tr><th>Priority</th><th>Metric</th><th>Issue</th></tr>
+    <tr><td class="err">High</td><td>All IMF metrics</td><td>Showing 2030 forecasts, not actuals</td></tr>
+    <tr><td class="warn">Medium</td><td>US Real Interest Rate</td><td>2021 data (4 years old)</td></tr>
+    <tr><td class="warn">Medium</td><td>Japan Real Rate</td><td>No recent World Bank data</td></tr>
+    <tr><td class="note">Low</td><td>Japan e-Stat metrics</td><td>API availability variable (not tested)</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Code Changes Required</h2>
+
+  <h3>1. Filter IMF Forecasts</h3>
+  <pre>
+# File: src/connectors/imf.py
+# In normalize() method, add year filtering:
+
+def normalize(self, config: ConnectorConfig, raw_data: Any):
+    current_year = datetime.now().year
+    observations = []
+
+    for year, value in country_data.items():
+        year_int = int(year)
+        # Skip future forecasts - only use historical/current
+        if year_int > current_year:
+            continue
+        # ... rest of processing
+</pre>
+
+  <h3>2. Add Period Labels to Display</h3>
+  <pre>
+# File: templates/dashboard.html
+# Update metric display to show period:
+
+&lt;span class="m-val"&gt;{{ m.formatted_value }}&lt;/span&gt;
+&lt;span class="m-period"&gt;({{ m.period }})&lt;/span&gt;
+</pre>
+
+  <h3>3. Add Data Freshness Warning</h3>
+  <pre>
+# File: src/generator/html.py
+# Add warning for old data:
+
+if metric.data_age_years > 2:
+    metric.freshness_warning = True
+</pre>
+</section>
+
+</div>
+
+<section class="bib" style="margin-top: 16px;">
+  <h2>Data Sources Validated</h2>
+  <ol>
+    <li><a href="https://www.imf.org/external/datamapper/api">IMF DataMapper API</a> - Macroeconomic indicators with forecasts</li>
+    <li><a href="https://data-api.ecb.europa.eu">ECB SDMX API</a> - Eurozone monetary data</li>
+    <li><a href="https://api.worldbank.org/v2">World Bank API</a> - Development indicators (lagged)</li>
+    <li><a href="https://query1.finance.yahoo.com/v8/finance/chart">Yahoo Finance API</a> - Market data</li>
+    <li><a href="https://api.coingecko.com/api/v3">CoinGecko API</a> - Cryptocurrency prices</li>
+    <li><a href="https://tradingeconomics.com/commodity/gold">Trading Economics</a> - Gold price verification</li>
+  </ol>
+</section>
+
+</body>
+</html>

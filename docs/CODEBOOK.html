@@ -18,6 +18,8 @@
       --accent: #205EA6;
       --link: #24837B;
       --code: #5E409D;
+      --green: #66800B;
+      --orange: #BC5215;
     }
 
     html { font-size: 11px; }
@@ -183,6 +185,26 @@
       color: var(--dim);
       font-size: 8px;
     }
+
+    .tag {
+      display: inline-block;
+      padding: 1px 4px;
+      border-radius: 2px;
+      font-size: 7px;
+      font-weight: 500;
+      margin-left: 4px;
+      text-transform: uppercase;
+    }
+
+    .tag.primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .tag.projection {
+      background: var(--orange);
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -202,52 +224,125 @@
     <th>API</th>
     <th>Auth</th>
     <th>Frequency</th>
+    <th>Data Type</th>
   </tr>
   <tr>
-    <td><strong>IMF DataMapper</strong></td>
-    <td><code>imf.org/external/datamapper/api</code></td>
-    <td>No</td>
-    <td>Annual</td>
+    <td><strong>FRED</strong> <span class="tag primary">Primary</span></td>
+    <td><code>api.stlouisfed.org/fred</code></td>
+    <td>API Key (free)</td>
+    <td>Daily/Monthly/Quarterly</td>
+    <td>Actual/Historical</td>
   </tr>
   <tr>
     <td><strong>ECB SDMX</strong></td>
     <td><code>data-api.ecb.europa.eu</code></td>
     <td>No</td>
     <td>Monthly/Daily</td>
+    <td>Actual/Historical</td>
+  </tr>
+  <tr>
+    <td><strong>Yahoo Finance</strong></td>
+    <td><code>query1.finance.yahoo.com</code></td>
+    <td>No</td>
+    <td>Real-time</td>
+    <td>Market Prices</td>
+  </tr>
+  <tr>
+    <td><strong>CoinGecko</strong></td>
+    <td><code>api.coingecko.com/api/v3</code></td>
+    <td>No</td>
+    <td>Real-time</td>
+    <td>Crypto Prices</td>
+  </tr>
+  <tr>
+    <td><strong>IMF DataMapper</strong> <span class="tag projection">Projections</span></td>
+    <td><code>imf.org/external/datamapper/api</code></td>
+    <td>No</td>
+    <td>Annual</td>
+    <td>Forecasts to 2030</td>
   </tr>
   <tr>
     <td><strong>World Bank</strong></td>
     <td><code>api.worldbank.org/v2</code></td>
     <td>No</td>
     <td>Annual</td>
+    <td>Historical (lagged)</td>
   </tr>
   <tr>
     <td><strong>Japan e-Stat</strong></td>
     <td><code>dashboard.e-stat.go.jp/api</code></td>
     <td>No</td>
     <td>Monthly/Quarterly</td>
-  </tr>
-  <tr>
-    <td><strong>Yahoo Finance</strong></td>
-    <td><code>query1.finance.yahoo.com</code></td>
-    <td>No</td>
-    <td>Daily</td>
-  </tr>
-  <tr>
-    <td><strong>CoinGecko</strong></td>
-    <td><code>api.coingecko.com/api/v3</code></td>
-    <td>No</td>
-    <td>Daily</td>
+    <td>Actual/Historical</td>
   </tr>
   <tr>
     <td><strong>Hacker News</strong></td>
     <td><code>hacker-news.firebaseio.com</code> + <code>hn.algolia.com</code></td>
     <td>No</td>
     <td>Real-time</td>
+    <td>News Feed</td>
   </tr>
 </table>
 
-<h2>US Economy</h2>
+<h2>US Economy (FRED) <span class="tag primary">Actual Data</span></h2>
+
+<p>Current economic indicators from the Federal Reserve Economic Data (FRED). Updated monthly/quarterly with actual reported values.</p>
+
+<table>
+  <tr>
+    <th>Metric</th>
+    <th>Definition</th>
+    <th>Source</th>
+    <th>Series ID</th>
+    <th>Frequency</th>
+  </tr>
+  <tr>
+    <td><strong>US GDP Growth</strong></td>
+    <td>Real GDP percent change, seasonally adjusted annual rate</td>
+    <td>FRED</td>
+    <td><code>A191RL1Q225SBEA</code></td>
+    <td>Quarterly</td>
+  </tr>
+  <tr>
+    <td><strong>US Inflation (CPI)</strong></td>
+    <td>Consumer Price Index for All Urban Consumers, YoY change</td>
+    <td>FRED</td>
+    <td><code>CPIAUCSL</code></td>
+    <td>Monthly</td>
+  </tr>
+  <tr>
+    <td><strong>US Unemployment</strong></td>
+    <td>Civilian Unemployment Rate, seasonally adjusted</td>
+    <td>FRED</td>
+    <td><code>UNRATE</code></td>
+    <td>Monthly</td>
+  </tr>
+  <tr>
+    <td><strong>US Real Rate</strong></td>
+    <td>10-Year Treasury Inflation-Indexed Security, Constant Maturity</td>
+    <td>FRED</td>
+    <td><code>REAINTRATREARAT10Y</code></td>
+    <td>Daily</td>
+  </tr>
+  <tr>
+    <td><strong>Fed Funds Rate</strong></td>
+    <td>Effective Federal Funds Rate</td>
+    <td>FRED</td>
+    <td><code>FEDFUNDS</code></td>
+    <td>Monthly</td>
+  </tr>
+  <tr>
+    <td><strong>US Debt/GDP</strong></td>
+    <td>Federal Debt: Total Public Debt as Percent of GDP</td>
+    <td>FRED</td>
+    <td><code>GFDEGDQ188S</code></td>
+    <td>Quarterly</td>
+  </tr>
+</table>
+
+<h2>US Outlook (IMF 2030) <span class="tag projection">Projections</span></h2>
+
+<p>Long-term projections from the IMF World Economic Outlook. These are <strong>forecasts through 2030</strong>, not current values. Useful for comparing current data against projected trends.</p>
 
 <table>
   <tr>
@@ -257,38 +352,32 @@
     <th>Code</th>
   </tr>
   <tr>
-    <td><strong>US GDP Growth</strong></td>
-    <td>Real GDP growth rate, annual percent change</td>
+    <td><strong>GDP Growth (2030f)</strong></td>
+    <td>Projected real GDP growth rate for 2030</td>
     <td>IMF</td>
     <td><code>NGDP_RPCH/USA</code></td>
   </tr>
   <tr>
-    <td><strong>US Inflation</strong></td>
-    <td>Consumer price inflation, annual average percent change</td>
+    <td><strong>Inflation (2030f)</strong></td>
+    <td>Projected consumer price inflation for 2030</td>
     <td>IMF</td>
     <td><code>PCPIPCH/USA</code></td>
   </tr>
   <tr>
-    <td><strong>US Real Interest Rate</strong></td>
-    <td>Lending rate adjusted for inflation (nominal rate minus GDP deflator)</td>
-    <td>World Bank</td>
-    <td><code>FR.INR.RINR/USA</code></td>
-  </tr>
-  <tr>
-    <td><strong>US Unemployment</strong></td>
-    <td>Unemployment rate as percent of labor force</td>
+    <td><strong>Unemployment (2030f)</strong></td>
+    <td>Projected unemployment rate for 2030</td>
     <td>IMF</td>
     <td><code>LUR/USA</code></td>
   </tr>
   <tr>
-    <td><strong>US Gov Debt/GDP</strong></td>
-    <td>General government gross debt as percent of GDP</td>
+    <td><strong>Debt/GDP (2030f)</strong></td>
+    <td>Projected government debt to GDP ratio for 2030</td>
     <td>IMF</td>
     <td><code>GGXWDG_NGDP/USA</code></td>
   </tr>
   <tr>
-    <td><strong>US Current Account</strong></td>
-    <td>Current account balance as percent of GDP</td>
+    <td><strong>Current Acct (2030f)</strong></td>
+    <td>Projected current account balance as percent of GDP for 2030</td>
     <td>IMF</td>
     <td><code>BCA_NGDPD/USA</code></td>
   </tr>
@@ -304,22 +393,22 @@
     <th>Code</th>
   </tr>
   <tr>
-    <td><strong>EU GDP Growth</strong></td>
-    <td>Euro area real GDP growth rate</td>
-    <td>IMF</td>
-    <td><code>NGDP_RPCH/EUQ</code></td>
-  </tr>
-  <tr>
     <td><strong>EU HICP Inflation</strong></td>
     <td>Harmonised Index of Consumer Prices, annual rate</td>
     <td>ECB</td>
     <td><code>ICP/M.U2.N.000000.4.ANR</code></td>
   </tr>
   <tr>
-    <td><strong>EU Policy Rate</strong></td>
+    <td><strong>ECB Policy Rate</strong></td>
     <td>ECB Deposit Facility Rate (key policy rate)</td>
     <td>ECB</td>
     <td><code>FM/B.U2.EUR.4F.KR.DFR.LEV</code></td>
+  </tr>
+  <tr>
+    <td><strong>EU GDP Growth</strong></td>
+    <td>Euro area real GDP growth rate (IMF projection)</td>
+    <td>IMF</td>
+    <td><code>NGDP_RPCH/EUQ</code></td>
   </tr>
   <tr>
     <td><strong>Germany Unemployment</strong></td>
@@ -501,17 +590,19 @@
 <h2>Notes</h2>
 
 <ol>
-  <li><strong>IMF DataMapper</strong> provides forecasts for current and future years; historical data goes back to 1980.</li>
-  <li><strong>World Bank Real Interest Rate</strong> is calculated as: lending rate minus inflation (GDP deflator). Data typically lags 2-3 years.</li>
+  <li><strong>FRED</strong> is the primary source for US economic data, providing actual reported values with monthly/quarterly frequency. Requires a free API key.</li>
+  <li><strong>IMF DataMapper</strong> provides forecasts through 2030. The "US Outlook" section shows these projections for comparison with current FRED data.</li>
   <li><strong>ECB Policy Rate</strong> shows the Deposit Facility Rate, which is the rate banks receive for overnight deposits with the ECB. This is the key rate used to implement monetary policy since 2022.</li>
+  <li><strong>World Bank Real Interest Rate</strong> is calculated as: lending rate minus inflation (GDP deflator). Data typically lags 1-3 years.</li>
   <li><strong>Japan e-Stat</strong> data is sourced from official Japanese government statistics (Statistics Bureau, Cabinet Office, METI).</li>
   <li><strong>Sparklines</strong> display the last 16 data points using Unicode braille patterns for 2x resolution.</li>
-  <li><strong>Change values</strong> show period-over-period change where available (e.g., YoY for annual data, MoM for monthly).</li>
+  <li><strong>Change values</strong> show period-over-period change where available (e.g., QoQ for quarterly data, MoM for monthly).</li>
 </ol>
 
 <h2>API Endpoints</h2>
 
-<pre><code>IMF:        https://www.imf.org/external/datamapper/api/v1/{indicator}/{country}
+<pre><code>FRED:       https://api.stlouisfed.org/fred/series/observations?series_id={id}&api_key={key}
+IMF:        https://www.imf.org/external/datamapper/api/v1/{indicator}/{country}
 ECB:        https://data-api.ecb.europa.eu/service/data/{dataflow}/{series_key}
 World Bank: https://api.worldbank.org/v2/country/{country}/indicator/{indicator}
 e-Stat:     https://dashboard.e-stat.go.jp/api/1.0/Json/getData?IndicatorCode={code}
@@ -519,6 +610,16 @@ Yahoo:      https://query1.finance.yahoo.com/v8/finance/chart/{ticker}
 CoinGecko:  https://api.coingecko.com/api/v3/coins/{id}/market_chart
 HN:         https://hacker-news.firebaseio.com/v0/topstories.json
 Algolia:    https://hn.algolia.com/api/v1/search?query={query}</code></pre>
+
+<h2>FRED API Setup</h2>
+
+<p>To enable FRED data fetching:</p>
+
+<ol>
+  <li>Get a free API key from <a href="https://fred.stlouisfed.org/docs/api/api_key.html">fred.stlouisfed.org</a></li>
+  <li>Set the environment variable: <code>export FRED_API_KEY=your_key_here</code></li>
+  <li>Run the dashboard updater: <code>python -m src.main</code></li>
+</ol>
 
 <footer>
   <a href="index.html">&larr; Meridian Dashboard</a>

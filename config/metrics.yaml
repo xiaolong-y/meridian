@@ -1,6 +1,9 @@
 # Metric Configuration Schema
-# ALL SOURCES ARE FREE AND REQUIRE NO API KEY
-# Data sources: IMF DataMapper, ECB SDMX, e-Stat Dashboard, World Bank, Yahoo Finance, CoinGecko
+# Primary sources: FRED (US actuals), ECB, Yahoo, CoinGecko
+# Secondary sources: IMF (projections), World Bank, e-Stat
+#
+# FRED requires free API key: https://fred.stlouisfed.org/docs/api/api_key.html
+# Set environment variable: export FRED_API_KEY=your_key
 
 defaults:
   cache_hours: 6
@@ -8,10 +11,62 @@ defaults:
 
 metrics:
   # ============================================
-  # UNITED STATES
+  # UNITED STATES - ACTUAL DATA (FRED)
   # ============================================
   - id: us.gdp_growth
     name: "US GDP Growth"
+    source: fred
+    series_id: A191RL1Q225SBEA    # Real GDP % change, quarterly annualized
+    frequency: quarterly
+    unit: "%"
+    decimals: 1
+
+  - id: us.inflation
+    name: "US Inflation (CPI)"
+    source: fred
+    series_id: CPIAUCSL            # CPI All Urban Consumers
+    frequency: monthly
+    unit: "%"
+    decimals: 1
+    transform: yoy_percent         # Calculate year-over-year % change
+
+  - id: us.unemployment
+    name: "US Unemployment"
+    source: fred
+    series_id: UNRATE              # Civilian Unemployment Rate
+    frequency: monthly
+    unit: "%"
+    decimals: 1
+
+  - id: us.real_rate
+    name: "US Real Rate"
+    source: fred
+    series_id: REAINTRATREARAT10Y  # 10-Year Real Interest Rate
+    frequency: daily
+    unit: "%"
+    decimals: 2
+
+  - id: us.fed_funds
+    name: "Fed Funds Rate"
+    source: fred
+    series_id: FEDFUNDS            # Effective Federal Funds Rate
+    frequency: monthly
+    unit: "%"
+    decimals: 2
+
+  - id: us.gov_debt
+    name: "US Debt/GDP"
+    source: fred
+    series_id: GFDEGDQ188S         # Federal Debt to GDP
+    frequency: quarterly
+    unit: "%"
+    decimals: 1
+
+  # ============================================
+  # UNITED STATES - IMF PROJECTIONS (2030)
+  # ============================================
+  - id: us.gdp_growth_proj
+    name: "GDP Growth (2030f)"
     source: imf
     indicator: NGDP_RPCH
     country: USA
@@ -19,8 +74,8 @@ metrics:
     unit: "%"
     decimals: 1
 
-  - id: us.inflation
-    name: "US Inflation"
+  - id: us.inflation_proj
+    name: "Inflation (2030f)"
     source: imf
     indicator: PCPIPCH
     country: USA
@@ -28,8 +83,8 @@ metrics:
     unit: "%"
     decimals: 1
 
-  - id: us.unemployment
-    name: "US Unemployment"
+  - id: us.unemployment_proj
+    name: "Unemployment (2030f)"
     source: imf
     indicator: LUR
     country: USA
@@ -37,17 +92,8 @@ metrics:
     unit: "%"
     decimals: 1
 
-  - id: us.real_rate
-    name: "US Real Interest Rate"
-    source: worldbank
-    indicator: FR.INR.RINR
-    country: USA
-    frequency: annual
-    unit: "%"
-    decimals: 1
-
-  - id: us.gov_debt
-    name: "US Gov Debt/GDP"
+  - id: us.gov_debt_proj
+    name: "Debt/GDP (2030f)"
     source: imf
     indicator: GGXWDG_NGDP
     country: USA
@@ -55,8 +101,8 @@ metrics:
     unit: "%"
     decimals: 0
 
-  - id: us.current_account
-    name: "US Current Account"
+  - id: us.current_account_proj
+    name: "Current Acct (2030f)"
     source: imf
     indicator: BCA_NGDPD
     country: USA
@@ -76,6 +122,15 @@ metrics:
     unit: "%"
     decimals: 1
 
+  - id: eu.policy_rate
+    name: "ECB Policy Rate"
+    source: ecb
+    dataflow: FM
+    series_key: B.U2.EUR.4F.KR.DFR.LEV
+    frequency: daily
+    unit: "%"
+    decimals: 2
+
   - id: eu.gdp_growth
     name: "EU GDP Growth"
     source: imf
@@ -93,15 +148,6 @@ metrics:
     frequency: annual
     unit: "%"
     decimals: 1
-
-  - id: eu.real_rate
-    name: "EU Policy Rate"
-    source: ecb
-    dataflow: FM
-    series_key: B.U2.EUR.4F.KR.DFR.LEV
-    frequency: daily
-    unit: "%"
-    decimals: 2
 
   # ============================================
   # CHINA
@@ -199,6 +245,14 @@ metrics:
   # ============================================
   # GLOBAL MARKETS
   # ============================================
+  - id: global.sp500
+    name: "S&P 500"
+    source: yahoo
+    series_id: "^GSPC"
+    frequency: daily
+    unit: "index"
+    decimals: 0
+
   - id: global.brent
     name: "Brent Crude"
     source: yahoo
@@ -223,35 +277,6 @@ metrics:
     unit: "index"
     decimals: 1
 
-  - id: global.sp500
-    name: "S&P 500"
-    source: yahoo
-    series_id: "^GSPC"
-    frequency: daily
-    unit: "index"
-    decimals: 0
-
-  # ============================================
-  # WORLD
-  # ============================================
-  - id: world.gdp_growth
-    name: "World GDP Growth"
-    source: worldbank
-    indicator: NY.GDP.MKTP.KD.ZG
-    country: WLD
-    frequency: annual
-    unit: "%"
-    decimals: 1
-
-  - id: world.inflation
-    name: "World Inflation"
-    source: imf
-    indicator: PCPIPCH
-    country: WLD
-    frequency: annual
-    unit: "%"
-    decimals: 1
-
   # ============================================
   # CRYPTO
   # ============================================
@@ -273,17 +298,20 @@ metrics:
 
 # Display groupings for dashboard layout
 groups:
-  - name: "US Economy"
-    metrics: [us.gdp_growth, us.inflation, us.real_rate, us.unemployment, us.gov_debt, us.current_account]
+  - name: "US Economy (FRED)"
+    metrics: [us.gdp_growth, us.inflation, us.unemployment, us.real_rate, us.fed_funds, us.gov_debt]
+
+  - name: "US Outlook (IMF 2030)"
+    metrics: [us.gdp_growth_proj, us.inflation_proj, us.unemployment_proj, us.gov_debt_proj, us.current_account_proj]
 
   - name: "Eurozone"
-    metrics: [eu.gdp_growth, eu.inflation, eu.real_rate, eu.unemployment]
+    metrics: [eu.inflation, eu.policy_rate, eu.gdp_growth, eu.unemployment]
 
   - name: "China"
-    metrics: [china.gdp_growth, china.inflation, china.real_rate, china.unemployment, china.current_account]
+    metrics: [china.gdp_growth, china.inflation, china.unemployment, china.real_rate, china.current_account]
 
   - name: "Japan"
-    metrics: [japan.gdp_qoq, japan.inflation, japan.real_rate, japan.unemployment, japan.industrial]
+    metrics: [japan.gdp_qoq, japan.inflation, japan.unemployment, japan.real_rate, japan.industrial]
 
   - name: "Global Markets"
     metrics: [global.sp500, global.brent, global.gold, global.dxy]
