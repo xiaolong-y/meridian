@@ -1,5 +1,80 @@
 # Meridian Dashboard Changelog
 
+## 2025-12-21: Risk, Volatility & AI Metrics Expansion
+
+### New Data Sources
+
+Added 8 new metrics across 3 new connectors to track market risk, leading indicators, and AI industry metrics.
+
+#### Risk & Volatility (FRED)
+| Metric | Description | Series ID | Interpretation |
+|--------|-------------|-----------|----------------|
+| VIX | CBOE Volatility Index | `VIXCLS` | <20 normal, >30 high stress |
+| HY Credit Spread | ICE BofA High Yield OAS | `BAMLH0A0HYM2` | <300bp tight, >500bp stressed |
+| 2Y Treasury | 2-Year Treasury Yield | `DGS2` | Fed rate expectations |
+| 5Y Breakeven | 5-Year Inflation Expectations | `T5YIE` | Target ~2% |
+| 10Y Breakeven | 10-Year Inflation Expectations | `T10YIE` | Long-term anchor |
+
+#### Leading Indicators (DBnomics)
+| Metric | Description | Series | Interpretation |
+|--------|-------------|--------|----------------|
+| ISM Manufacturing PMI | Purchasing Managers Index | `ISM/pmi/pm` | >50 expansion, <50 contraction |
+
+**Note:** ISM data was removed from FRED in June 2016. Now sourced via DBnomics API.
+
+#### AI & Compute (HuggingFace, Vast.ai)
+| Metric | Description | Source | Interpretation |
+|--------|-------------|--------|----------------|
+| Top LLM Score | Best open model benchmark score | HuggingFace | Tracks frontier capability |
+| H100 80GB Spot | NVIDIA H100 spot price | Vast.ai | AI compute scarcity proxy |
+| A100 80GB Spot | NVIDIA A100 spot price | Vast.ai | Previous-gen pricing |
+
+### New Connectors
+
+| Connector | File | Auth Required |
+|-----------|------|---------------|
+| DBnomics | `src/connectors/dbnomics.py` | No |
+| HuggingFace | `src/connectors/huggingface.py` | No |
+| Vast.ai | `src/connectors/vastai.py` | Optional (`VASTAI_API_KEY`) |
+
+### UX Improvements
+
+**Period Labels:** All sparkline deltas now display comparison period:
+- `DoD` - Day-over-Day (daily metrics)
+- `MoM` - Month-over-Month (monthly metrics)
+- `QoQ` - Quarter-over-Quarter (quarterly metrics)
+- `YoY` - Year-over-Year (annual metrics)
+
+Example: `+0.15pp MoM` instead of just `+0.15pp`
+
+### Files Modified
+- `config/metrics.yaml` - Added 8 new metrics, 2 new groups
+- `src/connectors/dbnomics.py` - **NEW** DBnomics connector
+- `src/connectors/huggingface.py` - **NEW** HuggingFace connector
+- `src/connectors/vastai.py` - **NEW** Vast.ai connector
+- `src/connectors/__init__.py` - Registered new connectors
+- `src/main.py` - Added connector initialization
+- `src/generator/html.py` - Added period label support
+- `templates/dashboard.html` - Display period labels, updated footer
+- `docs/CODEBOOK.html` - Full documentation for new metrics
+
+### Data Source Summary (Updated)
+
+| Region/Category | Primary Source | Notes |
+|-----------------|---------------|-------|
+| US Economy | FRED | Actual data, requires API key |
+| Risk & Volatility | FRED | Daily market indicators |
+| Leading Indicators | DBnomics | ISM PMI, no auth |
+| AI & Compute | HuggingFace, Vast.ai | LLM benchmarks, GPU pricing |
+| US Outlook | IMF | 2030 projections |
+| Eurozone | ECB SDMX | Current monetary data |
+| China | IMF + World Bank | Annual data |
+| Japan | e-Stat + IMF + WB | Mixed sources |
+| Markets | Yahoo Finance | Real-time |
+| Crypto | CoinGecko | Near real-time |
+
+---
+
 ## 2025-12-20: Data Quality Overhaul
 
 ### Problem Identified
