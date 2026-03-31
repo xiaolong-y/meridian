@@ -11,7 +11,6 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      /* Flexoki Light Theme */
       --bg: #FFFCF0;
       --card: #F2F0E5;
       --text: #2D2B28;
@@ -20,7 +19,7 @@
       --up: #66800B;
       --down: #AF3029;
       --accent: #205EA6;
-      --spark: #8B5CF6;  /* Vibrant violet for sparkline visibility */
+      --spark: #8B5CF6;
       --score: #AD8301;
       --link: #24837B;
       --particle: #24837B;
@@ -38,7 +37,6 @@
       font-weight: 400;
     }
 
-    /* Header */
     header {
       display: flex;
       justify-content: space-between;
@@ -56,7 +54,6 @@
     }
     .timestamp { color: var(--dim); font-size: 9px; }
 
-    /* Main 3-Column Layout: Stats | Tech | AI+Startups */
     .main-grid {
       display: grid;
       grid-template-columns: 1fr 1.5fr 1fr;
@@ -85,156 +82,49 @@
       }
     }
 
-    /* Stats Column - stacked cards */
     .col-stats {
       display: flex;
       flex-direction: column;
       gap: 3px;
     }
 
-    /* Card Base */
-    .card {
-      background: var(--card);
-      font-size: 9px;
-      border: 1px solid var(--muted);
-      border-radius: 2px;
-    }
-
-    .card-head {
-      background: var(--bg);
-      padding: 2px 4px;
-      font-size: 8px;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border-bottom: 1px solid var(--muted);
-      font-weight: 500;
-    }
-
-    .card-head::before {
-      content: '>';
-      color: var(--muted);
-      margin-right: 4px;
-    }
-
-    /* Metric Row */
-    .m-row {
-      display: flex;
-      align-items: baseline;
-      padding: 2px 4px;
-      border-bottom: 1px dotted var(--muted);
-      gap: 4px;
-    }
-
-    .m-row:last-child { border-bottom: none; }
-    .m-row:hover { background: rgba(45, 43, 40, 0.03); }
-
-    .m-name {
-      color: var(--dim);
-      font-size: 8px;
-      flex: 1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      min-width: 0;
-    }
-
-    .m-spark {
-      color: var(--spark);
-      font-size: 9px;
-      letter-spacing: -0.5px;
-      flex-shrink: 0;
-    }
-
-    .m-val {
-      font-weight: 500;
-      font-size: 10px;
-      flex-shrink: 0;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .m-chg {
-      font-size: 8px;
-      flex-shrink: 0;
-      min-width: 56px;
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .m-chg.up { color: var(--up); }
-    .m-chg.down { color: var(--down); }
-
-    /* News Row */
-    .n-row {
-      display: flex;
-      align-items: baseline;
-      padding: 2px 4px;
-      border-bottom: 1px dotted var(--muted);
-      gap: 6px;
-      line-height: 1.4;
-    }
-
-    .n-row:last-child { border-bottom: none; }
-    .n-row:hover { background: rgba(45, 43, 40, 0.03); }
-
-    .n-score {
-      color: var(--score);
-      font-size: 8px;
-      font-weight: 500;
-      min-width: 28px;
-      text-align: right;
-      flex-shrink: 0;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .n-content {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .n-title {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 9px;
-    }
-
-    .n-title:hover { color: var(--accent); }
-
-    .n-domain {
-      color: var(--dim);
-      font-size: 7px;
-    }
-
-    .n-meta {
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-      flex-shrink: 0;
-      font-size: 7px;
-      color: var(--dim);
-    }
-
-    .n-time { color: var(--dim); }
-
-    .n-hn {
-      color: var(--link);
-      text-decoration: none;
-      padding: 0 2px;
-    }
-
-    .n-hn:hover {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
-    /* Right Column - stacked AI/ML and Startups */
     .col-right {
       display: flex;
       flex-direction: column;
       gap: 3px;
     }
 
-    /* Footer with ASCII Art */
+    .card-wrapper {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--muted);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .card-wrapper canvas {
+      display: block;
+      width: 100%;
+    }
+
+    .card-wrapper .links {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .card-wrapper .links a {
+      position: absolute;
+      pointer-events: auto;
+      cursor: pointer;
+      color: transparent;
+      text-decoration: none;
+      display: block;
+    }
+
     footer {
       margin-top: 8px;
       padding: 6px 4px;
@@ -262,7 +152,6 @@
       margin: 0 4px;
     }
 
-    /* Particle ASCII Art */
     .ascii-footer {
       margin: 8px auto 4px;
       font-size: 8px;
@@ -297,19 +186,18 @@
     .ascii-footer .p5 { animation: particleDrift 3s ease-in-out infinite 1.2s; }
     .ascii-footer .p6 { animation: particleDrift 3s ease-in-out infinite 1.5s; }
 
-    .empty {
-      color: var(--dim);
-      font-size: 8px;
-      padding: 6px 4px;
-      text-align: center;
-    }
-
-    /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .ascii-footer .particle {
         animation: none;
         opacity: 0.3;
       }
+    }
+
+    noscript p {
+      text-align: center;
+      padding: 20px;
+      color: var(--dim);
+      font-size: 9px;
     }
   </style>
 </head>
@@ -317,894 +205,85 @@
 
 <header>
   <span class="title">Meridian</span>
-  <span class="timestamp">2026-03-30 18:55 UTC</span>
+  <span class="timestamp">2026-03-31 01:34 UTC</span>
 </header>
 
 <div class="main-grid">
-  
-  <div class="col-stats">
+  <div class="col-stats" id="col-stats">
     
-    <div class="card">
-      <div class="card-head">US Economy (FRED)</div>
-      
-        
-        <div class="m-row">
-          <span class="m-name">US GDP Growth</span>
-          <span class="m-spark">⢀⣤⣤⣷⣰⣦⢰⣆</span>
-          <span class="m-val">0.7%</span>
-          <span class="m-chg down">-3.70pp QoQ</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">US Inflation (CPI)</span>
-          <span class="m-spark">⣠⣶⡄⠀⣤⣾⣄⠀</span>
-          <span class="m-val">2.4%</span>
-          <span class="m-chg up">+0.06pp MoM</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">US Unemployment</span>
-          <span class="m-spark">⢀⠀⣀⣠⢠⣴⣷⣴</span>
-          <span class="m-val">4.4%</span>
-          <span class="m-chg up">+0.10pp MoM</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">US 1Y Real Rate</span>
-          <span class="m-spark">⣤⣼⣠⣆⣤⣀⢀⣠</span>
-          <span class="m-val">1.6%</span>
-          <span class="m-chg up">+0.68pp MoM</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">US 10Y Real Rate</span>
-          <span class="m-spark">⣼⣦⣀⣄⠀⢀⢀⣀</span>
-          <span class="m-val">1.6%</span>
-          <span class="m-chg down">-0.13pp DoD</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">Fed Funds Rate</span>
-          <span class="m-spark">⣷⣤⣤⣤⣤⣄⠀⠀</span>
-          <span class="m-val">3.6%</span>
-          <span class="m-chg ">0.00pp MoM</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">US Debt/GDP</span>
-          <span class="m-spark">⣄⣀⢀⣠⣤⣴⣄⣾</span>
-          <span class="m-val">122.5%</span>
-          <span class="m-chg up">+1.50pp QoQ</span>
-        </div>
-        
-      
+    <div class="card-wrapper" data-card-type="metric" data-card-index="0">
+      <canvas></canvas>
+      <div class="links"></div>
     </div>
     
-    <div class="card">
-      <div class="card-head">Risk &amp; Volatility</div>
-      
-        
-        <div class="m-row">
-          <span class="m-name">VIX</span>
-          <span class="m-spark">⣆⡀⣤⠀⡀⣄⣄⣼</span>
-          <span class="m-val">31.1</span>
-          <span class="m-chg up">+3.70 DoD</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">HY Credit Spread</span>
-          <span class="m-spark">⢀⠀⣠⣄⣠⣄⣀⣸</span>
-          <span class="m-val">342bp</span>
-          <span class="m-chg up">+21bp DoD</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">2Y Treasury</span>
-          <span class="m-spark">⠀⠀⢀⣀⣀⣴⣴⣼</span>
-          <span class="m-val">4.0%</span>
-          <span class="m-chg up">+0.12pp DoD</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">5Y Breakeven</span>
-          <span class="m-spark">⣀⢀⣦⣠⣧⡆⡀⣀</span>
-          <span class="m-val">2.6%</span>
-          <span class="m-chg ">0.00pp DoD</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">10Y Breakeven</span>
-          <span class="m-spark">⣀⢠⣦⣤⣧⡆⠀⡀</span>
-          <span class="m-val">2.3%</span>
-          <span class="m-chg down">-0.03pp DoD</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">ISM Manufacturing PMI</span>
-          <span class="m-spark">⣶⣶⣷⣶⣶⣶⠀⠀</span>
-          <span class="m-val">10.3</span>
-          <span class="m-chg up">+0.30 MoM</span>
-        </div>
-        
-      
+    <div class="card-wrapper" data-card-type="metric" data-card-index="1">
+      <canvas></canvas>
+      <div class="links"></div>
     </div>
     
-    <div class="card">
-      <div class="card-head">US Outlook (IMF 2030)</div>
-      
-        
-        <div class="m-row">
-          <span class="m-name">GDP Growth (2030f)</span>
-          <span class="m-spark">⣄⣤⡄⣧⣤⣠⣤⣀</span>
-          <span class="m-val">1.8%</span>
-          <span class="m-chg down">-0.10pp YoY</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">Inflation (2030f)</span>
-          <span class="m-spark">⠀⣀⠀⣼⣄⣀⣀⣀</span>
-          <span class="m-val">2.2%</span>
-          <span class="m-chg ">0.00pp YoY</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">Unemployment (2030f)</span>
-          <span class="m-spark">⣀⠀⢸⡀⠀⠀⠀⠀</span>
-          <span class="m-val">3.7%</span>
-          <span class="m-chg down">-0.10pp YoY</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">Debt/GDP (2030f)</span>
-          <span class="m-spark">⠀⠀⢠⣄⣀⣤⣴⣾</span>
-          <span class="m-val">143.0%</span>
-          <span class="m-chg up">+3.00pp YoY</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">Current Acct (2030f)</span>
-          <span class="m-spark">⣶⣷⣦⠀⡀⠀⠀⠀</span>
-          <span class="m-val">-3.5%</span>
-          <span class="m-chg up">+0.10pp YoY</span>
-        </div>
-        
-      
+    <div class="card-wrapper" data-card-type="metric" data-card-index="2">
+      <canvas></canvas>
+      <div class="links"></div>
     </div>
     
-    <div class="card">
-      <div class="card-head">Eurozone</div>
-      
-        
-        <div class="m-row">
-          <span class="m-name">EU HICP Inflation</span>
-          <span class="m-spark">⢀⣴⣧⣤⢀⣀⣤⡄</span>
-          <span class="m-val">1.9%</span>
-          <span class="m-chg down">-0.20pp MoM</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">ECB Policy Rate</span>
-          <span class="m-spark">⠀⣠⣴⣾⣶⣤⣄⡀</span>
-          <span class="m-val">2.0%</span>
-          <span class="m-chg down">-0.25pp DoD</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">EU GDP Growth</span>
-          <span class="m-spark">⣤⣤⡄⣧⣤⣤⣤⣤</span>
-          <span class="m-val">1.4%</span>
-          <span class="m-chg down">-0.10pp YoY</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">Germany Unemployment</span>
-          <span class="m-spark">⣧⡀⢀⡀⢀⣄⠀⠀</span>
-          <span class="m-val">2.9%</span>
-          <span class="m-chg ">0.00pp YoY</span>
-        </div>
-        
-      
+    <div class="card-wrapper" data-card-type="metric" data-card-index="3">
+      <canvas></canvas>
+      <div class="links"></div>
     </div>
     
-    <div class="card">
-      <div class="card-head">China</div>
-      
-        
-        <div class="m-row">
-          <span class="m-name">China GDP Growth</span>
-          <span class="m-spark">⣤⣤⡄⡇⣀⣀⣀⠀</span>
-          <span class="m-val">3.4%</span>
-          <span class="m-chg down">-0.30pp YoY</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">China Inflation</span>
-          <span class="m-spark">⣤⣤⣷⣠⠀⠀⣠⣤</span>
-          <span class="m-val">2.0%</span>
-          <span class="m-chg up">+0.10pp YoY</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">China Unemployment</span>
-          <span class="m-spark">⠀⣸⣸⣀⣀⣀⣀⣀</span>
-          <span class="m-val">5.1%</span>
-          <span class="m-chg ">0.00pp YoY</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">China Real Rate (WB)</span>
-          <span class="m-spark">⡇⢠⣴⣦⢀⣴⢠⣶</span>
-          <span class="m-val">5.1%</span>
-          <span class="m-chg up">+0.20pp YoY</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">China Current Account</span>
-          <span class="m-spark">⣆⡀⢀⣤⣠⣷⣤⣤</span>
-          <span class="m-val">2.1%</span>
-          <span class="m-chg down">-0.10pp YoY</span>
-        </div>
-        
-      
+    <div class="card-wrapper" data-card-type="metric" data-card-index="4">
+      <canvas></canvas>
+      <div class="links"></div>
     </div>
     
-    <div class="card">
-      <div class="card-head">Japan</div>
-      
-        
-        <div class="m-row">
-          <span class="m-name">Japan GDP QoQ</span>
-          <span class="m-spark">⡆⡆⣼⡄⡀⣤⣤⡄</span>
-          <span class="m-val">-1.8%</span>
-          <span class="m-chg down">-4.10pp QoQ</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">Japan Inflation</span>
-          <span class="m-spark">⡀⢀⠀⢰⣷⣧⣤⣤</span>
-          <span class="m-val">2.0%</span>
-          <span class="m-chg ">0.00pp YoY</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">Japan Unemployment</span>
-          <span class="m-spark">⣶⣰⣶⣠⣴⢠⣦⣼</span>
-          <span class="m-val">2.6%</span>
-          <span class="m-chg down">-0.10pp MoM</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">Japan Real Rate (WB)</span>
-          <span class="m-spark">⣾⣶⣶⣦⣷⣤⠀⣀</span>
-          <span class="m-val">1.1%</span>
-          <span class="m-chg up">+0.50pp YoY</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">Japan Industrial Prod</span>
-          <span class="m-spark">⣼⣤⣀⡄⠀⠀⠀⢠</span>
-          <span class="m-val">95.0</span>
-          <span class="m-chg down">-9.50 MoM</span>
-        </div>
-        
-      
+    <div class="card-wrapper" data-card-type="metric" data-card-index="5">
+      <canvas></canvas>
+      <div class="links"></div>
     </div>
     
-    <div class="card">
-      <div class="card-head">Global Markets</div>
-      
-        
-        <div class="m-row">
-          <span class="m-name">S&amp;P 500</span>
-          <span class="m-spark">⣷⣦⣴⣦⣄⣄⣄⠀</span>
-          <span class="m-val">6343.0</span>
-          <span class="m-chg down">-26.00 DoD</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">Brent Crude</span>
-          <span class="m-spark">⡀⢠⣤⣴⣶⣠⣴⣷</span>
-          <span class="m-val">$107.70</span>
-          <span class="m-chg down">-4.87 DoD</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">Gold</span>
-          <span class="m-spark">⣾⣶⣦⣤⡀⠀⠀⠀</span>
-          <span class="m-val">$4,546.00</span>
-          <span class="m-chg up">+54.00 DoD</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">US Dollar Index</span>
-          <span class="m-spark">⠀⢠⣦⣰⢠⢀⣠⣾</span>
-          <span class="m-val">100.5</span>
-          <span class="m-chg up">+0.30 DoD</span>
-        </div>
-        
-      
+    <div class="card-wrapper" data-card-type="metric" data-card-index="6">
+      <canvas></canvas>
+      <div class="links"></div>
     </div>
     
-    <div class="card">
-      <div class="card-head">Crypto</div>
-      
-        
-        <div class="m-row">
-          <span class="m-name">Bitcoin</span>
-          <span class="m-spark">⣤⣷⣄⣀⢠⣠⡀⠀</span>
-          <span class="m-val">$65,970.00</span>
-          <span class="m-chg down">-585.00 DoD</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">Ethereum</span>
-          <span class="m-spark">⣠⣷⣄⡀⢀⣀⠀⠀</span>
-          <span class="m-val">$1,983.00</span>
-          <span class="m-chg down">-46.00 DoD</span>
-        </div>
-        
-      
+    <div class="card-wrapper" data-card-type="metric" data-card-index="7">
+      <canvas></canvas>
+      <div class="links"></div>
     </div>
     
-    <div class="card">
-      <div class="card-head">AI &amp; Compute</div>
-      
-        
-        <div class="m-row">
-          <span class="m-name">Top LLM Score</span>
-          <span class="m-spark">⣤⣤⣤⣤⣤⣤⣤⣤</span>
-          <span class="m-val">46.80</span>
-          <span class="m-chg "> DoD</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">H100 80GB Spot</span>
-          <span class="m-spark">⣤⣤⣤⣤⣤⣤⣤⣤</span>
-          <span class="m-val">$2.74</span>
-          <span class="m-chg "> DoD</span>
-        </div>
-        
-        <div class="m-row">
-          <span class="m-name">A100 80GB Spot</span>
-          <span class="m-spark">⣤⣤⣤⣤⣤⣤⣤⣤</span>
-          <span class="m-val">$4.91</span>
-          <span class="m-chg "> DoD</span>
-        </div>
-        
-      
+    <div class="card-wrapper" data-card-type="metric" data-card-index="8">
+      <canvas></canvas>
+      <div class="links"></div>
     </div>
     
   </div>
 
   
+  <div class="card-wrapper" data-card-type="news" data-feed-id="hn_tech">
+    <canvas></canvas>
+    <div class="links"></div>
+  </div>
   
+
+  <div class="col-right" id="col-right">
     
-    <div class="card">
-      <div class="card-head">Tech</div>
-      
-        
-        <div class="n-row">
-          <span class="n-score">916</span>
-          <div class="n-content">
-            <a class="n-title" href="https://www.buchodi.com/chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state-i-decrypted-the-program-that-does-it/" target="_blank" rel="noopener">ChatGPT won&#39;t let you type until Cloudflare reads your React state</a>
-            <span class="n-domain"> (buchodi.com)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">22h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47566865" target="_blank">591c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">408</span>
-          <div class="n-content">
-            <a class="n-title" href="https://nbailey.ca/post/router/" target="_blank" rel="noopener">How to turn anything into a router</a>
-            <span class="n-domain"> (nbailey.ca)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">5h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47574034" target="_blank">157c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">316</span>
-          <div class="n-content">
-            <a class="n-title" href="https://www.datagubbe.se/aipixels/" target="_blank" rel="noopener">The curious case of retro demo scene graphics</a>
-            <span class="n-domain"> (datagubbe.se)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">13h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47570666" target="_blank">79c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">238</span>
-          <div class="n-content">
-            <a class="n-title" href="https://www.dhanishsemar.com/writing/bird-brains" target="_blank" rel="noopener">Bird brains (2023)</a>
-            <span class="n-domain"> (dhanishsemar.com)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">5h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47573887" target="_blank">148c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">226</span>
-          <div class="n-content">
-            <a class="n-title" href="https://blog.lysk.tech/excalidraw-frame-export/" target="_blank" rel="noopener">I use Excalidraw to manage my diagrams for my blog</a>
-            <span class="n-domain"> (blog.lysk.tech)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">11h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47571376" target="_blank">98c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">173</span>
-          <div class="n-content">
-            <a class="n-title" href="https://www.seattletimes.com/business/local-business/new-washington-law-bans-noncompete-agreements/" target="_blank" rel="noopener">New Washington state law bans noncompete agreements</a>
-            <span class="n-domain"> (seattletimes.com)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">1h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47576861" target="_blank">55c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">163</span>
-          <div class="n-content">
-            <a class="n-title" href="https://www.codingfont.com/" target="_blank" rel="noopener">CodingFont: A game to help you pick a coding font</a>
-            <span class="n-domain"> (codingfont.com)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">3h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47575403" target="_blank">94c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">162</span>
-          <div class="n-content">
-            <a class="n-title" href="https://www.lesswrong.com/posts/BJ4pnropWdnzzgeJc/i-am-definitely-missing-the-pre-ai-writing-era" target="_blank" rel="noopener">I am definitely missing the pre-AI writing era</a>
-            <span class="n-domain"> (lesswrong.com)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">11h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47571279" target="_blank">139c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">160</span>
-          <div class="n-content">
-            <a class="n-title" href="https://arxiv.org/abs/2603.26524" target="_blank" rel="noopener">Mathematical methods and human thought in the age of AI</a>
-            <span class="n-domain"> (arxiv.org)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">7h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47572771" target="_blank">60c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">147</span>
-          <div class="n-content">
-            <a class="n-title" href="https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-takes-action-against-match-okcupid-deceiving-users-sharing-personal-data-third-party" target="_blank" rel="noopener">FTC action against Match and OkCupid for deceiving users, sharing personal data</a>
-            <span class="n-domain"> (ftc.gov)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">3h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47575616" target="_blank">65c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">90</span>
-          <div class="n-content">
-            <a class="n-title" href="https://brianschrader.com/archive/take-better-notes-by-hand/" target="_blank" rel="noopener">Take better notes, by hand</a>
-            <span class="n-domain"> (brianschrader.com)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">2h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47576317" target="_blank">46c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">87</span>
-          <div class="n-content">
-            <a class="n-title" href="https://github.com/electrikmilk/cherri" target="_blank" rel="noopener">Cherri – programming language that compiles to an Apple Shortuct</a>
-            <span class="n-domain"> (github.com)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">2d</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47549824" target="_blank">7c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">78</span>
-          <div class="n-content">
-            <a class="n-title" href="https://christianheilmann.com/2026/03/28/you-are-falling-behind-because-you-havent-fed-the-insincerity-machine-in-the-last-5-minutes/" target="_blank" rel="noopener">You are falling behind because you haven&#39;t fed the insincerity machine</a>
-            <span class="n-domain"> (christianheilmann.com)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">1h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47576978" target="_blank">11c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">70</span>
-          <div class="n-content">
-            <a class="n-title" href="https://github.com/gumyr/build123d" target="_blank" rel="noopener">Build123d: A Python CAD programming library</a>
-            <span class="n-domain"> (github.com)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">21h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47567242" target="_blank">23c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">53</span>
-          <div class="n-content">
-            <a class="n-title" href="https://www.getanchorgrid.com/developer/docs/endpoints/drawings-doors" target="_blank" rel="noopener">OCR for construction documents does not work, we fixed it</a>
-            <span class="n-domain"> (getanchorgrid.com)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">2h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47576055" target="_blank">36c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">37</span>
-          <div class="n-content">
-            <a class="n-title" href="https://www.marginalia.nu/log/a_134_nsfw/" target="_blank" rel="noopener">An NSFW filter for Marginalia search</a>
-            <span class="n-domain"> (marginalia.nu)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">2h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47575935" target="_blank">5c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">20</span>
-          <div class="n-content">
-            <a class="n-title" href="https://github.com/coast-guard/coasts" target="_blank" rel="noopener">Show HN: Coasts – Containerized Hosts for Agents</a>
-            <span class="n-domain"> (github.com)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">3h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47575417" target="_blank">7c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">15</span>
-          <div class="n-content">
-            <a class="n-title" href="https://alexhwoods.com/dont-let-ai-write-for-you/" target="_blank" rel="noopener">Do your own writing</a>
-            <span class="n-domain"> (alexhwoods.com)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">6h</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47573519" target="_blank">1c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">13</span>
-          <div class="n-content">
-            <a class="n-title" href="https://nicklandolfi.com/posts/proactively-parasocial.html" target="_blank" rel="noopener">Proactively Parasocial</a>
-            <span class="n-domain"> (nicklandolfi.com)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">4d</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47526744" target="_blank">2c</a>
-          </div>
-        </div>
-        
-        <div class="n-row">
-          <span class="n-score">7</span>
-          <div class="n-content">
-            <a class="n-title" href="https://maurycyz.com/projects/spinthariscope/" target="_blank" rel="noopener">A sea of sparks: Seeing radioactivity</a>
-            <span class="n-domain"> (maurycyz.com)</span>
-          </div>
-          <div class="n-meta">
-            <span class="n-time">20m</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id=47577979" target="_blank">0c</a>
-          </div>
-        </div>
-        
-      
+    <div class="card-wrapper" data-card-type="news" data-feed-id="hn_ai">
+      <canvas></canvas>
+      <div class="links"></div>
     </div>
     
-  
-    
-  
-    
-  
-
-  
-  <div class="col-right">
-    
-      
-    
-      
-      <div class="card">
-        <div class="card-head">AI/ML</div>
-        
-          
-          <div class="n-row">
-            <span class="n-score">4229</span>
-            <div class="n-content">
-              <a class="n-title" href="https://news.ycombinator.com/newsguidelines.html#generated" target="_blank" rel="noopener">Don&#39;t post generated/AI-edited comments. HN is for conversation between humans</a>
-              <span class="n-domain"> (news.ycombinator.com)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">2w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47340079" target="_blank">1670c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">1520</span>
-            <div class="n-content">
-              <a class="n-title" href="https://www.canirun.ai/" target="_blank" rel="noopener">Can I run AI locally?</a>
-              <span class="n-domain"> (canirun.ai)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">2w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47363754" target="_blank">355c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">1448</span>
-            <div class="n-content">
-              <a class="n-title" href="https://www.svd.se/a/K8nrV4/metas-ai-smart-glasses-and-data-privacy-concerns-workers-say-we-see-everything" target="_blank" rel="noopener">Meta’s AI smart glasses and data privacy concerns</a>
-              <span class="n-domain"> (svd.se)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">3w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47225130" target="_blank">812c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">1272</span>
-            <div class="n-content">
-              <a class="n-title" href="https://opencode.ai/" target="_blank" rel="noopener">OpenCode – Open source AI coding agent</a>
-              <span class="n-domain"> (opencode.ai)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">1w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47460525" target="_blank">622c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">780</span>
-            <div class="n-content">
-              <a class="n-title" href="https://news.stanford.edu/stories/2026/03/ai-advice-sycophantic-models-research" target="_blank" rel="noopener">AI overly affirms users asking for personal advice</a>
-              <span class="n-domain"> (news.stanford.edu)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">2d</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47554773" target="_blank">607c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">758</span>
-            <div class="n-content">
-              <a class="n-title" href="https://www.grandforksherald.com/news/north-dakota/ai-error-jails-innocent-grandmother-for-months-in-north-dakota-fraud-case" target="_blank" rel="noopener">Innocent woman jailed after being misidentified using AI facial recognition</a>
-              <span class="n-domain"> (grandforksherald.com)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">2w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47356968" target="_blank">393c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">745</span>
-            <div class="n-content">
-              <a class="n-title" href="https://blog.jakesaunders.dev/is-anybody-else-bored-of-talking-about-ai/" target="_blank" rel="noopener">Is anybody else bored of talking about AI?</a>
-              <span class="n-domain"> (blog.jakesaunders.dev)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">5d</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47508745" target="_blank">526c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">733</span>
-            <div class="n-content">
-              <a class="n-title" href="https://mistral.ai/news/forge" target="_blank" rel="noopener">Mistral AI Releases Forge</a>
-              <span class="n-domain"> (mistral.ai)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">1w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47418295" target="_blank">194c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">659</span>
-            <div class="n-content">
-              <a class="n-title" href="https://arstechnica.com/ai/2026/03/after-outages-amazon-to-make-senior-engineers-sign-off-on-ai-assisted-changes/" target="_blank" rel="noopener">After outages, Amazon to make senior engineers sign off on AI-assisted changes</a>
-              <span class="n-domain"> (arstechnica.com)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">2w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47323017" target="_blank">486c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">649</span>
-            <div class="n-content">
-              <a class="n-title" href="https://www.lemonde.fr/en/international/article/2026/03/20/stravaleaks-france-s-aircraft-carrier-located-in-real-time-by-le-monde-through-fitness-app_6751640_4.html" target="_blank" rel="noopener">France&#39;s aircraft carrier located in real time by Le Monde through fitness app</a>
-              <span class="n-domain"> (lemonde.fr)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">1w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47453942" target="_blank">532c</a>
-            </div>
-          </div>
-          
-        
-      </div>
-      
-    
-      
-    
-
-    
-      
-    
-      
-    
-      
-      <div class="card">
-        <div class="card-head">Startups</div>
-        
-          
-          <div class="n-row">
-            <span class="n-score">418</span>
-            <div class="n-content">
-              <a class="n-title" href="https://www.ft.com/content/e5245ec3-1a58-4eff-ab58-480b6259aaf1" target="_blank" rel="noopener">Yann LeCun&#39;s AI startup raises $1B in Europe&#39;s largest ever seed round</a>
-              <span class="n-domain"> (ft.com)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">2w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47321533" target="_blank">2c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">163</span>
-            <div class="n-content">
-              <a class="n-title" href="https://moglang.org" target="_blank" rel="noopener">Show HN: The Mog Programming Language</a>
-              <span class="n-domain"> (moglang.org)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">3w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47312728" target="_blank">83c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">125</span>
-            <div class="n-content">
-              <a class="n-title" href="https://www.guru3d.com/story/hisense-vidaa-tvs-reportedly-add-unskippable-startup-ads-before-live-tv/" target="_blank" rel="noopener">Hisense TVs add unskippable startup ads before live TV</a>
-              <span class="n-domain"> (guru3d.com)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">2w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47322966" target="_blank">154c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">118</span>
-            <div class="n-content">
-              <a class="n-title" href="https://opper.ai/ai-roundtable/" target="_blank" rel="noopener">Show HN: AI Roundtable – Let 200 models debate your question</a>
-              <span class="n-domain"> (opper.ai)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">5d</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47507666" target="_blank">95c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">85</span>
-            <div class="n-content">
-              <a class="n-title" href="https://news.ycombinator.com/item?id=47442452" target="_blank" rel="noopener">Launch HN: Voltair (YC W26) – Drone and charging network for power utilities</a>
-              
-            </div>
-            <div class="n-meta">
-              <span class="n-time">1w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47442452" target="_blank">28c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">77</span>
-            <div class="n-content">
-              <a class="n-title" href="https://news.ycombinator.com/item?id=47324296" target="_blank" rel="noopener">Launch HN: Didit (YC W26) – Stripe for Identity Verification</a>
-              
-            </div>
-            <div class="n-meta">
-              <span class="n-time">2w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47324296" target="_blank">66c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">62</span>
-            <div class="n-content">
-              <a class="n-title" href="https://news.ycombinator.com/item?id=47278980" target="_blank" rel="noopener">Launch HN: Palus Finance (YC W26): Better yields on idle cash for startups, SMBs</a>
-              
-            </div>
-            <div class="n-meta">
-              <span class="n-time">3w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47278980" target="_blank">93c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">62</span>
-            <div class="n-content">
-              <a class="n-title" href="https://news.ycombinator.com/item?id=47282620" target="_blank" rel="noopener">Ask HN: Anyone else feel this community has changed recently?</a>
-              
-            </div>
-            <div class="n-meta">
-              <span class="n-time">3w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47282620" target="_blank">35c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">52</span>
-            <div class="n-content">
-              <a class="n-title" href="https://www.cnbc.com/2026/03/09/nscale-ai-data-center-nvidia-raise.html" target="_blank" rel="noopener">Nvidia backs AI data center startup Nscale as it hits $14.6B valuation</a>
-              <span class="n-domain"> (cnbc.com)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">3w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47307419" target="_blank">54c</a>
-            </div>
-          </div>
-          
-          <div class="n-row">
-            <span class="n-score">33</span>
-            <div class="n-content">
-              <a class="n-title" href="https://www.cnbc.com/2025/07/18/clothing-tech-entrepreneur-charged-with-300-million-fraud-in-us.html" target="_blank" rel="noopener">&#34;Clothing-as-a-Service&#34; startup charged with $300M fraud (2025)</a>
-              <span class="n-domain"> (cnbc.com)</span>
-            </div>
-            <div class="n-meta">
-              <span class="n-time">3w</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id=47254265" target="_blank">10c</a>
-            </div>
-          </div>
-          
-        
-      </div>
-      
+    <div class="card-wrapper" data-card-type="news" data-feed-id="hn_startups">
+      <canvas></canvas>
+      <div class="links"></div>
+    </div>
     
   </div>
 </div>
+
+<noscript>
+  <style>.main-grid { display: none; }</style>
+  <p>This dashboard requires JavaScript for canvas rendering.</p>
+</noscript>
 
 <footer>
   <div class="footer-links">
@@ -1218,6 +297,699 @@
     <span class="particle p6">˚</span> <span class="particle p5">·</span> <span class="particle p4">˚</span> <span class="particle p3">·</span> <span class="particle p2">˚</span> <span class="particle p1">·</span>
   </div>
 </footer>
+
+<script>
+const DASHBOARD_DATA = {"title":"Meridian","generated_at":"2026-03-31 01:34 UTC","metric_groups":[{"name":"US Economy (FRED)","metrics":[{"id":"us.gdp_growth","name":"US GDP Growth","source":"imf","frequency":"annual","unit":"%","last_value":3.8,"last_updated":"2025-12-21T16:42:31.460153","previous_value":-0.6,"change":4.4,"change_percent":-733.33,"sparkline":"⣼⣆⣴⣄⢀⣦⣤⣀","sparkline_values":[2.5,4.7,3.4,0.8,2.8,3.6,3.3,1.9,-0.6,2.0,3.8,2.1,2.1,2.1,1.9,1.8],"change_class":"up","change_period":"QoQ","direction_arrow":"⬆","formatted_value":"3.8%","formatted_change":"+4.40pp"},{"id":"us.inflation","name":"US Inflation","source":"imf","frequency":"annual","unit":"%","last_value":2.72,"last_updated":"2025-12-21T16:42:32.061658","previous_value":3.02,"change":-0.3,"change_percent":-9.93,"sparkline":"⣦⡆⠀⣤⣾⡄⠀⠀","sparkline_values":[3.0,2.7,2.83,2.4,2.33,2.4,2.68,2.71,2.96,3.02,2.72,2.4,2.2,2.2,2.2,2.2],"change_class":"down","change_period":"MoM","direction_arrow":"⬇","formatted_value":"2.7%","formatted_change":"-0.30pp"},{"id":"us.unemployment","name":"US Unemployment","source":"imf","frequency":"annual","unit":"%","last_value":4.6,"last_updated":"2025-12-21T16:42:32.621863","previous_value":4.4,"change":0.2,"change_percent":4.55,"sparkline":"⣠⣠⣤⣠⣴⣇⡀⠀","sparkline_values":[4.0,4.2,4.1,4.2,4.2,4.2,4.1,4.2,4.3,4.4,4.6,4.1,4.0,3.9,3.8,3.7],"change_class":"up","change_period":"MoM","direction_arrow":"⬆","formatted_value":"4.6%","formatted_change":"+0.20pp"},{"id":"us.real_rate_1y","name":"US 1Y Real Rate","source":"fred","frequency":"monthly","unit":"%","last_value":-0.17,"last_updated":"2025-12-21T16:42:33.382183","previous_value":1.0,"change":-1.17,"change_percent":-117.0,"sparkline":"⣷⣦⣤⣆⣤⣠⣄⡀","sparkline_values":[2.45,2.21,2.05,1.59,1.64,1.34,2.26,0.87,1.2,1.72,0.84,1.52,1.15,0.97,1.0,-0.17],"change_class":"down","change_period":"MoM","direction_arrow":"⬇","formatted_value":"-0.2%","formatted_change":"-1.17pp"},{"id":"us.real_rate_10y","name":"US 10Y Real Rate","source":"fred","frequency":"daily","unit":"%","last_value":1.45,"last_updated":"2025-12-21T16:42:34.285153","previous_value":1.61,"change":-0.16,"change_percent":-9.94,"sparkline":"⠀⣦⣷⣄⣠⡀⠀⡀","sparkline_values":[1.58,1.48,1.96,1.82,2.06,2.03,1.86,1.67,1.67,1.87,1.66,1.57,1.57,1.55,1.61,1.45],"change_class":"down","change_period":"DoD","direction_arrow":"⬇","formatted_value":"1.4%","formatted_change":"-0.16pp"},{"id":"us.fed_funds","name":"Fed Funds Rate","source":"fred","frequency":"monthly","unit":"%","last_value":3.88,"last_updated":"2025-12-21T16:42:34.823491","previous_value":4.09,"change":-0.21,"change_percent":-5.13,"sparkline":"⣷⣤⣀⣀⣀⣀⡀⠀","sparkline_values":[5.33,5.13,4.83,4.64,4.48,4.33,4.33,4.33,4.33,4.33,4.33,4.33,4.33,4.22,4.09,3.88],"change_class":"down","change_period":"MoM","direction_arrow":"⬇","formatted_value":"3.9%","formatted_change":"-0.21pp"},{"id":"us.gov_debt","name":"US Gov Debt/GDP","source":"imf","frequency":"annual","unit":"%","last_value":118.8,"last_updated":"2025-12-21T16:42:35.181117","previous_value":120.5,"change":-1.7,"change_percent":-1.41,"sparkline":"⠀⠀⠀⠀⢀⢀⣴⣾","sparkline_values":[117.4,118.1,119.6,120.5,122.0,119.5,120.2,121.4,120.5,125.0,118.8,129.0,133.0,137.0,140.0,143.0],"change_class":"down","change_period":"QoQ","direction_arrow":"⬇","formatted_value":"118.8%","formatted_change":"-1.70pp"}]},{"name":"Risk & Volatility","metrics":[{"id":"risk.vix","name":"VIX","source":"fred","frequency":"daily","unit":"index","last_value":16.9,"last_updated":"2025-12-21T16:42:35.562842","previous_value":17.6,"change":-0.7,"change_percent":-3.98,"sparkline":"⣦⣦⣀⢠⣄⢀⣤⣧","sparkline_values":[17.2,16.4,17.2,16.6,16.1,15.8,15.4,16.7,16.9,15.8,14.8,15.7,16.5,16.5,17.6,16.9],"change_class":"down","change_period":"DoD","direction_arrow":"⬇","formatted_value":"16.9","formatted_change":"-0.70"},{"id":"risk.hy_spread","name":"HY Credit Spread","source":"fred","frequency":"daily","unit":"bp","last_value":295.0,"last_updated":"2025-12-21T16:42:35.939872","previous_value":299.0,"change":-4.0,"change_percent":-1.34,"sparkline":"⣤⣤⡀⢀⣀⢀⣰⣧","sparkline_values":[295.0,292.0,294.0,292.0,289.0,288.0,285.0,289.0,289.0,291.0,288.0,291.0,291.0,298.0,299.0,295.0],"change_class":"down","change_period":"DoD","direction_arrow":"⬇","formatted_value":"295bp","formatted_change":"-4bp"},{"id":"us.yield_2y","name":"2Y Treasury","source":"fred","frequency":"daily","unit":"%","last_value":3.46,"last_updated":"2025-12-21T16:42:36.377732","previous_value":3.49,"change":-0.03,"change_percent":-0.86,"sparkline":"⠀⣄⣀⣤⣧⣀⡀⡀","sparkline_values":[3.45,3.47,3.54,3.51,3.49,3.52,3.56,3.57,3.61,3.54,3.52,3.52,3.51,3.48,3.49,3.46],"change_class":"down","change_period":"DoD","direction_arrow":"⬇","formatted_value":"3.5%","formatted_change":"-0.03pp"},{"id":"us.breakeven_5y","name":"5Y Breakeven","source":"fred","frequency":"daily","unit":"%","last_value":2.27,"last_updated":"2025-12-21T16:42:36.909966","previous_value":2.26,"change":0.01,"change_percent":0.44,"sparkline":"⣠⣄⣾⣶⣶⣆⠀⠀","sparkline_values":[2.29,2.31,2.3,2.29,2.33,2.34,2.32,2.32,2.32,2.32,2.32,2.29,2.25,2.26,2.26,2.27],"change_class":"up","change_period":"DoD","direction_arrow":"⬆","formatted_value":"2.3%","formatted_change":"+0.01pp"},{"id":"us.breakeven_10y","name":"10Y Breakeven","source":"fred","frequency":"daily","unit":"%","last_value":2.24,"last_updated":"2025-12-21T16:42:37.291552","previous_value":2.24,"change":0.0,"change_percent":0.0,"sparkline":"⢀⣀⣿⣿⣤⣧⢀⣀","sparkline_values":[2.23,2.24,2.24,2.24,2.26,2.26,2.26,2.26,2.25,2.25,2.26,2.25,2.23,2.24,2.24,2.24],"change_class":"","change_period":"DoD","direction_arrow":"→","formatted_value":"2.2%","formatted_change":"0.00pp"},{"id":"us.pmi","name":"ISM Manufacturing PMI","source":"dbnomics","frequency":"monthly","unit":"index","last_value":10.0,"last_updated":"2025-12-21T16:42:37.903433","previous_value":10.0,"change":0.0,"change_percent":0.0,"sparkline":"⣶⣶⣾⣶⣶⣶⡆⠀","sparkline_values":[47.5,47.5,46.9,48.4,49.2,50.9,50.3,49.0,48.7,48.5,49.0,48.0,48.7,11.1,10.0,10.0],"change_class":"","change_period":"MoM","direction_arrow":"→","formatted_value":"10.0","formatted_change":"0.00"}]},{"name":"US Outlook (IMF 2030)","metrics":[{"id":"us.gdp_growth_proj","name":"GDP Growth (2030f)","source":"imf","frequency":"annual","unit":"%","last_value":1.8,"last_updated":"2025-12-21T16:42:40.908767","previous_value":1.9,"change":-0.1,"change_percent":-5.26,"sparkline":"⣄⣤⡄⣧⣤⣠⣤⣀","sparkline_values":[2.9,1.8,2.5,3.0,2.6,-2.1,6.2,2.5,2.9,2.8,2.0,2.1,2.1,2.1,1.9,1.8],"change_class":"down","change_period":"YoY","direction_arrow":"⬇","formatted_value":"1.8%","formatted_change":"-0.10pp"},{"id":"us.inflation_proj","name":"Inflation (2030f)","source":"imf","frequency":"annual","unit":"%","last_value":2.2,"last_updated":"2025-12-21T16:42:44.423747","previous_value":2.2,"change":0.0,"change_percent":0.0,"sparkline":"⠀⣀⠀⣼⣄⣀⣀⣀","sparkline_values":[0.1,1.3,2.1,2.4,1.8,1.3,4.7,8.0,4.1,3.0,2.7,2.4,2.2,2.2,2.2,2.2],"change_class":"","change_period":"YoY","direction_arrow":"→","formatted_value":"2.2%","formatted_change":"0.00pp"},{"id":"us.unemployment_proj","name":"Unemployment (2030f)","source":"imf","frequency":"annual","unit":"%","last_value":3.7,"last_updated":"2025-12-21T16:42:45.789080","previous_value":3.8,"change":-0.1,"change_percent":-2.63,"sparkline":"⣀⠀⢸⡀⠀⠀⠀⠀","sparkline_values":[5.3,4.9,4.4,3.9,3.7,8.1,5.4,3.6,3.6,4.0,4.2,4.1,4.0,3.9,3.8,3.7],"change_class":"down","change_period":"YoY","direction_arrow":"⬇","formatted_value":"3.7%","formatted_change":"-0.10pp"},{"id":"us.gov_debt_proj","name":"Debt/GDP (2030f)","source":"imf","frequency":"annual","unit":"%","last_value":143.0,"last_updated":"2025-12-21T16:42:48.121956","previous_value":140.0,"change":3.0,"change_percent":2.14,"sparkline":"⠀⠀⢠⣄⣀⣤⣴⣾","sparkline_values":[105.0,107.0,106.0,108.0,109.0,132.0,125.0,119.0,120.0,122.0,125.0,129.0,133.0,137.0,140.0,143.0],"change_class":"up","change_period":"YoY","direction_arrow":"⬆","formatted_value":"143.0%","formatted_change":"+3.00pp"},{"id":"us.current_account_proj","name":"Current Acct (2030f)","source":"imf","frequency":"annual","unit":"%","last_value":-3.5,"last_updated":"2025-12-21T16:42:51.733081","previous_value":-3.6,"change":0.1,"change_percent":-2.78,"sparkline":"⣶⣷⣦⠀⡀⠀⠀⠀","sparkline_values":[-2.2,-2.1,-1.9,-2.1,-2.1,-2.8,-3.6,-3.8,-3.3,-4.0,-4.0,-3.6,-3.6,-3.6,-3.6,-3.5],"change_class":"up","change_period":"YoY","direction_arrow":"⬆","formatted_value":"-3.5%","formatted_change":"+0.10pp"}]},{"name":"Eurozone","metrics":[{"id":"eu.inflation","name":"EU HICP Inflation","source":"ecb","frequency":"monthly","unit":"%","last_value":2.1,"last_updated":"2025-12-21T16:42:52.719373","previous_value":2.1,"change":0.0,"change_percent":0.0,"sparkline":"⡄⣠⣾⣤⡄⣀⣠⣤","sparkline_values":[2.2,1.7,2.0,2.2,2.4,2.5,2.3,2.2,2.2,1.9,2.0,2.0,2.0,2.2,2.1,2.1],"change_class":"","change_period":"MoM","direction_arrow":"→","formatted_value":"2.1%","formatted_change":"0.00pp"},{"id":"eu.policy_rate","name":"ECB Policy Rate","source":"ecb","frequency":"daily","unit":"%","last_value":2.0,"last_updated":"2025-12-21T16:42:53.147738","previous_value":2.25,"change":-0.25,"change_percent":-11.11,"sparkline":"⠀⣠⣴⣾⣶⣤⣄⡀","sparkline_values":[1.5,2.0,2.5,3.0,3.25,3.5,3.75,4.0,3.75,3.5,3.25,3.0,2.75,2.5,2.25,2.0],"change_class":"down","change_period":"DoD","direction_arrow":"⬇","formatted_value":"2.0%","formatted_change":"-0.25pp"},{"id":"eu.gdp_growth","name":"EU GDP Growth","source":"imf","frequency":"annual","unit":"%","last_value":1.4,"last_updated":"2025-12-21T16:42:54.618275","previous_value":1.5,"change":-0.1,"change_percent":-6.67,"sparkline":"⣤⣤⡄⣧⣤⣤⣤⣤","sparkline_values":[1.6,1.7,2.8,2.3,2.0,-5.4,6.4,2.5,1.2,1.8,1.3,1.4,1.6,1.5,1.5,1.4],"change_class":"down","change_period":"YoY","direction_arrow":"⬇","formatted_value":"1.4%","formatted_change":"-0.10pp"},{"id":"eu.unemployment","name":"Germany Unemployment","source":"imf","frequency":"annual","unit":"%","last_value":2.9,"last_updated":"2025-12-21T16:42:58.813091","previous_value":2.9,"change":0.0,"change_percent":0.0,"sparkline":"⣧⡀⢀⡀⢀⣄⠀⠀","sparkline_values":[4.4,3.9,3.5,3.2,3.0,3.6,3.6,3.1,3.1,3.4,3.7,3.4,3.0,2.9,2.9,2.9],"change_class":"","change_period":"YoY","direction_arrow":"→","formatted_value":"2.9%","formatted_change":"0.00pp"}]},{"name":"China","metrics":[{"id":"china.gdp_growth","name":"China GDP Growth","source":"imf","frequency":"annual","unit":"%","last_value":3.4,"last_updated":"2025-12-21T16:43:02.237848","previous_value":3.7,"change":-0.3,"change_percent":-8.11,"sparkline":"⣤⣤⡄⡇⣀⣀⣀⠀","sparkline_values":[7.0,6.8,6.9,6.8,6.1,2.3,8.6,3.1,5.4,5.0,4.8,4.2,4.2,4.0,3.7,3.4],"change_class":"down","change_period":"YoY","direction_arrow":"⬇","formatted_value":"3.4%","formatted_change":"-0.30pp"},{"id":"china.inflation","name":"China Inflation","source":"imf","frequency":"annual","unit":"%","last_value":2.0,"last_updated":"2025-12-21T16:43:04.630619","previous_value":1.9,"change":0.1,"change_percent":5.26,"sparkline":"⣤⣤⣷⣠⠀⠀⣠⣤","sparkline_values":[1.5,2.0,1.6,2.1,2.9,2.5,0.9,2.0,0.2,0.2,0.0,0.7,1.4,1.8,1.9,2.0],"change_class":"up","change_period":"YoY","direction_arrow":"⬆","formatted_value":"2.0%","formatted_change":"+0.10pp"},{"id":"china.unemployment","name":"China Unemployment","source":"imf","frequency":"annual","unit":"%","last_value":5.1,"last_updated":"2025-12-21T16:43:05.942999","previous_value":5.1,"change":0.0,"change_percent":0.0,"sparkline":"⠀⣸⣸⣀⣀⣀⣀⣀","sparkline_values":[5.0,4.9,5.2,5.6,5.1,5.6,5.2,5.1,5.1,5.1,5.1,5.1,5.1,5.1],"change_class":"","change_period":"YoY","direction_arrow":"→","formatted_value":"5.1%","formatted_change":"0.00pp"},{"id":"china.real_rate","name":"China Real Rate (WB)","source":"worldbank","frequency":"annual","unit":"%","last_value":5.1,"last_updated":"2025-12-21T16:43:06.254345","previous_value":4.9,"change":0.2,"change_percent":4.08,"sparkline":"⡇⢠⣴⣦⢀⣴⢠⣶","sparkline_values":[5.4,-1.0,-1.3,3.5,3.6,4.5,4.2,2.8,0.2,0.9,3.0,3.8,-0.1,2.4,4.9,5.1],"change_class":"up","change_period":"YoY","direction_arrow":"⬆","formatted_value":"5.1%","formatted_change":"+0.20pp"},{"id":"china.current_account","name":"China Current Account","source":"imf","frequency":"annual","unit":"%","last_value":2.1,"last_updated":"2025-12-21T16:43:07.702611","previous_value":2.2,"change":-0.1,"change_percent":-4.55,"sparkline":"⣆⡀⢀⣤⣠⣷⣤⣤","sparkline_values":[2.6,1.7,1.5,0.2,0.7,1.6,1.9,2.4,1.4,2.3,3.3,2.8,2.5,2.4,2.2,2.1],"change_class":"down","change_period":"YoY","direction_arrow":"⬇","formatted_value":"2.1%","formatted_change":"-0.10pp"}]},{"name":"Japan","metrics":[{"id":"japan.gdp_qoq","name":"Japan GDP QoQ","source":"estat_dashboard","frequency":"quarterly","unit":"%","last_value":-2.3,"last_updated":"2025-12-21T16:43:08.929612","previous_value":2.1,"change":-4.4,"change_percent":-209.52,"sparkline":"⣇⣆⣴⡄⣄⣴⣤⣄","sparkline_values":[4.8,-1.5,4.0,-1.4,1.7,2.9,1.1,-5.3,1.8,-2.1,1.0,2.7,1.4,1.5,2.1,-2.3],"change_class":"down","change_period":"QoQ","direction_arrow":"⬇","formatted_value":"-2.3%","formatted_change":"-4.40pp"},{"id":"japan.inflation","name":"Japan Inflation","source":"imf","frequency":"annual","unit":"%","last_value":2.0,"last_updated":"2025-12-21T16:43:12.487321","previous_value":2.0,"change":0.0,"change_percent":0.0,"sparkline":"⡀⢀⠀⢰⣷⣧⣤⣤","sparkline_values":[0.8,-0.1,0.5,1.0,0.5,0.0,-0.2,2.5,3.3,2.7,3.3,2.1,2.0,2.0,2.0,2.0],"change_class":"","change_period":"YoY","direction_arrow":"→","formatted_value":"2.0%","formatted_change":"0.00pp"},{"id":"japan.unemployment","name":"Japan Unemployment","source":"estat_dashboard","frequency":"monthly","unit":"%","last_value":2.5,"last_updated":"2025-12-21T16:43:15.699686","previous_value":2.6,"change":-0.1,"change_percent":-3.85,"sparkline":"⣿⣿⣸⣿⣠⣼⢀⣧","sparkline_values":[2.6,2.6,2.6,2.6,2.4,2.6,2.6,2.6,2.4,2.5,2.5,2.6,2.3,2.4,2.6,2.5],"change_class":"down","change_period":"MoM","direction_arrow":"⬇","formatted_value":"2.5%","formatted_change":"-0.10pp"},{"id":"japan.real_rate","name":"Japan Real Rate (WB)","source":"worldbank","frequency":"annual","unit":"%","last_value":1.1,"last_updated":"2025-12-21T16:43:16.020982","previous_value":0.6,"change":0.5,"change_percent":83.33,"sparkline":"⣾⣶⣶⣦⣷⣤⠀⣀","sparkline_values":[3.3,3.5,2.9,2.9,2.5,2.6,2.8,2.3,3.5,3.2,2.2,1.7,-0.5,-0.9,0.6,1.1],"change_class":"up","change_period":"YoY","direction_arrow":"⬆","formatted_value":"1.1%","formatted_change":"+0.50pp"},{"id":"japan.industrial","name":"Japan Industrial Prod","source":"estat_dashboard","frequency":"monthly","unit":"index","last_value":101.6,"last_updated":"2025-12-21T16:43:17.767803","previous_value":102.0,"change":-0.4,"change_percent":-0.39,"sparkline":"⣤⣼⣄⣀⡄⠀⠀⠀","sparkline_values":[104.6,105.3,104.9,107.1,105.3,103.9,102.9,103.3,104.4,101.2,101.5,101.4,101.8,101.5,101.9,102.0],"change_class":"down","change_period":"MoM","direction_arrow":"⬇","formatted_value":"101.6","formatted_change":"-0.40"}]},{"name":"Global Markets","metrics":[{"id":"global.sp500","name":"S&P 500","source":"yahoo","frequency":"daily","unit":"index","last_value":6834.0,"last_updated":"2025-12-21T16:43:18.026306","previous_value":6775.0,"change":59.0,"change_percent":0.87,"sparkline":"⣤⣤⣶⣤⣾⣤⡀⣠","sparkline_values":[6849.0,6813.0,6829.0,6850.0,6857.0,6870.0,6847.0,6841.0,6887.0,6901.0,6827.0,6817.0,6800.0,6721.0,6775.0,6834.0],"change_class":"up","change_period":"DoD","direction_arrow":"⬆","formatted_value":"6834.0","formatted_change":"+59.00"},{"id":"global.brent","name":"Brent Crude","source":"yahoo","frequency":"daily","unit":"$/bbl","last_value":60.47,"last_updated":"2025-12-21T16:43:18.214588","previous_value":59.82,"change":0.65,"change_percent":1.09,"sparkline":"⣶⣴⣾⣤⣄⣀⠀⢀","sparkline_values":[63.2,63.17,62.45,62.67,63.26,63.75,62.49,61.94,62.21,61.28,61.12,60.56,58.92,59.68,59.82,60.47],"change_class":"up","change_period":"DoD","direction_arrow":"⬆","formatted_value":"$60.47","formatted_change":"+0.65"},{"id":"global.gold","name":"Gold","source":"yahoo","frequency":"daily","unit":"$/oz","last_value":4387.0,"last_updated":"2025-12-21T16:43:18.318750","previous_value":4340.0,"change":47.0,"change_percent":1.08,"sparkline":"⢀⠀⠀⠀⢀⣤⣴⣾","sparkline_values":[4218.0,4239.0,4187.0,4199.0,4212.0,4213.0,4187.0,4207.0,4196.0,4286.0,4300.0,4307.0,4304.0,4348.0,4340.0,4387.0],"change_class":"up","change_period":"DoD","direction_arrow":"⬆","formatted_value":"$4,387.00","formatted_change":"+47.00"},{"id":"global.dxy","name":"US Dollar Index","source":"yahoo","frequency":"daily","unit":"index","last_value":98.7,"last_updated":"2025-12-21T16:43:18.507407","previous_value":98.4,"change":0.3,"change_percent":0.3,"sparkline":"⣷⣆⣤⣴⡀⠀⠀⢀","sparkline_values":[99.5,99.4,99.4,98.8,99.0,99.0,99.1,99.2,98.8,98.3,98.4,98.2,98.2,98.4,98.4,98.7],"change_class":"up","change_period":"DoD","direction_arrow":"⬆","formatted_value":"98.7","formatted_change":"+0.30"}]},{"name":"Crypto","metrics":[{"id":"crypto.bitcoin","name":"Bitcoin","source":"coingecko","frequency":"daily","unit":"$","last_value":88242.0,"last_updated":"2025-12-21T16:43:18.733502","previous_value":88348.0,"change":-106.0,"change_percent":-0.12,"sparkline":"⣤⣼⣶⣤⡀⡀⢀⣀","sparkline_values":[89245.0,90163.0,90618.0,92723.0,92005.0,92494.0,90307.0,90257.0,88231.0,86414.0,87822.0,86065.0,85450.0,88104.0,88348.0,88242.0],"change_class":"down","change_period":"DoD","direction_arrow":"⬇","formatted_value":"$88,242.00","formatted_change":"-106.00"},{"id":"crypto.ethereum","name":"Ethereum","source":"coingecko","frequency":"daily","unit":"$","last_value":2981.0,"last_updated":"2025-12-21T16:43:18.845119","previous_value":2977.0,"change":4.0,"change_percent":0.13,"sparkline":"⣀⣴⣷⣤⣀⡀⢀⣀","sparkline_values":[3039.0,3053.0,3125.0,3322.0,3326.0,3236.0,3085.0,3115.0,3065.0,2964.0,2964.0,2828.0,2827.0,2977.0,2977.0,2981.0],"change_class":"up","change_period":"DoD","direction_arrow":"⬆","formatted_value":"$2,981.00","formatted_change":"+4.00"}]},{"name":"AI & Compute","metrics":[{"id":"ai.top_model_score","name":"Top LLM Score","source":"huggingface","frequency":"daily","unit":"pts","last_value":46.8,"last_updated":"2025-12-21T16:42:39.000179","previous_value":null,"change":null,"change_percent":null,"sparkline":"⣤⣤⣤⣤⣤⣤⣤⣤","sparkline_values":[46.8],"change_class":"","change_period":"DoD","direction_arrow":"","formatted_value":"46.80","formatted_change":""},{"id":"compute.h100_spot","name":"H100 80GB Spot","source":"vastai","frequency":"daily","unit":"$/hr","last_value":4.27,"last_updated":"2025-12-21T16:42:39.263461","previous_value":null,"change":null,"change_percent":null,"sparkline":"⣤⣤⣤⣤⣤⣤⣤⣤","sparkline_values":[4.27],"change_class":"","change_period":"DoD","direction_arrow":"","formatted_value":"$4.27","formatted_change":""},{"id":"compute.a100_spot","name":"A100 80GB Spot","source":"vastai","frequency":"daily","unit":"$/hr","last_value":1.6,"last_updated":"2025-12-21T16:42:39.476538","previous_value":null,"change":null,"change_percent":null,"sparkline":"⣤⣤⣤⣤⣤⣤⣤⣤","sparkline_values":[1.6],"change_class":"","change_period":"DoD","direction_arrow":"","formatted_value":"$1.60","formatted_change":""}]}],"feeds":[{"id":"hn_tech","name":"Tech","stories":[{"id":46346796,"title":"Logging Sucks","url":"https://loggingsucks.com/","score":365,"comments":114,"author":"FlorinSays","posted_at":"2025-12-21T13:09:52","source":"hn_firebase","domain":"loggingsucks.com","time_ago":"14w","heat_symbol":"✦","time_symbol":"📆"},{"id":46342859,"title":"Ruby website redesigned","url":"https://www.ruby-lang.org/en/","score":316,"comments":123,"author":"psxuaw","posted_at":"2025-12-21T02:06:48","source":"hn_firebase","domain":"ruby-lang.org","time_ago":"14w","heat_symbol":"✦","time_symbol":"📆"},{"id":46347080,"title":"Mullvad VPN: \"This is a Chat Control 3.0 attempt.\"","url":"https://mastodon.online/@mullvadnet/115742530333573065","score":294,"comments":80,"author":"janandonly","posted_at":"2025-12-21T13:39:46","source":"hn_firebase","domain":"mastodon.online","time_ago":"14w","heat_symbol":"✦","time_symbol":"📆"},{"id":46345897,"title":"Show HN: Books mentioned on Hacker News in 2025","url":"https://hackernews-readings-613604506318.us-west1.run.app","score":250,"comments":99,"author":"seinvak","posted_at":"2025-12-21T11:21:04","source":"hn_firebase","domain":"hackernews-readings-613604506318.us-west1.run.app","time_ago":"14w","heat_symbol":"✦","time_symbol":"📆"},{"id":46345745,"title":"Show HN: WalletWallet – create Apple passes from anything","url":"https://walletwallet.alen.ro/","score":216,"comments":70,"author":"alentodorov","posted_at":"2025-12-21T11:04:05","source":"hn_firebase","domain":"walletwallet.alen.ro","time_ago":"14w","heat_symbol":"✦","time_symbol":"📆"},{"id":46342447,"title":"Indoor tanning makes youthful skin much older on a genetic level","url":"https://www.ucsf.edu/news/2025/12/431206/indoor-tanning-makes-youthful-skin-much-older-genetic-level","score":198,"comments":145,"author":"SanjayMehta","posted_at":"2025-12-21T00:21:42","source":"hn_firebase","domain":"ucsf.edu","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46347108,"title":"I can't upgrade to Windows 11, now leave me alone","url":"https://idiallo.com/byte-size/cant-update-to-windows-11-leave-me-alone","score":176,"comments":156,"author":"firefoxd","posted_at":"2025-12-21T13:43:20","source":"hn_firebase","domain":"idiallo.com","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46344514,"title":"Coarse Is Better","url":"https://borretti.me/article/coarse-is-better","score":158,"comments":86,"author":"_dain_","posted_at":"2025-12-21T07:57:44","source":"hn_firebase","domain":"borretti.me","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46346958,"title":"You’re not burnt out, you’re existentially starving","url":"https://neilthanedar.com/youre-not-burnt-out-youre-existentially-starving/","score":125,"comments":116,"author":"thanedar","posted_at":"2025-12-21T13:28:56","source":"hn_firebase","domain":"neilthanedar.com","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46294694,"title":"I Program on the Subway","url":"https://www.scd31.com/posts/programming-on-the-subway","score":122,"comments":71,"author":"evankhoury","posted_at":"2025-12-16T16:23:18","source":"hn_firebase","domain":"scd31.com","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46345444,"title":"ARIN Public Incident Report – 4.10 Misissuance Error","url":"https://www.arin.net/announcements/20251212/","score":122,"comments":29,"author":"immibis","posted_at":"2025-12-21T10:19:41","source":"hn_firebase","domain":"arin.net","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46345333,"title":"Structured outputs create false confidence","url":"https://boundaryml.com/blog/structured-outputs-create-false-confidence","score":90,"comments":49,"author":"gmays","posted_at":"2025-12-21T10:06:46","source":"hn_firebase","domain":"boundaryml.com","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46345523,"title":"E.W.Dijkstra Archive","url":"https://www.cs.utexas.edu/~EWD/welcome.html","score":88,"comments":7,"author":"surprisetalk","posted_at":"2025-12-21T10:29:31","source":"hn_firebase","domain":"cs.utexas.edu","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46345125,"title":"Three Ways to Solve Problems","url":"https://andreasfragner.com/writing/three-ways-to-solve-problems","score":87,"comments":18,"author":"42point2","posted_at":"2025-12-21T09:35:29","source":"hn_firebase","domain":"andreasfragner.com","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46345506,"title":"CO2 batteries that store grid energy take off globally","url":"https://spectrum.ieee.org/co2-battery-energy-storage","score":74,"comments":62,"author":"rbanffy","posted_at":"2025-12-21T10:27:36","source":"hn_firebase","domain":"spectrum.ieee.org","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46346391,"title":"Get an AI code review in 10 seconds","url":"https://oldmanrahul.com/2025/12/19/ai-code-review-trick/","score":59,"comments":26,"author":"oldmanrahul","posted_at":"2025-12-21T12:21:05","source":"hn_firebase","domain":"oldmanrahul.com","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46348329,"title":"A Guide to Local Coding Models","url":"https://www.aiforswes.com/p/you-dont-need-to-spend-100mo-on-claude","score":27,"comments":4,"author":"mpweiher","posted_at":"2025-12-21T15:55:15","source":"hn_firebase","domain":"aiforswes.com","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46285424,"title":"Show HN: Autograd.c – a tiny ML framework built from scratch","url":"https://github.com/sueszli/autograd.c","score":14,"comments":0,"author":"sueszli","posted_at":"2025-12-16T01:26:01","source":"hn_firebase","domain":"github.com","time_ago":"15w","heat_symbol":"•","time_symbol":"📆"},{"id":46348318,"title":"More on whether useful quantum computing is \"imminent\"","url":"https://scottaaronson.blog/?p=9425","score":10,"comments":0,"author":"A_D_E_P_T","posted_at":"2025-12-21T15:53:34","source":"hn_firebase","domain":"scottaaronson.blog","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46348455,"title":"The gift card accountability sink","url":"https://www.bitsaboutmoney.com/archive/gift-card-accountability-sink/","score":7,"comments":0,"author":"walterbell","posted_at":"2025-12-21T16:07:01","source":"hn_firebase","domain":"bitsaboutmoney.com","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"}]},{"id":"hn_ai","name":"AI/ML","stories":[{"id":46131406,"title":"Zig quits GitHub, says Microsoft's AI obsession has ruined the service","url":"https://www.theregister.com/2025/12/02/zig_quits_github_microsoft_ai_obsession/","score":1066,"comments":615,"author":"Brajeshwar","posted_at":"2025-12-03T07:52:37+00:00","source":"hn_algolia","domain":"theregister.com","time_ago":"16w","heat_symbol":"🔥","time_symbol":"📆"},{"id":46302267,"title":"AWS CEO says replacing junior devs with AI is 'one of the dumbest ideas'","url":"https://www.finalroundai.com/blog/aws-ceo-ai-cannot-replace-junior-developers","score":1063,"comments":531,"author":"birdculture","posted_at":"2025-12-17T17:08:35+00:00","source":"hn_algolia","domain":"finalroundai.com","time_ago":"14w","heat_symbol":"🔥","time_symbol":"📆"},{"id":46138952,"title":"Everyone in Seattle hates AI","url":"https://jonready.com/blog/posts/everyone-in-seattle-hates-ai.html","score":967,"comments":1065,"author":"mips_avatar","posted_at":"2025-12-03T19:37:25+00:00","source":"hn_algolia","domain":"jonready.com","time_ago":"16w","heat_symbol":"⚡","time_symbol":"📆"},{"id":46124324,"title":"IBM CEO says there is 'no way' spending on AI data centers will pay off","url":"https://www.businessinsider.com/ibm-ceo-big-tech-ai-capex-data-center-spending-2025-12","score":857,"comments":954,"author":"nabla9","posted_at":"2025-12-02T18:10:23+00:00","source":"hn_algolia","domain":"businessinsider.com","time_ago":"16w","heat_symbol":"⚡","time_symbol":"📆"},{"id":46284266,"title":"8M users' AI conversations sold for profit by \"privacy\" extensions","url":"https://www.koi.ai/blog/urban-vpn-browser-extension-ai-conversations-data-collection","score":831,"comments":245,"author":"takira","posted_at":"2025-12-16T03:03:49+00:00","source":"hn_algolia","domain":"koi.ai","time_ago":"14w","heat_symbol":"⚡","time_symbol":"📆"},{"id":46294574,"title":"AI will make formal verification go mainstream","url":"https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html","score":823,"comments":430,"author":"evankhoury","posted_at":"2025-12-16T21:14:49+00:00","source":"hn_algolia","domain":"martin.kleppmann.com","time_ago":"14w","heat_symbol":"⚡","time_symbol":"📆"},{"id":46137514,"title":"Reverse engineering a $1B Legal AI tool exposed 100k+ confidential files","url":"https://alexschapiro.com/security/vulnerability/2025/12/02/filevine-api-100k","score":821,"comments":289,"author":"bearsyankees","posted_at":"2025-12-03T17:44:33+00:00","source":"hn_algolia","domain":"alexschapiro.com","time_ago":"16w","heat_symbol":"⚡","time_symbol":"📆"},{"id":46121870,"title":"OpenAI declares 'code red' as Google catches up in AI race","url":"https://www.theverge.com/news/836212/openai-code-red-chatgpt","score":819,"comments":930,"author":"goplayoutside","posted_at":"2025-12-02T15:00:16+00:00","source":"hn_algolia","domain":"theverge.com","time_ago":"16w","heat_symbol":"⚡","time_symbol":"📆"},{"id":46145180,"title":"How elites could shape mass preferences as AI reduces persuasion costs","url":"https://arxiv.org/abs/2512.04047","score":704,"comments":661,"author":"50kIters","posted_at":"2025-12-04T08:38:17+00:00","source":"hn_algolia","domain":"arxiv.org","time_ago":"16w","heat_symbol":"⚡","time_symbol":"📆"},{"id":46062504,"title":"The EU made Apple adopt new Wi-Fi standards, and now Android can support AirDrop","url":"https://arstechnica.com/gadgets/2025/11/the-eu-made-apple-adopt-new-wi-fi-standards-and-now-android-can-support-airdrop/","score":597,"comments":311,"author":"cyclecount","posted_at":"2025-11-26T21:25:36+00:00","source":"hn_algolia","domain":"arstechnica.com","time_ago":"17w","heat_symbol":"⚡","time_symbol":"📆"}]},{"id":"hn_startups","name":"Startups","stories":[{"id":46051449,"title":"Show HN: KiDoom – Running DOOM on PCB Traces","url":"https://www.mikeayles.com/#kidoom","score":362,"comments":49,"author":"mikeayles","posted_at":"2025-11-25T22:13:35+00:00","source":"hn_algolia","domain":"mikeayles.com","time_ago":"17w","heat_symbol":"✦","time_symbol":"📆"},{"id":46024644,"title":"73% of AI startups are just prompt engineering","url":"https://pub.towardsai.net/i-reverse-engineered-200-ai-startups-73-are-lying-a8610acab0d3","score":246,"comments":205,"author":"kllrnohj","posted_at":"2025-11-23T16:17:57+00:00","source":"hn_algolia","domain":"pub.towardsai.net","time_ago":"18w","heat_symbol":"✦","time_symbol":"📆"},{"id":46163121,"title":"I'm Peter Roberts, immigration attorney who does work for YC and startups. AMA","url":null,"score":228,"comments":306,"author":"proberts","posted_at":"2025-12-05T16:04:20+00:00","source":"hn_algolia","domain":"","time_ago":"16w","heat_symbol":"✦","time_symbol":"📆"},{"id":46022704,"title":"Silicon Valley startups: being evil, again and again","url":"https://notesfrombelow.org/article/silicon-valley-startups-doing-evil-again-and-again","score":160,"comments":125,"author":"iSpiderman","posted_at":"2025-11-23T11:32:15+00:00","source":"hn_algolia","domain":"notesfrombelow.org","time_ago":"18w","heat_symbol":"•","time_symbol":"📆"},{"id":46034145,"title":"Show HN: Cynthia – Reliably play MIDI music files – MIT / Portable / Windows","url":"https://www.blaizenterprises.com/cynthia.html","score":86,"comments":33,"author":"blaiz2025","posted_at":"2025-11-24T13:58:05+00:00","source":"hn_algolia","domain":"blaizenterprises.com","time_ago":"18w","heat_symbol":"•","time_symbol":"📆"},{"id":46189632,"title":"Why Startups Die","url":"https://www.techfounderstack.com/p/why-startups-die","score":79,"comments":60,"author":"makle","posted_at":"2025-12-08T08:04:51+00:00","source":"hn_algolia","domain":"techfounderstack.com","time_ago":"16w","heat_symbol":"•","time_symbol":"📆"},{"id":46314385,"title":"Show HN: Composify – Open-Source Visual Editor / Server-Driven UI for React","url":"https://github.com/composify-js/composify","score":71,"comments":5,"author":"injung","posted_at":"2025-12-18T16:02:29+00:00","source":"hn_algolia","domain":"github.com","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46292682,"title":"Ask HN: How are you LLM-coding in an established code base?","url":null,"score":70,"comments":66,"author":"adam_gyroscope","posted_at":"2025-12-16T18:54:37+00:00","source":"hn_algolia","domain":"","time_ago":"14w","heat_symbol":"•","time_symbol":"📆"},{"id":46207017,"title":"Launch HN: Mentat (YC F24) – Controlling LLMs with Runtime Intervention","url":null,"score":54,"comments":34,"author":"cgorlla","posted_at":"2025-12-09T16:37:55+00:00","source":"hn_algolia","domain":"","time_ago":"15w","heat_symbol":"•","time_symbol":"📆"},{"id":46148686,"title":"The Math Legend Who Just Left Academia–For an AI Startup Run by a 24-Year-Old","url":"https://www.wsj.com/tech/ai/math-ken-ono-carina-hong-axiom-startup-649bc417","score":32,"comments":41,"author":"pondsider","posted_at":"2025-12-04T15:26:29+00:00","source":"hn_algolia","domain":"wsj.com","time_ago":"16w","heat_symbol":"•","time_symbol":"📆"}]}],"primary_feed":"hn_tech","sidebar_feeds":["hn_ai","hn_startups"]};
+</script>
+<script>
+(function() {
+  'use strict';
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.1  COLOR CONSTANTS
+  // ═══════════════════════════════════════════════════════════════
+
+  function readColors() {
+    var s = getComputedStyle(document.documentElement);
+    return {
+      bg:      s.getPropertyValue('--bg').trim(),
+      card:    s.getPropertyValue('--card').trim(),
+      text:    s.getPropertyValue('--text').trim(),
+      dim:     s.getPropertyValue('--dim').trim(),
+      muted:   s.getPropertyValue('--muted').trim(),
+      up:      s.getPropertyValue('--up').trim(),
+      down:    s.getPropertyValue('--down').trim(),
+      accent:  s.getPropertyValue('--accent').trim(),
+      spark:   s.getPropertyValue('--spark').trim(),
+      score:   s.getPropertyValue('--score').trim(),
+      link:    s.getPropertyValue('--link').trim(),
+      hoverBg: 'rgba(45, 43, 40, 0.03)',
+    };
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.2  FONT CONSTANTS
+  // ═══════════════════════════════════════════════════════════════
+
+  var FONTS = {
+    cardHeader:   '500 8px "IBM Plex Mono", monospace',
+    metricName:   '400 8px "IBM Plex Mono", monospace',
+    metricValue:  '500 10px "IBM Plex Mono", monospace',
+    metricChange: '400 8px "IBM Plex Mono", monospace',
+    newsScore:    '500 8px "IBM Plex Mono", monospace',
+    newsTitle:    '400 9px "IBM Plex Mono", monospace',
+    newsDomain:   '400 7px "IBM Plex Mono", monospace',
+    newsMeta:     '400 7px "IBM Plex Mono", monospace',
+  };
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.3  TEXT MEASUREMENT
+  // ═══════════════════════════════════════════════════════════════
+
+  function withAlpha(color, alpha) {
+    if (color.charAt(0) === '#') {
+      var r = parseInt(color.slice(1, 3), 16);
+      var g = parseInt(color.slice(3, 5), 16);
+      var b = parseInt(color.slice(5, 7), 16);
+      return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+    }
+    // Handle rgb() format
+    var m = color.match(/[\d.]+/g);
+    if (m && m.length >= 3) {
+      return 'rgba(' + m[0] + ',' + m[1] + ',' + m[2] + ',' + alpha + ')';
+    }
+    return color;
+  }
+
+  var _measureCanvas = document.createElement('canvas');
+  var _measureCtx = _measureCanvas.getContext('2d');
+
+  function measureWidth(text, font) {
+    _measureCtx.font = font;
+    return _measureCtx.measureText(text).width;
+  }
+
+  function truncateText(text, font, maxWidth) {
+    var fullWidth = measureWidth(text, font);
+    if (fullWidth <= maxWidth) return text;
+
+    var ellipsis = '\u2026';
+    var ellipsisWidth = measureWidth(ellipsis, font);
+    var targetWidth = maxWidth - ellipsisWidth;
+    if (targetWidth <= 0) return ellipsis;
+
+    var lo = 0, hi = text.length;
+    while (lo < hi) {
+      var mid = (lo + hi + 1) >> 1;
+      if (measureWidth(text.slice(0, mid), font) <= targetWidth) {
+        lo = mid;
+      } else {
+        hi = mid - 1;
+      }
+    }
+    return text.slice(0, lo) + ellipsis;
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.4  METRIC CARD LAYOUT
+  // ═══════════════════════════════════════════════════════════════
+
+  function computeMetricCardLayout(group, containerWidth) {
+    var PAD = 4;
+    var GAP = 4;
+    var HEADER_H = 16;
+    var ROW_H = 16;
+    var SPARK_W = 56;
+
+    var metrics = group.metrics || [];
+
+    var nameWidths = metrics.map(function(m) {
+      return measureWidth(m.name || '', FONTS.metricName);
+    });
+    var valueWidths = metrics.map(function(m) {
+      return measureWidth(m.formatted_value || '', FONTS.metricValue);
+    });
+
+    var changeTexts = metrics.map(function(m) {
+      var t = m.formatted_change || '';
+      if (m.change_period) t += ' ' + m.change_period;
+      return t;
+    });
+    var changeWidths = changeTexts.map(function(t) {
+      return measureWidth(t, FONTS.metricChange);
+    });
+
+    var maxValue = valueWidths.length ? Math.max.apply(null, valueWidths) : 0;
+    var maxChange = changeWidths.length ? Math.max.apply(null, changeWidths) : 0;
+
+    var fixedWidth = PAD * 2 + GAP * 3 + SPARK_W + maxValue + maxChange;
+    var nameCol = Math.max(containerWidth - fixedWidth, 40);
+
+    // Ensure value and change columns don't overlap
+    var valueX = PAD + nameCol + GAP + SPARK_W + GAP;
+    var changeX = containerWidth - PAD - maxChange;
+    if (valueX + maxValue + GAP > changeX) {
+      // Shrink sparkline to make room
+      var overflow = (valueX + maxValue + GAP) - changeX;
+      SPARK_W = Math.max(SPARK_W - overflow, 20);
+      valueX = PAD + nameCol + GAP + SPARK_W + GAP;
+    }
+
+    var cols = {
+      name:   { x: PAD, width: nameCol },
+      spark:  { x: PAD + nameCol + GAP, width: SPARK_W },
+      value:  { x: valueX, width: maxValue },
+      change: { x: changeX, width: maxChange },
+    };
+
+    return {
+      headerHeight: HEADER_H,
+      rowHeight: ROW_H,
+      padding: PAD,
+      columns: cols,
+      totalHeight: HEADER_H + metrics.length * ROW_H,
+      changeTexts: changeTexts,
+      _metricCount: metrics.length,
+    };
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.5  NEWS CARD LAYOUT
+  // ═══════════════════════════════════════════════════════════════
+
+  function computeNewsCardLayout(feed, containerWidth) {
+    var PAD = 4;
+    var GAP = 6;
+    var HEADER_H = 16;
+    var ROW_H = 18;
+
+    var stories = feed.stories || [];
+
+    var scoreWidths = stories.map(function(s) {
+      return measureWidth(String(s.score || 0), FONTS.newsScore);
+    });
+    var scoreCol = scoreWidths.length ? Math.max(Math.max.apply(null, scoreWidths), 20) : 20;
+
+    var metaTexts = stories.map(function(s) {
+      return (s.time_ago || '') + ' ' + (s.comments || 0) + 'c';
+    });
+    var metaWidths = metaTexts.map(function(t) {
+      return measureWidth(t, FONTS.newsMeta);
+    });
+    var metaCol = metaWidths.length ? Math.max(Math.max.apply(null, metaWidths), 30) : 30;
+
+    var titleX = PAD + scoreCol + GAP;
+    var titleWidth = containerWidth - titleX - GAP - metaCol - PAD;
+
+    return {
+      headerHeight: HEADER_H,
+      rowHeight: ROW_H,
+      padding: PAD,
+      columns: {
+        score: { x: PAD, width: scoreCol },
+        title: { x: titleX, width: Math.max(titleWidth, 60) },
+        meta:  { x: containerWidth - PAD - metaCol, width: metaCol },
+      },
+      totalHeight: HEADER_H + stories.length * ROW_H,
+      metaTexts: metaTexts,
+      _storyCount: stories.length,
+    };
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.6  DRAWING FUNCTIONS
+  // ═══════════════════════════════════════════════════════════════
+
+  function drawCardHeader(ctx, name, width, headerHeight, colors) {
+    // Header background
+    ctx.fillStyle = colors.bg;
+    ctx.fillRect(0, 0, width, headerHeight);
+
+    // Header bottom border
+    ctx.strokeStyle = colors.muted;
+    ctx.lineWidth = 1;
+    ctx.setLineDash([]);
+    ctx.beginPath();
+    ctx.moveTo(0, headerHeight - 0.5);
+    ctx.lineTo(width, headerHeight - 0.5);
+    ctx.stroke();
+
+    // Chevron
+    ctx.font = FONTS.cardHeader;
+    ctx.fillStyle = colors.muted;
+    ctx.textBaseline = 'middle';
+    ctx.textAlign = 'left';
+    ctx.fillText('>', 4, headerHeight / 2);
+
+    // Section name
+    ctx.fillStyle = colors.accent;
+    var chevronWidth = measureWidth('> ', FONTS.cardHeader);
+    ctx.fillText(name.toUpperCase(), 4 + chevronWidth, headerHeight / 2);
+  }
+
+  function drawDottedSeparator(ctx, y, width, colors) {
+    ctx.strokeStyle = colors.muted;
+    ctx.lineWidth = 1;
+    ctx.setLineDash([1, 2]);
+    ctx.beginPath();
+    ctx.moveTo(0, y + 0.5);
+    ctx.lineTo(width, y + 0.5);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  function drawSparkline(ctx, values, x, y, width, height, colors) {
+    if (!values || values.length < 2) return;
+
+    var min = Infinity, max = -Infinity;
+    for (var i = 0; i < values.length; i++) {
+      if (values[i] < min) min = values[i];
+      if (values[i] > max) max = values[i];
+    }
+    var range = max - min;
+    if (range === 0) range = 1;
+
+    var pad = 3;
+    var drawH = height - pad * 2;
+    var drawW = width;
+    var stepX = drawW / (values.length - 1);
+
+    ctx.save();
+    ctx.beginPath();
+
+    for (var i = 0; i < values.length; i++) {
+      var px = x + i * stepX;
+      var py = y + pad + drawH - ((values[i] - min) / range) * drawH;
+      if (i === 0) ctx.moveTo(px, py);
+      else ctx.lineTo(px, py);
+    }
+
+    ctx.strokeStyle = colors.spark;
+    ctx.lineWidth = 1.5;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.stroke();
+
+    // Area fill with gradient
+    ctx.lineTo(x + drawW, y + height);
+    ctx.lineTo(x, y + height);
+    ctx.closePath();
+
+    var grad = ctx.createLinearGradient(0, y, 0, y + height);
+    grad.addColorStop(0, withAlpha(colors.spark, 0.09));
+    grad.addColorStop(1, withAlpha(colors.spark, 0.01));
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  function drawMetricRow(ctx, metric, rowIndex, layout, colors, changeText, isHovered) {
+    var y = layout.headerHeight + rowIndex * layout.rowHeight;
+    var cols = layout.columns;
+
+    // Hover background
+    if (isHovered) {
+      ctx.fillStyle = colors.hoverBg;
+      ctx.fillRect(0, y, cols.change.x + cols.change.width + layout.padding, layout.rowHeight);
+    }
+
+    var textY = y + layout.rowHeight * 0.72;
+
+    // Metric name (truncate if needed)
+    ctx.font = FONTS.metricName;
+    ctx.fillStyle = colors.dim;
+    ctx.textBaseline = 'alphabetic';
+    ctx.textAlign = 'left';
+    var displayName = truncateText(metric.name || '', FONTS.metricName, cols.name.width);
+    ctx.fillText(displayName, cols.name.x, textY);
+
+    // Sparkline
+    var sparkValues = metric.sparkline_values;
+    if (sparkValues && sparkValues.length >= 2) {
+      drawSparkline(ctx, sparkValues, cols.spark.x, y + 1, cols.spark.width, layout.rowHeight - 2, colors);
+    }
+
+    // Value (right-aligned within value column)
+    ctx.font = FONTS.metricValue;
+    ctx.fillStyle = colors.text;
+    ctx.textAlign = 'right';
+    ctx.fillText(metric.formatted_value || '', cols.value.x + cols.value.width, textY);
+
+    // Change (right-aligned)
+    ctx.font = FONTS.metricChange;
+    if (metric.change_class === 'up') {
+      ctx.fillStyle = colors.up;
+    } else if (metric.change_class === 'down') {
+      ctx.fillStyle = colors.down;
+    } else {
+      ctx.fillStyle = colors.dim;
+    }
+    ctx.textAlign = 'right';
+    ctx.fillText(changeText, cols.change.x + cols.change.width, textY);
+
+    // Row separator (except last row)
+    var totalMetrics = (layout._metricCount !== undefined) ? layout._metricCount : 999;
+    if (rowIndex < totalMetrics - 1) {
+      drawDottedSeparator(ctx, y + layout.rowHeight, cols.change.x + cols.change.width + layout.padding, colors);
+    }
+  }
+
+  function drawNewsRow(ctx, story, rowIndex, layout, colors, metaText, isHovered) {
+    var y = layout.headerHeight + rowIndex * layout.rowHeight;
+    var cols = layout.columns;
+
+    // Hover background
+    if (isHovered) {
+      ctx.fillStyle = colors.hoverBg;
+      ctx.fillRect(0, y, cols.meta.x + cols.meta.width + layout.padding, layout.rowHeight);
+    }
+
+    var textY = y + layout.rowHeight * 0.68;
+
+    // Score (right-aligned)
+    ctx.font = FONTS.newsScore;
+    ctx.fillStyle = colors.score;
+    ctx.textBaseline = 'alphabetic';
+    ctx.textAlign = 'right';
+    ctx.fillText(String(story.score || 0), cols.score.x + cols.score.width, textY);
+
+    // Title (truncated) + domain
+    ctx.font = FONTS.newsTitle;
+    ctx.fillStyle = colors.text;
+    ctx.textAlign = 'left';
+    var titleText = story.title || '';
+    var domainText = story.domain ? ' (' + story.domain + ')' : '';
+    var domainWidth = domainText ? measureWidth(domainText, FONTS.newsDomain) : 0;
+    var availableForTitle = cols.title.width - domainWidth - 2;
+    var displayTitle = truncateText(titleText, FONTS.newsTitle, availableForTitle);
+    ctx.fillText(displayTitle, cols.title.x, textY);
+
+    // Domain (after title)
+    if (domainText) {
+      var titleDisplayWidth = measureWidth(displayTitle, FONTS.newsTitle);
+      ctx.font = FONTS.newsDomain;
+      ctx.fillStyle = colors.dim;
+      ctx.fillText(domainText, cols.title.x + titleDisplayWidth + 1, textY);
+    }
+
+    // Meta (time + comments, right-aligned)
+    ctx.font = FONTS.newsMeta;
+    ctx.fillStyle = colors.dim;
+    ctx.textAlign = 'right';
+
+    // Draw time and comments link separately
+    var timeText = story.time_ago || '';
+    var commentsText = (story.comments || 0) + 'c';
+    var commentsWidth = measureWidth(commentsText, FONTS.newsMeta);
+    var timeWidth = measureWidth(timeText, FONTS.newsMeta);
+    var spacing = measureWidth(' ', FONTS.newsMeta);
+
+    var metaRight = cols.meta.x + cols.meta.width;
+
+    // Comments (right side, link-colored)
+    ctx.fillStyle = colors.link;
+    ctx.fillText(commentsText, metaRight, textY);
+
+    // Time (left of comments)
+    ctx.fillStyle = colors.dim;
+    ctx.fillText(timeText, metaRight - commentsWidth - spacing, textY);
+
+    // Row separator (except last row)
+    var totalStories = (layout._storyCount !== undefined) ? layout._storyCount : 999;
+    if (rowIndex < totalStories - 1) {
+      drawDottedSeparator(ctx, y + layout.rowHeight, cols.meta.x + cols.meta.width + layout.padding, colors);
+    }
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.7  CARD RENDER ORCHESTRATORS
+  // ═══════════════════════════════════════════════════════════════
+
+  function setupCanvas(canvas, logicalWidth, logicalHeight) {
+    var dpr = window.devicePixelRatio || 1;
+    var pw = Math.round(logicalWidth * dpr);
+    var ph = Math.round(logicalHeight * dpr);
+    // Only resize when dimensions change (avoids GPU buffer reallocation on hover)
+    if (canvas.width !== pw || canvas.height !== ph) {
+      canvas.width = pw;
+      canvas.height = ph;
+      canvas.style.width = logicalWidth + 'px';
+      canvas.style.height = logicalHeight + 'px';
+    }
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, logicalWidth, logicalHeight);
+    return ctx;
+  }
+
+  function renderMetricCard(wrapper, group, colors, hoverIndex) {
+    var canvas = wrapper.querySelector('canvas');
+    var width = wrapper.clientWidth;
+    if (width < 1) return;
+
+    var layout = computeMetricCardLayout(group, width);
+    wrapper._layout = layout;
+    wrapper._data = group;
+
+    var ctx = setupCanvas(canvas, width, layout.totalHeight);
+
+    // Card background
+    ctx.fillStyle = colors.card;
+    ctx.fillRect(0, 0, width, layout.totalHeight);
+
+    // Header
+    drawCardHeader(ctx, group.name, width, layout.headerHeight, colors);
+
+    // Metric rows
+    var metrics = group.metrics || [];
+    for (var i = 0; i < metrics.length; i++) {
+      drawMetricRow(ctx, metrics[i], i, layout, colors, layout.changeTexts[i], i === hoverIndex);
+    }
+
+    // Accessibility
+    var label = group.name + ': ' + metrics.map(function(m) {
+      return m.name + ' ' + (m.formatted_value || '');
+    }).join(', ');
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', label);
+  }
+
+  function renderNewsCard(wrapper, feed, colors, hoverIndex) {
+    var canvas = wrapper.querySelector('canvas');
+    var width = wrapper.clientWidth;
+    if (width < 1) return;
+
+    var layout = computeNewsCardLayout(feed, width);
+    var stories = feed.stories || [];
+    wrapper._layout = layout;
+    wrapper._data = feed;
+
+    var ctx = setupCanvas(canvas, width, layout.totalHeight);
+
+    // Card background
+    ctx.fillStyle = colors.card;
+    ctx.fillRect(0, 0, width, layout.totalHeight);
+
+    // Header
+    drawCardHeader(ctx, feed.name, width, layout.headerHeight, colors);
+
+    // News rows
+    for (var i = 0; i < stories.length; i++) {
+      drawNewsRow(ctx, stories[i], i, layout, colors, layout.metaTexts[i], i === hoverIndex);
+    }
+
+    // Only create/update link overlays on initial render or resize, not on hover
+    if (!wrapper._overlaysCreated || wrapper._lastOverlayWidth !== width) {
+      createLinkOverlays(wrapper, stories, layout);
+      wrapper._overlaysCreated = true;
+      wrapper._lastOverlayWidth = width;
+    }
+
+    // Accessibility
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', feed.name + ' feed: ' + stories.length + ' stories');
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.8  LINK OVERLAYS
+  // ═══════════════════════════════════════════════════════════════
+
+  function createLinkOverlays(wrapper, stories, layout) {
+    var linksDiv = wrapper.querySelector('.links');
+    linksDiv.innerHTML = '';
+
+    for (var i = 0; i < stories.length; i++) {
+      var story = stories[i];
+      var rowY = layout.headerHeight + i * layout.rowHeight;
+
+      // Title link
+      var a = document.createElement('a');
+      a.href = story.url || ('https://news.ycombinator.com/item?id=' + story.id);
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.setAttribute('aria-label', story.title);
+      a.style.cssText = 'top:' + rowY + 'px;left:' + layout.columns.title.x + 'px;width:' + layout.columns.title.width + 'px;height:' + layout.rowHeight + 'px;';
+      linksDiv.appendChild(a);
+
+      // HN comments link
+      var hn = document.createElement('a');
+      hn.href = 'https://news.ycombinator.com/item?id=' + story.id;
+      hn.target = '_blank';
+      hn.rel = 'noopener';
+      hn.setAttribute('aria-label', (story.comments || 0) + ' comments on Hacker News');
+      var commentsWidth = measureWidth((story.comments || 0) + 'c', FONTS.newsMeta);
+      var hnLeft = layout.columns.meta.x + layout.columns.meta.width - commentsWidth;
+      hn.style.cssText = 'top:' + rowY + 'px;left:' + hnLeft + 'px;width:' + commentsWidth + 'px;height:' + layout.rowHeight + 'px;';
+      linksDiv.appendChild(hn);
+    }
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.9  HOVER SYSTEM
+  // ═══════════════════════════════════════════════════════════════
+
+  function attachHoverHandlers(wrapper, colors) {
+    var canvas = wrapper.querySelector('canvas');
+    var currentHover = -1;
+
+    canvas.addEventListener('mousemove', function(e) {
+      var layout = wrapper._layout;
+      if (!layout) return;
+
+      var rect = canvas.getBoundingClientRect();
+      var y = e.clientY - rect.top;
+      var row = Math.floor((y - layout.headerHeight) / layout.rowHeight);
+      var maxRow = wrapper.dataset.cardType === 'metric'
+        ? (layout._metricCount || 0) - 1
+        : (layout._storyCount || 0) - 1;
+
+      if (row < 0 || row > maxRow) row = -1;
+
+      if (row !== currentHover) {
+        currentHover = row;
+        if (wrapper.dataset.cardType === 'metric') {
+          renderMetricCard(wrapper, wrapper._data, colors, row);
+        } else {
+          renderNewsCard(wrapper, wrapper._data, colors, row);
+        }
+      }
+    });
+
+    canvas.addEventListener('mouseleave', function() {
+      if (currentHover !== -1) {
+        currentHover = -1;
+        if (wrapper.dataset.cardType === 'metric') {
+          renderMetricCard(wrapper, wrapper._data, colors, -1);
+        } else {
+          renderNewsCard(wrapper, wrapper._data, colors, -1);
+        }
+      }
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.10 RESIZE OBSERVER
+  // ═══════════════════════════════════════════════════════════════
+
+  function setupResizeObserver(wrappers, colors) {
+    if (!window.ResizeObserver) return;
+
+    var resizeTimeout = null;
+    var observer = new ResizeObserver(function() {
+      if (resizeTimeout) clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(function() {
+        renderAllCards(wrappers, colors);
+      }, 50);
+    });
+
+    wrappers.forEach(function(w) { observer.observe(w); });
+    return observer;
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.11 INITIALIZATION
+  // ═══════════════════════════════════════════════════════════════
+
+  function renderAllCards(wrappers, colors) {
+    var data = DASHBOARD_DATA;
+
+    wrappers.forEach(function(wrapper) {
+      var type = wrapper.dataset.cardType;
+      if (type === 'metric') {
+        var idx = parseInt(wrapper.dataset.cardIndex, 10);
+        var group = data.metric_groups[idx];
+        if (group) renderMetricCard(wrapper, group, colors, -1);
+      } else if (type === 'news') {
+        var feedId = wrapper.dataset.feedId;
+        var feed = null;
+        for (var i = 0; i < data.feeds.length; i++) {
+          if (data.feeds[i].id === feedId) { feed = data.feeds[i]; break; }
+        }
+        if (feed) renderNewsCard(wrapper, feed, colors, -1);
+      }
+    });
+  }
+
+  function initDashboard() {
+    var colors = readColors();
+    var wrappers = Array.prototype.slice.call(document.querySelectorAll('.card-wrapper'));
+
+    renderAllCards(wrappers, colors);
+
+    // Attach hover handlers
+    wrappers.forEach(function(wrapper) {
+      attachHoverHandlers(wrapper, colors);
+    });
+
+    // Responsive resize
+    setupResizeObserver(wrappers, colors);
+
+    // ═════════════════════════════════════════════════════════════
+    // D.12 DEBUG MODE
+    // ═════════════════════════════════════════════════════════════
+
+    if (location.search.indexOf('debug=1') !== -1) {
+      wrappers.forEach(function(wrapper) {
+        var canvas = wrapper.querySelector('canvas');
+        var ctx = canvas.getContext('2d');
+        var dpr = window.devicePixelRatio || 1;
+        var layout = wrapper._layout;
+        if (!layout) return;
+
+        ctx.save();
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.strokeStyle = 'rgba(255, 0, 0, 0.3)';
+        ctx.lineWidth = 0.5;
+        ctx.setLineDash([2, 2]);
+
+        // Column boundaries
+        var cols = layout.columns;
+        Object.keys(cols).forEach(function(key) {
+          var col = cols[key];
+          ctx.beginPath();
+          ctx.moveTo(col.x, 0);
+          ctx.lineTo(col.x, layout.totalHeight);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(col.x + col.width, 0);
+          ctx.lineTo(col.x + col.width, layout.totalHeight);
+          ctx.stroke();
+        });
+
+        // Row boundaries
+        ctx.strokeStyle = 'rgba(0, 0, 255, 0.2)';
+        var rowH = layout.rowHeight;
+        var count = layout._metricCount || layout._storyCount || 0;
+        for (var r = 0; r <= count; r++) {
+          var ry = layout.headerHeight + r * rowH;
+          ctx.beginPath();
+          ctx.moveTo(0, ry);
+          ctx.lineTo(canvas.width / dpr, ry);
+          ctx.stroke();
+        }
+
+        ctx.restore();
+      });
+    }
+  }
+
+  // Wait for IBM Plex Mono to load before measuring/rendering
+  if (document.fonts && document.fonts.load) {
+    Promise.all([
+      document.fonts.load('400 8px "IBM Plex Mono"'),
+      document.fonts.load('500 10px "IBM Plex Mono"'),
+    ]).then(initDashboard).catch(function() {
+      // Font load failed (CDN down?), render with fallback monospace
+      initDashboard();
+    });
+  } else {
+    // Fallback for browsers without Font Loading API
+    window.addEventListener('load', initDashboard);
+  }
+
+})();
+</script>
 
 </body>
 </html>

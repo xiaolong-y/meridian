@@ -11,7 +11,6 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      /* Flexoki Light Theme */
       --bg: #FFFCF0;
       --card: #F2F0E5;
       --text: #2D2B28;
@@ -20,7 +19,7 @@
       --up: #66800B;
       --down: #AF3029;
       --accent: #205EA6;
-      --spark: #8B5CF6;  /* Vibrant violet for sparkline visibility */
+      --spark: #8B5CF6;
       --score: #AD8301;
       --link: #24837B;
       --particle: #24837B;
@@ -38,7 +37,6 @@
       font-weight: 400;
     }
 
-    /* Header */
     header {
       display: flex;
       justify-content: space-between;
@@ -56,7 +54,6 @@
     }
     .timestamp { color: var(--dim); font-size: 9px; }
 
-    /* Main 3-Column Layout: Stats | Tech | AI+Startups */
     .main-grid {
       display: grid;
       grid-template-columns: 1fr 1.5fr 1fr;
@@ -85,156 +82,49 @@
       }
     }
 
-    /* Stats Column - stacked cards */
     .col-stats {
       display: flex;
       flex-direction: column;
       gap: 3px;
     }
 
-    /* Card Base */
-    .card {
-      background: var(--card);
-      font-size: 9px;
-      border: 1px solid var(--muted);
-      border-radius: 2px;
-    }
-
-    .card-head {
-      background: var(--bg);
-      padding: 2px 4px;
-      font-size: 8px;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border-bottom: 1px solid var(--muted);
-      font-weight: 500;
-    }
-
-    .card-head::before {
-      content: '>';
-      color: var(--muted);
-      margin-right: 4px;
-    }
-
-    /* Metric Row */
-    .m-row {
-      display: flex;
-      align-items: baseline;
-      padding: 2px 4px;
-      border-bottom: 1px dotted var(--muted);
-      gap: 4px;
-    }
-
-    .m-row:last-child { border-bottom: none; }
-    .m-row:hover { background: rgba(45, 43, 40, 0.03); }
-
-    .m-name {
-      color: var(--dim);
-      font-size: 8px;
-      flex: 1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      min-width: 0;
-    }
-
-    .m-spark {
-      color: var(--spark);
-      font-size: 9px;
-      letter-spacing: -0.5px;
-      flex-shrink: 0;
-    }
-
-    .m-val {
-      font-weight: 500;
-      font-size: 10px;
-      flex-shrink: 0;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .m-chg {
-      font-size: 8px;
-      flex-shrink: 0;
-      min-width: 56px;
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .m-chg.up { color: var(--up); }
-    .m-chg.down { color: var(--down); }
-
-    /* News Row */
-    .n-row {
-      display: flex;
-      align-items: baseline;
-      padding: 2px 4px;
-      border-bottom: 1px dotted var(--muted);
-      gap: 6px;
-      line-height: 1.4;
-    }
-
-    .n-row:last-child { border-bottom: none; }
-    .n-row:hover { background: rgba(45, 43, 40, 0.03); }
-
-    .n-score {
-      color: var(--score);
-      font-size: 8px;
-      font-weight: 500;
-      min-width: 28px;
-      text-align: right;
-      flex-shrink: 0;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .n-content {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .n-title {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 9px;
-    }
-
-    .n-title:hover { color: var(--accent); }
-
-    .n-domain {
-      color: var(--dim);
-      font-size: 7px;
-    }
-
-    .n-meta {
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-      flex-shrink: 0;
-      font-size: 7px;
-      color: var(--dim);
-    }
-
-    .n-time { color: var(--dim); }
-
-    .n-hn {
-      color: var(--link);
-      text-decoration: none;
-      padding: 0 2px;
-    }
-
-    .n-hn:hover {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
-    /* Right Column - stacked AI/ML and Startups */
     .col-right {
       display: flex;
       flex-direction: column;
       gap: 3px;
     }
 
-    /* Footer with ASCII Art */
+    .card-wrapper {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--muted);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .card-wrapper canvas {
+      display: block;
+      width: 100%;
+    }
+
+    .card-wrapper .links {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .card-wrapper .links a {
+      position: absolute;
+      pointer-events: auto;
+      cursor: pointer;
+      color: transparent;
+      text-decoration: none;
+      display: block;
+    }
+
     footer {
       margin-top: 8px;
       padding: 6px 4px;
@@ -262,7 +152,6 @@
       margin: 0 4px;
     }
 
-    /* Particle ASCII Art */
     .ascii-footer {
       margin: 8px auto 4px;
       font-size: 8px;
@@ -297,19 +186,18 @@
     .ascii-footer .p5 { animation: particleDrift 3s ease-in-out infinite 1.2s; }
     .ascii-footer .p6 { animation: particleDrift 3s ease-in-out infinite 1.5s; }
 
-    .empty {
-      color: var(--dim);
-      font-size: 8px;
-      padding: 6px 4px;
-      text-align: center;
-    }
-
-    /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .ascii-footer .particle {
         animation: none;
         opacity: 0.3;
       }
+    }
+
+    noscript p {
+      text-align: center;
+      padding: 20px;
+      color: var(--dim);
+      font-size: 9px;
     }
   </style>
 </head>
@@ -321,106 +209,36 @@
 </header>
 
 <div class="main-grid">
-  {# Column 1: All Stats #}
-  <div class="col-stats">
+  <div class="col-stats" id="col-stats">
     {% for group in metric_groups %}
-    <div class="card">
-      <div class="card-head">{{ group.name }}</div>
-      {% if group.metrics %}
-        {% for m in group.metrics %}
-        <div class="m-row">
-          <span class="m-name">{{ m.name }}</span>
-          {% if m.sparkline %}<span class="m-spark">{{ m.sparkline }}</span>{% endif %}
-          <span class="m-val">{{ m.formatted_value }}</span>
-          <span class="m-chg {{ m.change_class }}">{{ m.formatted_change }}{% if m.change_period %} {{ m.change_period }}{% endif %}</span>
-        </div>
-        {% endfor %}
-      {% else %}
-        <div class="empty">No data</div>
-      {% endif %}
+    <div class="card-wrapper" data-card-type="metric" data-card-index="{{ loop.index0 }}">
+      <canvas></canvas>
+      <div class="links"></div>
     </div>
     {% endfor %}
   </div>
 
-  {# Column 2: Tech (20 items) #}
-  {% for feed in feeds %}
-    {% if feed.id == 'hn_tech' %}
-    <div class="card">
-      <div class="card-head">{{ feed.name }}</div>
-      {% if feed.stories %}
-        {% for story in feed.stories %}
-        <div class="n-row">
-          <span class="n-score">{{ story.score }}</span>
-          <div class="n-content">
-            <a class="n-title" href="{{ story.url or 'https://news.ycombinator.com/item?id=' ~ story.id }}" target="_blank" rel="noopener">{{ story.title }}</a>
-            {% if story.domain %}<span class="n-domain"> ({{ story.domain }})</span>{% endif %}
-          </div>
-          <div class="n-meta">
-            <span class="n-time">{{ story.time_ago }}</span>
-            <a class="n-hn" href="https://news.ycombinator.com/item?id={{ story.id }}" target="_blank">{{ story.comments }}c</a>
-          </div>
-        </div>
-        {% endfor %}
-      {% else %}
-        <div class="empty">No stories</div>
-      {% endif %}
+  {% for feed in feeds %}{% if feed.id == primary_feed %}
+  <div class="card-wrapper" data-card-type="news" data-feed-id="{{ feed.id }}">
+    <canvas></canvas>
+    <div class="links"></div>
+  </div>
+  {% endif %}{% endfor %}
+
+  <div class="col-right" id="col-right">
+    {% for feed in feeds %}{% if feed.id in sidebar_feeds %}
+    <div class="card-wrapper" data-card-type="news" data-feed-id="{{ feed.id }}">
+      <canvas></canvas>
+      <div class="links"></div>
     </div>
-    {% endif %}
-  {% endfor %}
-
-  {# Column 3: AI/ML + Startups stacked #}
-  <div class="col-right">
-    {% for feed in feeds %}
-      {% if feed.id == 'hn_ai' %}
-      <div class="card">
-        <div class="card-head">{{ feed.name }}</div>
-        {% if feed.stories %}
-          {% for story in feed.stories %}
-          <div class="n-row">
-            <span class="n-score">{{ story.score }}</span>
-            <div class="n-content">
-              <a class="n-title" href="{{ story.url or 'https://news.ycombinator.com/item?id=' ~ story.id }}" target="_blank" rel="noopener">{{ story.title }}</a>
-              {% if story.domain %}<span class="n-domain"> ({{ story.domain }})</span>{% endif %}
-            </div>
-            <div class="n-meta">
-              <span class="n-time">{{ story.time_ago }}</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id={{ story.id }}" target="_blank">{{ story.comments }}c</a>
-            </div>
-          </div>
-          {% endfor %}
-        {% else %}
-          <div class="empty">No stories</div>
-        {% endif %}
-      </div>
-      {% endif %}
-    {% endfor %}
-
-    {% for feed in feeds %}
-      {% if feed.id == 'hn_startups' %}
-      <div class="card">
-        <div class="card-head">{{ feed.name }}</div>
-        {% if feed.stories %}
-          {% for story in feed.stories %}
-          <div class="n-row">
-            <span class="n-score">{{ story.score }}</span>
-            <div class="n-content">
-              <a class="n-title" href="{{ story.url or 'https://news.ycombinator.com/item?id=' ~ story.id }}" target="_blank" rel="noopener">{{ story.title }}</a>
-              {% if story.domain %}<span class="n-domain"> ({{ story.domain }})</span>{% endif %}
-            </div>
-            <div class="n-meta">
-              <span class="n-time">{{ story.time_ago }}</span>
-              <a class="n-hn" href="https://news.ycombinator.com/item?id={{ story.id }}" target="_blank">{{ story.comments }}c</a>
-            </div>
-          </div>
-          {% endfor %}
-        {% else %}
-          <div class="empty">No stories</div>
-        {% endif %}
-      </div>
-      {% endif %}
-    {% endfor %}
+    {% endif %}{% endfor %}
   </div>
 </div>
+
+<noscript>
+  <style>.main-grid { display: none; }</style>
+  <p>This dashboard requires JavaScript for canvas rendering.</p>
+</noscript>
 
 <footer>
   <div class="footer-links">
@@ -434,6 +252,699 @@
     <span class="particle p6">˚</span> <span class="particle p5">·</span> <span class="particle p4">˚</span> <span class="particle p3">·</span> <span class="particle p2">˚</span> <span class="particle p1">·</span>
   </div>
 </footer>
+
+<script>
+const DASHBOARD_DATA = {{ dashboard_json | safe }};
+</script>
+<script>
+(function() {
+  'use strict';
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.1  COLOR CONSTANTS
+  // ═══════════════════════════════════════════════════════════════
+
+  function readColors() {
+    var s = getComputedStyle(document.documentElement);
+    return {
+      bg:      s.getPropertyValue('--bg').trim(),
+      card:    s.getPropertyValue('--card').trim(),
+      text:    s.getPropertyValue('--text').trim(),
+      dim:     s.getPropertyValue('--dim').trim(),
+      muted:   s.getPropertyValue('--muted').trim(),
+      up:      s.getPropertyValue('--up').trim(),
+      down:    s.getPropertyValue('--down').trim(),
+      accent:  s.getPropertyValue('--accent').trim(),
+      spark:   s.getPropertyValue('--spark').trim(),
+      score:   s.getPropertyValue('--score').trim(),
+      link:    s.getPropertyValue('--link').trim(),
+      hoverBg: 'rgba(45, 43, 40, 0.03)',
+    };
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.2  FONT CONSTANTS
+  // ═══════════════════════════════════════════════════════════════
+
+  var FONTS = {
+    cardHeader:   '500 8px "IBM Plex Mono", monospace',
+    metricName:   '400 8px "IBM Plex Mono", monospace',
+    metricValue:  '500 10px "IBM Plex Mono", monospace',
+    metricChange: '400 8px "IBM Plex Mono", monospace',
+    newsScore:    '500 8px "IBM Plex Mono", monospace',
+    newsTitle:    '400 9px "IBM Plex Mono", monospace',
+    newsDomain:   '400 7px "IBM Plex Mono", monospace',
+    newsMeta:     '400 7px "IBM Plex Mono", monospace',
+  };
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.3  TEXT MEASUREMENT
+  // ═══════════════════════════════════════════════════════════════
+
+  function withAlpha(color, alpha) {
+    if (color.charAt(0) === '#') {
+      var r = parseInt(color.slice(1, 3), 16);
+      var g = parseInt(color.slice(3, 5), 16);
+      var b = parseInt(color.slice(5, 7), 16);
+      return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+    }
+    // Handle rgb() format
+    var m = color.match(/[\d.]+/g);
+    if (m && m.length >= 3) {
+      return 'rgba(' + m[0] + ',' + m[1] + ',' + m[2] + ',' + alpha + ')';
+    }
+    return color;
+  }
+
+  var _measureCanvas = document.createElement('canvas');
+  var _measureCtx = _measureCanvas.getContext('2d');
+
+  function measureWidth(text, font) {
+    _measureCtx.font = font;
+    return _measureCtx.measureText(text).width;
+  }
+
+  function truncateText(text, font, maxWidth) {
+    var fullWidth = measureWidth(text, font);
+    if (fullWidth <= maxWidth) return text;
+
+    var ellipsis = '\u2026';
+    var ellipsisWidth = measureWidth(ellipsis, font);
+    var targetWidth = maxWidth - ellipsisWidth;
+    if (targetWidth <= 0) return ellipsis;
+
+    var lo = 0, hi = text.length;
+    while (lo < hi) {
+      var mid = (lo + hi + 1) >> 1;
+      if (measureWidth(text.slice(0, mid), font) <= targetWidth) {
+        lo = mid;
+      } else {
+        hi = mid - 1;
+      }
+    }
+    return text.slice(0, lo) + ellipsis;
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.4  METRIC CARD LAYOUT
+  // ═══════════════════════════════════════════════════════════════
+
+  function computeMetricCardLayout(group, containerWidth) {
+    var PAD = 4;
+    var GAP = 4;
+    var HEADER_H = 16;
+    var ROW_H = 16;
+    var SPARK_W = 56;
+
+    var metrics = group.metrics || [];
+
+    var nameWidths = metrics.map(function(m) {
+      return measureWidth(m.name || '', FONTS.metricName);
+    });
+    var valueWidths = metrics.map(function(m) {
+      return measureWidth(m.formatted_value || '', FONTS.metricValue);
+    });
+
+    var changeTexts = metrics.map(function(m) {
+      var t = m.formatted_change || '';
+      if (m.change_period) t += ' ' + m.change_period;
+      return t;
+    });
+    var changeWidths = changeTexts.map(function(t) {
+      return measureWidth(t, FONTS.metricChange);
+    });
+
+    var maxValue = valueWidths.length ? Math.max.apply(null, valueWidths) : 0;
+    var maxChange = changeWidths.length ? Math.max.apply(null, changeWidths) : 0;
+
+    var fixedWidth = PAD * 2 + GAP * 3 + SPARK_W + maxValue + maxChange;
+    var nameCol = Math.max(containerWidth - fixedWidth, 40);
+
+    // Ensure value and change columns don't overlap
+    var valueX = PAD + nameCol + GAP + SPARK_W + GAP;
+    var changeX = containerWidth - PAD - maxChange;
+    if (valueX + maxValue + GAP > changeX) {
+      // Shrink sparkline to make room
+      var overflow = (valueX + maxValue + GAP) - changeX;
+      SPARK_W = Math.max(SPARK_W - overflow, 20);
+      valueX = PAD + nameCol + GAP + SPARK_W + GAP;
+    }
+
+    var cols = {
+      name:   { x: PAD, width: nameCol },
+      spark:  { x: PAD + nameCol + GAP, width: SPARK_W },
+      value:  { x: valueX, width: maxValue },
+      change: { x: changeX, width: maxChange },
+    };
+
+    return {
+      headerHeight: HEADER_H,
+      rowHeight: ROW_H,
+      padding: PAD,
+      columns: cols,
+      totalHeight: HEADER_H + metrics.length * ROW_H,
+      changeTexts: changeTexts,
+      _metricCount: metrics.length,
+    };
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.5  NEWS CARD LAYOUT
+  // ═══════════════════════════════════════════════════════════════
+
+  function computeNewsCardLayout(feed, containerWidth) {
+    var PAD = 4;
+    var GAP = 6;
+    var HEADER_H = 16;
+    var ROW_H = 18;
+
+    var stories = feed.stories || [];
+
+    var scoreWidths = stories.map(function(s) {
+      return measureWidth(String(s.score || 0), FONTS.newsScore);
+    });
+    var scoreCol = scoreWidths.length ? Math.max(Math.max.apply(null, scoreWidths), 20) : 20;
+
+    var metaTexts = stories.map(function(s) {
+      return (s.time_ago || '') + ' ' + (s.comments || 0) + 'c';
+    });
+    var metaWidths = metaTexts.map(function(t) {
+      return measureWidth(t, FONTS.newsMeta);
+    });
+    var metaCol = metaWidths.length ? Math.max(Math.max.apply(null, metaWidths), 30) : 30;
+
+    var titleX = PAD + scoreCol + GAP;
+    var titleWidth = containerWidth - titleX - GAP - metaCol - PAD;
+
+    return {
+      headerHeight: HEADER_H,
+      rowHeight: ROW_H,
+      padding: PAD,
+      columns: {
+        score: { x: PAD, width: scoreCol },
+        title: { x: titleX, width: Math.max(titleWidth, 60) },
+        meta:  { x: containerWidth - PAD - metaCol, width: metaCol },
+      },
+      totalHeight: HEADER_H + stories.length * ROW_H,
+      metaTexts: metaTexts,
+      _storyCount: stories.length,
+    };
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.6  DRAWING FUNCTIONS
+  // ═══════════════════════════════════════════════════════════════
+
+  function drawCardHeader(ctx, name, width, headerHeight, colors) {
+    // Header background
+    ctx.fillStyle = colors.bg;
+    ctx.fillRect(0, 0, width, headerHeight);
+
+    // Header bottom border
+    ctx.strokeStyle = colors.muted;
+    ctx.lineWidth = 1;
+    ctx.setLineDash([]);
+    ctx.beginPath();
+    ctx.moveTo(0, headerHeight - 0.5);
+    ctx.lineTo(width, headerHeight - 0.5);
+    ctx.stroke();
+
+    // Chevron
+    ctx.font = FONTS.cardHeader;
+    ctx.fillStyle = colors.muted;
+    ctx.textBaseline = 'middle';
+    ctx.textAlign = 'left';
+    ctx.fillText('>', 4, headerHeight / 2);
+
+    // Section name
+    ctx.fillStyle = colors.accent;
+    var chevronWidth = measureWidth('> ', FONTS.cardHeader);
+    ctx.fillText(name.toUpperCase(), 4 + chevronWidth, headerHeight / 2);
+  }
+
+  function drawDottedSeparator(ctx, y, width, colors) {
+    ctx.strokeStyle = colors.muted;
+    ctx.lineWidth = 1;
+    ctx.setLineDash([1, 2]);
+    ctx.beginPath();
+    ctx.moveTo(0, y + 0.5);
+    ctx.lineTo(width, y + 0.5);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  function drawSparkline(ctx, values, x, y, width, height, colors) {
+    if (!values || values.length < 2) return;
+
+    var min = Infinity, max = -Infinity;
+    for (var i = 0; i < values.length; i++) {
+      if (values[i] < min) min = values[i];
+      if (values[i] > max) max = values[i];
+    }
+    var range = max - min;
+    if (range === 0) range = 1;
+
+    var pad = 3;
+    var drawH = height - pad * 2;
+    var drawW = width;
+    var stepX = drawW / (values.length - 1);
+
+    ctx.save();
+    ctx.beginPath();
+
+    for (var i = 0; i < values.length; i++) {
+      var px = x + i * stepX;
+      var py = y + pad + drawH - ((values[i] - min) / range) * drawH;
+      if (i === 0) ctx.moveTo(px, py);
+      else ctx.lineTo(px, py);
+    }
+
+    ctx.strokeStyle = colors.spark;
+    ctx.lineWidth = 1.5;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.stroke();
+
+    // Area fill with gradient
+    ctx.lineTo(x + drawW, y + height);
+    ctx.lineTo(x, y + height);
+    ctx.closePath();
+
+    var grad = ctx.createLinearGradient(0, y, 0, y + height);
+    grad.addColorStop(0, withAlpha(colors.spark, 0.09));
+    grad.addColorStop(1, withAlpha(colors.spark, 0.01));
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  function drawMetricRow(ctx, metric, rowIndex, layout, colors, changeText, isHovered) {
+    var y = layout.headerHeight + rowIndex * layout.rowHeight;
+    var cols = layout.columns;
+
+    // Hover background
+    if (isHovered) {
+      ctx.fillStyle = colors.hoverBg;
+      ctx.fillRect(0, y, cols.change.x + cols.change.width + layout.padding, layout.rowHeight);
+    }
+
+    var textY = y + layout.rowHeight * 0.72;
+
+    // Metric name (truncate if needed)
+    ctx.font = FONTS.metricName;
+    ctx.fillStyle = colors.dim;
+    ctx.textBaseline = 'alphabetic';
+    ctx.textAlign = 'left';
+    var displayName = truncateText(metric.name || '', FONTS.metricName, cols.name.width);
+    ctx.fillText(displayName, cols.name.x, textY);
+
+    // Sparkline
+    var sparkValues = metric.sparkline_values;
+    if (sparkValues && sparkValues.length >= 2) {
+      drawSparkline(ctx, sparkValues, cols.spark.x, y + 1, cols.spark.width, layout.rowHeight - 2, colors);
+    }
+
+    // Value (right-aligned within value column)
+    ctx.font = FONTS.metricValue;
+    ctx.fillStyle = colors.text;
+    ctx.textAlign = 'right';
+    ctx.fillText(metric.formatted_value || '', cols.value.x + cols.value.width, textY);
+
+    // Change (right-aligned)
+    ctx.font = FONTS.metricChange;
+    if (metric.change_class === 'up') {
+      ctx.fillStyle = colors.up;
+    } else if (metric.change_class === 'down') {
+      ctx.fillStyle = colors.down;
+    } else {
+      ctx.fillStyle = colors.dim;
+    }
+    ctx.textAlign = 'right';
+    ctx.fillText(changeText, cols.change.x + cols.change.width, textY);
+
+    // Row separator (except last row)
+    var totalMetrics = (layout._metricCount !== undefined) ? layout._metricCount : 999;
+    if (rowIndex < totalMetrics - 1) {
+      drawDottedSeparator(ctx, y + layout.rowHeight, cols.change.x + cols.change.width + layout.padding, colors);
+    }
+  }
+
+  function drawNewsRow(ctx, story, rowIndex, layout, colors, metaText, isHovered) {
+    var y = layout.headerHeight + rowIndex * layout.rowHeight;
+    var cols = layout.columns;
+
+    // Hover background
+    if (isHovered) {
+      ctx.fillStyle = colors.hoverBg;
+      ctx.fillRect(0, y, cols.meta.x + cols.meta.width + layout.padding, layout.rowHeight);
+    }
+
+    var textY = y + layout.rowHeight * 0.68;
+
+    // Score (right-aligned)
+    ctx.font = FONTS.newsScore;
+    ctx.fillStyle = colors.score;
+    ctx.textBaseline = 'alphabetic';
+    ctx.textAlign = 'right';
+    ctx.fillText(String(story.score || 0), cols.score.x + cols.score.width, textY);
+
+    // Title (truncated) + domain
+    ctx.font = FONTS.newsTitle;
+    ctx.fillStyle = colors.text;
+    ctx.textAlign = 'left';
+    var titleText = story.title || '';
+    var domainText = story.domain ? ' (' + story.domain + ')' : '';
+    var domainWidth = domainText ? measureWidth(domainText, FONTS.newsDomain) : 0;
+    var availableForTitle = cols.title.width - domainWidth - 2;
+    var displayTitle = truncateText(titleText, FONTS.newsTitle, availableForTitle);
+    ctx.fillText(displayTitle, cols.title.x, textY);
+
+    // Domain (after title)
+    if (domainText) {
+      var titleDisplayWidth = measureWidth(displayTitle, FONTS.newsTitle);
+      ctx.font = FONTS.newsDomain;
+      ctx.fillStyle = colors.dim;
+      ctx.fillText(domainText, cols.title.x + titleDisplayWidth + 1, textY);
+    }
+
+    // Meta (time + comments, right-aligned)
+    ctx.font = FONTS.newsMeta;
+    ctx.fillStyle = colors.dim;
+    ctx.textAlign = 'right';
+
+    // Draw time and comments link separately
+    var timeText = story.time_ago || '';
+    var commentsText = (story.comments || 0) + 'c';
+    var commentsWidth = measureWidth(commentsText, FONTS.newsMeta);
+    var timeWidth = measureWidth(timeText, FONTS.newsMeta);
+    var spacing = measureWidth(' ', FONTS.newsMeta);
+
+    var metaRight = cols.meta.x + cols.meta.width;
+
+    // Comments (right side, link-colored)
+    ctx.fillStyle = colors.link;
+    ctx.fillText(commentsText, metaRight, textY);
+
+    // Time (left of comments)
+    ctx.fillStyle = colors.dim;
+    ctx.fillText(timeText, metaRight - commentsWidth - spacing, textY);
+
+    // Row separator (except last row)
+    var totalStories = (layout._storyCount !== undefined) ? layout._storyCount : 999;
+    if (rowIndex < totalStories - 1) {
+      drawDottedSeparator(ctx, y + layout.rowHeight, cols.meta.x + cols.meta.width + layout.padding, colors);
+    }
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.7  CARD RENDER ORCHESTRATORS
+  // ═══════════════════════════════════════════════════════════════
+
+  function setupCanvas(canvas, logicalWidth, logicalHeight) {
+    var dpr = window.devicePixelRatio || 1;
+    var pw = Math.round(logicalWidth * dpr);
+    var ph = Math.round(logicalHeight * dpr);
+    // Only resize when dimensions change (avoids GPU buffer reallocation on hover)
+    if (canvas.width !== pw || canvas.height !== ph) {
+      canvas.width = pw;
+      canvas.height = ph;
+      canvas.style.width = logicalWidth + 'px';
+      canvas.style.height = logicalHeight + 'px';
+    }
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, logicalWidth, logicalHeight);
+    return ctx;
+  }
+
+  function renderMetricCard(wrapper, group, colors, hoverIndex) {
+    var canvas = wrapper.querySelector('canvas');
+    var width = wrapper.clientWidth;
+    if (width < 1) return;
+
+    var layout = computeMetricCardLayout(group, width);
+    wrapper._layout = layout;
+    wrapper._data = group;
+
+    var ctx = setupCanvas(canvas, width, layout.totalHeight);
+
+    // Card background
+    ctx.fillStyle = colors.card;
+    ctx.fillRect(0, 0, width, layout.totalHeight);
+
+    // Header
+    drawCardHeader(ctx, group.name, width, layout.headerHeight, colors);
+
+    // Metric rows
+    var metrics = group.metrics || [];
+    for (var i = 0; i < metrics.length; i++) {
+      drawMetricRow(ctx, metrics[i], i, layout, colors, layout.changeTexts[i], i === hoverIndex);
+    }
+
+    // Accessibility
+    var label = group.name + ': ' + metrics.map(function(m) {
+      return m.name + ' ' + (m.formatted_value || '');
+    }).join(', ');
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', label);
+  }
+
+  function renderNewsCard(wrapper, feed, colors, hoverIndex) {
+    var canvas = wrapper.querySelector('canvas');
+    var width = wrapper.clientWidth;
+    if (width < 1) return;
+
+    var layout = computeNewsCardLayout(feed, width);
+    var stories = feed.stories || [];
+    wrapper._layout = layout;
+    wrapper._data = feed;
+
+    var ctx = setupCanvas(canvas, width, layout.totalHeight);
+
+    // Card background
+    ctx.fillStyle = colors.card;
+    ctx.fillRect(0, 0, width, layout.totalHeight);
+
+    // Header
+    drawCardHeader(ctx, feed.name, width, layout.headerHeight, colors);
+
+    // News rows
+    for (var i = 0; i < stories.length; i++) {
+      drawNewsRow(ctx, stories[i], i, layout, colors, layout.metaTexts[i], i === hoverIndex);
+    }
+
+    // Only create/update link overlays on initial render or resize, not on hover
+    if (!wrapper._overlaysCreated || wrapper._lastOverlayWidth !== width) {
+      createLinkOverlays(wrapper, stories, layout);
+      wrapper._overlaysCreated = true;
+      wrapper._lastOverlayWidth = width;
+    }
+
+    // Accessibility
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', feed.name + ' feed: ' + stories.length + ' stories');
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.8  LINK OVERLAYS
+  // ═══════════════════════════════════════════════════════════════
+
+  function createLinkOverlays(wrapper, stories, layout) {
+    var linksDiv = wrapper.querySelector('.links');
+    linksDiv.innerHTML = '';
+
+    for (var i = 0; i < stories.length; i++) {
+      var story = stories[i];
+      var rowY = layout.headerHeight + i * layout.rowHeight;
+
+      // Title link
+      var a = document.createElement('a');
+      a.href = story.url || ('https://news.ycombinator.com/item?id=' + story.id);
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.setAttribute('aria-label', story.title);
+      a.style.cssText = 'top:' + rowY + 'px;left:' + layout.columns.title.x + 'px;width:' + layout.columns.title.width + 'px;height:' + layout.rowHeight + 'px;';
+      linksDiv.appendChild(a);
+
+      // HN comments link
+      var hn = document.createElement('a');
+      hn.href = 'https://news.ycombinator.com/item?id=' + story.id;
+      hn.target = '_blank';
+      hn.rel = 'noopener';
+      hn.setAttribute('aria-label', (story.comments || 0) + ' comments on Hacker News');
+      var commentsWidth = measureWidth((story.comments || 0) + 'c', FONTS.newsMeta);
+      var hnLeft = layout.columns.meta.x + layout.columns.meta.width - commentsWidth;
+      hn.style.cssText = 'top:' + rowY + 'px;left:' + hnLeft + 'px;width:' + commentsWidth + 'px;height:' + layout.rowHeight + 'px;';
+      linksDiv.appendChild(hn);
+    }
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.9  HOVER SYSTEM
+  // ═══════════════════════════════════════════════════════════════
+
+  function attachHoverHandlers(wrapper, colors) {
+    var canvas = wrapper.querySelector('canvas');
+    var currentHover = -1;
+
+    canvas.addEventListener('mousemove', function(e) {
+      var layout = wrapper._layout;
+      if (!layout) return;
+
+      var rect = canvas.getBoundingClientRect();
+      var y = e.clientY - rect.top;
+      var row = Math.floor((y - layout.headerHeight) / layout.rowHeight);
+      var maxRow = wrapper.dataset.cardType === 'metric'
+        ? (layout._metricCount || 0) - 1
+        : (layout._storyCount || 0) - 1;
+
+      if (row < 0 || row > maxRow) row = -1;
+
+      if (row !== currentHover) {
+        currentHover = row;
+        if (wrapper.dataset.cardType === 'metric') {
+          renderMetricCard(wrapper, wrapper._data, colors, row);
+        } else {
+          renderNewsCard(wrapper, wrapper._data, colors, row);
+        }
+      }
+    });
+
+    canvas.addEventListener('mouseleave', function() {
+      if (currentHover !== -1) {
+        currentHover = -1;
+        if (wrapper.dataset.cardType === 'metric') {
+          renderMetricCard(wrapper, wrapper._data, colors, -1);
+        } else {
+          renderNewsCard(wrapper, wrapper._data, colors, -1);
+        }
+      }
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.10 RESIZE OBSERVER
+  // ═══════════════════════════════════════════════════════════════
+
+  function setupResizeObserver(wrappers, colors) {
+    if (!window.ResizeObserver) return;
+
+    var resizeTimeout = null;
+    var observer = new ResizeObserver(function() {
+      if (resizeTimeout) clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(function() {
+        renderAllCards(wrappers, colors);
+      }, 50);
+    });
+
+    wrappers.forEach(function(w) { observer.observe(w); });
+    return observer;
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.11 INITIALIZATION
+  // ═══════════════════════════════════════════════════════════════
+
+  function renderAllCards(wrappers, colors) {
+    var data = DASHBOARD_DATA;
+
+    wrappers.forEach(function(wrapper) {
+      var type = wrapper.dataset.cardType;
+      if (type === 'metric') {
+        var idx = parseInt(wrapper.dataset.cardIndex, 10);
+        var group = data.metric_groups[idx];
+        if (group) renderMetricCard(wrapper, group, colors, -1);
+      } else if (type === 'news') {
+        var feedId = wrapper.dataset.feedId;
+        var feed = null;
+        for (var i = 0; i < data.feeds.length; i++) {
+          if (data.feeds[i].id === feedId) { feed = data.feeds[i]; break; }
+        }
+        if (feed) renderNewsCard(wrapper, feed, colors, -1);
+      }
+    });
+  }
+
+  function initDashboard() {
+    var colors = readColors();
+    var wrappers = Array.prototype.slice.call(document.querySelectorAll('.card-wrapper'));
+
+    renderAllCards(wrappers, colors);
+
+    // Attach hover handlers
+    wrappers.forEach(function(wrapper) {
+      attachHoverHandlers(wrapper, colors);
+    });
+
+    // Responsive resize
+    setupResizeObserver(wrappers, colors);
+
+    // ═════════════════════════════════════════════════════════════
+    // D.12 DEBUG MODE
+    // ═════════════════════════════════════════════════════════════
+
+    if (location.search.indexOf('debug=1') !== -1) {
+      wrappers.forEach(function(wrapper) {
+        var canvas = wrapper.querySelector('canvas');
+        var ctx = canvas.getContext('2d');
+        var dpr = window.devicePixelRatio || 1;
+        var layout = wrapper._layout;
+        if (!layout) return;
+
+        ctx.save();
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.strokeStyle = 'rgba(255, 0, 0, 0.3)';
+        ctx.lineWidth = 0.5;
+        ctx.setLineDash([2, 2]);
+
+        // Column boundaries
+        var cols = layout.columns;
+        Object.keys(cols).forEach(function(key) {
+          var col = cols[key];
+          ctx.beginPath();
+          ctx.moveTo(col.x, 0);
+          ctx.lineTo(col.x, layout.totalHeight);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(col.x + col.width, 0);
+          ctx.lineTo(col.x + col.width, layout.totalHeight);
+          ctx.stroke();
+        });
+
+        // Row boundaries
+        ctx.strokeStyle = 'rgba(0, 0, 255, 0.2)';
+        var rowH = layout.rowHeight;
+        var count = layout._metricCount || layout._storyCount || 0;
+        for (var r = 0; r <= count; r++) {
+          var ry = layout.headerHeight + r * rowH;
+          ctx.beginPath();
+          ctx.moveTo(0, ry);
+          ctx.lineTo(canvas.width / dpr, ry);
+          ctx.stroke();
+        }
+
+        ctx.restore();
+      });
+    }
+  }
+
+  // Wait for IBM Plex Mono to load before measuring/rendering
+  if (document.fonts && document.fonts.load) {
+    Promise.all([
+      document.fonts.load('400 8px "IBM Plex Mono"'),
+      document.fonts.load('500 10px "IBM Plex Mono"'),
+    ]).then(initDashboard).catch(function() {
+      // Font load failed (CDN down?), render with fallback monospace
+      initDashboard();
+    });
+  } else {
+    // Fallback for browsers without Font Loading API
+    window.addEventListener('load', initDashboard);
+  }
+
+})();
+</script>
 
 </body>
 </html>

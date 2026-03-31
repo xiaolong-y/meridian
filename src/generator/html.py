@@ -4,6 +4,7 @@ Static HTML dashboard generator.
 Generates a single-page dense dashboard using Jinja2 templates.
 Output is a self-contained HTML file suitable for GitHub Pages.
 """
+import json
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Optional
@@ -284,6 +285,7 @@ def build_dashboard_context() -> dict[str, Any]:
                 group_metrics.append({
                     **meta,
                     "sparkline": sparkline,
+                    "sparkline_values": sparkline_values,
                     "change_class": change_class,
                     "change_period": change_period,
                     "direction_arrow": get_directional_arrow(meta.get("change")),
@@ -296,7 +298,9 @@ def build_dashboard_context() -> dict[str, Any]:
                     "id": metric_id,
                     "name": metric_id,
                     "sparkline": "",
+                    "sparkline_values": [],
                     "change_class": "",
+                    "change_period": "",
                     "formatted_value": "—",
                     "formatted_change": "",
                 })
@@ -337,7 +341,7 @@ def generate_dashboard() -> Path:
     Generate the static HTML dashboard.
 
     Loads the Jinja2 template, builds context from database,
-    renders the template, and writes to docs/index.html.
+    serializes data as JSON for canvas rendering, and writes to docs/index.html.
 
     Returns:
         Path to generated index.html
@@ -347,16 +351,17 @@ def generate_dashboard() -> Path:
         autoescape=True
     )
 
-    # Register custom filters for symbol enhancements
-    env.filters["section_icon"] = get_section_icon
-    env.filters["heat_symbol"] = get_heat_symbol
-    env.filters["time_symbol"] = get_time_symbol
-    env.filters["direction_arrow"] = get_directional_arrow
-
     template = env.get_template("dashboard.html")
     context = build_dashboard_context()
 
-    html = template.render(**context)
+    # Serialize context to JSON for client-side canvas rendering
+    # Sanitize to prevent </script> injection in story titles
+    dashboard_json = json.dumps(context, separators=(",", ":"), ensure_ascii=False)
+    dashboard_json = dashboard_json.replace("</", "<\\/")
+    dashboard_json = dashboard_json.replace("\u2028", "\\u2028")
+    dashboard_json = dashboard_json.replace("\u2029", "\\u2029")
+
+    html = template.render(**context, dashboard_json=dashboard_json)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output_path = OUTPUT_DIR / "index.html"
