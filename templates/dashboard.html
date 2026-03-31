@@ -55,21 +55,16 @@
     .timestamp { color: var(--dim); font-size: 9px; }
 
     .dashboard {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3px;
-      align-items: flex-start;
+      position: relative;
     }
 
     .card-wrapper {
-      position: relative;
+      position: absolute;
       background: var(--card);
       border: 1px solid var(--muted);
       border-radius: 2px;
       overflow: hidden;
-      flex-grow: 1;
-      min-width: 200px;
-      /* flex-basis and max-width set dynamically by JS */
+      /* top, left, width set by JS layout engine */
     }
 
     .card-wrapper canvas {
@@ -305,10 +300,10 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // D.3b IDEAL WIDTH COMPUTATION (drives flex layout)
+  // D.3b MASONRY LAYOUT ENGINE (pure JS positioning)
   // ═══════════════════════════════════════════════════════════════
 
-  function computeMetricCardIdealWidth(group) {
+  function computeMetricMinWidth(group) {
     var PAD = 4, GAP = 4, SPARK_W = 56;
     var metrics = group.metrics || [];
     if (metrics.length === 0) return 220;
@@ -328,48 +323,100 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
     return PAD * 2 + maxName + GAP * 3 + SPARK_W + maxValue + maxChange;
   }
 
-  function computeNewsCardIdealWidth(feed) {
-    var PAD = 4, GAP = 6;
-    var stories = feed.stories || [];
-    if (stories.length === 0) return 320;
-
-    var scoreWidths = stories.map(function(s) { return measureWidth(String(s.score || 0), FONTS.newsScore); });
-    var maxScore = Math.max.apply(null, scoreWidths);
-    var metaTexts = stories.map(function(s) { return (s.time_ago || '') + ' ' + (s.comments || 0) + 'c'; });
-    var metaWidths = metaTexts.map(function(t) { return measureWidth(t, FONTS.newsMeta); });
-    var maxMeta = Math.max.apply(null, metaWidths);
-
-    // Use 60th percentile title width so most titles read well
-    var titleWidths = stories.map(function(s) { return measureWidth(s.title || '', FONTS.newsTitle); });
-    titleWidths.sort(function(a, b) { return a - b; });
-    var p60Title = titleWidths[Math.floor(titleWidths.length * 0.6)] || 200;
-
-    return PAD * 2 + maxScore + GAP * 2 + p60Title + maxMeta;
+  function indexOfMin(arr) {
+    var minIdx = 0;
+    for (var i = 1; i < arr.length; i++) {
+      if (arr[i] < arr[minIdx]) minIdx = i;
+    }
+    return minIdx;
   }
 
-  function setCardFlexBasis(wrappers) {
-    var data = DASHBOARD_DATA;
+  function layoutDashboard(wrappers, data, gap) {
+    var container = document.querySelector('.dashboard');
+    var viewportWidth = container.clientWidth;
+    if (viewportWidth < 1) return;
 
-    wrappers.forEach(function(wrapper) {
-      var type = wrapper.dataset.cardType;
-      var idealWidth;
+    // 1. Build card descriptors with measured min widths
+    var cards = [];
+    for (var i = 0; i < wrappers.length; i++) {
+      var w = wrappers[i];
+      var type = w.dataset.cardType;
+      var cardData = null, minW = 220;
 
       if (type === 'metric') {
-        var idx = parseInt(wrapper.dataset.cardIndex, 10);
-        var group = data.metric_groups[idx];
-        idealWidth = group ? computeMetricCardIdealWidth(group) : 220;
+        var idx = parseInt(w.dataset.cardIndex, 10);
+        cardData = data.metric_groups[idx];
+        if (cardData) minW = computeMetricMinWidth(cardData);
       } else {
-        var feedId = wrapper.dataset.feedId;
-        var feed = null;
-        for (var i = 0; i < data.feeds.length; i++) {
-          if (data.feeds[i].id === feedId) { feed = data.feeds[i]; break; }
+        var feedId = w.dataset.feedId;
+        for (var f = 0; f < data.feeds.length; f++) {
+          if (data.feeds[f].id === feedId) { cardData = data.feeds[f]; break; }
         }
-        idealWidth = feed ? computeNewsCardIdealWidth(feed) : 320;
+        minW = 280;
+      }
+      cards.push({ wrapper: w, type: type, data: cardData, minWidth: minW });
+    }
+
+    // 2. Column count derived from widest metric card's measured width
+    var metricMinWidths = [];
+    for (var i = 0; i < cards.length; i++) {
+      if (cards[i].type === 'metric') metricMinWidths.push(cards[i].minWidth);
+    }
+    var minColWidth = metricMinWidths.length ? Math.max.apply(null, metricMinWidths) : 260;
+    minColWidth = Math.max(minColWidth, 220);
+
+    var colCount = Math.max(1, Math.floor((viewportWidth + gap) / (minColWidth + gap)));
+    var colWidth = (viewportWidth - (colCount - 1) * gap) / colCount;
+
+    // 3. Masonry: pack cards into shortest column(s)
+    var colHeights = [];
+    for (var c = 0; c < colCount; c++) colHeights.push(0);
+
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      var isNews = card.type === 'news';
+      var span = (isNews && colCount >= 2) ? Math.min(2, colCount) : 1;
+      var cardW = colWidth * span + gap * (span - 1);
+
+      // Card height from content
+      var headerH = 16, rowH, rowCount;
+      if (isNews) {
+        rowH = 18;
+        rowCount = (card.data && card.data.stories) ? card.data.stories.length : 0;
+      } else {
+        rowH = 16;
+        rowCount = (card.data && card.data.metrics) ? card.data.metrics.length : 0;
+      }
+      var cardH = headerH + rowCount * rowH;
+
+      // Find placement
+      var bestCol, bestY;
+      if (span === 1) {
+        bestCol = indexOfMin(colHeights);
+        bestY = colHeights[bestCol];
+      } else {
+        bestCol = 0;
+        bestY = Math.max(colHeights[0], colHeights[1] || 0);
+        for (var p = 1; p + 1 < colCount; p++) {
+          var pairY = Math.max(colHeights[p], colHeights[p + 1]);
+          if (pairY < bestY) { bestY = pairY; bestCol = p; }
+        }
       }
 
-      wrapper.style.flexBasis = Math.round(idealWidth) + 'px';
-      wrapper.style.maxWidth = Math.round(idealWidth * 1.6) + 'px';
-    });
+      // Position card
+      var x = bestCol * (colWidth + gap);
+      card.wrapper.style.left = Math.round(x) + 'px';
+      card.wrapper.style.top = Math.round(bestY) + 'px';
+      card.wrapper.style.width = Math.round(cardW) + 'px';
+
+      // Update column heights
+      for (var s = 0; s < span; s++) {
+        colHeights[bestCol + s] = bestY + cardH + gap;
+      }
+    }
+
+    // 4. Set container height
+    container.style.height = Math.round(Math.max.apply(null, colHeights)) + 'px';
   }
 
   // ═══════════════════════════════════════════════════════════════
@@ -861,6 +908,7 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
     var observer = new ResizeObserver(function() {
       if (resizeTimeout) clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(function() {
+        layoutDashboard(wrappers, DASHBOARD_DATA, 3);
         renderAllCards(wrappers, colors);
       }, 50);
     });
@@ -897,12 +945,9 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
     var colors = readColors();
     var wrappers = Array.prototype.slice.call(document.querySelectorAll('.card-wrapper'));
 
-    // Compute ideal widths from content and set flex-basis before rendering
-    setCardFlexBasis(wrappers);
-
-    // Allow browser to settle flex layout, then render canvases at actual widths
-    requestAnimationFrame(function() {
-      renderAllCards(wrappers, colors);
+    // Compute masonry layout from measured text, then render canvases
+    layoutDashboard(wrappers, DASHBOARD_DATA, 3);
+    renderAllCards(wrappers, colors);
 
     // Attach hover handlers
     wrappers.forEach(function(wrapper) {
@@ -959,7 +1004,6 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
         ctx.restore();
       });
     }
-    }); // end requestAnimationFrame
   }
 
   // Wait for IBM Plex Mono to load before measuring/rendering
