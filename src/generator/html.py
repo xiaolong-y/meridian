@@ -326,13 +326,33 @@ def build_dashboard_context() -> dict[str, Any]:
             "stories": stories
         })
 
+    # Build interleaved card order: distribute feeds evenly among metric groups
+    card_order = []
+    feed_ids = [f["id"] for f in feeds]
+    n_metrics = len(metric_groups)
+    n_feeds = len(feed_ids)
+    if n_feeds > 0 and n_metrics > 0:
+        step = n_metrics / n_feeds
+        feed_positions = {int((i + 0.5) * step) for i in range(n_feeds)}
+    else:
+        feed_positions = set()
+
+    feed_idx = 0
+    for i in range(n_metrics):
+        card_order.append({"type": "metric", "index": i})
+        if i in feed_positions and feed_idx < n_feeds:
+            card_order.append({"type": "feed", "id": feed_ids[feed_idx]})
+            feed_idx += 1
+    while feed_idx < n_feeds:
+        card_order.append({"type": "feed", "id": feed_ids[feed_idx]})
+        feed_idx += 1
+
     return {
         "title": "Meridian",
         "generated_at": datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
         "metric_groups": metric_groups,
         "feeds": feeds,
-        "primary_feed": config["feeds"].get("display", {}).get("primary_feed", "hn_top"),
-        "sidebar_feeds": config["feeds"].get("display", {}).get("sidebar_feeds", []),
+        "card_order": card_order,
     }
 
 

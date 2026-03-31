@@ -54,44 +54,11 @@
     }
     .timestamp { color: var(--dim); font-size: 9px; }
 
-    .main-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr 1fr;
-      gap: 3px;
-      align-items: start;
-    }
-
-    @media (max-width: 1200px) {
-      .main-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .col-right {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3px;
-      }
-    }
-
-    @media (max-width: 800px) {
-      .main-grid {
-        grid-template-columns: 1fr;
-      }
-      .col-right {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .col-stats {
+    .dashboard {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       gap: 3px;
-    }
-
-    .col-right {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
+      align-items: flex-start;
     }
 
     .card-wrapper {
@@ -100,6 +67,9 @@
       border: 1px solid var(--muted);
       border-radius: 2px;
       overflow: hidden;
+      flex-grow: 1;
+      min-width: 200px;
+      /* flex-basis and max-width set dynamically by JS */
     }
 
     .card-wrapper canvas {
@@ -208,35 +178,24 @@
   <span class="timestamp">{{ generated_at }}</span>
 </header>
 
-<div class="main-grid">
-  <div class="col-stats" id="col-stats">
-    {% for group in metric_groups %}
-    <div class="card-wrapper" data-card-type="metric" data-card-index="{{ loop.index0 }}">
+<div class="dashboard">
+  {% for card in card_order %}
+    {% if card.type == 'metric' %}
+    <div class="card-wrapper" data-card-type="metric" data-card-index="{{ card.index }}">
       <canvas></canvas>
       <div class="links"></div>
     </div>
-    {% endfor %}
-  </div>
-
-  {% for feed in feeds %}{% if feed.id == primary_feed %}
-  <div class="card-wrapper" data-card-type="news" data-feed-id="{{ feed.id }}">
-    <canvas></canvas>
-    <div class="links"></div>
-  </div>
-  {% endif %}{% endfor %}
-
-  <div class="col-right" id="col-right">
-    {% for feed in feeds %}{% if feed.id in sidebar_feeds %}
-    <div class="card-wrapper" data-card-type="news" data-feed-id="{{ feed.id }}">
+    {% elif card.type == 'feed' %}
+    <div class="card-wrapper" data-card-type="news" data-feed-id="{{ card.id }}">
       <canvas></canvas>
       <div class="links"></div>
     </div>
-    {% endif %}{% endfor %}
-  </div>
+    {% endif %}
+  {% endfor %}
 </div>
 
 <noscript>
-  <style>.main-grid { display: none; }</style>
+  <style>.dashboard { display: none; }</style>
   <p>This dashboard requires JavaScript for canvas rendering.</p>
 </noscript>
 
@@ -343,6 +302,74 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
       }
     }
     return text.slice(0, lo) + ellipsis;
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.3b IDEAL WIDTH COMPUTATION (drives flex layout)
+  // ═══════════════════════════════════════════════════════════════
+
+  function computeMetricCardIdealWidth(group) {
+    var PAD = 4, GAP = 4, SPARK_W = 56;
+    var metrics = group.metrics || [];
+    if (metrics.length === 0) return 220;
+
+    var nameWidths = metrics.map(function(m) { return measureWidth(m.name || '', FONTS.metricName); });
+    var maxName = Math.max.apply(null, nameWidths);
+    var valueWidths = metrics.map(function(m) { return measureWidth(m.formatted_value || '', FONTS.metricValue); });
+    var maxValue = Math.max.apply(null, valueWidths);
+    var changeTexts = metrics.map(function(m) {
+      var t = m.formatted_change || '';
+      if (m.change_period) t += ' ' + m.change_period;
+      return t;
+    });
+    var changeWidths = changeTexts.map(function(t) { return measureWidth(t, FONTS.metricChange); });
+    var maxChange = Math.max.apply(null, changeWidths);
+
+    return PAD * 2 + maxName + GAP * 3 + SPARK_W + maxValue + maxChange;
+  }
+
+  function computeNewsCardIdealWidth(feed) {
+    var PAD = 4, GAP = 6;
+    var stories = feed.stories || [];
+    if (stories.length === 0) return 320;
+
+    var scoreWidths = stories.map(function(s) { return measureWidth(String(s.score || 0), FONTS.newsScore); });
+    var maxScore = Math.max.apply(null, scoreWidths);
+    var metaTexts = stories.map(function(s) { return (s.time_ago || '') + ' ' + (s.comments || 0) + 'c'; });
+    var metaWidths = metaTexts.map(function(t) { return measureWidth(t, FONTS.newsMeta); });
+    var maxMeta = Math.max.apply(null, metaWidths);
+
+    // Use 60th percentile title width so most titles read well
+    var titleWidths = stories.map(function(s) { return measureWidth(s.title || '', FONTS.newsTitle); });
+    titleWidths.sort(function(a, b) { return a - b; });
+    var p60Title = titleWidths[Math.floor(titleWidths.length * 0.6)] || 200;
+
+    return PAD * 2 + maxScore + GAP * 2 + p60Title + maxMeta;
+  }
+
+  function setCardFlexBasis(wrappers) {
+    var data = DASHBOARD_DATA;
+
+    wrappers.forEach(function(wrapper) {
+      var type = wrapper.dataset.cardType;
+      var idealWidth;
+
+      if (type === 'metric') {
+        var idx = parseInt(wrapper.dataset.cardIndex, 10);
+        var group = data.metric_groups[idx];
+        idealWidth = group ? computeMetricCardIdealWidth(group) : 220;
+      } else {
+        var feedId = wrapper.dataset.feedId;
+        var feed = null;
+        for (var i = 0; i < data.feeds.length; i++) {
+          if (data.feeds[i].id === feedId) { feed = data.feeds[i]; break; }
+        }
+        idealWidth = feed ? computeNewsCardIdealWidth(feed) : 320;
+      }
+
+      wrapper.style.flexBasis = Math.round(idealWidth) + 'px';
+      wrapper.style.maxWidth = Math.round(idealWidth * 1.6) + 'px';
+    });
   }
 
   // ═══════════════════════════════════════════════════════════════
@@ -870,7 +897,12 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
     var colors = readColors();
     var wrappers = Array.prototype.slice.call(document.querySelectorAll('.card-wrapper'));
 
-    renderAllCards(wrappers, colors);
+    // Compute ideal widths from content and set flex-basis before rendering
+    setCardFlexBasis(wrappers);
+
+    // Allow browser to settle flex layout, then render canvases at actual widths
+    requestAnimationFrame(function() {
+      renderAllCards(wrappers, colors);
 
     // Attach hover handlers
     wrappers.forEach(function(wrapper) {
@@ -927,6 +959,7 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
         ctx.restore();
       });
     }
+    }); // end requestAnimationFrame
   }
 
   // Wait for IBM Plex Mono to load before measuring/rendering
