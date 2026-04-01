@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meridian Reader: Curated RSS feed timeline">
+  <title>{{ title }}</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --up: #66800B; --down: #AF3029; --accent: #205EA6;
+      --link: #24837B; --purple: #5E409D; --orange: #BC5215;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+        --orange: #DA702C;
+      }
+    }
+
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      background: var(--bg); color: var(--text);
+      line-height: 1.4; padding: 4px; max-width: 900px; margin: 0 auto;
+    }
+
+    header {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 2px 4px 4px; margin-bottom: 4px;
+      border-bottom: 1px solid var(--muted);
+    }
+    .title { font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+    .title a { color: var(--text); text-decoration: none; }
+    .timestamp { color: var(--dim); font-size: 9px; }
+
+    /* Category tabs */
+    .tabs {
+      display: flex; gap: 2px; margin-bottom: 6px; flex-wrap: wrap;
+      border-bottom: 1px solid var(--muted); padding-bottom: 4px;
+    }
+    .tab {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      padding: 2px 6px; border: 1px solid var(--muted); border-radius: 2px;
+      background: transparent; color: var(--dim); cursor: pointer;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .tab:hover { border-color: var(--accent); color: var(--accent); }
+    .tab.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+    /* Entry list */
+    .entry {
+      padding: 6px 4px; border-bottom: 1px solid var(--muted);
+      cursor: pointer; transition: background 0.1s;
+    }
+    .entry:hover { background: var(--card); }
+    .entry.focused { background: var(--card); border-left: 2px solid var(--accent); padding-left: 2px; }
+    .entry-header {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: 8px;
+    }
+    .entry-title {
+      font-size: 10px; font-weight: 400; color: var(--text);
+      flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .entry-title a { color: var(--text); text-decoration: none; }
+    .entry-title a:hover { color: var(--accent); }
+    .entry-meta {
+      font-size: 8px; color: var(--dim); white-space: nowrap;
+      display: flex; gap: 6px; align-items: baseline;
+    }
+    .entry-source { color: var(--link); font-weight: 500; }
+    .entry-category {
+      font-size: 7px; color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .entry-summary {
+      font-size: 9px; color: var(--dim); margin-top: 2px;
+      line-height: 1.35; display: none;
+      max-height: 60px; overflow: hidden;
+    }
+    .entry.expanded .entry-summary { display: block; }
+    .entry-actions {
+      font-size: 8px; margin-top: 2px; display: none; gap: 8px;
+    }
+    .entry.expanded .entry-actions { display: flex; }
+    .entry-actions a { color: var(--link); text-decoration: none; }
+    .entry-actions a:hover { text-decoration: underline; }
+
+    /* Time decay: fade older entries */
+    .entry[data-age="old"] { opacity: 0.7; }
+    .entry[data-age="stale"] { opacity: 0.5; }
+
+    /* Category section headers */
+    .category-header {
+      font-size: 9px; font-weight: 500; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--accent);
+      padding: 4px; margin-top: 8px;
+      border-left: 3px solid var(--accent); padding-left: 6px;
+    }
+
+    /* Keyboard help */
+    .kbd-help {
+      position: fixed; bottom: 4px; right: 4px;
+      font-size: 7px; color: var(--dim); background: var(--card);
+      padding: 2px 6px; border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .kbd-help kbd {
+      background: var(--bg); padding: 0 3px; border: 1px solid var(--muted);
+      border-radius: 1px; font-family: inherit;
+    }
+
+    footer {
+      margin-top: 8px; padding: 6px 4px;
+      border-top: 1px solid var(--muted); text-align: center;
+      color: var(--dim); font-size: 7px;
+    }
+    footer a { color: var(--link); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      body { padding: 2px; }
+      .entry-title { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="title"><a href="index.html">Meridian</a> / Reader</span>
+  <span class="timestamp">{{ generated_at }}</span>
+</header>
+
+<div class="tabs">
+  <button class="tab active" data-category="all">All</button>
+  {% for cat in categories %}
+  <button class="tab" data-category="{{ cat }}">{{ cat }}</button>
+  {% endfor %}
+</div>
+
+<div id="entries">
+{% for cat in categories %}
+  <div class="category-header" data-category="{{ cat }}">{{ cat }}</div>
+  {% for entry in by_category[cat] %}
+  <div class="entry"
+       data-category="{{ cat }}"
+       data-entry-id="{{ entry.id }}"
+       data-age="{% if entry.time_ago and entry.time_ago.endswith('d') %}old{% elif entry.time_ago and entry.time_ago.endswith('w') %}stale{% else %}fresh{% endif %}">
+    <div class="entry-header">
+      <span class="entry-title">
+        <a href="read/{{ entry.id }}.html">{{ entry.title }}</a>
+      </span>
+      <span class="entry-meta">
+        <span class="entry-source">{{ entry.feed_title }}</span>
+        <span>{{ entry.time_ago }}</span>
+        {% if entry.domain %}<span>{{ entry.domain }}</span>{% endif %}
+      </span>
+    </div>
+    {% if entry.summary %}
+    <div class="entry-summary">{{ entry.summary[:200] }}</div>
+    {% endif %}
+    <div class="entry-actions">
+      <a href="read/{{ entry.id }}.html">Read in Meridian</a>
+      {% if entry.url %}<a href="{{ entry.url }}" target="_blank" rel="noopener">Open original</a>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+{% endfor %}
+</div>
+
+<div class="kbd-help">
+  <kbd>j</kbd>/<kbd>k</kbd> navigate &middot;
+  <kbd>o</kbd> read &middot;
+  <kbd>O</kbd> original &middot;
+  <kbd>x</kbd> expand
+</div>
+
+<footer>
+  <a href="index.html">Dashboard</a> |
+  <a href="https://github.com/xiaolong-y/meridian">src</a>
+</footer>
+
+<script>
+(function() {
+  // Category filtering
+  var tabs = document.querySelectorAll('.tab');
+  var entries = document.querySelectorAll('.entry');
+  var headers = document.querySelectorAll('.category-header');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      var cat = tab.dataset.category;
+
+      entries.forEach(function(e) {
+        e.style.display = (cat === 'all' || e.dataset.category === cat) ? '' : 'none';
+      });
+      headers.forEach(function(h) {
+        h.style.display = (cat === 'all' || h.dataset.category === cat) ? '' : 'none';
+      });
+
+      // Reset focus
+      focusIdx = -1;
+      updateFocus();
+    });
+  });
+
+  // Keyboard navigation
+  var focusIdx = -1;
+
+  function visibleEntries() {
+    return Array.from(entries).filter(function(e) { return e.style.display !== 'none'; });
+  }
+
+  function updateFocus() {
+    var visible = visibleEntries();
+    entries.forEach(function(e) { e.classList.remove('focused'); });
+    if (focusIdx >= 0 && focusIdx < visible.length) {
+      visible[focusIdx].classList.add('focused');
+      visible[focusIdx].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    var visible = visibleEntries();
+
+    switch(e.key) {
+      case 'j':
+        focusIdx = Math.min(focusIdx + 1, visible.length - 1);
+        updateFocus();
+        e.preventDefault();
+        break;
+      case 'k':
+        focusIdx = Math.max(focusIdx - 1, 0);
+        updateFocus();
+        e.preventDefault();
+        break;
+      case 'o':
+        if (focusIdx >= 0 && focusIdx < visible.length) {
+          var link = visible[focusIdx].querySelector('.entry-title a');
+          if (link) window.location.href = link.href;
+        }
+        e.preventDefault();
+        break;
+      case 'O':
+        if (focusIdx >= 0 && focusIdx < visible.length) {
+          var orig = visible[focusIdx].querySelector('.entry-actions a[target]');
+          if (orig) window.open(orig.href, '_blank');
+        }
+        e.preventDefault();
+        break;
+      case 'x':
+        if (focusIdx >= 0 && focusIdx < visible.length) {
+          visible[focusIdx].classList.toggle('expanded');
+        }
+        e.preventDefault();
+        break;
+    }
+  });
+
+  // Click to expand
+  entries.forEach(function(entry, idx) {
+    entry.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') return;
+      entry.classList.toggle('expanded');
+      focusIdx = Array.from(visibleEntries()).indexOf(entry);
+      updateFocus();
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

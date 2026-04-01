@@ -12,7 +12,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Generator
 
-from .models import Observation, Story, MetricMeta
+from .models import Observation, Story, MetricMeta, RSSFeed, RSSEntry
 
 DB_PATH = Path(__file__).parent.parent.parent / "data" / "meridian.db"
 
@@ -49,6 +49,49 @@ CREATE TABLE IF NOT EXISTS stories (
 
 CREATE INDEX IF NOT EXISTS idx_stories_feed ON stories(feed_id);
 CREATE INDEX IF NOT EXISTS idx_stories_score ON stories(score DESC);
+
+-- RSS feed subscriptions
+CREATE TABLE IF NOT EXISTS rss_feeds (
+    id TEXT PRIMARY KEY,
+    title TEXT NOT NULL,
+    feed_url TEXT NOT NULL UNIQUE,
+    site_url TEXT,
+    category TEXT,
+    tier TEXT DEFAULT 'normal',
+    etag TEXT,
+    last_modified TEXT,
+    last_fetched_at TEXT,
+    last_status INTEGER,
+    error_count INTEGER DEFAULT 0,
+    created_at TEXT DEFAULT (datetime('now'))
+);
+
+-- RSS feed entries
+CREATE TABLE IF NOT EXISTS rss_entries (
+    id TEXT PRIMARY KEY,
+    feed_id TEXT NOT NULL,
+    guid TEXT,
+    title TEXT NOT NULL,
+    url TEXT,
+    summary TEXT,
+    content TEXT,
+    content_hash TEXT,
+    author TEXT,
+    published_at TEXT,
+    fetched_at TEXT DEFAULT (datetime('now')),
+    word_count INTEGER,
+    read_time_minutes INTEGER
+);
+
+CREATE INDEX IF NOT EXISTS idx_rss_entries_feed ON rss_entries(feed_id);
+CREATE INDEX IF NOT EXISTS idx_rss_entries_published ON rss_entries(published_at DESC);
+
+-- Saved RSS entries (read-later)
+CREATE TABLE IF NOT EXISTS rss_saved (
+    entry_id TEXT PRIMARY KEY,
+    saved_at TEXT DEFAULT (datetime('now')),
+    note TEXT
+);
 
 -- Metric metadata cache
 CREATE TABLE IF NOT EXISTS metrics (
@@ -182,3 +225,109 @@ def get_all_metric_meta() -> list[dict]:
     with get_connection() as conn:
         rows = conn.execute("SELECT * FROM metrics ORDER BY id").fetchall()
         return [dict(row) for row in rows]
+
+
+# ── RSS feed operations ──────────────────────────────────────────────
+
+
+def upsert_rss_feed(feed: RSSFeed) -> None:
+    """Insert or update an RSS feed subscription."""
+    with get_connection() as conn:
+        conn.execute("""
+            INSERT INTO rss_feeds (id, title, feed_url, site_url, category, tier, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, datetime('now'))
+            ON CONFLICT(id) DO UPDATE SET
+                title=excluded.title, feed_url=excluded.feed_url,
+                site_url=excluded.site_url, category=excluded.category,
+                tier=excluded.tier
+        """, (feed.id, feed.title, feed.feed_url, feed.site_url,
+              feed.category, feed.tier))
+
+
+def update_rss_feed_status(feed_id: str, status: int,
+                           etag: str = None, last_modified: str = None) -> None:
+    """Update feed polling status after fetch."""
+    with get_connection() as conn:
+        conn.execute("""
+            UPDATE rss_feeds SET
+                last_status = ?, etag = COALESCE(?, etag),
+                last_modified = COALESCE(?, last_modified),
+                last_fetched_at = datetime('now'),
+                error_count = CASE WHEN ? < 400 THEN 0 ELSE error_count + 1 END
+            WHERE id = ?
+        """, (status, etag, last_modified, status, feed_id))
+
+
+def upsert_rss_entry(entry: RSSEntry) -> None:
+    """Insert or update an RSS entry."""
+    with get_connection() as conn:
+        conn.execute("""
+            INSERT INTO rss_entries
+                (id, feed_id, guid, title, url, summary, content,
+                 content_hash, author, published_at, fetched_at,
+                 word_count, read_time_minutes)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), ?, ?)
+            ON CONFLICT(id) DO UPDATE SET
+                title=excluded.title, summary=excluded.summary,
+                content=COALESCE(excluded.content, content),
+                content_hash=COALESCE(excluded.content_hash, content_hash),
+                word_count=COALESCE(excluded.word_count, word_count),
+                read_time_minutes=COALESCE(excluded.read_time_minutes, read_time_minutes)
+        """, (entry.id, entry.feed_id, entry.guid, entry.title,
+              entry.url, entry.summary, entry.content,
+              entry.content_hash, entry.author,
+              entry.published_at.isoformat() if entry.published_at else None,
+              entry.word_count, entry.read_time_minutes))
+
+
+def get_rss_entries_by_feed(feed_id: str, limit: int = 20) -> list[dict]:
+    """Get RSS entries for a specific feed."""
+    with get_connection() as conn:
+        rows = conn.execute("""
+            SELECT * FROM rss_entries WHERE feed_id = ?
+            ORDER BY published_at DESC LIMIT ?
+        """, (feed_id, limit)).fetchall()
+        return [dict(r) for r in rows]
+
+
+def get_all_rss_entries(limit: int = 100) -> list[dict]:
+    """Get all RSS entries with feed metadata for reader page."""
+    with get_connection() as conn:
+        rows = conn.execute("""
+            SELECT e.*, f.title as feed_title, f.category, f.tier, f.site_url
+            FROM rss_entries e JOIN rss_feeds f ON e.feed_id = f.id
+            ORDER BY e.published_at DESC LIMIT ?
+        """, (limit,)).fetchall()
+        return [dict(r) for r in rows]
+
+
+def get_all_rss_feeds() -> list[dict]:
+    """Get all RSS feed subscriptions."""
+    with get_connection() as conn:
+        rows = conn.execute(
+            "SELECT * FROM rss_feeds ORDER BY category, title"
+        ).fetchall()
+        return [dict(r) for r in rows]
+
+
+def get_rss_entry(entry_id: str) -> dict:
+    """Get a single RSS entry by ID."""
+    with get_connection() as conn:
+        row = conn.execute("""
+            SELECT e.*, f.title as feed_title, f.category, f.tier, f.site_url
+            FROM rss_entries e JOIN rss_feeds f ON e.feed_id = f.id
+            WHERE e.id = ?
+        """, (entry_id,)).fetchone()
+        return dict(row) if row else None
+
+
+def cleanup_old_rss_entries(days: int = 30) -> int:
+    """Remove RSS entries older than N days (except saved). Returns count."""
+    cutoff = (datetime.now() - timedelta(days=days)).isoformat()
+    with get_connection() as conn:
+        cursor = conn.execute("""
+            DELETE FROM rss_entries
+            WHERE fetched_at < ?
+            AND id NOT IN (SELECT entry_id FROM rss_saved)
+        """, (cutoff,))
+        return cursor.rowcount

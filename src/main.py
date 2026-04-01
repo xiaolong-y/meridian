@@ -43,14 +43,21 @@ from .storage.database import (
     update_metric_meta,
     cleanup_old_stories,
     clear_feed_stories,
+    upsert_rss_feed,
+    upsert_rss_entry,
+    update_rss_feed_status,
+    cleanup_old_rss_entries,
+    get_all_rss_feeds,
 )
-from .storage.models import MetricMeta
+from .storage.models import MetricMeta, RSSFeed
+from .connectors.rss import RSSConnector, RSSFeedConfig
+from .connectors.extractor import extract_article
 from .transforms.calculations import (
     calculate_change,
     calculate_yoy_percent,
     calculate_qoq_percent,
 )
-from .generator.html import generate_dashboard
+from .generator.html import generate_dashboard, generate_reader, generate_article_pages
 
 # Configure logging
 logging.basicConfig(
@@ -261,6 +268,76 @@ def fetch_feeds(feeds_config: dict) -> None:
             logger.error(f"  -> Failed: {e}")
 
 
+def fetch_rss(rss_config: dict) -> None:
+    """Fetch all configured RSS feeds."""
+    connector = RSSConnector()
+    feeds = rss_config.get("rss_feeds", [])
+    display = rss_config.get("display", {})
+
+    logger.info(f"Processing {len(feeds)} RSS feeds...")
+
+    for feed_def in feeds:
+        feed_id = feed_def["id"]
+        logger.info(f"  {feed_id}...")
+
+        # Upsert feed record
+        feed = RSSFeed(
+            id=feed_id, title=feed_def["title"],
+            feed_url=feed_def["feed_url"],
+            site_url=feed_def.get("site_url"),
+            category=feed_def.get("category"),
+            tier=feed_def.get("tier", "normal"),
+        )
+        upsert_rss_feed(feed)
+
+        # Load conditional GET state from DB
+        db_feeds = {f["id"]: f for f in get_all_rss_feeds()}
+        db_feed = db_feeds.get(feed_id, {})
+
+        config = RSSFeedConfig(
+            id=feed_id, title=feed_def["title"],
+            feed_url=feed_def["feed_url"],
+            site_url=feed_def.get("site_url"),
+            category=feed_def.get("category"),
+            tier=feed_def.get("tier", "normal"),
+            limit=feed_def.get("limit", 50),
+            etag=db_feed.get("etag"),
+            last_modified=db_feed.get("last_modified"),
+        )
+
+        try:
+            result = connector.fetch(config)
+
+            if result.success and result.data:
+                entries = connector.normalize(config, result.data)
+
+                for entry in entries:
+                    if entry.url:
+                        content = extract_article(entry.url)
+                        if content:
+                            entry.content = content
+                            entry.word_count = len(content.split())
+                            entry.read_time_minutes = (entry.word_count // 200) + 1
+                    upsert_rss_entry(entry)
+
+                logger.info(f"    -> {len(entries)} entries")
+
+            update_rss_feed_status(
+                feed_id,
+                status=result.status_code or (200 if result.success else 500),
+                etag=result.etag, last_modified=result.last_modified,
+            )
+
+        except Exception as e:
+            logger.error(f"    -> Error: {e}")
+            update_rss_feed_status(feed_id, status=500)
+
+    retention = display.get("article_retention_days", 30)
+    deleted = cleanup_old_rss_entries(days=retention)
+    if deleted:
+        logger.info(f"  Cleaned up {deleted} old RSS entries")
+
+
 def main():
     """Main entry point for the orchestrator."""
     parser = argparse.ArgumentParser(
@@ -316,6 +393,17 @@ Examples:
         if deleted:
             logger.info(f"Cleaned up {deleted} old stories")
 
+        # Fetch RSS feeds
+        rss_config_path = CONFIG_DIR / "rss_feeds.yaml"
+        if rss_config_path.exists():
+            with open(rss_config_path) as f:
+                rss_config = yaml.safe_load(f) or {}
+            if rss_config.get("rss_feeds"):
+                logger.info("")
+                logger.info("Fetching RSS feeds...")
+                logger.info("-" * 30)
+                fetch_rss(rss_config)
+
     if not args.fetch_only:
         # Generate dashboard
         logger.info("")
@@ -323,6 +411,12 @@ Examples:
         logger.info("-" * 30)
         output = generate_dashboard()
         logger.info(f"Generated: {output}")
+
+        reader = generate_reader()
+        logger.info(f"Generated: {reader}")
+
+        article_count = generate_article_pages()
+        logger.info(f"Generated {article_count} article pages")
 
     logger.info("")
     logger.info("=" * 50)

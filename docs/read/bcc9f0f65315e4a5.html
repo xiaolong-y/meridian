@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantum computing in the second quantum century — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="cce065aa805d31e2.html" title="Nicole’s guide to interviewing for faculty positions">&larr; prev</a>
+    <a href="2865aa704f643085.html" title="Make use of time, let not advantage slip">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Quantum computing in the second quantum century</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Frontiers (Caltech)</span>
+      <span>preskill</span>
+      <span>13w</span>
+      <span class="article-category">quantum</span>
+      <span>2398 words</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    On December 10, I gave a keynote address at the Q2B 2025 Conference in Silicon Valley. This is a transcript of my remarks. The slides I presented are here. The video is here.
+The first century
+We are nearing the end of the International Year of Quantum Science and Technology, so designated to commemorate the 100th anniversary of the discovery of quantum mechanics in 1925. The story goes that 23-year-old Werner Heisenberg, seeking relief from severe hay fever, sailed to the remote North Sea Island of Helgoland, where a crucial insight led to his first, and notoriously obscure, paper describing the framework of quantum mechanics.
+In the years following, that framework was clarified and extended by Heisenberg and others. Notably among them was Paul Dirac, who emphasized that we have a theory of almost everything that matters in everyday life. It’s the Schrödinger equation, which captures the quantum behavior of many electrons interacting electromagnetically with one another and with atomic nuclei. That describes everything in chemistry and materials science and all that is built on those foundations. But, as Dirac lamented, in general the equation is too complicated to solve for more than a few electrons.
+Somehow, over 50 years passed before Richard Feynman proposed that if we want a machine to help us solve quantum problems, it should be a quantum machine, not a classical machine. The quest for such a machine, he observed, is “a wonderful problem because it doesn’t look so easy,” a statement that still rings true.
+I was drawn into that quest about 30 years ago. It was an exciting time. Efficient quantum algorithms for the factoring and discrete log problems were discovered, followed rapidly by the first quantum error-correcting codes and the foundations of fault-tolerant quantum computing. By late 1996, it was firmly established that a noisy quantum computer could simulate an ideal quantum computer efficiently if the noise is not too strong or strongly correlated. Many of us were then convinced that powerful fault-tolerant quantum computers could eventually be built and operated.
+Three decades later, as we enter the second century of quantum mechanics, how far have we come? Today’s quantum devices can perform some tasks beyond the reach of the most powerful existing conventional supercomputers. Error correction had for decades been a playground for theorists; now informative demonstrations are achievable on quantum platforms. And the world is investing heavily in advancing the technology further.
+Current NISQ machines can perform quantum computations with thousands of two-qubit gates, enabling early explorations of highly entangled quantum matter, but still with limited commercial value. To unlock a wide variety of scientific and commercial applications, we need machines capable of performing billions or trillions of two-qubit gates. Quantum error correction is the way to get there.
+I’ll highlight some notable developments over the past year—among many others I won’t have time to discuss. (1) We’re seeing intriguing quantum simulations of quantum dynamics in regimes that are arguably beyond the reach of classical simulations. (2) Atomic processors, both ion traps and neutral atoms in optical tweezers, are advancing impressively. (3) We’re acquiring a deeper appreciation of the advantages of nonlocal connectivity in fault-tolerant protocols. (4) And resource estimates for cryptanalytically relevant quantum algorithms have dropped sharply.
+Quantum machines for science
+A few years ago, I was not particularly excited about running applications on the quantum platforms that were then available; now I’m more interested. We have superconducting devices from IBM and Google with over 100 qubits and two-qubit error rates approaching 10^{-3}. The Quantinuum ion trap device has even better fidelity as well as higher connectivity. Neutral-atom processors have many qubits; they lag behind now in fidelity, but are improving.
+Users face tradeoffs: The high connectivity and fidelity of ion traps is an advantage, but their clock speeds are orders of magnitude slower than for superconducting processors. That limits the number of times you can run a given circuit, and therefore the attainable statistical accuracy when estimating expectations of observables.
+Verifiable quantum advantage
+Much attention has been paid to sampling from the output of random quantum circuits, because this task is provably hard classically under reasonable assumptions. The trouble is that, in the high-complexity regime where a quantum computer can reach far beyond what classical computers can do, the accuracy of the quantum computation cannot be checked efficiently. Therefore, attention is now shifting toward verifiable quantum advantage — tasks where the answer can be checked. If we solved a factoring or discrete log problem, we could easily check the quantum computer’s output with a classical computation, but we’re not yet able to run these quantum algorithms in the classically hard regime. We might settle instead for quantum verification, meaning that we check the result by comparing two quantum computations and verifying the consistency of the results.
+A type of classical verification of a quantum circuit was demonstrated recently by BlueQubit on a Quantinuum processor. In this scheme, a designer builds a family of so-called “peaked” quantum circuits such that, for each such circuit and for a specific input, one output string occurs with unusually high probability. An agent with a quantum computer who knows the circuit and the right input can easily identify the preferred output string by running the circuit a few times. But the quantum circuits are cleverly designed to hide the peaked output from a classical agent — one may argue heuristically that the classical agent, who has a description of the circuit and the right input, will find it hard to predict the preferred output. Thus quantum agents, but not classical agents, can convince the circuit designer that they have reliable quantum computers. This observation provides a convenient way to benchmark quantum computers that operate in the classically hard regime.
+The notion of quantum verification was explored by the Google team using Willow. One can execute a quantum circuit acting on a specified input, and then measure a specified observable in the output. By repeating the procedure sufficiently many times, one obtains an accurate estimate of the expectation value of that output observable. This value can be checked by any other sufficiently capable quantum computer that runs the same circuit. If the circuit is strategically chosen, then the output value may be very sensitive to many-qubit interference phenomena, in which case one may argue heuristically that accurate estimation of that output observable is a hard task for classical computers. These experiments, too, provide a tool for validating quantum processors in the classical hard regime. The Google team even suggests that such experiments may have practical utility for inferring molecular structure from nuclear magnetic resonance data.
+Correlated fermions in two dimensions
+Quantum simulations of fermionic systems are especially compelling, since electronic structure underlies chemistry and materials science. These systems can be hard to simulate in more than one dimension, particularly in parameter regimes where fermions are strongly correlated, or in other words profoundly entangled. The two-dimensional Fermi-Hubbard model is a simplified caricature of two-dimensional materials that exhibit high-temperature superconductivity and hence has been much studied in recent decades. Large-scale tensor-network simulations are reasonably successful at capturing static properties of this model, but the dynamical properties are more elusive.
+Dynamics in the Fermi-Hubbard model has been simulated recently on both Quantinuum (here and here) and Google processors. Only a 6 x 6 lattice of electrons was simulated, but this is already well beyond the scope of exact classical simulation. Comparing (error-mitigated) quantum circuits with over 4000 two-qubit gates to heuristic classical tensor-network and Majorana path methods, discrepancies were noted, and the Phasecraft team argues that the quantum simulation results are more trustworthy. The Harvard group also simulated models of fermionic dynamics, but were limited to relatively low circuit depths due to atom loss. It’s encouraging that today’s quantum processors have reached this interesting two-dimensional strongly correlated regime, and with improved gate fidelity and noise mitigation we can go somewhat further, but expanding system size substantially in digital quantum simulation will require moving toward fault-tolerant implementations. We should also note that there are analog Fermi-Hubbard simulators with thousands of lattice sites, but digital simulators provide greater flexibility in the initial states we can prepare, the observables we can access, and the Hamiltonians we can reach.
+When it comes to many-particle quantum simulation, a nagging question is: “Will AI eat quantum’s lunch?” There is surging interest in using classical artificial intelligence to solve quantum problems, and that seems promising. How will AI impact our quest for quantum advantage in this problem space? This question is part of a broader issue: classical methods for quantum chemistry and materials have been improving rapidly, largely because of better algorithms, not just greater processing power. But for now classical AI applied to strongly correlated matter is hampered by a paucity of training data. Data from quantum experiments and simulations will likely enhance the power of classical AI to predict properties of new molecules and materials. The practical impact of that predictive power is hard to clearly foresee.
+The need for fundamental research
+Today is December 10th, the anniversary of Alfred Nobel’s death. The Nobel Prize award ceremony in Stockholm concluded about an hour ago, and the Laureates are about to sit down for a well-deserved sumptuous banquet. That’s a fitting coda to this International Year of Quantum. It’s useful to be reminded that the foundations for today’s superconducting quantum processors were established by fundamental research 40 years ago into macroscopic quantum phenomena. No doubt fundamental curiosity-driven quantum research will continue to uncover unforeseen technological opportunities in the future, just as it has in the past.
+I have emphasized superconducting, ion-trap, and neutral atom processors because those are most advanced today, but it’s vital to continue to pursue alternatives that could suddenly leap forward, and to be open to new hardware modalities that are not top-of-mind at present. It is striking that programmable, gate-based quantum circuits in neutral-atom optical-tweezer arrays were first demonstrated only a few years ago, yet that platform now appears especially promising for advancing fault-tolerant quantum computing. Policy makers should take note!
+The joy of nonlocal connectivity
+As the fault-tolerant era dawns, we increasingly recognize the potential advantages of the nonlocal connectivity resulting from atomic movement in ion traps and tweezer arrays, compared to geometrically local two-dimensional processing in solid-state devices. Over the past few years, many contributions from both industry and academia have clarified how this connectivity can reduce the overhead of fault-tolerant protocols.
+Even when using the standard surface code, the ability to implement two-qubit logical gates transversally—rather than through lattice surgery—significantly reduces the number of syndrome-measurement rounds needed for reliable decoding, thereby lowering the time overhead of fault tolerance. Moreover, the global control and flexible qubit layout in tweezer arrays increase the parallelism available to logical circuits.
+Nonlocal connectivity also enables the use of quantum low-density parity-check (qLDPC) codes with higher encoding rates, reducing the number of physical qubits needed per logical qubit for a target logical error rate. These codes now have acceptably high accuracy thresholds, practical decoders, and—thanks to rapid theoretical progress this year—emerging constructions for implementing universal logical gate sets. (See for example here, here, here, here.)
+A serious drawback of tweezer arrays is their comparatively slow clock speed, limited by the timescales for atom transport and qubit readout. A millisecond-scale syndrome-measurement cycle is a major disadvantage relative to microsecond-scale cycles in some solid-state platforms. Nevertheless, the reductions in logical-gate overhead afforded by atomic movement can partially compensate for this limitation, and neutral-atom arrays with thousands of physical qubits already exist.
+To realize the full potential of neutral-atom processors, further improvements are needed in gate fidelity and continuous atom loading to maintain large arrays during deep circuits. Encouragingly, active efforts on both fronts are making steady progress.
+Approaching cryptanalytic relevance
+Another noteworthy development this year was a significant improvement in the physical qubit count required to run a cryptanalytically relevant quantum algorithm, reduced by Gidney to less than 1 million physical qubits from the 20 million Gidney and Ekerå had estimated earlier. This applies under standard assumptions: a two-qubit error rate of 10^{-3} and 2D geometrically local processing. The improvement was achieved using three main tricks. One was using approximate residue arithmetic to reduce the number of logical qubits. (This also suppresses the success probability and therefore lengthens the time to solution by a factor of a few.) Another was using a more efficient scheme to reduce the number of physical qubits for each logical qubit in cold storage. And the third was a recently formulated scheme for reducing the spacetime cost of non-Clifford gates. Further cost reductions seem possible using advanced fault-tolerant constructions, highlighting the urgency of accelerating migration from vulnerable cryptosystems to post-quantum cryptography.
+Looking forward
+Over the next 5 years, we anticipate dramatic progress toward scalable fault-tolerant quantum computing, and scientific insights enabled by programmable quantum devices arriving at an accelerated pace. Looking further ahead, what might the future hold? I was intrigued by a 1945 letter from John von Neumann concerning the potential applications of fast electronic computers. After delineating some possible applications, von Neumann added: “Uses which are not, or not easily, predictable now, are likely to be the most important ones … they will … constitute the most surprising extension of our present sphere of action.” Not even a genius like von Neumann could foresee the digital revolution that lay ahead. Predicting the future course of quantum technology is even more hopeless because quantum information processing entails an even larger step beyond past experience.
+As we contemplate the long-term trajectory of quantum science and technology, we are hampered by our limited imaginations. But one way to loosely characterize the difference between the past and the future of quantum science is this: For the first hundred years of quantum mechanics, we achieved great success at understanding the behavior of weakly correlated many-particle systems, leading for example to transformative semiconductor and laser technologies. The grand challenge and opportunity we face in the second quantum century is acquiring comparable insight into the complex behavior of highly entangled states of many particles, behavior well beyond the scope of current theory or computation. The wonders we encounter in the second century of quantum mechanics, and their implications for human civilization, may far surpass those of the first century. So we should gratefully acknowledge the quantum pioneers of the past century, and wish good fortune to the quantum explorers of the future.
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumfrontiers.com/2025/12/26/quantum-computing-in-the-second-quantum-century/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="cce065aa805d31e2.html" class="prev-next">&larr; Nicole’s guide to interviewing for faculty positions</a>
+  
+  
+  <a href="2865aa704f643085.html" class="prev-next">Make use of time, let not advantage slip &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-04-01 02:33 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>

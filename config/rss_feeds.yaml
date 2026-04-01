@@ -1,0 +1,44 @@
+# RSS feed subscriptions — managed via 'python -m src.rss' CLI
+# Feeds are fetched every 6 hours via GitHub Actions
+
+rss_feeds:
+  # === Quantum Computing Researchers ===
+  - id: scott-aaronson
+    title: "Shtetl-Optimized"
+    feed_url: https://scottaaronson.blog/?feed=rss2
+    site_url: https://scottaaronson.blog
+    category: quantum
+    tier: curated
+
+  - id: quantum-computing-report
+    title: "Quantum Computing Report"
+    feed_url: https://quantumcomputingreport.com/feed/
+    site_url: https://quantumcomputingreport.com
+    category: quantum
+    tier: curated
+
+  - id: qiskit-blog
+    title: "Qiskit Blog"
+    feed_url: https://medium.com/feed/qiskit
+    site_url: https://medium.com/qiskit
+    category: quantum
+    tier: curated
+
+  - id: quantum-frontiers
+    title: "Quantum Frontiers (Caltech)"
+    feed_url: https://quantumfrontiers.com/feed/
+    site_url: https://quantumfrontiers.com
+    category: quantum
+    tier: curated
+
+  - id: microsoft-quantum
+    title: "Microsoft Quantum Blog"
+    feed_url: https://cloudblogs.microsoft.com/quantum/feed/
+    site_url: https://cloudblogs.microsoft.com/quantum
+    category: quantum
+    tier: curated
+
+display:
+  entries_per_category: 8
+  max_age_days: 7
+  article_retention_days: 30

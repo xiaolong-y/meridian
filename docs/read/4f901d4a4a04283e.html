@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast with Tom Darras, CEO and Co-founder, Welinq — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="3db5f082770c9c6b.html" title="memQ Secures $10M Series A to Develop Distributed Quantum Networking Hardware">&larr; prev</a>
+    <a href="cfcfacc968a21b80.html" title="QuantX Labs Launches Optical Frequency Comb for Orbital Clock Demonstration">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Podcast with Tom Darras, CEO and Co-founder, Welinq</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>22h</span>
+      <span class="article-category">quantum</span>
+      <span>3589 words</span>
+      <span>18 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    Yuval Boger interviews Tom Darras, CEO and co-founder of Welinq. They discuss how quantum networking uses shared entanglement to interconnect quantum processors, enabling modular scale-out clusters and quantum-safe connectivity between data centers. Tom explains the technical building blocks—qubit-photon interfaces, optical networks, entangled photon sources, and especially quantum memories—as well as the performance metrics that matter most, like entanglement generation rate, fidelity, and memory lifetime. They also cover Welinq’s Arachne compiler for distributing circuits across multiple QPUs, why networking is becoming a consensus scaling strategy across modalities, and how “quantum-augmented data centers” are starting to become real initiatives.
+Transcript
+Yuval Boger: Hello Tom, and thank you for joining me today.
+Tom Darras: Thank you.
+Yuval: So, who are you and what do you do?
+Tom: Well, it’s a real pleasure for me to be here today. My name is Tom Darras. I’m the CEO and co-founder of Welinq. And at Welinq we build networking technologies that connect quantum computers together. Our goal is to provide the entire stack of networking solutions that will allow us to deploy clusters of quantum computers in data centers all around the world.
+Yuval: When people talk about networking, sometimes they talk about achieving a very large number of qubits — sort of scale-out versus scale-up. Because it’s about networking separate quantum computers, sometimes it’s about secure communication. So which part are you targeting?
+Tom: So we are targeting typically all of them. What we are doing at Welinq is developing the technology to master and share entanglement between quantum systems, and then depending on the scale at which you manage to share this entanglement, you can work on a variety of applications. So of course for us the main application we are looking at is quantum computer interconnect, where the goal is to take several intermediate-scale quantum processors and connect them together to increase the computational power. And then once you have access to that, you can build clusters of quantum computers — in our case that can be either homogeneous or heterogeneous, between quantum computers based on a variety of technologies. So this local interconnection is really focusing on computing applications. But then what you can do as well is share this entanglement over larger and larger distances, typically targeting metropolitan scale, a few tens or a few hundreds of kilometers. And then the application we are targeting is how we can use this entanglement to connect clients of this network in a quantum-safe way. But in the end, when we discuss with our partners and in particular data centers, we see now a real convergence of these two applications and markets, because data centers of course want to have access to powerful computing resources, but they also need to ensure that they can provide secure access to those resources to their customers. With this understanding, we are now working with such partners on what we call quantum-augmented data centers at metropolitan scale, where we have several data centers in which we deploy interconnected machines locally, but we also connect these data centers between them in a quantum-safe way. So that’s the big picture of what we are building at Welinq.
+Yuval: How does it work?
+Tom: So from the physical perspective, the idea is that you have two quantum devices — let’s say two quantum computers. Each of them is composed of qubits, and inside these machines, the qubits are entangled with one another. So how does that work when you want to connect them in a quantum way? What you need to do is create entanglement between qubits that are physically separated. To do that we make use of an optical quantum network in which we share entanglement in the form of light. We can either send this photonic entanglement to the quantum computers to convert it into the qubits of the quantum computer, and then have the distant qubits entangled with one another. The other approach is to make it so the quantum computers can emit light from their own qubits — transferring the information from the qubits of, say, one atom of a neutral-atom quantum computer into light — and then making it so all these photons meet at some point, interfere, and when they interfere, thanks to specific measurements, we are swapping the entanglement between the quantum computers. That’s how this works.
+Yuval: Is it more difficult for certain types of modalities than others? Superconducting, neutral atoms, trapped ions, or something else?
+Tom: I would say the level of challenge is typically similar across all types of quantum computing technologies. What is very important to have in mind is that no matter the technology you’re considering — neutral atom, photonic, ion, silicon, or superconducting — it’s now becoming the broad consensus that networking is the most promising way to scale. The majority of players now are actively working on this topic.
+If we decompose the technical challenges, we can break them into three layers of the networking stack. One critical thing is that the quantum computers themselves need to be compatible with the network — they need to be network-ready. If you look at most quantum computers available today, they don’t have a quantum Ethernet port. You cannot today extract photons from some of the machines that have been deployed. So what we are building at Welinq is a key set of technologies — qubit-photon interfaces — that we are now incorporating into the QPUs of our partners so that we can extract optical information from their quantum processors. The specific challenge depends on the technology. For neutral atoms and ions, for example, you need to build a cavity system around your atoms. For superconducting quantum computing, you need to build what we call a microwave-to-optical transducer to convert the information from your superconducting circuit into the optical domain. There are very good companies with whom we are working on that topic. For photonic quantum computing, the conversion step is not needed since it’s already light, but you still need to ensure that the properties of your photons are compatible with the rest of the network — for example, converting the wavelength or reshaping photons before injecting them into the network. So those are also technologies we provide at Welinq.
+Moving into the optical network itself, what you need to build on the hardware side is a fully-fledged system where you can generate, allocate, store, and send entanglement between quantum computers on demand. For that we make use of conventional optical fibers along with specific quantum technologies — for example, entangled photon pair sources to generate optical entanglement in your network. A key technology in this quantum networking layer is quantum memories. Quantum memories are used to store optical entanglement so that you can retrieve it on demand and inject it into your quantum computers. So on the hardware side, the second layer requires building a variety of quantum technologies that are all interoperable, so that in the end you have a very efficient optical system to connect your devices.
+But you also need to work on the software layer of your networking stack, because once you have managed to network your quantum computers, it’s not the same thing to run an algorithm on a single machine as to distributing an algorithm across a cluster of quantum computers. At Welinq we are actively working on that as well — about one third of our R&amp;D is focused on it. A few months ago we released a software layer, a compiler called AraQne, that takes as input a large monolithic circuit, the number of QPUs you have access to, and the constraints of your network, and gives you at the output the optimal partition of that algorithm across the cluster of quantum computers. So we are really covering the entire networking stack.
+Yuval: Sometimes I hear quantum networking referred to in the same breath as quantum memory. Is that accurate, and if so, why?
+Tom: Quantum networking goes much further than quantum memory. Quantum memory is one component of a full quantum network system. A quantum network is really a fully-fledged infrastructure that can share entanglement between any quantum devices over arbitrary distances. To do that, you need access to many technologies — entangled photon pair sources, optical quantum frequency converters, qubit-photon interfaces, and quantum memories. Quantum memories are one essential component of the network, but they are essential because they are the only technology that allows you to store optical entanglement in the network. Light by definition is always traveling, and as you scale your architecture and increase the number of optical entangled states you need to share, if you don’t have the capability to buffer them and reallocate them on demand, your architecture will not scale. That’s why quantum memories are so central to quantum networking — but you need to build more than memories to build a quantum network.
+Historically at Welinq we really started with our memory technology. We had been working on laser-cooled neutral atoms for more than 20 years, and when we spun out Welinq four years ago, we had achieved the world record performance for quantum memories at Laboratoire Kastler-Brossel in Paris. Our first milestone as a company was to take that amazing technology, knowing it was critical for quantum networking, and make a product out of it. We delivered on that — we announced commercial availability of our quantum memories and recently announced that we have sold one to a customer in Europe. But of course we want to capture the full value of the quantum network. So around this quantum memory we have now built a full portfolio of interoperable technologies including entangled photon pair sources, optical quantum frequency converters, highly efficient qubit-photon interfaces, and the software layer, so that we can deliver fully-fledged quantum networking systems to our partners.
+Yuval: When people evaluate quantum computers, they talk about the number of logical qubits, the logical two-qubit error rate, sometimes gate speed or circuit depth. If I were evaluating quantum networking technologies, what are the key performance parameters I should be thinking about?
+Tom: A very critical parameter in quantum networking is how often you can share entanglement between two devices. This is called the entanglement rate, and you want to maximize it. If you have to wait ten minutes before actually entangling two devices, it’s so slow that you cannot make practical use of the networking. At Welinq this is really part of our culture — we build all the components of the network to maximize end-to-end entanglement rates. To do that, you need to make sure you are never losing quantum information along the way, which means maximizing what we call the efficiency of each component.
+Our quantum memories are a good example. When you store entanglement and retrieve it after storage, you don’t want to lose it. When we spun out the company, we had demonstrated world-record storage and retrieval efficiency above 90%, which was a real benchmark in the community for making these components deployment-ready. We keep that philosophy across our entire portfolio. When you work on qubit-photon interfaces, you want to do that with maximum efficiency. When you generate optical entanglement, you want to generate it with maximum purity.
+Another important parameter is the fidelity of your optical entangled state. The question is whether the entanglement is of good enough quality to use, for example, to execute a gate between two quantum computers. Here, the good news is that the fidelity requirements for quantum networking are not as stringent as what you need inside the quantum processors. There have been architecture papers recently demonstrating that with Bell state fidelities above around 90 to 92%, you can already use them in some distributed architecture protocols. You can also purify entangled states through distillation protocols. Taken together, we have now reached the point where we can experimentally generate entanglement with quality sufficient to run distributed quantum error correction on a cluster of quantum computers. That’s extremely promising. The challenge now is to be the first to assemble all these components at this level of performance — and we have achieved that at Welinq.
+Yuval: So you mentioned fidelity and entanglement generation rate and maybe storage time for the memory. Could you give me some numbers for what your products can deliver today?
+Tom: Storage time becomes important when you want to increase the distance between your devices. What happens is that you store an entangled state in one memory while another photon travels in an optical fiber at the speed of light. The longer the memory can hold information, the longer your entanglement links can be.
+For local interconnection at the level of a data center, storage time is not the limiting factor — even a few microseconds, which we could achieve before Welinq was created, is sufficient. But when you want to scale to more than 50 kilometers or a few hundred kilometers, you need to reach a few hundred microseconds or even the millisecond regime. And for satellite links, you would need a few milliseconds of storage time.
+We have made significant progress at Welinq on that front. When we started the company in 2022, we had demonstrated typically 10 to 15 microseconds of storage time for neutral atoms. Thanks to all the engineering work we have done, we released data about a year ago demonstrating 200 microseconds of on-demand storage time in our quantum memories, unlocking 50 kilometers of distance. And now we have data showing we have reached the millisecond regime. I would say for the applications we are targeting at Welinq, we have reached the benchmark.
+For storage and retrieval efficiency, when we started the company we were above 90%. We have now achieved 95% storage and retrieval efficiency with qubit fidelity above 99.5%. That’s what we have achieved at the level of our first quantum memory product.
+Yuval: You mentioned neutral atoms, but neutral atoms can actually scale within a single computer much more than, say, superconducting qubits can. People have shown thousands or close to 10,000 qubits on a single computer, whereas that’s not the case for superconducting. So have you chosen the right modality to network? Maybe networking is more urgent for superconducting or other technologies?
+Tom: That’s a very good point. Every technology has a glass ceiling, and depending on the platform, that ceiling is at a different height in terms of qubit count. At Welinq we take a multi-platform approach to quantum networking — we are working on neutral atoms, but also on superconducting quantum computing and on interconnection of photonic quantum computers. The technologies we have developed can also be extended to ion and silicon qubits. We are covering a large spectrum of technologies. Very interestingly, we are also working with data centers on building heterogeneous clusters of quantum computers spanning different modalities.
+Looking at neutral-atom quantum computers specifically: today you can get a few thousand qubits within a single chip, and we hope to reach maybe 10,000 or a few tens of thousands. But if you look at what’s needed to deliver really broad commercial value across many use cases, we need to scale to hundreds of thousands or even millions of atoms. In that case, a modular architecture — putting together several QPUs of a few tens of thousands of atoms each — is a very promising path.
+For ions the limitation is even more stringent. Typically, on a platform you can get a few tens or a few hundreds of ions. A very good example is the path IonQ has followed: originally limited in qubit count, they made acquisitions of Lightsynq and Oxford Ionics to scale. That’s another path several players in the industry are following.
+Yuval: How do you think about speed? Doesn’t networking significantly slow down the execution relative to running everything on a single computer, if you could run it on a single computer?
+Tom: If you could run it on a single quantum computer, I would advise you to do so — not just for speed reasons, but also because when you network devices together you need to dedicate some qubits to communication and others to computation. Even in conventional computing, a monolithic architecture is more efficient than a distributed one when you have that option. So we need to push both simultaneously. The problem is that we eventually hit the glass ceiling and have no choice but to scale.
+The key insight is that with technologies like quantum memories, we can generate and store large numbers of optical entangled states and effectively create an entanglement bank in the optical network. When you need to execute a gate between computers, the entanglement is already there ready to be used. What we have demonstrated at Welinq is that on a variety of qubit modalities, we can generate entanglement faster than it is consumed by the distributed architecture, so that the network is not the limiting factor. That’s extremely promising.
+Yuval: You mentioned software earlier. Initially I was thinking the software basically does a max-cut to separate the algorithm into blocks that are not heavily interconnected, but it sounds like it goes beyond that.
+Tom: It has to go beyond that, because what we are doing in our partitioning techniques is taking into account the fact that we are sharing entanglement between the processors. That’s really important. If you do a purely classical partitioning of a quantum algorithm, it’s actually very hard to outperform a distributed architecture relative to what you can already do on a monolithic circuit, because the power of a quantum computer comes from entanglement — the more entanglement you have access to, the more performant the machine. But if your software takes into account that you can now share entanglement between your quantum computers, you can access very powerful distributed architectures.
+What you want to ensure is that you are not creating more entangled states between your quantum computers than the number of qubits you have available, and that you avoid an exponential overhead in the number of inter-computer gates. What we have demonstrated with AraQne, the software we built at Welinq, is that you can efficiently partition algorithms between quantum computers and minimize the number of entanglements to be shared, so that it doesn’t become a bottleneck.
+Now we are also incorporating hardware constraints of the QPUs into the software, because the optimal partitioning depends on how qubits are interconnected inside each QPU. The software also takes into account the error correction codes implemented between the physical and logical layers. And then the whole thing fits into a data center workflow like this: a customer sends a problem — say, in materials discovery — to the data center. The problem is partitioned between classical and quantum computing. On the quantum side, our software partitions the problem, and can even determine whether a given use case is best suited for neutral atoms, ions, or superconducting quantum computers, depending on what’s available. It’s also a path toward being somewhat hardware-agnostic. Once we know which quantum computers to use and which qubits of which machine to connect to which qubits of another, we build the cluster accordingly.
+Yuval: As we get close to the end of our conversation, I’m curious — you’ve been doing this for four years in the company, and probably several years before that before the company was spun off. What have you learned about the quantum industry in the last 12 months that you didn’t know before?
+Tom: When we started Welinq, it was really the moment where we were seeing the first quantum computers being assembled and deployed. Now we see more than a hundred quantum computers that have been sold and deployed around the world, so the technology is mature and providers are delivering to their customers.
+When we built Welinq four years ago, we had the vision that networking would become a consensus in the short run — and that is really taking shape now. You see networking included in most of the roadmaps from quantum computing providers and from data centers themselves.
+I would say the most striking development in the last year is that we now have real ongoing initiatives to build quantum-augmented data centers. We actually have the green light to access data centers, we are working with our QPU manufacturer partners to connect machines together, and we are working alongside competing technologies to build fully-fledged and resilient architectures. For me, this is a clear sign that things are accelerating and that we are on track to deploy clusters of quantum computers in the near term.
+Yuval: And last, a hypothetical: if you could have dinner with one of the quantum greats, dead or alive, who would that be?
+Tom: I haven’t thought about that one. This might be a bit of a trivial answer from my perspective, but you know that we have the chance to have Alain Aspect as part of our scientific advisory board, along with other physics legends such as Artur Ekert, Kae Nemoto, and Peter Zoller. For me, as someone who was a young PhD student working in the field of quantum networking, having these physicists on board and having regular dinners with them is something I would say is already unlocked. So that’s what comes to mind.
+Yuval: Very good. Tom, thank you so much for joining me today.
+Tom: It was a real pleasure. Thank you for having me.
+Yuval Boger is the Chief Commercial Officer of QuEra Computing.
+March 30, 2026
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/podcast-with-tom-darras-ceo-and-co-founder-welinq/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="3db5f082770c9c6b.html" class="prev-next">&larr; memQ Secures $10M Series A to Develop Distributed Quantum Networking Hardware</a>
+  
+  
+  <a href="cfcfacc968a21b80.html" class="prev-next">QuantX Labs Launches Optical Frequency Comb for Orbital Clock Demonstration &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-04-01 02:33 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>

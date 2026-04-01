@@ -45,3 +45,38 @@ class MetricMeta:
     previous_value: Optional[float]
     change: Optional[float]
     change_percent: Optional[float]
+
+
+@dataclass
+class RSSFeed:
+    """An RSS feed subscription."""
+    id: str
+    title: str
+    feed_url: str
+    site_url: Optional[str] = None
+    category: Optional[str] = None
+    tier: str = "normal"
+    etag: Optional[str] = None
+    last_modified: Optional[str] = None
+    last_fetched_at: Optional[datetime] = None
+    last_status: Optional[int] = None
+    error_count: int = 0
+    created_at: Optional[datetime] = None
+
+
+@dataclass
+class RSSEntry:
+    """An entry from an RSS feed."""
+    id: str
+    feed_id: str
+    title: str
+    url: Optional[str] = None
+    guid: Optional[str] = None
+    summary: Optional[str] = None
+    content: Optional[str] = None
+    content_hash: Optional[str] = None
+    author: Optional[str] = None
+    published_at: Optional[datetime] = None
+    fetched_at: Optional[datetime] = None
+    word_count: Optional[int] = None
+    read_time_minutes: Optional[int] = None

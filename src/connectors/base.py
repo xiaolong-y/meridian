@@ -58,6 +58,10 @@ class FetchResult:
     error: Optional[str] = None
     source: str = ""
     fetched_at: datetime = None
+    # HTTP caching metadata (used by RSS connector)
+    etag: Optional[str] = None
+    last_modified: Optional[str] = None
+    status_code: Optional[int] = None
 
     def __post_init__(self):
         if self.fetched_at is None:

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantum-safe security: Progress towards next-generation cryptography — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="2865aa704f643085.html" title="Make use of time, let not advantage slip">&larr; prev</a>
+    <a href="bf52b1a310f52795.html" title="Microsoft advances quantum error correction with a family of novel four-dimensional codes">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Quantum-safe security: Progress towards next-generation cryptography</h1>
+    <div class="article-meta">
+      <span class="article-source">Microsoft Quantum Blog</span>
+      <span>Mark Russinovich and Michal Braverman-Blumenstyk</span>
+      <span>31w</span>
+      <span class="article-category">quantum</span>
+      <span>1480 words</span>
+      <span>8 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    Quantum computing promises transformative advancements, yet it also poses a very real risk to today’s cryptographic security. In the future scalable quantum computing could break public-key cryptography methods currently in use and undermine digital signatures, resulting in compromised authentication systems and identity verification.
+Starting your journey to become quantum-safe
+While scalable quantum computing is not available today, the time to prepare is now. Microsoft is preparing to be quantum-safe and partnering with regulatory and technical bodies like the National Institute of Standards and Technology (NIST), Internet Engineering Task Force (IETF), International Organization for Standardization (ISO), Distributed Management Task Force (DMTF), Open Compute Project (OCP), and European Telecommunications Standards Institute (ETSI) to align on quantum-safe encryption standards and support worldwide interoperability.
+The opportunity and challenge ahead
+Migration to post quantum cryptography (PQC) is not a flip-the-switch moment, it’s a multiyear transformation that requires immediate planning and coordinated execution to avoid a last-minute scramble.
+It is also an opportunity for every organization to address legacy technology and practices and implement improved cryptographic standards. By acting now, organizations can upgrade to modern cryptographical architectures that are inherently quantum safe, upgrade existing systems with the latest standards in cryptography, and embrace crypto-agility (the ability to easily change algorithms) to modernize their cryptographic standards and practices and prepare for scalable quantum computing.
+The investment in a quantum future
+At Microsoft, we have been investing in this shift by developing both the advances in quantum computing, such as the Majorana 1 quantum processor and 4D geometric error correction codes, and the requirements for PQC.
+Our PQC effort began in 2014 when we published research on post-quantum algorithms and later quantum cryptanalysis to more rigorously determine when contemporary algorithms will be broken. To contribute to PQC algorithm development we participated in four submissions to the original 2017 NIST PQC call and one submission to the current call. Since 2018 we have been experimenting with verified versions of PQC algorithms and in 2019 Microsoft Research completed testing of an experimental PQC-protected VPN tunnel between Redmond, Washington, and Scotland using the Project Natick underwater datacenter.
+To support standards development and foster the integration of post-quantum cryptographic algorithms into internet protocols, Microsoft joined as a founding member of the Open Quantum Safe project. Additionally, we led the integration workstream of the NIST NCCoE Post-Quantum project. Microsoft Research was contributing to updating the ISO cryptography standard to include PQC, with our FrodoKEM cryptosystem, developed in collaboration with academic and industry partners, poised to become an ISO standard algorithm.
+In 2024, we announced and contributed Adams Bridge Accelerator, an open-source quantum resilient cryptographic hardware accelerator and integrated into Caliptra 2.0, part of Open Compute Project (OCP).
+Finally, to help customers and partners begin exploration and integration of quantum-safe algorithms into their environments we previewed PQC capabilities for Windows Insiders and Linux and updated SymCrypt to support verified PQC algorithms. This will help them proactively prepare their software and services for PQC support.
+Creating a Quantum Safe Program
+In 2023, Charlie Bell, Executive Vice President for Microsoft Security, outlined Microsoft’s vision to build a quantum-safe future, which led to the creation of the Microsoft Quantum Safe Program (QSP). This program unifies and accelerates Microsoft’s efforts to protect our infrastructure, as well as that of our customers, partners, and ecosystems, from the evolving risk of quantum computing.
+The following timelines shows a consolidated view of where we are today, and what to expect in the near future as we progress this important program as an industry.
+The Microsoft QSP is aligned with United States government requirements and timelines for quantum safety, including the US Office of Management and Budget (OMB), the Cybersecurity and Infrastructure Security Agency (CISA), NIST, and the National Security Agency’s guidance for organizations to start preparing and transitioning for PQC enablement. We also closely monitor quantum-safe initiatives from international governments, including the European Union, Japan, Canada, Australia, and the United Kingdom, to align with their efforts.
+You can learn more about our collaboration with standards bodies and recommendations for effective government policies to accelerate the quantum-safe transition in the Microsoft On the Issues blog by Amy Hogan Burney, Vice President, Customer Security and Trust.
+The Microsoft QSP strategy
+Our QSP is a comprehensive and company-wide effort to enable Microsoft, our customers, and partners, to transition smoothly and securely into the quantum era. The program is governed by the QSP leadership team with representatives across all major business groups, research and engineering divisions, and functions.
+The QSP strategy is guided by three priorities:
+- Make Microsoft quantum safe by updating Microsoft first- and third-party services, supply chain, and ecosystem to become quantum safe and crypto-agile.
+- Support customers, partners, and ecosystems to become quantum safe with appropriate tools and guidance.
+- Promote global research, standards, and solutions for quantum-safe technologies and crypto-agility.
+Our quantum-safe journey began with an enterprise-wide inventory to assess and prioritize cryptographic asset risks. From there, we partnered with industry leaders to address critical dependencies, investing in quantum safe research and collaborating on hardware and firmware innovation. We accelerated the adoption of quantum-resilient algorithms across core infrastructure, supported by Microsoft’s open-source silicon initiatives.
+As a result of this foundational work, we are aligned with global government timelines, striving to meet even the most forward-leaning CNSA 2.0 deadlines outlined in CNSSP-15. Combining the different regulations’ aspects and timelines worldwide, Microsoft’s roadmap aims to complete transition of its services and products by 2033—two years before the 2035 deadline set by most governments—aiming to enable early adoption of quantum-safe capabilities by 2029, gradually making them default in subsequent years, or sooner where possible.
+To maintain resilience of Microsoft’s services and systems against quantum computers powerful enough to break modern cryptographic algorithms, we’ve developed a phased transition strategy built on a modular framework. This approach considers each service unique requirements, performance constraints, and risk profile, resulting in either a direct shift to full PQC or a hybrid approach combining classical and quantum-resistant algorithms as an interim step. Therefore, as early adoption will begin by 2029, core services will reach maturity a few years before then.
+Here are the three key phases for this strategy:
+1. Foundational security components
+Microsoft has integrated PQC algorithms into foundational components like SymCrypt, the primary cryptographic library that provides consistent cryptographic security across Windows, Microsoft Azure, Microsoft 365 and other platforms. SymCrypt supports both symmetric (for example, AES [Advanced Encryption Standard]) and asymmetric algorithms (for example, RSA [Rivest–Shamir–Adleman], ECDSA [Elliptic Curve Digital Signature Algorithm]), providing essential cryptographic operations such as encryption, decryption, signing, verification, hashing, and key exchange. Most recently we’ve made ML-KEM (Module-Lattice Key Encapsulation Mechanism) and ML-DSA (Module-Lattice Digital Signature Algorithm) available through Cryptography API: Next Generation (CNG) and Certificate and Cryptographic messaging functions. These capabilities are available to Windows Insiders and Linux customers now, with additional foundational capabilities coming through the next five years, always aligning and timebound to evolving industry standards and advancements.
+As quantum computing advances, the threat of Harvest Now, Decrypt Later (HNDL) cyberattacks become increasingly pressing—where threat actors record and store encrypted data today with the intention of decrypting it once quantum capabilities mature. To counter this risk, security protocol standards are prioritizing quantum-safe key exchange mechanisms. For instance, TLS 1.3 is being enhanced to support both hybrid and pure post-quantum key exchange methods, making it a robust adaptable foundation for integrating PQC algorithms. With version 1.9.0 of SymCrypt-OpenSSL, we’ve enabled TLS hybrid key exchange as per the latest IETF internet draft, providing an early opportunity to help prepare for HNDL threats. This capability will be coming to Windows TLS stack soon.
+2. Core infrastructure services
+Updating foundational components in products and services, considered core infrastructure service, to provide quantum safety for Microsoft and our customers from future quantum risks. Examples include Microsoft Entra authentication, key and secret management, and signing services. By prioritizing these services, Microsoft will protect the most sensitive and essential components first, providing a strong foundation for the broader transition.
+3. All services and endpoints
+Integrating PQC into Windows, Azure services, Microsoft 365, data platforms, AI services, and networking enables the broader ecosystem of Microsoft services to be quantum safe, providing comprehensive protection across all platforms and applications.
+What’s next
+In our previous blog, Starting your journey to become quantum safe, we provided some practical recommendations and services for customers to start their quantum-safe journey. In future updates, we will continue to provide insights and guidance, grounded in practical experience as we take these critical steps on a most important journey.
+Transitioning to a quantum-safe environment is a complex but essential process and we encourage our customers and partners to start developing their strategy now.
+To learn more about Microsoft Security solutions, visit our website. Bookmark the Security blog to keep up with our expert coverage on security matters. Also, follow us on LinkedIn (Microsoft Security) and X (@MSFTSecurity) for the latest news and updates on cybersecurity.
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://www.microsoft.com/en-us/security/blog/2025/08/20/quantum-safe-security-progress-towards-next-generation-cryptography/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="2865aa704f643085.html" class="prev-next">&larr; Make use of time, let not advantage slip</a>
+  
+  
+  <a href="bf52b1a310f52795.html" class="prev-next">Microsoft advances quantum error correction with a family of novel four-dimensional codes &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-04-01 02:33 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>

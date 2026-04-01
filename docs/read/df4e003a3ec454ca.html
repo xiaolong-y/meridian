@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My theoretical computer science notes from Epsilon Camp — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="154b16074c21acc9.html" title="Movie Review: “The AI Doc”">&larr; prev</a>
+    <a href="538651b2b94946d2.html" title="Congrats to Bennett and Brassard on the Turing Award!">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">My theoretical computer science notes from Epsilon Camp</h1>
+    <div class="article-meta">
+      <span class="article-source">Shtetl-Optimized</span>
+      <span>Scott</span>
+      <span>2d</span>
+      <span class="article-category">quantum</span>
+      <span>906 words</span>
+      <span>5 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    My theoretical computer science notes from Epsilon Camp
+Last summer, I was privileged to teach a two-week course on theoretical computer science to exceptional 11- and 12-year-olds at Epsilon Camp, held at Washington University in St. Louis. The course was basically a shorter version of the 6.045 course that I used to teach to undergrads at MIT.
+I was at Epsilon Camp to accompany my son Daniel, who attended a different course there, for the 7- and 8-year-olds. So they got me to teach while I was there.
+Teaching at Epsilon was some of the hardest work I’ve done in years: I taught two classes, held office hours, and interacted with or supervised students for 6-7 hours per day (compared to ~4 hours per week as a professor), on top of being Daniel’s sole caregiver, on top of email and all my other normal responsibilities. But it was also perhaps the most extraordinary teaching I’ve ever done: during “lecture,” the kids were throwing paper planes, talking over and interrupting me every ten seconds, and sometimes getting in physical fights with each other. In my ~20 years as a professor, this was the first time that I ever needed to worry about classroom discipline (!). It gave me newfound respect for what elementary school teachers handle every day.
+But then, when I did have the kids’ attention, they would often ask questions or make observations that I would’ve been thrilled to hear from undergrads at UT Austin or MIT. Some of these kids, I felt certain, can grow up if they want to be world-leading mathematicians and physicists and computer scientists, Terry Taos and Ed Wittens of their generation. Or at least, that’ll be true if AI isn’t soon going to outperform the top human scientists at their own game, a prospect that of course casts a giant shadow not only over Epsilon Camp but over our entire enterprise. But enough about the future. For now I can say: it was a privilege of a lifetime to teach these kids, to be the one who first introduced them to theoretical computer science.
+Or at least, the one who first systematically introduced them. As I soon realized, there was no topic I could mention—not the halting problem or the Busy Beaver function, not NP-completeness or Diffie-Hellman encryption—that some of these 11-year-olds hadn’t previously seen, and that they didn’t want to interrupt me to share everything they already knew about. Rather than fighting that tendency, I smiled and let them do this. While their knowledge was stunningly precocious, it was also fragmentary and disjointed and weirdly overindexed on examples rather than general principles. So fine, I still had something to teach them!
+Coming to Epsilon Camp was also an emotional experience for me. When I was 15, I attended Canada/USA Mathcamp 1996, the first year that that camp operated. I might not have gone into research otherwise. Coming from a public high school—from the world of English teachers who mainly cared whether you adhered to the Five Paragraph Format, and chemistry teachers who’d give 0 on right answers if you didn’t write “1 mol / 1 mol” and then cross off both of the moles—I was suddenly thrust, sink or swim, into a course on elliptic curves taught by Ken Ribet, who’d played a major role in the proof of Fermat’s Last Theorem that had just been completed, and a talk on algorithms and complexity by Richard Karp himself, and lectures on number theory by Richard Guy, who had stories from when he knew G. H. Hardy.
+Back when I was 15, I got to know George Rubin Thomas, the founding director of Mathcamp … and then, after 29 years, there he was again at Epsilon Camp—the patriarch of a whole ecosystem of math camps—and not only there, but sitting in on my course. Also at Epsilon Camp, unexpectedly, was a woman who I knew well back when we were undergrads at Cornell, both of took taking the theoretical computer science graduate sequence, but who I’d barely seen since. She, as it turned out, was accompanying her 8-year-old son, who got to know my 8-year-old. They played together every day and traded math facts.
+It occurred to me that the course I taught, on theoretical computer science, was one of the most accessible I’ve ever done, and therefore more people might be interested. So I advertised on this blog for someone to help me LaTeX up the notes for wider distribution. I was thrilled to find a talented student to volunteer. Alas, because of where that student lives, he needs to stay anonymous for now. I thank him, pray for his safety, and hope to be able to reveal his name in the future. I’m also thrilled to have gotten three great high school students—Ian Ko, Tzak Lau, and Sunetra Rao—to help with the figures. Thanks to them as well.
+You can read the notes here [59 pages, PDF]
+If you’re curious, here’s the table of contents:
+- Lecture 1: Bits
+- Lecture 2: Gates
+- Lecture 3: Finite Automata
+- Lecture 4: Turing Machines
+- Lecture 5: Big Numbers
+- Lecture 6: Complexity, or Number of Operations
+- Lecture 7: Polynomial vs. Exponential
+- Lecture 8: The P vs. NP Problem
+- Lecture 9: NP-completeness
+- Lecture 10: Foundations of Cryptography
+- Lecture 11: Public-Key Cryptography and Quantum Computing
+Happy as always to receive comments and corrections. Enjoy!
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://scottaaronson.blog/?p=9650" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="154b16074c21acc9.html" class="prev-next">&larr; Movie Review: “The AI Doc”</a>
+  
+  
+  <a href="538651b2b94946d2.html" class="prev-next">Congrats to Bennett and Brassard on the Turing Award! &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-04-01 02:33 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>

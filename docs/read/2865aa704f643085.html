@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make use of time, let not advantage slip — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="bcc9f0f65315e4a5.html" title="Quantum computing in the second quantum century">&larr; prev</a>
+    <a href="9ce0e464f94a90fc.html" title="Quantum-safe security: Progress towards next-generation cryptography">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Make use of time, let not advantage slip</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Frontiers (Caltech)</span>
+      <span>Nicole Yunger Halpern</span>
+      <span>15w</span>
+      <span class="article-category">quantum</span>
+      <span>1303 words</span>
+      <span>7 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    During the spring of 2022, I felt as though I kept dashing backward and forward in time.
+At the beginning of the season, hay fever plagued me in Maryland. Then, I left to present talks in southern California. There—closer to the equator—rose season had peaked, and wisteria petals covered the ground near Caltech’s physics building. From California, I flew to Canada to present a colloquium. Time rewound as I traveled northward; allergies struck again. After I returned to Maryland, the spring ripened almost into summer. But the calendar backtracked when I flew to Sweden: tulips and lilacs surrounded me again.
+The zigzagging through horticultural time disoriented my nose, but I couldn’t complain: it echoed the quantum information processing that collaborators and I would propose that summer. We showed how to improve quantum metrology—our ability to measure things, using quantum detectors—by simulating closed timelike curves.
+A closed timelike curve is a trajectory that loops back on itself in spacetime. If on such a trajectory, you’ll advance forward in time, reverse chronological direction to advance backward, and then reverse again. Author Jasper Fforde illustrates closed timelike curves in his novel The Eyre Affair. A character named Colonel Next buys an edition of Shakespeare’s works, travels to the Elizabethan era, bestows them on a Brit called Will, and then returns to his family. Will copies out the plays and stages them. His colleagues publish the plays after his death, and other editions ensue. Centuries later, Colonel Next purchases one of those editions to take to the Elizabethan era.1
+Closed timelike curves can exist according to Einstein’s general theory of relativity. But do they exist? Nobody knows. Many physicists expect not. But a quantum system can simulate a closed timelike curve, undergoing a process modeled by the same mathematics.
+How can one formulate closed timelike curves in quantum theory? Oxford physicist David Deutsch proposed one formulation; a team led by MIT’s Seth Lloyd proposed another. Correlations distinguish the proposals.
+Two entities share correlations if a change in one entity tracks a change in the other. Two classical systems can correlate; for example, your brain is correlated with mine, now that you’ve read writing I’ve produced. Quantum systems can correlate more strongly than classical systems can, as by entangling.
+Suppose Colonel Next correlates two nuclei and gives one to his daughter before embarking on his closed timelike curve. Once he completes the loop, what relationship does Colonel Next’s nucleus share with his daughter’s? The nuclei retain the correlations they shared before Colonel Next entered the loop, according to Seth and collaborators. When referring to closed timelike curves from now on, I’ll mean ones of Seth’s sort.
+We can simulate closed timelike curves by subjecting a quantum system to a circuit of the type illustrated below. We read the diagram from bottom to top. Along this direction, time—as measured by a clock at rest with respect to the laboratory—progresses. Each vertical wire represents a qubit—a basic unit of quantum information, encoded in an atom or a photon or the like. Each horizontal slice of the diagram represents one instant.
+At the bottom of the diagram, the two vertical wires sprout from one curved wire. This feature signifies that the experimentalist prepares the qubits in an entangled state, represented by the symbol . Farther up, the left-hand wire runs through a box. The box signifies that the corresponding qubit undergoes a transformation (for experts: a unitary evolution).
+At the top of the diagram, the vertical wires fuse again: the experimentalist measures whether the qubits are in the state they began in. The measurement is probabilistic; we (typically) can’t predict the outcome in advance, due to the uncertainty inherent in quantum physics. If the measurement yields the yes outcome, the experimentalist has simulated a closed timelike curve. If the no outcome results, the experimentalist should scrap the trial and try again.
+So much for interpreting the diagram above as a quantum circuit. We can reinterpret the illustration as a closed timelike curve. You’ve probably guessed as much, comparing the circuit diagram to the depiction, farther above, of Colonel Next’s journey. According to the second interpretation, the loop represents one particle’s trajectory through spacetime. The bottom and top show the particle reversing chronological direction—resembling me as I flew to or from southern California.
+How can we apply closed timelike curves in quantum metrology? In Fforde’s books, Colonel Next has a brother, named Mycroft, who’s an inventor.2 Suppose that Mycroft is studying how two particles interact (e.g., by an electric force). He wants to measure the interaction’s strength. Mycroft should prepare one particle—a sensor—and expose it to the second particle. He should wait for some time, then measure how much the interaction has altered the sensor’s configuration. The degree of alteration implies the interaction’s strength. The particles can be quantum, if Mycroft lives not merely in Sherlock Holmes’s world, but in a quantum-steampunk one.
+But how should Mycroft prepare the sensor—in which quantum state? Certain initial states will enable the sensor to acquire ample information about the interaction; and others, no information. Mycroft can’t know which preparation will work best: the optimal preparation depends on the interaction, which he hasn’t measured yet.
+Mycroft can overcome this dilemma via a strategy published by my collaborator David Arvidsson-Shukur, his recent student Aidan McConnell, and me. According to our protocol, Mycroft entangles the sensor with a third particle. He subjects the sensor to the interaction (coupling the sensor to particle #2) and measures the sensor.
+Then, Mycroft learns about the interaction—learns which state he should have prepared the sensor in earlier. He effectively teleports this state backward in time to the beginning-of-protocol sensor, using particle #3 (which began entangled with the sensor).3 Quantum teleportation is a decades-old information-processing task that relies on entanglement manipulation. The protocol can transmit quantum states over arbitrary distances—or, effectively, across time.
+We can view Mycroft’s experiment in two ways. Using several particles, he manipulates entanglement to measure the interaction strength optimally (with the best possible precision). This process is mathematically equivalent to another. In the latter process, Mycroft uses only one sensor. It comes forward in time, reverses chronological direction (after Mycroft learns the optimal initial state’s form), backtracks to an earlier time (to when the sensing protocol began), and returns to progressing forward in time (informing Mycroft about the interaction).
+In Sweden, I regarded my work with David and Aidan as a lark. But it’s led to an experiment, another experiment, and two papers set to debut this winter. I even pass as a quantum metrologist nowadays. Perhaps I should have anticipated the metamorphosis, as I should have anticipated the extra springtimes that erupted as I traveled between north and south. As the bard says, there’s a time for all things.
+1In the sequel, Fforde adds a twist to Next’s closed timelike curve. I can’t speak for the twist’s plausibility or logic, but it makes for delightful reading, so I commend the novel to you.
+2You might recall that Sherlock Holmes has a brother, named Mycroft, who’s an inventor. Why? In Fforde’s novel, an evil corporation pursues Mycroft, who’s built a device that can transport him into the world of a book. Mycroft uses the device to hide from the corporation in Sherlock Holmes’s backstory.
+3Experts, Mycroft implements the effective teleportation as follows: He prepares a fourth particle in the ideal initial sensor state. Then, he performs a two-outcome entangling measurement on particles 3 and 4: he asks “Are particles 3 and 4 in the state in which particles 1 and 3 began?” If the measurement yields the yes outcome, Mycroft has effectively teleported the ideal sensor state backward in time. He’s also simulated a closed timelike curve. If the measurement yields the no outcome, Mycroft fails to measure the interaction optimally. Figure 1 in our paper synopsizes the protocol.
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumfrontiers.com/2025/12/14/make-use-of-time-let-not-advantage-slip/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="bcc9f0f65315e4a5.html" class="prev-next">&larr; Quantum computing in the second quantum century</a>
+  
+  
+  <a href="9ce0e464f94a90fc.html" class="prev-next">Quantum-safe security: Progress towards next-generation cryptography &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-04-01 02:33 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>

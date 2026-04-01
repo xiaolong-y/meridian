@@ -196,7 +196,8 @@
 
 <footer>
   <div class="footer-links">
-    Data: FRED · IMF · ECB · DBnomics · HuggingFace · Vast.ai · Yahoo · CoinGecko · HN |
+    Data: FRED · IMF · ECB · DBnomics · HuggingFace · Vast.ai · Yahoo · CoinGecko · HN · RSS |
+    <a href="reader.html">reader</a> |
     <a href="CODEBOOK.html">codebook</a> |
     <a href="https://github.com/xiaolong-y/meridian">src</a>
   </div>
@@ -210,9 +211,19 @@
 <script>
 const DASHBOARD_DATA = {{ dashboard_json | safe }};
 </script>
-<script>
-(function() {
-  'use strict';
+<script type="module">
+
+  // ═══════════════════════════════════════════════════════════════
+  // D.0  PRETEXT IMPORT (dynamic, with canvas fallback)
+  // ═══════════════════════════════════════════════════════════════
+
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — fall back to canvas-only measurement
+  }
 
   // ═══════════════════════════════════════════════════════════════
   // D.1  COLOR CONSTANTS
@@ -276,6 +287,18 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
   function measureWidth(text, font) {
     _measureCtx.font = font;
     return _measureCtx.measureText(text).width;
+  }
+
+  // Pretext-powered multi-line height prediction (canvas fallback for single line)
+  function measureTextHeight(text, font, maxWidth, lineHeight) {
+    if (_pretext) {
+      var prepared = _pretext.prepare(text, font);
+      return _pretext.layout(prepared, maxWidth, lineHeight);
+    }
+    // Fallback: assume single line if text fits, else estimate line count
+    var w = measureWidth(text, font);
+    var lines = Math.max(1, Math.ceil(w / maxWidth));
+    return { height: lines * lineHeight, lineCount: lines };
   }
 
   function truncateText(text, font, maxWidth) {
@@ -357,62 +380,46 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
       cards.push({ wrapper: w, type: type, data: cardData, minWidth: minW });
     }
 
-    // 2. Column count derived from widest metric card's measured width
-    var metricMinWidths = [];
-    for (var i = 0; i < cards.length; i++) {
-      if (cards[i].type === 'metric') metricMinWidths.push(cards[i].minWidth);
-    }
-    var minColWidth = metricMinWidths.length ? Math.max.apply(null, metricMinWidths) : 260;
+    // 2. Column count derived from widest card's measured width
+    var allMinWidths = cards.map(function(c) { return c.minWidth; });
+    var minColWidth = allMinWidths.length ? Math.max.apply(null, allMinWidths) : 260;
     minColWidth = Math.max(minColWidth, 220);
 
     var colCount = Math.max(1, Math.floor((viewportWidth + gap) / (minColWidth + gap)));
     var colWidth = (viewportWidth - (colCount - 1) * gap) / colCount;
 
-    // 3. Masonry: pack cards into shortest column(s)
+    // 3. Masonry: pack each card into the shortest column
+    var BORDER = 2; // 1px border top + 1px border bottom on .card-wrapper
     var colHeights = [];
     for (var c = 0; c < colCount; c++) colHeights.push(0);
 
     for (var i = 0; i < cards.length; i++) {
       var card = cards[i];
       var isNews = card.type === 'news';
-      var span = (isNews && colCount >= 2) ? Math.min(2, colCount) : 1;
-      var cardW = colWidth * span + gap * (span - 1);
 
-      // Card height from content
-      var headerH = 16, rowH, rowCount;
-      if (isNews) {
-        rowH = 18;
-        rowCount = (card.data && card.data.stories) ? card.data.stories.length : 0;
+      // Card height from content (news cards use pretext-measured variable heights)
+      var cardH;
+      if (isNews && card.data) {
+        var newsLayout = computeNewsCardLayout(card.data, colWidth);
+        cardH = newsLayout.totalHeight;
       } else {
-        rowH = 16;
-        rowCount = (card.data && card.data.metrics) ? card.data.metrics.length : 0;
+        var headerH = 16, rowH = 16;
+        var rowCount = (card.data && card.data.metrics) ? card.data.metrics.length : 0;
+        cardH = headerH + rowCount * rowH;
       }
-      var cardH = headerH + rowCount * rowH;
 
-      // Find placement
-      var bestCol, bestY;
-      if (span === 1) {
-        bestCol = indexOfMin(colHeights);
-        bestY = colHeights[bestCol];
-      } else {
-        bestCol = 0;
-        bestY = Math.max(colHeights[0], colHeights[1] || 0);
-        for (var p = 1; p + 1 < colCount; p++) {
-          var pairY = Math.max(colHeights[p], colHeights[p + 1]);
-          if (pairY < bestY) { bestY = pairY; bestCol = p; }
-        }
-      }
+      // Find shortest column
+      var bestCol = indexOfMin(colHeights);
+      var bestY = colHeights[bestCol];
 
       // Position card
       var x = bestCol * (colWidth + gap);
       card.wrapper.style.left = Math.round(x) + 'px';
       card.wrapper.style.top = Math.round(bestY) + 'px';
-      card.wrapper.style.width = Math.round(cardW) + 'px';
+      card.wrapper.style.width = Math.round(colWidth) + 'px';
 
-      // Update column heights
-      for (var s = 0; s < span; s++) {
-        colHeights[bestCol + s] = bestY + cardH + gap;
-      }
+      // Update column height (account for wrapper border)
+      colHeights[bestCol] = bestY + cardH + BORDER + gap;
     }
 
     // 4. Set container height
@@ -508,7 +515,18 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
     var metaCol = metaWidths.length ? Math.max(Math.max.apply(null, metaWidths), 30) : 30;
 
     var titleX = PAD + scoreCol + GAP;
-    var titleWidth = containerWidth - titleX - GAP - metaCol - PAD;
+    var titleWidth = Math.max(containerWidth - titleX - GAP - metaCol - PAD, 60);
+
+    // Measure each title height via pretext (supports multi-line wrapping)
+    var rowYOffsets = [];
+    var y = HEADER_H;
+    var rowHeights = stories.map(function(s) {
+      var h = measureTextHeight(s.title || '', FONTS.newsTitle, titleWidth, ROW_H);
+      rowYOffsets.push(y);
+      var rh = Math.max(h.height, ROW_H); // at least one row tall
+      y += rh;
+      return rh;
+    });
 
     return {
       headerHeight: HEADER_H,
@@ -516,10 +534,12 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
       padding: PAD,
       columns: {
         score: { x: PAD, width: scoreCol },
-        title: { x: titleX, width: Math.max(titleWidth, 60) },
+        title: { x: titleX, width: titleWidth },
         meta:  { x: containerWidth - PAD - metaCol, width: metaCol },
       },
-      totalHeight: HEADER_H + stories.length * ROW_H,
+      totalHeight: y,
+      rowHeights: rowHeights,
+      rowYOffsets: rowYOffsets,
       metaTexts: metaTexts,
       _storyCount: stories.length,
     };
@@ -665,13 +685,14 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
   }
 
   function drawNewsRow(ctx, story, rowIndex, layout, colors, metaText, isHovered) {
-    var y = layout.headerHeight + rowIndex * layout.rowHeight;
+    var y = layout.rowYOffsets ? layout.rowYOffsets[rowIndex] : (layout.headerHeight + rowIndex * layout.rowHeight);
+    var rh = layout.rowHeights ? layout.rowHeights[rowIndex] : layout.rowHeight;
     var cols = layout.columns;
 
     // Hover background
     if (isHovered) {
       ctx.fillStyle = colors.hoverBg;
-      ctx.fillRect(0, y, cols.meta.x + cols.meta.width + layout.padding, layout.rowHeight);
+      ctx.fillRect(0, y, cols.meta.x + cols.meta.width + layout.padding, rh);
     }
 
     var textY = y + layout.rowHeight * 0.68;
@@ -727,7 +748,7 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
     // Row separator (except last row)
     var totalStories = (layout._storyCount !== undefined) ? layout._storyCount : 999;
     if (rowIndex < totalStories - 1) {
-      drawDottedSeparator(ctx, y + layout.rowHeight, cols.meta.x + cols.meta.width + layout.padding, colors);
+      drawDottedSeparator(ctx, y + rh, cols.meta.x + cols.meta.width + layout.padding, colors);
     }
   }
 
@@ -830,7 +851,8 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
 
     for (var i = 0; i < stories.length; i++) {
       var story = stories[i];
-      var rowY = layout.headerHeight + i * layout.rowHeight;
+      var rowY = layout.rowYOffsets ? layout.rowYOffsets[i] : (layout.headerHeight + i * layout.rowHeight);
+      var rh = layout.rowHeights ? layout.rowHeights[i] : layout.rowHeight;
 
       // Title link
       var a = document.createElement('a');
@@ -838,7 +860,7 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
       a.target = '_blank';
       a.rel = 'noopener';
       a.setAttribute('aria-label', story.title);
-      a.style.cssText = 'top:' + rowY + 'px;left:' + layout.columns.title.x + 'px;width:' + layout.columns.title.width + 'px;height:' + layout.rowHeight + 'px;';
+      a.style.cssText = 'top:' + rowY + 'px;left:' + layout.columns.title.x + 'px;width:' + layout.columns.title.width + 'px;height:' + rh + 'px;';
       linksDiv.appendChild(a);
 
       // HN comments link
@@ -849,7 +871,7 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
       hn.setAttribute('aria-label', (story.comments || 0) + ' comments on Hacker News');
       var commentsWidth = measureWidth((story.comments || 0) + 'c', FONTS.newsMeta);
       var hnLeft = layout.columns.meta.x + layout.columns.meta.width - commentsWidth;
-      hn.style.cssText = 'top:' + rowY + 'px;left:' + hnLeft + 'px;width:' + commentsWidth + 'px;height:' + layout.rowHeight + 'px;';
+      hn.style.cssText = 'top:' + rowY + 'px;left:' + hnLeft + 'px;width:' + commentsWidth + 'px;height:' + rh + 'px;';
       linksDiv.appendChild(hn);
     }
   }
@@ -868,12 +890,22 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
 
       var rect = canvas.getBoundingClientRect();
       var y = e.clientY - rect.top;
-      var row = Math.floor((y - layout.headerHeight) / layout.rowHeight);
-      var maxRow = wrapper.dataset.cardType === 'metric'
-        ? (layout._metricCount || 0) - 1
-        : (layout._storyCount || 0) - 1;
-
-      if (row < 0 || row > maxRow) row = -1;
+      var row;
+      if (layout.rowYOffsets) {
+        // Variable-height rows: binary search for the row containing y
+        row = -1;
+        for (var r = 0; r < layout.rowYOffsets.length; r++) {
+          var ry = layout.rowYOffsets[r];
+          var rh = layout.rowHeights[r];
+          if (y >= ry && y < ry + rh) { row = r; break; }
+        }
+      } else {
+        row = Math.floor((y - layout.headerHeight) / layout.rowHeight);
+        var maxRow = wrapper.dataset.cardType === 'metric'
+          ? (layout._metricCount || 0) - 1
+          : (layout._storyCount || 0) - 1;
+        if (row < 0 || row > maxRow) row = -1;
+      }
 
       if (row !== currentHover) {
         currentHover = row;
@@ -913,7 +945,7 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
       }, 50);
     });
 
-    wrappers.forEach(function(w) { observer.observe(w); });
+    observer.observe(document.querySelector('.dashboard'));
     return observer;
   }
 
@@ -991,14 +1023,25 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
 
         // Row boundaries
         ctx.strokeStyle = 'rgba(0, 0, 255, 0.2)';
-        var rowH = layout.rowHeight;
-        var count = layout._metricCount || layout._storyCount || 0;
-        for (var r = 0; r <= count; r++) {
-          var ry = layout.headerHeight + r * rowH;
-          ctx.beginPath();
-          ctx.moveTo(0, ry);
-          ctx.lineTo(canvas.width / dpr, ry);
-          ctx.stroke();
+        if (layout.rowYOffsets) {
+          // Variable-height rows
+          for (var r = 0; r < layout.rowYOffsets.length; r++) {
+            var ry = layout.rowYOffsets[r];
+            ctx.beginPath(); ctx.moveTo(0, ry); ctx.lineTo(canvas.width / dpr, ry); ctx.stroke();
+          }
+          // Bottom edge of last row
+          if (layout.rowYOffsets.length > 0) {
+            var lastIdx = layout.rowYOffsets.length - 1;
+            var ry = layout.rowYOffsets[lastIdx] + layout.rowHeights[lastIdx];
+            ctx.beginPath(); ctx.moveTo(0, ry); ctx.lineTo(canvas.width / dpr, ry); ctx.stroke();
+          }
+        } else {
+          var rowH = layout.rowHeight;
+          var count = layout._metricCount || layout._storyCount || 0;
+          for (var r = 0; r <= count; r++) {
+            var ry = layout.headerHeight + r * rowH;
+            ctx.beginPath(); ctx.moveTo(0, ry); ctx.lineTo(canvas.width / dpr, ry); ctx.stroke();
+          }
         }
 
         ctx.restore();
@@ -1020,7 +1063,6 @@ const DASHBOARD_DATA = {{ dashboard_json | safe }};
     window.addEventListener('load', initDashboard);
   }
 
-})();
 </script>
 
 </body>

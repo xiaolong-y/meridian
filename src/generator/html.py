@@ -13,7 +13,10 @@ from urllib.parse import urlparse
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
-from ..storage.database import get_all_metric_meta, get_stories_by_feed, get_latest_observations
+from ..storage.database import (
+    get_all_metric_meta, get_stories_by_feed, get_latest_observations,
+    get_all_rss_entries, get_all_rss_feeds, get_rss_entry,
+)
 from ..transforms.calculations import prepare_sparkline_data, generate_ascii_sparkline, generate_braille_sparkline
 
 # Symbol mappings for enhanced visual display
@@ -347,12 +350,46 @@ def build_dashboard_context() -> dict[str, Any]:
         card_order.append({"type": "feed", "id": feed_ids[feed_idx]})
         feed_idx += 1
 
+    # RSS entries for dashboard summary card
+    rss_entries_raw = get_all_rss_entries(limit=50)
+    rss_by_category = {}
+    for entry in rss_entries_raw:
+        cat = entry.get("category", "other")
+        entry["time_ago"] = time_ago(entry.get("published_at"))
+        entry["domain"] = extract_domain(entry.get("url"))
+        rss_by_category.setdefault(cat, []).append(entry)
+
+    # Convert RSS categories into synthetic feed objects for the dashboard renderer
+    for cat in sorted(rss_by_category.keys()):
+        rss_feed_id = f"rss_{cat}"
+        rss_stories = []
+        for entry in rss_by_category[cat][:8]:
+            rss_stories.append({
+                "id": entry["id"],
+                "title": entry["title"],
+                "url": f"read/{entry['id']}.html",
+                "score": 0,
+                "comments": 0,
+                "domain": entry.get("feed_title", entry.get("domain", "")),
+                "time_ago": entry.get("time_ago", ""),
+            })
+        if rss_stories:
+            feeds.append({
+                "id": rss_feed_id,
+                "name": f"RSS: {cat.title()}",
+                "stories": rss_stories,
+            })
+            card_order.append({"type": "feed", "id": rss_feed_id})
+
     return {
         "title": "Meridian",
         "generated_at": datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
         "metric_groups": metric_groups,
         "feeds": feeds,
         "card_order": card_order,
+        "rss_entries": rss_entries_raw,
+        "rss_by_category": rss_by_category,
+        "rss_feeds": get_all_rss_feeds(),
     }
 
 
@@ -390,6 +427,85 @@ def generate_dashboard() -> Path:
     return output_path
 
 
+def _sanitize_json(data: dict) -> str:
+    """Serialize dict to JSON safe for embedding in HTML <script>."""
+    s = json.dumps(data, separators=(",", ":"), ensure_ascii=False, default=str)
+    s = s.replace("</", "<\\/")
+    s = s.replace("\u2028", "\\u2028")
+    s = s.replace("\u2029", "\\u2029")
+    return s
+
+
+def generate_reader() -> Path:
+    """Generate the RSS reader timeline page."""
+    env = Environment(loader=FileSystemLoader(TEMPLATE_DIR), autoescape=True)
+    template = env.get_template("reader.html")
+
+    entries = get_all_rss_entries(limit=200)
+    feeds = get_all_rss_feeds()
+
+    for entry in entries:
+        entry["time_ago"] = time_ago(entry.get("published_at"))
+        entry["domain"] = extract_domain(entry.get("url"))
+
+    by_category = {}
+    for entry in entries:
+        cat = entry.get("category", "other")
+        by_category.setdefault(cat, []).append(entry)
+
+    context = {
+        "title": "Meridian Reader",
+        "generated_at": datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
+        "entries": entries,
+        "by_category": by_category,
+        "feeds": feeds,
+        "categories": sorted(by_category.keys()),
+    }
+
+    html = template.render(**context, reader_json=_sanitize_json(context))
+
+    output_path = OUTPUT_DIR / "reader.html"
+    output_path.write_text(html, encoding="utf-8")
+    return output_path
+
+
+def generate_article_pages() -> int:
+    """Generate individual article reading pages. Returns count."""
+    env = Environment(loader=FileSystemLoader(TEMPLATE_DIR), autoescape=True)
+    template = env.get_template("article.html")
+
+    entries = get_all_rss_entries(limit=200)
+    article_dir = OUTPUT_DIR / "read"
+    article_dir.mkdir(exist_ok=True)
+
+    count = 0
+    for i, entry in enumerate(entries):
+        if not entry.get("content") and not entry.get("summary"):
+            continue
+
+        entry["time_ago"] = time_ago(entry.get("published_at"))
+        prev_entry = entries[i - 1] if i > 0 else None
+        next_entry = entries[i + 1] if i < len(entries) - 1 else None
+
+        html = template.render(
+            title=entry["title"],
+            entry=entry,
+            prev_entry=prev_entry,
+            next_entry=next_entry,
+            generated_at=datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
+        )
+
+        output_path = article_dir / f"{entry['id']}.html"
+        output_path.write_text(html, encoding="utf-8")
+        count += 1
+
+    return count
+
+
 if __name__ == "__main__":
     path = generate_dashboard()
     print(f"Generated: {path}")
+    reader = generate_reader()
+    print(f"Generated: {reader}")
+    count = generate_article_pages()
+    print(f"Generated {count} article pages")
