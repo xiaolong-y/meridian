@@ -146,7 +146,7 @@
 
   {% if entry.content %}
   <div class="article-content" id="article-body">
-    {{ entry.content }}
+    {{ entry.content | safe }}
   </div>
   {% elif entry.summary %}
   <div class="article-content" id="article-body">

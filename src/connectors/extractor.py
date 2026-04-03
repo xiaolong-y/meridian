@@ -32,7 +32,19 @@ def extract_article(url: str, timeout: int = 15) -> Optional[str]:
             no_fallback=False,
             favor_recall=True,
         )
-        return text
+        if text:
+            # Convert plain text paragraphs to HTML for proper rendering
+            paragraphs = text.split('\n\n')
+            html_parts = []
+            for p in paragraphs:
+                p = p.strip()
+                if not p:
+                    continue
+                # Preserve single newlines as <br> within paragraphs
+                p = p.replace('\n', '<br>\n')
+                html_parts.append(f'<p>{p}</p>')
+            return '\n'.join(html_parts)
+        return None
 
     except ImportError:
         logger.warning("trafilatura not installed — skipping content extraction")

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moar Updatez — Meridian Reader</title>
+  <title>QuEra Releases Open-Source GPU-Accelerated T-Gate Simulator for Error Correction Research — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,52 +126,47 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="3da65fa92e6ed0ef.html" title="The ”JVG algorithm” is crap">&larr; prev</a>
-    <a href="d6c7d6e9b377d977.html" title="What is next in quantum advantage?">next &rarr;</a>
+    <a href="f8d6fb95dfe0e1b6.html" title="QuiX Quantum Demonstrates Below-Threshold Error Mitigation in Photonic Hardware">&larr; prev</a>
+    <a href="e6de98bc6f8da9ec.html" title="Quanscient and Haiqu Demonstrate  Algorithm for Scalable Computational Nonlinear Fluid Simulations">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Moar Updatez</h1>
+    <h1 class="article-title">QuEra Releases Open-Source GPU-Accelerated T-Gate Simulator for Error Correction Research</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>4w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>21h</span>
       <span class="article-category">quantum</span>
-      <span>709 words</span>
-      <span>4 min read</span>
+      <span>276 words</span>
+      <span>2 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Moar Updatez<br>
-To start on a somber note: those of us at UT Austin are in mourning this week for Savitha Shan, an undergrad double major here in economics and information systems, who was murdered over the weekend by an Islamist terrorist who started randomly shooting people on Sixth Street, apparently angry about the war in Iran. Two other innocents were also killed.<br>
-As it happens, these murders happened just a few hours after the end of my daughter’s bat mitzvah, and in walking distance from the venue. The bat mitzvah itself was an incredibly joyful and successful event that consumed most of my time lately, and which I might or might not say more about—the nastier the online trolls get, the more I need to think about my family’s privacy.<br>
-Of all the many quantum computing podcasts/interviews I’ve done recently, I’m probably happiest with this one, with Yuval Boger of QuEra. It covers all the main points about where the hardware currently is, the threat to public-key cryptography, my decades-long battle against quantum applications hype, etc. etc., and there’s even an AI-created transcript that eliminates my verbal infelicities!<br>
-A month ago, I blogged about “The Time I Didn’t Meet Jeffrey Epstein” (basically, because my mom warned me not to). Now the story has been written up in Science magazine, under the clickbaity headline “Meet Three Scientists Who Said No to Epstein.” (Besides yours truly, the other two scientists are friend-of-the-blog Sean Carroll, whose not-meeting-Epstein story I’d already heard directly from him, and David Agus, whose story I hadn’t heard.)<br>
-To be clear: as I explained in my post, I never actually said “no” to Epstein. Instead, based on my mom’s advice, I simply failed to follow up with his emissary, to the point where no meeting ever happened.<br>
-Anyway, ever since Science ran this story and it started making the rounds on social media, my mom has been getting congratulatory messages from friends of hers who saw it!<br>
-I’ve been a huge fan of the philosopher-novelist Rebecca Newberger Goldstein ever since I read her celebrated debut work, The Mind-Body Problem, back in 2005. Getting to know Rebecca and her husband, Steven Pinker, was a highlight of my last years at MIT. So I’m thrilled that Rebecca will be visiting UT Austin next week to give a talk on Spinoza, related to her latest book The Mattering Instinct (which I’m reading right now), and hosted by me and my colleague Galen Strawson in UT’s philosophy department. More info is in the poster below. If you’re in Austin, I hope to see you there!<br>
-The 88-year-old Donald Knuth has published a 5-page document about how Claude was able to solve a tricky graph theory problem that arose while he was working on the latest volume of The Art of Computer Programming—a series that Knuth is still writing after half a century. As you’d expect from Knuth, the document is almost entirely about the graph theory problem itself and Claude’s solution to it, eschewing broader questions about the nature of machine intelligence and how LLMs are changing life on Earth. To anyone who’s been following AI-for-math lately, the fact that Claude now can help with this sort of problem won’t come as a great shock. The virality is presumably because Knuth is such a legend that to watch him interact productively with an LLM is sort of like watching Leibniz, Babbage, or Turing do the same.<br>
-John Baez is a brilliant mathematical physicist and writer, who was blogging about science before the concept of “blogging” even existed, and from whom I’ve learned an enormous amount. But regarding John’s quest for the past 15 years — namely, to use category theory to help solve the climate crisis (!) — I always felt like the Cookie Monster would, with equal intellectual justification, say that the key to arresting climate change was for him to eat more Oreos. Then I read this Quanta article on the details of Baez’s project, and … uh … I confess it failed to change my view. Maybe someday I’ll understand why it’s better to say using category theory what I would’ve said in a 100x simpler way without category theory, but I fear that day is not today.</p>
+    <p>QuEra Computing has released Tsim, an open-source, GPU-accelerated quantum circuit simulator designed to model non-Clifford gate operations. The tool addresses a technical gap in the development of quantum error correction (QEC) protocols, which require high-speed, large-scale statistical analysis of universal quantum circuits. While established simulators such as STIM focus on Clifford gates, Tsim provides the functionality needed to simulate T-gates, which are necessary for achieving universal quantum computation and practical quantum advantage.<br>
+Technically, Tsim supports quantum circuits with 80 or more physical qubits and is optimized to produce millions of samples in parallel. Performance benchmarks indicate that the simulator can process an 85-qubit circuit at a rate of approximately 600 nanoseconds per shot when running on an NVIDIA GH200. The package is compatible with the STIM circuit format and API, enabling researchers to incorporate non-Clifford operations into existing QEC simulation pipelines. It is also integrated into QuEra’s Bloqade ecosystem, which covers the workflow from program definition and noise modeling to decoding.<br>
+The release of Tsim follows several hardware milestones reported by QuEra in 2025, including the demonstration of 96 logical qubits and the first logical-level magic state distillation. By providing a tool that accelerates the design and testing of fault-tolerant algorithms, QuEra aims to facilitate the validation of QEC strategies before they are executed on physical hardware. The simulator is currently available on GitHub, and the company has scheduled a technical webinar for April 28, 2026, to discuss its application in designing reliable fault-tolerant architectures.<br>
+For the complete technical details on Tsim and access to the GitHub repository, consult the official QuEra announcement here, the repository here, and the webinar registration link here.<br>
+April 2, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9606" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/quera-releases-open-source-gpu-accelerated-t-gate-simulator-for-error-correction-research/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="3da65fa92e6ed0ef.html" class="prev-next">&larr; The ”JVG algorithm” is crap</a>
+  <a href="f8d6fb95dfe0e1b6.html" class="prev-next">&larr; QuiX Quantum Demonstrates Below-Threshold Error Mitigation in Photonic Hardware</a>
   
   
-  <a href="d6c7d6e9b377d977.html" class="prev-next">What is next in quantum advantage? &rarr;</a>
+  <a href="e6de98bc6f8da9ec.html" class="prev-next">Quanscient and Haiqu Demonstrate  Algorithm for Scalable Computational Nonlinear Fluid Simulations &rarr;</a>
   
 </div>
 
