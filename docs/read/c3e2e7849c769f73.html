@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Decryption Threshold — Re-estimating the Quantum Threat to Blockchain Infrastructure — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="bc368c55790c236f.html" title="Using Digital Twin Methods to Accurately Simulate Quantum Error Correction">&larr; prev</a>
+    <a href="6c8689380cbdbdca.html" title="CavilinQ Secures $8.8M Seed Round to Develop Modular Quantum Interconnects">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">The Decryption Threshold — Re-estimating the Quantum Threat to Blockchain Infrastructure</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>8h</span>
+      <span class="article-category">quantum</span>
+      <span>1430 words</span>
+      <span>8 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>By Mohamed Abdel-Kareem<br>
+Recent technical disclosures from Google Quantum AI and the newly emerged Oratomic have provided updated resource estimates for executing Shor’s algorithm against the secp256k1 elliptic curve. secp256k1 is a specialized cryptographic algorithm best known for powering Bitcoin’s public-key cryptography and digital signatures. These findings indicate a reduction in the physical and logical requirements for a Cryptographically Relevant Quantum Computer (CRQC) to compromise the digital signature schemes underpinning the Bitcoin and Ethereum networks.<br>
+The following analysis evaluates the divergence between “fast-clock” and “slow-clock” architectures and the resulting implications for active and dormant digital assets.<br>
+The 1,000 Logical Qubit Milestone<br>
+In a whitepaper released on March 30, 2026, Google Quantum AI indicated that the 256-bit Elliptic Curve Discrete Logarithm Problem (ECDLP can be broken with a dramatically smaller quantum computer than previously thought (an order of magnitude smaller, using only 1,200-1450 logical qubits and 90-70 million Toffoli gates). Crucially on quantum computers with sufficiently fast clock speeds, the attack could be executed in as little as a 9 minute window; short enough to threaten digital signatures exposed during the Bitcoin transaction broadcast process.<br>
+In a noteworthy quantum industry first, Google utilized a Zero-Knowledge (ZK) proof to substantiate these claims, an approach dictated by the “Responsible Disclosure” paradigm. As quantum resource estimates shrink toward the thresholds of foreseeable hardware, Google argued that publishing the specific logical gate sequences or optimized attack vectors would effectively provide a functional blueprint for nefarious actors. The ZK proof allows for independent cryptographic verification of the results while keeping the sensitive “how-to” details opaque.<br>
+Crucially, the Toffoli gate count (70 to 90 million) serves as the primary determinant of execution speed. Because these gates represent the total computational depth required, their reduction is what allows a superconducting architecture with a 10-3 physical error rate to resolve a private key in approximately 9 to 23 minutes. By linking Toffoli count directly to a specific time window, the research demonstrates that “on-spend” attacks are transitioning from a theoretical possibility to a concrete threat model for fast-clock systems.<br>
+Fast-Clock vs. Slow-Clock Architectures<br>
+A key distinction highlighted in this research is the operational speed, or “clock rate,” of different quantum modalities:<br>
+- Fast-Clock (Superconducting Circuits/Photon Based/Silicon Spin): These systems feature short error-correction cycles (approx. 1 microsecond). High gate speeds enable “on-spend” attacks, where a private key is derived within the ten-minute average block time of Bitcoin.<br>
+- Slow-Clock (Neutral Atom/Trapped Ion): These systems have cycle times two to three orders of magnitude slower (100 microseconds to 1 millisecond). While capable of “at-rest” attacks on static balances, they are currently considered too slow to intercept active mempool transactions.<br>
+Neutral Atoms and Hardware Efficiency<br>
+Simultaneously, Oratomic (featuring researchers such as John Preskill and Dolev Bluvstein) published results demonstrating that Shor’s algorithm is viable with as few as 10,000 reconfigurable atomic qubits. This approach prioritizes hardware efficiency over raw execution speed, leveraging a specifically selected family of ultra-high-rate Quantum Low-Density Parity-Check (qLDPC) codes.<br>
+While the Google approach requires approximately 500,000 physical qubits on a superconducting plane to reach the logical threshold, Oratomic’s architecture achieves a 30% encoding rate. This allows for a cryptographically relevant machine to be built with an order of magnitude fewer physical components (~26,000 qubits). However, the trade-off involves more than just time—with an Oratomic system requiring days rather than minutes—it also encompasses significant engineering challenges regarding connectivity.<br>
+The high-rate qLDPC (Quantum Low-Density Parity-Check) codes utilized by Oratomic require “non-local” connectivity, often demanding 6 or more connections per qubit and interactions between non-nearest neighbors. While Oratomic’s reconfigurable neutral-atom arrays leverage optical tweezers to achieve this non-local mapping, traditional superconducting architectures are historically constrained by 4-nearest-neighbor planar connectivity. Google’s recent estimates specifically rely on this simpler planar model, as implementing the long-distance wiring required for qLDPC remains a formidable scaling hurdle for superconducting hardware.<br>
+These examples stand in alongside the resource estimates published in 2024 and 2025 by Alice & Bob of attacks on requiring 100,000 Cat qubits and an estimated runtime of 9 hours. This architecture though is at a significantly earlier stage of realization.<br>
+Comparative Resource Estimates for secp256k1 (n=256)<br>
+The following table compares the current leading proposals for breaking the elliptic curve cryptography used in major cryptocurrencies:<br>
+| Platform | Modality | Logical Qubits | Physical Qubits | Estimated Time | Attack Type |<br>
+| Superconducting | 1,200 | ~500,000 | 9–23 Minutes | On-Spend & At-Rest | |<br>
+| Oratomic | Neutral Atom | ~1,000 | 26,000* | ~10 Days | At-Rest |<br>
+| Alice & Bob | Cat Qubits | ~1,000** | ~100,000*** | ~9 Hours**** | Hybrid |<br>
+* The “Space-Efficient” Oratomic setup uses ~10,000 qubits but takes ~264 days; the “Time-Efficient” 26k setup reduces this to ~10 days.<br>
+** Standard Shor’s requirement for 256-bit ECDLP.<br>
+*** Per Alice & Bob 2024 LDPC architecture paper.<br>
+**** Per Gouzien et al. (2023) estimate for 256-bit ECDLP.<br>
+The “On-Spend” Threat to Blockchains<br>
+The feasibility of sub-30-minute decryption introduces the On-Spend Attack vector. In this scenario, an adversary monitors the public mempool for a transaction broadcast. Once the public key is revealed, the CRQC derives the private key and broadcasts a “forged” transaction with a higher fee to the same miners.<br>
+- Bitcoin Resilience: With an average block time of 10 minutes, Bitcoin is highly vulnerable to fast-clock CRQCs.<br>
+- Ethereum Resilience: Ethereum’s 12-second block slots and use of private mempools (e.g., BuilderNet) provide a higher degree of insulation against on-spend attacks, though at-rest vulnerabilities remain.<br>
+- Proof-of-Work (PoW): Google’s whitepaper highlights that Grover’s algorithm does not pose a credible threat to Bitcoin mining. The theoretical quadratic speedup is effectively negated by quantum error-correction overhead and the massive parallelization of existing classical ASIC miners.<br>
+Policy Implications: Digital Salvage and Dormant Assets<br>
+The existence of “historic P2PK” (Pay-to-Public-Key) assets—wallets that have not moved funds in years and primarily date back to the network’s first year—presents a unique policy challenge. Approximately 1.7 million BTC are currently held in these Satoshi-era scripts, which have been largely phased out in favor of more secure hashed formats like P2PKH. Because the public keys for these UTXOs are exposed directly on the ledger, they are vulnerable to “at-rest” attacks by a CRQC. As illustrated in the Google whitepaper’s Figure 7, which ranks vulnerable addresses by balance, these fixed targets cannot be migrated to Post-Quantum Cryptography (PQC) because the owners have likely lost their private keys, leaving hundreds of billions of dollars in digital wealth effectively abandoned.<br>
+Google’s whitepaper suggests three community-led frameworks for these assets:<br>
+- Burn: Modifying the protocol to render dormant assets unspendable after a certain date.<br>
+- Hourglass: Limiting the rate at which dormant assets can be spent to prevent a sudden supply shock.<br>
+- Digital Salvage: A legal framework where the recovery of abandoned digital assets is treated similarly to “sunken treasure,” regulated by governments to ensure proceeds enter the taxable economy.<br>
+The Imperative for Immediate Migration<br>
+The technical path to quantum resilience is well-defined: a systemic migration to Post-Quantum Cryptography (PQC) standards, such as ML-DSA (Dilithium) or Falcon. However, the Google Quantum AI team emphasizes that the window for this transition is narrowing. In their 2026 disclosure, they took the unusual step of bolding their primary recommendation to ensure it was not lost in the technical data:<br>
+“As we will argue throughout this piece, the safest course of action for the cryptocurrency community is to begin preparing itself against quantum attacks immediately.”<br>
+Google’s decision to transition from publishing “attack blueprints” to providing “resource estimates via ZK proofs” signals that the industry has entered a new phase of risk. While a cryptographically relevant quantum computer (CRQC) does not exist today, the 20x reduction in required physical qubits—bringing the requirement to under 500,000—suggests that the 2029–2030 timeframe is no longer a conservative estimate, but an active deadline for the digital economy.<br>
+Intermediate mitigations include:<br>
+- Address Rotation: Strictly avoiding public key reuse for P2PKH/P2WPKH addresses.<br>
+- Key Rotation in PoS: Implementing mechanisms for Ethereum validators to rotate to PQC credentials before CRQCs reach the 1,000 logical qubit threshold.<br>
+- Account Abstraction: Utilizing smart contract wallets to decouple identity from a single, static ECDSA key.<br>
+Follow-up Question: Given that fast-clock architectures are now estimated to break secp256k1 within a single block window, should Bitcoin developers prioritize a hard fork for PQC migration over intermediate soft-fork “hourglass” solutions?<br>
+For technical details and industry commentary on these updated resource estimates, view a blog post published by Google here, consult the Google Quantum AI whitepaper here, the Oratomic study on atomic hardware efficiency here, and Alice & Bob’s architectural analysis here.<br>
+April 3, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/the-decryption-threshold-re-estimating-the-quantum-threat-to-blockchain-infrastructure/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="bc368c55790c236f.html" class="prev-next">&larr; Using Digital Twin Methods to Accurately Simulate Quantum Error Correction</a>
+  
+  
+  <a href="6c8689380cbdbdca.html" class="prev-next">CavilinQ Secures $8.8M Seed Round to Develop Modular Quantum Interconnects &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-04-04 06:57 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
