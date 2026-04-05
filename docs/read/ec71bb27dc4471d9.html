@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Updatez! — Meridian Reader</title>
+  <title>Osaka University and Fixstars Break 40-Qubit Barrier in Quantum Chemistry Simulation — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,50 +126,49 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="3b9cc18cd75e489f.html" title="Anthropic: Stay strong!">&larr; prev</a>
-    <a href="2e0d545a26c4a802.html" title="Quantum cartography">next &rarr;</a>
+    <a href="c5d637bb94b7abd7.html" title="Postquant Labs Launches Quip.Network Testnet for Decentralized Quantum-Classical Optimization">&larr; prev</a>
+    <a href="c12faad80c3dafd9.html" title="Rigetti Sells Novera QPU to University of Saskatchewan for Canada’s First Open-Architecture System">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Updatez!</h1>
+    <h1 class="article-title">Osaka University and Fixstars Break 40-Qubit Barrier in Quantum Chemistry Simulation</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>6w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>12h</span>
       <span class="article-category">quantum</span>
-      <span>493 words</span>
+      <span>460 words</span>
       <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Updatez!<br>
-- The STOC’2026 accepted papers list is out. It seems to me that there’s an emperor’s bounty of amazing stuff this year. I felt especially gratified to see the paper on the determination of BusyBeaver(5) on the list, reflecting a broad view of what theory of computing is about.<br>
-- There’s a phenomenal profile of Henry Yuen in Quanta magazine. Henry is now one of the world leaders of quantum complexity theory, involved in breakthroughs like MIP*=RE and now pioneering the complexity theory of quantum states and unitary transformations (the main focus of this interview). I’m proud that Henry tells Quanta that learned about the field in 2007 or 2008 from a blog called … what was it again? … Shtetl-Optimized? I’m also proud that I got to help mentor Henry when he was a PhD student of my wife Dana Moshkovitz at MIT. Before I read this Quanta profile, I didn’t even know the backstory about Henry’s parents surviving and fleeing the Cambodian genocide, or about Henry growing up working in his parents’ restaurant. Henry never brought any of that up!<br>
-- See Lance’s blog for an obituary of Joe Halpern, a pioneer of the branch of theoretical computer science that deals with reasoning about knowledge (e.g., the muddy children puzzle), who sadly passed away last week. I knew Prof. Halpern a bit when I was an undergrad at Cornell. He was a huge presence in the Cornell CS department who’ll be sorely missed.<br>
-- UT Austin has announced the formation of a School of Computing, which will bring together the CS department (where I work) with statistics, data science, and several other departments. Many of UT’s peer institutions have recently done the same. Naturally, I’m excited for what this says about the expanded role of computing at UT going forward. We’ll be looking to hire even more new faculty than we were before!<br>
-- When I glanced at the Chronicle of Higher Education to see what was new, I learned that researchers at OpenAI had proposed a technical solution, called “watermarking,” that might help tackle the crisis of students relying on AI to write all their papers … but that OpenAI had declined to deploy that solution. The piece strongly advocates a legislative mandate in favor of watermarking LLM outputs, and addresses some of the main counterarguments to that position.<br>
-- For those who can’t get enough podcasts of me, here are the ones I’ve done recently. Quantum: Science vs. Mythology on the Peggy Smedley Show. AI Alignment, Complexity Theory, and the Computability of Physics, on Alexander Chin’s Philosophy Podcast. And last but not least, What Is Quantum Computing? on the Robinson Erhardt Podcast.<br>
-- Also, here’s an article that quotes me entitled “Bitcoin needs a quantum upgrade. So why isn’t it happening?” Also, here’s a piece that interviews me in Investor’s Business Daily, entitled “Is quantum computing the next big tech shift?” (I have no say over these titles.)</p>
+    <p>Osaka University’s Center for Quantum Information and Quantum Biology (QIQB) and Fixstars Corporation have established a new benchmark in classical quantum simulation, utilizing 1,024 NVIDIA H100 GPUs to surpass the traditional 40-qubit “glass ceiling.” By leveraging the ABCI-Q system at Japan’s National Institute of Advanced Industrial Science and Technology (AIST), the joint team successfully executed one of the world’s largest state-vector-based simulations of quantum chemistry circuits. This achievement provides a critical high-fidelity testbed for the development and validation of algorithms intended for future Fault-Tolerant Quantum Computers (FTQC).<br>
+The team’s technical methodology focused on Iterative Quantum Phase Estimation (IQPE), a core subroutine in quantum chemistry designed to extract precise energy eigenvalues while minimizing the required number of ancillary qubits. The researchers implemented this algorithm within the “chemqulacs-gpu” simulator, an optimized version of the Qulacs library tailored for GPU clusters. Because IQPE is significantly more resource-efficient than standard QPE, it is considered a primary candidate for industrial applications in drug discovery and materials development once error-corrected hardware becomes viable.<br>
+To maintain efficiency across such a massive hardware footprint, the team developed a bespoke parallel computing architecture to resolve the inter-GPU communication bottlenecks that typically stall state-vector simulations at high qubit counts. Distributing a state vector for over 40 qubits requires managing an astronomical amount of data—the memory requirement doubles with each added qubit. Fixstars provided the performance profiling and tuning expertise necessary to synchronize the 1,024 H100 GPUs on the ABCI-Q cluster, ensuring that the computational overhead did not negate the benefits of the massive parallelization.<br>
+The simulation achieved two major milestones in molecular complexity: a 42-spin-orbital system for an H2O molecule and a 41-qubit pure circuit benchmark for an Fe2S2 (iron-sulfur) cluster. Modeling iron-sulfur clusters is notoriously difficult for classical computers due to their complex electronic structures, yet they are vital for understanding biological processes like nitrogen fixation and photosynthesis. By successfully simulating these systems, the researchers have expanded the scale of molecular models available for vetting the Hamiltonians and gate sequences that will eventually drive discovery in catalysts and new materials.<br>
+This collaboration underscores the strategic importance of pre-hardware algorithm validation. As the industry moves closer to the FTQC era, it is essential to have classical “gold standards” to ensure that quantum subroutines perform as expected when scaled. The ability to simulate 42-qubit circuits on classical supercomputers allows researchers to “de-risk” their software stacks today, ensuring that the industrial tools for molecular screening are rigorously tested before the arrival of large-scale, fault-tolerant systems. This work highlights a maturing shift toward treating software optimization as a foundational pillar of the quantum utility roadmap.<br>
+For the complete technical breakdown and the GTC 2026 presentation (Session P81339), consult the official Fixstars announcement here and the Osaka University research news here.<br>
+April 4, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9572" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/osaka-university-and-fixstars-break-40-qubit-barrier-in-quantum-chemistry-simulation/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="3b9cc18cd75e489f.html" class="prev-next">&larr; Anthropic: Stay strong!</a>
+  <a href="c5d637bb94b7abd7.html" class="prev-next">&larr; Postquant Labs Launches Quip.Network Testnet for Decentralized Quantum-Classical Optimization</a>
   
   
-  <a href="2e0d545a26c4a802.html" class="prev-next">Quantum cartography &rarr;</a>
+  <a href="c12faad80c3dafd9.html" class="prev-next">Rigetti Sells Novera QPU to University of Saskatchewan for Canada’s First Open-Architecture System &rarr;</a>
   
 </div>
 

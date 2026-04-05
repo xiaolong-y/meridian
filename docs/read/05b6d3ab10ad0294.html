@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Updatez! — Meridian Reader</title>
+  <title>Sydney and IBM Researchers Leverage Gauge Theory for Low-Overhead Fault Tolerance — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,50 +126,47 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="3b9cc18cd75e489f.html" title="Anthropic: Stay strong!">&larr; prev</a>
-    <a href="2e0d545a26c4a802.html" title="Quantum cartography">next &rarr;</a>
+    
+    <a href="c5d637bb94b7abd7.html" title="Postquant Labs Launches Quip.Network Testnet for Decentralized Quantum-Classical Optimization">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Updatez!</h1>
+    <h1 class="article-title">Sydney and IBM Researchers Leverage Gauge Theory for Low-Overhead Fault Tolerance</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>6w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>10h</span>
       <span class="article-category">quantum</span>
-      <span>493 words</span>
+      <span>404 words</span>
       <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Updatez!<br>
-- The STOC’2026 accepted papers list is out. It seems to me that there’s an emperor’s bounty of amazing stuff this year. I felt especially gratified to see the paper on the determination of BusyBeaver(5) on the list, reflecting a broad view of what theory of computing is about.<br>
-- There’s a phenomenal profile of Henry Yuen in Quanta magazine. Henry is now one of the world leaders of quantum complexity theory, involved in breakthroughs like MIP*=RE and now pioneering the complexity theory of quantum states and unitary transformations (the main focus of this interview). I’m proud that Henry tells Quanta that learned about the field in 2007 or 2008 from a blog called … what was it again? … Shtetl-Optimized? I’m also proud that I got to help mentor Henry when he was a PhD student of my wife Dana Moshkovitz at MIT. Before I read this Quanta profile, I didn’t even know the backstory about Henry’s parents surviving and fleeing the Cambodian genocide, or about Henry growing up working in his parents’ restaurant. Henry never brought any of that up!<br>
-- See Lance’s blog for an obituary of Joe Halpern, a pioneer of the branch of theoretical computer science that deals with reasoning about knowledge (e.g., the muddy children puzzle), who sadly passed away last week. I knew Prof. Halpern a bit when I was an undergrad at Cornell. He was a huge presence in the Cornell CS department who’ll be sorely missed.<br>
-- UT Austin has announced the formation of a School of Computing, which will bring together the CS department (where I work) with statistics, data science, and several other departments. Many of UT’s peer institutions have recently done the same. Naturally, I’m excited for what this says about the expanded role of computing at UT going forward. We’ll be looking to hire even more new faculty than we were before!<br>
-- When I glanced at the Chronicle of Higher Education to see what was new, I learned that researchers at OpenAI had proposed a technical solution, called “watermarking,” that might help tackle the crisis of students relying on AI to write all their papers … but that OpenAI had declined to deploy that solution. The piece strongly advocates a legislative mandate in favor of watermarking LLM outputs, and addresses some of the main counterarguments to that position.<br>
-- For those who can’t get enough podcasts of me, here are the ones I’ve done recently. Quantum: Science vs. Mythology on the Peggy Smedley Show. AI Alignment, Complexity Theory, and the Computability of Physics, on Alexander Chin’s Philosophy Podcast. And last but not least, What Is Quantum Computing? on the Robinson Erhardt Podcast.<br>
-- Also, here’s an article that quotes me entitled “Bitcoin needs a quantum upgrade. So why isn’t it happening?” Also, here’s a piece that interviews me in Investor’s Business Daily, entitled “Is quantum computing the next big tech shift?” (I have no say over these titles.)</p>
+    <p>Dr. Dominic Williamson (University of Sydney) and Theodore J. Yoder (IBM) have introduced a “gauging” procedure for fault-tolerant logical measurement in quantum error-correcting codes. Published in Nature Physics, the research was developed during Williamson’s industrial placement at IBM. The methodology addresses a critical bottleneck in Quantum Low-Density Parity-Check (qLDPC) codes: how to perform logical processing without sacrificing the efficiency gains of high-rate quantum memory.<br>
+The core innovation involves treating a logical operator as a global physical symmetry and “gauging” it—a concept borrowed from lattice gauge theory in particle physics. By introducing auxiliary “gauge qubits” on a connected graph G, the system enforces a global symmetry through a product of local symmetries (Gauss’s law operators). This allows the hardware to track global logical information without forcing the collapse of local quantum states, effectively providing a non-destructive way to measure logical operators in a large code block.<br>
+Efficiency is the primary differentiator of this framework. Previous qLDPC lattice surgery methods typically incurred an auxiliary qubit overhead of Θ(Wd), where W is the operator weight and d is the code distance. In high-performance codes where n = Θ(d), this often resulted in a resource overhead of Ω(n2), which is substantially larger than the code itself. Williamson’s approach achieves a worst-case overhead of W⋅polylog(W), representing a nearly linear scaling that dramatically reduces the physical qubits required for fault-tolerant architectures.<br>
+To maintain the LDPC property during code deformation, the researchers utilized expander graphs and the Freedman-Hastings decongestion lemma. By “cellulating” cycles into triangles and adding layers to the auxiliary graph, the team ensures the deformed code remains sparse while preserving a spacetime fault distance of d. This graph-based flexibility makes the procedure platform-agnostic, allowing it to be adapted to any stabilizer code, including non-CSS (Calderbank-Shor-Steane) varieties that have historically been difficult to process efficiently.<br>
+IBM has already integrated elements of this “gauging” design into its long-term roadmap for large-scale, fault-tolerant quantum computers. By reducing the “engineering debt” of auxiliary qubits, the framework supports a transition toward a “quantum hard drive” model where processing costs scale proportionally with stored information. This research represents a significant alignment between theoretical high-energy physics and hardware engineering, providing a blueprint for the resource-efficient implementation of universal quantum gates.<br>
+For a comprehensive technical breakdown of the gauging logical operators framework and the official press package from the University of Sydney, consult the Nature Physics study here and the EurekAlert! news release here.<br>
+April 4, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9572" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/sydney-and-ibm-researchers-leverage-gauge-theory-for-low-overhead-fault-tolerance/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
+  <span></span>
   
-  <a href="3b9cc18cd75e489f.html" class="prev-next">&larr; Anthropic: Stay strong!</a>
-  
-  
-  <a href="2e0d545a26c4a802.html" class="prev-next">Quantum cartography &rarr;</a>
+  <a href="c5d637bb94b7abd7.html" class="prev-next">Postquant Labs Launches Quip.Network Testnet for Decentralized Quantum-Classical Optimization &rarr;</a>
   
 </div>
 
