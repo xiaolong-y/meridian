@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quantum cartography — Meridian Reader</title>
+  <title>IQM and Fraunhofer FOKUS Milestone: Qrisp 0.8 Compiles 2048-bit Shor’s Algorithm — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,50 +126,54 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="d70ea703cf92165c.html" title="Updatez!">&larr; prev</a>
-    <a href="6e6fe253255697a8.html" title="Spooky action nearby: Entangling logical qubits without physical operations">next &rarr;</a>
+    
+    <a href="05b6d3ab10ad0294.html" title="Sydney and IBM Researchers Leverage Gauge Theory for Low-Overhead Fault Tolerance">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Quantum cartography</h1>
+    <h1 class="article-title">IQM and Fraunhofer FOKUS Milestone: Qrisp 0.8 Compiles 2048-bit Shor’s Algorithm</h1>
     <div class="article-meta">
-      <span class="article-source">Quantum Frontiers (Caltech)</span>
-      <span>Nicole Yunger Halpern</span>
-      <span>7w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>7h</span>
       <span class="article-category">quantum</span>
-      <span>581 words</span>
+      <span>401 words</span>
       <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>My husband and I visited the Library of Congress on the final day of winter break this year. In a corner, we found a facsimile of a hand-drawn map: the world as viewed by sixteenth-century Europeans. North America looked like it had been dieting, having shed landmass relative to the bulk we knew. Australia didn’t appear. Yet the map’s aesthetics hit home: yellowed parchment, handwritten letters, and symbolism abounded. Never mind street view; I began hungering for an “antique” setting on Google maps.<br>
-Approximately four weeks after that trip, I participated in the release of another map: the publication of the review “Roadmap on quantum thermodynamics” in the journal Quantum Science and Technology. The paper contains 24 chapters, each (apart from the introduction) profiling one opportunity within the field of quantum thermodynamics. My erstwhile postdoc Aleks Lasek and I wrote the chapter about the thermodynamics of incompatible conserved quantities, as Quantum Frontiers fans1 might guess from earlier blog posts.<br>
-Allow me to confess an ignoble truth: upon agreeing to coauthor the roadmap, I doubted whether it would impact the community enough to merit my time. Colleagues had published the book Thermodynamics in the Quantum Regime seven years earlier. Different authors had contributed different chapters, each about one topic on the rise. Did my community need such a similar review so soon after the book’s publication? If I printed a map of a city the last time I visited, should I print another map this time?<br>
-Apparently so. I often tout the swiftness with which quantum thermodynamics is developing, yet not even I predicted the appetite for the roadmap. Approximately thirty papers cited the arXiv version of the paper during the first nine months of its life—before the journal publication. I shouldn’t have likened the book and roadmap to maps of a city; I should have likened them to maps of a terra incognita undergoing exploration. Such maps change constantly, let alone over seven years.<br>
-Two trends unite many of the roadmap’s chapters, like a mountain range and a river. First, several chapters focus on experiments. Theorists founded quantum thermodynamics and dominated the field for decades, but experimentalists are turning the tables. Even theory-heavy chapters, like Aleks’s and mine, mention past experiments and experimental opportunities.<br>
-Second, several chapters blend quantum thermodynamics with many-body physics. Many-body physicists share interests with quantum thermodynamicists: thermalization and equilibrium, the absence thereof, and temperature. Yet many-body physicists belong to another tribe. They tend to interact with each other differently than quantum thermodynamicists do, write papers differently, adhere to different standards, and deploy different mathematical toolkits. Many-body-physicists use random-matrix theory, mean field theory, Wick transformations, and the like. Quantum thermodynamicists tend to cultivate and apply quantum information theory. Yet the boundary between the communities has blurred, and many scientists (including yours truly) shuttle between the two.<br>
-When Quantum Science and Technology published the roadmap, lead editor Steve Campbell announced the event to us coauthors. He’d wrangled the 69 of us into agreeing to contribute, choosing topics, drafting chapters, adhering to limitations on word counts and citations, responding to referee reports, and editing. An idiom refers to the herding of cats, but it would gain in poignancy by referring to the herding of academics. Little wonder Steve wrote in his email, “I’ll leave it to someone else to pick up the mantle and organise Roadmap #2.” I look forward to seeing that roadmap—and, perhaps, contributing to it. Who wants to pencil in Australia with me?<br>
-1Hi, Mom and Dad.</p>
+    <p>IQM Quantum Computers, in collaboration with Fraunhofer FOKUS, has announced a major update to the Eclipse Qrisp framework, achieving the first full gate-level compilation of Shor’s algorithm at a cryptographically relevant scale of 2048-bit keys. While previous resource estimates for breaking RSA-2048 relied on symbolic extrapolation or theoretical models, Qrisp 0.8 produced a concrete gate-by-gate assembly and exact qubit budget. Utilizing a parallelized resource estimation loop, the compiler reached a processing rate of approximately 109 gates per second, turning long-standing theoretical benchmarks into precise engineering targets for future fault-tolerant systems.<br>
+The 0.8 release marks a shift toward Quantum Linear Algebra through the introduction of the BlockEncoding<br>
+class. This provides a “NumPy-like” interface for non-unitary operations, allowing developers to perform complex matrix arithmetic—including addition, multiplication, and inversion—using standard Python operators. By embedding non-unitary operators into the upper-left block of a larger unitary matrix, Qrisp automates the underlying circuit construction and ancilla management. This is supported by a Generalized Quantum Signal Processing (GQSP) module, which implements advanced techniques like the Quantum Eigenvalue Transform for Hamiltonian simulations and matrix inversion with O(poly(log(1/ϵ))) complexity.<br>
+To bridge the gap between high-level research and industrial-grade software engineering, Qrisp now includes a native MLIR (Multi-Level Intermediate Representation) quantum dialect. This connects quantum compilation to the same optimization infrastructure used in high-performance classical computing. Additionally, the framework introduces Stim integration, allowing developers to extract error correction circuits directly from high-level programs. By combining these “utility-scale” tools with a suite of advanced algorithms—including Quantum Lanczos for ground-state energy estimation and QDrift for stochastic Hamiltonian simulation—the Eclipse Qrisp ecosystem positions itself as a full-stack framework for the fault-tolerant era.<br>
+Key Technical Features in Qrisp 0.8<br>
+| Feature | Description |<br>
+BlockEncoding | NumPy-style interface for non-unitary matrix inversion and spectral transforms. |<br>
+| Scaleable Shor | Full compilation for 128 to 2048-bit keys using BigInteger types. |<br>
+| MLIR Dialect | Standards-compliant lowering of quantum programs into the LLVM ecosystem. |<br>
+| Stim Extraction | Direct bridge to quantum error correction (QEC) simulation and noise modeling. |<br>
+| Quantum Lanczos | Ground-state energy estimation via Krylov subspace construction. |<br>
+“At IQM, we believe quantum advantage is built, not rented. Resource estimation at this scale turns vague promises into concrete engineering targets.” — IQM Quantum Computers<br>
+For the complete technical changelog and tutorials on 2048-bit resource estimation, consult the Eclipse Qrisp documentation here and the official project overview here.<br>
+April 5, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantumfrontiers.com/2026/02/11/quantum-cartography/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/iqm-and-fraunhofer-fokus-milestone-qrisp-0-8-compiles-2048-bit-shors-algorithm/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
+  <span></span>
   
-  <a href="d70ea703cf92165c.html" class="prev-next">&larr; Updatez!</a>
-  
-  
-  <a href="6e6fe253255697a8.html" class="prev-next">Spooky action nearby: Entangling logical qubits without physical operations &rarr;</a>
+  <a href="05b6d3ab10ad0294.html" class="prev-next">Sydney and IBM Researchers Leverage Gauge Theory for Low-Overhead Fault Tolerance &rarr;</a>
   
 </div>
 
