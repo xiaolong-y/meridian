@@ -137,20 +137,29 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>18h</span>
+      <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>70 words</span>
-      <span>1 min read</span>
+      <span>401 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>IQM Quantum Computers, in collaboration with Fraunhofer FOKUS, has announced a major update to the Eclipse Qrisp framework, achieving the first full gate-level compilation of Shor’s algorithm at a cryptographically relevant scale of 2048-bit keys. While previous resource estimates for breaking RSA-2048 relied on symbolic extrapolation or theoretical models, Qrisp 0.8 produced a concrete gate-by-gate [...] The post IQM and Fraunhofer FOKUS Milestone: Qrisp 0.8 Compiles 2048-bit Shor’s Algorithm a</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/iqm-and-fraunhofer-fokus-milestone-qrisp-0-8-compiles-2048-bit-shors-algorithm/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>IQM Quantum Computers, in collaboration with Fraunhofer FOKUS, has announced a major update to the Eclipse Qrisp framework, achieving the first full gate-level compilation of Shor’s algorithm at a cryptographically relevant scale of 2048-bit keys. While previous resource estimates for breaking RSA-2048 relied on symbolic extrapolation or theoretical models, Qrisp 0.8 produced a concrete gate-by-gate assembly and exact qubit budget. Utilizing a parallelized resource estimation loop, the compiler reached a processing rate of approximately 109 gates per second, turning long-standing theoretical benchmarks into precise engineering targets for future fault-tolerant systems.<br>
+The 0.8 release marks a shift toward Quantum Linear Algebra through the introduction of the BlockEncoding<br>
+class. This provides a “NumPy-like” interface for non-unitary operations, allowing developers to perform complex matrix arithmetic—including addition, multiplication, and inversion—using standard Python operators. By embedding non-unitary operators into the upper-left block of a larger unitary matrix, Qrisp automates the underlying circuit construction and ancilla management. This is supported by a Generalized Quantum Signal Processing (GQSP) module, which implements advanced techniques like the Quantum Eigenvalue Transform for Hamiltonian simulations and matrix inversion with O(poly(log(1/ϵ))) complexity.<br>
+To bridge the gap between high-level research and industrial-grade software engineering, Qrisp now includes a native MLIR (Multi-Level Intermediate Representation) quantum dialect. This connects quantum compilation to the same optimization infrastructure used in high-performance classical computing. Additionally, the framework introduces Stim integration, allowing developers to extract error correction circuits directly from high-level programs. By combining these “utility-scale” tools with a suite of advanced algorithms—including Quantum Lanczos for ground-state energy estimation and QDrift for stochastic Hamiltonian simulation—the Eclipse Qrisp ecosystem positions itself as a full-stack framework for the fault-tolerant era.<br>
+Key Technical Features in Qrisp 0.8<br>
+| Feature | Description |<br>
+BlockEncoding | NumPy-style interface for non-unitary matrix inversion and spectral transforms. |<br>
+| Scaleable Shor | Full compilation for 128 to 2048-bit keys using BigInteger types. |<br>
+| MLIR Dialect | Standards-compliant lowering of quantum programs into the LLVM ecosystem. |<br>
+| Stim Extraction | Direct bridge to quantum error correction (QEC) simulation and noise modeling. |<br>
+| Quantum Lanczos | Ground-state energy estimation via Krylov subspace construction. |<br>
+“At IQM, we believe quantum advantage is built, not rented. Resource estimation at this scale turns vague promises into concrete engineering targets.” — IQM Quantum Computers<br>
+For the complete technical changelog and tutorials on 2048-bit resource estimation, consult the Eclipse Qrisp documentation here and the official project overview here.<br>
+April 5, 2026</p>
   </div>
   
 </article>
@@ -173,7 +182,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-04-06 18:55 UTC
+  Generated 2026-04-07 02:03 UTC
 </div>
 
 <script type="module">
