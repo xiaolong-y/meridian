@@ -137,22 +137,20 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>1h</span>
+      <span>19h</span>
       <span class="article-category">quantum</span>
-      <span>515 words</span>
-      <span>3 min read</span>
+      <span>64 words</span>
+      <span>1 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Q-CTRL has introduced Q-NEXUS, a heterogeneous quantum computing architecture designed to address the physical resource bottlenecks currently limiting large-scale quantum computers. Rather than scaling a single monolithic array of qubits, the Q-NEXUS framework decomposes the system into specialized functional modules: Quantum Processing Units (QPUs) for logic, Quantum Memory (QM) for storage, and Quantum State Factories (QSF) for resource generation. This approach seeks to resolve the “tyranny of numbers”—the unsustainable growth of control wiring and cryogenic load—by centralizing high-speed operations while offloading storage to simplified, high-density tiers.<br>
-A primary technical insight in the Q-CTRL paper is that qubits in algorithms like RSA-2048 factorization are inactive for approximately 96–97% of all logical clock cycles. In a monolithic design, these idle qubits sit in expensive, actively error-corrected hardware, where they continue to accumulate decoherence and consume system resources. Q-NEXUS addresses this by segregating storage into a hierarchical memory system. This includes Static Transversal Quantum Memory (STQM), which uses ultra-long-coherence substrates like rare-earth ions to store states without active error correction, and Random-Access Quantum Memory (RAQM), which utilizes slower but stable modalities like neutral atoms for long-term storage.<br>
-The transition from monolithic to heterogeneous organization enables massive gains in computational reliability and efficiency. According to Q-CTRL’s detailed accounting, the Q-NEXUS architecture achieves up to a 551× reduction in algorithmic logical error for specific subroutines and a 138× reduction in physical qubit requirements for fault-tolerant benchmarks. For the factorization of a 2048-bit RSA integer, the architecture requires between 190,000 and 381,000 physical qubits depending on the memory modality used. This is a sharp reduction from the one-million-qubit baseline traditionally estimated for such tasks. Furthermore, the architecture introduces Application-Specific QPUs (ASQPUs)—dedicated hardware accelerators for subroutines like the Adder, which can cut factorization time by nearly half with only a minor hardware penalty.<br>
-To manage this distributed ecosystem, Q-CTRL developed Q-CHESS (Quantum Compiler for Heterogeneous Execution, Scheduling, and Synthesis). This orchestration layer produces machine-level instructions that account for the timing mismatches between between hardware modules. For instance, Q-CHESS synchronizes the microsecond-speed superconducting QPUs with the millisecond-scale memory tiers by inserting idling buffers and utilizing out-of-order execution. This ensures that the system’s overall throughput is limited by the fast processing core rather than the slower storage modules, effectively masking memory latency through intelligent scheduling.<br>
-This framework allows the industry to bypass the need for a single “Goldilocks” qubit by allowing different modalities to collaborate based on their intrinsic strengths. By utilizing superconducting qubits for logic and neutral atoms or trapped ions for memory, the path toward a cryptographically relevant quantum computer (CRQC) becomes an engineering challenge of integration rather than just raw scaling. The focus for hardware developers now shifts toward the reliability of the Quantum Bus—the interconnect system that facilitates module-to-module communication—as it represents the final critical enabler for this multi-modal path to utility-scale quantum computing.<br>
-For the full technical analysis and resource estimation data, consult the official Q-CTRL research paper on arXiv here. A deep-dive analysis of the threat to cryptographic foundations and the shift toward heterogeneous design is available via the Quantum Computing Report (QCR) Qnalysis here.<br>
-April 10, 2026</p>
+    <p>Overview of Q-NEXUS: a heterogeneous architecture made of specialized functional modules connected through an interconnect bus Q-CTRL has introduced Q-NEXUS, a heterogeneous quantum computing architecture designed to address the physical resource bottlenecks currently limiting large-scale quantum computers. Rather than scaling a single monolithic array of qubits, the Q-NEXUS framework decomposes the system into specialized functional [...] The post Q-CTRL Proposes Heterogeneous Architecture to O</p>
+  </div>
+  <div class="fallback">
+    Full article extraction unavailable.
+    <a href="https://quantumcomputingreport.com/q-ctrl-proposes-heterogeneous-architecture-to-optimize-fault-tolerant-resource-requirements/" target="_blank" rel="noopener">Read on original site &rarr;</a>
   </div>
   
 </article>
@@ -175,7 +173,7 @@ April 10, 2026</p>
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-04-10 13:04 UTC
+  Generated 2026-04-11 06:58 UTC
 </div>
 
 <script type="module">
