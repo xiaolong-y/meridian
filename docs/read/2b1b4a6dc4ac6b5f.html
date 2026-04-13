@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How I learned to stop worrying and…no, I’ve always adored entropy — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="43d49b625c6b6a0c.html" title="Unleashing the Advantage of Quantum AI">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">How I learned to stop worrying and…no, I’ve always adored entropy</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Frontiers (Caltech)</span>
+      <span>Nicole Yunger Halpern</span>
+      <span>2h</span>
+      <span class="article-category">quantum</span>
+      <span>1213 words</span>
+      <span>7 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>When I was pursuing a PhD at Caltech, so was my friend Jeremy. He used to throw a dinner party every few months. The email invitations welcomed friends to partake of his cooking and, if we wished, to help him cook. I didn’t help cook; but, when I arrived, the mess of pots and pans drew me to the kitchen like vinegar drawing a pathological fly. I couldn’t sit still while cookware needed cleaning, so I scrubbed and rinsed the pans and spoons and bowls. Jeremy, an applied-physics student, commented on my adeptness at decreasing entropy.<br>
+It’s the story of my life, I replied.<br>
+In fourth grade, my classmates and I cleaned our desks every Friday afternoon. Once a student finished, my teacher dismissed him or her onto the playground. My neighbor’s desk horrified me like the disaster in a hurricane’s wake, so I neatened his desk after finishing with mine.1 Another friend requested the same favor. A third classmate offered to pay me for cleaning his desk, but I’d have undertaken the chore for its own sake. Ordering the world offered me fulfillment.<br>
+From cleaning a fourth-grade desk, I progressed to pursuing a PhD in theoretical physics. The two pursuits might seem to resemble each other no more than Dr. Jekyll and Mr. Hyde; yet, to me, the path between them is but a step. I trained as a theoretical physicist because I love organizing ideas. Caltech paid me to build models, propose definitions and theorems, and structure proofs—to dream up ideas and identify the optimal arrangements for them. I needed that pay, being an adult, as I hadn’t needed my fourth-grade classmate’s desk-cleaning fee. Yet I organized ideas for the same reason that drove me to organize my neighbor’s notebooks.<br>
+Many people have called entropy a measure of disorder. To see why, imagine that Jeremy’s crew has used thirty utensils while cooking. The chefs can have scattered the utensils across the kitchen in many ways: they may have dropped forks on the floor, left spoons in the sink, arranged spatulas on the drying rack, or filled a vase with knives like a modern-art bouquet. In few of these configurations do the forks lie in their compartment of the utensil drawer, the spoons lie in their compartment, etc. We call such configurations neat. Most of the other configurations, we call messy.<br>
+A system’s entropy is the number of configurations consistent with known large-scale properties of the system, such as the number of forks.2 More configurations are consistent with messiness (and a fixed number of forks and so on) than with neatness (and the same number of forks and so on). Messiness tends to correlate with high entropy. People often say, therefore, that entropy quantifies messiness. Hence Jeremy’s complimenting me on my decreasing of entropy.<br>
+Jeremy’s dinner parties came to mind as I read the book The Mattering Instinct, published by Rebecca Newberger Goldstein this January. Rebecca is a philosopher of science and a writer. I had the good fortune to meet her through my undergraduate mentor Marcelo Gleiser, who’s had another cameo or two on Quantum Frontiers. Rebecca’s latest book covers what she calls the mattering instinct: the longing to know that we matter.<br>
+We spend scads of energy and time on securing our “survival and flourishing,” as Rebecca says. We feed ourselves; work to earn money to purchase food; clean, shelter, and clothe ourselves; ingrain ourselves in societies that offer some degree of security; and more. Do we deserve all this effort? We long for assurance that, in the immortal words of L’Oreal, we’re worth it.<br>
+Survival and flourishing, Rebecca writes, requires us to decrease entropy. Every closed, isolated system’s entropy increases or remains constant, according to the second law of thermodynamics. Entropy increases as a system becomes more uniform, loosely speaking. The system’s particles spread out across space, these particles’ temperature comes to equal those particles’ temperature, and so on. In contrast, your body exists because its particles clump together in a certain shape consistently. You withstand heat waves and snow because homeostasis maintains your temperature despite your environment’s temperature. You keep your body’s entropy low to survive. Rebecca therefore casts us as fighting entropy.<br>
+As a thermodynamicist, I agree with Rebecca. Yet I also adore entropy. It helps explain why time flows, quantifies uncertainty, and determines the maximal efficiencies with which we can perform tasks such as communication. What versatility and richness! Entropy also embodies tension and subtlety: its mathematical definition looks obscure at first glance, yet entropy helps explain familiar phenomena such as aging. For these reasons, before beginning my PhD, I told a potential advisor that I could imagine devoting the next five years of my life to entropy.<br>
+I therefore aspire to rehabilitate entropy’s reputation. Novelist Terry Pratchett endeared mortality to millions of readers through anthropomorphism. His character Death, a mainstay of the Discworld series of novels, elicits empathy and fondness. I won’t anthropomorphize entropy here,3 but I aim to replace conflict with cooperation in the narrative above. To survive and flourish, I hold, we partner with entropy. How? We create oodles of entropy in our environments. This entropy increase offsets the entropy decrease that supports life.<br>
+For example, imagine working at a desalination plant. You’d process high-entropy water throughout which salt has spread. You’d concentrate the salt in a tiny region, reducing the water’s entropy. This reduction, producing fresh water, could support your city’s drinking, cooking, and toothbrushing needs.<br>
+To reduce the water’s entropy, you’d create loads more entropy. You’d eat breakfast before work, consuming energy stored neatly in your waffle’s chemical bonds. Your body would later break the bonds, releasing the energy. Some energy would power your muscles, so you could program the desalination system, test its output, etc. But much of the chemical energy would transform into heat radiated by your body. The heat would warm up the air molecules around you, magnifying their random jigglings and jostlings. You’d increase the entropy of the air—your environment—to decrease the water’s entropy. The air’s entropy increase would outweigh the water’s entropy decrease.<br>
+Organisms survive and flourish by producing entropy in their environments. In fact, organisms have a knack for generating entropy. Entropy and life thereby further each other. A glass-half-full thinker could conclude that we partner with entropy.<br>
+So did I partner with entropy as a PhD student, applying it to solve problems in quantum information theory and thermodynamics. So did I partner with entropy in fourth grade and at Jeremy’s apartment, deriving satisfaction from my cleaning. Rebecca would call these activities’ ultimate aim (beyond the aim of, e.g., not sitting beside a pigsty in fourth grade) mattering. She writes that we reduce entropy (within our immediate vicinities) to satisfy the mattering instinct. Rebecca’s proposition describes my behaviors with uncanny precision, I realized upon reading her book.<br>
+Which I’ve now finished. So pardon me while I return to washing forks in the quantum kitchen of the universe.<br>
+With thanks to Jeremy for his friendship…and food.<br>
+1I also ensured that my neighbor brought home, every afternoon, the sweater he’d brought to school that morning. Before I took charge, he’d ended up with three forgotten sweaters crammed into his cubby.<br>
+2At least, one entropy is. Many other entropies exist.<br>
+3If you anthropomorphize entropy elsewhere, let me know.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumfrontiers.com/2026/04/12/how-i-learned-to-stop-worrying-andno-ive-always-adored-entropy/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="43d49b625c6b6a0c.html" class="prev-next">Unleashing the Advantage of Quantum AI &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-04-13 02:14 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
