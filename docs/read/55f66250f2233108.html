@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast with Matt Kinsella, CEO of Infleqtion — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="daa853e2ff8de35f.html" title="IonQ and University of Maryland Expand QLab Partnership to Advance Quantum Networking">&larr; prev</a>
+    <a href="9ec9b8c1d67add22.html" title="QAI Ventures and QCentroid Partner to Accelerate Industrial Quantum Adoption">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Podcast with Matt Kinsella, CEO of Infleqtion</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>10h</span>
+      <span class="article-category">quantum</span>
+      <span>4408 words</span>
+      <span>23 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Yuval Boger interviews Matt Kinsella, CEO of Infleqtion. They discuss Infleqtion’s neutral-atom strategy, including its combination of quantum computing, sensing, and timing products, and why Matt believes that diversified approach strengthens both the business and the technology stack. Matt also shares his timeline for commercially useful quantum computing, his reaction to Google entering neutral atoms, and his perspective on capital, talent, and scaling the company as a newly public business.<br>
+Transcript<br>
+Yuval: Hello, Matt. And thank you for joining me today.<br>
+Matt: Hey, Yuval, thanks so much for having me. It’s going to be fun.<br>
+Yuval: So who are you and what do you do?<br>
+Matt: Well, I am Matthew Kinsella. I am the CEO of Infleqtion. And before I became CEO about two years ago, I was the first investor in Infleqtion. So I’ve been an investor and on the board since early 2018.<br>
+Yuval: And I think I know the answer, but just in case someone listening doesn’t, what does Infleqtion do?<br>
+Matt: Infleqtion is a quantum technologies company. And we use a quantum modality called neutral atoms to build various products in the quantum sensing realm, as well as quantum computers.<br>
+Yuval: I interviewed Scott Faris, I think, who preceded you in this chair. At the time, he told me that Infleqtion was trying to be the manufacturers of the picks and shovels for the quantum era. Is that still how you view your company’s role?<br>
+Matt: We are more of a quantum systems company. We do build some of the picks and shovels that are necessary for atom-based quantum technologies. And so the history of the business, and probably why Scott gave this answer, was Dana Anderson, our founder, was a professor at the University of Colorado Boulder for 40 years and part of a few of the foundational teams that pushed neutral atoms out of the, call it the science world, into more of the commercialization world. Dana, being an applied physicist, made the core foundational componentry that you needed to do neutral atom experiments. And so when I first met Dana, Dana was running a business, which he called ColdQuanta at the time, and it was kind of an extension of his lab at the University of Colorado. And what he was doing was making some of those core components. And in many cases, they were vacuum cells, in some cases, trapped ions, or ion traps as well. And what I saw at that time was the ability to build a company that was all based on that foundational technology, it was actually bringing real systems to market in the form of some of these quantum sensors and ultimately quantum computers, although back in 2018, neutral atoms were a little bit of a new kid on the block from a quantum computing perspective. So we do and have been a supplier of those foundational components to the entire neutral atom market for many years, but we also build systems that are based on those components that are actual end market products as well.<br>
+Yuval: If I think about other companies that deal with neutral atoms, many of them just make computers. And computers, making computers and making them run well is probably a very hard problem anyway. You guys also make sensors and clocks and other things. What’s the rationale behind it?<br>
+Matt: So it all goes back to my initial seed thesis for the business, which was neutral atoms are a much more flexible quantum modality than a number of the other quantum modalities. So you have others that require extreme cooling. And so they have to reside inside large cryogenic freezers, which really makes them good for just one thing, and that is building a computer. What’s great about neutral atoms is that it all takes place at room temperature, and therefore you can shrink, you can field deploy, you can harden this technology. So the initial seed thesis was, since neutral atoms were the new kids on the block from a computing perspective, we could build a more broad-based quantum technologies company almost following in the footsteps of NVIDIA, taking this powerful neutral atom core and pointing at some more of the near-term applications that we knew we could have a quantum advantage at that time. And so those were clocks, those were RF antennas and inertial sensors, and then start to do the R&D work to see if neutral atoms would indeed be a good candidate for quantum computing. Fast forward to today, it turns out neutral atoms are a very good candidate for quantum computing, kind of leapfrogged, as you know, to the front of the pack in a lot of the metrics that matter for quantum computing. Why does it still make sense to pursue this more diversified approach? It really has to do with leverage. So the underlying technologies for the quantum sensors are very, very similar to the quantum computers themselves. And so as we build and ship these quantum sensors, which are addressing large markets in and of themselves, we are getting better at engineering the systems that ultimately will make us better at engineering quantum computing. And kind of a fun way to think about it is some of the sensors that we’re building are kind of helping us master some of the critical technologies you need to build quantum computers. So our clocks, for instance, take advantage of the energy transition of rubidium atoms. And in some ways, that’s a very basic form of superposition. We’re taking advantage of that energy transition. It’s actually the same clock state that we use in our quantum computers for that energy transition. Our Rydberg sensors, which is how we build our RF technologies, have to be in the Rydberg state, which is the state that atoms need to be in to entangle them. And then finally, the inertial sensors are all ultra cold. And so we have to hold those atoms in place such that they move very, very little, and they become the coldest place in the known universe, even though the system itself is at room temperature. And that gives us the ultra cold nature. And so you have sort of basic building blocks of superposition, of entanglement, and of ultra cold, and those are three of the critical building blocks for quantum computers. And the last thing I’ll say, it’s just an engineering mindset as opposed to just a research mindset. And so yes, pushing the research further and further in the lab is super important for getting quantum computing to be useful, but the engineering mindset and the ability to have people focus on the ability to ship products, and those products need to work, and they need to be able to be shipped with physicists alongside them, is something that you can’t really snap your fingers and inject that DNA overnight. And so we’ve been injecting that DNA in the company going back to 2018.<br>
+Yuval: You mentioned useful, and quantum computers are not very useful today. Of course they’re very useful in educating and preparing, but they’re not that useful in terms of there’s not much that you can do on a quantum computer that you cannot do classically. So when you fast forward, say, let’s start with 10 years, and now quantum computers are truly useful. Do you still think that sensing and clocks are a significant part of the business for Infleqtion?<br>
+Matt: I do. I do. And if they weren’t all interrelated at the componentry level, and they weren’t all based on some of the same foundational technology, I’d probably have a different answer, but the markets that we’re addressing are enormous on the sensing side of things. The precision timing market’s enormous. The RF market is enormous. And more and more, you’re seeing different parts of our sensing technology working together. For instance, our clocks are now an important part of our QRF systems. And if you package the clocks and the QRF systems plus the inertial sensors, you’re starting to get a pretty darn interesting navigation system as well. And I believe that those sensors that will be generating quantum data will also tie into our quantum computers over time. So yes, I do think that those will still be an important part. But you know, quantum is the most interesting strategic chessboard I’ve ever seen. And so it’s hard to give definitive answers, honestly, when you think out 10 years.<br>
+Yuval: By the way, do you agree with the premise of the question that quantum computers today are not very useful commercially?<br>
+Matt: I do. Yes, I do. I think they’re useful in the ways you mentioned, for sure. There are interesting physics use cases that they’re useful for. But the way I like to think about it is when someone like a JP Morgan Chase or a material science company or a drug discovery company buys a quantum computer off of cash from their balance sheet because they believe they’re going to earn a return on using that tool for their core business, that’s when we’ll know quantum computers are commercially useful. Today, and not to minimize this, there’s a very robust market to sell quantum computers in. But most of those dollars being used are earmarked by governments somewhere or by academic institutions to buy a quantum computer, not because they expect to earn a return on that investment, but because they want to train their workforce or use it for physics experiments. And so I think we’re getting much, much closer and neutral atoms are leading the way to getting us to the point where they’re useful. But I agree with the premise of your statement that they are not yet commercially useful.<br>
+Yuval: So the obvious follow-up is when? I mean, we took 10 years as far out. When do you think quantum computers will be commercially useful and for what?<br>
+Matt: The way we think about this internally at Infleqtion, and I don’t think it’s terribly different than how most folks in the industry think about it, is at or around 100 logical qubits, and these are good logical qubits, you can probably start to have some commercial benefit relative to classical computing in areas like material science. And so you call it maybe minimum viable commercial usefulness for electron modeling as you’re combining different types of molecules together to build new materials at around that 100 logical qubit level. Our roadmap calls for us to get there by the end of 2028. And so I think you could think about the end of 2028, early 2029 being a time where we’ll start to see some, again, minimum viable commercial usefulness. I don’t think it’s going to be like the ChatGPT moment that we all experienced in whenever that was, 2023 or 2022. I can’t remember when that was. No, it was November. I know that for sure. Where, you know, it was like a pre-that-moment and post-that-moment. And I think quantum computing will start to almost osmose into the computing ecosystem in conjunction with GPUs, starting to enable new use cases for computing. So it’s not going to be as much of a punch-you-in-the-face, oh my gosh, this is the new era. But I’ll stick with my answer. I think late 2028 is when we’ll start to see some of those early commercially useful use cases. And then as we get from 100 to 1,000 logical qubits, new use cases will open up outside of the material science world. And then as we grow from there, more and more use cases will become available.<br>
+Yuval: Let’s assume that you now have that computer with 100 good enough logical qubits. Who’s going to develop the applications to run on it? Is that something that Infleqtion is going to do, or do you envision other players stepping in?<br>
+Matt: We think a lot about this, and the development of the, or the, I guess this is redundant, but the flourishing of the developer community for quantum computing is going to be incredibly important for people to be developing applications on. We do have a quantum software team that works on applications today. And I think we will be doing some of the application development, but I think it’s going to play out much like the traditional computing world where it’ll be the developer community that’s going to be developing those applications. And so we think of it as yes, we will do some of the application work early on, because right now, the quantum computing world, it’s sort of like the IBM mainframe world of the 1950s, right? You have to kind of own a lot of the stack itself. And then you go on premise and deploy these systems. And that takes a long time. But over time, I believe it will develop like the computing world where we’ll have an application layer and different layers all sort of chopped up. And so I believe it’s going to be much more a large crowd of developers that will be making these applications. And we need to, the whole industry needs to take a role in developing and making sure that’s a flourishing community.<br>
+Yuval: We are recording this at the end of March 2026, and a few days ago, Google announced that they’re opening a formal neutral atom group to build neutral atom computers. So the obvious question is what about IBM, right? What are they doing in neutral atoms? But seriously, how do you think about what Google is doing?<br>
+Matt: I’d say, and I’ve thought a lot about this, it is a positive for neutral atoms. If we rewind to 2018, when I first got involved with Infleqtion, it was an uphill battle convincing people that neutral atoms were going to be a useful modality for quantum computing. I think someone like Google, not abandoning superconducting, but supplementing what they’re doing in superconducting by looking into neutral atoms is a very good thing for all of us in the neutral atom community. Now, we also have to be wary that this is one of the largest companies in the world with an absolutely massive balance sheet. And so while the positives are there as well, it does change the dynamics of the industry. And so going back to my point about the quantum computing world being the most intriguing strategic chessboard I’ve ever seen, this is an interesting move on that strategic chessboard.<br>
+Yuval: And when Google made the announcement, I think they were making the claim that neutral atoms are good for certain applications and superconducting are good for others. Do you agree with that?<br>
+Matt: I do, I do think, and again, we have to have, I always try to have a healthy degree of humbleness or whatever you want to call it when making predictions about the future in the quantum computing world. But I think it is in the realm of possibilities that this plays out maybe like the memory world in which you have much faster memory, which is used much closer to the actual computation. And then you have memory that’s a little further away from the actual processing unit that is better for other things. And then you have other types of memory that’s better for other things. And I could see a world in which it’s a multimodality world in which superconducting is good for certain use cases and neutral atoms is good for other use cases. And they’re working together in a network fashion to solve problems. And I think it’s all going to be deeply intertwined with NVIDIA as well and what they’re doing with GPUs, because I think the way QPUs come out into the market is in tandem with GPUs and working with them to solve hard problems. So I don’t disagree with that. But again, it’s very difficult to tell. And I think between now and 2028, it’s each modality trying to achieve that minimum viable commercial usefulness. And that’s what we’re focused on right now. And then how they all interact together, a little bit more of a question mark.<br>
+Yuval: If a company got excited about what you’re doing, could they use your computer on a cloud? I mean, how would they engage with using one of your computers?<br>
+Matt: Yes, we have it up and running. You can access it via our Superstaq platform or with NVIDIA’s CUDA-Q. And over time, we will have it up on other cloud systems as well. One of the problems with having your computer on the cloud is, you know, it’s great, you need to have the developers utilizing it to get used to using it. But also if we’re using it as an R&D machine, you can’t do the same at once. You can’t virtualize these machines yet. And so it’s a little bit of a double-edged sword, but we will have our computer more readily available on various clouds in the not-too-distant future.<br>
+Yuval: Infleqtion is now a public company, congratulations.<br>
+Matt: Thank you, thank you.<br>
+Yuval: But now you have to balance the quarterly earnings and the stock price with longer-term investments. How are you thinking about the best way of doing that?<br>
+Matt: Well, the good news is, before I came to Infleqtion as CEO to work here full-time two years ago, I was an investor for 18 years and my investment career was kind of split in two. My first nine years was as a public equity investor focusing on technology, and my next nine years was as a venture capitalist focusing on earlier-stage technology. So I have a lot of experience with the public markets. And so it was a comfortable place to be operating for me just because of how long I’d focused on them. And so at the highest level, I have to communicate our longer-term strategy with investors. We need to make sure we are reporting on a quarterly basis and living up to the promises we make, but we have to keep our eye on the ball. And that is the long-term creation of shareholder value. And so it’s a needle that needs to be threaded on putting near-term points on the board. And our sensing business helps us do that as that is more revenue generative today. And then we have the longer-term roadmap of getting quantum computing to be commercially useful. And so what we’ll need to do is put the financials out every quarter, but also keep people up to speed on what we’re doing for the critical metrics that are the leading indicators to getting to useful quantum computing.<br>
+Yuval: You’ve mentioned that you’ve been doing quantum computing full-time for two years and part-time for much longer. What have you learned about the industry, the market over the last year or two that you didn’t know before?<br>
+Matt: Oh, good question. I initially got interested in quantum actually from meeting someone from the superconducting world, Chad Rigetti, at Y Combinator, I think it was many, many years ago. And that’s what led me down the quantum rabbit hole. And then it was a paper put out by the UK government that got me more interested in the broader quantum sensing opportunities as opposed to just the quantum computing market. And then ultimately it led me to meeting Dana at the University of Colorado. That’s just a little bit of history on how I got to the point where I was ready to make an investment in a company in early 2018. What have I learned about the market that I didn’t know before? Well, it’s such a dynamic market that it’s so different today than it was before. There are many, many more quantum computing companies that are being birthed every year. And so the market is constantly evolving and new companies are popping up. But to me, the biggest difference, honestly, if I look a year ago versus today, and I guess this wouldn’t be something that I knew versus didn’t know, but it’s to me the biggest difference in the quantum computing market, is just the progress that neutral atoms continue to make from both a qubit quantity, but importantly, a qubit quality perspective. And that was always the big question mark on neutral atoms, as you know, was could you get them to high enough quality levels to complement the quantity. And the neutral atom industry has really started to solve that. And so that would be to me the biggest change in the market in the last couple of years.<br>
+Yuval: When you speak with retail investors, I’m curious, are they more focused on the quantum upside of solving new problems in chemistry or material science or optimization, or are they focused on RSA and breaking encryption?<br>
+Matt: Yeah, that’s a good question. I think the answer is all of the above. I don’t have a lot of one-on-one interaction with retail investors, so it’s hard to make a blanket statement. But I think for the most part, retail investors are excited about the prospects of quantum and view it as the next technological shift post AI. And I think they’re interested in all of those things. That’s, sorry, a non-answer, but I don’t know if it’s more RSA versus the promise. But I’d say it’s all of the above.<br>
+Yuval: Could you give me a quick snapshot of the company in terms of how many people, key locations, and such?<br>
+Matt: Yes, absolutely. So our headquarters are in Boulder, Colorado. We have two offices in Boulder, one actually in the town next door to Boulder called Louisville. And then in Boulder proper, we have an office. In Chicago, which is where our quantum software team is based. And then we have a very small office in Madison, Wisconsin, which is where our chief scientist for quantum computing, Mark Saffman, is a professor. Those are the main offices in the United States. And then we have a relatively large office in Oxford in the UK, which we opened in 2018. We have about 60 folks in Oxford, and then a small but growing office in Melbourne, Australia. But I like to say that Infleqtion is exo-terrestrial, which means that we have presence both on planet Earth as well as in space. And we have had our equipment on the International Space Station since 2018. And so we don’t have any people based on the International Space Station, but we do have Infleqtion’s equipment. We have about 200 or so employees and those are, the majority of them are in Colorado, but as I mentioned, about 60 of them are in Oxford and then the rest are in Chicago, Madison, or in Melbourne.<br>
+Yuval: I think by definition, there’s always a weakest link. You know, if you take a chain, there’s one link that’s weakest than the other. What is the weakest link in Infleqtion that you’d like to improve, say over the next year or so?<br>
+Matt: Well, I will give you two answers. One, which was what was the weakest link? And then, as I think about what is going forward, what is the weakest link? So we raised our Series C in 2025 and were well capitalized for multiple years. But as I thought about the existential threats to the business, capital kept coming up as really the main existential threat. And it wasn’t because I saw us running out of capital, but there would be a time where we would need to go back to raise capital. And having been an investor for as long as I had been, I’ve seen many cycles where deep tech is not in vogue. And so to me, there were scenarios where we’d run into a situation in which we could not raise capital when we needed to in several years. And so to me, the capital aspect was the existential risk to the business. And so that’s why we went down this process of going public, really was to remove that existential risk to the best of our ability. And so alongside going public, we raised a large amount of capital, which was the primary driver for doing that. So that’s not the question you asked, but that was to me the weakest link in the form of a potential existential threat to the business. I’ve always looked at technology companies with really three factors. And so you have financing. We’ve just mentioned that one that I think we’ve addressed. You have technology, and then you have team. And so I believe Infleqtion at this point has all three. I deeply believe in our tech. We are now well-financed and we have an amazing team. But as I look forward, I do think that the critical bottleneck, slash the constrained resource for quantum, is going to be people. And so it might not be the weakest link necessarily. But it’s something I spend a lot of time thinking about, how do we make sure we attract the best people to Infleqtion. And it’s in a world in which there just aren’t that many people who are well trained in this, there’s a finite number of them. And so making sure we can continue to hire the best and attract the best is the thing I spend a lot of my time on. So just to be very clear, in no way am I saying that the team is the weakest link, it’s the strongest link, but making sure we grow and maintain that level of excellence from our team is something I spend a ton of my time thinking about.<br>
+Yuval: And last hypothetical, if you could have dinner with one of the quantum greats, dead or alive, who would that be?<br>
+Matt: Ooh, boy, that’s a great one. I gotta go with Richard Feynman. I’d love to play bongos with him and then have a fun dinner and have him explain quantum to me in a very understandable way because he excelled at that. So off the top of my head, Richard Feynman.<br>
+Yuval: Matt, thank you so much for joining me today.<br>
+Matt: Thank you, Yuval, it was fun.<br>
+—<br>
+Yuval Boger is the Chief Commercial Officer of QuEra Computing.<br>
+April 13, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/podcast-with-matt-kinsella-ceo-of-infleqtion/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="daa853e2ff8de35f.html" class="prev-next">&larr; IonQ and University of Maryland Expand QLab Partnership to Advance Quantum Networking</a>
+  
+  
+  <a href="9ec9b8c1d67add22.html" class="prev-next">QAI Ventures and QCentroid Partner to Accelerate Industrial Quantum Adoption &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-04-14 07:27 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
