@@ -137,20 +137,20 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>8h</span>
+      <span>14h</span>
       <span class="article-category">quantum</span>
-      <span>69 words</span>
-      <span>1 min read</span>
+      <span>283 words</span>
+      <span>2 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Infleqtion has announced the integration of the NVIDIA Ising Decoding AI model into its Sqale neutral-atom quantum computing platform. The collaboration aims to address the classical computing bottleneck in quantum error correction (QEC), where the speed of decoding syndrome data must match the microsecond-scale readout times of quantum hardware to prevent error accumulation. By utilizing [...] The post Infleqtion Integrates NVIDIA Ising for AI-Accelerated Quantum Error Correction appeared first</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/infleqtion-integrates-nvidia-ising-for-ai-accelerated-quantum-error-correction/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Infleqtion has announced the integration of the NVIDIA Ising Decoding AI model into its Sqale neutral-atom quantum computing platform. The collaboration aims to address the classical computing bottleneck in quantum error correction (QEC), where the speed of decoding syndrome data must match the microsecond-scale readout times of quantum hardware to prevent error accumulation. By utilizing the NVIDIA Ising AI predecoder on GPUs, Infleqtion intends to sparsify raw syndrome streams, reducing the computational load on downstream decoders while maintaining the accuracy required for fault-tolerant operations.<br>
+The integration specifically addresses the unique physical characteristics of neutral-atom systems, which function as multi-level “qudits” rather than idealized two-level qubits. These systems are subject to leakage—where atoms move into states outside the computational subspace—and atom loss. Infleqtion has incorporated the NVIDIA Ising workflow into its Leaky simulation framework to account for these non-computational states. Technical evaluations indicate that logical performance remains stable when leakage effects are included, allowing the system to benefit from a faster decoding path without sacrificing the realism of the noise model.<br>
+This advancement supports Infleqtion’s broader roadmap to scale from its current 12 logical qubits to a target of 30 logical qubits by the end of 2026. A key component of this scaling strategy is the use of erasure conversion, where detected leakage or loss events are surfaced as known error locations for the decoder. By training the NVIDIA Ising predecoder on these enriched signals and leveraging the low-latency NVIDIA NVQLink interconnect, Infleqtion aims to establish a real-time control loop between its neutral-atom QPUs and classical GPU accelerators, a configuration recently showcased at GTC 2026.<br>
+For the technical details on Infleqtion’s AI-accelerated QEC and leakage-aware decoding, visit the official announcement here.<br>
+April 14, 2026</p>
   </div>
   
 </article>
@@ -171,7 +171,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-04-15 13:19 UTC
+  Generated 2026-04-15 19:12 UTC
 </div>
 
 <script type="module">
