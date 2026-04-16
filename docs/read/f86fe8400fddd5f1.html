@@ -137,20 +137,27 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>8h</span>
+      <span>13h</span>
       <span class="article-category">quantum</span>
-      <span>69 words</span>
-      <span>1 min read</span>
+      <span>403 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Researchers at UC San Diego’s Picasso Lab have released technical results evaluating the NVIDIA Ising neural pre-decoder. The study explores how lightweight neural networks can accelerate and improve Quantum Error Correction (QEC) by preprocessing syndromes before they reach a primary decoder like PyMatching. While the system demonstrated significant performance gains on traditional surface codes, the [...] The post Evaluating Neural Pre-Decoding with NVIDIA Ising: From Surface to Bivariate Bicy</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/evaluating-neural-pre-decoding-with-nvidia-ising-from-surface-to-bivariate-bicycle-codes/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Researchers at UC San Diego’s Picasso Lab have released technical results evaluating the NVIDIA Ising neural pre-decoder. The study explores how lightweight neural networks can accelerate and improve Quantum Error Correction (QEC) by preprocessing syndromes before they reach a primary decoder like PyMatching. While the system demonstrated significant performance gains on traditional surface codes, the research also investigated the transition to quantum Low-Density Parity-Check (qLDPC) codes, specifically bivariate bicycle (BB) codes, which offer a higher encoding rate.<br>
+The Role of the Pre-Decoder<br>
+A pre-decoder acts as a “filter” that identifies and corrects high-confidence, local errors. By outputting a “sparser residual” syndrome, it simplifies the task for the primary decoder. In surface codes—where qubits are arranged on a regular 2D grid—the researchers utilized a 3D Convolutional Neural Network (CNN). Because the CNN’s receptive field matches the code’s regular spatial structure, it effectively captures complex spatiotemporal noise correlations that standard decoders often approximate or discard.<br>
+Performance on Surface Codes<br>
+The evaluation of the NVIDIA Ising CNN on surface codes (distance d=9) revealed two primary technical advantages:<br>
+- Accuracy: The model achieved a 1.66x reduction in Logical Error Rate (LER). By learning hardware-specific noise patterns (such as CNOT propagation), the CNN identifies errors that conventional Minimum-Weight Perfect Matching (MWPM) might misinterpret.<br>
+- Latency: The “sparsification” of syndromes allowed PyMatching to run up to 2.12x faster. As code distance increases, this classical speedup becomes more pronounced, addressing a critical bottleneck in real-time fault tolerance.<br>
+Transition to Bivariate Bicycle Codes<br>
+The study contrasted these results with an MLP (Multi-Layer Perceptron) pre-decoder designed for bivariate bicycle codes. BB codes are highly efficient; for example, a [[144, 12, 12]] code stores 12 logical qubits in 144 physical qubits, a 12x improvement over surface codes. However, these codes feature non-local connectivity, which does not align with a CNN’s local filters.<br>
+The results showed that while the MLP provided a 14x LER reduction at very low physical error rates (p=0.01), the benefit vanished at higher error rates. This highlights a core principle identified by the Picasso Lab: architecture-code alignment. A neural pre-decoder is most robust when its internal structure (like a CNN’s grid) reflects the physical connectivity of the quantum code’s Tanner graph. Future work will focus on using Graph Neural Networks (GNNs) to better match the non-planar connectivity of qLDPC codes.<br>
+For the full technical blog and benchmarking code, visit the Picasso Lab at UC San Diego here.<br>
+April 15, 2026</p>
   </div>
   
 </article>
@@ -173,7 +180,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-04-16 02:15 UTC
+  Generated 2026-04-16 07:28 UTC
 </div>
 
 <script type="module">

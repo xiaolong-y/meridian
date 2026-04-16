@@ -137,20 +137,25 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>8h</span>
+      <span>13h</span>
       <span class="article-category">quantum</span>
-      <span>69 words</span>
-      <span>1 min read</span>
+      <span>404 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>EdenCode Research has released technical findings from an early-access study of NVIDIA Ising Decoding, demonstrating that the open-source 3D CNN architecture is capable of generalizing beyond its original surface code design. By connecting the Ising training framework to a Tanner-graph-based simulator, EdenCode successfully applied the decoder to repetition codes under both simple and correlated noise [...] The post EdenCode Demonstrates Universal QEC Decoding Using NVIDIA Ising on General Tanne</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/edencode-demonstrates-universal-qec-decoding-using-nvidia-ising-on-general-tanner-graphs/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>EdenCode Research has released technical findings from an early-access study of NVIDIA Ising Decoding, demonstrating that the open-source 3D CNN architecture is capable of generalizing beyond its original surface code design. By connecting the Ising training framework to a Tanner-graph-based simulator, EdenCode successfully applied the decoder to repetition codes under both simple and correlated noise models (CNOT hook errors). The results confirm that the Tanner graph—a mathematical representation of any stabilizer code—carries sufficient structural information for the CNN to learn effective corrections across structurally different code families.<br>
+The exploration utilized the NVIDIA Ising pre-decoder strategy, which uses a 3D CNN to “sparsify” syndrome data before passing it to a conventional decoder like PyMatching. Running on NVIDIA H200 GPUs, EdenCode evaluated six model architectures ranging from 50K to 7.1M parameters. Key technical outcomes included:<br>
+- Performance Gains: The CNN + PyMatching hybrid achieved a 1.7–2.0× reduction in Logical Error Rate (LER) compared to PyMatching alone.<br>
+- Classical Acceleration: The sparser residual syndromes allowed for a 7× speedup in the conventional decoding stage.<br>
+- Generalization: The model, despite being designed for surface codes, effectively reduced errors on repetition codes without architectural modifications, proving its potential as a universal AI decoder framework.<br>
+Co-Scaling: The Relationship Between Model Size and Code Distance<br>
+A critical discovery in the EdenCode study is the “co-scaling” requirement for fault-tolerant systems. The data shows that as the quantum code distance (d) increases, the size of the AI decoder must grow proportionally to maintain an error-correction advantage. Small models (50K parameters) provided benefits at d=3 but degraded performance at d=9. In contrast, the largest models (7.1M parameters) maintained a strong advantage across all tested distances, suggesting that scaling quantum hardware will necessitate a parallel scaling of classical AI infrastructure.<br>
+EdenCode’s research indicates that the future of practical quantum computing will rely on the joint scaling of qubits and GPU-based decoding. By utilizing the NVIDIA NVQLink for low-latency interconnects and the Ising Decoding open models, developers can now build closed-loop correction systems where the AI grows alongside the quantum processor. This shift moves the industry toward a paradigm where the joint performance of quantum and classical layers defines the reliability of a fault-tolerant machine.<br>
+For the full technical exploration of Tanner graphs and repetition code decoding, visit the EdenCode Research blog here. Access to the NVIDIA Ising Decoding models and training frameworks is available via build.nvidia.com or the official GitHub repository here.<br>
+April 15, 2026</p>
   </div>
   
 </article>
@@ -173,7 +178,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-04-16 02:15 UTC
+  Generated 2026-04-16 07:28 UTC
 </div>
 
 <script type="module">
