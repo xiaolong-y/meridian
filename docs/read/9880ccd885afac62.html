@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A guide to the Qiskit circuit library — Meridian Reader</title>
+  <title>Architectural Blueprints for Fault-Tolerant Trapped-Ion and Neutral-Atom Systems — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,46 +126,50 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="2824c77ba62ee873.html" title="Important changes to Qiskit documentation and learning resources">&larr; prev</a>
-    
+    <a href="f9136eaa7903ed81.html" title="QMatter Secures $1.2M Pre-Seed to Create Software that Compresses Complex Quantum Problems to their Essential Core">&larr; prev</a>
+    <a href="f45bcc836f05ab7a.html" title="Quantum Elements to Explore Digital Twin Modeling on Rigetti Hardware">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">A guide to the Qiskit circuit library</h1>
+    <h1 class="article-title">Architectural Blueprints for Fault-Tolerant Trapped-Ion and Neutral-Atom Systems</h1>
     <div class="article-meta">
-      <span class="article-source">Qiskit Blog</span>
-      <span>Qiskit</span>
-      <span>133w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>12h</span>
       <span class="article-category">quantum</span>
-      <span>86 words</span>
-      <span>1 min read</span>
+      <span>400 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>By Robert Davis, Julien Gacon, Abby Mitchell, and Luciano BelloWhen it comes to quantum circuits, sometimes the “do it yourself” approach is best. Even for common subroutines like the quantum Fourier transform (QFT), a user may find that it’s better to build their circuit by hand, so they can implement it in a way that works for their specific use case. But in many cases, the circuits we need are well-studied, and we can avoid having to reinvent the wheel (potentially creating bugs in the proces</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://medium.com/qiskit/a-guide-to-the-qiskit-circuit-library-36ee0f189956?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Recent research has introduced two distinct architectural blueprints for fault-tolerant quantum computing (FTQC) utilizing Quantum Low-Density Parity-Check (QLDPC) codes. A team from IonQ proposed the “Walking Cat” architecture for trapped-ion systems, while researchers at Duke University, UT Austin, and Yale detailed a parallelization scheme for neutral-atom arrays. Both papers address the “space-time” overhead of quantum error correction (QEC), focusing on hardware-specific strengths—such as qubit transport and reconfigurable connectivity—to reduce the number of physical qubits required for large-scale simulations.<br>
+The Walking Cat architecture leverages the mobility of ions within a Quantum Charge-Coupled Device (QCCD) chip to implement non-local QLDPC codes. The design utilizes “cat factories” to produce multi-qubit entangled states that serve as the backbone for logical operations. A key technical result is a dense memory instance using a [[102, 22, 9]] code, which encodes 22 logical qubits into 102 physical qubits. For a 100-site Heisenberg model simulation, IonQ estimates a requirement of 10,000 physical qubits and an execution time of approximately one month.<br>
+The neutral-atom blueprint focuses on the “measurement bottleneck” inherent in atom-array platforms, where measurement times are significantly slower than gate operations. To mitigate this, the researchers introduced a teleportation-based scheme that utilizes unutilized space within QLDPC modules to parallelize non-Clifford gate injections. This approach achieved a 3× speedup in simulations over serial “extractor” architectures without increasing the physical qubit footprint. The team identified a configuration using 11,495 atoms capable of executing Hamiltonian dynamics simulations in approximately 15 hours.<br>
+A critical differentiator in these blueprints is the specific management of hardware-level errors, including qubit loss and leakage, which are often omitted in idealized resource estimates. The IonQ architecture incorporates a dedicated qubit factory and local reservoirs to detect and replace lost ions in real-time, preventing the spread of errors through the QLDPC blocks. Similarly, the neutral-atom study evaluates the impact of T-state factory nondeterminism, modeling the discard rate of magic states and its effect on total wall time.<br>
+By integrating streaming decoders capable of processing syndromes faster than they accumulate, both architectures move toward a “closed-loop” operational model necessary for the sustained execution of fault-tolerant instructions. These developments provide a quantitative baseline for the resources needed to achieve quantum advantage in areas such as materials science and dynamics simulations using near-term fault-tolerant hardware.<br>
+The IonQ “Walking Cat” paper is available on arXiv here. The neutral-atom architectural study from the Duke University collaboration is available here.<br>
+April 22, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://medium.com/qiskit/a-guide-to-the-qiskit-circuit-library-36ee0f189956?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/architectural-blueprints-for-fault-tolerant-trapped-ion-and-neutral-atom-systems/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="2824c77ba62ee873.html" class="prev-next">&larr; Important changes to Qiskit documentation and learning resources</a>
+  <a href="f9136eaa7903ed81.html" class="prev-next">&larr; QMatter Secures $1.2M Pre-Seed to Create Software that Compresses Complex Quantum Problems to their Essential Core</a>
   
-  <span></span>
+  
+  <a href="f45bcc836f05ab7a.html" class="prev-next">Quantum Elements to Explore Digital Twin Modeling on Rigetti Hardware &rarr;</a>
+  
 </div>
 
 <div class="article-footer">
