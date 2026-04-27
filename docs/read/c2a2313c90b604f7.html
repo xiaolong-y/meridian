@@ -127,7 +127,7 @@
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
     <a href="87f0b356a749bf00.html" title="National Quantum Algorithm Center Announces 2026 Grand Challenges Awards">&larr; prev</a>
-    <a href="648a03fe54a7da04.html" title="Qubitrium Secures €2.25M in Seed-Plus Funding to Scale Space-Based Quantum Hardware">next &rarr;</a>
+    <a href="29ad57666c95329b.html" title="Three greats who we’ve lost">next &rarr;</a>
   </div>
 </nav>
 
@@ -137,20 +137,45 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>2d</span>
+      <span>3d</span>
       <span class="article-category">quantum</span>
-      <span>63 words</span>
-      <span>1 min read</span>
+      <span>1304 words</span>
+      <span>7 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>By Mohamed Abdel-Kareem Quantum hardware is transitioning from academic fabrication to industrial manufacturing. Semiconductor standardized, and therefore highly optimized, processes enable consistency unobtainable with academic academic R&amp;amp;D style fabrication. However, only certain qubit modalities can harness these benefits due to their compatibility with the standardized methods. The Transition to Industrial Fabrication The most important shift [...] The post From One-Off to Industrial: Wh</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/from-one-off-to-industrial-why-standardized-processes-matter-for-quantum-hardware/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Quantum hardware is transitioning from academic fabrication to industrial manufacturing. Semiconductor standardized, and therefore highly optimized, processes enable consistency unobtainable with academic academic R&D style fabrication. However, only certain qubit modalities can harness these benefits due to their compatibility with the standardized methods.<br>
+The Transition to Industrial Fabrication<br>
+The most important shift in quantum hardware manufacturing is not a specific wafer diameter. It is the move from one-off academic fabrication to standardized industrial processes. Companies across modalities are seeking repeatability, defect control, and yield—capabilities that come from established semiconductor fabrication lines, regardless of whether they operate at 100mm, 200mm, or 300mm.<br>
+For some modalities, larger wafers bring additional benefits. For others, the value lies in the process control itself.<br>
+The Cost Logic of Larger Wafers<br>
+The semiconductor industry moved from 100mm to 150mm to 200mm to 300mm wafers primarily for cost. Processing a 300mm wafer costs a little more than processing a 200mm wafer but yields more than twice the number of die and achieves a lower cost per die. For high-volume manufacturing, this economics drives the industry.<br>
+For quantum hardware, the benefits of 300mm extend beyond die area. The most advanced process control tools—etch systems, deposition tools, and metrology equipment that minimize defect densities and process variation—are developed for 300mm fabs. Many semiconductor fabs, in order to remain competitive, have migrated to 300mm processes. Companies that need access to the best tooling must work at 300mm or partner with a facility that does.<br>
+However, 300mm is not the only path. Oxford Quantum Circuits (OQC), for example, is starting with a 200mm process because it is available and cost-effective at their current scale. The optimal wafer size depends on the company’s stage, volume, and capital constraints.<br>
+Modality-Specific Considerations<br>
+Superconducting qubits have relatively large die areas and benefit directly from 300mm wafers because more qubits fit on each wafer. IBM’s shift to 300mm at Albany NanoTech reflects this. More broadly, the move to 300mm tooling enables superconducting qubits to achieve improved coherence, lower gate error rates, and reduced variability across the wafer through better process control and uniformity.<br>
+Spin qubits have feature sizes measured in nanometers. Their path to 300mm is not driven by die area but by access to high-quality tools, access to existing semiconductor fabrication facilities, and process control. A 2025 paper in npj Quantum Information describes quantum dots hosted in a natural Si/SiGe heterostructure fully fabricated by an industrial 300mm semiconductor wafer process line, achieving T1 times exceeding one second and single-qubit fidelities above 99%. This is significant because Si/SiGe is a less common 300mm process than pure silicon with SiO2; the demonstration proves that 300mm tooling is compatible with the advanced Si/SiGe heterostructures that enable high-performance spin qubits (most notably developed by HRL Laboratories).<br>
+A 2025 Nature paper from Steinacker and colleagues reports a silicon two-qubit device made in a 300mm semiconductor processing line. The authors fabricated four devices, and all achieved gate fidelities exceeding 99%. This consistency across multiple devices is precisely the kind of repeatability and yield metric that distinguishes industrial fabrication from academic one-offs.<br>
+Cost Comparisons<br>
+Beyond tool availability, cost structures differ by modality. Silicon spin qubits leverage existing CMOS infrastructure and are significantly cheaper to fabricate per qubit than superconducting qubits, which require specialized materials and processes. This cost advantage is a key driver for spin qubit companies to adopt 300mm foundry processes.<br>
+Access to Advanced Tools<br>
+Beyond cost, tool availability is a second consideration. The most advanced process control tools—the etch systems, deposition tools, and metrology equipment that minimize defect densities and process variation—are developed for 300mm fabs. While some equipment manufacturers design tools to handle multiple wafer sizes, the leading-edge process development typically targets the largest wafer size where high-volume customers operate.<br>
+Beyond cost, tool availability is a second consideration. The most advanced process control tools—the etch systems, deposition tools, and metrology equipment that minimize defect densities and process variation—are often first developed for 300mm fabs. While some equipment manufacturers design tools to handle multiple wafer sizes, the leading-edge process development typically targets the largest wafer size where high-volume customers operate.<br>
+Companies that need access to the best tooling must either work at 300mm or partner with a facility that does. IBM and IMEC have moved in this direction for precisely this reason. For spin qubits, the path to 300mm is already established. For superconducting qubits, the move to 300mm tooling enables improved coherence, lower gate error rates, and reduced variability across the wafer.<br>
+Platforms That Do Not Rely on Wafer-Scale Fabrication<br>
+Not all quantum platforms depend on wafer-scale manufacturing.<br>
+Trapped-ion systems require only a single trap rather than large numbers of identical die. The primary CMOS integration challenge lies in photonic integrated circuits (PICs) and optical interconnects used for control and readout. Recent work demonstrates modular approaches combining ion traps with integrated photonics and micro-optics, enabling scalable addressing of ion arrays. Other demonstrations show PIC-based addressing of closely spaced ions using CMOS-compatible silicon nitride waveguides.<br>
+Recent developments in materials science are also relevant. A notable example is the use of tantalum-based photonic materials, which can enable fabrication pathways that avoid some of the process constraints inherent to silicon nitride platforms. As highlighted by Joe Spencer in his analysis “Tantalising Lasers: Importance of Tantalum in the Supply Chain,” these materials support more compact and potentially more flexible integrated photonics architectures for quantum control. At the same time, tantalum introduces supply chain considerations, as production is geographically concentrated and tied to existing industrial demand. This illustrates a broader trend: as quantum hardware adopts more advanced materials and fabrication approaches, it increasingly inherits the constraints of established semiconductor and materials supply chains.<br>
+Neutral atoms systems face different scaling constraints. The manufacturing challenge is not wafer diameter but the photonic integrated circuits needed to control and address large arrays. In August 2025, QuEra Computing, in collaboration with Sandia National Laboratories, MIT, and the University of Arizona, published a paper demonstrating a foundry-fabricated photonic integrated circuit platform for Rubidium-87 neutral-atom QPUs. The platform operates across multiple wavelengths (795 nm, 420 nm, 1013 nm), addressing both single-qubit and two-qubit Rydberg gate requirements. The paper explicitly states that the work “establishes a scalable platform for developing advanced large-scale optical control required in fault-tolerant quantum computers.”<br>
+A broader industry trend is the transition from discrete laser systems to photonic integrated circuits to reduce system size and cost. This shift reflects the same move toward integration and manufacturability seen across other quantum hardware modalities. For example, Quantinuum has announced plans to establish a new R&D center in New Mexico with a focus on photonics development, as also noted in coverage by Quantum Computing Report by GQI. This points to increasing investment in integrated photonics as a pathway to scalable quantum control systems.<br>
+For these platforms, the move to industrial fabrication standards is not about wafer size but about integrating CMOS-fabricated photonics and control electronics.<br>
+The Common Thread: Repeatability<br>
+What unites the quantum hardware industry is not a universal move to 300mm but a move toward standardized production processes. Companies across modalities seek repeatability, higher yields, and lower defect densities.<br>
+For spin qubits, that path already runs through 300mm fabs. For superconducting qubits, 300mm is becoming the target as tooling access and die area economics align. For trapped ions and neutral atoms, the manufacturing challenges are different—centered on PICs and optical integration—but the transition from academic one-off fabrication to industrial-scale manufacturing defines the next phase of quantum hardware development.<br>
+This is the first in a series examining quantum hardware manufacturing. For deeper analysis of fabrication trends, supply chain dynamics, and modality-specific roadmaps, GQI subscribers can access our full manufacturing database and custom briefing services. To learn more, contact GQI at info@global-qi.com or reach out directly to clay@global-qi.com. Next week, we will look at fabrication throughput and the economics of iteration cycles.<br>
+April 24, 2025</p>
   </div>
   
 </article>
@@ -166,14 +191,14 @@
   <a href="87f0b356a749bf00.html" class="prev-next">&larr; National Quantum Algorithm Center Announces 2026 Grand Challenges Awards</a>
   
   
-  <a href="648a03fe54a7da04.html" class="prev-next">Qubitrium Secures €2.25M in Seed-Plus Funding to Scale Space-Based Quantum Hardware &rarr;</a>
+  <a href="29ad57666c95329b.html" class="prev-next">Three greats who we’ve lost &rarr;</a>
   
 </div>
 
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-04-27 02:28 UTC
+  Generated 2026-04-27 19:15 UTC
 </div>
 
 <script type="module">
