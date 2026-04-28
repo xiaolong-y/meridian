@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast with Lionel Martellini, Founding Director of the EDHEC Quantum Institute — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="7ba80eec42267a07.html" title="IonQ and Florida LambdaRail Launch U.S. Statewide Quantum-Safe Network">&larr; prev</a>
+    <a href="2432da4bdd0dcd40.html" title="QuantX Labs Deploys Quantum Optical Clock to Orbit Amid $425B Defense Commitment">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Podcast with Lionel Martellini, Founding Director of the EDHEC Quantum Institute</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>12h</span>
+      <span class="article-category">quantum</span>
+      <span>4403 words</span>
+      <span>23 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Yuval Boger interviews Lionel Martellini, finance professor at the EDHEC and founding director of the EDHEC Quantum Institute. Lionel describes his unusual path from finance to astrophysics and why business schools should teach quantum awareness to future leaders. They discuss core quantum concepts, the danger of overhyping “quantum washing,” and the real prospects for quantum applications in finance. The conversation also explores executive education, practical use cases, and how businesses should prepare for quantum technologies.<br>
+Transcript<br>
+Yuval Boger: Hello Lionel, and thank you for being here today.<br>
+Lionel Martellini: Hi, it’s a pleasure.<br>
+Yuval: So who are you and what do you do?<br>
+Lionel: Ah, it’s a good question. Who am I? That’s a tough one. Well, I guess I’ve lived a large part of my life in a state of superposition between being a finance professor, first in the US and then I moved back to France, my home country, and I started a career as a finance professor at EDHEC Business School, which is one of these top European institutions. And that’s one part of my life. And then on the side, I kind of kept pursuing a career, or not really a career, but just doing physics on the side, just as probably as a way to be faithful or loyal to my childhood dreams. As I grew up, I was very keenly interested in physics. And for some funny reason, life has not, you know, wanted me to start like undergrad studies in physics. I went to business and math and stats and finance and stochastic calculus and all these things. But yeah, anyway, so that’s kind of my background. It’s a dual background. I went back to physics on the late, you may call that a midlife crisis, but I got a PhD in physics and was doing relativistic astrophysics, like gravitational waves, black holes, with the LIGO-Virgo collaboration, you know, in my 40s. So there was like a midlife crisis. And then, so I kept doing these two things together, right, as a form of schizophrenia, in a way, so doing physics on the weekends and on the weekdays I was doing finance. But recently I proposed, I suggested to my dean that we launched an institute. So it’s called the EDHEC Quantum Institute, for which I serve as the founding director. And I guess it’s probably, I guess, the first quantum institute within a business school. And so, well, now that’s what I’m doing now. So my superposition has collapsed. I’m kind of combining those two aspects of my life, physics and finance, in a way, within a single job.<br>
+Yuval: That’s where I’m standing now. I went to a business school in Chicago, Northwestern, and during orientation week, they reviewed addition, subtraction, the quadratic equation, and some really basic math. So having a quantum program in a business school, what are you teaching? Quantum error correction for accountants? What’s the reason for this?<br>
+Lionel: Yeah, it’s a good question. I remember when I was teaching, well, I guess maybe it’s a US bias when I was teaching, I don’t wanna say bad things about US MBA students, but I was teaching MBA students back in the US and then somebody asked, can you explain for those of us who are mathematically challenged, I mean, like the same thing, but for, and I said, well, I’m sorry, I just did. So that’s the bad news. I can’t do any better. Anyway, yeah, you’re raising a good question. Here is the way we think about it. We think, I mean, at least that was the founding thoughts behind that institute. I kind of believe that science, science in general, but quantum in particular, is way too important to be left to like an elite of experts, like a group of, you know, it’s only physicists who can deal with quantum. I mean, quantum is very important. And as those second generation quantum technologies are maturing, they are eventually bound to impact several industries, if not all industries, depending on how we think about the scale of development. So I think it’s really important for us to prepare the future generations of business leaders and economic decision makers to be quantum aware. So our goal is clearly not to train quantum physicists or quantum engineers, even though we will be launching in the years ahead, not yet, but in the years ahead, in collaboration with, you know, engineering schools and physics departments, we might be launching, you know, programs in quantum business and engineering. But so far, what we are trying to do is for undergraduate students and also graduate students, including MBA students, raise their awareness, you know, let them understand what is it that we are talking about and how quantum technologies might impact, you know, different business models.<br>
+Yuval: And could you put that in the context of other things that are happening at EDHEC? I mean, for instance, is there an institute on sustainability or maybe one on AI or other technologies that may be relevant to business leaders?<br>
+Lionel: Yeah, it’s actually a good point. We’ve launched a couple of years ago the EDHEC Climate Institute. And, you know, we started by doing climate finance and thinking about, you know, measuring the impact of, you know, physical risks and transition risks on portfolios and assets. And but then we moved on to expanding the scale of our research to, you know, climate science, more generally speaking, because we feel that it’s extremely important for our students to be exposed, I mean, to these things as well. We also have an AI research center and AI is obviously a big component in all of our classes now. So in a way, I mean, the way I like to think about it is for AI, business schools had been like a few years late, you know, everybody got kind of caught by surprise by this ChatGPT moment where all of a sudden the thing happened and then, you know, the next thing, you know, everything is changing around you. So we adapted fast, but a little late. I guess for quantum, I guess it’s fair to say that, you know, we are a little bit early. How early are we? Well, that’s an interesting question, but you know, for this case, we are, yes, we are early. So, but yeah, to answer your question more directly, we believe at EDHEC in the hybridization of knowledge, the fact that, you know, these boundaries between business schools and engineering schools are somewhat artificial and obsolete, that the younger generation has to be technology fluent if they want to make a living in this new world.<br>
+Yuval: What do you think that… So if you were holding a class and say with CEOs and CIOs, what do they need to know? What’s critical for them to know about quantum computing? And what did you find to be the hardest thing to convey?<br>
+Lionel: Well, yeah, I mean, I think there’s a clear need to, I mean, I call that reclaiming the quantum narrative. I mean, as you well know, the current quantum narrative is a little disturbing. I mean, on the one hand, what we teach to physics and engineering students or math students, essentially what we tell them is shut up and calculate. You guys can do the math so you understand the Hilbert space formalism. As long as you’re comfortable with this Hilbert space formalism, just, you know, don’t think about what quantum tells us about the world or reality. Just do the math, you know, and the math works well. Now that’s what we say to people who are kind of savvy in math and science. Now for those people who have just like a business background or no science background, we tell them, well, quantum is weird, quantum is very mysterious, nobody understands quantum. And well, that just, I mean, it’s just the same concept again, like, don’t try and understand. It’s beyond you. Well, and it’s actually beyond everyone else. Well, I think that this narrative is really counterproductive. And I think we have to do better than this. I mean, maybe in the early stage as a young physics student when you come to quantum, then this mystery of quantum is something that kind of attracts you and that’s beautiful and kind of exciting and mysterious. But then when it comes to implementation, adoption, understanding, then I think it clouds a little bit, you know, any attempt from someone who’s not a physicist to try and get their hands on what quantum computing can mean. So, I mean, the way I start the discussion is always by trying to give a little more sense and background behind the fundamental quantum principles. And, you know, for quantum computing, the two fundamental quantum principles are superposition and interferences that go with being in superposition and entanglement. And so I think it’s really important. So I do spend a fair amount of time, maybe more than I should, with those non-physics students, talking about the foundations of quantum physics, the history behind quantum physics, the great debates between the giants, Bohr and Einstein in those Solvay conferences, and thinking carefully about the different camps, the realists with Einstein and Schrödinger on the one hand, and then Bohr and Heisenberg and the other ones that had a more instrumental understanding of quantum mechanics. And I think it really helps people. I mean, looking at these debates, then they understand that there are different sides to the question. And that I think is enlightening. And then that typically allows us to get a better understanding of how does quantum computing, how can quantum computing obtain this speedup, whether they are quadratic or exponential speedups. Yeah, I mean, that’s at least what I’m trying to do. Whether I’m successful or not, well, I guess we should ask the students, yeah.<br>
+Yuval: Like any new technology, quantum has two sides. There’s a risk of using quantum, or there’s a risk that’s born through quantum technologies, and there are obviously tremendous opportunities. Risk being more on the security, for instance, cracking encryption and so on. Do you focus on one more than the other?<br>
+Lionel: Right, it’s a good question. I have a bias, which is I like to address the reptilian side of people’s brain. And using the fear factor as effective as it is, is not my preferred way into explaining to them why they should be interested in quantum. I’d rather share my enthusiasm and my love for the topic. And in a way, what I like to tell students and what I like to share with them is that even if some of them may eventually never ever get to work with anything related to quantum technologies, either because quantum technologies don’t make it through and they don’t come to that maturity level that we hope they are going to reach, or because those students will eventually get jobs that are entirely unrelated to quantum technologies. I like to think, I have the weakness to think that trying to think carefully about what quantum is, what quantum tells us about the world, is a great learning experience. It is an invitation to think about the complexity of the real world. And you know, as the world gets, you know, more and more, you know, immersed into black and white debates and people take stances that are very, you know, very critically strong. And I mean, those nuances that the quantum formalism invites you to have, I mean, the very fact of thinking in terms of states and superposition. I think it’s a really great learning experience. So yeah, I, right. So, but anyway, to answer your question, I’d like to talk about the positive and the upsides, but yes, I end up, you know, alluding also, of course, on, you know, cybersecurity and cryptography and Shor’s algorithm and things of the kind. And clearly I see that people react to that, obviously.<br>
+Yuval: And you can imagine there’s a counter view, right? That the CEO, yeah, he needs to understand that there’s such a thing as quantum computers and qubits and superposition and entanglement. But ultimately, just like a CEO may or may not understand how the iPhone works, they just say, oh, but I can do these applications with it. So should the focus be, I mean, I, again, I understand the romanticism of understanding quantum technologies and the way it makes you think about the world, but for an executive, isn’t the outcome more important than the underlying physics?<br>
+Lionel: Yeah, I hate to say this, but I think you’re right, at least partly right. But yeah, so I do want to spend a fair amount of time on the use cases. And I think that’s of course the real important part for some of these senior executives. So in particular, when I talk to people in finance, you know, I like to think very carefully with them, walk them through the kind of use cases that are meant to be potentially addressed by quantum computers and those that are not meant to be addressed by quantum computers. I mean, there’s a term that I like to use, I call it quantum washing. And I like to caution people against and about the risks of quantum washing. So we’ve got a lot of climate washing, right, or greenwashing. The fact that we have a green label on all of financial products, and then that makes them sell better to people because they think that, you know, there’s something that’s important and related to the environment. Now there’s a tendency to oversell quantum. I call that quantum washing, that tendency to oversell quantum. And quantum washing is very tricky because it has different sides to it. I mean, one side to it is, of course, we oversell quantum benefits that are only potential, you know, and that may or may not, you know, come to life within the next, you know, few years. And so we’re kind of overselling what can be done currently in the NISQ era, while we still don’t have fault-tolerant quantum computers. We’re kind of, you know, over-exemplifying the benefits of quantum computing. So that’s one way of thinking about it, right? Overselling things before they become even available. But there’s another way, which is in a way even more subtle, and which is to look at use cases that have been over-engineered to be suitable for quantum computers, if and when they become truly available. So there are a lot of papers and talks and discussions in finance about combinatorial problems, where we look at portfolio optimization, for example, and then we have these binary variables that tell us whether different assets should be included or not in the portfolio. Well, based on my long, I mean, like more than 30 years experience in finance, both on the academic side, also I’ve been involved in launching startups and fintech and talking and working with, you know, financial institutions and pension funds and asset managers. It is very rarely the case, if not never the case, that the selection stage and the optimization stage gets mixed in one step. So in other words, there’s one step where we select securities. And that’s a separate step. And the way we do that is typically based on different motivations, like what is the factor exposure of my stocks? So I want to tilt my portfolio towards certain factors, right? Also, you could have ESG kind of constraints. So I want to increase the score of my portfolio with respect to environmental, social, or governance factors. And I mean, there are different ways and motivations for selecting stocks. But it is never, never a good idea to hope that a black box, like an optimizer, will do the job for you. You know, that optimizer black box could be helpful in telling you how much, what should be the allocation to different stocks once they have been selected. Right. But anyway, so there are a lot of applications, supposed, you know, interesting, attractive applications to finance and portfolio optimization that rely heavily for demonstrating a quantum advantage, that rely heavily on those binary constraints. And again, they are very hardly, or hardly ever, relevant in the real world practice. So, you know, that’s something that I think is important, right, to caution people against this quantum washing kind of trends, right, over-hype.<br>
+Yuval: And because you’re a finance expert and a quantum expert, quantum computing comes up in financial services in so many different things. I mean, you mentioned portfolio optimization, there’s fraud detection, there’s arbitrage opportunities and so on. Option pricing. We are still at the NISQ or perhaps closer to the end of the NISQ era. Where do you see the near-term opportunities for quantum in finance? In what applications, what algorithms are you particularly excited about?<br>
+Lionel: Yeah, it’s a good question. And I think it’s fair to say that at the NISQ era, at the current era, there’s nothing truly convincing, especially if you start factoring the cost of quantum computing, which is the other hidden dimension of quantum washing where people talk about quantum advantage, but they don’t necessarily tell you about the ROI, right? The return on investment, how much did it cost you to come up with this so-called improved optimization technique? So well, you know, let’s put it this way. Whenever we get access to fault-tolerant quantum computers, then the universal or multi-purpose gate-based hardware is certainly the place where we are going to see the most transformational impact. Now, as we are still in the NISQ era, where we have very relatively few qubits and they are still noisy, there are probably reasons to believe that special purpose quantum annealers might be more likely to give access to some interesting applications. And even kind of zero qubit quantum-inspired kind of classical techniques like digital annealers have been shown and, you know, to provide some interesting benefits. So I think, yes, I think there’s a clear disconnect between the short term and the long term. But again, to be honest, in the short term, when you look at these benefits obtained through these quantum annealers, whether they are digital, you know, quantum-inspired annealers or true D-Wave-like quantum annealers, you know, most of these use cases look a little over-engineered. They definitely look and feel like, you know, a solution desperately in search of a problem, like a big hammer trying to be used and find, you know, nails to be nailed down, right? That’s still the feeling you get when you come from, you know, from a financial background. So, you know, so I think we don’t want to, you know, the potential medium-term benefits of quantum computing in finance are large, as you said, and there are many different applications. So I think we should be very cautious not to oversell the short-term benefits because yeah, there would be a credibility kind of cost associated to that.<br>
+Yuval: When accountants in business school learn about a balance sheet, they don’t just learn about it, they write some balance sheets, not to mention read them. How much hands-on quantum computing is at the Quantum Institute at EDHEC?<br>
+Lionel: That’s a great question. Okay, so the institute is brand new, so it’s like literally like a few months old, and this is a question I keep pondering, you know, how far do I want to go? So we are starting our first experiment with MBA students and we don’t have them sit and try and do kind of coding with Qiskit and quantum kind of software and language. We definitely want to get more practical with undergrad students. In particular, we are launching tracks that are going to be more data, math and statistics heavy. And those students are meant to start kind of being more hands-on and practical. So that’s the place where I think we will see more, you know, real-world kind of actual coding taking place. But for MBA students, maybe I’m kind of shying away from pushing them too hard, but because that’s our first experience, we’re just, you know, doing this hand-wavy discussion so far.<br>
+Yuval: Do you see a need, do you feel a pull to have executive education that’s focused on quantum? I mean, places like Harvard and MIT and Northwestern and others, I’m sure, have, you know, three-day sessions on channel management or AI for marketers or so on. Do you see that happening where companies are coming to you asking for education that’s specific to quantum computers?<br>
+Lionel: I think it’s coming. I think so. Again, we are a little early, and it’s better to be early than to be late. It’s a better feeling. But I think it’s definitely coming. There are two different sides to this equation. One side is I get increasing demands from quantum technology firms that tell me, well, you know, we need CFOs and human resource people. And we also need marketing people. And we want those people to be, you know, typically they are, we are going to hire, we’re not going to hire engineers or physicists, right? We are going to hire business school students. But it would be great if those students could be quantum aware, could have a good awareness of the stakes of what’s at stake in quantum technologies. So on the one hand this is something that we see growing, a growing need from this emerging quantum technology sector for business people that are kind of quantum savvy. So that’s one part of the equation. And that one, we already feel it. And we see interest in hiring some of our students by quantum, you know, kind of quantum computing firms, hardware, software, and the rest. Now, the other side of this equation is then the end users, right? The industry users, like the financial industry and then, you know, the aerospace and other industries. We don’t, it’s more like a pull and push. So we are discussing with different people and they show interest. I wouldn’t say that they feel an urgent need for training their teams right now, but I think they understand that the time will come. And what they clearly understand is that there is an opportunity cost associated with waiting in a way, right? So again, it’s better to be early. And so I’m pretty confident that this is going to be an increasing trend. So yeah, to answer your question, actually MIT launched a very good program on quantum computing for business, for business people. And it’s a great program. And I think that that’s only one, there will be more to come, definitely.<br>
+Yuval: As we get close to the end of our conversation, I’m curious if one of the participants asks for a book recommendation to learn about quantum. It would not be Mike and Ike, right? So what would you recommend to them as their first book?<br>
+Lionel: Yeah, that’s a tough one. Yeah, I have to think a little more about it. There are popular science books, but most of them are kind of a little bit too much on the surface and they are not deep enough. And then you’ve got someone like Sean Carroll, who’s great at popularizing science and also has books with equations. But his quantum kind of book has a very strong emphasis on quantum field theory, which is not probably going to be very useful to business people wanting to get interested in quantum. So I think that’s an interesting challenge. I think the one that we will recommend is the one that we will end up writing. We are currently writing a book which is called A Quantum Walk Down Wall Street, which is meant for an audience of finance professionals. And essentially we decided to start that project simply because we could not find a good book that would be deep enough and still readable enough for CFA charterholders and typical finance professionals. So yeah, I guess there’s more work for us ahead.<br>
+Yuval: In last hypothetical, if you could have dinner with one of the quantum greats, dead or alive, who would that be?<br>
+Lionel: Oh, okay. Now you’re asking me a very tough question because I have to make a choice between two individuals. I mean, Dick Feynman would certainly sit very high up there, right? Because in terms of having a good time and having an entertaining dinner, I don’t think I can beat that. Dick Feynman as a choice of someone to have dinner with, it would be so lovely. But having a chance to talk to Albert Einstein, and I consider him as one of the greatest and obviously, but also one of the key founding fathers of quantum physics, would be, I mean, who would turn down an opportunity to talk to Albert Einstein? So it would still be my first pick.<br>
+Yuval: Yeah, if I could. Very good, Lionel, thank you so much for joining me today.<br>
+Lionel: Thank you, it was a pleasure. Thanks a lot.<br>
+First person (host perspective):<br>
+My guest today is Lionel Martellini, a finance professor at EDHEC Business School who also pursued a PhD in physics and now leads the EDHEC Quantum Institute. We discuss why a business school should teach quantum technologies and how future executives can become “quantum aware.” Lionel explains the fundamentals of quantum concepts, the risks of “quantum washing,” and the realistic opportunities for quantum in finance. We also talk about education, use cases, and how business leaders should approach emerging quantum technologies.<br>
+Third person: Yuval Boger interviews Lionel Martellini, finance professor at EDHEC and founding director of the EDHEC Quantum Institute. Lionel describes his unusual path from finance to astrophysics and why business schools should teach quantum awareness to future leaders. They discuss core quantum concepts, the danger of overhyping “quantum washing,” and the real prospects for quantum applications in finance. The conversation also explores executive education, practical use cases, and how businesses should prepare for quantum technologies.<br>
+Yuval Boger is the Chief Commercial Officer of QuEra Computing.<br>
+April 27, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/podcast-with-lionel-martellini-founding-director-of-the-edhec-quantum-institute/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="7ba80eec42267a07.html" class="prev-next">&larr; IonQ and Florida LambdaRail Launch U.S. Statewide Quantum-Safe Network</a>
+  
+  
+  <a href="2432da4bdd0dcd40.html" class="prev-next">QuantX Labs Deploys Quantum Optical Clock to Orbit Amid $425B Defense Commitment &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-04-28 08:20 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
