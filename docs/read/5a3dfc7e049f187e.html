@@ -139,18 +139,103 @@
       <span>Qiskit</span>
       <span>122w</span>
       <span class="article-category">quantum</span>
-      <span>77 words</span>
-      <span>1 min read</span>
+      <span>2020 words</span>
+      <span>11 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>By Abby Mitchell, Jake Lishman, Luciano Bello, Matthew Treinish &amp;amp; Blake JohnsonQiskit 1.0 will be released in February 2024 🎉This is a huge milestone, the culmination of six years of open-source efforts, all made possible by the continued enthusiasm of thousands of users and the ongoing support of hundreds of contributors.In this article you’ll find the following:What this upcoming major version means for usersHow to test out 1.0 functionality before the stable releaseHow to upgrade to Qiski</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://medium.com/qiskit/coming-soon-qiskit-1-0-a8d59c3533a4?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Coming soon: Qiskit 1.0!<br>
+By Abby Mitchell, Jake Lishman, Luciano Bello, Matthew Treinish & Blake Johnson<br>
+Qiskit 1.0 will be released in February 2024 🎉<br>
+This is a huge milestone, the culmination of six years of open-source efforts, all made possible by the continued enthusiasm of thousands of users and the ongoing support of hundreds of contributors.<br>
+In this article you’ll find the following:<br>
+- What this upcoming major version means for users<br>
+- How to test out 1.0 functionality before the stable release<br>
+- How to upgrade to Qiskit 1.0<br>
+- Possible disruptions to be aware of during the transition period<br>
+The article below is a repost of our original announcement on the IBM Research blog.<br>
+A new phase of Qiskit development<br>
+This upcoming release signals a new phase for Qiskit development, one centered on performance, stability and usability. Qiskit 1.0 is an open-source SDK for working with quantum computers at the level of extended quantum circuits, operators, and primitives.<br>
+What does this mean, exactly? We have been making numerous changes over the past few minor releases to prepare for this new phase, with an emphasis on the following:<br>
+- A high performance code base: We have steadily been improving performance over the years, and Qiskit 1.0 is set to be the best version yet. It will enable users to build and transpile 100+ qubit circuits with comparative ease, and lay the groundwork for future 1000+ qubit capabilities.<br>
+- A leaner package: We’ve made changes such as the removal of the metapackage architecture, the splitting out of<br>
+qiskit.algorithms<br>
+into a separate package, and the deprecation of various modules (e.g.qiskit.opflow<br>
+) — all in an effort to keep the Qiskit codebase more focused, stable, and maintainable. This paves the way for a more performant and usable package in the long run. - A more stable API: The launch of Qiskit 1.0 will move Qiskit development into a new release and versioning cycle, with less frequent breaking changes. (More details on this later.)<br>
+- Primitives are the access model for quantum hardware: The Qiskit codebase provides the definition for a primitives execution model for quantum hardware, with pre-existing functionality being refactored to use primitives and future functionality being developed with a primitives-first approach.<br>
+- An SDK to build upon: The transpiler plugin interface and the Qiskit Ecosystem program (among other things) are designed to encourage the further extension of Qiskit’s capabilities by users and contributors.<br>
+Performance: let’s take a closer look<br>
+We know it’s not enough for us to just say “Qiskit is more performant now!” We know you want to see the numbers, so let’s take a deeper look at what we mean when we talk about improved performance for Qiskit 1.0.<br>
+There are many different metrics to analyze for judging performance in a project like Qiskit, we’re going to focus on two: memory and speed.<br>
+In terms of speed, many features in Qiskit 1.0 just work faster now than they used to, due to ongoing internal refactoring and the introduction of Rust code under the hood. For example, the transpiler in Qiskit 1.0 can bind and transpile circuits 16x faster than Qiskit 0.33 (while also returning shorter circuit depths). See below for a comparison of the transpilation capabilities for different types of 100+ qubit circuits. The blue bars indicate how many times faster Qiskit can transpile these circuits compared to TKET (an alternative circuit building SDK), and the pink bars indicate the percentage reduction in two-qubit gates:<br>
+Similarly, when it comes to memory, we’ve done a lot of internal refactoring to reduce the footprint of circuits, with Qiskit 1.0 demonstrating an average 55% decrease in memory usage compared to Qiskit 0.39. The chart below shows data collected on the maximum memory used in building a 127-qubit Two Local circuit at increasing circuit depth, comparing the last three Qiskit versions with the upcoming 1.0 version:<br>
+Pre-release coming December 2023<br>
+Before the full release in February 2024, we will be offering a very early pre-release of Qiskit 1.0 on December 4, 2023. This will include a subset of the changes coming in the full 1.0 release two months later.<br>
+As an open-source project, we have always strived to bring our community along with us in our development journey, and so we’re thrilled to be able to provide this opportunity for users and contributors to test out Qiskit 1.0 early. As always, we greatly appreciate any bug reports and feedback made by opening an issue in our GitHub repository.<br>
+Also, in early February 2024 (after the 1.0 pre-release but before the 1.0 stable release) we will release an additional Qiskit 0.46. This version will be compatible with 0.45, and will be a useful stepping stone in the transition to 1.0. We will continue to support Qiskit 0.46 for a further six months, overlapping with the release of Qiskit 1.0. This version will contain warnings for everything that is changing in Qiskit 1.0 and possibly some bug fixes, but no new features.<br>
+How to upgrade to Qiskit 1.0<br>
+The following instructions are relevant for upgrading to Qiskit 1.0 or installing the pre-release.<br>
+The most important thing to know when the time comes to upgrade is this:<br>
+You will need to create a new virtual environment to install Qiskit 1.0.<br>
+Qiskit 1.0 will use a new packaging structure, and you will not be able to upgrade an existing Qiskit 0.x installation to Qiskit 1.0 in-place. This is the only time we expect to break packaging; you will be able to upgrade from Qiskit 1.0 and beyond in-place.<br>
+I’m a Qiskit user. What do I need to do?<br>
+Qiskit 1.0 is not yet available, so there is nothing you need to do immediately. When it is released, you will not be able to use pip install -U qiskit<br>
+to upgrade from any Qiskit 0.x version to 1.0.<br>
+To upgrade, you will need to begin a new virtual environment.<br>
+For example, using the standard tool venv<br>
+, you might do the following:<br>
+# Create a new virtual environment (you only do this once)<br>
+python -m venv ~/qiskit-1.0-env<br>
+# Activate the new virtual environment (you do this every time you start a new session)<br>
+source ~/qiskit-1.0-env/bin/activate<br>
+# Install Qiskit 1.0 (you only do this once for this environment)<br>
+pip install ‘qiskit>=1.0’<br>
+Note: For installing the pre-release, you can use the same steps above. The only difference is that for the last line, you should run pip install ‘qiskit==1.0.0b1’<br>
+instead.<br>
+You can follow similar steps if you prefer to use virtualenv<br>
+, Conda, or any other virtual-environment management. Consult the documentation for your chosen environment for more information on how to create new ones.<br>
+In addition to creating a new virtual environment, you might need to adapt your code to work with Qiskit 1.0, as there will be some breaking changes with respect to 0.x.<br>
+To prepare for this, we recommend that you install Qiskit 0.46 when it is released in early February 2024, and try running your code to see if anything breaks. Where there are places that you need to change, you will see DeprecationWarnings<br>
+being issued, which will include descriptions of how to modify your code for Qiskit 1.0.<br>
+We will support Qiskit 0.46 with bugfixes, but no new features, for six months after its release. This will give users time to make modifications, and will also give library maintainers time to upgrade any libraries users may depend on.<br>
+I use projects that depend on Qiskit . What do I need to do?<br>
+It will take some time for downstream projects to begin supporting Qiskit 1.0. Please be patient with these projects; it is a lot of work to support new versions of libraries, and it can take maintainers time to switch over.<br>
+As an end user, you must not install packages that require Qiskit versions before Qiskit 1.0 in the same environment where you have Qiskit 1.0 installed.<br>
+Doing so could break your virtual environment, and you might need to create a new one.<br>
+I maintain a project that depends on Qiskit . What do I need to do?<br>
+Qiskit 1.0 will include breaking changes, and we do not expect that packages supporting the current 0.44 or 0.45 series will necessarily support 1.0 unchanged.<br>
+We recommend two immediate modifications to your dependency management:<br>
+- Remove any dependencies on the<br>
+qiskit-terra<br>
+PyPI package, and replace them with dependencies on theqiskit<br>
+package. You can find a table matching oldqiskit<br>
+versions toqiskit-terra<br>
+versions here, if you want to support old versions of Qiskit. From Qiskit 0.45 onwards, the versions ofqiskit<br>
+andqiskit-terra<br>
+are identical, and are not listed in the table. This is critical as theqiskit-terra<br>
+PyPI package will no longer be updated in any form for the 1.0 series and above, as it is entirely superseded by theqiskit<br>
+PyPI package. - Place an upper bound on your<br>
+qiskit<br>
+dependency to restrict the use of1.0<br>
+until you have verified that your package supports Qiskit 1.0. To do this, set your dependency asqiskit >=0.44, <1.0<br>
+, or replace the0.44<br>
+as appropriate.<br>
+After implementing the above steps, but before the full release of Qiskit 1.0 we recommend testing your project with Qiskit 0.46 once it is released in early February. This will enable you to find all the warnings it will generate so you can upgrade your library to support Qiskit 1.0 when it is released. We will support Qiskit 0.46 with bug fixes for six months after the release of Qiskit 1.0, to give you time to begin supporting 1.0.<br>
+Once Qiskit 1.0 is released in February 2024 (and you have sufficiently tested it with your codebase), we recommend releasing a new version of your package with updated version requirements.<br>
+Breaking changes<br>
+Throughout the history of Qiskit development, we have strived to keep pace with the rapid progress of quantum technology while also trying very hard to keep breaking changes to a minimum, and to provide a clean upgrade path that allows library authors to support multiple versions of the Qiskit package simultaneously.<br>
+Qiskit 1.0 will require some changes that could not necessarily be made safely in this manner. These largely affect data-structure internals, which we could not change smoothly without severely compromising performance. We hope that many of these changes will not affect user code, but are aware that this is not always the case. The best way to prepare for the transition to 1.0, and understand which breaking changes will impact you, is to try out the Qiskit 1.0 pre-release and the final minor version Qiskit 0.46 when they are released.<br>
+With the transition to Qiskit 1.0 the development cycle of Qiskit is also changing. There will be a minimum of one year between major releases, and minor version releases will happen as usual every three months. This means that breaking changes will only occur during major releases. To dig into the details of how the release cycles are changing and why, you can check out our open RFC here.<br>
+While we anticipate the release of Qiskit 1.0 will result in some initial disruption, we see this as being necessary to pave the way towards a more stable and less breaking future for the package.<br>
+Conclusion<br>
+We are incredibly thankful to everyone who has taken the time over the past six years to get us to this place, whether it was a pull request, bug report, or just a comment on slack. Please keep it up! We are very proud of how far we’ve come, and can’t wait to embark on this next phase of our development journey with your continued support. Stay tuned for more Qiskit 1.0 updates!<br>
+Footnote for the GitHub Gurus!<br>
+Want to know more about what’s happening for Qiskit 1.0 at a codebase level? These resources may be of interest to you:<br>
+- If you wish to proactively test against changes coming in Qiskit 1.0, development is proceeding on the main branch of the Qiskit repository.<br>
+- Development on Qiskit 0.46 is happening on the stable/0.46 branch of the Qiskit repository.<br>
+- Conversations around release cycles, versioning and deprecation policies are happening in the release cycle RFC in the Qiskit organization RFC repository.</p>
   </div>
   
 </article>
@@ -173,7 +258,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-04-29 02:36 UTC
+  Generated 2026-04-29 08:11 UTC
 </div>
 
 <script type="module">
