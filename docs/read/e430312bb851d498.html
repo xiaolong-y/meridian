@@ -139,18 +139,48 @@
       <span>Qiskit</span>
       <span>126w</span>
       <span class="article-category">quantum</span>
-      <span>79 words</span>
-      <span>1 min read</span>
+      <span>784 words</span>
+      <span>4 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>In recent months, the Qiskit Ecosystem has undergone a series of changes, additions, migrations, and upgrades all driven by a common goal: to provide the community with a greater role in the development of algorithms and applications. To align with this goal, we have moved the applications repositories, relocated the algorithms in Qiskit into their own repository, and welcomed external partners as additional maintainers to the repositories. This blog post delves into the hows and whys of these c</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://medium.com/qiskit/a-new-chapter-for-qiskit-algorithms-and-applications-5baff541e826?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>A new chapter for Qiskit algorithms and applications<br>
+In recent months, the Qiskit Ecosystem has undergone a series of changes, additions, migrations, and upgrades all driven by a common goal: to provide the community with a greater role in the development of algorithms and applications. To align with this goal, we have moved the applications repositories, relocated the algorithms in Qiskit into their own repository, and welcomed external partners as additional maintainers to the repositories. This blog post delves into the hows and whys of these changes, and introduces the new maintainers.<br>
+Algorithms as an independent package<br>
+If you have been following our release updates, you may already be familiar with this change. Since Qiskit 0.44.0, qiskit.algorithms<br>
+has been migrated to a new standalone package, qiskit-algorithms<br>
+. The new library can be found in the qiskit-community<br>
+GitHub organization and PyPi, and is the place to go for updated, primitive-based algorithm implementations.<br>
+This move is significant because it separates the circuit-building tools from the libraries built on top of them. This separation allows algorithm development to move at a different pace than that of the core library. While Qiskit itself aims to provide a stable foundation layer for quantum development, algorithms are still an evolving field of research, and will benefit from more flexible development cycles.<br>
+Community-oriented algorithms and applications<br>
+In the case of the Qiskit applications modules, the repository changes have been a bit more subtle. qiskit-nature<br>
+, qiskit-machine-learning<br>
+, qiskit-optimization<br>
+, and qiskit-finance<br>
+are now also part of the qiskit-community<br>
+GitHub organization. The package installation path has remained unchanged, so the impact of this migration on end-users has been minimal. This move does however symbolize the strengthened community focus of the projects, which also involves the newly created qiskit-algorithms<br>
+.<br>
+While these packages have always been open-source and welcomed external contributors, most feature development and maintenance efforts were sourced from within IBM Quantum. By joining forces with external partners, we enable the community to have a stronger impact on the direction of these libraries, bringing in new perspectives and areas of expertise. At the same time, we can focus more resources on improving the performance and stability of the core Qiskit package. The documentation of the applications can be found in their corresponding repositories as well as the Ecosystem page.<br>
+Welcoming new maintainers<br>
+The algorithms and applications libraries have onboarded new code-owners and maintainers from IBM Quantum partner institutions:<br>
+Algorithmiq (qiskit-nature): “Our mission is to revolutionise life sciences by exploiting the potential of quantum computing to solve currently inaccessible problems. Algorithmiq’s top quantum chemistry team and their knowledge of state-of-the-art quantum chemistry methods will, together with qiskit’s expert community, tackle some of the greatest quantum chemistry simulation challenges that lie ahead.”<br>
+STFC Hartree Centre (qiskit-machine-learning): “We help UK businesses and organisations of any size to explore and adopt supercomputing, data analytics, AI and emerging technologies for enhanced productivity, smarter innovation and economic growth. Our Qiskit work will be supported by the Hartree National Centre for Digital Innovation (HNCDI) — a collaboration with IBM Research that bridges the gap between academic research and the adoption of new technologies to solve industry challenge and transfer the skills needed to adopt digital solutions.”<br>
+Quantagonia (qiskit-optimization): “Quantagonia’s mission is to democratize quantum computing, making it accessible and manageable for businesses across sectors, enabling them to leverage this powerful technology for transformative growth and a competitive edge.”<br>
+These are domain experts in chemistry, machine learning and optimization, as well as active community contributors.<br>
+Cleaning up legacy dependencies<br>
+To facilitate the community’s greater role in the development of algorithms and applications, legacy dependencies in the applications have been cleaned up to simplify the code base and make the libraries more accessible to external contributors and new maintainers.<br>
+This means the newly released versions of the application modules: qiskit-finance<br>
+0.4, qiskit-machine-learning<br>
+0.7, qiskit-optimization<br>
+0.6 and qiskit-nature<br>
+0.7 no longer depend on, or support, the now deprecated modules from Qiskit, such as opflow and quantum instance. These modules will no longer be available in the upcoming Qiskit 1.0 release.<br>
+In addition to this, and in anticipation of the upcoming removal of qiskit.algorithms<br>
+, which will also not be part of Qiskit 1.0, the applications modules have been updated to use only qiskit-algorithms<br>
+instead.<br>
+Conclusion<br>
+In summary, the new algorithm and application libraries in the Qiskit Ecosystem have undergone a significant shift towards community-led development. Establishing an independent algorithms package, relocating applications, and simplifying legacy code were all steps designed to facilitate and enhance community engagement. As always, community contributions are most welcome, and — together with the new maintainers — we invite all of you to get involved via the GitHub repositories or the corresponding Qiskit Slack channels, such as #applications.</p>
   </div>
   
 </article>
@@ -173,7 +203,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-04-29 08:11 UTC
+  Generated 2026-04-29 13:49 UTC
 </div>
 
 <script type="module">

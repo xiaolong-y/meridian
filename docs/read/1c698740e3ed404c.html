@@ -139,18 +139,135 @@
       <span>Qiskit</span>
       <span>129w</span>
       <span class="article-category">quantum</span>
-      <span>72 words</span>
-      <span>1 min read</span>
+      <span>1760 words</span>
+      <span>9 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>By Zhiding Liang, Jinglei Cheng, and Hanrui WangThe world of quantum computing is always evolving. Researchers and scientists are constantly pushing the boundaries, looking for ways to improve the methods they use to harness the power of quantum mechanics. Variational quantum algorithms (VQAs), for example, have gained significant traction in recent years as useful tools for exploring optimization and quantum chemistry problems. But how can we make them even better?Traditionally, researchers app</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://medium.com/qiskit/enhance-variational-quantum-algorithms-with-qiskit-pulse-and-qiskit-dynamics-768249daf8dd?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Enhance variational quantum algorithms with Qiskit Pulse and Qiskit Dynamics<br>
+By Zhiding Liang, Jinglei Cheng, and Hanrui Wang<br>
+The world of quantum computing is always evolving. Researchers and scientists are constantly pushing the boundaries, looking for ways to improve the methods they use to harness the power of quantum mechanics. Variational quantum algorithms (VQAs), for example, have gained significant traction in recent years as useful tools for exploring optimization and quantum chemistry problems. But how can we make them even better?<br>
+Traditionally, researchers approach VQAs at the gate-level. More specifically, they focus on the design of a type of quantum circuit structure known as the “ansatz,” which serves as a kind of template for the quantum state that we believe is close to the solution of the problem at hand. The challenge with this approach is that gate-level quantum circuits have a lot of redundancies and inefficiencies that limit the execution of intricate quantum algorithms on the noisy quantum computing hardware we have today. Fortunately, there’s a new kid on the block who could very well open up a world of possibilities for running VQA algorithms on near-term quantum hardware. It’s called the Parameterized Quantum Pulse Circuit.<br>
+In this blog post, we will showcase how to use a tool from the Qiskit Ecosystem called Qiskit Dynamics to simulate the parameterized quantum pulse circuits, with a focus on the variational quantum eigensolver (VQE) algorithm. More specifically, we will demonstrate the Pulse ansatz on near-term superconducting hardware by using part of the PAN [1] algorithm, implementing a pulse-based ansatz for estimating the H2 molecule’s ground state energy.<br>
+Pulse programming in Qiskit<br>
+One of the useful features of Qiskit is that it gives us a lot of flexibility. Most Qiskit users focus on gate-level operations. However, when we’re working with transmon qubits in superconducting hardware, we know the quantum system executes qubit operations by firing microwave pulses at the qubits. Qiskit provides both gate-level and pulse-level programming capabilities, allowing us to get much more creative with how we approach algorithms like VQE.<br>
+Within Qiskit’s Pulse programming, users can customize pulse shapes for transmon qubits, adjusting parameters like amplitude, phase, shape, and frequency. (Check the Qiskit Pulse module for more details.) Users can also use the Qiskit Ecosystem project Qiskit Dynamics to quickly and efficiently simulate the generated pulse schedules.<br>
+Pulse circuits offer much more versatility than gate-level programming, but they come at the cost of precision, leading to potential uncertainties in the resulting unitary matrix. This precision is crucial for non-variational algorithms that demand exact rotations and operations. However, in variational quantum algorithms, the primary goal is to approximate a specific quantum state, not to achieve perfect accuracy. Experiments in previous research — VQP [2] and Pan [1] by Liang, Zhiding, et al., and [3] by Egger, Daniel J, et al. — confirm that shorter circuit latency pulses can effectively achieve these outcomes on IBM hardware via pulse access with both quantum machine learning (QML) and quantum chemistry tasks, such as running the VQE algorithm.<br>
+Variational Quantum Eigensolver<br>
+The Variational Quantum Eigensolver (VQE) is a prominent example of variational quantum algorithms. A comprehensive review of its methods and best practices can be found in the VQE documentation provided in Qiskit. Distinct from conventional quantum algorithms that require fault-tolerant quantum computers for proper execution, VQE can be tailored for efficient operations on our current generation of noisy quantum devices.<br>
+When using the typical gate-level approach, we begin the process of using a VQE algorithm by expressing a system’s Hamiltonian with weighted Pauli matrices, which we can translate into quantum circuits. Next, we deploy an ansatz, essentially a quantum circuit with tunable parameters, to prepare the ground eigenstate of the Hamiltonian. Further measurement of this eigenstate gives us the Hamiltonian’s ground state energy. The power of VQE lies in its iterative nature. It employs classical optimization techniques to adjust the ansatz parameters, minimizing the Hamiltonian’s expectation value and thereby approximating the system’s lowest energy state.<br>
+Different ansatz structures have been proposed, from hardware-efficient models to the UCCSD, and each possesses its own advantages and challenges. Some researchers have even proposed a search-based algorithm, the QuantumNAS [4], to simplify the process of finding the best ansatz. As quantum computing continues to advance, VQE remains a popular area of focus, with ongoing studies exploring innovative ansatz structures and optimization strategies to enhance its precision and applicability.<br>
+Before diving into pulse-level VQE, let’s quickly recap the traditional gate-level approach:<br>
+- In gate-level VQE, the parameters we deal with are the angles of rotation gates.<br>
+- The ansatz, or the quantum circuit that approximates the desired quantum state, is composed of these parameterized gates (e.g. rotation gates) and fixed gates.<br>
+- The primary objective is to tweak these parameters such that the quantum state closely approximates the lowest energy state.<br>
+Now, let’s look at how pulse-level VQE differs from the usual approach:<br>
+- Instead of focusing on gate-level parameters, pulse-level VQE shifts attention to the parameters of quantum pulses.<br>
+- These quantum pulses are essentially microwave pulses that act directly on superconducting quantum qubits.<br>
+- By directly controlling the quantum pulses, we can significantly reduce circuit latency.<br>
+Why Pulse-Level VQE?<br>
+You might be wondering, “why should I bother with pulse-level VQE when the gate-level approach already exists?” Here are some compelling reasons:<br>
+- Expands the Design Space. Working with pulses allows us to potentially access areas of the Hilbert space that are inaccessible with a CNOT-based circuit decomposition. For example, leakage outside of the computational sub-space may allow the variational algorithm to take short-cuts.<br>
+- Lowers calibration cost. One of the challenges with quantum gates is calibration. With pulse-level VQE, the lack of calibration is automatically addressed as the parameters are updated to mitigate these errors. For example, quantum pulses can sometimes suffer from issues like overrotation and underrotation. Pulse-level VQE inherently corrects these errors by adjusting the parameters to find the optimal quantum state.<br>
+- Reduces Latency. By directly controlling the quantum pulses, the need for intermediate gate operations is reduced, leading to faster quantum computations.<br>
+How to build parameterized pulse circuits in Qiskit<br>
+To construct a pulse schedule, we can use the built-in functionality offered by Qiskit Pulse. This allows us to exercise control over the parameters in the quantum pulses, and extract the corresponding pulses from gates.<br>
+For instance, let’s generate a bell state pulse schedule by directly obtaining the corresponding pulses from the gate-level circuit.<br>
+from qiskit import QuantumCircuit, pulse<br>
+from qiskit_dynamics.backend import DynamicsBackend<br>
+qc_test = QuantumCircuit(2)<br>
+qc_test.h(0)<br>
+qc_test.cx(0,1)<br>
+qc_test.measure_all()<br>
+with pulse.build(backend) as pulse_test:<br>
+pulse.call(qc_test)<br>
+pulse_test.draw()<br>
+We can visualize the pulse schedule as follows:<br>
+Furthermore, we can build parameterized quantum pulse circuits (see example code below). Here, we use the drag pulse shape from a single qubit gate, since drag pulse is the native pulse in IBM’s superconducting quantum machines. By using drag pulses, we can avoid population leaking outside of the computational subspace. However, we can also build a parameterized pulse from scratch depending on our needs.<br>
+from qiskit.pulse import Schedule, GaussianSquare, Drag, Delay, Play, ControlChannel, DriveChannel<br>
+def drag_pulse(backend, amp, angle):<br>
+backend_defaults = backend.defaults()<br>
+inst_sched_map = backend_defaults.instruction_schedule_map<br>
+x_pulse = inst_sched_map.get(‘x’, (0)).filter(channels = [DriveChannel(0)], instruction_types=[Play]).instructions[0][1].pulse<br>
+duration_parameter = x_pulse.parameters[‘duration’]<br>
+sigma_parameter = x_pulse.parameters[‘sigma’]<br>
+beta_parameter = x_pulse.parameters[‘beta’]<br>
+pulse1 = Drag(duration=duration_parameter, sigma=sigma_parameter, beta=beta_parameter, amp=amp, angle=angle)<br>
+return pulse1<br>
+How to simulate the pulse circuit with Qiskit Dynamics<br>
+To run the pulse circuit using Qiskit Dynamics, first we need to initialize Qiskit Dynamics itself.<br>
+from qiskit_dynamics import Solver, DynamicsBackend<br>
+from qiskit_dynamics.backend import default_experiment_result_function<br>
+from qiskit_dynamics.array import Array<br>
+import jax<br>
+from qiskit.providers.fake_provider import *<br>
+gate_backend = FakeManila()<br>
+gate_backend.configuration().hamiltonian[‘qub’] = {‘0’: 2,’1': 2,’2': 2,’3': 2,’4': 2}<br>
+jax.config.update(“jax_enable_x64”, True)<br>
+jax.config.update(“jax_platform_name”, “cpu”)<br>
+Array.set_default_backend(“jax”)<br>
+pulse_backend = DynamicsBackend.from_backend(gate_backend, evaluation_mode=”sparse”)<br>
+solver_options = {“method”: “jax_odeint”, “atol”: 1e-6, “rtol”: 1e-8}<br>
+pulse_backend.set_options(solver_options=solver_options)<br>
+pulse_backend.configuration = lambda: gate_backend.configuration()<br>
+After the initialization, let’s try to run the pulse_test (the Bell state circuit we showed in the last section) on Qiskit Dynamics.<br>
+results = pulse_backend.run(pulse_test).result()<br>
+counts = results.get_counts()<br>
+Pulse based VQE for Ground State Energy of H2<br>
+We will now perform ground state energy estimation for the H2 molecule using our Pulse-based VQE. We’ll need to start with the following preprocessing steps:<br>
+- Use ‘sto-3g’ Gaussian equations to fit the spin orbital of the H2 molecule with bond length equals 0.735.<br>
+- Through the Fermionic mapping, we get the Pauli strings and corresponding coefficients that describe the problem. Based on these Pauli strings, we can generate the observable layer for the VQE algorithm.<br>
+from qiskit_nature.units import DistanceUnit<br>
+from qiskit_nature.second_q.drivers import PySCFDriver<br>
+from qiskit_nature.second_q.mappers import JordanWignerMapper,ParityMapper,QubitConverter<br>
+import numpy as np<br>
+simplified_h2_molecule = """<br>
+H 0.0 0.0 0.0<br>
+H 0.0 0.0 0.735<br>
+"""<br>
+driver = PySCFDriver(<br>
+atom=ultra_simplified_ala_string.strip(),basis='sto3g',<br>
+charge=0,<br>
+spin=0,<br>
+unit=DistanceUnit.ANGSTROM<br>
+)<br>
+qmolecule = driver.run()<br>
+We define the VQE and build our own custom pulse ansatz. Then we can use the Qiskit Dynamics module to obtain the results of the estimated energy of H2. (For more details regarding implementation based on the PAN [1] algorithm, please refer to this pulse-level VQE tool based on Qiskit-Pulse and Qiskit-Dynamics.)<br>
+def vqe(params,pauli_dict,pulse_backend, backend,n_qubit,n_shot):<br>
+print(“params in def chemistry in vqe.py: “, params)<br>
+# assert(len(params)%2==0)<br>
+width_len = int(len(params)-1*(n_qubit-1))<br>
+split_ind = int(width_len/2)<br>
+amp = np.array(params[:split_ind])<br>
+angle = np.array(params[split_ind:width_len])*np.pi*2<br>
+width_1 = (np.array(params[width_len:]))<br>
+num_items = (1024–256) // 16 + 1<br>
+width_norm = (width_1–256) / (1024–256)<br>
+width_norm = np.clip(width_norm, 0, 1)<br>
+width = (np.round(width_norm * (num_items — 1)) * 16 + 256).astype(int)<br>
+amp = amp.tolist()<br>
+angle = angle.tolist()<br>
+width = width.tolist()<br>
+keys = [key for key in pauli_dict]<br>
+values = [pauli_dict[key] for key in pauli_dict]<br>
+expect_values = []<br>
+for key, value in zip(keys, values):<br>
+prepulse = HE_pulse(backend, amp, angle, width)<br>
+expect = vqe_one(prepulse, n_qubit, n_shot, pulse_backend, backend, key, value)<br>
+expect_values.append(expect)<br>
+print(“E for cur_iter: “,sum(expect_values))<br>
+return sum(expect_values)<br>
+Here is a plot showing the convergence of estimated energy while training pulse-based VQE for the H2 molecule.<br>
+Conclusion<br>
+Pulse-level VQE offers a promising avenue for quantum optimization. By shifting the focus from gate-level parameters to quantum pulse parameters, we can address several challenges inherent in quantum computing, such as calibration and rotation errors.<br>
+We hope this blog post provides you with a deeper understanding of pulse-level VQE and its advantages. Stay tuned for more insights into the fascinating world of quantum computing!<br>
+References<br>
+[1] Liang, Zhiding, et al. “Pan: Pulse ansatz on nisq machines.” arXiv preprint arXiv:2208.01215 (2022).<br>
+[2] Liang, Zhiding, et al. “Variational quantum pulse learning.” 2022 IEEE International Conference on Quantum Computing and Engineering (QCE). IEEE, 2022.<br>
+[3] Egger, Daniel J, et al. “Pulse variational quantum eigensolver on cross-resonance-based hardware.” PhysRevResearch.5.033159. American Physical Society (2023).<br>
+[4] Wang, Hanrui, et al. “Quantumnas: Noise-adaptive search for robust quantum circuits.” 2022 IEEE International Symposium on High-Performance Computer Architecture (HPCA). IEEE, 2022.</p>
   </div>
   
 </article>
@@ -173,7 +290,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-04-29 08:11 UTC
+  Generated 2026-04-29 13:49 UTC
 </div>
 
 <script type="module">

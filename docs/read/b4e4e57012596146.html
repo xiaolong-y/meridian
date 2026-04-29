@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will you heed my warnings NOW? — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="29ad57666c95329b.html" title="Three greats who we’ve lost">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Will you heed my warnings NOW?</h1>
+    <div class="article-meta">
+      <span class="article-source">Shtetl-Optimized</span>
+      <span>Scott</span>
+      <span>5h</span>
+      <span class="article-category">quantum</span>
+      <span>1032 words</span>
+      <span>6 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Will you heed my warnings NOW?<br>
+Holy crap … yesterday I was elected to the US National Academy of Sciences! If you don’t believe me, click the link and keep scrolling down until you hit the name “Aaronson.” But then continue scrolling to see 144 other inductees, including my IAS postdoctoral classmate Maria Chudnovsky, my longtime friend and colleague Salil Vadhan, and even Janet Yellen. I’m humbled to be in such company.<br>
+Years ago, somewhere on this blog, I mused that, if I were ever invited to join NAS, I hoped I’d follow the wisdom of Richard Feynman, who famously resigned his NAS membership, comparing it to an honor society back at his high school that spent most of its time debating who should be a member of the honor society. Feynman was also annoyed at having to pay dues.<br>
+But now that I’m actually faced with the choice, it’s like, dude! At my advanced age of 44, I’ve encountered so many people who dislike me or even sneer at me, and so many clubs that won’t have me as a member, that I feel mostly gratitude and warmth toward a fine club like NAS that will have me as a member. Anyway, I’ll certainly try it out to see what it’s like—even Feynman did that!<br>
+A few hours after I started getting congratulatory emails, for which I was thankful, someone from UT Austin’s press office asked me how I feel about this “culmination” and “capstone” of my entire research career. I replied, look, I know I’ve slowed down a lot since my nubile twenties, but I still hold out the hope that this isn’t any kind of “capstone”!<br>
+In any case, I’m ridiculously grateful to all the friends, family, colleagues, and readers who believed in me and helped me reach wherever this is.<br>
+Now for a totally different topic, but that will ultimately loop back to the first one:<br>
+Last week, I did an Ask Me Anything about quantum computing and blockchain for stacker.news, a forum devoted to bitcoin. Thanks to Will Scoresby for organizing it.<br>
+As a longer-term commitment, I also collaborated with my colleagues Dan Boneh, Justin Drake, Sreeram Kannan, Yehuda Lindell, and Dahlia Malkhi, in a panel convened by Coinbase, to put out a detailed position paper about the quantum threat to cryptocurrencies and how best to respond to it. Take a look!<br>
+Notably, the situation evolved even while we were writing our position paper—for example, with the major recent papers from Google and Caltech/Oratomic that I blogged about a month ago.<br>
+I’d now like to add a few words of my own, not presuming to speak for my fellow Coinbase panelists.<br>
+See, some of the most reputable people in quantum hardware and quantum error-correction—people whose judgment I trust more than my own on those topics—are now telling me that a fault-tolerant quantum computer able to break deployed cryptosystems ought to be possible by around 2029.<br>
+Maybe they’re overoptimistic. Maybe it will take longer. I dunno. I’m not a timing guy.<br>
+But here’s what I do know: the companies racing to scale up fault-tolerant QC, have no plans to slow down in order to “give cybersecurity time to adapt” or whatever. The way they see it, cryptographically relevant QCs will plausibly be built sometime soon: indeed, it’s ultimately unavoidable, even if people’s only interest in QC was to do quantum simulations for materials science and chemistry. So, given that reality, isn’t it better that it be done first by mostly US-based companies in the open, than by (let’s say) Chinese or Russian intelligence in secret? And besides, haven’t there already been years of warnings and meetings about the quantum threat to RSA, Diffie-Hellman, and elliptic curve cryptography? Aren’t many in cybersecurity still in denial about the threat?<br>
+Haven’t these slumberers shown that won’t wake up until dramatic achievements in fault-tolerant QC roust them—the way Anthropic’s Mythos model has now jolted even the most ostrich-like about the cybersecurity risks of AI? So, mixing metaphors, mightn’t we just as well rip this Band-Aid off ASAP, rather than giving foreign intelligence agencies extra years to catch up? Indeed, when you think about it that way, isn’t racing to build a cryptographically relevant QC, as quickly as possible, the most ethical, socially responsible thing for an American QC company to do?<br>
+Is the above line of reasoning suspiciously self-serving and convenient? Does it remind you of the galaxy-brained arguments that AI company after AI company offered over the last decade for why “really, if you think about it, accelerating toward dangerous superintelligence is the safest course that we could possibly take”? I.e., the arguments that underpinned the current frenzied AI race, which some believe is imperiling all life on earth?<br>
+It’s not my place here to answer such questions; I leave all further ethical and geopolitical debate to the comment section! My point here is simply: whether or not anyone likes it, this is how some of the leading QC companies are now thinking about the Shor of Damocles that they genuinely believe now hangs over the Internet.<br>
+And I’d say that that makes my own moral duty right now ironically simple and clear: namely, to use my unique soapbox, as the writer of The Internet’s Most Trusted Quantum Computing Blog Since 2005TM, to sound the alarm.<br>
+So, here it is: if quantum computers start breaking cryptography a few years from now, don’t you dare come to this blog and tell me that I failed to warn you. This post is your warning. Please start switching to quantum-resistant encryption, and urge your company or organization or blockchain or standards body to do the same.<br>
+Yea, heed my warning, for it comes not from some WordPress-using rando, but from the inventor of BosonSampling and PostBQP and shadow tomography, the Schlumberger Centennial Chair and Founding Director of the Quantum Information Center at the University of Texas at Austin, and (wait for it) new member of the US National Academy of Sciences, that august and distinguished body brought into being by President Abraham Lincoln in 1863.<br>
+Because, you know, none of this is about me. It’s only about you. And whether you’ll listen to me.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://scottaaronson.blog/?p=9718" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="29ad57666c95329b.html" class="prev-next">Three greats who we’ve lost &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-04-29 13:49 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
