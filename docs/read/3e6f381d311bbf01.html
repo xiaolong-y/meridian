@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast with Michaela Eichinger, Product Solutions Physicist at Quantum Machines — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="f26c01a2a3c11004.html" title="Quantum eMotion Launches eShield-Q for Runtime Cryptographic Protection">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Podcast with Michaela Eichinger, Product Solutions Physicist at Quantum Machines</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>20h</span>
+      <span class="article-category">quantum</span>
+      <span>3085 words</span>
+      <span>16 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Yuval Boger interviews Michaela Eichinger, a product solutions physicist at Quantum Machines and the author of a widely read quantum computing newsletter. They discuss her transition from academia to industry, her fascination with systems-level views of the quantum stack, and the role of communication in building the quantum ecosystem. The conversation covers the state of quantum computing in 2026, realistic metrics for progress, superconducting qubits, and why classical processing and HPC integration are becoming central to useful quantum computers.<br>
+Transcript<br>
+Yuval: Hello, Michaela, and thank you for joining me today.<br>
+Michaela: Thank you for having me.<br>
+Yuval: So who are you and what do you do?<br>
+Michaela: I’m an experimental physicist by training, but I have been working in the quantum industry for quite a few years, and in particular as a product solution physicist at Quantum Machines.<br>
+Yuval: And what does that entail?<br>
+Michaela: It entails a lot of different things, which makes it very exciting for me because I said that I’m an experimental physicist by training, but I was very drawn to deep tech industry and startups, especially in the quantum computing space. And this job role very nicely bridges technical product work and research, but also the business aspects. So I get to talk to a lot of customers and the broader quantum computing space, trying to understand where they want to go and what their problems are and trying to find solutions within Quantum Machines for that.<br>
+Yuval: I think it’s fair to say that you became more famous because of your newsletter. I think it’s called “Ideas, Results and Experiments in Quantum Computing”. First, do you think I’m correct? And two, how did that get started?<br>
+Michaela: Yeah, I find it very interesting that people started to know me because of the content that I post online, on the newsletter and on LinkedIn specifically. So how did I get started? When I joined Quantum Machines, or when I got more into thinking strategically about building a career—and communication is a big part of my job—I thought, okay, where is the quantum industry present? Many people are on LinkedIn and that’s how you connect with people there. And I quickly identified that there are some gaps in communication. Either it’s very high level or it’s too deeply technical. So I didn’t find a lot of value on there, especially when I started out in industry, trying to learn more about the stack. Because in my PhD, of course, or in a PhD in general, you focus very narrowly on one specific topic. For me it was materials and fabrication for superconducting qubits in particular. But I wanted to venture out of the stack and see how everything connected. And this kind of information I did not find online, or at least the feed did not recommend this type of information to me. So this is one component, and then on the other hand, I really enjoy writing. I really enjoyed writing my thesis because you can just refine thoughts and learn, and I was missing that a little bit. So it was a great way of finding a creative outlet and combining those two.<br>
+Yuval: And how long have you been writing in this format?<br>
+Michaela: It’s coming up probably to one and a half years, maybe a little bit longer. Of course, it’s been a journey. The newsletter I only started mid last year. But I’ve been at it for quite some time and been very consistent, so I accumulated a lot of content.<br>
+Yuval: As far as you can tell, what was your most popular post? And related to that, do people write back and say, hey, could you write a post on this topic? What kind of requests are you getting?<br>
+Michaela: That’s a good question. The most popular posts were either something where I posted—I think it’s very visually driven. If you have a great image of a quantum chip or a dilution refrigerator, the community really seems to enjoy that. And then when it basically explains something related to that in a bit more depth, but also in an accessible manner, why this is important or why this matters. I think these were posts that performed best. And of course, you’re always competing with other content online. So having a catching statement is typically the combo that draws many people into the posts.<br>
+When it comes to requests, in general people enjoy when it’s the latest and greatest based on arXiv articles. The requests I’ve had mostly are general requests—please just keep us updated on what is going on and keep continuing, just picking out very unique new results from different research groups.<br>
+Yuval: Just between us, how much AI do you use in generating content?<br>
+Michaela: It was less AI, but I think it can give you great iterations on what you wrote already. So I do use it as a heavy editing tool like many do. I still try to force myself to write down a bad first draft of a post and then use AI tools to iterate on that. And this was a great tip that I got overall from one of my PhD supervisors, Morten Kjaergaard. Whenever you write something, make sure you get a first draft down as fast as possible and don’t stop and start editing. And this is also how I approach my content overall. I write top to bottom, trying not to stop and get in this editing or perfection mode. And typically then you have a storyline there, and now AI is amazing at just refining this and putting it into better language.<br>
+Yuval: What parts of the stack do you find particularly interesting? Is it the low level chips and fabrications? Is it error correction? Is it high level applications, compilers, cloud? I mean, there’s so many parts to quantum. What’s attracting you the most?<br>
+Michaela: For me, what attracted me the most is getting a systems-level picture of the entire stack. And I see it as a process to get there. I think it was great that I really started on the materials and fabrication level. I really enjoy that. A big part of me enjoyed working in the clean room, thinking about different kinds of processes on how to make a single qubit work and how to improve it. But I always try to build up this ecosystem’s view and see how the components connect. And I think it’s the connection between the components that interests me most.<br>
+Right now I’ve been working myself up the stack. I think that’s why it’s also great to be with Quantum Machines because we sit at such a core functionality of getting a quantum computer to work. And we intersect with the stack above and below. This interconnectivity and how the elements work together and actually form a computer—this is what excites me most.<br>
+Yuval: We’re now in January 2026. What do you think the state of quantum is? How close are we to truly useful quantum computers?<br>
+Michaela: I like this question a lot because as a physicist, I feel we’re already at a stage where the computers or the processors are useful to what physicists are doing. We’re constantly improving how we build a quantum computer and we’re learning a lot of novel ways along the way. So I find that already very useful. We’re developing technology that probably will be also very helpful for other types of industries. But of course, when it comes to the overall motivation of quantum computing and why there is billions of investment in this field, then I think we’re still early in this era. It’s great to see that it seems we have all the building blocks coming together from hardware to the software components and quantum error correction. But there is still a big gap to having a broader zoo of applications and a broader zoo of algorithms that can be applied to specific problems.<br>
+Yuval: If a customer came to you—and maybe not necessarily a Quantum Machines customer, but an enterprise customer or an HPC center, or maybe a government program that’s trying to decide—and they ask, well, what are the key metrics that we should be paying attention to? Is it T2 times? Is it the number of qubits? Is it something else? What would you recommend to them?<br>
+Michaela: An HPC center also has many layers to it, right? You have hardware, you have software, you have orchestration layers, and you have customers. You need to have this exact lens and also treat quantum computing from an ecosystem perspective. Just looking at a single layer isolated doesn’t make a lot of sense. It won’t tell you a lot. Even the qubit number or the coherence times will probably not tell you a lot about what you will eventually have to do to integrate this and then how you will connect it with your wider infrastructure. So I think you need to approach it like any other technology and dissect it layer by layer and then see how this will fit into your existing infrastructure.<br>
+Yuval: When I think about creating products, I try to think into the future because if it’s a product that we don’t have today or a feature that we don’t have today, it takes time to develop and test and make sure it works the right way. And so I’d like to think about what will customers need in a year that they don’t have today. What do you think customers will need in a year’s time?<br>
+Michaela: This is exactly the type of thinking that is very core to the product and product solutions team at Quantum Machines, because we need to be ahead of our customers. We need to know now what they need in three or four years and need to take good guesses on which direction we need to push our products.<br>
+So in 12 months—that’s actually an excellent question because I’ve been telling you that we have all of these building blocks for fault-tolerant quantum computers. And with that, I mean that we’re able to do calibration without stopping, for instance. We are able to do non-Clifford gates, which are an essential component for fault-tolerant quantum computing. We have hardware that has many, many qubits with great fidelity. There are many little things that are coming together.<br>
+But what’s becoming very apparent—and I think people are waking up to it more and more—is this huge classical processing component to quantum computing and the tight connection to it. I think that’s why HPC centers are getting more interested in this field, because it’s not just that HPC centers will need quantum compute, but quantum compute actually needs this entire accelerated compute environment to scale further and to enable computation. Not just memory experiments or showing specific building blocks for these processors, but really having another enabling technology to make it a compute engine.<br>
+Yuval: I believe you’re based in Europe, is that correct?<br>
+Michaela: Yes, I’m based in beautiful Switzerland.<br>
+Yuval: Do you work primarily with European customers or more globally?<br>
+Michaela: I actually work more globally. This is one of the great things about being with a startup that operates globally and across many qubit modalities. Our customers are in the US, in Asia, in Europe. And part of my role is of course to work with the customers overseas.<br>
+Yuval: Do you see a difference in the requirements and questions that you get from different geographies or are they mostly the same?<br>
+Michaela: First of all, I think academics are always very thorough and very science and spec driven. Probably what I don’t see is this territorial difference, but rather the difference between how a commercial or an academic lab approaches this technology and the questions that they have.<br>
+Yuval: You mentioned that you started writing, one reason is that you were looking to educate yourself and that when you came into the market, you felt that there was some educational content missing. So if someone from academia wants to get into the commercial world, what would you have them read other than your writing?<br>
+Michaela: I get asked this question quite a lot and I have to admit that I often don’t have a good answer for that, which probably pinpoints to maybe missing content. Typically, I’m a fan of video content and I think we do see professional content in this space popping up more and more. Of course you can go on YouTube and find great lectures about the different qubit modalities or even the latest talks from conferences happening in our space, but I think a bit more accessible, casual content that also looks at the quantum ecosystem and the industry ecosystem in general and presents to you, hey, these are the startups, this is the supply chain—I think the supply chain is often completely underrepresented and how these companies work together in order to make a quantum processor happen.<br>
+Yuval: You went from academia to what’s sometimes called the dark side. Do you miss academia? Do you want to go back one day?<br>
+Michaela: I don’t miss academia. I have the pleasure, though, to work with a lot of academic labs and be involved in educational projects. So I feel part of my job or my day-to-day life and the projects that I’m involved in have academic character. But I really do enjoy the dark side, as you call it, because I do like the strategy around scaling a technology and building products and being a bit more tied to real world economics.<br>
+Yuval: How does your hype filter work? I mean, some of the announcements—every day is a breakthrough, it’s going to change the world, and it’s probably not true for every single one of them. How do you think about bringing it down to earth so that your readers understand whether it’s truly significant or just nice progress?<br>
+Michaela: When something new comes out, I think the first stance I typically take is just observe and don’t react immediately. Really see what are the angles that other people pick it up from. And then of course, being exposed to this field and to this technology over years, you develop a natural sense of what’s working or not. And since I’m very close to quantum control and new QPUs and how they actually get operated, I think I can at least tell from a hardware level and materials level quite easily or much faster if something is very hyped up or realistic.<br>
+I do have more problems when it comes to algorithms and applications, so this is something I’m trying to learn. But of course, there are many, many layers from the control up to these applications. So it gets a bit harder for me to identify the hype in there, just because my expertise lies a bit lower in the stack.<br>
+Yuval: You came from a superconducting background. Is that still your favorite modality?<br>
+Michaela: It is still my favorite modality. I had a great time fabricating and learning how to fabricate single superconducting qubits and also very novel types of superconducting qubits, so-called gate-tunable qubits that are based on III-V materials. I had a lot of fun doing that, and that’s why the platform is close to my heart.<br>
+I am very excited though about other platforms as well and seeing how they compare, how you can even make hybrid architectures and use the advantages of each platform in a unique way. Because I do believe that things are getting more distributed. We’re moving more towards a heterogeneous distributed quantum computing architecture where you might pick the best of the modalities. But superconducting qubits are still my main focus. Of course, you’ve got to be aware of what’s happening elsewhere and how this might influence product development and the entire development of this technology.<br>
+Yuval: So how are you thinking about the limitations of superconducting qubits—the local connectivity, the need for dilution fridges, the limited number of qubits that you can put on a single chip? Do you think that’s still the path to go to large-scale fault-tolerant quantum computers?<br>
+Michaela: I do like the ideas where you utilize superconducting circuits, for instance, for magic state cultivation and compare it then with another platform like neutral atoms that are maybe very good as quantum memory. But of course these are science fiction architectures because they rely on other technologies that enable you to connect both.<br>
+But if I look at superconducting circuits and qubits on their own, I think there are lots of potential solutions for getting around this limited connectivity, and how you can scale, how you can get more superconducting qubits per chiplet. They all go into building a 3D architecture stack. And I think we’re seeing similar things happen in the semiconductor industry—that you have many, many layers and routing accordingly to pack as many transistors on a chip. And with superconducting qubits we’re doing this already. The standard architecture is not just a 2D plane but we do have interposer layers and have started stacking these multiple chips. Probably we see more and more of that. That also enables us to increase the number of qubits, it will also potentially enable increased connectivity. And that of course opens then the possibility to use different kinds of quantum error correction codes.<br>
+Yuval: And last hypothetical, if you could have dinner with one of the quantum greats that are alive, who would that be?<br>
+Michaela: I thought about this quite a bit because I’m familiar with this question and heard it over and over again. I think probably the best fit for me, or the person I would like to have dinner with, is Brian Josephson, just because I came across the Josephson junction from many different angles over the course of many years. And I also learned that Brian was apparently a very interesting physicist who stopped doing physics in his thirties and looked into more spiritual and mind and philosophy experiments. I think that would make for a very interesting dinner conversation with someone who had a very interesting career path and took many turns.<br>
+Yuval: Excellent. Michaela, thank you so much for spending some time with me.<br>
+Michaela: Thank you very much, Yuval, for having me.<br>
+Yuval Boger is the Chief Commercial Officer of QuEra Computing.<br>
+May 4, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/podcast-with-michaela-eichinger-product-solutions-physicist-at-quantum-machines/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="f26c01a2a3c11004.html" class="prev-next">Quantum eMotion Launches eShield-Q for Runtime Cryptographic Protection &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-05-05 19:16 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
