@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AQT Launches LYNX Series with European-Record Quantum Volume of 32,768 — Meridian Reader</title>
+  <title>Q-CTRL Achieves 3,000x Speedup in Quantum Materials Simulation — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,51 +126,49 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="95e7e4ec2a33f67f.html" title="Quantum Machines Acquires QHarbor to Expand European R&amp;D and Control Stack Capabilities">&larr; prev</a>
-    <a href="a7a2b8d8216a74ba.html" title="Cleveland Clinic, RIKEN, and IBM Simulate 12,635-Atom Protein Complex">next &rarr;</a>
+    <a href="4abfc2dc5063feec.html" title="Haiqu Launches Agentic Quantum Operating System to Accelerate Enterprise R&amp;D">&larr; prev</a>
+    <a href="1e2cad476f92b83d.html" title="The Road to Practical Quantum Advantage: Science Experiment or Reality?">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">AQT Launches LYNX Series with European-Record Quantum Volume of 32,768</h1>
+    <h1 class="article-title">Q-CTRL Achieves 3,000x Speedup in Quantum Materials Simulation</h1>
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>1d</span>
+      <span>1h</span>
       <span class="article-category">quantum</span>
-      <span>376 words</span>
-      <span>2 min read</span>
+      <span>505 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>AQT, the Innsbruck-based leader in ion-trap quantum computing, has unveiled its LYNX Series, a new generation of 19-inch rack-mounted quantum computers. The system has officially achieved a Quantum Volume (QV) of 32,768, the highest ever recorded for a quantum computer designed, built, and located in Europe. This milestone positions AQT as the company with the second-highest Quantum Volume globally, demonstrating the scalability of its trapped-ion architecture for industrial applications in chemistry, logistics, and research.<br>
-Technical Benchmarking and Performance<br>
-The LYNX system passed the rigorous QV test using a 15-qubit register (215 = 32,768). To validate the result, AQT executed 305 random quantum circuits with 100 shots each, achieving a mean Heavy Output Probability (HOP) of 0.678, surpassing the required threshold with a 99.5% confidence level. The architecture’s all-to-all qubit connectivity eliminates the need for time-consuming SWAP operations, contributing to an execution speed of approximately 2.9 Quantum Volume Circuits Per Second (QVCPS). This represents a 256-fold performance increase over the previous AQT IBEX series, driven by patented gate implementations that reduce sensitivity to laser frequency and phase noise.<br>
-Integration and Cloud Infrastructure<br>
-A distinctive feature of the LYNX Series is its “PINE” setup, which integrates the complex quantum hardware into a standardized 19-inch rack. This form factor allows the system to operate within conventional data center environments without requiring external cryogenic infrastructure. For immediate deployment, AQT provides access to its trapped-ion systems through the ARNICA cloud service, as well as through a global network of cloud partners including AWS Braket, Scaleway, Horizon Quantum, and Classiq.<br>
-Strategic Impact on the European Ecosystem<br>
-The launch of the LYNX Series reinforces European technological sovereignty in the deep-tech sector. Supported by the European Commission’s Quantum Technology Flagship and the European Innovation Council, the system provides European industries with high-performance quantum assets that ensure data security. The first LYNX units are scheduled for availability to strategic partners in Q4 2026, offering a universal quantum computing platform capable of running long, high-fidelity algorithmic sequences that were previously computationally inaccessible on the continent.<br>
-You can find the official press release regarding the AQT LYNX Series launch here and a detailed technical overview of the QV 32,768 demonstration here. Information regarding cloud partner access via AWS and other providers is available here.<br>
-May 5, 2026</p>
+    <p>Q-CTRL, in collaboration with IBM, has demonstrated what it defines as “practical quantum advantage” by utilizing the IBM Quantum Platform to simulate the Fermi–Hubbard model at a scale of 120 qubits. The simulation, which focused on the dynamical evolution of interacting electrons in one-dimensional materials, achieved a 3,000-fold speedup in wall-clock time compared to performance-optimized classical benchmarks. While the quantum processor completed the execution in approximately two minutes, the state-of-the-art classical alternative—using a Time-Dependent Variational Principle (TDVP) solver on a high-performance compute cluster—required over 100 hours to reach comparable accuracy.<br>
+The execution involved over 10,000 two-qubit quantum-logic operations and up to 90 Trotter steps, a depth that typically results in significant error accumulation on Noisy Intermediate-Scale Quantum (NISQ) hardware. To overcome this, Q-CTRL utilized its performance-management infrastructure software to implement runtime error suppression. Unlike traditional error mitigation, which requires massive sampling overhead and slows down execution, this software-defined approach allowed the hardware to maintain accuracy while operating at native speeds. The results, published on arXiv (2605.04025), showed an agreement within 1% Root Mean Square Error (RMSE) between the quantum outputs and the highest-resolution classical tensor-network simulations.<br>
+In a specific 62-qubit experiment, the team observed spin-charge separation, a fundamental quantum phenomenon where an electron’s spin and charge degrees of freedom propagate at different velocities (vc and vs). This simulation reached an evolution time of t=9 in natural units, surpassing prior quantum demonstrations in both scale and resolution. The ability to extract precise velocity ratios that match classical predictions validates the use of contemporary digital quantum processors as a quantitatively accurate platform for many-body physics, particularly for problems in the BQP (Bounded-error Quantum Polynomial time) complexity class that scale poorly for classical algorithms.<br>
+The demonstration highlights a shift toward using quantum computers as essential components in the R&D roadmap for energy and materials science. Approximately one-third of global supercomputing time is currently dedicated to chemical and materials simulation, and the computational bottlenecks of classical heuristics limit the discovery of room-temperature superconductors and carbon-neutral materials. By providing a solution that is faster and equally accurate to leading classical tools like ITensor, Q-CTRL and IBM have established a baseline for positive ROI in quantum-centric scientific workflows.<br>
+The software configuration utilized for these results will soon be integrated into the IBM Quantum Platform as a new Qiskit Function. This move is intended to allow industrial and academic researchers to incorporate quantum-accelerated simulation directly into their materials discovery pipelines. While Q-CTRL acknowledges the potential for future specialized classical algorithms or GPU-accelerated tensor networks to improve classical performance, the current results establish a practical advantage relative to the most capable computational tools available to researchers today.<br>
+You can read the official press release regarding Q-CTRL’s achievement here and the detailed technical blog here. The technical manuscript, “Fast, accurate, high-resolution simulation of large-scale Fermi-Hubbard models on a digital quantum processor,” is accessible on arXiv here. In addition, GQI has published a companion Qnalysis piece titled “The Road to Practical Quantum Advantage: Science Experiment or Reality?” that can be found here.<br>
+May 6, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantumcomputingreport.com/aqt-launches-lynx-series-with-european-record-quantum-volume-of-32768/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/q-ctrl-achieves-3000x-speedup-in-quantum-materials-simulation/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="95e7e4ec2a33f67f.html" class="prev-next">&larr; Quantum Machines Acquires QHarbor to Expand European R&amp;D and Control Stack Capabilities</a>
+  <a href="4abfc2dc5063feec.html" class="prev-next">&larr; Haiqu Launches Agentic Quantum Operating System to Accelerate Enterprise R&amp;D</a>
   
   
-  <a href="a7a2b8d8216a74ba.html" class="prev-next">Cleveland Clinic, RIKEN, and IBM Simulate 12,635-Atom Protein Complex &rarr;</a>
+  <a href="1e2cad476f92b83d.html" class="prev-next">The Road to Practical Quantum Advantage: Science Experiment or Reality? &rarr;</a>
   
 </div>
 
