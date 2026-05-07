@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The ”JVG algorithm” is crap — Meridian Reader</title>
+  <title>Quantum Motion Secures $160M Series C to Scale Silicon Spin QPUs — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,51 +126,54 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="82574f955c147a4d.html" title="Remarks at UT on the Pentagon/Anthropic situation">&larr; prev</a>
-    <a href="d6c7d6e9b377d977.html" title="What is next in quantum advantage?">next &rarr;</a>
+    <a href="96f4cd2800421254.html" title="ParityQC and University of Innsbruck Propose Distillation Architecture to Reduce FTQC Overhead">&larr; prev</a>
+    <a href="fbcb0fc7ad27f100.html" title="Horizon Quantum Reports Q1 2026 Financial Results: Nasdaq Debut and Testbed Expansion">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">The ”JVG algorithm” is crap</h1>
+    <h1 class="article-title">Quantum Motion Secures $160M Series C to Scale Silicon Spin QPUs</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>8w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>4h</span>
       <span class="article-category">quantum</span>
-      <span>404 words</span>
+      <span>565 words</span>
       <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>The ”JVG algorithm” is crap<br>
-Sorry to interrupt your regular programming about the AI apocalypse, etc., and return to the traditional beat of this blog’s very earliest years … but I’ve now gotten multiple messages asking me to comment on something called the “JVG (Jesse–Victor–Gharabaghi) algorithm” (yes, the authors named it after themselves). This is presented as a massive improvement over Shor’s factoring algorithm, which could (according to popular articles) allow RSA-2048 to be broken using only 5,000 physical qubits.<br>
-On inspection, the paper’s big new idea is that, in the key step of Shor’s algorithm where you compute xr mod N in a superposition over all r’s, you instead precompute the xr mod N’s on a classical computer and then load them all into the quantum state.<br>
-Alright kids, why does this not work? Shall we call on someone in the back of the class—like, any undergrad quantum computing class in the world? Yes class, that’s right! There are exponentially many r’s. Computing them all takes exponential time, and loading them into the quantum computer also takes exponential time. We’re out of the n2-time frying pan but into the 2n-time fire. This can only look like it wins on tiny numbers; on large numbers it’s hopeless.<br>
-If you want to see people explaining the same point more politely and at greater length, try this from Hacker News or this from Postquantum.com.<br>
-Even for those who know nothing about quantum algorithms, is there anything that could’ve raised suspicion here?<br>
-- The paper didn’t appear on the arXiv, but someplace called “Preprints.org.” Come to think of it, I should add this to my famous Ten Signs a Claimed Mathematical Breakthrough is Wrong! It’s not that there isn’t tons of crap on the arXiv as well, but so far I’ve seen pretty much only crap on preprint repositories other than arXiv, ECCC, and IACR.<br>
-- Judging from a Google search, the claim seems to have gotten endlessly amplified on clickbait link-farming news sites, but ignored by reputable science news outlets—yes, even the usual quantum hypesters weren’t touching this one!<br>
-Often, when something is this bad, the merciful answer is to let it die in obscurity. In this case, I feel like there was a sufficient level of intellectual hooliganism, just total lack of concern for what’s true, that those involved deserve to have this Shtetl-Optimized post as a tiny bit of egg on their faces forever.</p>
+    <p>Quantum Motion, a developer of silicon transistor-based quantum computers, has successfully closed a $160 million Series C funding round. The investment was co-led by DCVC and Kembara, with participation from the British Business Bank, Firgun, and existing backers including Bosch Ventures and Porsche Automobil Holding SE. This financing establishes Quantum Motion as the UK’s best-funded quantum computing company and is intended to accelerate the commercialization of utility-scale systems that leverage existing CMOS (Complementary Metal-Oxide-Semiconductor) manufacturing processes.<br>
+Quantum Motion, a developer of silicon transistor-based quantum computers, has closed a $160 million Series C funding round. The investment was co-led by DCVC and Kembara (the deep-tech fund of Mundi Ventures), with significant new participation from the British Business Bank and Firgun. The round also saw full support from existing investors, including Oxford Science Enterprises, Inkef, Bosch Ventures, Porsche Automobil Holding SE, and Parkwalk Advisors. This financing positions Quantum Motion as the UK’s best-funded quantum computing company and is intended to accelerate the commercialization of utility-scale systems that utilize existing CMOS manufacturing processes.<br>
+The Silicon Transistor Advantage<br>
+Quantum Motion’s architecture is built on the premise that quantum information can be processed using the same silicon transistor technology found in modern smartphones and laptops. By utilizing quantum dots to trap single electron spins, the company can manufacture qubits within standard semiconductor foundries. This approach offers a significant reduction in physical and resource overhead compared to other modalities; the company reports a 100-fold reduction in cost and space requirements and a 1,000-fold reduction in energy consumption relative to industrial-scale architectures that require bespoke, multi-megawatt facilities.<br>
+Deployment and Manufacturing Integration<br>
+The Series C follows the 2025 deployment of a full-stack silicon CMOS quantum computer at the UK National Quantum Computing Centre (NQCC). This system demonstrated single and two-qubit gates, entanglement, and reliable measurement within a footprint of only three standard server racks. To ensure a scalable supply chain, Quantum Motion has deepened its manufacturing partnership with GlobalFoundries, allowing its roadmap to integrate directly into commercial 300mm wafer production lines. This strategy aims to deliver “utility-scale” processors that fit within existing data center racks rather than requiring dedicated buildings.<br>
+International Expansion and Talent Growth<br>
+Since 2023, Quantum Motion has expanded its global operations, opening new laboratories and offices in Spain and Australia to complement its London headquarters. The company’s workforce has grown from approximately 30 employees in 2022 to over 120 in 2026, comprising a multi-disciplinary team of IC engineers, quantum theoreticians, and hardware specialists. This growth supports the company’s participation in international benchmarks, such as Stage B of DARPA’s Quantum Benchmarking Initiative, which evaluates the transition of quantum systems from laboratory science to industrial practice.<br>
+The Path to Ubiquitous Quantum Computing<br>
+By operating its silicon QPUs at temperatures below 1 Kelvin, Quantum Motion utilizes a thermal regime that allows for continuous operation and efficient heat removal using standard commercial cryostats. The company’s “transistor moment” refers to the transition where quantum chips achieve the same component density and complexity as classical processors. CEO Dr. James Palles-Dimmock noted that the objective is to provide fast, fault-tolerant quantum computing in a “box, not a building,” enabling a wide range of applications in drug discovery, materials science, and finance to be deployed within existing IT infrastructures.<br>
+You can find the official announcement regarding Quantum Motion’s Series C funding here and a detailed technical perspective on the benefits of silicon-based quantum computing here.<br>
+May 7, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9615" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/quantum-motion-secures-160m-series-c-to-scale-silicon-spin-qpus/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="82574f955c147a4d.html" class="prev-next">&larr; Remarks at UT on the Pentagon/Anthropic situation</a>
+  <a href="96f4cd2800421254.html" class="prev-next">&larr; ParityQC and University of Innsbruck Propose Distillation Architecture to Reduce FTQC Overhead</a>
   
   
-  <a href="d6c7d6e9b377d977.html" class="prev-next">What is next in quantum advantage? &rarr;</a>
+  <a href="fbcb0fc7ad27f100.html" class="prev-next">Horizon Quantum Reports Q1 2026 Financial Results: Nasdaq Debut and Testbed Expansion &rarr;</a>
   
 </div>
 
