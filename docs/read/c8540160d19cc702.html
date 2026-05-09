@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The ”JVG algorithm” is crap — Meridian Reader</title>
+  <title>CAS Cold Atom Technology Unveils Hanyuan-2 Dual-Core Neutral Atom System — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,51 +126,52 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="82574f955c147a4d.html" title="Remarks at UT on the Pentagon/Anthropic situation">&larr; prev</a>
-    <a href="d6c7d6e9b377d977.html" title="What is next in quantum advantage?">next &rarr;</a>
+    
+    <a href="7896c2bcf821e682.html" title="Bloq Quantum Launches No-Code Platform to Accelerate Algorithm Development">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">The ”JVG algorithm” is crap</h1>
+    <h1 class="article-title">CAS Cold Atom Technology Unveils Hanyuan-2 Dual-Core Neutral Atom System</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>8w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>5h</span>
       <span class="article-category">quantum</span>
-      <span>404 words</span>
+      <span>426 words</span>
       <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>The ”JVG algorithm” is crap<br>
-Sorry to interrupt your regular programming about the AI apocalypse, etc., and return to the traditional beat of this blog’s very earliest years … but I’ve now gotten multiple messages asking me to comment on something called the “JVG (Jesse–Victor–Gharabaghi) algorithm” (yes, the authors named it after themselves). This is presented as a massive improvement over Shor’s factoring algorithm, which could (according to popular articles) allow RSA-2048 to be broken using only 5,000 physical qubits.<br>
-On inspection, the paper’s big new idea is that, in the key step of Shor’s algorithm where you compute xr mod N in a superposition over all r’s, you instead precompute the xr mod N’s on a classical computer and then load them all into the quantum state.<br>
-Alright kids, why does this not work? Shall we call on someone in the back of the class—like, any undergrad quantum computing class in the world? Yes class, that’s right! There are exponentially many r’s. Computing them all takes exponential time, and loading them into the quantum computer also takes exponential time. We’re out of the n2-time frying pan but into the 2n-time fire. This can only look like it wins on tiny numbers; on large numbers it’s hopeless.<br>
-If you want to see people explaining the same point more politely and at greater length, try this from Hacker News or this from Postquantum.com.<br>
-Even for those who know nothing about quantum algorithms, is there anything that could’ve raised suspicion here?<br>
-- The paper didn’t appear on the arXiv, but someplace called “Preprints.org.” Come to think of it, I should add this to my famous Ten Signs a Claimed Mathematical Breakthrough is Wrong! It’s not that there isn’t tons of crap on the arXiv as well, but so far I’ve seen pretty much only crap on preprint repositories other than arXiv, ECCC, and IACR.<br>
-- Judging from a Google search, the claim seems to have gotten endlessly amplified on clickbait link-farming news sites, but ignored by reputable science news outlets—yes, even the usual quantum hypesters weren’t touching this one!<br>
-Often, when something is this bad, the merciful answer is to let it die in obscurity. In this case, I feel like there was a sufficient level of intellectual hooliganism, just total lack of concern for what’s true, that those involved deserve to have this Shtetl-Optimized post as a tiny bit of egg on their faces forever.</p>
+    <p>CAS Cold Atom Technology, a quantum hardware developer based in Wuhan and affiliated with the Chinese Academy of Sciences (CAS), has unveiled Hanyuan-2 (also referred to as HANYUAN 02), the world’s first dual-core neutral atom quantum computer. This 200-qubit system marks a transition from single-core architectures to a parallelized, dual-core design, enabling a “main core plus auxiliary core” operational mode. The dual-core framework is intended to address scalability limitations and interference challenges by allowing the two arrays to either compute different aspects of a problem simultaneously or perform error correction on one another.<br>
+Neutral Atom Architecture and Energy Efficiency<br>
+Unlike superconducting or trapped-ion systems that require massive dilution refrigerators to maintain temperatures near absolute zero, Hanyuan-2 utilizes neutral atoms (specifically Rubidium-85 and Rubidium-87). Because neutral atoms are uncharged and cooled directly via laser cooling, the system can operate at room temperature without extensive environmental shielding. This architecture results in a significant reduction in operational overhead:<br>
+- Power Consumption: The total system power draw is below 7 kW, comparable to standard IT server racks.<br>
+- Deployment: The machine uses a compact, cabinet-style integrated design, allowing for rapid deployment in ordinary indoor environments rather than specialized cryogenic laboratories.<br>
+- Qubit Configuration: The system integrates 100 atoms of Rubidium-85 and 100 atoms of Rubidium-87, forming two independent but collaborative 100-qubit arrays.<br>
+Parallel Computing and Stability Breakthroughs<br>
+The dual-core design is a significant architectural shift in the neutral atom platform, which is increasingly favored for its long coherence times and high control accuracy. By moving to a dual-core model, CAS Cold Atom Technology aims to facilitate parallel quantum computing, where complex algorithms are decomposed and executed across both cores to accelerate time-to-solution. This setup also provides a pathway toward more stable logical qubits, as the second core can be dedicated to real-time syndrome extraction and error correction tasks without disrupting the primary computation.<br>
+Strategic Context and Commercial Roadmap<br>
+Hanyuan-2 follows the successful commercial delivery of the company’s first-generation system, Hanyuan-1. General Manager Tang Biao noted that the modular design of neutral atom systems allows for significant future scaling, with the goal of expanding to thousands of qubits while maintaining a manageable energy footprint. As the first instance of a dual-core quantum processor, Hanyuan-2 is positioned as a critical step in lowering the technical and cost barriers for industrial quantum applications in sectors such as materials science, geological exploration, and cryptography.<br>
+You can find the official report on the Hanyuan-2 unveiling from the Science and Technology Daily here and the technical briefing on its 200-qubit dual-core architecture here.<br>
+May 9, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9615" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/cas-cold-atom-technology-unveils-hanyuan-2-dual-core-neutral-atom-system/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
+  <span></span>
   
-  <a href="82574f955c147a4d.html" class="prev-next">&larr; Remarks at UT on the Pentagon/Anthropic situation</a>
-  
-  
-  <a href="d6c7d6e9b377d977.html" class="prev-next">What is next in quantum advantage? &rarr;</a>
+  <a href="7896c2bcf821e682.html" class="prev-next">Bloq Quantum Launches No-Code Platform to Accelerate Algorithm Development &rarr;</a>
   
 </div>
 

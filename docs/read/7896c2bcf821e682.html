@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The ”JVG algorithm” is crap — Meridian Reader</title>
+  <title>Bloq Quantum Launches No-Code Platform to Accelerate Algorithm Development — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,51 +126,54 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="82574f955c147a4d.html" title="Remarks at UT on the Pentagon/Anthropic situation">&larr; prev</a>
-    <a href="d6c7d6e9b377d977.html" title="What is next in quantum advantage?">next &rarr;</a>
+    <a href="c8540160d19cc702.html" title="CAS Cold Atom Technology Unveils Hanyuan-2 Dual-Core Neutral Atom System">&larr; prev</a>
+    <a href="b52f971dc61b6612.html" title="FrostByte Secures €1.3M ($1.5M USD) to Scale Cryo-CMOS Control Electronics for Quantum Computing">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">The ”JVG algorithm” is crap</h1>
+    <h1 class="article-title">Bloq Quantum Launches No-Code Platform to Accelerate Algorithm Development</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>8w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>5h</span>
       <span class="article-category">quantum</span>
-      <span>404 words</span>
+      <span>411 words</span>
       <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>The ”JVG algorithm” is crap<br>
-Sorry to interrupt your regular programming about the AI apocalypse, etc., and return to the traditional beat of this blog’s very earliest years … but I’ve now gotten multiple messages asking me to comment on something called the “JVG (Jesse–Victor–Gharabaghi) algorithm” (yes, the authors named it after themselves). This is presented as a massive improvement over Shor’s factoring algorithm, which could (according to popular articles) allow RSA-2048 to be broken using only 5,000 physical qubits.<br>
-On inspection, the paper’s big new idea is that, in the key step of Shor’s algorithm where you compute xr mod N in a superposition over all r’s, you instead precompute the xr mod N’s on a classical computer and then load them all into the quantum state.<br>
-Alright kids, why does this not work? Shall we call on someone in the back of the class—like, any undergrad quantum computing class in the world? Yes class, that’s right! There are exponentially many r’s. Computing them all takes exponential time, and loading them into the quantum computer also takes exponential time. We’re out of the n2-time frying pan but into the 2n-time fire. This can only look like it wins on tiny numbers; on large numbers it’s hopeless.<br>
-If you want to see people explaining the same point more politely and at greater length, try this from Hacker News or this from Postquantum.com.<br>
-Even for those who know nothing about quantum algorithms, is there anything that could’ve raised suspicion here?<br>
-- The paper didn’t appear on the arXiv, but someplace called “Preprints.org.” Come to think of it, I should add this to my famous Ten Signs a Claimed Mathematical Breakthrough is Wrong! It’s not that there isn’t tons of crap on the arXiv as well, but so far I’ve seen pretty much only crap on preprint repositories other than arXiv, ECCC, and IACR.<br>
-- Judging from a Google search, the claim seems to have gotten endlessly amplified on clickbait link-farming news sites, but ignored by reputable science news outlets—yes, even the usual quantum hypesters weren’t touching this one!<br>
-Often, when something is this bad, the merciful answer is to let it die in obscurity. In this case, I feel like there was a sufficient level of intellectual hooliganism, just total lack of concern for what’s true, that those involved deserve to have this Shtetl-Optimized post as a tiny bit of egg on their faces forever.</p>
+    <p>Bloq Quantum, an India-based startup founded by alumni of IISER and the University of Toronto, has announced the official launch of its low-code quantum computing platform. The software is designed to streamline the research and development lifecycle by providing a visual, drag-and-drop interface for building quantum programs. According to the company, the platform reduces the time required for setup and experimentation by a factor of 10x, addressing the “technical busywork”—such as environment configuration and SDK integration—that typically occupies a significant portion of a researcher’s workflow.<br>
+Unified Workspace for Hybrid Workflows<br>
+The Bloq Quantum platform functions as a centralized hub that connects various quantum software development kits (SDKs) and hardware backends. The architecture is divided into three primary modules:<br>
+- Experiment Tab: A no-code environment where users can select algorithms from pre-built libraries, upload proprietary datasets, and execute runs on various quantum processors without manual coding.<br>
+- Visual Circuit Studio: A specialized editor for designing custom Parameterized Quantum Circuits (PQCs), feature maps, and ansaetze. These components can be exported directly into the experiment module for rapid iteration.<br>
+- Editor Tab: A full Jupyter Notebook interface that allows developers to take generated code and build complex, hybrid quantum-classical workflows with programmatic control over CPU and GPU clusters.<br>
+Focus on Real-World Data Integration<br>
+A core objective of the platform is to facilitate the transition from theoretical experiments to data-driven business use cases. By allowing users to upload their own datasets directly into quantum routines, Bloq Quantum aims to simplify the development of Quantum Machine Learning (QML) models, such as Quantum Support Vector Machines (QSVMs). Early users, including researchers at the academic and corporate levels, have reported that the intuitive interface enables beginners to test ideas quickly before committing to full-scale implementation, thereby lowering the barrier to entry for industrial quantum R&D.<br>
+Institutional Access and Roadmap<br>
+Currently, Bloq Quantum is prioritizing access for universities and corporate research teams, offering dedicated support for connecting quantum routines to existing enterprise data systems. Individual researchers can join a waitlist, with full public access expected in the coming months. The company’s long-term roadmap includes the integration of agentic coding features to further automate the development of hybrid quantum solutions. Founded in 2024 by Sreekuttan L S (CEO) and Jay Patel (CTO), Bloq Quantum is positioned as a “one-stop-shop” for organizations seeking to bridge the gap between quantum science and practical application.<br>
+You can find the official launch announcement here and explore the platform’s technical features here.<br>
+May 9, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9615" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/bloq-quantum-launches-no-code-platform-to-accelerate-algorithm-development/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="82574f955c147a4d.html" class="prev-next">&larr; Remarks at UT on the Pentagon/Anthropic situation</a>
+  <a href="c8540160d19cc702.html" class="prev-next">&larr; CAS Cold Atom Technology Unveils Hanyuan-2 Dual-Core Neutral Atom System</a>
   
   
-  <a href="d6c7d6e9b377d977.html" class="prev-next">What is next in quantum advantage? &rarr;</a>
+  <a href="b52f971dc61b6612.html" class="prev-next">FrostByte Secures €1.3M ($1.5M USD) to Scale Cryo-CMOS Control Electronics for Quantum Computing &rarr;</a>
   
 </div>
 
