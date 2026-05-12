@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quantum computing bombshells that are not April Fools — Meridian Reader</title>
+  <title>Quobly and Hon Hai Research Institute Release Open-Source QPE Toolbox — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,51 +126,50 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="f681695608c41f13.html" title="Before we start on quantum">&larr; prev</a>
-    <a href="154b16074c21acc9.html" title="Movie Review: “The AI Doc”">next &rarr;</a>
+    <a href="61f281a5c763f0be.html" title="Oxford Instruments and NYU Nanofab Partner to Advance Atomic-Scale Quantum Fabrication">&larr; prev</a>
+    <a href="e2df3c260febf0c3.html" title="Photonic Inc. Reaches $2B Valuation with $200M Final Close">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Quantum computing bombshells that are not April Fools</h1>
+    <h1 class="article-title">Quobly and Hon Hai Research Institute Release Open-Source QPE Toolbox</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>5w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>1h</span>
       <span class="article-category">quantum</span>
-      <span>504 words</span>
-      <span>3 min read</span>
+      <span>349 words</span>
+      <span>2 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Quantum computing bombshells that are not April Fools<br>
-For those of you who haven’t seen, there were actually two “bombshell” QC announcements this week. One, from Caltech, including friend-of-the-blog John Preskill, showed how to do quantum fault-tolerance with lower overhead than was previously known, by using high-rate codes, which could work for example in neutral-atom architectures (or possibly other architectures that allow nonlocal operations, like trapped ions). The second bombshell, from Google, gave a lower-overhead implementation of Shor’s algorithm to break 256-bit elliptic curve cryptography.<br>
-Notably, out of an abudance of caution, the Google team chose to “publish” its result via a cryptographic zero-knowledge proof that their circuit exists (so, without revealing the details to attackers). This is the first time I’ve ever seen a new mathematical result actually announced that way, although I understand that there’s precedent in the 1500’s, when mathematicians would (for example) prove their ability to solve quartic equations by challenging their rivals to duels. I’m not sure how much it will actually help, as once other groups know that a smaller circuit exists, it might be only a short time until they’re able to find it as well.<br>
-Neither of these results change the basic principles of QC that we’ve known for decades, but they do change the numbers.<br>
-When you put both of them together, Bitcoin signatures for example certainly look vulnerable to quantum attack earlier than was previously known! In particular, the Caltech group estimates that a mere 25,000 physical qubits might suffice for this, where a year ago the best estimates were in the millions. How much time will this save — maybe a year? Subtracting, of course, off a number of years that no one knows.<br>
-In any case, these results provide an even stronger impetus for people to upgrade now to quantum-resistant cryptography. They—meaning you, if relevant—should really get on that!<br>
-When I got an early heads-up about these results—especially the Google team’s choice to “publish” via a zero-knowledge proof—I thought of Frisch and Peierls, calculating how much U-235 was needed for a chain reaction in 1940, but not publishing it, even though the latest results on nuclear fission had been openly published just the year prior. Will we, in quantum computing, also soon cross that threshold? But I got strong pushback on that analogy from the cryptography and cybersecurity people who I most respect. They said: we have decades of experience with this, and the answer is that you publish. And, they said, if publishing causes people still using quantum-vulnerable systems to crap their pants … well, maybe that’s what needs to happen right now.<br>
-Naturally, journalists have been hounding me for comments, though it was the worst possible week, when I needed to host like four separate visitors in Austin. I hope this post helps! Please feel free to ask questions or post further details in the comments.<br>
-And now, with no time for this blog post to leaven and rise, I need to go home for my family’s Seder. Happy Passover!</p>
+    <p>Quobly, a French developer of silicon-based quantum processors, and the Hon Hai Research Institute (the R&D arm of Foxconn), have co-released an open-source numerical toolbox dedicated to the Quantum Phase Estimation (QPE) algorithm. The qpe-toolbox is designed to bridge the gap between theoretical cost models and the practical resource requirements needed for fault-tolerant quantum computing, particularly in the fields of quantum chemistry and materials science.<br>
+The Python-based toolkit utilizes advanced tensor network techniques and the quimb library to allow researchers to simulate the full QPE pipeline on classical hardware. It provides a structured environment to prepare physically motivated initial states using DMRG (Density Matrix Renormalization Group), encode molecular Hamiltonians via trotterization or qubitization, and compare standard QPE with Robust Phase Estimation (RPE). The toolbox is capable of executing full circuits for approximately 20 qubits with gate counts up to 100,000, enabling detailed analysis of circuit depth and error sources on a standard laptop.<br>
+Strategic Collaboration for Fault-Tolerant Computing<br>
+The partnership reflects a shared commitment to algorithm-hardware co-design. By providing a “numerical playground,” Quobly and Hon Hai aim to help the global research community develop realistic intuition for algorithms that will eventually run on fault-tolerant hardware. Min-Hsiu Hsieh, Director of the Quantum Computing Research Center at Hon Hai, noted that the modular nature of the tool allows for the exploration of trade-offs between precision and resource efficiency, which is critical for the future industrialization of quantum chemistry applications.<br>
+Open-Source Availability and Roadmap<br>
+The qpe-toolbox is released under an open-source license and is available on GitHub. It interfaces with established quantum chemistry tools like PySCF and OpenFermion, ensuring compatibility with current scientific workflows. Future updates are expected to include variational circuit synthesis and larger-scale simulations. This release marks a significant milestone in Quobly’s efforts to advance silicon-based quantum computing and Hon Hai’s strategy to transform from a manufacturing-centric “brawn” organization to a research-driven “brains” leader in emerging technologies.<br>
+You can access the qpe-toolbox and its documentation on GitHub here. For the official press release from Quobly, visit their newsroom here and the Hon Hai Research Institute announcement here.<br>
+May 12, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9665" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/quobly-and-hon-hai-research-institute-release-open-source-qpe-toolbox/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="f681695608c41f13.html" class="prev-next">&larr; Before we start on quantum</a>
+  <a href="61f281a5c763f0be.html" class="prev-next">&larr; Oxford Instruments and NYU Nanofab Partner to Advance Atomic-Scale Quantum Fabrication</a>
   
   
-  <a href="154b16074c21acc9.html" class="prev-next">Movie Review: “The AI Doc” &rarr;</a>
+  <a href="e2df3c260febf0c3.html" class="prev-next">Photonic Inc. Reaches $2B Valuation with $200M Final Close &rarr;</a>
   
 </div>
 
