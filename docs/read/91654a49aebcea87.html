@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NSF Launches $1.5 Billion Independent X-Labs Initiative Targeting Quantum and Sensing Technologies — Meridian Reader</title>
+  <title>NIST Advances Nine Post-Quantum Digital Signature Candidates to Third Evaluation Round — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,49 +126,47 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="85abae66359c3ff4.html" title="Xanadu Announces Q1 2026 Financial Results: Historic Nasdaq Debut and $285M Government Funding Negotiations">&larr; prev</a>
-    <a href="1dd8f1b6f1dc3b8d.html" title="Equal1 Unveils Rack-Mounted Silicon-Spin Quantum Computer">next &rarr;</a>
+    
+    <a href="85abae66359c3ff4.html" title="Xanadu Announces Q1 2026 Financial Results: Historic Nasdaq Debut and $285M Government Funding Negotiations">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">NSF Launches $1.5 Billion Independent X-Labs Initiative Targeting Quantum and Sensing Technologies</h1>
+    <h1 class="article-title">NIST Advances Nine Post-Quantum Digital Signature Candidates to Third Evaluation Round</h1>
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>2d</span>
+      <span>7h</span>
       <span class="article-category">quantum</span>
-      <span>354 words</span>
-      <span>2 min read</span>
+      <span>505 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>The U.S. National Science Foundation (NSF) has allocated $1.5 billion over a ten-year period to establish the NSF X-Labs initiative. Managed by the NSF Directorate for Technology, Innovation and Partnerships (TIP), the program funds independent, interdisciplinary teams consisting of researchers, engineers, and entrepreneurs operating outside conventional academic and industry structures. The initiative utilizes milestone-based federal funding to transition technology from early-stage prototypes into commercial platforms. The program’s design, initially introduced via a Request for Information (RFI) in December 2025 under the provisional name Tech Labs, aligns with directives from the White House Office of Science and Technology Policy to implement alternative funding models for high-value research infrastructure.<br>
+    <p>The National Institute of Standards and Technology (NIST) has transitioned nine cryptographic algorithms to the third round of its Additional Digital Signature Selection Project, as detailed in NIST Internal Report (IR) 8610. Initiated in September 2022 to diversify the post-quantum cryptography (PQC) portfolio beyond structured lattice-based designs—such as the previously standardized ML-DSA and FN-DSA schemes—the project tracks general-purpose signatures optimized for alternative security assumptions, short signatures, and accelerated verification. The second evaluation round concluded on May 14, 2026, following 18 months of public cryptanalysis, performance benchmarking, and architectural updates presented at the Sixth NIST PQC Standardization Conference in September 2025. Five algorithms—CROSS, LESS, Mirath, PERK, and RYDE—were eliminated from further standardization consideration due to uncompetitive performance trade-offs or security vulnerabilities identified during the second round.<br>
 Technical Architecture & Specifications / Operational Implementation<br>
-Funding under the NSF X-Labs initiative is executed via the Other Transactions Agreement (OTA) Solutions Offering mechanism, allowing the agency to distribute multiyear awards across targeted technical areas via rolling topic announcements. The initial funding cycle designates two specific technical tracks. The first track, Scientific Instrumentation for Sensing and Imaging, focuses on the integration of quantum sensing, artificial intelligence-driven computational imaging, and novel chemical modalities to build advanced diagnostic tools. The second track, Quantum Systems: Interconnects and Integrated Photonics, requires the development of hardware components capable of transferring quantum information between heterogeneous quantum architectures. This includes optimizing optical interfaces, improving interconnect fidelity, and engineering integrated photonic circuits to mitigate coherence losses during state transfer across distinct quantum computing platforms.<br>
+The nine advancing candidates are categorized across four distinct mathematical modalities: lattice-based, isogeny-based, Multi-Party Computation in the Head (MPCitH), and multivariate cryptography. HAWK, the sole lattice-based advance, utilizes integer-only arithmetic over cyclotomic rings to solve the Search Module Lattice Isomorphism Problem (smLIP) of rank 2 and the One-More-Shortest-Vector Problem (omSVP), avoiding the floating-point dependencies of Falcon. SQIsign relies on the hardness of finding isogenies between supersingular elliptic curves, incorporating higher-dimensional isogenies in its structural redesign to compress public-key and signature sizes to 148 bytes at security category 1. The MPCitH category comprises FAEST, MQOM, and SDitH; FAEST implements the VOLE-in-the-Head framework via the QuickSilver protocol to prove AES constraints, while MQOM relies on the multivariate quadratic (MQ) problem optimized through Threshold Computation in the Head (TCitH). SDitH bases its security on the syndrome decoding problem for unstructured binary linear codes. The final four candidates—UOV, MAYO, QR-UOV, and SNOVA—are multivariate schemes based on the Unbalanced Oil and Vinegar framework. SNOVA and MAYO employ aggressive structural transformations to minimize public keys, while QR-UOV uses quotient rings over odd-characteristic fields to achieve resistance against algebraic “wedge” attacks that compromised several characteristic-2 parameter sets during second-round cryptanalysis.<br>
 Strategic Positioning & Ecosystem Integration<br>
-The NSF X-Labs initiative operates as a translational pipeline designed to bypass standard academic publication metrics, focusing instead on scalable hardware and software deliverables. The program provides the initial financial runway necessary to de-risk platform capabilities before entering the private investment sector. To inform its deployment strategy and refine future topic allocations, NSF TIP is integrating organizational feedback compiled from its initial RFI. Selected research teams will acquire long-term operational autonomy to establish independent technical facilities. The agency has scheduled an introductory webinar to detail the compliance parameters, milestone verification processes, and registration requirements for prospective awardees under this OTA framework.<br>
-You can find the official announcement regarding the NSF X-Labs initiative here.<br>
-May 16, 2026</p>
+The third round marks a two-year evaluation phase focusing on implementation security, formal proof verification, and resistance to physical attack vectors. Submission teams have until August 14, 2026, to submit finalized specification updates and implementation modifications (“tweaks”) to address known cryptanalytic vulnerabilities, such as adjusting multivariate parameters to mitigate exterior product and small-field attacks. NIST will evaluate the candidates based on their integration suitability within production internet protocols, including TLS, SSH, IPsec, and DNSSEC. Computational efficiency benchmarks will target the NIST reference platform alongside constrained hardware environments to evaluate constant-time, side-channel-resistant implementations. The evaluation timeline culminates in the 7th NIST PQC Standardization Conference, scheduled for late spring or early summer 2027 in Gaithersburg, Maryland, where performance data and formal security reductions in the Quantum Random Oracle Model (QROM) will guide subsequent standardization selections.<br>
+You can find the official announcement regarding the Additional Digital Signature Schemes here, view the initial publication metadata here, download the comprehensive NIST IR 8610 report PDF here, and read the historical context from the Quantum Computing Report here.<br>
+May 18, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantumcomputingreport.com/nsf-launches-1-5-billion-independent-x-labs-initiative-targeting-quantum-and-sensing-technologies/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/nist-advances-nine-post-quantum-digital-signature-candidates-to-third-evaluation-round/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
+  <span></span>
   
-  <a href="85abae66359c3ff4.html" class="prev-next">&larr; Xanadu Announces Q1 2026 Financial Results: Historic Nasdaq Debut and $285M Government Funding Negotiations</a>
-  
-  
-  <a href="1dd8f1b6f1dc3b8d.html" class="prev-next">Equal1 Unveils Rack-Mounted Silicon-Spin Quantum Computer &rarr;</a>
+  <a href="85abae66359c3ff4.html" class="prev-next">Xanadu Announces Q1 2026 Financial Results: Historic Nasdaq Debut and $285M Government Funding Negotiations &rarr;</a>
   
 </div>
 
