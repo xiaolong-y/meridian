@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast with Brian Gaucher, Co-Chair of ERVA Report on Quantum Technologies — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="91654a49aebcea87.html" title="NIST Advances Nine Post-Quantum Digital Signature Candidates to Third Evaluation Round">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Podcast with Brian Gaucher, Co-Chair of ERVA Report on Quantum Technologies</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>9h</span>
+      <span class="article-category">quantum</span>
+      <span>3276 words</span>
+      <span>17 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Yuval Boger interviews Brian Gaucher, an experienced engineer and IBM veteran who co-chaired ERVA’s report Engineering Research to Advance Quantum Technologies. Brian explains that while U.S. quantum science remains strong, global competition is accelerating and the key limiter is no longer physics discovery but engineering the path from “lab to fab”—scalable, manufacturable, reliable systems. They discuss why the U.S. should pursue a coordinated, semiconductor-like national strategy with shared pilot lines, standards, metrology, public-private investment, and a broader workforce—not just physicists. They also cover the report’s four pillars (materials, biology, computing, AI), the importance of domestic fabrication, and why biology and quantum sensing may deliver surprisingly near-term impact.<br>
+Transcript<br>
+Yuval: Hello, Brian, and thank you for joining me today.<br>
+Brian: My pleasure.<br>
+Yuval: So Brian, who are you and what do you do?<br>
+Brian: Oh, good question. It’s a long sordid story. I started off as an electrical engineer and hardware designer by background. And I spent probably 10 or 12 years at an aerospace and defense company doing military R&D for satellite and radar communications systems, and then moved to IBM where they wanted me to translate a million dollar communication system to something that would be cost effective in a laptop. That was fun. And that was back in the mid 90s. And I spent a long part of my career in what we call millimeter wave design and CMOS technologies. Eventually I managed a group of folks doing profit and loss on some of our chips up in Poughkeepsie and Fishkill, and then got a chance to come back to research and do a little bit of AI. When the quantum chance came around, it just seemed like a really good opportunity to look at a hard problem, both from a physics perspective, and by then in my career, looking at it from more of a systems and architectural perspective and seeing the challenges that are coming in a new technology and what we might be able to do to get out in front of it and see how we could get to a scalable system. You know, integration, reproducibility, and deployment become really important. And this NSF effort became a really interesting opportunity because they’re really looking at helping to translate deep technical advances into engineering frameworks for policymakers, industry researchers, et cetera. So, you know, there’s a lot of in-betweens all of that, but I’m pretty excited to have a chance to work on this report.<br>
+Yuval: Very good. So let’s talk about the report. So you guys, ERVA, released a report on quantum technologies. Could you give me the cliff notes?<br>
+Brian: Sure, sure. You know, in a sense, as I mentioned, they’re kind of looking at these big problems and how to get them in a way where people can dive in and start working on it. This report, “Engineering Research to Advance Quantum Technologies,” is about US leadership in quantum science. It’s strong, but we’re seeing a lot of competition coming in and looking at ways on how we can advance what we’re doing. So I think what we’re seeing now is engineering is a limiting factor and global competition is kind of accelerating. If you look what’s happening in UK and China and other places, they’re getting a lot of funding to do this work, and we’d like to see something similarly happen here, and this report is an opportunity to do it. So it’s really about what happens after the discovery, how quantum technologies can actually become usable, reproducible, manufacturable systems. I would say, the core message is really around the engineering is the bottleneck. You think about that, it’s scaling versus the basic physics discovery, integration versus just isolated performance or lab demos, or the system versus the components that are needed. So quantum advantage isn’t going to happen just because we have better qubits alone, but it’s going to be, from better engineering overall. It’s a really big statement of how do you move from the lab to the fab. And that’s a translation gap. If you’re familiar with the government’s TRL readiness levels, the technology readiness levels, they’re fairly low today. And I think you need to get up into the higher levels in order to get something out that’s going to change the world and have an impact. I think it’s held back by the reliability, the yields. Cost is still an unresolved problem. I think we know how to deal with the quantum effects. What we don’t yet know is how to make them scalable. And that whole report, I think, came around because of this. The report, looked at a lot of quantum capabilities. Four seemed to surface as really important. We’ll call them the pillars. Those were in materials, biology, computing, and AI. They aren’t silos by any means, but I think they are interfaces where engineering leverage is the highest across all of those. I can walk you through some of those if you want and show you how I think they’re connected.<br>
+Yuval: Let’s start by the bottom line. So someone from the government reads this report and what’s the call to action? Is it just to put more money into quantum? Is it to put more money into specific areas of quantum? Is it to achieve better coordination between the various stakeholders? What would you want to happen as a result of this report?<br>
+Brian: Success is in my mind, having the national labs come together and agree that this is the direction we want to go. ERVA and the work that we’ve done, we’re neutral. We’re not really trying to espouse any particular direction or funding model. And the ERVA group doesn’t fund this. So you need to get others on board. And I think having national labs on board with this message would help get and facilitate additional work out into the industry.<br>
+Yuval: When I looked at the report, the report mentions both China investments, as well as sort of a coordinated EU approach to quantum technology. And I think it spurs a debate about centralized national strategy versus fragmentation. Should we kind of let the individual academics and companies do what they do and maybe create a market for their product? Or should the US adopt more of a centralized sort of semiconductor style strategy? Where do you stand on that?<br>
+Brian: I’d like to see something like the semiconductor style strategy, we did just OK, but because of what we did, we didn’t get the overall fabrication capabilities done well. I think there’s a lot of lessons to learn from what we did. The scientific leadership alone isn’t going to be a guarantee of long term manufacturing leadership. I think the US remains strong in semiconductor research and design, but manufacturing ecosystems and supply chains became just globally distributed over time. A key lesson from that I would take away is that that translation, fabrication facilities, supply chains and workforce pipelines and standards, which don’t exist, must evolve alongside that discovery. Once manufacturing ecosystems become geographically concentrated, they’re going to be difficult to move and costly to rebuild if you have to. For quantum, I think we’re in the early stage. Opportunity now is to align engineering research infrastructure and workforce deployment deliberately before supply chains and manufacturing models fully mature elsewhere. The goal, not simply invest in isolation, but a coordinated development across academia, industry, national labs, capital markets to ensure that, you know, we have the scientific advances to translate into those durable technological capabilities.<br>
+Yuval: And universities are typically stronger on the research side, on the discovery. So how does one encourage manufacturing? Is it by regulation to say, oh, the US will only buy from US manufacturers? Is it by providing tax incentives or other financial incentives to build a manufacturing plant? How do you see that translating into reality?<br>
+Brian: Yeah, trying to do what we did in the semiconductor space, that’s a tough one. I would say, encouragement, you’re going to have to have shared test beds and pilot lines. There’s going to have to be standardized processes and recipes that people can follow and validated material stacks and metrology tools and industrial throughput. Those don’t exist right now. So building that ecosystem infrastructure is really important. I have to say we need standards and they need to align early. Those don’t exist. And part of the work that needs to get done is creating the performance metrics, looking at interoperability and some kind of certification. Without that, we’re going to be in trouble. And then de-risking capital investment because manufacturing requires big capital, right? There’s public private partnerships. There’s co-investment models. There’s multi-year procurement. We need clear market roadmaps and we don’t even have demonstrated use cases yet. And we have to build that, also build the pipeline of workforce, the people who are skilled in doing this. It isn’t just a bunch of physicists, but it’s got to be a bunch of people with underlying skills. Manufacturing is going to be encouraged when we have discovery going to prototype, to pilot, to production. There’s got to be a visible mid-stage engineering investment, industrial compatibility. The universities have to be part and parcel of this whole plan. As you say, they do core research really well. What we don’t do a good job is commercializing that in an industrial fashion. I think we’re going to have to have those ties be a little bit better. I don’t know if that addresses exactly what you wanted.<br>
+Yuval: And the answer is a good answer, but I did want to ask, the manufacturing requirements for say a superconducting quantum computer are dramatically different than a neutral atom one or a photonics one. So how do you deal with this platform diversity? Do you just create incentives for one of each? Do you wait to see how the market shakes out for what would be the dominant platform?<br>
+Brian: You’re basically saying we don’t know what the qubit’s going to be yet. And how do we deal with building up these big expensive manufacturing capabilities? I think it’s really still addressed through materials control and process standardization and metrology feedback loops. Superconductor systems need surface preparation and thin film deposition and consistency. The variability is going to be defined around precision materials and standardized fabrication processes. There’s no one way until we settle on a qubit in terms of making those huge investments, but they have to be made. If you’re doing neutral atoms, you’re going to have to invest in it because you’ve got to be ready if you’re successful.<br>
+Yuval: The report mentioned several areas, and I think you touched on them early on, quantum in materials, quantum in biology, computing, sensing, quantum and AI. Some are more mature than others, right? Quantum and biology, maybe not as mature as quantum sensors. Does the report treat all of them equally or does it offer more of a staggered approach to what to do first?<br>
+Brian: No, the report doesn’t address any prioritization across the four pillars. It basically says, hey, we need help in all of these areas. I think what the report does do is say materials is an underlying aspect of biology, computing, and AI. So the materials is a broad brush across all of these. I also think quantum and AI are sort of this bi-directional capability where AI can help quantum do a lot of what it needs to do in terms of control and optimization and managing how you do everything from defects to error correction. And then in the end, AI will benefit from quantum in terms of the workloads that it can address more efficiently as well. But materials are key to everything we do.<br>
+Yuval: And how do you feel about domestic fabrication versus offshoring? And offshoring, of course, could be to friendly countries, could be to adversaries. How important is domestic manufacturing here?<br>
+Brian: I think it’s critical that we have domestic manufacturing. We see aspects of this discussion going in other areas right now, but this technology and what it may or may be used for eventually, both commercially and by the government, it’s got to require onshore capabilities. It doesn’t mean everything has to be done completely, but there has to be an onshore capability to make this whole and useful for the long term.<br>
+Yuval: Can you point to a model that you think works well? So for instance, you might say, oh, Germany has done it really well, or Singapore has done it really well. Is there something that we could look to for example, or do we have to create basically a completely new program?<br>
+Brian: Hmm. I don’t think you need a fresh manufacturing model. You just can’t copy one wholesale either, right? Quantum will likely borrow heavily from existing manufacturing paradigms, especially in the semiconductor space. But it will also require adaptation in specific areas, like cryogenics, ultra-low defect materials, and system integration. We can look at it through the semiconductor lens. That’s the closest analogy. Superconducting qubits, silicon spin qubits, photonic quantum platforms. It’s strong because you need extreme defect control, process standardization, yield tracking, metrology, foundry models. All of that is critically important. Same for photonics, right? Neutral atoms, trapped ions and photonic quantum systems. Laser systems are important, optical alignment, vacuum systems. All of that is going to be needed for specific alignment and automation that they’ll need. I’m no expert in that area, but it’s truly important. And the cryogenic systems themselves, we’ve got the ability to house a thousand qubits or more. We’re going to need hundreds of thousands, if not millions, right? And there’s a whole missing element of how we build those kinds of systems and get those to interconnect and communicate with one another so you can scale and then manage that. What happens when one breaks? Do you take down the whole system and stop a month’s worth of work? Or can you bridge seamlessly with less cryogenic systems in there while you fix one? And how do you find it and how do you fix it? And is it automated or human? There’s so much to do in this very large space of systems.<br>
+Yuval: How urgent is the problem? Do you think the house is on fire or just, you know, there’s a danger that’s slowly moving in our direction?<br>
+Brian: I don’t think the house is on fire. I think it’s strategically urgent, but not technically desperate, if you wanted to put it that way. No, we’re not months or years from losing everything. I think the window closes in the single digit years.The physics breakthroughs will slowly be completed over time. But we still haven’t shown quantum advantage yet. I think the urgency really comes from supply chains forming that can manage all of this, creating that standard that will work so we’re not all building disparate types of hardware and systems. And we get the right people involved who are skilled to doing this, whether it’s a neutral atom or a superconducting qubit. I don’t think it’s an urgent crisis in that sense. I think science is progressing steadily. The manufacturing ecosystems and standards tend to solidify on their own over time. We need coordination. It’s far more costly to try to build capacity once global infrastructure is consolidated elsewhere.<br>
+Yuval: As I look again at the areas, I see that in quantum and computing, there’s a discussion about interconnects and components, but I’m curious why there wasn’t, or maybe I missed it, a section on quantum networking, and not to mention quantum security. These seem to be very much in the headlines when people talk about quantum technology, but I haven’t seen them in the report.<br>
+Brian: I think quantum networks and security are very important, but I think that tends to be in the application layer. I think it’s a level up from where we are right now, trying to build out the hardware. And that’s more what the report is about, this kind of building the underlying technologies and then how those are put to use. Totally agree with you. Security in many dimensions is important, from creating communication links that are secure, to understanding and securing the technology itself that’s built at a particular place in the US or otherwise. Those are important, but I think they’re an upper layer that we didn’t address as much.<br>
+Yuval: You were asked to be involved in the report, probably because of your experience and expertise, which is considerable. But as you were preparing the report, what surprised you the most? What did you learn that you didn’t know before?<br>
+Brian: There’s a couple answers to that question. One is, I had no idea on the biology side of things and how important that is. Biology, there’s, Jennifer, and Afrooz, who ran a lot of the biology element. And I wasn’t aware exactly how much or how important the quantum sensors are, how you do in vitro sensing and the effects on the human body and how to make the improvements and the technology that could help in doing that. I was inspired by what they were doing. They look at everything from protein folding and molecular dynamics to drug targeting and interaction, these reaction pathways and using AI to guide molecular design. And they can have near-term impact as well in what they’re doing. So they’d love to have some capabilities made available to them. It’s probably hybrid systems as well for them. But that was one of the biggest surprises for me. I understood AI and quantum and the relationships there. And I also understood the materials and how important it’s going to be to do all of the work that’s needed. But biology caught me by surprise.<br>
+Yuval: Wonderful. So as we get close to the end of our conversation, if I were to summarize the report, quantum is moving from the lab to the field, it’s entering its system engineering era, and the winners, the national winners, will be those that industrialize it, not just discover it. Would that be a fair summary?<br>
+Brian: Yeah, I think that’s a reasonable way to look at it.<br>
+Yuval: And last, a hypothetical. If you could have dinner with one of the quantum greats, dead or alive, who would that be?<br>
+Brian: Oh, that’s an interesting question. I’m going to give you two answers. Feynman is kind of the guy I’d want to have dinner with just because he’s a character, and he articulated the idea of quantum simulation. If you want to simulate nature, then you better do it with quantum. But I want to ask him about translating this quantum theory into these engineering systems today, and what he thought the biggest challenges would be and how he’d go about it. He’s just such an insightful person. But I also bring in somebody completely off the wall here, Claude Shannon. He’s the father of information theory. I would love to be able to bring quantum computing to him. Because ultimately, it’s all about information. His work shaped how we think about encoding, and noise, and reliability. I’d be fascinated to explore how he’d view quantum error correction and what he would do. Just would be a fun conversation.<br>
+Yuval: Brian, thank you so much for spending some time with me today.<br>
+Brian: It’s my pleasure. Thank you so much.<br>
+Yuval Boger is the Chief Commercial Officer of QuEra Computing.<br>
+May 18, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/podcast-with-brian-gaucher-co-chair-of-erva-report-on-quantum-technologies/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="91654a49aebcea87.html" class="prev-next">NIST Advances Nine Post-Quantum Digital Signature Candidates to Third Evaluation Round &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-05-19 14:54 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
