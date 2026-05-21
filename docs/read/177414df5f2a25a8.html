@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole’s guide to handling failure and rejection — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="9abecc269a332140.html" title="Kipu Quantum Launches Hybrid Framework to Enable Offline Inference for Quantum Machine Learning">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Nicole’s guide to handling failure and rejection</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Frontiers (Caltech)</span>
+      <span>Nicole Yunger Halpern</span>
+      <span>2h</span>
+      <span class="article-category">quantum</span>
+      <span>1165 words</span>
+      <span>6 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>It’s happening.<br>
+Your inbox registers an email from the chair of a faculty-hiring committee. With trembling fingers, you click on the message. “We’ve been grateful for the opportunity to learn about your work…The decision was very difficult…many highly qualified candidates…” Months of labor, soul-searching, strain, and anxiety give way to despair. The committee has filled the position, and not with you.<br>
+I recently published advice about how to proceed if you receive an offer of a faculty position. But what if you don’t receive an offer—what if hiring committees reject you? Or scholarship committees, grant committees, admissions committees, or potential advisors? What if a journal referee shreds your magnum opus? Or a program committee declines your submission to a conference?<br>
+Failure suffuses science as dinner suffuses a nighttime diaper, for two reasons. First, undertaking science is difficult. By “undertaking science,” I mean formulating and proving theorems, cajoling equipment into working, identifying bugs in code, extracting meaning from noisy data, etc. Second, science doesn’t unfold in a vacuum. Human beings do science within a society fraught with opinions, emotions, and limited resources. These challenges lead to the failures and rejections that this article addresses most. (If you’re a member of my group and you’re facing a failure due to the difficulty of undertaking science, come talk with me.)<br>
+What can you do if failure or rejection ails thee? The rest of this article prescribes, in chronological order, steps that will help you recover. You can even turn your lemons into, if not lemonade, then not-entirely-unappetizing lemon meringue pie.<br>
+Immediately after receiving the news:<br>
+- Read the communication once—or, if you must, twice. Don’t linger over the letter for longer than necessary.<br>
+- Put the communication away, so you won’t see it unless you try to. If the news came via email, remove the message from your inbox.<br>
+- Lower your heart rate. Electrified with anger? Expend that energy; go for a walk, for a run, or to the gym, if possible. If you can’t, breathe deeply for several minutes, extending your exhalations.<br>
+- Review records of your successes. I maintain a folder called “Nice messages.” It contains notices of awards I’ve received, kudos on papers I’ve published, messages such as “Thanks for everything this past semester! Your class was probably my favorite one,” and every compliment I’ve received from the taciturn John Preskill via email. Review evidence—remind yourself—that you’re not a failure even though you’re experiencing failure or rejection.<br>
+Avoid thinking about the news for a few days. Imagine cutting yourself on a kitchen knife. The wound may sting and bleed initially. But the blood clots and the stinging diminishes if you cover the wound and don’t aggravate it.<br>
+After experiencing a failure or rejection, invite a colleague to lunch, and ask about their recent reading and travels. Dive into a project that will absorb you. Visit a museum, or watch a movie. Remove the letdown from your thoughts.<br>
+Consider seeking input from a mentor, especially if you’ve never experienced a failure or rejection of this type before. Mentors have more experience and so can put obstacles in perspective. For example, suppose you’re a student who’s received an upsetting referee report from a journal. The report might look mild to a faculty member, who’s likely received far more, and more-upsetting, reports. What sounds harsh to you might sound quotidian to an advisor, whose lack of distress might reassure you.<br>
+Also, mentors notice upsides that you’ve overlooked. Perhaps the referee trashed your presentation of an idea but tacitly approved of the idea itself. The trashing might have drowned out the approval during your reading. Yet the approval could justify a resubmission to the journal, upending your belief in the cause’s hopelessness. Relatedly, a mentor can help you identify strategies for moving past the failure. Maybe this journal won’t publish your paper but another journal is soliciting contributions to a relevant special collection.<br>
+As a PhD student, I applied for an internship at a company developing a quantum computer. I broke an obligation and flew out of state to interview for the position. No offer materialized. To process the outcome, I spoke with a more-advanced researcher I trusted. He not only offered a mature perspective, but also had access to inside information. The team liked me, he reported, but my interests didn’t overlap with theirs enough. In a sense, I’d grown too independent. As independence marks maturity in PhD students, the rejection came to double as a compliment. Today, I remain on friendly terms with multiple people from that team, and a student of mine just landed an internship at a quantum-computing company.<br>
+Chart a path past the failure or rejection. Cue the lemon meringue pie. Did a hiring committee reject an application of yours? Email the committee’s chair, thanking them for considering your application. Express your hope of improving your materials so that you can try again the following year. Ask if the chair would provide feedback via phone or Zoom.1<br>
+Pursue the path you’ve charted. To ease the burden, consider undertaking lighter tasks before more-arduous ones. I recently received a laundry list of requests about a manuscript from an editor—and when I say laundry, I mean the equivalent of hauling a multiple-pound bag to a stream, scrubbing everything by hand while the wind attempts to blow cleaned items into the mud, and then hauling everything back. I began with the tasks that required little effort. Dispatching them, I crossed about half the requests off my to-do list. The list looked more manageable as a result; I felt better-equipped to handle the trickiest work.<br>
+Celebrate your triumphs. Don’t let failures and rejections consume your attention; carve out time for your successes. If you recognize them, you’ll remember them the next time you face failure; they’ll cushion you when you fall.<br>
+I recently failed at a task over a hundred times (yes, I counted). After 28 months of trying, I succeeded. I celebrated by treating myself to lunch at the National Gallery of Art.2 Why not gather ye rosebuds while ye may? This success afforded me the opportunity to fail at a new task.<br>
+Always remember, what matters in the long run is not any one failure or rejection, but your persistence despite failures and rejections. I progressed to the Rhodes Scholarship competition’s final round two years in a row. Each year, a committee interviewed and rejected me. I’d poured time, sweat, and blood into my applications and interview preparations. I felt like I had no more blood to squeeze into the applications I then had to write for graduate programs because of those rejections. Those rejections, though, led me to become a student of John Preskill’s. Over a decade later, I’m not kicking myself.<br>
+Share about your favorite failures in the comments section below!<br>
+1Not via email, which doesn’t offer the same freedom.<br>
+2Its Garden Café had enticed me for years, but I can rarely bring myself to pay for food when I can prepare it myself.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumfrontiers.com/2026/05/20/nicoles-guide-to-handling-failure-and-rejection/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="9abecc269a332140.html" class="prev-next">Kipu Quantum Launches Hybrid Framework to Enable Offline Inference for Quantum Machine Learning &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-05-21 02:55 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
