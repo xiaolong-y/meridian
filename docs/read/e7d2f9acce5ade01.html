@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infleqtion Releases Neutral-Atom Core Architectural Milestones Across Hardware, Software, and Theory — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="c295d314fbb6f109.html" title="Quantinuum and bp Expand Collaboration Targeting Quantum-Accelerated Seismic Imaging">&larr; prev</a>
+    <a href="74f20419a30ee6ff.html" title="WISeKey and SEALSQ Introduce Quantum-Resilient Robotics Platform and Operational Architecture">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Infleqtion Releases Neutral-Atom Core Architectural Milestones Across Hardware, Software, and Theory</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>11h</span>
+      <span class="article-category">quantum</span>
+      <span>616 words</span>
+      <span>4 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Infleqtion has unveiled a series of technical milestones that advance its full-stack neutral-atom quantum computing architecture toward utility-scale, fault-tolerant operations. The coordinated announcements span software resource estimation tools, record physical gate fidelities, gate-design optimization theory, and novel atomic transport mechanics. Tightly coupling these distinct structural layers is designed to accelerate surface-code quantum error correction (QEC) timelines, support efficient magic-state distillation, and allow rapid design iterations. The commercial scale-up is backed by Infleqtion’s recent transition to a publicly traded corporation via a business combination with Churchill Capital Corp X.<br>
+Open-Source Resource Estimation Middleware<br>
+In software, Infleqtion and the University of Chicago have open-sourced resource-superstaq<br>
+, an architecture-level resource estimation package integrated into the company’s commercial Superstaq ecosystem. The compilation-driven software translates arbitrary algorithmic circuits into logical primitive operations with mapped physical hardware constraints, enabling users to extrapolate logical qubit counts, routing delays, and circuit runtimes against public hardware roadmaps. The compiler allows configurable hardware assumptions to evaluate how design choices—such as multi-species arrays, dedicated measurement zones, and atom-shuttling trajectories—impact application-level performance. Early testing on fault-tolerant simulation benchmarks indicates that while magic-state production remains the dominant overhead bottleneck, optimized, movement-aware compilers can mitigate routing delays during logical state cultivation.<br>
+Record Inter-Species Rydberg Gate Fidelity<br>
+On the physical hardware layer, Infleqtion researchers demonstrated a dual-species rubidium-cesium entangling Rydberg gate with a verified inter-species gate fidelity of 97.5% (± 0.2%). The dual-species architecture establishes a technical path toward fast, in-place quantum non-demolition (QND) qubit measurements essential for executing active surface-code error syndrome detection. By assigning different atomic species to data and ancilla qubits, the system conducts real-time readout operations without inducing cross-talk or decoherence in adjacent, unaddressed data registers. This capability was validated by performing multi-qubit error syndrome measurements on two- and three-qubit plaquettes, achieving target QND measurement fidelities of 93.3% and 86.5%, respectively, without requiring slow atom-shelving or hardware-intensive extraction workflows.<br>
+Förster Resonance Gate-Design Optimization<br>
+Complementing these physical benchmarks, a joint theoretical paper from the University of Wisconsin-Madison and Infleqtion details an algorithmic optimization framework to push neutral-atom entangling gate fidelities beyond the 99.9% fault-tolerance threshold. The research constructs a specialized two-eigenstate model that accounts for multi-channel interaction dynamics inside the Rydberg-pair manifold near Förster resonances, rather than treating them as a single effective state. The paper demonstrates that by formally incorporating exchange dynamics based on the inter-atomic Rydberg interaction strength and characteristic Rydberg state lifetime, the resulting gate protocol saturates theoretical boundary conditions in the large-Rabi-frequency limit. This mathematical refinement improves the existing theoretical fidelity boundary by approximately 40%, directly lowering the physical qubit overhead required for active fault-tolerant logic gates.<br>
+Static Magnetic-Field Sub-Doppler Cooling and Optical Transport<br>
+To resolve physical atom scaling bottlenecks, Infleqtion validated a continuous-operation atomic loading architecture based on a static magnetic-field configuration for sub-Doppler cooling and optical atom transport. Traditional alkali atom preparation cycles rely on time-varying, dynamic magnetic fields that introduce undesirable eddy currents and transient field coupling, disrupting nearby coherent operations. The new method implements a blue-detuned Type-II magneto-optical trap operating on the closed transition of the D2 line in cesium, achieving stable sub-Doppler temperatures of 17 µK (± 1 µK) without altering the underlying magnetic-field gradient. This static environment permits direct loading into a shallow optical lattice and subsequent spatial transport over a distance of 17 cm, continuously delivering millions of coherent atoms per second from an isolated preparation chamber directly into the primary science cell.<br>
+You can review the official press release detailing Infleqtion’s technical milestones here. You can also download the open-source compilation preprint here, read the experimental dual-species Rydberg gate manuscript here, examine the theoretical Förster resonance paper here, access the static-field laser cooling data here, and register for the technical results webinar here.<br>
+May 21, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/infleqtion-releases-neutral-atom-core-architectural-milestones-across-hardware-software-and-theory/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="c295d314fbb6f109.html" class="prev-next">&larr; Quantinuum and bp Expand Collaboration Targeting Quantum-Accelerated Seismic Imaging</a>
+  
+  
+  <a href="74f20419a30ee6ff.html" class="prev-next">WISeKey and SEALSQ Introduce Quantum-Resilient Robotics Platform and Operational Architecture &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-05-22 02:55 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
