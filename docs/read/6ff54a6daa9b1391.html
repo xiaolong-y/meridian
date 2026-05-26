@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast with Klea Dhimitri of Hamamtsu Photonics — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="ae4c95dcad8a9981.html" title="Surveying the California Quantum Ecosystem">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Podcast with Klea Dhimitri of Hamamtsu Photonics</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>18h</span>
+      <span class="article-category">quantum</span>
+      <span>4275 words</span>
+      <span>22 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Klea Dhmitri of Hamamatsu joins Yuval to discuss the company’s role as a photonic component provider for trapped-ion and neutral-atom quantum computers. She explains key technologies such as photomultiplier tubes (PMTs), SPADs, and quantitative CMOS cameras, and how scaling to larger qubit arrays changes requirements for speed, resolution, and integration. Klea also shares how customer demand is pushing product innovation, reflects on her unconventional path into quantum, and offers advice for those looking to build careers in photonics and quantum technologies.<br>
+Transcript<br>
+Yuval: Hello, Klea. Thank you for joining me today.<br>
+Klea: Hi, Yuval. I’m glad to be here.<br>
+Yuval: So who are you and what do you do?<br>
+Klea: Hi, yes, happy to introduce myself. So I’m Klea Dhmitri and I work for Hamamatsu Corporation, which is the North American subsidiary of Hamamatsu Photonics. And I will be with Hamamatsu eight years in June. And what I do here is I lead our quantum computing and quantum communication project here in North America. And so what that means is I engage a lot with the community in helping, you know, folks from academia to industry find solutions of the product, help them find photonic solutions of the current products that they’re building, but also keeping in mind their next generation. And this is really where I work closely with our R&D colleagues in Japan and bringing these maybe R&D or prototype solutions and detection, modulation, and even lasers to these customers. And I also do a lot of marketing as well. So you’ll find me at trade shows, doing webinars, and really creating content that explains where Hamamatsu plays in this space. And so maybe a bit of a sort of a fun tidbit is actually this role in this project did not exist when I joined the company. So it was a bit serendipitous. So I’m happy to jump into that later in the conversation if you’d like to learn more.<br>
+Yuval: What kind of components does Hamamatsu provide to quantum computing companies?<br>
+Klea: Yes, so if you just step back a bit, when you look at quantum computers, there are different ways to make them, different modalities. And so I think when we think the word quantum computer, we think of that gold chandelier, that beautiful gold chandelier that IBM and Google have. We do not play there. There are no photons in that system. So we typically play in quantum computer modalities that use photonics. And so those are trapped ions, neutral atoms, photonic qubits, and nitrogen vacancies, although that’s not been maybe as industrialized as the others. And so where photonics plays a role in these systems is when you’re trying to implement gates. So as you’re going through a gate circuit, there are lasers, and through the acquisition of NKT Photonics we provide that. And there’s also modulation. So in neutral atoms, you create optical tweezers to hold these atoms in space. And we make a lot of the spatial light modulators that go into them. And then sometimes you may want to modulate the light for gate addressing. SLMs can be used there as well. And lastly, I would say where I think we really started off was in detection. So we make a lot of different photon detection because if you look at something like trapped ions and neutral atoms, because it’s a bit simple, but typically those atoms will either be dark or light and that’s going to translate to your zeros and ones. And so what we try to do is we try to capture that fluorescence where, you know, hardware providers will try to read out those zeros and ones and we have a wide range of solutions for that space. So what we really are is we’re a photonic component solutions provider, but we also have a lot of solutions that can help in integration, whether that’s like firmware or software, depending on the device, as well as trying to make that interfacing easier with some different optical designs and things like that. But really at our core, we play at these different levels of the photonic rack of these systems.<br>
+Yuval: How do the requirements change over time? As systems try to become bigger and bigger, what does that mean for the photonic solutions?<br>
+Klea: That’s a great, great question. So we can stick to trapped ions a little bit because that one has historically kind of existed for a while. So in trapped ions, you know, back in like 1995, the first two-qubit gate was done with ytterbium. And if you’re not familiar, ytterbium emits at 369. So that’s about a UV wavelength. And then, you know, they were making these little tiny chains. And so they typically used different versions of PMTs, maybe a linear version or a single channel version. And then as, you know, decades went on, what some people may have noticed is that the trapped ion community changed to a different species, barium. And so one of the changes that came along with that is that it was now in the visible at 493. And so one of the changes that it came with was that now you had options to different types of detectors, but now you cared about different types of things. So you cared more about scaling. So now you knew that these detectors were going to see much more ions. And so these are some of the changes that we’ve started to see. So sometimes we’ll see a change in species, and that’s going to change the wavelengths, but we’re also seeing a change in requirements. And so scaling is something that comes up. And we can talk a little bit about this, but it’s really not trivial when you’re picking a detector because it’s not as easy as saying, okay, what has the best sensitivity and the lowest dark counts? You actually do have to take into consideration a lot of the system. So if you’re interested, I can dive into that a little bit to give you context on how you could select something or what you would consider.<br>
+Yuval: You mentioned PMTs. I’m not sure everyone listening knows about PMTs. Can you explain that please?<br>
+Klea: Sure. So a PMT is something known as a photomultiplier tube. It’s a glass tube with a vacuum inside it. So what happens is a photon hits this, what we call a photocathode, and it’s made of different materials. And then on the other end, you’ll get a photoelectron pop out. It’s the same effect that Einstein won his Nobel Prize in, the photoelectric effect. And so then what happens is, through voltages, that photoelectron is going to hit what we call a dynode stage. And then that’s going to amplify through different dynode stages. So as those photoelectrons hit the next one, there’s more that pops out and more that pops out and more that pops out. And the stage could be 7 to 10, depending on the photomultiplier. And then you read out a current at the anode. And so this was one of the first photon detectors. And for quantum computing, this was probably one of the first photon detectors that could see the single photons from the ions. So if you go back to those 1995 papers, the PMT was the only thing back in the day that could see this light. So we’ve been making PMTs for 70 years and it was actually probably the first product Hamamatsu Photonics made, and so it’s kind of our bread and butter. PMTs, by the way, are not only used in quantum, they were actually used in positron emission tomography machines and also in a lot of high energy physics. So we’ve made thousands and thousands of these in something known as the Kamiokande experiments and the Super-Kamiokande. And if you don’t know what these experiments are, they were the experiments that detected neutrinos, but then also the bigger one, I think detected that neutrinos had mass. So they’ve been used in a lot of low-light detection applications and quantum was one of the ones it found a way into.<br>
+Yuval: If we are now in the acronym zoo, I know there are also SPADs, right? Talk about them and sort of clear the air. What is a SPAD and how does that relate to Hamamatsu?<br>
+Klea: Sure, sure. So there are different ways you can detect single photons. I think SPADs might have come out in the 60s or 70s and they’re essentially the silicon version of, I think, a photomultiplier. And so typically what happens is now the photon will hit the detector and then it’ll find a p-n junction electron hole pair and when it combines you read it out. There’s some attractions to SPADs. So I mentioned that photocathode material. So that photocathode material in terms of efficiency can be limited. So we know we’re trying to find ways to increase it but it wouldn’t really exceed 50%. Whereas with SPADs you have more room to get up to the 60s, 70s, and 80s. So that’s kind of one of their differences. But also you can make larger arrays of these. So SPAD arrays. And another characteristic that the PMTs still hold is that with SPADs, as you increase the area, the dark count goes up. So what’s beautiful about PMTs is you can have this massive area but have a very, very low dark count. So if that’s something you care about, that’s a consideration. So SPADs are sort of these another version of single photon detectors that we do make. And we’ve used a lot of SPADs. We developed a lot of our SPADs for LiDAR when LiDAR was looking into them, but they can also be used in a lot of biological applications. Why they’re attractive in quantum, so as I mentioned in trapped ions, there was that change in species from ytterbium to barium. So when the community moved to 493, now when I said all these other detectors became of interest, SPADs were one of those technologies that now became more interesting and potentially more useful than a photomultiplier tube because you did get to take this advantage of, you know, visible is used in a lot of applications like biology, so you had access to more mature technologies like a SPAD and you could get something like an 80% quantum efficiency. You may have not gotten that before because of your species choice and what was available at those wavelengths.<br>
+Yuval: When you think about neutral atom computers with an array of qubits ever increasing from hundreds of qubits to now thousands of qubits, how does that change the requirements for the detectors both in terms of size and perhaps also in terms of speed?<br>
+Klea: Yes, yes, that’s a great, great question. So neutral atoms, I think their first two-qubit gate was around 2010, so they’re kind of a newer kid on the block, so to speak. But they’re making amazing progress. So the first type of cameras, we’ll go back, is something known as EMCCDs, which were called electron-multiplying charge-coupled devices. Now I won’t go too much into it, but one of their limitations is the way they would amplify signal photons was through a stochastic process, and that smears a lot of your readout and can introduce noise. So what we’ve created for neutral atom quantum computing is something known as a quantitative CMOS camera. So because we were able to reduce the read noise so low, one of the features of this image sensor, which can have, you know, 9.4 megapixels and really large arrays, is you’re able to photon number resolve. And so this is the quantitative aspect. Now a lot of neutral atom quantum computers don’t use it because it’s not quick enough for the operations they’re doing, but they can take advantage of this low read noise. What’s also great about these sensors is they have very high quantum efficiency. So this scientific camera technology was really riding the coattails of CMOS image sensors. So these are the sensors you’ll find in your webcam, your phone, and so all of that improvement and processes of making those sensors allowed us to also make better scientific sensors where you’re able to get sensors that you can put into cameras with like 90% quantum efficiency. And in neutral atoms, you know, you’re not in the visible. Sometimes you go out to 780 for rubidium or 850 for cesium. And so what’s great about what we were able to bring to the QCMOS is, the lenses that we added onto it, the quantum efficiency didn’t drop as you were approaching those longer wavelengths. So you still were around 50 or 40 percent. So for neutral atoms, when you have a lot of arrays, we’ve created a lot of these cameras. And these cameras are kind of scale-proof because they’re really, really large arrays. And what I think we’re seeing is there is more of an interest on trying to read out quicker. And I think this is where the topic of mid-circuit measurement comes in as well. But yes, in neutral atoms, a lot of people use these QCMOS cameras or quantitative CMOS cameras.<br>
+Yuval: To what extent is the quantum industry pushing Hamamatsu to create new products as opposed to, “Oh yeah, we’ve had this product for 50 years or 20 years or 5 and now you can actually use it in a quantum computer”?<br>
+Klea: Oh, every day. I would say, you know, I think we’re definitely getting pushed on that. And I wouldn’t say it’s always a new product. It’s always a strong modification to a current product. So, you know, thinking about, you know, sticking to detection, it always goes back to the system. So, you know, going back to the cameras, you know, one push we’re getting is in terms of speed. You know, as mid-circuit measurement is kind of an area that people are exploring, it’s always like, “How can I read this out quicker so I can make my decision quicker?” And then maybe you need to consider your arrays and you may need to say, “Okay, is it a QCMOS or is it a SPAD?” And so now you have some different design considerations. And they’re also at different levels of maturity, so it’s not a super straightforward answer as well. So you’ll have to consider that. Even in modulation, right, so if we just stick to the neutral atoms kind of discussion that we had, so the way neutral atoms scales is maybe a little simpler to understand, right? You just need a high-powered laser and a lot of spots on a spatial light modulator, right? Because the more spots you have, the more atoms you can hold into your array. So, you know, we’ve definitely gotten pushes for more resolution on our spatial light modulator. And we have a response to that. So just last year, our Japanese colleagues were selected for a NEDO grant, which was given by the Japanese government. And we’re actually working on three areas to help scale quantum computers. And those three areas will be high-resolution and ultra-sensitive kind of imaging solutions, high-resolution SLMs, and then also some stabilization technologies for lasers. And so what’s interesting about that is that we know we actually have to improve all these three kind of subsystems of the quantum computer in order to reach these kind of next gens that the industry is trying to strive for across the board from neutrals to traps. So it’s every day and every discussion and there’s always two or three layers, right? Because people have to think five to ten years ahead and there’s so many system considerations to consider. And it’s a constant discussion of like, when do you need this? How is this going to impact your computer? What can you tolerate? And so it’s never always just about the technology. It’s always about the system that they’re building and what they can tolerate. So it’s a constant and ongoing discussion, I would say.<br>
+Yuval: You mentioned that you’ve been in the market for eight years with Hamamatsu, I think. I’m curious how you got into quantum and photonics and perhaps what advice do you have for others that want to follow the same path?<br>
+Klea: So I guess this is a bit of the backstory that I was hinting at earlier. My undergrad was in physics and math and I worked at Professor Javad Shabani’s lab. He’s now at NYU but he was at City College and to set the scene this was 2016. So 2016, quantum was a lot of IBM and Google and Microsoft. I think IonQ was probably just founded at the time. But he worked a lot on Majorana fermions, so he worked a lot on growing these materials, fabricating them and putting them in dilution refrigerators. So I worked a lot on material simulation and fabrication towards the end. And so I knew quantum computers was this big thing that everyone wanted to make and it was a new way of computing. And I don’t think I fully understood a lot of it back then. But you know, I got exposure and I was excited by it. And what happened was at the end of my undergrad, I decided I didn’t want to go to grad school. Grad school felt a lot like marriage. It was a big commitment, and there’s a lot of factors: location, the department, your colleagues. And so I didn’t find the right fit on the offers I got. So I said, you know what? Let me try this industry thing. If I really don’t like it, I’ll just go back and get a PhD later. And so I did that. And what was funny, I did this probably a month before graduating. And so I put physics in LinkedIn. So I was applying to GlobalFoundries because I had fab experience. I was like, okay, maybe that’s something I’ll get a job in. And the other was Hamamatsu. And I remember when I applied, I said, this Japanese company has nothing to do with quantum. Quantum is so niche, it’s probably just these big guys, you know, I’ll never see it again. Joined the company six months in and I was so wrong. We were making products for trapped ions, this modality I heard that was competing with the superconducting qubits. And so that’s kind of how I got started. And I was actually hired to just really do a lot of our technical support for, you know, our university customers. That’s what I was signed up for. But I think because the company was so encouraging, they allowed me to look into this to see if there was a business case. And we eventually, over the years, made that business case to where we have a team and this is part of our corporate strategy that we want to create solutions. And so I think your initial question was, what is my kind of advice to folks in photonics and quantum? And I would say that for quantum, you don’t need a PhD to be in this industry. I think QEDC did a lovely job at writing a workforce report. You know, there are people building systems, there’s going to be technicians, there’s going to be field service people. You and I, we work in marketing and we interface with customers, so there’s going to be a lot of that need as well as people are trying to articulate what services they’re providing. And so you don’t only need a PhD. I would say the PhD is probably more needed if you want to work closely with the hardware and you want to do the design. But even on the hardware side, there’s a huge need for optical engineers. And I would say this is where my advice to photonics folks would come in is if you understand optics, if you understand detection, if you understand filters and how to put different pieces together, that is hugely valued in the quantum computing, sensing, and communication space. People are building different subsystems and that expertise is hugely desired and needed. And I would say that I’ve started to see this probably in the last couple years as a lot of people who worked in LiDAR and other applications who built other different photonic systems are bringing their system expertise in optics and photonics to a quantum computer. And a quantum computer, when you look at it, is a system with all these different components. And anyone who knows how to manage that is going to be incredibly valuable to these players in this industry.<br>
+Yuval: How has the industry changed over the last couple of years and what do you expect to happen over the next two years?<br>
+Klea: Oh yeah, that’s a really, really good question. I would say I think overall what I’ve noticed in the industry is that there’s a huge focus on scaling. I think that is something that is kind of constantly top of mind wherever you go is how do you scale these systems? What are the different options of scaling? And I think, you know, what you realize is that there are different approaches that people are considering and they’re not easy. So there’s a lot of engineering needed, right? And what I mean by that is kind of, you know, we could pick photonic qubits, for example. They tried to bring kind of everything on chip. And I think there’s always this discussion of bringing components closer together, and that’s always challenging with different optical interfaces. And so I think that’s something that people are talking about or, you know, trying to even adjust different temperatures, right? If you have something that’s cryogenic but then something that works at room temperature, how do you mitigate that? So I think there’s always like system engineering discussions on how do you scale and where do you make these trade-offs. I think that’s just something that is constantly becoming areas of discussion in the industry and people just trying to work on different ways of integrating these interfaces because as you build these systems, you can’t just brute force it. There has to be kind of some minimizing of these interfaces and ensuring the information is preserved as you go through the system. And then I think your second question was like, how do I think it’s going to change? I think we’re going to sort of maybe see more of the progress on how we scale this, and I can give a specific example. So, you know, some of the ideas that people are thinking about is trying to bring some of the detection closer. And so there’s been a lot of work at like NIST, for example, and MIT Lincoln Labs on trying to bring SPADs or nanowires into ion traps. And they’ve discovered like, “Oh, well, actually, the SPAD and the ion talk, and that shouldn’t happen, so we have to put this mesh.” Or they realize, “Oh, the ion’s influencing the nanowire, so now we have to put an aluminum mirror to ground it.” And I know this doesn’t sound groundbreaking, but these little engineering insights are so important because they start to tell us what’s possible and what do we need to really refine. And so I think we’re going to get these little tidbits of engineering of like, oh, when you push this component or when it starts talking to the atom and ion, you got to make sure you’re mindful of this. And I think the more tidbits we get, the better we’re going to get a more complete picture on how we realize these quantum computers. And so I think we’re going to start to see more of that. And we’ve started to see a little bit the last couple years or so I would say.<br>
+Yuval: And finally a hypothetical. If you could have dinner with one of the quantum greats, dead or alive, who would that be?<br>
+Klea: This is a great question. So I’ve thought about this. I’ve heard numerous Superposition Guy podcasts and everyone has these really great answers of Einstein or Dirac. I gotta be honest, maybe I take the dinner question too seriously, but I don’t know if I could keep up with them. And I don’t know how entertaining I would be as a guest. So, you know, I’m gonna have to go with, I’d like to sit down with kind of engineers who are building these superconducting, topological, and spin qubits, because these are the modalities I don’t get to interact with a lot. But I think the engineers building these systems will eventually become some of the quantum greats of how they realize it. And I love hardware. I love talking to engineers. So I think I’d have a little bit of a dinner party with those folks and just kind of hear how they’re thinking of approaching it and some of the challenges they may be seeing. I think I would be able to keep on par with that conversation. So I think those would be my choices.<br>
+Yuval: Wonderful. Klea, thank you so much for joining me today.<br>
+Klea: Thanks for having me, Yuval. It was a great conversation.<br>
+Yuval Boger is the Chief Commercial Officer of QuEra Computing.<br>
+May 25, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/podcast-with-klea-dhimitri-of-hamamtsu-photonics/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="ae4c95dcad8a9981.html" class="prev-next">Surveying the California Quantum Ecosystem &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-05-26 15:00 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
