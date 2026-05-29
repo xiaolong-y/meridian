@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update on Quantinuum’s IPO Filing — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="7c9c402557ec5b91.html" title="IBM Pledges $10 Billion Global Quantum Expansion to Deliver Fault-Tolerant Supercomputers by 2029">&larr; prev</a>
+    <a href="455f88bc37c80e01.html" title="Beyond a Single Quantum Chip: Why the Future of Quantum Computing is Modular">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Update on Quantinuum’s IPO Filing</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>10h</span>
+      <span class="article-category">quantum</span>
+      <span>1040 words</span>
+      <span>6 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>On May 11, 2026 we reported on the first public S-1 filing that Quantinuum submitted to the U.S. Securities and Exchange Commission (SEC) that provided much detail on the company’s technology and operations. Previously, the company announced it had submitted a confidential S-1 in April. In the first public S-1 filing, much of the financial information related to the IPO including valuation, share price, and other important items had not yet been determined and were not included in the document. Now, the company has just submitted an amended S-1A filing that does include this information. We have determined the most significant changes made between the S-1 and the S-1A documents including details on the proposed $100 million equity purchase by the U.S. government that we reported on last week.<br>
+The most significant changes are summarized below:<br>
+1. IPO Pricing and Share Capitalization Quantified<br>
+The initial S-1 omitted key parameters regarding the offering size, which have now been fully finalized in the S-1/A:<br>
+- Offering Size & Price Range: The company is offering 21,052,632 shares of Class A common stock, with an anticipated initial public offering price between $45.00 and $50.00 per share. This represents a 68% to 87% increase over the $26.77 price that was used in the last private fundraising round (Series B convertible preferred stock completed between August and December 2025). The Class A common stock is expected to trade on Nasdaq under the symbol “QNT.”<br>
+- Valuation: The company’s valuation after completion of the IPO would be in a range between $11.43 billion to $12.70 billion depending upon the final share price.<br>
+- Over-Allotment Option: The underwriters’ 30-day option to purchase additional shares is set at up to 3,157,894 shares.<br>
+- Total Post-IPO Shares Outstanding: Upon completion of the offering, 25,948,276 shares of Class A common stock and 227,988,971 shares of Class B common stock will be outstanding. If all Common Units held by pre-IPO owners are exchanged, the total Class A common stock equivalent will be 253,937,247 shares.<br>
+- Economic & Voting split: The public investors in the IPO will collectively hold a 10.2% economic interest in Quantinuum Holdings, LLC. The pre-IPO Continuing Common Unitholders will retain the remaining 89.8% economic interest and hold 89.8% of the voting power via Class B stock.<br>
+- Honeywell Ownership: Honeywell Entities collectively hold 124,774,437 shares of Class B common stock. Immediately following the completion of the IPO, Honeywell will beneficially own approximately 49.1% of the combined voting power (or 48.5% if the underwriters exercise their over-allotment option in full)<br>
+2. Recent Development: U.S. Government Transaction (CHIPS Act LOI)<br>
+The most notable operational expansion added to the prospectus summary and risk factors is a major agreement with the U.S. government:<br>
+- $100 Million Award: On May 21, 2026, Quantinuum signed a non-binding Letter of Intent with the U.S. Department of Commerce for an award of up to $100 million under the CHIPS Act of 2022 to support technical projects scaled across U.S. sites.<br>
+- Disbursement and Milestones: Funding is divided into tranches: $56.0 million available on the Award Date, followed by milestone tranches of $32.0 million (Milestone 1) and $12.0 million (Milestone 2).<br>
+- Definition of Milestones: Milestone 1 relates to the fabrication and testing of integrated optical waveguide and diffraction grating optimized for performance at 422 nanometer and also fabrication and testing of laser components. Milestone 2 relates to fabrication and characterization of final version of the diffraction grating optimized for performance at 422 nanometer and also fabrication and testing of a custom-designed chip (ASIC) purpose-built for the quantum computing system.<br>
+- Equity Issuance to Government: In exchange for the funding, Quantinuum will issue equity securities to the Department of Commerce based on formulas discounting the IPO or public trading price (e.g., a 15% to 20% discount). The government will retain 100% of these equity securities even if full milestone funding is withheld or clawed back.<br>
+- U.S. Nexus Restrictions: The agreement introduces strict multi-year compliance parameters, including a requirement that funded innovations be produced exclusively in the U.S. for 10 years following performance, and restrictions keeping intellectual property under U.S. corporate ownership.<br>
+3. Transition from Director Nominees to Active Board Members<br>
+The corporate governance section shifted from planning a board to formally seating it:<br>
+- Seated Board of Directors: In the initial S-1, 7 out of the 10 board seats were listed as “Director Nominees”. In the S-1/A, all individuals—including independent directors Dr. Harold Barron, Manish Bhatia, Eric Branderiz, Paul Daugherty, Kenneth Denman, Joseph Jimenez, Jr. and Prineha Narang have been formally appointed and are listed as current Directors as of May 2026.<br>
+- Board Qualification Rule: A strict new covenant has been added to the company’s amended bylaws requiring that every member of the Board must qualify as a U.S. Person under federal regulations (15 C.F.R. 772.1).<br>
+4. Updates to Executive Compensation Policies<br>
+The terms of executive compensation were modified to align with a finalized public corporate model, effective upon the closing of the IPO:<br>
+- CEO Salary Increase: Dr. Rajeeb Hazra’s annual base salary will increase from $500,000 to $550,000 effective upon the consummation of the offering.<br>
+- CEO Performance Target Increase: Dr. Hazra’s target annual cash bonus will more than double, shifting from 40% of his annual base salary to 100% effective upon the consummation of the offering.<br>
+- Finalized Director Equity Vesting: Long-term IPO equity awards for non-employee directors (aggregating to $2,450,000 value) have been explicitly scheduled to vest ratably in annual installments over three years.<br>
+5. Completed Financial Statement Disclosures & Item 13 Expenses<br>
+With the offering prices established, the financial line items have been computed:<br>
+- Pro Forma Financials: The Summary Financial Data and Unaudited Pro Forma sections are fully populated with exact calculated dollar values, reclassifying the company’s historical $1,513.9 million in temporary preferred equity into permanent equity structures.<br>
+- Item 13 IPO Expenses Finalized: Registration and issuance expenses (excluding underwriting fees) have been finalized at an aggregate $18,300,000 , driven heavily by $9,000,000 in legal fees and $7,400,000 in accounting fees.<br>
+For more information, you can access the amended S-1A filing on the SEC website here and the previous S-1 filing here. Also, our previous report on the company’s initial public S-1 filing can be found here.<br>
+May 28, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/update-on-quantinuums-ipo-filing/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="7c9c402557ec5b91.html" class="prev-next">&larr; IBM Pledges $10 Billion Global Quantum Expansion to Deliver Fault-Tolerant Supercomputers by 2029</a>
+  
+  
+  <a href="455f88bc37c80e01.html" class="prev-next">Beyond a Single Quantum Chip: Why the Future of Quantum Computing is Modular &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-05-29 14:55 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>

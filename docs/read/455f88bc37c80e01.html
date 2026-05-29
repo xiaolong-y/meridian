@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond a Single Quantum Chip: Why the Future of Quantum Computing is Modular — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="c4ab1e9d77fe3309.html" title="Update on Quantinuum’s IPO Filing">&larr; prev</a>
+    <a href="f5c3ae82667a4cac.html" title="Qilimanjaro Deploys an Analog Quantum Computer at the Barcelona Supercomputing Center">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Beyond a Single Quantum Chip: Why the Future of Quantum Computing is Modular</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>15h</span>
+      <span class="article-category">quantum</span>
+      <span>1273 words</span>
+      <span>7 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Guest Post by Zeynep Koruturk, Dr. Kris Naudts, and Donald Harmitt of Firgun Ventures<br>
+For years, the headline metric in quantum computing has been a simple one: how many qubits can a company fit onto a single chip. Qubits are the basic units of quantum information, and increasing their number signals that the field is moving beyond laboratory prototypes. The race produced steadily larger processors, but it is widely believed that increasingly fitting a significant number of qubits onto a single chip will eventually run into a wall that physics and manufacturing impose together. Beyond a certain size, fabricating a flawless monolithic chip becomes punishingly difficult, and wiring every qubit to every other qubit grows harder with each addition.<br>
+The path to a genuinely useful machine, one capable of solving commercially meaningful problems, runs through a different strategy. Rather than building one enormous processor, the field has turned toward linking many smaller ones together. This is the logic of modular quantum computing, in which multiple smaller processors, or modules, are interconnected so that they behave as a single, larger machine. Keeping every qubit on one chip is not impossible, but the smarter route is to scale outwards through connection rather than upwards through density.<br>
+There are two modularity angles worth exploring here. The first is the homogeneous view, where a single qubit modality is scaled by networking many identical modules. The second is heterogeneous, where several different qubit hardware types, e.g. superconducting, trapped ions and others, are combined so each contributes what it does best. Both point toward the same destination: a future in which quantum computing lives less in a single exotic device and more in something resembling a high-performance computing centre.<br>
+Scaling One Modality By Connecting Many Modules<br>
+Industrial technologies often move from heroic single machines to networked systems. Early computers filled rooms, now modern computing power comes from chips, servers, accelerators and networks working together. Quantum appears to be approaching a similar transition, and one of the earliest commercial demonstrations of homogeneous modularity came from Xanadu. In January 2025, the Canadian company unveiled Aurora, which it described as the first modular and networked photonic quantum computer. In practical terms, the team connected 35 photonic chips and roughly 13 kilometres of optical fibre across four server racks to build a 12-qubit machine. The qubit count was modest, but it was never the point. The significance is that the architecture could in principle scale to thousands of server racks and millions of qubits, the foundation of a future quantum data centre.<br>
+Photonics lends itself to this because light naturally travels down a fibre, so the networking layer and the computing medium are one and the same, and much of the system runs at room temperature rather than demanding elaborate refrigeration. Quantum computing hardware companies such as Photonic Inc., one of Firgun Ventures portfolio companies and a Vancouver-based developer of silicon-spin qubit hardware, have taken a scalability-first posture, treating how to connect modules as the problem to solve before all others. A parallel bet is being made not on the qubits themselves but on the wiring between them. Nu Quantum, a Cambridge spin-out, is building the networking layer as a standalone product, underscoring that the interconnect is increasingly treated as infrastructure in its own right.<br>
+The incumbents have arrived at modularity from the opposite direction, scaling established hardware by stitching chips together. IBM’s roadmap is the most detailed public example. Its Heron processors are designed to be linked through chip-to-chip couplers, while its Flamingo processor is expected to introduce longer-range coupling to carry quantum information between separate chips, both within IBM Quantum System Two, a platform built to host interconnected modules rather than one large chip.<br>
+The same instinct is visible in China. In May 2026, the Wuhan-based CAS Cold Atom Technology unveiled Hanyuan-2, described as the world’s first dual-core neutral-atom quantum computer which pairs two processor cores in one cabinet. Independent benchmarks are still missing, but points to a state-backed national champion building out modular designs rather than a single ever-larger array.<br>
+Different Qubits, Better Together<br>
+The heterogeneous view is more ambitious and begins from a simple observation. Each qubit modality has distinct strengths rooted in its physics, and those are unlikely to converge as the technology matures. Superconducting qubits, favoured by IBM and Google, are fast and benefit from mature semiconductor fabrication. Trapped ions offer exceptionally high fidelity, meaning very precise operations. Neutral atom arrays scale to large numbers of qubits and suit the simulation of physical systems. Photonics, as Aurora shows, excels at networking and operates at room temperature. No single technology delivers everything yet.<br>
+That insight now has institutional weight behind it. In 2026, DARPA launched its Heterogeneous Architectures for Quantum programme, known as HARQ, to develop systems that combine multiple qubit technologies into one. The effort runs across two workstreams: MOSAIC, which builds the software and compilers to assign tasks across different qubit types, and QSB, which develops the interconnects that physically link distinct hardware platforms. Although HARQ targets heterogeneous machines, the photonic interconnects it advances will benefit homogeneous modular systems just as much. This notion mirrors a shift already underway in classical chipmaking. Patrick Vandenameele, Chief Executive of the Belgian nanoelectronics institute, Imec, argues that next-generation AI systems are becoming heterogeneous assemblies of multiple technologies that must be co-optimised across the whole stack rather than improved in isolation.<br>
+A Battery Use Case Split Across Modalities<br>
+A battery chemistry use case makes this less abstract. Everyone understands the frustration of a phone battery fading or an electric vehicle losing range in cold weather, and designing better battery chemistry illustrates how a heterogeneous machine might divide the labour. Neutral atom arrays could simulate candidate electrolyte molecules (electronically charged particles dissolved within fluids with the ability to conduct electricity) and how they interact with electrode surfaces. Trapped ion systems could then handle high-fidelity (accuracy) calculations of reaction and degradation pathways, where small differences separate a stable molecule from an unstable one.<br>
+Superconducting processors could run the algorithms that pass work back and forth between the quantum simulation and classical machine learning trained on existing materials data. Photonics, and spin-photonics of the kind pursued by quantum companies such as Photonic Inc. and Quandela, would serve as the networking layer between modules. Each component does what it is best at, and the fibre between them makes the whole behave as one. This is not a prediction that all these pieces will be integrated tomorrow. It is a way of seeing where the field may be heading.<br>
+The Shape Of What Comes Next<br>
+Modularity, in both its homogeneous and heterogeneous forms, reframes the central engineering challenge of quantum computing. The question is no longer only how to build a better qubit, but how to connect qubits, whether identical or diverse, into systems large and capable enough to matter. The interconnect, long treated as supporting infrastructure, is becoming the main event. Progress is genuine but early, as cross-module operations remain slower and noisier than those within a single chip.<br>
+The industry is moving from isolated processors toward connected systems, and from architecture debates toward system integration, where the future quantum data centre houses several technologies side by side, each carrying the part of the problem it handles best. The companies that learn to connect quantum processors, rather than merely enlarge them, are building the architecture on which a useful quantum industry will eventually run.<br>
+Firgun Ventures is a global quantum-first VC firm investing in Series A/B scale-ups. Views presented by contributors on these pages are their own and may or may not be the same as the views held by GQI.<br>
+May 28, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/beyond-a-single-quantum-chip-why-the-future-of-quantum-computing-is-modular/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="c4ab1e9d77fe3309.html" class="prev-next">&larr; Update on Quantinuum’s IPO Filing</a>
+  
+  
+  <a href="f5c3ae82667a4cac.html" class="prev-next">Qilimanjaro Deploys an Analog Quantum Computer at the Barcelona Supercomputing Center &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-05-29 14:55 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
