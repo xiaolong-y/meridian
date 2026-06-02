@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On hope — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="81d5892b30c96db8.html" title="QuiX Quantum Installs Real-Time Feed-Forward Control Unit for Photonic Computing Architecture">&larr; prev</a>
+    <a href="072e209215ccc2cb.html" title="MIcrosoft Announces an Improved Majorana Qubit Design">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">On hope</h1>
+    <div class="article-meta">
+      <span class="article-source">Shtetl-Optimized</span>
+      <span>Scott</span>
+      <span>1h</span>
+      <span class="article-category">quantum</span>
+      <span>918 words</span>
+      <span>5 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>On hope<br>
+The comments on my previous post, on recent AI breakthroughs in solving Erdös problems and beyond, must’ve set some sort of record for the number of separate reasons commenters offered me to despair about the future of humanity. All this in a post that I saw as relatively nerdy and anodyne, goring few oxen, when I clicked “Publish”!<br>
+According to some persistent commenters, the only reason I wrote about recent AI-enabled math breakthroughs is that I’m a shameless shill for the AI companies, my loud public criticisms of those companies being nothing more than cynical smokescreen. Except I’m also a laughable dupe of the AI companies.<br>
+See, AI, despite all appearances to the contrary, has not solved the Erdös unit distance problem or any other important math problems at all. It’s merely produced vast amounts of garbage via brute-force search, and then human mathematicians, sifting through the digital garbage pile, found some things they could call “proofs.” Except also, those human mathematicians aren’t even real mathematicians! They’re merely Hungarian combinatorialists, the kind obsessed with trivial, uninteresting Erdös problems, which it stands to reason that AI can now solve. AI will never touch the truly deep, creative math, epitomized by Grothendieck-style algebraic geometry.<br>
+(When I relayed this to a world-leading algebraic geometer of my acquaintance, he laughed and said that everyone has to tell themselves whatever it takes to cope with the situation. He himself has been using LLMs in his research, and while they can’t yet write his papers, he expects them to improve very rapidly.)<br>
+When pressed, my commenters made it explicit: Timothy Gowers, the Fields Medalist who advised the world’s mathematicians that he hopes they’re sitting down before he announced the news about the Erdös distance problem, isn’t a real mathematician, just a combinatorialist. Paul Erdös himself wasn’t a real mathematician either.<br>
+Oh, and also, I’m a genocidal Judeofascist Zionist. That entered the comments too, the pretext being that I had shared a GPT-written story about ancient Israelites.<br>
+Does anyone wonder why I blog much less than I used to? Seeing what humanity has to offer, as reflected in my comment section, I feel like maybe we should take our chances with our future AI overlords. Except that some of my comments are—ironically, given their content—likely to be AI-generated as well.<br>
+As I mentioned in my last comment section, these days friend after friend of mine, colleague after colleague, acquaintance after acquaintance is becoming a multimillionaire or even billionaire from startup equity. Meanwhile, I’ve scrupulously abstained from all of that.<br>
+Why? Well, probably the single biggest reason has been Shtetl-Optimized. I’ve zealously sought to protect my “neutrality” and “objectivity” as a commentator, on this free (and even ad-free) public forum, the one where I try every week to reason with anonymous trolls with “proton.me” email addresses who show up to call me a hack and a shill and a baby-killer and a dunce. Ironically, the actual startup billionaires hardly ever get called these sorts of names, mostly because they don’t offer the world a huge attack surface like I do. Or if they occasionally do get called them, they don’t care.<br>
+On reflection, all the commenters calling me a dunce have a point. When one looks at how I’ve chosen to live my life, versus how all my unattacked billionaire friends have, I kind of am a moron.<br>
+And yet I titled this post “On Hope.” In a situation like the present, one needs to find hope wherever I can. And right now, I’m choosing to find it in this open letter, which has been signed by over 1,250 professors at the University of California. Let me quote the beginning of it:<br>
+To the UC Regents, UCOP, Academic Senate leadership, and the people of California:<br>
+We write as University of California mathematics faculty, joined by faculty from other STEM disciplines. UC has long served students from every background and has been a powerful engine of social mobility for the people of California. That public trust must be protected for future generations. Today, UC’s mission is at risk. To preserve that mission:<br>
+We call for the reinstatement of the SAT/ACT mathematics requirement for applicants to STEM majors beginning with the 2027 admissions cycle, alongside STEM faculty oversight of readiness standards and admissions practices affecting those majors.<br>
+Over the past five years, we have seen a widening divergence in mathematical preparation levels within the same classroom. This trend indicates that current admissions practices do not provide a sufficiently reliable check on mathematical readiness for STEM majors. The UC San Diego Senate–Administration Workgroup on Admissions report documents this crisis in stark terms: in the last five years, the number of students whose mathematics skills fall below high school level increased nearly thirtyfold; moreover, 70% of those students fall below middle school levels, reaching roughly one in twelve members of the entering cohort. These findings are corroborated by data across our campuses…<br>
+Everywhere one looks right now, and on every part of the political spectrum, doofuses and blankfaces strut across the earth triumphantly. Yet there remain pockets of sanity. What reading this open letter told me is that the University of California STEM faculty is one of them.<br>
+With enough such pockets, I could live a perfectly reasonable rest of my life, from now until my natural death (or until AI changes all our lives beyond recognition), regardless of who shows up in 3 … 2 … 1 … with a “proton.me” email address to tell me otherwise.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://scottaaronson.blog/?p=9801" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="81d5892b30c96db8.html" class="prev-next">&larr; QuiX Quantum Installs Real-Time Feed-Forward Control Unit for Photonic Computing Architecture</a>
+  
+  
+  <a href="072e209215ccc2cb.html" class="prev-next">MIcrosoft Announces an Improved Majorana Qubit Design &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-06-02 20:44 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
