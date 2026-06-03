@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Three greats who we’ve lost — Meridian Reader</title>
+  <title>Qunova Computing Joins Japan’s JHPC-quantum Test User Program to Deploy High-Precision Chemistry Solvers — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,46 +126,55 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="b4e4e57012596146.html" title="Will you heed my warnings NOW?">&larr; prev</a>
-    <a href="2b1b4a6dc4ac6b5f.html" title="How I learned to stop worrying and…no, I’ve always adored entropy">next &rarr;</a>
+    <a href="1b91cf6783bbd5bc.html" title="Infineon Integrates Certified OPTIGA TPM into NVIDIA Jetson Thor to Secure Autonomous Fleet Frameworks">&larr; prev</a>
+    <a href="d45abd8a3330fad6.html" title="Oxford Quantum Circuits Closes £260 Million ($350 Million USD) Series C Round to Scale Superconducting Quantum Infrastructure Globally">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Three greats who we’ve lost</h1>
+    <h1 class="article-title">Qunova Computing Joins Japan’s JHPC-quantum Test User Program to Deploy High-Precision Chemistry Solvers</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>6w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>6h</span>
       <span class="article-category">quantum</span>
-      <span>428 words</span>
+      <span>513 words</span>
       <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Three greats who we’ve lost<br>
-Sir Charles Antony Richard Hoare (1934-2026) won the 1980 Turing Award for numerous contributions to computer science, including foundational work on concurrency and formal verification and the invention (with Dijkstra) of the dining philosophers problem. But he’s perhaps best known, to pretty much everyone who’s ever studied CS, as the inventor of the Quicksort algorithm. I’m sorry that I never got to meet him.<br>
-Michael O. Rabin (1931-2026), of Harvard University, was one of the founders of theoretical computer science and winner of the 1976 Turing Award. In 1959, he and Dana Scott introduced the concept of a “nondeterministic machine”—that is, a machine with exponentially many possible computation paths, which accepts if and only if there exists an accepting path—which would of course later play a central role in the formulation of P vs. NP problem. He’s also known for the Miller-Rabin primality test, which helped to establish randomness as a central concept in algorithms, and for many other things. He’s survived by his daughter Tal Rabin, also a distinguished theoretical computer scientist. I was privileged to meet the elder Rabin on several visits to Harvard, where he showed me great kindness.<br>
-Sir Anthony Leggett (1938-2026), of the University of Illinois Urbana-Champaign, was one of the great quantum physicists of the late 20th century, and recipient of the 2003 Nobel Prize for his work on superfluidity. When I knew him, he was a sort of elder statesman of quantum computing and information, who helped remind the rest of us of why we got into the field in the first place—not to solve Element Distinctness moderately faster, but to learn the truth of quantum mechanics itself. Tony insisted, over and over, that the validity of quantum mechanics on the scale of everyday life is an open empirical problem, to be settled by better experiments and not by a-priori principles. I first met Tony at a Gordon Research Conference in southern California. Even though I was then a nobody and he a recent Nobel laureate, he took the time to listen to my ideas about Sure/Shor separators, and to suggest (correctly) what we now call 2D cluster states as an excellent candidate for what I wanted. In all my later interactions with Tony, at both the University of Waterloo (where he was visiting faculty for a while) and at UIUC (where my wife Dana and I considered taking jobs), he was basically the friendliest, funniest guy you could possibly meet at his level of achievement and renown. I was bummed to hear about his passing.</p>
+    <p>Quantum software developer Qunova Computing has signed a Memorandum of Understanding (MoU) to join JHPC-quantum (Japan High-Performance Computing), a national quantum-supercomputing convergence project funded by the New Energy and Industrial Technology Development Organization (NEDO). The agreement designates Qunova as an official participant in the initiative’s Test User Program following a technical selection process managed by the RIKEN Center for Computational Science. Out of 21 participating organizations selected globally, Qunova is one of only two non-Japanese entities admitted, granting the company direct utility access to Japan’s flagship integrated classical-quantum computational nodes.<br>
+Technical Architecture & Algorithmic Handover Mechanisms<br>
+The computing infrastructure managed under the JHPC-quantum framework addresses the integration limits between classical Message Passing Interface (MPI) supercomputing clusters and distributed quantum coprocessors. Traditional Variational Quantum Eigensolver (VQE) algorithms frequently encounter performance degradation on Noisy Intermediate-Scale Quantum (NISQ) hardware due to the high volume of quantum measurements (shots) required to achieve chemical accuracy, alongside processing overheads when passing variables between Python-based developer frameworks and high-performance classical nodes. To resolve these execution barriers, Qunova will deploy its proprietary Handover Iterative Variational Quantum Eigensolver (HI-VQE) algorithm.<br>
+The HI-VQE framework restructures standard hybrid processing parameters by introducing a mathematical “handover” loop that splits computational loads based on hardware efficiency:<br>
+- Core Subspace Extraction: The algorithm utilizes the quantum processor as a targeted coprocessor, executing shallow-depth hardware circuits to isolate the specific multi-reference electronic configurations that dominate a molecule’s ground state. Qunova Computing<br>
+- Problem Transformation: The initial, high-dimensional Hamiltonian is rewritten and compressed into a simplified active space framework, reducing the cumulative quantum sampling burden.<br>
+- Classical Optimization: The transformed problem is passed back to the classical supercomputer to resolve the remaining configuration interactions, achieving an energy precision threshold of 1.6 mHa (chemical accuracy). Qunova Computing<br>
+- Target Application: The joint project will apply this hybrid stack to benchmark strongly correlated electronic systems, focusing on iron-sulfur (Fe–S) clusters—a complex 40-qubit active space molecular simulation that serves as a diagnostic standard for battery design, materials informatics, and small-molecule drug discovery.<br>
+Ecosystem Convergence & Hybrid Infrastructure Mapping<br>
+The Test User Program provides Qunova with allocation time across an interconnected national hardware network overseen by RIKEN and SoftBank. The compute infrastructure links Japan’s flagship classical supercomputer, Fugaku, alongside next-generation NVIDIA Grace-Blackwell liquid-cooled AI clusters via a high-speed, low-latency networking bus. This classical layer is integrated with local quantum backends, including an on-premises superconducting IBM Quantum System Two installed in Kobe (“IBM Kobe”) and a high-fidelity trapped-ion Quantinuum platform located in Wako (“Reimei”).<br>
+Operating midway through its five-year R&D mandate running from November 2023 through October 2028, the JHPC-quantum project uses a unified API layer to manage job queues and cross-node data exchanges. By incorporating Qunova’s hardware-agnostic solvers into this multi-platform testbed, the initiative aims to establish production-grade software libraries ahead of the platform’s scheduled commercial cloud pre-release in 2028.<br>
+You can review the official partnership announcement via the Qunova Computing news room here. For an analysis of the selection benchmarks, intellectual property protocols, and active enterprise participation parameters governing the hybrid testbed, access the primary JHPC-quantum program registry here.<br>
+June 3, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9704" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/qunova-computing-joins-japans-jhpc-quantum-test-user-program-to-deploy-high-precision-chemistry-solvers/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="b4e4e57012596146.html" class="prev-next">&larr; Will you heed my warnings NOW?</a>
+  <a href="1b91cf6783bbd5bc.html" class="prev-next">&larr; Infineon Integrates Certified OPTIGA TPM into NVIDIA Jetson Thor to Secure Autonomous Fleet Frameworks</a>
   
   
-  <a href="2b1b4a6dc4ac6b5f.html" class="prev-next">How I learned to stop worrying and…no, I’ve always adored entropy &rarr;</a>
+  <a href="d45abd8a3330fad6.html" class="prev-next">Oxford Quantum Circuits Closes £260 Million ($350 Million USD) Series C Round to Scale Superconducting Quantum Infrastructure Globally &rarr;</a>
   
 </div>
 
