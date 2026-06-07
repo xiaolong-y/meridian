@@ -139,7 +139,7 @@
       <span>Qiskit</span>
       <span>134w</span>
       <span class="article-category">quantum</span>
-      <span>1979 words</span>
+      <span>1976 words</span>
       <span>10 min read</span>
     </div>
   </div>
@@ -151,26 +151,15 @@ By Abby Mitchell, Luciano Bello, Matthew Treinish, Jake Lishman<br>
 We’re excited to announce the release of Qiskit v0.45! Read on for a summary of the key highlights and, as always, you can find the full release notes in our documentation here. With this being the last release before Qiskit 1.0, you’ll notice a lot of changes which we’ve highlighted in the article below.<br>
 The TL;DR<br>
 The biggest updates we’re going to cover include the following:<br>
-- New<br>
-passmanager<br>
-submodule to make constructing passmanagers easier - New hardware-aware synthesis functionality, so you can now write a synthesis plugin that uses hardware information<br>
-- New methods to make it easier to use<br>
-TranspileLayout<br>
-- New<br>
-SabrePreLayout<br>
-pass to provide a better “first guess” initial layout before runningSabreLayout<br>
+- New passmanagersubmodule to make constructing passmanagers easier<br>
+- New hardware-aware synthesis functionality, so you can now write a synthesis plugin that uses hardware information<br>
+- New methods to make it easier to use TranspileLayout<br>
+- New SabrePreLayoutpass to provide a better “first guess” initial layout before runningSabreLayout<br>
 - Performance improvements due to refactoring gates into singletons (Note: Some attributes will now error because of mutability changes)<br>
-Unroller<br>
-pass,bind_parameters()<br>
-and any duplicated gate methods are now deprecated.qiskit.extensions<br>
-is pending deprecation- Deprecated code from old releases (0.16, 0.19, 0.20 and 0.21) has been removed<br>
+- Unrollerpass,- bind_parameters()and any duplicated gate methods are now deprecated.- qiskit.extensionsis pending deprecation<br>
+- Deprecated code from old releases (0.16, 0.19, 0.20 and 0.21) has been removed<br>
 An important note about package versioning<br>
-If you’re confused about version numbers and think you may have missed out on a lot — don’t panic! In our last release, we announced that we had renamed Qiskit Terra to just Qiskit. This means the python package qiskit<br>
-(which used to refer to the metapackage codebase) now refers to the codebase that was formerly named qiskit-terra<br>
-. The last phase of this renaming process is to sync the version numbers between the old qiskit<br>
-metapackage (the last release was v0.44) and the old qiskit-terra<br>
-(the last release was v0.25). We chose to stick with the higher version number, so this release of qiskit<br>
-will be v0.45.<br>
+If you’re confused about version numbers and think you may have missed out on a lot — don’t panic! In our last release, we announced that we had renamed Qiskit Terra to just Qiskit. This means the python package qiskit (which used to refer to the metapackage codebase) now refers to the codebase that was formerly named qiskit-terra. The last phase of this renaming process is to sync the version numbers between the old qiskit metapackage (the last release was v0.44) and the old qiskit-terra (the last release was v0.25). We chose to stick with the higher version number, so this release of qiskit will be v0.45.<br>
 Top new features & improvements<br>
 In this section we’ll cover some of the most important new features and enhancements included in this release. If you want to know more about these, or other features that didn’t make it into this article, you can see the full list of new features here.<br>
 New passmanager sub-module<br>
@@ -179,16 +168,17 @@ The following example demonstrates how you can construct a toy passmanager that,
 from qiskit.passmanager import BasePassManager, GenericPass, ConditionalController<br>
 # create custom passmanager using BasePassManager<br>
 class ToyPassManager(BasePassManager):<br>
-# convert input integer to string<br>
-def _passmanager_frontend(self, input_program: int, **kwargs) -> str:<br>
-return str(input_program)<br>
-# convert IR string to integer for output<br>
-def _passmanager_backend(self, passmanager_ir: str, in_program: int, **kwargs) -> int:<br>
-return int(passmanager_ir)<br>
+    # convert input integer to string<br>
+    def _passmanager_frontend(self, input_program: int, **kwargs) -> str:<br>
+        return str(input_program)<br>
+    <br>
+    # convert IR string to integer for output<br>
+    def _passmanager_backend(self, passmanager_ir: str, in_program: int, **kwargs) -> int:<br>
+        return int(passmanager_ir)<br>
 # Create a pass to remove a number if it equals 5<br>
 class RemoveFive(GenericPass):<br>
-def run(self, passmanager_ir: str):<br>
-return passmanager_ir.replace("5", "")<br>
+    def run(self, passmanager_ir: str):<br>
+        return passmanager_ir.replace("5", "")<br>
 # Initialize pass<br>
 task = RemoveFive()<br>
 # Initialize passmanager<br>
@@ -196,29 +186,16 @@ pm = ToyPassManager()<br>
 # Add pass to passmanager<br>
 pm.append(task)<br>
 # Run the passmanager<br>
-pm.run([123456789, 45654, 36785554])<br>
-Output:<br>
-[12346789, 464, 36784]<br>
-Improved workflow for transpiler layout<br>
-A number of new methods have been added to simplify the workflow for using and applying the TranspileLayout<br>
-class.<br>
-TranspileLayout<br>
-itself now has the following new methods:<br>
-.initial_index_layout()<br>
-— returns a python list ofTranspileLayout.initial_layout<br>
-.routing_permutation()<br>
-— returns a python list ofTranspileLayout.final_layout<br>
-.initial_virtual_layout()<br>
-— same functionality asTranspileLayout.initial_layout<br>
-but with the option to exclude auxilary qubits by setting the argumentfilter_ancillas=False<br>
-.final_index_layout()<br>
-— returns a python list of the output positions for each qubit from the input circuit to the transpiler.final_virtual_layout()<br>
-— returns aLayout<br>
-object of the output positions for each qubit from the input circuit to the transpiler<br>
-In addition, the SparsePauliOp<br>
-class now has a new method, apply_layout()<br>
-, that enables a transpiled layout to be applied to an observable locally before passing it to a primitive .run()<br>
-function. E.g.:<br>
+pm.run([123456789, 45654, 36785554])Output:<br>
+[12346789, 464, 36784]Improved workflow for transpiler layout<br>
+A number of new methods have been added to simplify the workflow for using and applying the TranspileLayout class.<br>
+TranspileLayout itself now has the following new methods:<br>
+- .initial_index_layout()— returns a python list of- TranspileLayout.initial_layout<br>
+- .routing_permutation()— returns a python list of- TranspileLayout.final_layout<br>
+- .initial_virtual_layout()— same functionality as- TranspileLayout.initial_layoutbut with the option to exclude auxilary qubits by setting the argument- filter_ancillas=False<br>
+- .final_index_layout()— returns a python list of the output positions for each qubit from the input circuit to the transpiler<br>
+- .final_virtual_layout()— returns a- Layoutobject of the output positions for each qubit from the input circuit to the transpiler<br>
+In addition, the SparsePauliOp class now has a new method, apply_layout(), that enables a transpiled layout to be applied to an observable locally before passing it to a primitive .run() function. E.g.:<br>
 from qiskit.circuit.library import RealAmplitudes<br>
 from qiskit.quantum_info import SparsePauliOp<br>
 from qiskit.primitives import BackendEstimator<br>
@@ -231,14 +208,9 @@ estimator = BackendEstimator(backend=backend, skip_transpilation=True)<br>
 thetas = [0, 1, 1, 2, 3, 5]<br>
 transpiled_psi = transpile(psi, backend, optimization_level=3)<br>
 permuted_op = H1.apply_layout(transpiled_psi.layout)<br>
-res = estimator.run(transpiled_psi, permuted_op, thetas).result()<br>
-New SabrePreLayout pass<br>
-This release includes a new transpiler pass, called SabrePreLayout<br>
-, designed to provide a better initial layout before running SabreLayout<br>
-. This layout attempts to improve transpilation outputs in particular for large device topologies.<br>
-The following example demonstrates how to use the SabrePreLayout<br>
-pass before running a SabreLayout<br>
-pass:<br>
+res = estimator.run(transpiled_psi, permuted_op, thetas).result()New SabrePreLayout pass<br>
+This release includes a new transpiler pass, called SabrePreLayout, designed to provide a better initial layout before running SabreLayout. This layout attempts to improve transpilation outputs in particular for large device topologies.<br>
+The following example demonstrates how to use the SabrePreLayout pass before running a SabreLayout pass:<br>
 import math<br>
 from qiskit.transpiler import CouplingMap, PassManager<br>
 from qiskit.circuit.library import EfficientSU2<br>
@@ -248,13 +220,12 @@ qc.assign_parameters([math.pi / 2] * len(qc.parameters), inplace=True)<br>
 qc.measure_all()<br>
 coupling_map = CouplingMap.from_heavy_hex(7)<br>
 pm = PassManager(<br>
-[<br>
-SabrePreLayout(coupling_map=coupling_map),<br>
-SabreLayout(coupling_map),<br>
-]<br>
+  [<br>
+    SabrePreLayout(coupling_map=coupling_map),<br>
+    SabreLayout(coupling_map),<br>
+  ]<br>
 )<br>
-pm.run(qc)<br>
-For more details on how this new pass does its thing, check out the PR for a more detailed description of the logic behind its development.<br>
+pm.run(qc)For more details on how this new pass does its thing, check out the PR for a more detailed description of the logic behind its development.<br>
 Note: This new feature is an experimental pass and is not yet included in the preset passmanagers.<br>
 Performance improvements<br>
 In this section, we’ll cover the most significant performance improvements that users will gain with this release.<br>
@@ -263,139 +234,59 @@ The transpiler has undergone some refactoring under the hood, resulting in perfo
 The graphs below show the difference in transpile time between Qiskit v0.44 and v0.55 across a range of circuit depths and optimization levels:<br>
 Faster circuit construction and QASM parsing due to Singleton classes<br>
 The following unparameterised and non-controlled gate classes have been refactored to be singletons:<br>
-DCXGate<br>
-,ECRGate<br>
-,HGate<br>
-,IGate<br>
-,iSwapGate<br>
-,SGate<br>
-,SdgGate<br>
-,SwapGate<br>
-,SXGate<br>
-,SXdgGate<br>
-,TGate<br>
-,TdgGate<br>
-,XGate<br>
-,RCCXGate<br>
-,RC3XGate<br>
-,YGate<br>
-,ZGate<br>
-,CHGate<br>
-,CSGate<br>
-,CSdgGate<br>
-,CSwapGate<br>
-,CSXGate<br>
-,CXGate<br>
-,CCXGate<br>
-,C3SXGate<br>
-,C3XGate<br>
-,C4XGate<br>
-,CYGate<br>
-,CZGate<br>
+- DCXGate,- ECRGate,- HGate,- IGate,- iSwapGate,- SGate,- SdgGate,- SwapGate,- SXGate,- SXdgGate,- TGate,- TdgGate,- XGate,- RCCXGate,- RC3XGate,- YGate,- ZGate,- CHGate,- CSGate,- CSdgGate,- CSwapGate,- CSXGate,- CXGate,- CCXGate,- C3SXGate,- C3XGate,- C4XGate,- CYGate,- CZGate<br>
 As a result, implementing these gates has become significantly more efficient, requiring less memory, reducing circuit construction time and speeding up QASM parsing time. These effects are most noticeable in large circuits, and highlight the efforts being made to ensure Qiskit can continue to support users as they move towards utility-scale experimentation.<br>
 See below a comparison of circuit build time and parameter binding time between Qiskit v0.44 and 0.45:<br>
 New deprecations<br>
 In this section we’ll cover some of the most important new deprecations in this release. This section aims to highlight things that will now start throwing deprecation warnings and will be removed in a later release, following Qiskit’s Deprecation Policy (documented in full here). Due to this being the last release before Qiskit 1.0, you may see more things than usual being highlighted in this section.<br>
 For guidance on how to deal with deprecation warnings, check out the deprecations section in our previous article here. You can see more detail about the deprecations specific to this release here.<br>
 qiskit.extensions<br>
-The qiskit.extensions<br>
-sub-module is pending deprecation and will be fully deprecated in a future release, with its contents either being moved to other sub-modules or deprecated.<br>
-The following qiskit.extensions<br>
-classes have been moved to the circuit library, users should update their import statements accordingly, using from qiskit.circuit.library import ...<br>
-instead of from qiskit.extensions import ...<br>
-.<br>
-UCPauliRotGate<br>
-,UCRXGate<br>
-,UCRYGate<br>
-,UCRZGate<br>
-,UnitaryGate<br>
-,HamiltonianGate<br>
-,Initialize<br>
-The following qiskit.extensions<br>
-classes have been deprecated, due to them being similar to existing functionality elsewhere:<br>
-SingleQubitUnitary<br>
-andSnapshot<br>
-Additionally, the following QuantumCircuit<br>
-methods have been deprecated as part of this change:<br>
-.isometry()<br>
-, .snapshot()<br>
-,.ucrx()<br>
-,.ucry()<br>
-,.ucrz()<br>
-,.squ()<br>
-,.diagonal()<br>
-and.hamiltonian()<br>
+The qiskit.extensions sub-module is pending deprecation and will be fully deprecated in a future release, with its contents either being moved to other sub-modules or deprecated.<br>
+The following qiskit.extensions classes have been moved to the circuit library, users should update their import statements accordingly, using from qiskit.circuit.library import ... instead of from qiskit.extensions import ... .<br>
+- UCPauliRotGate,- UCRXGate,- UCRYGate,- UCRZGate,- UnitaryGate,- HamiltonianGate,- Initialize<br>
+The following qiskit.extensions classes have been deprecated, due to them being similar to existing functionality elsewhere:<br>
+- SingleQubitUnitaryand- Snapshot<br>
+Additionally, the following QuantumCircuit methods have been deprecated as part of this change:<br>
+- .isometry(), .- snapshot(),- .ucrx(),- .ucry(),- .ucrz(),- .squ(),- .diagonal()and- .hamiltonian()<br>
 Unroller transpiler pass<br>
-The Unroller<br>
-pass has been deprecated due to its functionality being superseded by the BasisTranslator<br>
-pass, which can be used in a wider range of use cases than was possible with the Unroller<br>
-pass.<br>
-For users currently using the Unroller<br>
-pass, we recommended updating your code to use a custom pass manager with the BasisTranslator<br>
-pass. For example:<br>
+The Unroller pass has been deprecated due to its functionality being superseded by the BasisTranslator pass, which can be used in a wider range of use cases than was possible with the Unroller pass.<br>
+For users currently using the Unroller pass, we recommended updating your code to use a custom pass manager with the BasisTranslator pass. For example:<br>
 from qiskit.transpiler import PassManager<br>
 from qiskit.transpiler.passes import UnrollCustomDefinitions, BasisTranslator<br>
 from qiskit.circuit.equivalence_library import SessionEquivalenceLibrary as sel<br>
 circuit = YOUR_CIRCUIT<br>
 basis_gates = YOUR_BASIS_GATE_LIST<br>
 pm = PassManager(<br>
-[<br>
-UnrollCustomDefinitions(sel, basis_gates=basis_gates),<br>
-BasisTranslator(sel, target_basis=basis_gates),<br>
-]<br>
+ [<br>
+   UnrollCustomDefinitions(sel, basis_gates=basis_gates),<br>
+   BasisTranslator(sel, target_basis=basis_gates),<br>
+ ]<br>
 )<br>
-pm.run(circuit)<br>
-In addition, as part of this deprecation, the use of the unroller<br>
-value for the translation_method<br>
-argument in the transpile()<br>
-function is also deprecated. Users should use the default translator<br>
-option instead. So, instead of transpile(qc, backend, translation_method="unroller", ...)<br>
-, users can use transpile(qc, backend, ...)<br>
-.<br>
+pm.run(circuit)In addition, as part of this deprecation, the use of the unroller value for the translation_method argument in the transpile() function is also deprecated. Users should use the default translator option instead. So, instead of transpile(qc, backend, translation_method="unroller", ...) , users can use transpile(qc, backend, ...) .<br>
 bind_parameters()<br>
-The functionality of assign_parameters()<br>
-is the same as that of bind_parameters()<br>
-, so we’ve made the decision to deprecate bind_parameters()<br>
-in an effort to clean up the Qiskit codebase. Users should update their code to use assign_parameters()<br>
-instead of bind_parameters()<br>
-going forward.<br>
+The functionality of assign_parameters() is the same as that of bind_parameters() , so we’ve made the decision to deprecate bind_parameters() in an effort to clean up the Qiskit codebase. Users should update their code to use assign_parameters() instead of bind_parameters() going forward.<br>
 Duplicated circuit gate methods<br>
-There are certain QuantumCircuit<br>
-methods that apply the same gate as another existing method, so duplicated gate methods have been deprecated, and going forward only one gate method will exist for each gate. The following methods are being deprecated by this change:<br>
-.i()<br>
-is deprecated; users should use.id()<br>
-instead.cnot()<br>
-is deprecated; users should use.cx()<br>
-instead.toffoli()<br>
-is deprecated; users should use.ccx()<br>
-instead.mct()<br>
-is deprecated; users should use.mcx()<br>
-instead.fredkin()<br>
-is deprecated; users should use.cswap()<br>
-instead<br>
+There are certain QuantumCircuit methods that apply the same gate as another existing method, so duplicated gate methods have been deprecated, and going forward only one gate method will exist for each gate. The following methods are being deprecated by this change:<br>
+- .i()is deprecated; users should use- .id()instead<br>
+- .cnot()is deprecated; users should use- .cx()instead<br>
+- .toffoli()is deprecated; users should use- .ccx()instead<br>
+- .mct()is deprecated; users should use- .mcx()instead<br>
+- .fredkin()is deprecated; users should use- .cswap()instead<br>
 Breaking changes<br>
 In this section we’ll highlight any changes that could cause user’s existing code to break when updating to this latest version, such as deprecated classes/functions that have now been removed.<br>
 Deprecated code from numerous prior releases has been removed<br>
 Due to the upcoming release of Qiskit 1.0, we are doing as much as we can to remove outdated code that has been throwing deprecation warnings for 3 months or more (in line with the removal timeline stipulated in our deprecation policy). In this release we have removed all code that was deprecated in Qiskit (Terra) releases 0.16, 0.19, 0.20 and 0.21. Users who are using deprecated code from these release versions should check the deprecation warnings for information on how to update your code, or consider pinning your Qiskit version to v0.44 or earlier.<br>
 Singleton Gates<br>
-Due to unparameterised and non-controlled gates being refactored to singletons, users will no longer be able to set the label<br>
-, condition<br>
-, duration<br>
-, or unit<br>
-attributes after instantiating a gate object. Instead users will now only be able to set these attributes as arguments when creating a new gate object, or use the new method .to_mutable()<br>
-to get a mutable copy of the gate and set the attribute on that copy instead of the original object.<br>
+Due to unparameterised and non-controlled gates being refactored to singletons, users will no longer be able to set the label, condition, duration, or unit attributes after instantiating a gate object. Instead users will now only be able to set these attributes as arguments when creating a new gate object, or use the new method .to_mutable() to get a mutable copy of the gate and set the attribute on that copy instead of the original object.<br>
 For example, the following code will now throw an error:<br>
 from qiskit.circuit.library import XGate<br>
 x_gate = XGate()<br>
-xgate.label = "My X Gate"<br>
-Instead, this example could be refactored like so:<br>
+xgate.label = "My X Gate"Instead, this example could be refactored like so:<br>
 from qiskit.circuit.library import XGate<br>
-x_gate = XGate(label="My X Gate")<br>
-or alternatively:<br>
+x_gate = XGate(label="My X Gate")or alternatively:<br>
 from qiskit.circuit.library import XGate<br>
 x_gate = XGate().to_mutable()<br>
-xgate.label = "My X Gate"<br>
-And there you have it! The most important details of the latest release. Remember, if you want to put ideas forward for future versions of Qiskit, you can always open a GitHub issue to request a feature or report a bug! And if you want to follow what’s coming up in the next release (as well as releases for other packages in the Qiskit Ecosystem), you can take a look at the Qiskit Release Planning Wiki.<br>
+xgate.label = "My X Gate"And there you have it! The most important details of the latest release. Remember, if you want to put ideas forward for future versions of Qiskit, you can always open a GitHub issue to request a feature or report a bug! And if you want to follow what’s coming up in the next release (as well as releases for other packages in the Qiskit Ecosystem), you can take a look at the Qiskit Release Planning Wiki.<br>
 Many people contributed to this release, special thanks to (in alphabetical order): Abby Mitchell, Abhiraj Shrotriya, Abigail J. Cross, Alexander Ivrii, AlexanderGroeger, Andir16, Aniket Patil, Christopher J. Wood, David McKay, Diego Emilio Serrano, Edwin Navarro, Elena Peña Tapia, Eric Arellano, Erick Winston, Evgenii Zheltonozhskii, Henry Zou, Hunter Kemeny, Ikko Eltociear Ashimine, Ikko Hamamura, Jake Lishman, Jay M. Gambetta, John Lapeyre, Joonghoon Lee, Julien Gacon, Kevin Hartman, Kevin J. Sung, Kyle Lund, Luciano Bello, Mahnoor Fatima, Matthew Treinish, Michał Górny, MozammilQ, Naoki Kanazawa, Paul Nation, Pieter Eendebak, Raghav, Raynel Sanchez, Ryuhei Yoshida, SamD-1998, Santhosh G S, Simone Gasperini, Takashi Imamichi, Toshinari Itoko, TsafrirA, Will Shanks, adigaboy, atharva-satpute, danielleodigie, jaeunkim, rht</p>
   </div>
   
@@ -419,7 +310,7 @@ Many people contributed to this release, special thanks to (in alphabetical orde
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-06-07 13:45 UTC
+  Generated 2026-06-07 19:18 UTC
 </div>
 
 <script type="module">

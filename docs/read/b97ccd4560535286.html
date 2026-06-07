@@ -139,7 +139,7 @@
       <span>Qiskit</span>
       <span>139w</span>
       <span class="article-category">quantum</span>
-      <span>2145 words</span>
+      <span>2123 words</span>
       <span>11 min read</span>
     </div>
   </div>
@@ -157,51 +157,39 @@ For example, the quantum Fourier transform (QFT) is an essential building block 
 import numpy as np<br>
 from qiskit import QuantumCircuit<br>
 def build_qft(n):<br>
-circuit = QuantumCircuit(n)<br>
-for j in reversed(range(n)):<br>
-circuit.h(j)<br>
-for k in reversed(range(j)):<br>
-circuit.cp(np.pi * 2. ** (k - j), j, k)<br>
-for j in range(n // 2):<br>
-circuit.swap(j, n - j - 1)<br>
-return circuit<br>
-qft = build_qft(5)<br>
-But users who want to save time on this common quantum computing task can simply import the QFT from the circuit library and use it in their subroutines like so:<br>
+   circuit = QuantumCircuit(n)<br>
+   for j in reversed(range(n)):<br>
+       circuit.h(j)<br>
+       for k in reversed(range(j)):<br>
+           circuit.cp(np.pi * 2. ** (k - j), j, k)<br>
+   for j in range(n // 2):<br>
+       circuit.swap(j, n - j - 1)<br>
+   return circuit<br>
+qft = build_qft(5)But users who want to save time on this common quantum computing task can simply import the QFT from the circuit library and use it in their subroutines like so:<br>
 from qiskit.circuit.library import QFT<br>
-qft = QFT(5)<br>
-Most Qiskit users are aware the circuit library exists, but not everyone realizes just how useful it can be. That’s why we suggest all users spend time familiarizing themselves with it. The circuit library provides essential tools for building quantum algorithms, and gives users the ability to write programs at a higher level of abstraction. Gates and other elements found in the circuit library are developed so that users can easily plug them into their own quantum circuits using the QuantumCircuit.append()<br>
-method, meaning users shouldn’t need to concern themselves with the lower level details of how those elements actually work.<br>
+qft = QFT(5)Most Qiskit users are aware the circuit library exists, but not everyone realizes just how useful it can be. That’s why we suggest all users spend time familiarizing themselves with it. The circuit library provides essential tools for building quantum algorithms, and gives users the ability to write programs at a higher level of abstraction. Gates and other elements found in the circuit library are developed so that users can easily plug them into their own quantum circuits using the QuantumCircuit.append() method, meaning users shouldn’t need to concern themselves with the lower level details of how those elements actually work.<br>
 The circuit library also provides tools that help users investigate properties of the quantum system itself, such as measuring quantum volume, and it offers useful information about the gates and circuits we use most often. It really is a library in the truest sense—in many cases; documentation for gates and other objects include links to a paper detailing the theory upon which they’re based.<br>
 Now, let’s take a look at some of the different kinds of circuits and gates that users will find in the Qiskit Circuit Library.<br>
 Variational quantum circuits (“N-local circuits”)<br>
 The N-local circuits sub-module of the circuit library contains a selection of subclasses that serve as parameterized models in variational algorithms, such as the variational quantum eigensolver (VQE) algorithm and the quantum approximate optimization algorithm (QAOA).<br>
 In fields like chemistry and physics, these algorithms serve to approximate wave functions efficiently, which is a task that is generally hard for classical computers. Variational algorithms are also useful for problems in classical optimization and machine learning, where a quantum computer might enable a better optimization of the objective.<br>
-Let’s take a look at an example of how to define a problem instance for a VQE algorithm, using the EfficientSU2<br>
-ansatz circuit taken from the circuit library. In this example, we’ll derive our Hamiltonian from a quantum chemistry problem:<br>
+Let’s take a look at an example of how to define a problem instance for a VQE algorithm, using the EfficientSU2 ansatz circuit taken from the circuit library. In this example, we’ll derive our Hamiltonian from a quantum chemistry problem:<br>
 from qiskit.quantum_info import SparsePauliOp<br>
 hamiltonian = SparsePauliOp.from_list(<br>
-[("YZ", 0.3980), ("ZI", -0.3980), ("ZZ", -0.0113), ("XX", 0.1810)]<br>
-)<br>
-As mentioned above, our choice of ansatz is the EfficientSU2 circuit. By default, the EfficientSU2<br>
-circuit linearly entangles qubits. This makes it ideal for use in quantum hardware with limited connectivity:<br>
+    [("YZ", 0.3980), ("ZI", -0.3980), ("ZZ", -0.0113), ("XX", 0.1810)]<br>
+)As mentioned above, our choice of ansatz is the EfficientSU2 circuit. By default, the EfficientSU2 circuit linearly entangles qubits. This makes it ideal for use in quantum hardware with limited connectivity:<br>
 from qiskit.circuit.library import EfficientSU2<br>
 ansatz = EfficientSU2(hamiltonian.num_qubits)<br>
-ansatz.draw("mpl")<br>
-Here’s what the circuit looks like:<br>
+ansatz.draw("mpl")Here’s what the circuit looks like:<br>
 Try printing with the following code to see how the circuit is structured!<br>
 Based on the previous figure, we know that our ansatz circuit is defined by a vector of parameters, θi, with the total number given by:<br>
 num_params = ansatz.num_parameters<br>
-print(num_params)<br>
-And in this case we get the output:<br>
-16<br>
-For an example on how to use the circuit library to run a VQE, see: https://qiskit.org/ecosystem/algorithms/tutorials/01_algorithms_introduction.html<br>
+print(num_params)And in this case we get the output:<br>
+16For an example on how to use the circuit library to run a VQE, see: https://qiskit.org/ecosystem/algorithms/tutorials/01_algorithms_introduction.html<br>
 Data encoding circuits<br>
 Data encoding circuits enable the preparation of input data for QML applications. There are several techniques to encode classical data, or features, into a quantum state, for example:<br>
-- Amplitude encoding: Encode the features into the amplitude of a basis state. This allows to store<br>
-2^n<br>
-numbers in a single state, but can be costly to implement - Basis encoding: Encode an integer<br>
-k<br>
-by preparing the corresponding basis state|k><br>
+- Amplitude encoding: Encode the features into the amplitude of a basis state. This allows to store 2^nnumbers in a single state, but can be costly to implement<br>
+- Basis encoding: Encode an integer kby preparing the corresponding basis state|k><br>
 - Angle encoding: Encode features as rotation angles in a variational quantum circuit<br>
 Deciding which of these approaches is best really depends upon the specifics of your application. On current quantum computers, however, we often use angle encoding.<br>
 One example is the ZZFeatureMap found in the circuit library:<br>
@@ -209,11 +197,9 @@ from qiskit.circuit.library import ZZFeatureMap<br>
 feature = [0.2, 0.4, 0.8]<br>
 feature_map = ZZFeatureMap(feature_dimension=len(feature))<br>
 encoded = feature_map.assign_parameters(feature)<br>
-encoded.draw('mpl')<br>
-which prints<br>
+encoded.draw('mpl')which prints<br>
 Try printing with the following code to see how the circuit is structured!<br>
-encoded.decompose().draw('mpl')<br>
-For an example of how to use data encoding circuits for classication, see: https://qiskit.org/ecosystem/machine-learning/tutorials/02_neural_network_classifier_and_regressor.html.<br>
+encoded.decompose().draw('mpl')For an example of how to use data encoding circuits for classication, see: https://qiskit.org/ecosystem/machine-learning/tutorials/02_neural_network_classifier_and_regressor.html.<br>
 Time evolution circuits<br>
 Time evolution circuits allow us to evolve a quantum state in time. Physics researchers make use of them for a wide-array of applications, including investigations of thermalization properties or potential phase transitions of a system. Time evolution circuits are also a fundamental building block of chemistry wave functions—e.g., for unitary coupled-cluster trial states—and of the QAOA algorithm we use for optimization problems.<br>
 from qiskit.circuit.library import PauliEvolutionGate<br>
@@ -226,33 +212,26 @@ state.h(1)<br>
 evolution = PauliEvolutionGate(hamiltonian, time=1)<br>
 # evolve state by appending the evolution gate<br>
 state.append(evolution)<br>
-state.draw('mpl')<br>
-And in this case we get the output:<br>
+state.draw('mpl')And in this case we get the output:<br>
 Benchmarking and complexity theory circuits<br>
 Benchmarking and complexity theory circuits are a vital tool for anyone working with quantum computers. They give us a sense of how well our hardware is actually working, and the true level of computational complexity involved in the problems we want to solve.<br>
-One of the most important examples of this is the QuantumVolume<br>
-circuit, which allows us to quantify the largest random circuit of equal width and depth that a near-term quantum computer of relatively modest size can successfully implement. This single metric can help us understand how well the quantum computer is doing in terms of fidelity of operations, qubit connectivity, gate set calibration, and circuit rewiring tool chains.<br>
+One of the most important examples of this is the QuantumVolume circuit, which allows us to quantify the largest random circuit of equal width and depth that a near-term quantum computer of relatively modest size can successfully implement. This single metric can help us understand how well the quantum computer is doing in terms of fidelity of operations, qubit connectivity, gate set calibration, and circuit rewiring tool chains.<br>
 A quantum volume model circuit comprises layers of Haar random elements of SU(4) applied between corresponding pairs of qubits in a random bipartition. Here’s an example of a quantum volume circuit built in Qiskit that runs on four qubits:<br>
 from qiskit.circuit.library import QuantumVolume<br>
 qv = QuantumVolume(4)<br>
-qv.decompose().decompose().draw('mpl')<br>
-Some quantum circuits have been shown to deliver advantage over classical algorithms. Many readers will already be familiar with some of the more famous examples of these circuits, which include Shor’s algorithm for prime factorizationand the Grover search algorithm.<br>
+qv.decompose().decompose().draw('mpl')Some quantum circuits have been shown to deliver advantage over classical algorithms. Many readers will already be familiar with some of the more famous examples of these circuits, which include Shor’s algorithm for prime factorizationand the Grover search algorithm.<br>
 The circuit library contains circuits that are conjectured to be hard to simulate classically, such as the IQP circuit. (Learn more about the IQP circuit here.)<br>
-It also contains building blocks for algorithms that are believed to provide quantum advantage. Some of these are of a more practical nature. For example, Qiskit users can build the circuit for Grover’s algorithm by using GroverOperator<br>
-.<br>
-Others are of more theoretical interest. For example, Fourier checking uses the FourierChecking<br>
-method. (Click here to learn more about Fourier checking.)<br>
+It also contains building blocks for algorithms that are believed to provide quantum advantage. Some of these are of a more practical nature. For example, Qiskit users can build the circuit for Grover’s algorithm by using GroverOperator.<br>
+Others are of more theoretical interest. For example, Fourier checking uses the FourierChecking method. (Click here to learn more about Fourier checking.)<br>
 Let’s take a look at an example of the IQP circuit:<br>
 from qiskit.circuit.library import IQP<br>
 interactions = [[6, 5, 3], [5, 4, 5], [3, 5, 1]]<br>
 circuit = IQP(interactions)<br>
-circuit.decompose().draw("mpl")<br>
-Arithmetic circuits<br>
+circuit.decompose().draw("mpl")Arithmetic circuits<br>
 Some users may be surprised to learn that the circuit library includes numerous quantum circuits that are designed to perform classical arithmetic operations on qubit states or state amplitudes, such as addition or multiplication. These are useful for applications like amplitude estimation, which have the potential to be valuable in finance applications, and in algorithms like HHL, which is a proposed method for solving linear systems of equations.<br>
-As an example, let’s try adding two 3-bit-long numbers, using a ripple-carry circuit to perform in-place addition (CDKMRippleCarryAdder<br>
-). This adder take two numbers—A and B—then it adds them, and “sets” B with the result. In this example, A=2 and B=3:<br>
+As an example, let’s try adding two 3-bit-long numbers, using a ripple-carry circuit to perform in-place addition (CDKMRippleCarryAdder). This adder take two numbers—A and B—then it adds them, and “sets” B with the result. In this example, A=2 and B=3:<br>
 from qiskit.circuit.library import CDKMRippleCarryAdder<br>
-adder = CDKMRippleCarryAdder(3) # Create an adder of 3-bit-long numbers<br>
+adder = CDKMRippleCarryAdder(3)  # Create an adder of 3-bit-long numbers<br>
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister<br>
 # Create the number A=2<br>
 reg_a = QuantumRegister(3, 'a')<br>
@@ -261,26 +240,20 @@ number_a.initialize('010') # number 2 - equivalent to format(2, '03b')<br>
 # Create the number B=3<br>
 reg_b = QuantumRegister(3, 'b')<br>
 number_b = QuantumCircuit(reg_b)<br>
-number_b.initialize('011') # number 3 - equivalent to format(3, '03b')<br>
+number_b.initialize('011')  # number 3 - equivalent to format(3, '03b')<br>
 # Create a circuit to hold everything, including a classical register to put the result<br>
 reg_result = ClassicalRegister(3)<br>
 circuit = QuantumCircuit(*adder.qregs, reg_result)<br>
 # Compose setting A and B with the adder. Measure the result in B<br>
 circuit = circuit.compose(number_a, qubits=reg_a).compose(number_b, qubits=reg_b).compose(adder)<br>
 circuit.measure(reg_b, reg_result)<br>
-circuit.draw('mpl')<br>
-By calling the sampler in qiskit.primitives.Sampler<br>
-, it is possible to simulate the execution of this circuit and observe that the result is 5.<br>
+circuit.draw('mpl')By calling the sampler in qiskit.primitives.Sampler, it is possible to simulate the execution of this circuit and observe that the result is 5.<br>
 from qiskit.primitives import Sampler<br>
 result = Sampler().run(circuit).result()<br>
-print(result.quasi_dists[0].keys())<br>
-dict_keys([5])<br>
-Standard gates<br>
+print(result.quasi_dists[0].keys())dict_keys([5])Standard gates<br>
 The Standard Gates section of the Qiskit Circuit Library is a foundational toolbox for building up a wide array of quantum circuits—from the humble X Gate all the way to more complex multi-controlled rotation gates.<br>
-Users can add standard gates to their circuits by calling the gates as methods—e.g., circuit.x(3)<br>
-will append an X Gate to the qubit 3. That's the most common way to use them. With that being said, this is still an incredibly useful section of the circuit library, and of our documentation in general, as it provides some very useful information about the matrices underlying these gates.<br>
-Let’s take a look at an example of how to append a multi-controlled CNOT to an existing quantum circuit, using the circuit library as a reference. In the following example we are constructing a multi-controlled X Gate (MCXGate<br>
-) with 4 control qubits from the circuit library and applying it to a quantum circuit, specifying the control qubits are at indices 0,1,2 and 4:<br>
+Users can add standard gates to their circuits by calling the gates as methods—e.g., circuit.x(3) will append an X Gate to the qubit 3. That's the most common way to use them. With that being said, this is still an incredibly useful section of the circuit library, and of our documentation in general, as it provides some very useful information about the matrices underlying these gates.<br>
+Let’s take a look at an example of how to append a multi-controlled CNOT to an existing quantum circuit, using the circuit library as a reference. In the following example we are constructing a multi-controlled X Gate (MCXGate) with 4 control qubits from the circuit library and applying it to a quantum circuit, specifying the control qubits are at indices 0,1,2 and 4:<br>
 from qiskit import QuantumCircuit<br>
 from qiskit.circuit.library import MCXGate<br>
 # create circuit<br>
@@ -289,15 +262,13 @@ circuit = QuantumCircuit(5)<br>
 gate = MCXGate(4)<br>
 # append gate to circuit, specifying qubit indices<br>
 circuit.append(gate, [0, 1, 4, 2, 3])<br>
-circuit.draw('mpl')<br>
-The resulting quantum circuit looks like this:<br>
+circuit.draw('mpl')The resulting quantum circuit looks like this:<br>
 And here’s an example of how we would transpile that to a quantum backend:<br>
 from qiskit import transpile<br>
 from qiskit.providers.fake_provider import FakeTokyo<br>
 backend = FakeTokyo()<br>
 transpiled = transpile(circuit, backend)<br>
-transpiled.draw('mpl', idle_wires=False)<br>
-Other interesting circuits<br>
+transpiled.draw('mpl', idle_wires=False)Other interesting circuits<br>
 This article only scratches the surface in terms of describing the many, many different types of circuits that are available in the Qiskit Circuit Library. Some other notable examples include the quantum Fourier transform (QFT), which is an essential subroutine in many algorithms, PhaseOracle, which implements the oracles used in grover search, and multi-control multi-target gate (MCMT), which makes it possible to (for example) implement an X gate acting on two qubits and controlled by three others.<br>
 Be sure to head over to the Qiskit Circuit Library to learn more about how to put these resources to use in your research.</p>
   </div>
@@ -320,7 +291,7 @@ Be sure to head over to the Qiskit Circuit Library to learn more about how to pu
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-06-07 13:45 UTC
+  Generated 2026-06-07 19:18 UTC
 </div>
 
 <script type="module">
