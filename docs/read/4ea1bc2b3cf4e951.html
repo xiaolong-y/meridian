@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overview of the Italian Quantum Ecosystem — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="df037767ee6354eb.html" title="News">&larr; prev</a>
+    <a href="11122e129089bd33.html" title="IBM Quantum Integrates Bivariate Bicycle Formulations with Algebraic Outer Concatenation">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Overview of the Italian Quantum Ecosystem</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>1d</span>
+      <span class="article-category">quantum</span>
+      <span>2001 words</span>
+      <span>11 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Guest post by Director Marina Natalucci, Researcher Beatrice Goretti, and Researcher Margherita Moroni of the Quantum Computing & Communication Observatory at Politecnico di Milano<br>
+In Italy, the quantum technology industry is going through a phase of rapid development, attracting growing international attention. Understanding the dynamics behind this growth is increasingly relevant for policymakers, investors, and industry leaders alike. Drawing on data from the Quantum Computing & Communication Observatory at Politecnico di Milano, this article offers an analytical overview of the Italian quantum ecosystem mapping its public foundations, emerging supply side, cautious demand side, and the strategic choices that will determine its long-term trajectory.<br>
+A Late but Determined Start: The Public Investment Framework<br>
+Compared to the United States, which began structuring national quantum investment programs around 2010, and to several European countries that followed suit from 2014 onward, Italy entered the field relatively late. Yet the country has moved with notable determination once it has been committed to the sector.<br>
+While Italy has long been internationally recognized for academic excellence in the field (ranking seventh worldwide for scientific publications in Quantum Computing, with more than ten dedicated Master’s and Graduate degree programs on the subject) the lack of a coordinated network had limited the sector’s industrial potential until 2022, which marked a turning point, with the National Recovery and Resilience Plan (NRRP) promoting the creation of an integrated research and development ecosystem while simultaneously encouraging the growth of the private sector. The National Recovery and Resilience Plan is Italy’s strategic investment and reform program, funded by the European Union’s Next Generation EU recovery instrument. The program channeled over €140 million into initiatives entirely dedicated to quantum technologies across a three-year window (2023-2025), funding research initiatives, public-private co-financing projects, and the early seeds of an industrial ecosystem. This investment enabled the establishment, in late 2022, of two structural pillars: the National Center for HPC, Big Data and Quantum Computing, whose tenth spoke is dedicated to quantum computing and to bridging industry and research, and the National Quantum Science and Technology Institute (NQSTI), focused on basic research and technology transfer. These two institutions represent the backbone of Italy’s quantum infrastructure, providing both computational resources and a framework for academic-industrial collaboration that would otherwise be difficult to organize in a fragmented national landscape. Yet as NRRP funding approached its conclusion, the urgency to provide a new strategic impulse became increasingly apparent. Without a guiding framework, the sector risked losing momentum. It’s in this context that, in 2025, Italy took a further significant step by launching its own National Quantum Strategy, joining a group of 10 European peers that had already adopted similar frameworks and the European Union itself, which published its own European Quantum Strategy in the same period.<br>
+The development of the Italian strategy was notably interministerial, involving ministries responsible for research, enterprise, defense, foreign affairs and digital transition, as well as the national cybersecurity agency. This breadth of institutional engagement signals the cross-cutting relevance quantum technologies now hold in Italian policy circles.<br>
+The strategy outlines a phased governance architecture that is worth examining closely. In the short term, it calls for the creation of a Permanent Committee for Quantum Technologies to engage key stakeholders across sectors. In the medium term, a National Quantum Hub is envisioned to facilitate coordination across policy, strategy and operational dimensions. In the long term, the strategy proposes the establishment of a Quantum Foundation designed to integrate public and private resources into a sustainable funding model. This three-horizon design is thoughtful and reflects lessons learned from other national strategies, but its value will ultimately depend on the execution of this architecture. Here lies the most significant tension in Italy’s current position. Although the document references a funding requirement of approximately €200 million annually for five years (a figure comparable to commitments made by France and Germany) the actual budget allocations remain to be confirmed within the national budget law. A similar gap between ambition and concreteness emerges when looking at governance: unlike peers such as Germany and the United Kingdom, which have paired their strategies with measurable objectives, Italy has identified key performance indicators for monitoring progress but has stopped short of defining specific targets.<br>
+The Supply Side: Academic Excellence and an Emerging Industry<br>
+On the industrial front, the picture that emerges from the mapping of the national supply side is of a young ecosystem. Italy’s most distinctive industrial strengths lie in Quantum Communication and photonics. This strength builds on decades of academic expertise in optics and photonics that continues to translate into commercially relevant innovation. A particularly notable example is QSENSATO, the first quantum sensing spinoff in Southern Europe, a claim that speaks to Italy’s capacity to pioneer new technological niches within the broader European quantum landscape. In the field of Quantum Communication, QTI stands out as a compelling case: a spinoff of the National Research Council, it specializes in Quantum Key Distribution-based solutions.<br>
+Regarding quantum computing, academic research is at the forefront: proprietary quantum computers have been developed at the University Federico II in Naples and at La Sapienza University in Rome, demonstrating that domestic hardware expertise does exist, even if it has not yet been fully translated into commercial ventures. On the hardware infrastructure side, recent installations signal growing international interest in Italy as a quantum deployment site: IQM, the Finnish superconducting hardware company, has installed systems both in Turin and in Bologna, at the Tecnopolo. In early 2026, the French company Pasqal installed a neutral-atom quantum computer also in Bologna, confirming the site’s emergence as a node of hardware diversity.<br>
+On the quantum computing industry front, the industrial ecosystem is also taking shape. On the hardware side, Planckian, a startup spun off from the University of Pisa and the Scuola Normale Superiore, is developing quantum processors with a strong academic pedigree. On the software side, G2Q, a Milan-based deep-tech startup, specializes in hybrid quantum-classical software solutions. Beyond these exemplificative native quantum companies, a broader ferment is visible: established consultancies and technology firms whose core business lies outside quantum are beginning to explore the field, a sign that the ecosystem is widening beyond its pioneering core.<br>
+The main structural challenge remains one of capital. In fact, Italy currently counts three native quantum computing companies with recent funding, which raised a combined €56 million between 2024 and 2025. This figure stands in sharp contrast with a comparable EU country like France, where six native quantum companies raised €235 million in the same period. This gap reflects not only differences in ecosystem maturity but also a partial misalignment between Italian venture capital and the specific technological and capital requirements of deep quantum hardware development. A potentially catalytic development, though, is the €41.5 million Chips Act funding awarded to Milan-based startup Ephos for photonic chip manufacturing. This is a signal that deep-tech investment in quantum-adjacent hardware is beginning to materialize in Italy.<br>
+Moreover, the broader ecosystem is further structured by two complementary initiatives born recently. First, the Italian Quantum Alliance, that brings together universities, research centers, industries and public institutions under a common framework to promote an integrated national ecosystem. Meanwhile, the Q-Alliance, born from a collaboration between American companies IonQ and D-Wave, aims to develop a research and development hub in Lombardy; a concrete demonstration of Italy’s capacity to attract foreign investment and multinational quantum players. In fact, last year IonQ opened its European hub in Rome and Algorithmiq, a deep-tech quantum software company, decided to move its headquarters in Milan.<br>
+The Demand Side: Growing Awareness, Limited Action<br>
+Among large Italian end-user companies, a small but strategically significant group has already moved well beyond awareness into active experimentation. Observatory data identified that around 15 Italian end-user companies have been publicly involved in quantum computing projects over the last three years. Leading this domestic vanguard are companies operating across key strategic sectors: Intesa Sanpaolo in financial services, Leonardo in defense, and Eni in the energy field that recently funded with ITQuanta the joint venture Eniquantic, an innovation lab dedicated to developing full-stack quantum computing hardware and software.<br>
+Yet when the lens widens from this pioneering cohort to the broader enterprise landscape, the picture becomes more cautious. In fact, even if the interest in quantum technologies is measurably increasing, the gap between awareness and concrete engagement remains wide. According to the Observatory’s 2025 survey, one in three large companies reports that interest in quantum computing has grown over the past two years, driven primarily by recent technological progress (cited by 64% of companies experiencing increased interest) and by growing political attention to the sector (cited by 49%).<br>
+Engagement with the quantum ecosystem is also expanding: 41% of large companies have begun establishing relationships for informational purposes, networking or more structured partnerships on the subject within the quantum community, a figure that more than doubled compared to two years prior.<br>
+The barriers to adoption are revealing, as they differ depending on organizational maturity. Companies with little or no interest in the topic most commonly cite lack of clearly defined use cases relevant to their business, flagged by 76% of this group. Those who are interested but not yet experimenting point to lack of internal expertise as the primary obstacle, cited by 69%. Organizations that are already running projects face a different challenge: 77% of them identify the difficulty of communicating quantum value to non-technical stakeholders as their main barrier. This pattern suggests that the Italian enterprise quantum journey is moving, but unevenly, with each stage of maturity generating its own distinct bottleneck. As elsewhere in the world, it is largely the largest, best-resourced companies, with both the capital and the strategic vision to invest in such an advanced field, that are leading the way.<br>
+On the quantum security side, the trajectory is more dynamic. Awareness of quantum security risks among large Italian enterprises has risen to 74%, up dramatically from just 31% two years ago. Nevertheless, the number of companies with public announcements of active quantum communication and quantum-safe projects remains very limited, fewer than five end-user organizations. Regulatory clarity emerges as a key enabler: 55% of organizations without active projects indicate that clearer regulatory frameworks would be the most significant factor in motivating them to begin these types of activities.<br>
+Looking Ahead: A Strategic Crossroads<br>
+Italy has built meaningful infrastructure, produced genuine research excellence, demonstrated the ability to attract international partners, and adopted a national strategy with a credible governance architecture. These are not trivial achievements for an ecosystem that formally began taking shape only few years ago.<br>
+The momentum is real and measurable. International hardware companies are choosing Italy as a deployment site. Domestic startups are raising capital at an increasing pace. Some end-user companies, like Intesa Sanpaolo, are already leading quantum innovation at the European level. Academic institutions are generating world-class research and, in some cases, beginning to translate it into commercial ventures. The National Quantum Strategy, with its phased governance design and interministerial breadth, signals a level of institutional seriousness that positions Italy well in the international landscape.<br>
+Yet stepping back from the national picture, it is worth placing Italy’s progress in a broader perspective. The numbers are telling: according to Observatory data, quantum computing native companies raised a combined $15 billion between 2020 and 2025. Yet although one third of these companies are European, the EU accounts for only 13% of total funding raised, while the United States alone secures 68%. The public funding picture is equally revealing, since the European Commission committed only 10% of total public quantum investment within the EU area, reflecting an approach that has until now remained fragmented across member states.<br>
+These are not arguments against celebrating Italy’s progress; they are a reminder that the national lens, however useful, captures only a small part of a much larger system, still under constant development.<br>
+Data and analysis drawn from the Quantum Computing & Communication Observatory, Politecnico di Milano, 2025. To go more in depth in these topics, you can attend our next event “Quantum Applications Summit”, June 15th, 2026.<br>
+June 6, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/overview-of-the-italian-quantum-ecosystem/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="df037767ee6354eb.html" class="prev-next">&larr; News</a>
+  
+  
+  <a href="11122e129089bd33.html" class="prev-next">IBM Quantum Integrates Bivariate Bicycle Formulations with Algebraic Outer Concatenation &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-06-08 10:30 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
