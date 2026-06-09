@@ -137,20 +137,24 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>9h</span>
+      <span>14h</span>
       <span class="article-category">quantum</span>
-      <span>65 words</span>
-      <span>1 min read</span>
+      <span>553 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>A collaborative research team representing Linköping University, KTH Royal Institute of Technology, Stockholm University, and Chalmers University of Technology has reported the physical deployment of a long-haul, trusted-node Quantum Key Distribution (QKD) link integrated into a dynamically reconfigurable telecommunications network. Detailed in an open-access preprint on arXiv, the field trial established secure quantum channels over [...] The post Field Demonstration of Trusted-Node QKD over De</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/field-demonstration-of-trusted-node-qkd-over-deployed-single-mode-and-multi-core-fiber-infrastructure/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>A collaborative research team representing Linköping University, KTH Royal Institute of Technology, Stockholm University, and Chalmers University of Technology has reported the physical deployment of a long-haul, trusted-node Quantum Key Distribution (QKD) link integrated into a dynamically reconfigurable telecommunications network. Detailed in an open-access preprint on arXiv, the field trial established secure quantum channels over a total distance of 303 km in southeastern Sweden. The network topology connects a university lab in Linköping with a national quantum hub in Stockholm through an intermediate trusted node, combining standard long-haul single-mode fiber (SMF) with a multi-core fiber (MCF) access segment to emulate heterogeneous enterprise infrastructures.<br>
+Hardware Customization and Space-Division Multiplexed Routing<br>
+The experimental architecture bridges a 270 km deployed dark fiber link rented from GlobalConnect with a 33 km spooled seven-core multi-core fiber access link. To circumvent the high transmission losses across the two main spans—measured at 23 dB for the 110 km Linköping-to-Nyköping sub-link and 36 dB for the 160 km Nyköping-to-Stockholm segment—the researchers modified commercial ThinkQuantum (QuKy EDU Pro) systems. The receivers were retrofitted to interface with external Superconducting Nanowire Single-Photon Detectors (SNSPDs), replacing the standard internal gated-mode Indium Gallium Arsenide (InGaAs) avalanche photodiodes. The SNSPDs provided detection efficiencies up to 93% and ultra-low dark count rates down to ≤ 1 count per second, yielding an immediate baseline upgrade in the Secret Key Rate (SKR) from 0.16±0.02 kbit/s up to 4.75±0.71 kbit/s over the initial 110 km section.<br>
+Within the space-division-multiplexed Linköping access link, quantum channels were actively routed through the fiber using a multi-port Polatis optical fiber switch. The system maintained positive key rates while dynamically switching the QKD channel between two designated low-loss cores, forcing the automated polarization controllers to autonomously re-align the polarization states mid-session within tens of seconds. This quantum traffic coexisted alongside a active classical 10 Gbps Ethernet data channel operating at 1546.12 nm with a 0 dBm launch power, supplemented by continuous broadband optical noise injected via a 1550 nm light-emitting diode (LED) to simulate cross-talk contamination from parallel telecommunication services.<br>
+Key Management Buffering and Cryptographic Payload Optimization<br>
+Operating continuously over 92 hours, the physical layer fed raw key blocks into integrated Key Management Systems (KMSs) configured to automatically execute a trusted-node key relay protocol. Because the Linköping-Nyköping span maintained a higher average key generation throughput than the high-loss Nyköping-Stockholm span, local KMS storage buffers absorbed the rate discrepancies. This buffering capability prevented key starvation on the end-to-end virtual link during localized hardware pauses, such as the periodic 24-hour helium condensation cycle native to the sorption-cooled SNSPDs at the Linköping node.<br>
+To validate the real-world utility of the fluctuating key rates, the generated keys were applied to One-Time Pad (OTP) information-theoretically secure image transmission over bounded 100-second windows. The researchers compared the performance of classical wavelet-based JPEG 2000 compression against the deep-learning-based JPEG AI codec across a 2,100-image subset of the NUS-WIDE database. The testing demonstrated that under highly constrained secret-key budgets, the neural-network-driven JPEG AI codec minimized the required bit allocation per payload, preserving higher perceptual similarity metrics (LPIPS) and Peak Signal-to-Noise Ratios (PSNR) than traditional transform-based approaches when operating under severe network noise injection up to 3.4 µW.<br>
+The complete technical manuscript describing the hardware configurations, fiber cross-talk modeling, and image encryption parameters can be accessed via the open-access arXiv repository here.<br>
+June 8, 2026</p>
   </div>
   
 </article>
@@ -173,7 +177,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-06-09 09:36 UTC
+  Generated 2026-06-09 14:41 UTC
 </div>
 
 <script type="module">
