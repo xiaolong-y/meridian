@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Majorana 2 – Microsoft’s Scalable Quantum Processor With Reliable, Long-Lasting Qubits — Meridian Reader</title>
+  <title>Field Demonstration of Trusted-Node QKD over Deployed Single-Mode and Multi-Core Fiber Infrastructure — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,56 +126,51 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="a286f094d89cc18d.html" title="On hope">&larr; prev</a>
-    <a href="c56e786be2f4bd57.html" title="Dispatches from the possibly last days of human relevance">next &rarr;</a>
+    <a href="0989d067a08689df.html" title="Podcast with Robert Wille, CEO of the Munich Quantum Software Company">&larr; prev</a>
+    <a href="df037767ee6354eb.html" title="News">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Majorana 2 – Microsoft’s Scalable Quantum Processor With Reliable, Long-Lasting Qubits</h1>
+    <h1 class="article-title">Field Demonstration of Trusted-Node QKD over Deployed Single-Mode and Multi-Core Fiber Infrastructure</h1>
     <div class="article-meta">
-      <span class="article-source">Microsoft Quantum Blog</span>
-      <span>Chetan Nayak</span>
-      <span>6d</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>2h</span>
       <span class="article-category">quantum</span>
-      <span>378 words</span>
-      <span>2 min read</span>
+      <span>553 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Figure 2. The new hybrid material stack, designed with AI, consists of lead atop a composite quantum well.<br>
- <br>
- <br>
-Advancing through DARPA's Quantum Benchmarking Initiative<br>
-The Defense Advanced Research Projects Agency (DARPA) previously advanced Microsoft as one of only two companies to the final phase of their rigorous program to evaluate quantum systems. The Microsoft Quantum team continues to make progress in DARPA’s Underexplored Systems for Utility-Scale Quantum Computing (US2QC), one of the programs that makes up their larger Quantum Benchmarking Initiative (QBI). <br>
- <br>
-DARPA’s US2QC program and its broader QBI represent a rigorous approach to evaluating quantum systems that could solve problems that are beyond the capabilities of classical computers. To date, the US2QC program has brought together experts from organizations including DARPA, Air Force Research Laboratory, Johns Hopkins University Applied Physics Laboratory, Los Alamos National Laboratory, Oak Ridge National Laboratory, Lawrence Berkeley National Laboratory, and Lawrence Livermore National Laboratory to verify quantum hardware, software, and applications. Going forward, the QBI is expected to engage with even more experts in the testing and evaluation of quantum computers.<br>
- <br>
-Previously, DARPA selected Microsoft for an earlier phase upon an assessment that we could plausibly build a utility-scale quantum computer in a reasonable timeframe. DARPA then evaluated the Microsoft Quantum team’s architectural designs and engineering plan for a fault-tolerant quantum computer. As a result of this careful analysis, DARPA and Microsoft executed an agreement to begin the final phase of the program. During this phase, Microsoft intends to build a fault-tolerant prototype based on topological qubits in years, not decades—a crucial acceleration step toward utility-scale quantum computing. <br>
- <br>
-Our accelerated roadmap to a scalable quantum machine<br>
-By overcoming formidable obstacles in physics, Majorana 1 was realized. Over the year that followed, the Microsoft Quantum team met the engineering challenges of manufacturing topological qubits with Majorana 2. Based on this rapid progress, we are accelerating our roadmap to a scalable, practical quantum computer—we have cut our timeline in half and now aim to reach this target by 2029. This achievement will mark a major milestone on the path to a transformative fault-tolerant quantum computer that has the potential to solve problems that affect all of humanity. <br>
- <br>
-Learn more about the latest advances from Microsoft Quantum</p>
+    <p>A collaborative research team representing Linköping University, KTH Royal Institute of Technology, Stockholm University, and Chalmers University of Technology has reported the physical deployment of a long-haul, trusted-node Quantum Key Distribution (QKD) link integrated into a dynamically reconfigurable telecommunications network. Detailed in an open-access preprint on arXiv, the field trial established secure quantum channels over a total distance of 303 km in southeastern Sweden. The network topology connects a university lab in Linköping with a national quantum hub in Stockholm through an intermediate trusted node, combining standard long-haul single-mode fiber (SMF) with a multi-core fiber (MCF) access segment to emulate heterogeneous enterprise infrastructures.<br>
+Hardware Customization and Space-Division Multiplexed Routing<br>
+The experimental architecture bridges a 270 km deployed dark fiber link rented from GlobalConnect with a 33 km spooled seven-core multi-core fiber access link. To circumvent the high transmission losses across the two main spans—measured at 23 dB for the 110 km Linköping-to-Nyköping sub-link and 36 dB for the 160 km Nyköping-to-Stockholm segment—the researchers modified commercial ThinkQuantum (QuKy EDU Pro) systems. The receivers were retrofitted to interface with external Superconducting Nanowire Single-Photon Detectors (SNSPDs), replacing the standard internal gated-mode Indium Gallium Arsenide (InGaAs) avalanche photodiodes. The SNSPDs provided detection efficiencies up to 93% and ultra-low dark count rates down to ≤ 1 count per second, yielding an immediate baseline upgrade in the Secret Key Rate (SKR) from 0.16±0.02 kbit/s up to 4.75±0.71 kbit/s over the initial 110 km section.<br>
+Within the space-division-multiplexed Linköping access link, quantum channels were actively routed through the fiber using a multi-port Polatis optical fiber switch. The system maintained positive key rates while dynamically switching the QKD channel between two designated low-loss cores, forcing the automated polarization controllers to autonomously re-align the polarization states mid-session within tens of seconds. This quantum traffic coexisted alongside a active classical 10 Gbps Ethernet data channel operating at 1546.12 nm with a 0 dBm launch power, supplemented by continuous broadband optical noise injected via a 1550 nm light-emitting diode (LED) to simulate cross-talk contamination from parallel telecommunication services.<br>
+Key Management Buffering and Cryptographic Payload Optimization<br>
+Operating continuously over 92 hours, the physical layer fed raw key blocks into integrated Key Management Systems (KMSs) configured to automatically execute a trusted-node key relay protocol. Because the Linköping-Nyköping span maintained a higher average key generation throughput than the high-loss Nyköping-Stockholm span, local KMS storage buffers absorbed the rate discrepancies. This buffering capability prevented key starvation on the end-to-end virtual link during localized hardware pauses, such as the periodic 24-hour helium condensation cycle native to the sorption-cooled SNSPDs at the Linköping node.<br>
+To validate the real-world utility of the fluctuating key rates, the generated keys were applied to One-Time Pad (OTP) information-theoretically secure image transmission over bounded 100-second windows. The researchers compared the performance of classical wavelet-based JPEG 2000 compression against the deep-learning-based JPEG AI codec across a 2,100-image subset of the NUS-WIDE database. The testing demonstrated that under highly constrained secret-key budgets, the neural-network-driven JPEG AI codec minimized the required bit allocation per payload, preserving higher perceptual similarity metrics (LPIPS) and Peak Signal-to-Noise Ratios (PSNR) than traditional transform-based approaches when operating under severe network noise injection up to 3.4 µW.<br>
+The complete technical manuscript describing the hardware configurations, fiber cross-talk modeling, and image encryption parameters can be accessed via the open-access arXiv repository here.<br>
+June 8, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/field-demonstration-of-trusted-node-qkd-over-deployed-single-mode-and-multi-core-fiber-infrastructure/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="a286f094d89cc18d.html" class="prev-next">&larr; On hope</a>
+  <a href="0989d067a08689df.html" class="prev-next">&larr; Podcast with Robert Wille, CEO of the Munich Quantum Software Company</a>
   
   
-  <a href="c56e786be2f4bd57.html" class="prev-next">Dispatches from the possibly last days of human relevance &rarr;</a>
+  <a href="df037767ee6354eb.html" class="prev-next">News &rarr;</a>
   
 </div>
 
