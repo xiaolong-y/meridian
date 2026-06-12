@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JIJ and ORCA Computing Demonstrate Hybrid Quantum-Classical Energy Optimization — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="61ef56e63b178d3e.html" title="ORCA Computing Integrates Photonic Systems into London Digital Realty Innovation Lab">&larr; prev</a>
+    <a href="49d701ae2dbc4eca.html" title="IQM Radiance 54 Superconducting Quantum Computer Goes Live at CINECA in Italy">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">JIJ and ORCA Computing Demonstrate Hybrid Quantum-Classical Energy Optimization</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>5h</span>
+      <span class="article-category">quantum</span>
+      <span>923 words</span>
+      <span>5 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Quantum optimization software provider JIJ Inc. and photonic hardware developer ORCA Computing, in a joint corporate project with energy conglomerate bp, and the UK National Quantum Computing Centre (NQCC), have released a comprehensive benchmarking white paper validating a hybrid quantum-classical workflow tailored for the energy sector. The industrial study focuses on deploying co-processed optimization routines to solve the Unit Commitment Problem (UCP)—the large-scale computational challenge of scheduling power generator configurations to meet grid demands at the lowest possible economic and environmental cost.<br>
+Numerical simulations and physical hardware execution indicate that hybrid quantum-classical decomposition models can efficiently scale to manage large-scale grid variables, offering a near-term pathway to outperform purely classical optimization heuristics on industrially relevant energy datasets.<br>
+The High-Impact Challenge: Modeling the Unit Commitment Problem<br>
+The Unit Commitment Problem represents one of the energy sector’s most mathematically complex and financially significant operational hurdles. Grid operators must continuously determine the exact start-up, shutdown, and continuous power output timelines for a diverse fleet of generators to satisfy dynamic household and industrial electricity demands. As modern grids integrate highly variable, intermittent renewable energy sources—and as aggregate load requirements expand due to energy-intensive infrastructure like AI data centers—the combinatorial complexity of the UCP scales exponentially.<br>
+To conduct rigorous hardware benchmarking, the project team utilized the standardized unit_cal_7 dataset verified by bp’s digital R&D team, encompassing 25,755 discrete variables and 48,939 operational constraints, including strict ramp-up/ramp-down limits, minimum duration bounds, and spinning reserve requirements.<br>
+Full-Stack Algorithmic Pipeline: Dual Decomposition and QUBO Compilation<br>
+To ingest and process the extensive constraints of the unit_cal_7 matrix without exceeding the physical qubit limitations of near-term hardware, the team engineered an asymmetric hybrid computing architecture. The mathematical formulation utilizes an algebraic modeling layer called JijModeling to segregate raw instance data from underlying operational logic, passing a unified representation via the Open Mathematical prograMming eXchange (OMMX) standard.<br>
+The execution pipeline then executes a dual-layer mathematical decomposition scheme:<br>
+- First-Layer Dantzig-Wolfe Decomposition: The top-level routine splits the global UCP timeline into independent time slices, generating a classical Restricted Master Problem (RMP) to enforce macro-level coupling constraints like total power balance across the grid.<br>
+- Second-Layer Multi-Cut Benders Decomposition: Each localized time slice is further divided. Continuous variables (such as exact megawatt dispatch levels) are offloaded to an open-source linear programming (LP) solver to generate mathematical feedback cuts, while the discrete, binary master equations (representing generator on/off statuses) are isolated for quantum acceleration.<br>
+The binary Benders subproblems are subsequently compiled via a Qamomile optimization layer into a Quadratic Unconstrained Binary Optimization (QUBO) format. This compilation step maps the logical variables directly into executable Hamiltonians where constraints are enforced through quadratic penalty terms.<br>
+Hardware Execution on ORCA’s PT-2 Photonic Time-Bin Interferometer<br>
+The compiled QUBO Hamiltonians were mapped and executed on ORCA Computing’s PT-2 photonic quantum processor hosted on-site at the NQCC. Operating as a specialized coprocessor for combinatorial ground-state sampling, the PT-2 features a Time-Bin Interferometer (TBI) architecture that manipulates quantum states of light known as qumodes across a network of two optical fiber delay lines. Rather than utilizing single discrete shots, the system runs a hybrid variational scheme called the Binary Bosonic Solver (BBS).<br>
+The BBS runs an automated feedback loop that continuously tunes the interferometer’s phase parameters based on classical orchestration inputs, iteratively guiding the photon coincidence patterns toward the QUBO’s low-energy ground state. Hardware-level post-selection is strictly enforced to eliminate empty photon states stemming from optical line loss, yielding banks of valid candidate solutions that are returned via an HTTP/REST network configuration to a local Apple M4 host machine for final dynamic programming assembly and local coordinate descent refinement.<br>
+Benchmarking Metrics: Scalability, Real-Time Robustness, and Quality Projections<br>
+The hybrid quantum-classical framework was benchmarked directly against classical heuristics, including open-source solvers like HiGHS and state-of-the-art commercial packages like Gurobi. In scalability evaluations across scaled sub-problems, the hybrid solver secured a strict, reproducible objective score advantage over classical decomposition baselines, demonstrating more effective optimization of discrete variables as the number of parameters increased.<br>
+Furthermore, a real-time robustness analysis proved that under sudden intra-day grid fluctuations—such as an escalating 25% spinning reserve requirement—static classical day-ahead schedules suffered catastrophic capacity shortfalls and load-shedding penalties. Conversely, the quantum-assisted model smoothly scaled the active generator fleet from 60 to over 74 committed units, dynamically avoiding grid failures by pivoting across the diverse combinatorial ground states sampled by the QPU.<br>
+While the current PT-2 setup delivers superior long-term solution quality, its total wall-clock time remains limited by classical orchestration latencies and a minimum 300 ms per-batch sampling overhead. To address this bottleneck, the white paper projects performance metrics onto ORCA’s upcoming next-generation PT-3 system, commercially available from mid-2026. The upgraded hardware expands capability from 48 to 128 qumodes and incorporates a three-loop fiber architecture, driving sample return latencies down to 10 ms.<br>
+These scaling projections indicate that the upcoming PT-3 hybrid configuration will actively outperfom state-of-the-art classical solvers on both solution fidelity and wall-clock times, establishing a clear pathway to commercial quantum advantage within the UK-Japan Quantum Science and Technology framework.<br>
+The complete technical white paper detailing the Benders decomposition matrices, QUBO penalty coefficients, and photon post-selection parameters can be accessed directly through the official JIJ here. For an executive summary of the project’s milestones, corporate compliance profiles, and responsible innovation standards under the Responsible Quantum Industry Forum (RQIF), review the joint media announcement published via the JIJ Newsroom here. For a historical breakdown of the preliminary exploratory agreements and early software-hardware mapping configurations that laid the groundwork for this energy optimization trial, read our previous coverage here.<br>
+June 11, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/jij-and-orca-computing-demonstrate-hybrid-quantum-classical-energy-optimization/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="61ef56e63b178d3e.html" class="prev-next">&larr; ORCA Computing Integrates Photonic Systems into London Digital Realty Innovation Lab</a>
+  
+  
+  <a href="49d701ae2dbc4eca.html" class="prev-next">IQM Radiance 54 Superconducting Quantum Computer Goes Live at CINECA in Italy &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-06-12 10:05 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
