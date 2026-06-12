@@ -137,20 +137,24 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>18h</span>
+      <span>23h</span>
       <span class="article-category">quantum</span>
-      <span>64 words</span>
-      <span>1 min read</span>
+      <span>583 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Distributed quantum hardware developer Nu Quantum Ltd. has reported structural mechanics and numerical simulations validating a fault-tolerant network framework capable of tolerating the complete failure of individual Quantum Processing Units (QPUs). Detailed in a technical manuscript deposited on the open-access arXiv repository, the research introduces a distributed quantum error correction (QEC) paradigm that handles catastrophic [...] The post Nu Quantum Demonstrates Subsystem Erasure Tolera</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/nu-quantum-demonstrates-subsystem-erasure-tolerance-in-networked-qpu-architectures/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Distributed quantum hardware developer Nu Quantum Ltd. has reported structural mechanics and numerical simulations validating a fault-tolerant network framework capable of tolerating the complete failure of individual Quantum Processing Units (QPUs). Detailed in a technical manuscript deposited on the open-access arXiv repository, the research introduces a distributed quantum error correction (QEC) paradigm that handles catastrophic hardware node dropouts as correctable localized erasures. By shifting away from large monolithic processors and instead encoding logical information across an interconnected multi-node network, the system prevents the permanent loss of quantum data, allowing continuous computation during both unscheduled subcomponent failures and routine hardware calibration.<br>
+The Entanglement Fabric Architecture and Node Replacement Loops<br>
+The structural framework developed by Nu Quantum splits a high-distance global QEC code across multiple modular QPUs, where each individual hardware node hosts an intermediate capacity of 16 to 48 physical qubits. Rather than routing local connections via dense physical layers, non-local gate operations and syndrome extractions spanning separate nodes are mediated through specialized Qubit-Photon Interfaces (QPIs). These optical interfaces generate non-local Bell states and multi-qubit GHZ resource states across a fully connected photonic routing network or “Entanglement Fabric.” When a targeted QPU must be taken offline for scheduled downtime or routine maintenance, the network initiates a transversal physical teleportation protocol, transferring the live state of all hosted data qubits to a standby node before reconfiguring the network’s optical switch routing.<br>
+Mitigating Unscheduled Failures and Architectural Overhead Savings<br>
+For unheralded, catastrophic node failures—such as ion chain losses in trapped-ion machines or cosmic-ray quasiparticle poisoning in superconducting platforms—the network utilizes a spatially correlated error model to suppress information loss. Because the global logical state is shared widely across the cluster network, the sudden failure of a single device does not trigger an unrecoverable logical fault, provided that the failed module contains only a minor fraction of the total code footprint. Upon heralding a node crash, the control plane substitutes a replacement QPU into the network topology, initializing its replacement data qubits into a maximally mixed state. Standard minimum-weight perfect matching (MWPM) decoding algorithms then isolate and correct the missing data segments over subsequent error correction cycles, achieving up to a six-fold improvement in qubit efficiency compared to conventional code concatenation methods that require large 6x to 9x physical hardware overheads.<br>
+Comparative Numerical Simulations: Toric vs. Floquet Code Suppression<br>
+To benchmark the system’s resilience against circuit-level noise and simultaneous hardware dropouts, authors Coral Westoby and Evan Sutcliffe simulated the architecture using the Stim verification framework over 32 noisy syndrome extraction rounds. The research analyzed two distinct multi-node topological variants: the standard unrotated toric code and a genus-10 semi-hyperbolic Floquet code ([[576,20,12]]) operating under an asymmetric noise model where non-local Bell state operations introduce a tenfold noise penalty (pnl=10p). The numerical results show that for an unscheduled, per-round node failure probability of 0.01p, the distributed toric code establishes an explicit performance crossover, successfully outperforming a single monolithic processor once the underlying physical qubit error rate falls below a threshold of 0.05%. This performance trend proves that fault-tolerant scaling is optimized by distributing the global code block over a higher count of smaller, modular QPUs rather than expanding a single monolithic chip.<br>
+The complete technical manuscript exploring distributed spectral partitioning, Floquet code scheduling, and node dropout simulations can be accessed via the open-access arXiv repository here. For broader industry roadmaps regarding multi-node network orchestration, optical fiber switching topologies, and localized UK National Quantum Technology initiatives, track the strategic briefings hosted via the Nu Quantum Newsroom here.<br>
+June 11, 2026</p>
   </div>
   
 </article>
@@ -173,7 +177,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-06-12 10:05 UTC
+  Generated 2026-06-12 14:51 UTC
 </div>
 
 <script type="module">
