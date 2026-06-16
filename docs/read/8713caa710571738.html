@@ -137,20 +137,29 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>8h</span>
+      <span>15h</span>
       <span class="article-category">quantum</span>
-      <span>66 words</span>
-      <span>1 min read</span>
+      <span>802 words</span>
+      <span>5 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>AIX Global Innovations has published a 100-page technical report on Zenodo documenting the execution of an end-to-end fault-tolerant quantum computing (FTQC) software stack on commodity superconducting hardware. Conducted over an eight-week hardware campaign from April 9 to June 1, 2026, the company utilized its proprietary Seed IQ platform—an Adaptive Multiagent Autonomous Control (AMAC) engine—to govern [...] The post AIX Global Innovations Discloses Software-Governed Fault-Tolerant Quantum Co</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/aix-global-innovations-discloses-software-governed-fault-tolerant-quantum-computing-campaign-on-cloud-accessible-ibm-hardware/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>AIX Global Innovations has published a 100-page technical report on Zenodo documenting the execution of an end-to-end fault-tolerant quantum computing (FTQC) software stack on commodity superconducting hardware. Conducted over an eight-week hardware campaign from April 9 to June 1, 2026, the company utilized its proprietary Seed IQ platform—an Adaptive Multiagent Autonomous Control (AMAC) engine—to govern operations on standard IBM Quantum Heron r2 and r3 processors accessed via public cloud subscriptions. The report indicates that the software layer successfully cleared four core structural FTQC criteria simultaneously under live hardware noise: distance-3 and distance-5 surface-code quantum error correction (QEC), universal Clifford+T gate sets driven via magic-state injection, heterogeneous primitive composition on a persistent encoded register, and continuous runtime admissibility verification on every committed result.<br>
+The Distance-1 Inversion Paradigm as an Operational Substitute for Code Distance<br>
+The architectural mechanism enabling fault tolerance on noisy, intermediate-scale quantum (NISQ) hardware without heavy physical redundancy is a technique termed the d=1 inversion. Traditional quantum error correction roadmaps rely on scaling surface-code distances quadratically (such as a distance-25 code requiring roughly 625 to 1,000 physical qubits to protect a single logical qubit) to drive down the logical error rate, which inherently increases gate depth, crosstalk, and phase decoherence.<br>
+The Seed IQ engine acts as an operational substitute for large physical code distances by employing active inference control loops to map and steer noisy, high-dimensional physical measurement vectors into a stable, admissible operating envelope. By applying this algorithmic governance directly to the encoded layer, AIX maintained a 150-qubit persistent register at a physical-to-logical substrate distance of d=1 (using 156 total physical qubits, including ancillas). This layer preserved logical fidelity and registered zero logical errors across the entire available physical qubit layout of the rented IBM Heron processors.<br>
+Heterogeneous Primitive Composition and Execution Pass Rates<br>
+The validation trail, verified across five independent IBM Heron chips (IBM Fez, Kingston, Marrakesh, Pittsburgh, and Boston), progressed from basic error-correction loops to the execution of a complete universal FTQC primitive pipeline. AIX initially validated surface-code error mitigation by recording an 88.5% logical error rate reduction at d=3 on IBM Fez and a 93.1% reduction at d=5.<br>
+Following these baseline runs, the control layer successfully cleared the classical 2/3 entanglement bound across the universal FTQC primitives: quantum teleportation, lattice-surgery CNOT gates, logical memory, and inline T-gates via magic-state injection without relying on an offline distillation factory. These components were then assembled into a heterogeneous primitive composition chain (TELE→CNOT→T→CNOT→TELE°ø20. This pipeline executed 22,500 circuits per run across two independent calibration windows (45,000 circuits total) at a runtime admissibility pass rate of Fgoverned=1.0000, yielding zero detected logical errors from per-shot stabilizer-syndrome statistics.<br>
+Molecular Chemistry Quantization and Sub-Wavenumber Accuracy Metrics<br>
+After compiling the primitive orchestration pipeline, AIX deployed the governed fault-tolerant stack to execute twenty-two molecular chemistry runs spanning five distinct molecular workloads (H2, LiH, H2O, BeH2) equilibrium, and the strongly multireference BeH2 transition state). All twenty-two committed runs converged within the strict threshold of chemical accuracy. The baseline H2 ground-state energy runs achieved full fault tolerance and landed within 0.0157 mHa of the exact Full Configuration Interaction (FCI) value, requiring less than 80 seconds of quantum processor time.<br>
+As the molecular complexity escalated to evaluate the highly correlated BeH2 equilibrium structure, the system surpassed standard chemical accuracy to achieve spectroscopic and sub-wavenumber precision. The BeH2 equilibrium commits reached a precision of ΔE=+0.000595 mHa relative to the FCI baseline, marking a highly precise molecular energy calculation performed on an operational quantum co-processor.<br>
+Admissibility Contracts and Cross-Chip Numerical Convergence Symmetries The report addresses potential classical post-processing bias by analyzing a highly counterintuitive physical signature recorded during the chemistry campaign: separate physical processors from different generations repeatedly converged to bit-identical molecular energies matching to twelve decimal places. Specifically, H2 calculations yielded identical twelve-decimal results between IBM Kingston and Marrakesh, while H2O runs replicated perfectly across the Fez, Marrakesh, and Kingston chips.<br>
+This numerical alignment is the engineered result of Seed IQ’s three-stage admissibility-and-projection contract. The software envelope is structured so that independent, noisy quantum measurement vectors from distinct physical hardware profiles are projected mathematically onto the exact same Newton fixed point within the trial-state subspace. The final committed energy is then derived directly from each chip’s unique raw QPU shot record through direct bitstring counting at that shared coordinate, omitting offline lookups, precomputed energy curves, or arbitrary binning filters.<br>
+The complete 100-page technical report containing the validation workloads, circuit schematics, and individual workload identifiers can be accessed via the open-access Zenodo Repository here. For an architectural analysis of the multiagent active inference algorithms, real-time telemetry metrics, and the underlying source documentation behind the d=1 inversion layers, track the data sheets published on the AIX Substack Research Log here. The initial media release and broad campaign workload background summaries can be reviewed via the official Business Wire wirelog here.<br>
+June 15, 2026</p>
   </div>
   
 </article>
@@ -173,7 +182,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-06-16 03:40 UTC
+  Generated 2026-06-16 11:05 UTC
 </div>
 
 <script type="module">
