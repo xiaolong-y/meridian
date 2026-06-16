@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast with Mehmet Sanliol, Managing Director at Evercore — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="c1dba8651ad84642.html" title="Atom Computing and Phasecraft Partner on Material Science Algorithms">&larr; prev</a>
+    <a href="8713caa710571738.html" title="AIX Global Innovations Discloses Software-Governed Fault-Tolerant Quantum Computing Campaign on Cloud-Accessible IBM Hardware">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Podcast with Mehmet Sanliol, Managing Director at Evercore</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>6h</span>
+      <span class="article-category">quantum</span>
+      <span>3758 words</span>
+      <span>19 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Yuval Boger interviews Mehmet Sanliol, managing director at Evercore covering quantum technologies and semiconductors. They discuss how investors value public quantum companies, when private companies should consider IPOs or SPACs, and why consolidation may shape the next phase of the industry. Mehmet also shares his perspective on technical and market signals that could affect valuations, the outlook for quantum software, and the recent developments in quantum that caught his attention most.<br>
+Transcript<br>
+Yuval: Hello, Mehmet, and thank you for joining me today.<br>
+Mehmet: How are you, Yuval? My pleasure.<br>
+Yuval: So, who are you and what do you do?<br>
+Mehmet: So, my name is Mehmet Sanliol. I am the managing director at an investment bank called Evercore, and I focus on quantum technologies and semiconductors.<br>
+Yuval: So, why don’t I start from the end? So if you’re speaking with the CEO of a private quantum computer company, one that has delivered the product, has investors, has some good technical progress, what would you advise them to do about the public markets?<br>
+Mehmet: So the way that, look, you’ve seen a number of companies, I think we’re now up to kind of seven and having entered the public markets. Thankfully, all seem to be trading well enough so far. And the older companies are kind of well in excess of the $10 stock price and the few others that have joined are hovering around that level. I really think about it as a de-risking strategy because access in the public markets does provide you with the ability to tap liquidity in a manner that’s not necessarily always going to be available on the private side. You do open yourself up to public scrutiny and at some point you see some of the companies that had been traded for a few years now from kind of ’21 onwards go through some tough times and you really need to kind of weigh those two things against each other. To my mind if you are already fully funded or you’re going to hit the milestones you can be and you can hit the requisite milestones to continue to be kind of fully funded privately, that feels to me like the right path for now.<br>
+Yuval: Could one justify the valuations of current companies? I mean maybe they’re undervalued, maybe they’re overvalued. How are you thinking about that?<br>
+Mehmet: Yeah so that’s a great question. If you look at not just companies in quantum computing, but also if you look at companies that are kind of across anything that, you know, what Wall Street sometimes refers to as the concept stock. So it could be something like a nuclear energy company, for example, where the real at-scale financial benefit is not accruing until, you know, years into the future. Typically the way that these are valued on Wall Street and indeed in the private community is to do a future valuation and then to apply a discount rate that’s kind of commensurate with the risk in the business. And so if you look at kind of quantum computing companies listed today and you look at how they’re valued, the majority of them are valued on either 2030 or kind of 2035 revenue multiples, and then those multiples end up getting discounted back. And if you look at, the discount rates that are applied are normally around the 25 percent area. I’d say in the private markets, you’re looking north of that. And that’s your kind of typical methodologies. And if you look at some very high growth semi names, you will also see similar methodologies applied. So, you know, Cerebras or even NVIDIA was growing extremely quickly, and, you know, being valued on a key ratio way up into the future. And I think one thing that the public companies have going for them is that many of them have raised substantial amounts of capital and will live to fight another day. And the fact that you can live to fight another day allows investors to kind of look a bit further into the future.<br>
+Yuval: And beyond cash, you also have the currency of equity, right, where you can make acquisitions or you can make deals that are equity-based, not just, oh, I’ve raised 500 or 700 or a billion dollars.<br>
+Mehmet: Yep, it’s a fantastic point, and it’s one that is, I think, especially important in an emerging, highly technical field such as quantum computing, where there are a limited number of highly talented individuals and that if you’re able to, and you’d seen this play out in the AI field, and probably a little bit more publicly, just kind of how much value can be accrued by having these kind of very small handful of talent that you have globally. And so having a listed public equity does give you the freedom to issue your stock in order to consolidate, in order to complete M&A. And that is going to be something that we’ve already seen start in the field. It’s only going to accelerate from here on in. Because it’s not realistic to expect the markets, private or public, to keep funding more and more companies that are chewing through tens of millions of dollars that are all pursuing the same goal. And when you also weigh that against the fact that you’ve got an unfortunately limited talent pool.<br>
+Yuval: I interviewed a partner at a VC firm, an upcoming episode on this podcast, and we were talking about public markets. That partner had experience in a large, very successful public company. And what I basically heard is there are public markets and then there’s SPAC, or there’s IPO and then there’s SPAC. How are you thinking about that? I mean, should any company that can do a regular IPO do one and SPAC is just a shortcut? Or what should our listeners know about that?<br>
+Mehmet: So look, I think first of all, it’s important when you’re embarking on this journey and if the company is ready to be public and it does make sense to evaluate your options. The traditional IPO path is not one that has yet been proven for quantum. We haven’t had a quantum IPO yet. There’s one company that is confidentially on file, which is all public, as you know. And the key differences are really, if you are going to IPO, you are typically able to get more certainty around your early investor base. And having a successful IPO is kind of really predicated on being able to convince the long-only investors in particular, the Fidelities, the BlackRocks, the Wellingtons of the world, that this is a field that is enduring, that you are going to kind of have a path to profitability in some kind of near term, next few years type period, and that you’re going to have a defensive moat. I think these things can be challenging in an emerging field where there is a lot changing and it’s not to say that it’s not possible. I think when it comes to SPACs, that’s a proven route for quantum companies to raise capital. When you look at the companies that have done SPACs, you have seen their investor bases positively shift. So when a company de-SPACs, you know, it’s typically a lot of retail that’s in the base along with some hedge funds. We have seen kind of over time that evolve towards more long-only in the base, but there’s definitely still room for that to shift further. As you look at what typical NASDAQ companies have as an investor base, which is around, you know, between 20 and 30 percent long-only. So it’s something that, you know, the SPAC will give you more certainty of getting your listing. But you’ve got to trade that off against, you know, not knowing as well who is going to be in your investor base. And what that leads to is greater volatility in the stock, and we’ve seen that play out with all of the public quantum companies to date.<br>
+Yuval: Perhaps I should have started with that, but tell me about Evercore. What do you guys do in quantum?<br>
+Mehmet: So, look, Evercore, our bread and butter is M&A, and it has been for 30 years since the company was founded. And so we certainly help there, but we also can help raise private capital as well as public capital. So for anybody looking to go public, we can help there as well. And we can also help on the debt financing side. Now that last part is a little bit premature as it pertains to quantum, but I’m hoping to see systems scaling in the next few years and kind of looking forward to getting our debt advisory folks engaged on that front at the right time. So it’s really all aspects of investment banking that we’re offering. We’re here to help.<br>
+Yuval: I heard you say that there are 185 companies with a median raise of about 10 million. Of course, since you said that there are probably 200 companies. How does that shake out?<br>
+Mehmet: So I think it comes back to the word I mentioned earlier about the consolidation. If you look across technology and indeed if you look across most of the economy, you’re seeing increasing returns to scale. I think a big part of why you’re seeing increasing returns to scale is because to some extent as humanity we’ve knocked down many of the easier problems and we’re now facing the harder and harder problems. And of course this is something that quantum computing will unlock. It will allow us to go away and do material science and drug discovery and hopefully cure many of the ills that people perhaps thought would never be cured. But in order to do so, I think it’s going to need more companies to come together to work together more closely and for the most talented individuals to coalesce. And so I think in that, it is going to require consolidation. And so I think once we see some advantage and kind of real applications out there with hundreds or so of logical qubits, you’re going to see some of these smaller teams, I think, scooped up because at that point, there’s going to be such an enormous ROI for the deployment of these people against real growing, accelerating opportunity sets.<br>
+Yuval: So you’re essentially saying if I think about signals that would change the valuation trajectory of companies, and not talking about any specific one, is proving true ROI or maybe cracking Shor’s algorithm. But conversely, what could be negative effects? Is it, you know, an NVIDIA getting into quantum in a more serious way? I mean, Google just announced that they’re doing a neutral atom activity. How are you thinking about things that could impact these valuations?<br>
+Mehmet: So, if I think about a move such as, you know, Google moving into neutrals, I mean, I think really I see that as a positive, if anything, because there’s sometimes the question with these kind of larger tech companies of they dabble in everything but where are they really focused. And the fact that they would choose to go down another tree and also explore neutral atoms I think is being done because they see that quantum is near term, quantum is going to happen this decade, and they want to maximize their chances of success by exploring different avenues. So I see that as a positive and not a negative. And even when I kind of look across the companies in the landscape, Yuval, I think every single one of the companies, including your own, was founded on kind of a very specific principle. So even if you look at Infleqtion companies or trapped ion companies, superconducting companies, like these companies are not all the same. You can kind of sub-subdivide them. And what that does mean is that there are specific skills that kind of come back to my earlier point around the consolidation theme. That perhaps as we get closer and closer to having a large-scale system or maybe we then have early systems of hundreds of logical qubits and we need to go that next step, we’re going to see that we need the capabilities of another player in order to help us with that scale-up. In terms of negatives for the field, one thing that worries me is just the geopolitical environment and maybe the kind of situation we’re in now. If there was a sustained economic downturn, that would be something that I think would cause people to pause. That said, one of the things that has kept quantum funded throughout the years is its national security relevance. And so it’s hard for me to see that there would be a big bubble burst in that sense. We do have a number of public companies out there and I kind of applaud all of them for the disclosure that they have to give now as public companies. And I would expect that at some point you’re going to start to see certain folks pull ahead and that is going to lead to a little bit more adjustment in where value is attributed. And so I wouldn’t necessarily say that there’s going to be a bubble burst, but I think over time the investment community is going to start to get more and more conviction in where they should be placing their bets. And that is going to drive something that for some players will look like it’s a bubble burst, but really it’ll be more down to growing conviction in, you know, what the winning player or kind of winning players look like.<br>
+Yuval: You studied physics at Oxford, I think. Is that just so you can say you’re the best investment banker out of the physicists or the best physicist out of the investment bankers, or does that really help you in your job?<br>
+Mehmet: I like to kid myself that I have some very, very high level kind of understanding of what’s happening in these companies, Yuval. And I think it is actually, jokes aside, it is actually helpful at this stage of the field because it is, you know, until we have scaled revenues and financials and the nuances between technical approaches, having some understanding of what folks need to solve in order to get to scale is helpful. And also kind of having sat in this investment banking seat for the past 17 years and taking complex technical milestones and kind of translating them into points that are digestible for the investment community is, I think, something that quantum computing companies and all companies for that matter can and would find very helpful, but especially so in this field. And in terms of my kind of path into banking, look, I love studying physics and I had enormous respect and am indebted to Dr. Sheridan Sheridan [?], who let me in. Perhaps he thinks it’s a mistake now. But following that, I kind of followed some friends into banking, really, because I was told there was a lot of math in it. And from there, I found my way to Silicon Valley back in 2014. I was covering semiconductors, but as I was covering the space and I was just kind of looking at my own personal computing journey, which started in probably, you know, around, I want to say around 2000 or so with a 100 megahertz chip. I remember getting my first gigahertz chip around, actually no, that would have been around 2000. I think I got my first machine in the mid nineties and it was around 100 megahertz. And then it was a gigahertz around 2000. And then I was working and looking at my laptop and it was about two gigahertz in 2014. And what I was seeing play out was the end of Dennard scaling. And as I kind of thought about it, it kind of seemed clear to me that this was going to put a cap on compute. And there were a bunch of problems out there that still needed to be solved, still do need to be solved, and that we would need something else. We would need something that was the true paradigm shift. And so I looked out at, you know, kind of what exotic compute architectures are out there. Quantum sprung up. But when I looked into it, I kind of realized it wasn’t maybe as exotic as some others. There are things like optical computing and DNA computing and all sorts of things. But once I had been going for about 30 years, there were a few companies at that point, D-Wave and Rigetti spring to mind, actually. This was now about a decade ago. And so, you know, I made it my mission to go out and meet those companies. I was advised against it. I was told, you know, this is not a good use of time for an investment banking prospect kit. But to me, it was just something I was fascinated by, and I had a strong conviction that it was going to come sooner than most people thought.<br>
+Yuval: Most public quantum companies are hardware companies. I think now there’s Horizon Quantum, that’s a software company. Do you see that changing anytime soon or do you think the public markets in the near term still favor hardware?<br>
+Mehmet: There’s also Zapata, which has popped back up and is doing well since it de-SPACed. So it depends on what you define as software. I think the quantum software companies at the end of the day are somewhat predicated on the hardware being ready and on kind of providing quantum advantage to end customers. By that measure, I think we need to see at least hundreds, if not ideally thousands of logical qubits and we need to get down to the, you know, kind of 10 to the minus nine ideally error rate level to deliver the applications where quantum is unequivocally needed. And you’re looking at some roadmaps, you know, you could say that that could happen within the next few years, and I wish all of those companies luck in delivering. I think once that happens, then I think you will see many more quantum software companies. But of course, quantum is also entering an interesting era now with AI and with all that AI can do. I was talking to a company that is doing deep infrastructure software in terms of compilation optimization across different compute architectures. This is something that would have been, you know, multiple PhD theses probably only 10 years ago. And they were telling me how helpful AI is. And indeed, that AI, if it is targeted in the right way, can actually write very good code, even where there’s a limited data set. So you can well imagine that if you’re trying to write compilers, there isn’t a huge amount of data for writing compilers to someone else’s architecture. And so I think it’s TBD to see how that’ll play out. And I think that’s the risk that I would watch for. But by the same token, that’s also going to hopefully enable all the hardware folks, such as yourself, to accelerate. Because it will enable those optimizations around the use cases to occur much more rapidly.<br>
+Yuval: As we get close to the end of our conversation, I’m curious, what did you learn over the past year, something that’s new in quantum that maybe surprised you?<br>
+Mehmet: I think the thing that’s probably surprised me the most over the past year has been the continued algorithmic work, which has been fantastic in terms of reducing not just the kind of qubit count, but also as importantly, the gate count. That has, and perhaps it should have been, but that has kind of surprised me the most. I feel like there are more and more papers coming out that are showing what look to me like novel optimizations in being able to shrink these algorithms. And that is the part that maybe doesn’t get as much public press, is that as much as everyone on the hardware side is doing fantastic work, the software in quantum is also coming the other way to meet the hardware and to kind of lower those gate counts and lower the qubit counts. And so that’s probably been the most surprising thing. I think the second thing I’d flag is just there has been, maybe not surprising as such, but there’s been increasing work done around networking and around, you know, kind of in particular, the thing that has surprised me is the aspiration to network together multiple qubit modalities. That to me has been surprising because intuitively it feels like an extremely, extremely challenging problem. And it is one that of course, you know, if we can get it to work, it would be incredible. But I think that has been a surprise.<br>
+Yuval: And last hypothetical, if you could have dinner with one of the quantum greats, dead or alive, who would that be?<br>
+Mehmet: So I typically pride myself on kind of being anti-consensus, but I think here I’m going to have to go with a consensus answer and say Richard Feynman. And look, he was there at the beginning in terms of having the idea for a quantum computer, but I think more than that, it’s really the first principles thinking and just really kind of tying everything back to, you know, how small a unit of compute could you potentially do? How could you kind of create a machine that could control that unit of compute and kind of building everything from the ground up? And I do think if we look over the past five years, 10 years, we’ve seen that these sorts of principles have been applied in different ways and of course are being applied to quantum and they’re yielding tremendous results and outcomes. And so I think for that reason and also because, you know, I’ve read some of Feynman’s books and I understand he was also a pretty entertaining character, so I think he’d make a really incredible dinner guest.<br>
+Yuval: Mehmet, thank you so much for joining me today.<br>
+Mehmet: Thank you, Yuval.<br>
+Yuval Boger is the Chief Commercial Officer of QuEra Computing.<br>
+June 15, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/podcast-with-mehmet-sanliol-managing-director-at-evercore/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="c1dba8651ad84642.html" class="prev-next">&larr; Atom Computing and Phasecraft Partner on Material Science Algorithms</a>
+  
+  
+  <a href="8713caa710571738.html" class="prev-next">AIX Global Innovations Discloses Software-Governed Fault-Tolerant Quantum Computing Campaign on Cloud-Accessible IBM Hardware &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-06-16 03:40 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
