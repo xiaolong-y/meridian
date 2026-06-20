@@ -139,18 +139,22 @@
       <span>Mohamed Abdel-Kareem</span>
       <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>65 words</span>
-      <span>1 min read</span>
+      <span>498 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Illustration of the Helios design and conception of operations. Sandia National Laboratories and Quantinuum have published peer-reviewed performance data in the journal Nature detailing Helios, a 98-qubit commercial trapped-ion quantum computer. Operating under a long-standing Cooperative Research and Development Agreement (CRADA), which was renewed in May 2026, researchers from Sandia evaluated and verified the system&#39;s [...] The post Sandia National Laboratories and Quantinuum Validate 98-Qubi</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/sandia-national-laboratories-and-quantinuum-validate-98-qubit-helios-trapped-ion-framework/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Sandia National Laboratories and Quantinuum have published peer-reviewed performance data in the journal Nature detailing Helios, a 98-qubit commercial trapped-ion quantum computer. Operating under a long-standing Cooperative Research and Development Agreement (CRADA), which was renewed in May 2026, researchers from Sandia evaluated and verified the system’s operational parameters. The benchmarking routines confirmed single-qubit gate fidelities of 99.9975% (an average infidelity of 2.5×10−5) and two-qubit gate fidelities of 99.921% (an average infidelity of 7.9×10−4), alongside a State Preparation and Measurement (SPAM) fidelity of 99.967%. These metrics establish baseline error rates that allow the system to execute operations outside the boundaries of classical simulation.<br>
+QCCD Architecture and the Rotatable Ion Storage Ring<br>
+The hardware core is built on a two-dimensional surface electrode Quantum Charge-Coupled Device (QCCD) architecture that utilizes 137Ba+ (barium) hyperfine clock states for its physical qubits. To achieve all-to-all connectivity without scaling up device fabrication complexity, Helios incorporates a four-way “X” junction that acts as a physical router between distinct memory and logic zones. Qubits are stored in a peripheral, rotatable ion storage ring and a series of leg storage corridors that act as random-access and sequential memory banks. During a program layer, a specialized “cache” zone buffers pre-sorted ions before translating them into eight high-fidelity quantum logic zones. This spatial segregation allows the physical sorting of upcoming qubit batches to proceed in parallel with the laser-cooling cycles of active ions, increasing the effective clock speed of the hardware.<br>
+Real-Time Control and Dynamic Virtual Mapping<br>
+Orchestrating these physical ion movements requires an integrated classical-quantum control stack governed by the Helios runtime software module. Moving away from static, pre-planned compilation methods, this control layer translates algorithmic operations on a program’s “virtual qubits” into corresponding physical ion transport commands in real time while the quantum state remains live. The runtime architecture dynamically manages ion splitting, combining, linear shifting, and junction routing based on mid-circuit data. This real-time compilation capability enables the deployment of complex program logic—such as conditional if-then-else branches, for/while loops, and early circuit termination routines—mirroring high-level classical computing frameworks rather than relying on flat, unalterable assembly strings.<br>
+Volumetric Evaluation and Classical Simulation Complexity<br>
+Sandia verified the system-level fidelity of Helios using volumetric benchmarks, including random Clifford circuits containing automated mid-circuit measurements and resets (MCMR). These tests evaluated the hardware’s cross-talk boundaries and stabilizer tracking capabilities, which are essential for structural quantum error correction. Additional verification via Random Circuit Sampling (RCS) mapped out the classical computation barriers of the 98-qubit processor. Optimized tensor-network contraction modeling indicates that classically simulating the cross-entropy metrics of Helios’s deep random circuits requires compute scales measured in exascale-years and multi-megawatt energy footprints, confirming that the trapped-ion cluster operates in a regime that challenges contemporary supercomputing architectures.<br>
+The official collaborative announcement from the national laboratory can be reviewed via the Sandia Newsroom here. For the complete, peer-reviewed engineering data tracking the underlying barium ion transitions, junction transport operations, and random circuit sampling cost configurations, read the full publication available in Nature here.<br>
+June 18, 2026</p>
   </div>
   
 </article>
@@ -173,7 +177,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-06-20 13:53 UTC
+  Generated 2026-06-20 19:20 UTC
 </div>
 
 <script type="module">
