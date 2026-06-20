@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quantum computing bombshells that are not April Fools — Meridian Reader</title>
+  <title>University of Southern Denmark Secures Access to Quantinuum Helios for Fault-Tolerant Algorithm R&amp;D — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,51 +126,49 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="f681695608c41f13.html" title="Before we start on quantum">&larr; prev</a>
-    <a href="154b16074c21acc9.html" title="Movie Review: “The AI Doc”">next &rarr;</a>
+    <a href="bf62bed5ac755c48.html" title="Sandia National Laboratories and Quantinuum Validate 98-Qubit Helios Trapped-Ion Framework">&larr; prev</a>
+    <a href="aac79b7a87e62fe5.html" title="Hexaware Technologies Allocates £25 Million ($33 Million USD) for UK R&amp;D Expansion and Quantum Computing Initiatives">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Quantum computing bombshells that are not April Fools</h1>
+    <h1 class="article-title">University of Southern Denmark Secures Access to Quantinuum Helios for Fault-Tolerant Algorithm R&amp;D</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>11w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>504 words</span>
+      <span>435 words</span>
       <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Quantum computing bombshells that are not April Fools<br>
-For those of you who haven’t seen, there were actually two “bombshell” QC announcements this week. One, from Caltech, including friend-of-the-blog John Preskill, showed how to do quantum fault-tolerance with lower overhead than was previously known, by using high-rate codes, which could work for example in neutral-atom architectures (or possibly other architectures that allow nonlocal operations, like trapped ions). The second bombshell, from Google, gave a lower-overhead implementation of Shor’s algorithm to break 256-bit elliptic curve cryptography.<br>
-Notably, out of an abudance of caution, the Google team chose to “publish” its result via a cryptographic zero-knowledge proof that their circuit exists (so, without revealing the details to attackers). This is the first time I’ve ever seen a new mathematical result actually announced that way, although I understand that there’s precedent in the 1500’s, when mathematicians would (for example) prove their ability to solve quartic equations by challenging their rivals to duels. I’m not sure how much it will actually help, as once other groups know that a smaller circuit exists, it might be only a short time until they’re able to find it as well.<br>
-Neither of these results change the basic principles of QC that we’ve known for decades, but they do change the numbers.<br>
-When you put both of them together, Bitcoin signatures for example certainly look vulnerable to quantum attack earlier than was previously known! In particular, the Caltech group estimates that a mere 25,000 physical qubits might suffice for this, where a year ago the best estimates were in the millions. How much time will this save — maybe a year? Subtracting, of course, off a number of years that no one knows.<br>
-In any case, these results provide an even stronger impetus for people to upgrade now to quantum-resistant cryptography. They—meaning you, if relevant—should really get on that!<br>
-When I got an early heads-up about these results—especially the Google team’s choice to “publish” via a zero-knowledge proof—I thought of Frisch and Peierls, calculating how much U-235 was needed for a chain reaction in 1940, but not publishing it, even though the latest results on nuclear fission had been openly published just the year prior. Will we, in quantum computing, also soon cross that threshold? But I got strong pushback on that analogy from the cryptography and cybersecurity people who I most respect. They said: we have decades of experience with this, and the answer is that you publish. And, they said, if publishing causes people still using quantum-vulnerable systems to crap their pants … well, maybe that’s what needs to happen right now.<br>
-Naturally, journalists have been hounding me for comments, though it was the worst possible week, when I needed to host like four separate visitors in Austin. I hope this post helps! Please feel free to ask questions or post further details in the comments.<br>
-And now, with no time for this blog post to leaven and rise, I need to go home for my family’s Seder. Happy Passover!</p>
+    <p>The University of Southern Denmark (SDU) has partnered with hardware developer Quantinuum and the Danish e-Infrastructure Consortium (DeiC) to integrate the Quantinuum Helios trapped-ion quantum computing platform into Denmark’s national research infrastructure. Supported by dedicated funding coordinated through DeiC in alignment with the Danish government’s national strategy for quantum technology, the project, titled “Implementing TQFTs and TQC on Quantinuum Hardware,” grants SDU researchers direct cloud access to the system. The platform will serve as an experimental testbed to refine fault-tolerant algorithms and evaluate quantum error-correction (QEC) protocols under live hardware conditions.<br>
+Trapped-Ion Architecture and High-Rate Logical Encoding<br>
+The Helios quantum processing unit (QPU) features a Quantum Charge-Coupled Device (QCCD) architecture equipped with a physical junction to route individual atomic ions across the trap. The system contains 98 fully connected physical qubits, delivering a single-qubit gate fidelity of 99.9975% and a two-qubit gate fidelity of 99.921%. By utilizing non-local physical qubit movement to enable all-to-all connectivity, the hardware supports mid-circuit measurements, pulse-level control, and advanced two-level concatenated “iceberg” codes. This high-rate encoding scheme yields a physical-to-logical qubit ratio near 2:1, producing approximately 48 to 50 fully error-corrected logical qubits from the 98 available physical qubits and demonstrating “beyond break-even” logical error rates that are 10 to 100 times lower than their physical counterparts.<br>
+Topological Computing Foundations and Knot Invariant Workflows<br>
+Research at SDU will be anchored at the Centre for Quantum Mathematics (QM), led by Director Professor Jørgen Ellegaard Andersen and Assistant Professor William Elbæk Mistegård. The scientific team will utilize the logical qubit baseline to bridge theoretical Topological Quantum Field Theory (TQFT) with real-world quantum hardware, explicitly testing topological surface codes based on Turaev-Viro theories to demonstrate universal, error-corrected quantum computation. SDU researchers are deploying variants of the Aharonov–Jones–Landau algorithm to compute complex knot invariants on physical processors, a project Mistegård recently presented at France’s Institut des Hautes Études Scientifiques (IHES). This work leverages Helios’s real-time execution engine and its Python-based language, Guppy, to interleave GPU-accelerated classical supercomputing with dynamic, measurement-driven quantum loops, providing a structured environment to benchmark QPUs and design hybrid machine-learning applications for the pharmaceutical, financial, and defense sectors.<br>
+The official, synchronized deployment announcement outlining the Danish infrastructure partnership can be reviewed via Quantinuum here. For the secondary academic release mapping out open-source software distributions, TQFT implementation benchmarks, and localized technical talent cultivation at the Centre for Quantum Mathematics, inspect the SDU Department of Mathematics and Computer Science bulletin here. For an exhaustive technical breakdown tracking the underlying 98-qubit hardware metrics, the 2:1 logical encoding breakthrough, and real-time algorithmic control flow capabilities, inspect the Quantinuum Helios Architecture Index here.<br>
+June 18, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9665" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/university-of-southern-denmark-secures-access-to-quantinuum-helios-for-fault-tolerant-algorithm-rd/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="f681695608c41f13.html" class="prev-next">&larr; Before we start on quantum</a>
+  <a href="bf62bed5ac755c48.html" class="prev-next">&larr; Sandia National Laboratories and Quantinuum Validate 98-Qubit Helios Trapped-Ion Framework</a>
   
   
-  <a href="154b16074c21acc9.html" class="prev-next">Movie Review: “The AI Doc” &rarr;</a>
+  <a href="aac79b7a87e62fe5.html" class="prev-next">Hexaware Technologies Allocates £25 Million ($33 Million USD) for UK R&amp;D Expansion and Quantum Computing Initiatives &rarr;</a>
   
 </div>
 
