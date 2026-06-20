@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sandia National Laboratories and Quantinuum Validate 98-Qubit Helios Trapped-Ion Framework — Meridian Reader</title>
+  <title>Fixstars Amplify Integrates IonQ Backend to Support Trapped-Ion Algorithm Prototyping — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,51 +126,53 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="d75c75f8714a64e6.html" title="Diraq Expands U.S. Infrastructure Operations with Palo Alto, California Headquarters">&larr; prev</a>
-    <a href="569c50e21114980a.html" title="University of Southern Denmark Secures Access to Quantinuum Helios for Fault-Tolerant Algorithm R&amp;D">next &rarr;</a>
+    <a href="4c9cced2f3dd48e7.html" title="Duke University and IonQ Demonstrate Tripartite Entanglement of Remote Atomic Qubits">&larr; prev</a>
+    <a href="6424f3cc741774f6.html" title="INNOSPACE and Norma Partner to Develop Space-Based Quantum Computing Infrastructure">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Sandia National Laboratories and Quantinuum Validate 98-Qubit Helios Trapped-Ion Framework</h1>
+    <h1 class="article-title">Fixstars Amplify Integrates IonQ Backend to Support Trapped-Ion Algorithm Prototyping</h1>
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>1d</span>
+      <span>5h</span>
       <span class="article-category">quantum</span>
-      <span>498 words</span>
+      <span>447 words</span>
       <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Sandia National Laboratories and Quantinuum have published peer-reviewed performance data in the journal Nature detailing Helios, a 98-qubit commercial trapped-ion quantum computer. Operating under a long-standing Cooperative Research and Development Agreement (CRADA), which was renewed in May 2026, researchers from Sandia evaluated and verified the system’s operational parameters. The benchmarking routines confirmed single-qubit gate fidelities of 99.9975% (an average infidelity of 2.5×10−5) and two-qubit gate fidelities of 99.921% (an average infidelity of 7.9×10−4), alongside a State Preparation and Measurement (SPAM) fidelity of 99.967%. These metrics establish baseline error rates that allow the system to execute operations outside the boundaries of classical simulation.<br>
-QCCD Architecture and the Rotatable Ion Storage Ring<br>
-The hardware core is built on a two-dimensional surface electrode Quantum Charge-Coupled Device (QCCD) architecture that utilizes 137Ba+ (barium) hyperfine clock states for its physical qubits. To achieve all-to-all connectivity without scaling up device fabrication complexity, Helios incorporates a four-way “X” junction that acts as a physical router between distinct memory and logic zones. Qubits are stored in a peripheral, rotatable ion storage ring and a series of leg storage corridors that act as random-access and sequential memory banks. During a program layer, a specialized “cache” zone buffers pre-sorted ions before translating them into eight high-fidelity quantum logic zones. This spatial segregation allows the physical sorting of upcoming qubit batches to proceed in parallel with the laser-cooling cycles of active ions, increasing the effective clock speed of the hardware.<br>
-Real-Time Control and Dynamic Virtual Mapping<br>
-Orchestrating these physical ion movements requires an integrated classical-quantum control stack governed by the Helios runtime software module. Moving away from static, pre-planned compilation methods, this control layer translates algorithmic operations on a program’s “virtual qubits” into corresponding physical ion transport commands in real time while the quantum state remains live. The runtime architecture dynamically manages ion splitting, combining, linear shifting, and junction routing based on mid-circuit data. This real-time compilation capability enables the deployment of complex program logic—such as conditional if-then-else branches, for/while loops, and early circuit termination routines—mirroring high-level classical computing frameworks rather than relying on flat, unalterable assembly strings.<br>
-Volumetric Evaluation and Classical Simulation Complexity<br>
-Sandia verified the system-level fidelity of Helios using volumetric benchmarks, including random Clifford circuits containing automated mid-circuit measurements and resets (MCMR). These tests evaluated the hardware’s cross-talk boundaries and stabilizer tracking capabilities, which are essential for structural quantum error correction. Additional verification via Random Circuit Sampling (RCS) mapped out the classical computation barriers of the 98-qubit processor. Optimized tensor-network contraction modeling indicates that classically simulating the cross-entropy metrics of Helios’s deep random circuits requires compute scales measured in exascale-years and multi-megawatt energy footprints, confirming that the trapped-ion cluster operates in a regime that challenges contemporary supercomputing architectures.<br>
-The official collaborative announcement from the national laboratory can be reviewed via the Sandia Newsroom here. For the complete, peer-reviewed engineering data tracking the underlying barium ion transitions, junction transport operations, and random circuit sampling cost configurations, read the full publication available in Nature here.<br>
-June 18, 2026</p>
+    <p>Cloud-based optimization developer Fixstars Amplify Corporation has added IonQ’s trapped-ion quantum computing environment as a standard execution backend within its optimization platform. The integration enables enterprise users in the United States and Japan to develop, test, and execute combinatorial optimization workloads across hardware-agnostic pipelines. Under the initial deployment framework, access to IonQ’s cloud-based quantum simulator is available to existing platform account holders at no additional charge, while access to actual trapped-ion hardware processing units is scheduled to roll out progressively through tiered, paid subscription plans.<br>
+Unified SDK Architecture and Hybrid Optimization Loops<br>
+The backend integration is orchestrated by combining the Fixstars Amplify SDK—a unified software development library designed to formulate combinatorial optimization problems—with Amplify Quantum, a specialized extension package that automates the translation of mathematical models into executable quantum structures. When an engineer calls the platform’s core execution functions, the extension dynamically converts the optimization model into parametric quantum circuits, handles the API communication downlinks, and manages the iterative feedback loop between classical and quantum layers. This unified interface allows users to switch their backend solver clients from classical GPU engines to trapped-ion targets by changing the destination client class configuration within their local Python environments.<br>
+The software stack supports several hybrid variational optimization algorithms optimized for Noisy Intermediate-Scale Quantum (NISQ) systems:<br>
+- Quantum Approximate Optimization Algorithm (QAOA): Executes parameter-driven state transformations to solve unconstrained Ising polynomials of arbitrary degrees.<br>
+- Constrained QAOA: Integrates structural N-HOT constraint boundaries directly into the circuit generation layer to prevent the sampling of invalid states.<br>
+- Recursive QAOA: Systematically reduces the effective size of the mathematical problem graph by recursively fixing highly correlated variable pairs through classical pre-processing loops.<br>
+Hardware Topology and All-to-All Qubit Interaction<br>
+Integrating IonQ’s platform into the Fixstars portfolio expands the compiler’s range beyond traditional superconducting architectures and classical annealing simulators. IonQ’s trapped-ion hardware uses precise laser control to manipulate individual ionized atoms suspended in electromagnetic fields, achieving a two-qubit gate fidelity of 99.99% and an empirical Algorithmic Qubit (#AQ) metric of 64. Because the physical ions are mobile within the trap, the hardware supports an all-to-all connectivity architecture where every qubit can interact directly with any other qubit in the system. This all-to-all mapping removes the routing overhead and swap-gate penalties common in fixed-coupling superconducting layouts, improving circuit depth efficiency when embedding dense optimization problems like the Travelling Salesperson Problem or Quadratic Assignment Problems.<br>
+The official commercial release detailing the software deployment can be reviewed through the Fixstars Press Center here. For structural programming examples, syntax rules, and algorithm parameter definitions, inspect the Fixstars Amplify Quantum Documentation here, and track live hardware benchmark statistics and corporate scaling milestones via the IonQ Developer Portal here.<br>
+June 20, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantumcomputingreport.com/sandia-national-laboratories-and-quantinuum-validate-98-qubit-helios-trapped-ion-framework/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/fixstars-amplify-integrates-ionq-backend-to-support-trapped-ion-algorithm-prototyping/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="d75c75f8714a64e6.html" class="prev-next">&larr; Diraq Expands U.S. Infrastructure Operations with Palo Alto, California Headquarters</a>
+  <a href="4c9cced2f3dd48e7.html" class="prev-next">&larr; Duke University and IonQ Demonstrate Tripartite Entanglement of Remote Atomic Qubits</a>
   
   
-  <a href="569c50e21114980a.html" class="prev-next">University of Southern Denmark Secures Access to Quantinuum Helios for Fault-Tolerant Algorithm R&amp;D &rarr;</a>
+  <a href="6424f3cc741774f6.html" class="prev-next">INNOSPACE and Norma Partner to Develop Space-Based Quantum Computing Infrastructure &rarr;</a>
   
 </div>
 
