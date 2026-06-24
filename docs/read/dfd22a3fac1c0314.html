@@ -137,26 +137,20 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>4h</span>
+      <span>10h</span>
       <span class="article-category">quantum</span>
-      <span>591 words</span>
-      <span>3 min read</span>
+      <span>63 words</span>
+      <span>1 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Barcelona-based quantum developer Qilimanjaro Quantum Tech has released QiliSDK 0.2.0, an open-source Python framework designed to bridge the structural divide between digital gate-based programming and analog Hamiltonian time evolution. Most quantum software development kits restrict developers to a single physical computing paradigm—either compiling standard quantum circuit logic or managing continuous analogue energy schedules. QiliSDK 0.2.0 establishes a single unified, backend-agnostic API. This abstraction tier enables researchers to write a single high-level codebase and toggle execution between local CPUs, accelerated GPUs, or real digital and analog Quantum Processing Units (QPUs) by modifying a single line of configuration code.<br>
-Three-Tier Architecture and Native Multi-Paradigm Abstractions<br>
-The framework is organized into three distinct operational layers: Primitives, Functionals, and Backends. The Primitives layer provides a foundational toolkit containing pre-built variational ansatz blocks for digital circuits, alongside continuous time-evolution schedule modules for analog systems. These modules feed into a core quantum-tensor type—now optimized as a native C++ module named QTensor—that handles high-speed state preparations, observables, and partial traces. The Functionals layer uses a standardized backend.execute(functional) method to normalize diverse routines like variational loops or analog annealing runs. This unified interface interfaces directly with the Backends layer, which maps computational tasks across classical emulators like QuTiP, NVIDIA graphics processors, or Qilimanjaro’s cloud-linked and on-premise physical quantum computers.<br>
-GPU Acceleration via NVIDIA CUDA-Q Integration<br>
-To support large-scale quantum emulation before dispatching code to physical QPUs, Qilimanjaro has integrated NVIDIA CUDA-Q directly into the framework via the CudaBackend class. The upgrade allows users to leverage the parallel processing power of graphics cards to track expanding quantum states, which grow exponentially with qubit count and quickly exhaust standard CPU memory limits above 25 qubits. The CUDA-Q wrapper automatically configures multi-GPU pooled execution and handles advanced multi-node tensor-network contractions. For analog operations, the backend translates time-dependent schedules into optimized operators, bypassing the need for researchers to write low-level CUDA code while pushing the practical state-vector simulation frontier to 30 qubits and beyond on single-node classical supercomputers.<br>
-Unified Noise Modeling, Interoperability, and Quantum AI Tools<br>
-Version 0.2.0 introduces a comprehensive noise modeling engine that can be defined once and applied uniformly across both CPU emulators and GPU backends. This system accommodates state noise, control perturbations, and readout asymmetries using both Kraus and Lindblad mathematical representations, ensuring compatibility with digital or analog hardware configurations. Additionally, the software introduces dedicated primitives—including quantum reservoirs and specialized input layers—to streamline Quantum Reservoir Computing for near-term analog hardware. The software update is completed by native import and export connectors for OpenQASM 3 and Microsoft’s Quantum Intermediate Representation (QIR), alongside automatic normalization of optimization terms using Rosenberg penalty functions.<br>
-Strategic Deployment in European Supercomputing Centers<br>
-The integration of CUDA-Q into QiliSDK coincides with a broader expansion of hybrid supercomputing infrastructure across Europe, where multiple facilities are deploying NVIDIA-accelerated platforms to host hybrid quantum-classical workloads. Qilimanjaro has installed three on-premise quantum computers at the Barcelona Supercomputing Center (BSC) under the EuroHPC Joint Undertaking, where researchers utilize the updated SDK to drive high-fidelity analog simulation on commodity hardware. By serving as an open-source development bridge, the software allows high-performance computing centers to couple classical GPU clusters with physical analog chips, advancing Europe’s sovereign industrial intelligence and clean-energy research frameworks.<br>
-The full framework capabilities and release history can be reviewed in the official QiliSDK 0.2.0 announcement here and the detailed software release notes here, while technical integration workflows and performance benchmarks are hosted on the Qilimanjaro CUDA-Q blog post here and their media release portal here, with broader continental infrastructure context available via the NVIDIA supercomputing brief here.<br>
-June 23, 2026</p>
+    <p>Barcelona-based quantum developer Qilimanjaro Quantum Tech has released QiliSDK 0.2.0, an open-source Python framework designed to bridge the structural divide between digital gate-based programming and analog Hamiltonian time evolution. Most quantum software development kits restrict developers to a single physical computing paradigm—either compiling standard quantum circuit logic or managing continuous analogue energy schedules. QiliSDK 0.2.0 [...] The post Qilimanjaro Releases QiliSDK 0.2.0 a</p>
+  </div>
+  <div class="fallback">
+    Full article extraction unavailable.
+    <a href="https://quantumcomputingreport.com/qilimanjaro-releases-qilisdk-0-2-0-and-integrates-nvidia-cuda-q-for-unified-hybrid-hardware-emulation/" target="_blank" rel="noopener">Read on original site &rarr;</a>
   </div>
   
 </article>
@@ -179,7 +173,7 @@ June 23, 2026</p>
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-06-23 19:57 UTC
+  Generated 2026-06-24 02:51 UTC
 </div>
 
 <script type="module">

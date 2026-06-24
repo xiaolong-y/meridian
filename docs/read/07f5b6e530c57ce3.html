@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manufacturing Throughput, Iteration Speed, and the Economics of Fabrication — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="6d96c6dae1b41a1c.html" title="Aegiq Launches New Sheffield Headquarters and Expands Semiconductor Partnership for Photonic Scaling">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Manufacturing Throughput, Iteration Speed, and the Economics of Fabrication</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>6h</span>
+      <span class="article-category">quantum</span>
+      <span>1591 words</span>
+      <span>8 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Moving to standard CMOS wafer manufacturing is very helpful for certain modalities but not all. The real competitive advantages come from fabrication throughput—measured in wafers per hour (WPH)—and cycle time (i.e. the time from design submission to tested device). This is where manufacturing economics meets quantum roadmaps.<br>
+The IonQ-SkyWater Acquisition: A Case Study in Vertical Integration<br>
+In January 2026, IonQ announced its intent to acquire SkyWater Technology, one of the largest U.S.-based pure-play semiconductor foundries, for approximately $1.8 billion. The transaction, which received shareholder approval in May 2026 and is expected to close in the second or third quarter of 2026, represents a clear signal that manufacturing is now an important consideration when developing quantum hardware.<br>
+Why vertical integration matters for cycle time:<br>
+With embedded access to its own trusted foundry, IonQ gains direct control over design, wafer fabrication, packaging, and testing under one roof. This eliminates the handoff delays and scheduling uncertainty of merchant foundry engagement.<br>
+The roadmap acceleration:<br>
+IonQ now expects to begin functional testing of 200,000-qubit machines (enabling over 8,000 ultra-high-fidelity logical qubits) in 2029. The company’s roadmap targets a 2,000,000-qubit machine by 2030.<br>
+Supply chain positioning (manufacturing to chip):<br>
+The combination creates a U.S.-based manufacturing supply chain from design through fabrication and packaging, likely focused on photonic integrated circuits (PICs) and trap development. This aligns with government procurement frameworks for secure domestic quantum hardware.<br>
+What this signals for the industry:<br>
+Fault-tolerant quantum roadmaps increasingly depend on manufacturing methodology and quality control. Metrics, like line roughness, take on new, critical dimensions, as they have a direct impact on qubit coherence. Competitors still relying on shared research fabs or merchant foundries face longer cycles and less control over these specialized process parameters.<br>
+Fabrication Throughput: The 24/7 Advantage<br>
+Not all fabrication facilities operate at the same speed. The difference in operating hours translates directly into faster design cycles.<br>
+IBM’s Albany advantage:<br>
+IBM’s quantum chips are fabricated at NY CREATES’ Albany NanoTech Complex (and soon Anderon), which processes wafers 24/7. Previously, IBM’s quantum chips were fabricated at their Yorktown Heights 200mm research-scale lab, which ran 16 hours a day, 5 or 6 days a week, resulting in ~ 72 hours of lost productivity per week. The issue is not only the advanced 300mm technology itself; it is that high-productivity fabs are the only facilities where this level of 24/7 operation makes economic sense. IBM is targeting that maximized productivity. As a further step, IBM is team with the U.S. Department of Commerce to create a new company called Anderon that will focus exclusively on quantum fabrication.<br>
+Christy Tyberg, IBM Distinguished Engineer of Quantum Fab Technology & Infrastructure, stated: “If we had not started processing our chips at Albany using 300mm technology, we wouldn’t have achieved the success required to pull off our development roadmap”.<br>
+The Testing Bottleneck<br>
+For quantum technology, a significant hurdle to rapid iteration is often the testing phase for the chips. To measure whether the core qubits work as intended, the devices must be cooled to near absolute zero (a few milliKelvin in most cases). Because the cooling process is difficult to do on a massive scale, it often becomes the primary bottleneck that delays getting new chips from the lab to the market.<br>
+The co-location solution:<br>
+SkyWater Technology is addressing this delay at its Minnesota facility by housing these cryogenic testing stations right next to the manufacturing line. By testing the chips under the same roof where they are built, the company eliminates the time lost shipping fragile wafers to outside labs.<br>
+This builds on important industry breakthroughs, like a collaboration between Intel, Bluefors, and Afore, which resulted in the first machine capable of testing entire wafers of chips at 1.6 Kelvin before they are even cut apart. To accommodate other types of quantum technology, SkyWater is also building in-house testing beds for light-based (photonic) chips, further speeding up the development cycle.<br>
+Quantum-Specific Constraints: Materials and Testing<br>
+Gold incompatibility with CMOS:<br>
+During GQI’s interview with Dr. Gilbert at Skywater, he highlighted that although gold is completely incompatible with standard CMOS processes, it is needed for some quantum packaging applications. Gold contaminates CMOS fabrication lines and cannot be easily removed. This forces quantum companies to choose between dedicated tooling or packaging in separate facilities for the crucial gold depositing.<br>
+Microsoft’s recently announced Majorana 2 chip led to a breakthrough in stability. The key improvement stems from the material switch from aluminum to lead. However, lead is traditionally banned from standard chip-making facilities. The chemical baths and highly purified water used to wash standard chips can easily strip the lead away, spreading contamination throughout the factory’s fluid systems. Manufacturing chips like the Majorana 2 at scale requires highly specialized precautions to ensure millions of dollars of factory equipment aren’t ruined by these incompatible materials.<br>
+The Economic Tension: Volume vs. Fixed Costs<br>
+Producing quantum chips on standard semiconductor lines presents a fundamental economic tension. The fixed costs of a mask set ($800K–$5M+) and EDA tool licenses ($200K–$1M+ annually) must be amortized over the number of wafers produced.<br>
+For high-volume commercial chips producing thousands of wafers per year, these fixed costs are negligible per die. For quantum chips, where annual wafer volumes may be in the dozens or hundreds, the per-die fixed cost is orders of magnitude higher.<br>
+This is why the IonQ-SkyWater vertical integration model is strategically significant. It allows IonQ to:<br>
+- Avoid huge CAPEX: SkyWater already owns the fabrication tools. IonQ does not need to buy them.<br>
+- Dedicate pilot lines: SkyWater can allocate specific equipment to quantum processes without contaminating mainstream CMOS production.<br>
+- Iterate without merchant foundry scheduling uncertainty: IonQ controls its own queue priority.<br>
+The economic tension is not that quantum cannot be fabricated on standard lines. It is that the fixed costs must be justified by strategic value, not unit volume.<br>
+From Lab to Fab: The Design Automation Gap<br>
+Scaling to thousands or millions of qubits requires electronic design automation (EDA) tools adapted for quantum. Most quantum companies already use GDSII format and some form of design rule checking. The gap is in design rules specific for quantum product manufacturing.<br>
+USTC’s wafer-scale Q-EDA stack:<br>
+Researchers at the University of Science and Technology of China (USTC) have demonstrated a complete pipeline converting GDSII files into manufacturing-ready instructions. Key achievements include:<br>
+- 504 qubits fabricated on a single chip<br>
+- 76 geometric design rule checks, of which nine are quantum-specific to address unique challenges in superconducting circuit fabrication (e.g. minimum coplanar waveguide gap of 3μm to control two-level system losses, Josephson junction overlap tolerances of ±50nm for critical current control)<br>
+- 300mm CMOS production lines achieving transmon coherence times exceeding 100μs, marking a transition from proof-of-concept to engineered systems<br>
+The USTC paper is available on ArXiv. However, it is important to qualify that these tolerances (±50nm) are not exceptionally precise by CMOS standards—line roughness in advanced nodes is measured in nanometers. The challenge is not meeting the tolerances but ensuring the right metrics (coherence, two-level system density) are prioritized.<br>
+A process methodology like this—with quantum-specific design rules embedded in standard EDA flows—is a significant enabler for migration to standardized CMOS fabrication.<br>
+The Competitive Landscape: Foundry Access Can Be a Moat<br>
+Current quantum hardware supply chain positioning varies significantly by company:<br>
+| Company | Fab Access Model | Wafer Size | Strategic Positioning | <br>
+| IonQ (via SkyWater) | Vertically integrated (acquisition) | 200mm | DMEA Category 1A Trusted Foundry, U.S. domestic supply chain, co-located testing | <br>
+| IBM | Direct partnership (Albany NanoTech plus soon Anderon) | 300mm | 24/7 operation, 75% more productive capacity than 16/5 | <br>
+| Rigetti | Vertically integrated | 150mm | Provides optimized process for their own proprietary superconducting qubit process | <br>
+| OQC | Merchant foundry | 200mm | Cost-effective at current scale | <br>
+| Others (Diraq, spin qubits) | Partner fabs | 300mm | Access to advanced nodes but less control | <br>
+Strategic observation: The quantum hardware industry is fragmenting into those who control their fabrication supply chain and those who do not. Vertical integration (IonQ) and exclusive partnerships (IBM with Albany NanoTech), and standalone foundries (Anderon) create moats. Merchant foundry dependency introduces uncertainty in pricing, scheduling, and access to advanced nodes.<br>
+Testing plays a critical role here. Companies with co-located testing (SkyWater Minnesota) or integrated test capabilities (IBM/Anderon with in-line wafer testing) can close the iteration loop faster than those shipping wafers to external test facilities. This directly reduces cycle time and X-factor.<br>
+The supply chain is increasingly defined by extreme supplier concentration in several critical categories—dilution refrigeration, helium-3, quantum-grade lasers, isotopically enriched silicon-28, and cryo-CMOS controllers. These constraints affect all modalities but compound for companies without direct fab access.<br>
+The Path Forward<br>
+To maintain competitiveness in quantum hardware, companies must be able to:<br>
+- Achieve high fabrication throughput (WPH) through 24/7 fab access or dedicated pilot lines<br>
+- Minimize cycle time through co-located testing and short design-to-measurement loops<br>
+- Control specialized process parameters (line roughness, material purity) that affect qubit coherence<br>
+- Access advanced tools without bearing the full CAPEX of ownership<br>
+- Integrate testing into the fabrication workflow to collapse iteration time<br>
+Companies that master these manufacturing disciplines will have an advantage in the next phase of the industry.<br>
+This is the second in a series examining quantum hardware manufacturing. For deeper analysis of fabrication trends, supply chain dynamics, and modality-specific roadmaps, GQI subscribers can access our full manufacturing database and custom briefing services. To learn more, contact GQI at info@global-qi.com or reach out directly to clay@global-qi.com.<br>
+June 23, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/manufacturing-throughput-iteration-speed-and-the-economics-of-fabrication/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="6d96c6dae1b41a1c.html" class="prev-next">Aegiq Launches New Sheffield Headquarters and Expands Semiconductor Partnership for Photonic Scaling &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-06-24 02:51 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
