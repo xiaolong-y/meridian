@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aegiq deploys automated AI calibration and NVIDIA-accelerated tensor networks for extreme-scale fluid simulation — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="5797d34fe175bbe1.html" title="Quandela Validates Low-Latency Photonic QPU Integration with NVIDIA Infrastructure using NVQLink">&larr; prev</a>
+    <a href="07f5b6e530c57ce3.html" title="Manufacturing Throughput, Iteration Speed, and the Economics of Fabrication">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Aegiq deploys automated AI calibration and NVIDIA-accelerated tensor networks for extreme-scale fluid simulation</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>6h</span>
+      <span class="article-category">quantum</span>
+      <span>732 words</span>
+      <span>4 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>UK-based photonic quantum computing company Aegiq has unveiled a series of technical milestones that integrate artificial intelligence and tensor network mathematics into its hardware operations and high-performance computing (HPC) software stacks. Deployed across the company’s first-generation quantum processing unit (QPU) and hybrid software libraries, these developments address key scalability bottlenecks in hardware stability and computational fluid dynamics (CFD). By leveraging NVIDIA’s specialized AI frameworks and accelerated architecture, the firm has demonstrated automated system optimization alongside logarithmic scaling models capable of handling extreme-scale engineering data.<br>
+Automated system optimization via Vision-Language Models<br>
+Quantum computing platforms are structurally sensitive to environmental noise and hardware drift, traditionally requiring manual tuning by specialized engineers to maintain performance baselines. To automate this process, Aegiq has integrated the NVIDIA Ising family of open-source AI models into the daily operational workflow of its Artemis photonic quantum computer, currently installed at the UK’s National Quantum Computing Centre (NQCC). Operating within an agent-based architecture on an on-premises NVIDIA system, the platform utilizes a pre-trained Calibration Vision-Language Model (VLM) to navigate the hardware’s parameter space. The multi-agent setup interprets natural language prompts to orchestrate real-time hardware adjustments, balancing critical quantum dot metrics—including photon brightness, purity, and indistinguishability—while delivering a 3x reduction in weekly engineering overhead.<br>
+[ Natural Language Prompt ] ──► [ NVIDIA Ising VLM Agent ] ──► [ Real-Time QPU Adjustments ] ──► 3x Maintenance Uptime<br>
+Tensor network compression and short-range eddy interactions<br>
+In the software domain, Aegiq has partnered with the EPCC at the University of Edinburgh, the University of Massachusetts Amherst, and Oak Ridge National Laboratory (ORNL) to resolve data storage ceilings in extreme-scale fluid simulations. Modern high-fidelity CFD routines generate hundreds of terabytes of data, with individual flow snapshots requiring up to 275 gigabytes of memory. Published on arXiv, the team’s research introduces a quantum-inspired compression method that maps high-dimensional fluid data into one-dimensional tensor networks, specifically matrix product states. This mathematical framework exploits the physical structure of turbulent fluid dynamics; much like short-range quantum entanglement, the dominant energy exchanges within a turbulent cascade occur locally between neighboring eddy scales, allowing the system to achieve a 10x lossless data compression ratio on classical hardware.<br>
+Logarithmic scaling and GPU-accelerated mesh generation<br>
+To transition these theoretical scaling advantages into industrial deployment, Aegiq integrated the NVIDIA cuTensorNet library, a core component of the NVIDIA cuQuantum SDK, to drive its quantum-ready CFD algorithms. A major barrier to applying tensor network methods to realistic geometries has been configuring the underlying calculation grid. Aegiq developed a proprietary mesh generation scheme designed to align physical boundaries with tensor structures. When deployed on an NVIDIA L40S GPU, this specialized grid architecture enabled the system to demonstrate logarithmic runtime and memory scaling while generating computational meshes exceeding one billion nodes, matching standard industrial design requirements on existing classical hardware.<br>
+Compressed-domain mathematics and Fourier acceleration<br>
+The primary operational advantage of Aegiq’s tensor framework is its capacity to execute complex, non-linear fluid equations directly within the compressed data format without executing full state decompressions. The research team demonstrated that highly intensive operations, such as the spatial convolutions used by classical Navier-Stokes solvers, can be executed inside the matrix product state representation. For large-scale datasets, this compressed-domain processing achieves significant speedups over traditional Fast Fourier Transform (FFT) methods. Because the computational advantage scales proportionally with the size and complexity of the simulation, the framework alters the scaling profile of high-dimensional partial differential equations, making previously intractable engineering problems manageable.<br>
+Cross-platform compilation and fault-tolerant roadmaps<br>
+The convergence of automated AI calibration and quantum-ready tensor libraries forms a continuous development pathway linking current GPU supercomputers to future fault-tolerant quantum hardware. The algorithmic architectures accelerated by NVIDIA platforms are inherently quantum-ready, meaning the compressed fluid states can be mapped directly onto quantum registers via established state-preparation protocols. This allows corporate users in aerospace engineering, clean-energy research, and climate modeling to extract immediate performance gains on classical GPU clusters like ORNL’s Frontier system, while ensuring their software pipelines can transition to large-scale, error-corrected photonic QPUs as the underlying hardware scales.<br>
+The technical software components, product release metrics, and joint academic publications can be reviewed via the Aegiq Artemis AI Calibration Report here, with the hardware-accelerated grid frameworks detailed in the Aegiq cuQuantum CFD Brief here, the mathematical foundations of the compression architecture hosted on the Aegiq Tensor Network Portal here, and the comprehensive peer-reviewed derivation accessible through the arXiv:2606.17064 Research Repository here.<br>
+June 23, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/aegiq-deploys-automated-ai-calibration-and-nvidia-accelerated-tensor-networks-for-extreme-scale-fluid-simulation/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="5797d34fe175bbe1.html" class="prev-next">&larr; Quandela Validates Low-Latency Photonic QPU Integration with NVIDIA Infrastructure using NVQLink</a>
+  
+  
+  <a href="07f5b6e530c57ce3.html" class="prev-next">Manufacturing Throughput, Iteration Speed, and the Economics of Fabrication &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-06-24 09:01 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
