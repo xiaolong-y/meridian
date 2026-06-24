@@ -137,21 +137,20 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>5h</span>
+      <span>10h</span>
       <span class="article-category">quantum</span>
-      <span>341 words</span>
-      <span>2 min read</span>
+      <span>67 words</span>
+      <span>1 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Silicon spin hardware developer Quantum Motion and computing platform NVIDIA have partnered to address the state preparation problem, a major initialization bottleneck that challenges end-to-end quantum advantage in molecular simulation. While quantum hardware can refine complex calculations to precisions that exceed classical computing limits, algorithms like Quantum Phase Estimation (QPE)—the gold standard for analyzing electronic ground states—require a highly accurate “guide state” input to execute successfully. If the initial data embedding is coarse or poorly configured, the algorithm cannot extract useful information, leading to an exponential drain on physical qubit time and gate depth resources during the active computation.<br>
-To streamline this initialization layer, the joint engineering team has released an open-source, GPU-accelerated Julia package named MPSCircuits.jl. The software pipeline encodes complex chemical systems by leveraging Matrix Product States (MPS), a specialized tensor network representation generated classically via the Density Matrix Renormalization Group (DMRG) algorithm. Once the approximate molecular ground state is mapped within the MPS format, the package’s “unitary disentangler” compilation modules automatically translate the high-dimensional tensor data into optimized, hardware-ready quantum circuits, loading the resulting structural guide states directly into the quantum processor.<br>
-[ Chemical Hamiltonian ] ──► [ Classical DMRG Pass ] ──► [ MPS State Mapping ] ──► [ MPSCircuits.jl Compiler ] ──► [ Optimized QPE Input ]<br>
-The hybrid workflow is compiled using the NVIDIA CUDA-Q platform, which allows researchers to alternate seamlessly between accelerated GPU simulations and physical Quantum Processing Unit (QPU) control stacks. By hosting the underlying compilation and initialization layers on high-throughput GPU nodes, the pipeline minimizes the physical quantum resources needed to evaluate complex molecular electronic structures. The initialization architecture is designed to scale beyond basic diatomic test molecules toward massive industrial benchmark systems, such as the iron-sulfur clusters in Ruthenium-based catalysts or the FeMoco complex responsible for biological nitrogen fixation, supporting breakthroughs in pharmaceutical drug discovery and battery materials design.<br>
-The implementation, tutorials, and open-source code can be reviewed in the Quantum Motion Engineering Brief here, on the GitHub repository here, and via the NVIDIA LinkedIn announcement here.<br>
-June 23, 2026</p>
+    <p>End-to-end QPE circuit with our custom MPS-to-circuit compiler to address state preparation. Silicon spin hardware developer Quantum Motion and computing platform NVIDIA have partnered to address the state preparation problem, a major initialization bottleneck that challenges end-to-end quantum advantage in molecular simulation. While quantum hardware can refine complex calculations to precisions that exceed classical computing [...] The post Quantum Motion and NVIDIA Partner to Resolve State Pr</p>
+  </div>
+  <div class="fallback">
+    Full article extraction unavailable.
+    <a href="https://quantumcomputingreport.com/quantum-motion-and-nvidia-partner-to-resolve-state-preparation-obstacles-in-quantum-chemistry/" target="_blank" rel="noopener">Read on original site &rarr;</a>
   </div>
   
 </article>
@@ -174,7 +173,7 @@ June 23, 2026</p>
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-06-24 09:01 UTC
+  Generated 2026-06-24 14:23 UTC
 </div>
 
 <script type="module">
