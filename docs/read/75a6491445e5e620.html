@@ -137,20 +137,35 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>5h</span>
+      <span>16h</span>
       <span class="article-category">quantum</span>
-      <span>61 words</span>
-      <span>1 min read</span>
+      <span>525 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>QuEra Computing Inc. has released its updated product roadmap during a strategic webinar briefing, detailing the transition timelines from Noisy Intermediate-Scale Quantum (NISQ) systems to error-corrected hardware classes. The revised roadmap—anchored upon peer-reviewed academic foundations—outlines a development path optimized for a modular, zoned neutral-atom hardware infrastructure. By substituting fixed qubit layouts with parallel atom-shuttling connectivity, [...] The post QuEra Updates Ne</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/quera-updates-neutral-atom-quantum-roadmap-with-2028-fault-tolerant-launch-on-amazon-braket/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>QuEra Computing Inc. has released its updated product roadmap during a strategic webinar briefing, detailing the transition timelines from Noisy Intermediate-Scale Quantum (NISQ) systems to error-corrected hardware classes. The revised roadmap—anchored upon peer-reviewed academic foundations—outlines a development path optimized for a modular, zoned neutral-atom hardware infrastructure. By substituting fixed qubit layouts with parallel atom-shuttling connectivity, the company targets the execution of multi-variable fault-tolerant algorithms by 2028, bypassing standard cryogenic cooling footprint mandates through room-temperature vacuum cell operations.<br>
+[ Aquila (2022) ] ──► [ Gemini (2025) ] ──► [ Libra (2028) ] ──► [ Next Gen (2028+) ]<br>
+  Static NISQ           QEC Testbed          256 Logical Qubits   1,000+ Logical Qubits<br>
+  Re-configurable       Multi-Zone           Megaquop Performance Gigaquop Performance<br>
+  Static Arrays         ArchitectureThe Multi-Zone Hardware Path to Megaquop Performance<br>
+The cornerstone of the 2028 roadmap iteration is Libra, a quantum system designed to achieve megaquop logical performance—significantly defined as completing on the order of one million reliable logical operations within an active runtime window. Scheduled for deployment on Amazon Braket under an expanded multi-year collaboration with Amazon Web Services (AWS), Libra will combine over 10,000 physical qubits to encode 256 error-corrected logical qubits at a target logical error rate of 10-6. The architectural execution loop integrates several hardware-level stabilization layers to sustain long-coherence depths:<br>
+- High-Rate QEC Encoding: Uses customized, low-overhead error-correction topologies to compress physical-to-logical qubit resource distributions.<br>
+- Transversal Logical Operations: Executes parallel atom-shuttling moves to run logical Clifford gates simultaneously across distinct zone boundaries.<br>
+- Mid-Circuit Active Reloading: Employs real-time syndrome extraction to detect atom loss, automatically injecting fresh qubits from an integrated reloading reservoir without disrupting the global calculation.<br>
+Following the Libra deployment, the company plans to introduce a next-generation gigaquop-class system. This subsequent architecture is projected to scale physical hardware capacities past 20,000 qubits to support more than 1,000 logical qubits operating at an error floor of 10-9.<br>
+Targeted Application Verticals and Algorithmic Capacity Bounds<br>
+The updated roadmap aligns specific hardware milestones with computational chemistry, high-energy physics, and condensed matter physics problems that scale beyond classical High-Performance Computing (HPC) simulation boundaries:<br>
+Roadmap Architecture Profiles<br>
+| Application Domain | Performance Tier | Target Benchmark Configurations | <br>
+| Material Science | Megaquop Class (Libra) | Spin-Lattice Hamiltonians: Simulates Heisenberg, XY, and Ising magnetism structures. Single-Band Fermi-Hubbard: Evaluates electron hopping interactions on 10×10 square lattices. | <br>
+| Gigaquop Class (Next Gen) | Single-Orbital Cuprate Models: Models high-temperature superconductivity on 20×20 grids. Two-Orbital Pnictide Models: Tracks multi-orbital Coulomb interactions on 10×10 structures. Moiré Superlattices: Investigates atomic alignment in twisted nano-graphene configurations. | |<br>
+| Nuclear Dynamics | Gigaquop Class (Next Gen) | Nucleon Simulation: Uses Quantum Phase Estimation (QPE) routines to track many-body nucleon correlations for fusion energy research and reactor design. | <br>
+| Quantum Chemistry | Gigaquop Class (Next Gen) | Ab-Initio Molecular Hamiltonians: Analyzes ground-state energies within small-to-medium active spaces to map reaction mechanisms in transition metal chemistry. | <br>
+The system power profiles, physical hardware dimensions, and registration access portals can be reviewed in the official QuEra Interactive Roadmap Hub here, with additional architectural insights detailed in the previous coverage here, and full technical presentations available via the QuEra Webinar Recording here.<br>
+June 24, 2026</p>
   </div>
   
 </article>
@@ -173,7 +188,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-06-25 08:56 UTC
+  Generated 2026-06-25 19:56 UTC
 </div>
 
 <script type="module">
