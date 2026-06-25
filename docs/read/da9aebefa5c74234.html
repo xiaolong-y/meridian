@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STMicroelectronics Launches ST54M Monolithic Mobile Chip with Post-Quantum Cryptography Accelerator — Meridian Reader</title>
+  <title>FPGA-Based Hardware Architecture for Real-Time Decoding of Quantum LDPC Codes Using GARI — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,39 +126,34 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="f8c6bc466e4a8248.html" title="QuEra and Los Alamos National Laboratory Introduce Transversal STAR Architecture for Scalable Quantum Simulation">&larr; prev</a>
-    <a href="ae30af3ef913082f.html" title="Classiq and Hatch Validate Hybrid Quantum-Classical Chemistry Pipeline on AWS Infrastructure">next &rarr;</a>
+    <a href="238c87700f3f606f.html" title="Lawrence Berkeley National Laboratory Outlines Quantum Industry and Computational Infrastructure Partnerships">&larr; prev</a>
+    <a href="f8c6bc466e4a8248.html" title="QuEra and Los Alamos National Laboratory Introduce Transversal STAR Architecture for Scalable Quantum Simulation">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">STMicroelectronics Launches ST54M Monolithic Mobile Chip with Post-Quantum Cryptography Accelerator</h1>
+    <h1 class="article-title">FPGA-Based Hardware Architecture for Real-Time Decoding of Quantum LDPC Codes Using GARI</h1>
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>7h</span>
+      <span>6h</span>
       <span class="article-category">quantum</span>
-      <span>444 words</span>
+      <span>594 words</span>
       <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Semiconductor manufacturer STMicroelectronics has introduced the ST54M, a single-die secure mobile processor equipped with a hardware accelerator for Post-Quantum Cryptography (PQC). Designed for smartphones and personal electronics, the chip integrates Near Field Communication (NFC) control circuits, a secure element, and embedded SIM (eSIM) functionality on a single substrate. The hardware platform targets upcoming security standards scheduled for industry-wide adoption around 2030, enabling mobile device makers to deploy quantum-resistant encryption parameters across connected consumer and enterprise services.<br>
-                  [ Embedded SIM (eSIM) ]<br>
-                             │<br>
-[ NFC Controller ] ──► [ ST54M Single Die ] ──► [ Hardware PQC Engine ] ──► ML-KEM / ML-DSA Algorithms<br>
-                             │<br>
-                 [ Secure Element Memory ]<br>
-Hardware-Level PQC Acceleration and Algorithmic Standards<br>
-The primary architecture of the ST54M centers on its dedicated, hardware-level cryptographic engine. This engine is optimized to process lattice-based PQC algorithms, including ML-KEM for secure key encapsulation and ML-DSA for digital signatures, supporting the transition away from legacy public-key infrastructures and temporary hybrid cryptographic methods. Under the supervision of STMicroelectronics Connected Security Group VP David Richetto, the secure computing block incorporates physical counter-measures engineered to protect processing states against side-channel monitoring and fault-injection tampering, building on the company’s existing firmware libraries such as NesLib-PQML and X-CUBE-PQC.<br>
-RF Interface Performance and Security Validation<br>
-In addition to its quantum-ready security architecture, the monolithic chip features a large internal memory capacity to co-host independent enterprise, bank, and government applications on a shared platform. The hardware handles multiple contactless use cases simultaneously, including transit ticketing, digital identity profiles, electronic driver’s licenses, and digital car keys. To support these applications within tight space constraints, the chip integrates an enhanced radio frequency (RF) front end. This interface layout improves signal stability across single-ended antenna configurations and smaller receiver footprints, facilitating demanding edge-device operations such as mobile Point-of-Sale (mPOS) transactions and wireless power charging loops.<br>
-Ecosystem Integration and Production Timeline<br>
-The convergence of telecom connectivity and quantum-safe processing on a single die allows original equipment manufacturers (OEMs) to maintain standard mobile device dimensions and power budgets while upgrading systemic security. The platform is designed to operate within digital ecosystems that involve mobile network operators, banking institutions, and cloud wallet providers. To confirm its alignment with sensitive data security mandates, the ST54M architecture has completed evaluation testing under the Common Criteria 2022 EUCC and EMVCo validation frameworks. Commercial sampling is currently available for device manufacturers, with full volume production and formal certification targeted for July 2026.<br>
-The technical silicon layout schematics, peripheral interface guidelines, and engineering datasheets can be reviewed on the official STMicroelectronics ST54M Product Hub here, with corporate deployment roadmaps and infrastructure milestones detailed in the STMicroelectronics Media Center Announcement here.<br>
+    <p>Researchers from the IMDEA Software Institute, Nokia Bell Labs, the Complutense University of Madrid, Aalto University, and Quobly have developed an FPGA-based hardware architecture for the real-time decoding of quantum LDPC codes. Published on ArXiv, the design manages correlated error arrays within a structural layout optimized for latency, physical area, and power consumption. The architecture utilizes targeted resource reuse loops rather than unrestricted hardware parallelization to process complex multi-qubit syndromic dependencies, addressing classical computational processing bottlenecks that challenge the physical scaling of the quantum error correction (QEC) layer.<br>
+The internal layout of the decoder maps straight to the specialized Graph Augmentation and Rewiring for Inference (GARI) framework. Standard decoding routines typically process spatial X and Z error coordinates independently, which reduces tracking fidelity when phase and bit-flip parameters become linked through combined Y-type faults. The GARI transform alters the underlying detector error model matrix by separating the correlated variables and eliminating short 4-cycles involving Y errors, substituting the entangled graphs with structured U and V coordinate dependencies. This algebraic reconfiguration allows the hardware to distribute joint decoding tasks over decoupled execution paths, suppressing harmful message correlations while maintaining iterative information exchanges between the error domains.<br>
+[ Complex Correlated Graph ] ──► [ GARI Transform Matrix ] ──► [ DX, DZ Serial BP Unit ] ──► [ Memory Real-Time Update ]<br>
+                                                               [  U,  V Parallel Unit  ] ──► [ Crossbar Interconnect  ]<br>
+To execute this restructured matrix, the architecture splits processing tasks between a belief propagation (BP) core and a parallelized tracking block. The primary DX and DZ matrices are routed through a memory-based, serially scheduled BP unit that updates calculation parameters sequentially according to normalized Min-Sum rules. Concurrently, the independent check structures of the U and V matrices are parallelized within separate hardware tiles to synchronize processing intervals with the serial core. Data transfers between these alternating computing passes are handled by a modular Crossbar interconnect that operates as an N-to-N pipeline router using binary radix sorting stages, bypassing explicit classical controller logic to prevent routing congestion and data-bus stall conditions.<br>
+The hardware implementation was evaluated on an AMD VCU19P FPGA (and mapped to VU29P FPGA fabrics) to decode the [[144,12,12]] bivariate bicycle code over a window of 12 consecutive syndrome measurement rounds. To minimize internal routing pressure and memory footprint, the architecture applies numerical quantization constraints, restricting input Log-Likelihood Ratios (LLRs) to 6 bits, check-node messages to 8 bits, and variable-node values to 10 bits while approximating the numerical precision of classical floating-point tracking models. Running at an operating frequency of approximately 274 MHz through AXI-Stream ports, the pipelined execution loop delivers an average decoding latency of 596 ns per round, satisfying real-time decoding constraints under hardware-realistic correlated noise distributions.<br>
+By reducing individual processing requirements, the design allows multiple independent decoding cores to be integrated onto a single piece of silicon. The individual core consumes a restricted footprint consisting of 7.5% of total logic Look-Up Tables (LUTs), 3.5% of registers, and 26% of internal Block RAM (BRAM) elements, which can be partially mapped onto URAM blocks to lower memory pressure. This resource efficiency enables a three-decoder ensemble configuration to run simultaneously inside a single VCU19P FPGA board. This spatial density lowers the device overhead needed to run multi-core decoders, allowing a complete tracking ensemble of 24 concurrent decoders to deploy across eight physical hardware devices instead of the 48 boards required by fully parallelized alternative architectures.<br>
+The detailed silicon resource allocations, matrix transformation derivations, and routing latency benchmarks can be reviewed in the full pre-print manuscript available on arXiv here.<br>
 June 24, 2026</p>
   </div>
   
@@ -166,16 +161,16 @@ June 24, 2026</p>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantumcomputingreport.com/stmicroelectronics-launches-st54m-monolithic-mobile-chip-with-post-quantum-cryptography-accelerator/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/fpga-based-hardware-architecture-for-real-time-decoding-of-quantum-ldpc-codes-using-gari/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="f8c6bc466e4a8248.html" class="prev-next">&larr; QuEra and Los Alamos National Laboratory Introduce Transversal STAR Architecture for Scalable Quantum Simulation</a>
+  <a href="238c87700f3f606f.html" class="prev-next">&larr; Lawrence Berkeley National Laboratory Outlines Quantum Industry and Computational Infrastructure Partnerships</a>
   
   
-  <a href="ae30af3ef913082f.html" class="prev-next">Classiq and Hatch Validate Hybrid Quantum-Classical Chemistry Pipeline on AWS Infrastructure &rarr;</a>
+  <a href="f8c6bc466e4a8248.html" class="prev-next">QuEra and Los Alamos National Laboratory Introduce Transversal STAR Architecture for Scalable Quantum Simulation &rarr;</a>
   
 </div>
 
