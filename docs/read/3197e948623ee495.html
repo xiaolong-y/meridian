@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My response to the White House executive order on QC — Meridian Reader</title>
+  <title>Jülich Supercomputing Centre Utilizes JUPITER Exascale Hardware to Set 50-Qubit Quantum Simulation Benchmark — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,45 +126,56 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="bb207681b178f00e.html" title="qBraid Integrates NVIDIA CUDA-Q Remote Targets, Expands GPU Fleet, and Deploys Google Cloud AlphaEvolve for Error Correction">&larr; prev</a>
-    <a href="201d83c02a168630.html" title="Bipartite matching is in NC!">next &rarr;</a>
+    <a href="1877a0c8fb5808f2.html" title="Classiq and TEA TEK Group Partner to Establish Quantum Computing Hub in Naples">&larr; prev</a>
+    <a href="16b206cba70cd5f1.html" title="Quantum Elements, USC Publish a New Quantum Monte Carlo (QMC) Method for Noisy Circuit Simulation">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">My response to the White House executive order on QC</h1>
+    <h1 class="article-title">Jülich Supercomputing Centre Utilizes JUPITER Exascale Hardware to Set 50-Qubit Quantum Simulation Benchmark</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>1d</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>2h</span>
       <span class="article-category">quantum</span>
-      <span>157 words</span>
-      <span>1 min read</span>
+      <span>544 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>My response to the White House executive order on QC<br>
-I’ve been getting emails from journalists asking me to comment on the new White House executive order on quantum computing. Alas, I don’t have time for a long response or interviews since I’m at a beautiful science camp in the California mountains, and heading soon to STOC’2026 in Salt Lake City. But I gave anyone who asked me the following statement, which I thought might be of interest to readers of this blog as well.<br>
-“I hope that at least some of the new funds made available from this Executive Order will go to basic, curiosity-driven academic research — the kind that led to the idea of quantum computing in the first place, and to the main quantum algorithms and other advances that everything builds on today — and not only to large organizations that have gotten good at capturing federal funds by repeating the requisite buzzwords.”</p>
+    <p>The Jülich Supercomputing Centre (JSC) has established an operational baseline in classical quantum emulations by executing a full simulation of a universal 50-qubit quantum computer. Conducted on JUPITER, Europe’s initial exascale supercomputer hosted at Forschungszentrum Jülich in Germany, the achievement utilizes the JUQCS-50 (Jülich Quantum Computer Simulator) framework developed alongside the jointly run NVIDIA Application Lab. By scaling the emulation threshold to 50 qubits, the project surpasses the previous classical simulation record of 48 qubits, providing a high-fidelity verification baseline that physical quantum hardware must outpace to demonstrate computational quantum supremacy.<br>
+[ Quantum State Vectors ] ──► Exponential Scaling O(2ⁿ) ──► Standard GPU Memory Exhausted<br>
+[ NVIDIA GH200 NVLink ]   ──► Seamless CPU Memory Spill ──► JUQCS-50 Emulation Matrix (50 Qubits)<br>
+Unified Memory Architecture and Exponential State Management<br>
+The primary bottleneck in classical quantum simulation stems from the exponential scaling of quantum state vectors (O(2n)), where storing the complex amplitudes of an expanding qubit array rapidly depletes the onboard memory capacity of standard graphics hardware. JSC resolved this structural memory wall by leveraging the coherent, tightly coupled CPU-GPU memory architecture of JUPITER‘s NVIDIA GH200 Grace Hopper Superchips and NVIDIA Quantum-X800 InfiniBand networking fabric. The interconnected hardware layer allows data exceeding the physical boundaries of the GPU memory to spill into the system’s central processing unit (CPU) memory bank with minimal performance loss, enabling the 540-node cluster to hold a larger quantum state representation than isolated graphics nodes allow.<br>
+Algorithmic Verification and JUNIQ Platform Integration<br>
+Because intermediate-scale physical quantum processors remain susceptible to environmental noise and gate execution errors, large-scale classical emulation serves as a primary utility for verifying and debugging new quantum code layers. The JUQCS-50 platform functions as a noise-free testbed where research teams can test, analyze, and optimize hybrid quantum-GPU algorithms before deploying them on live physical systems. To facilitate open-access research, the 50-qubit simulator will be integrated directly into JUNIQ (the Jülich Unified Infrastructure for Quantum Computing), a centralized hardware user facility directed by Prof. Kristel Michielsen to support European and international software compilation workflows.<br>
+Multimodal Exascale Science and Cross-Disciplinary Models<br>
+The quantum emulation project operates as part of a broader production-scale workload rollout on the JUPITER exascale framework, which handles multi-variable scientific data sets across separate computational fields. Under parallel research pipelines supervised by institutional directors including Thomas Lippert, the supercomputer’s NVIDIA Blackwell and Hopper processing tiers drive three additional high-density initiatives:<br>
+- CytoNet Brain Mapping: Developed by neuroscientist Katrin Amunts and computer scientist Christian Schiffer at INM-1, this cellular-scale foundation model processes 6.5 petabytes of post-mortem anatomical data across 4,096 Grace Hopper Superchips to map 86 billion neurons and their internal microarchitectural pathways.<br>
+- ICON Climate Simulation: A joint Earth-system modeling configuration that couples atmosphere, land, ocean, and carbon cycle interactions at a 1-kilometer global spatial resolution. Running on 20,480 GPUs, the model sets global climate records by simulating 146 days of real-world environmental dynamics within a 24-hour compute cycle.<br>
+- 6G AI Infrastructure: A long-term engineering collaboration alongside telecommunications provider Ericsson to train and test brain-inspired, neuromorphic network optimization models designed to manage high-density, low-altitude edge routing protocols at reduced energy costs.<br>
+The technical hardware layout parameters, software optimization frameworks, and cross-disciplinary simulation reports can be reviewed in the official NVIDIA Computational Science Review here.<br>
+June 24, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9861" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/julich-supercomputing-centre-utilizes-jupiter-exascale-hardware-to-set-50-qubit-quantum-simulation-benchmark/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="bb207681b178f00e.html" class="prev-next">&larr; qBraid Integrates NVIDIA CUDA-Q Remote Targets, Expands GPU Fleet, and Deploys Google Cloud AlphaEvolve for Error Correction</a>
+  <a href="1877a0c8fb5808f2.html" class="prev-next">&larr; Classiq and TEA TEK Group Partner to Establish Quantum Computing Hub in Naples</a>
   
   
-  <a href="201d83c02a168630.html" class="prev-next">Bipartite matching is in NC! &rarr;</a>
+  <a href="16b206cba70cd5f1.html" class="prev-next">Quantum Elements, USC Publish a New Quantum Monte Carlo (QMC) Method for Noisy Circuit Simulation &rarr;</a>
   
 </div>
 

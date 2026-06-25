@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My response to the White House executive order on QC — Meridian Reader</title>
+  <title>Classiq and Hatch Validate Hybrid Quantum-Classical Chemistry Pipeline on AWS Infrastructure — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,45 +126,55 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="bb207681b178f00e.html" title="qBraid Integrates NVIDIA CUDA-Q Remote Targets, Expands GPU Fleet, and Deploys Google Cloud AlphaEvolve for Error Correction">&larr; prev</a>
-    <a href="201d83c02a168630.html" title="Bipartite matching is in NC!">next &rarr;</a>
+    <a href="873c1e98f639478f.html" title="STMicroelectronics Launches ST54M Monolithic Mobile Chip with Post-Quantum Cryptography Accelerator">&larr; prev</a>
+    <a href="1877a0c8fb5808f2.html" title="Classiq and TEA TEK Group Partner to Establish Quantum Computing Hub in Naples">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">My response to the White House executive order on QC</h1>
+    <h1 class="article-title">Classiq and Hatch Validate Hybrid Quantum-Classical Chemistry Pipeline on AWS Infrastructure</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>1d</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>1h</span>
       <span class="article-category">quantum</span>
-      <span>157 words</span>
-      <span>1 min read</span>
+      <span>512 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>My response to the White House executive order on QC<br>
-I’ve been getting emails from journalists asking me to comment on the new White House executive order on quantum computing. Alas, I don’t have time for a long response or interviews since I’m at a beautiful science camp in the California mountains, and heading soon to STOC’2026 in Salt Lake City. But I gave anyone who asked me the following statement, which I thought might be of interest to readers of this blog as well.<br>
-“I hope that at least some of the new funds made available from this Executive Order will go to basic, curiosity-driven academic research — the kind that led to the idea of quantum computing in the first place, and to the main quantum algorithms and other advances that everything builds on today — and not only to large organizations that have gotten good at capturing federal funds by repeating the requisite buzzwords.”</p>
+    <p>Software developer Classiq and innovation center Hatch have completed a computational chemistry proof-of-concept (PoC) to estimate molecular binding energy via Amazon Web Services (AWS) and Amazon Braket. Executed through Hatch’s Dimension X open innovation challenge for Singapore’s Home Team and aligned with Singapore’s National Quantum Strategy, the project establishes a functional pipeline for analyzing how small molecules interact with protein target structures. By pairing AWS high-performance classical computing nodes with Classiq’s quantum software platform, the workflow demonstrates an enterprise model for calculating molecular recognition indicators before committing to laboratory testing.<br>
+Wavefunction-in-DFT Orbit Embedding and Active Space Selection<br>
+Calculating molecular binding energy requires determining three independent energy profiles: the protein-ligand complex, the isolated binding pocket, and the free ligand. Because complete quantum simulations of protein environments containing over 100 atoms are limited by physical qubit availability, the project implemented a projection-based Wavefunction-in-DFT (WF-in-DFT) embedding framework. This method partitions the molecular system into a chemically active fragment and a surrounding environment:<br>
+- The Surrounding Environment: Handled classically via Density Functional Theory (DFT) loop operations and Electronic Repulsion Integrals (ERI) calculations. This layer captures structural electronic influence without consuming quantum memory.<br>
+- The Active Fragment: Reduced from the dense protein substrate into a tractably isolated active space of roughly 10 to 14 spatial orbitals. This isolated region, where electronic correlation is densest, is mapped to a qubit Hamiltonian via the Jordan-Wigner transformation.<br>
+Automated UCC Circuit Synthesis and Optimization<br>
+The compiled qubit Hamiltonian is processed through a Variational Quantum Eigensolver (VQE) running on the Classiq platform. Rather than requiring engineers to draft gate-by-gate code instructions, the framework utilizes an automated synthesis engine. Researchers define the chemical inputs at a high level—specifying the fermionic Hamiltonian parameters, electron counts, and the targeted ansatz model—and the compiler automatically applies qubit tapering symmetry reductions to compress the physical register size.<br>
+The compiler generates an optimized Unitary Coupled Cluster (UCC) ansatz circuit implemented via Suzuki-Trotter numerical decomposition. During hybrid execution, the Classiq platform monitors Hamiltonian expectation values, passing parameter updates to a classical COBYLA optimizer loop until the active-space ground-state energy converges.<br>
+Parallelized Batch Execution on Amazon Compute Fleets<br>
+To handle the polynomial processing overhead (O(N4)) characteristic of large-scale DFT data steps, the classical pipeline was parallelized across an Amazon EC2 c6i.16xlarge compute instance featuring 64 vCPUs and 128 GB of memory. The independent matrix calculations for the complex, pocket, and ligand components are mapped directly to AWS Batch and checkpointed onto Amazon EBS and Amazon S3 storage volumes.<br>
+This distributed architecture enables multi-variable screening campaigns, allowing dozens of distinct ligand configurations to be evaluated simultaneously while constraining the total system runtime to the speed of the single slowest processing task. While validated on cloud-based classical emulators, the high-level Classiq compiler model is designed to transition directly onto quantum hardware providers by routing the backend flag to Amazon Braket-managed processors.<br>
+The technical software implementation guidelines, mathematical embedding formulas, and algorithmic validation data can be reviewed in the full text available on the AWS Quantum Technologies Blog here, with corporate strategic summaries hosted via the Classiq Insights Portal here.<br>
+June 24, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9861" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/classiq-and-hatch-validate-hybrid-quantum-classical-chemistry-pipeline-on-aws-infrastructure/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="bb207681b178f00e.html" class="prev-next">&larr; qBraid Integrates NVIDIA CUDA-Q Remote Targets, Expands GPU Fleet, and Deploys Google Cloud AlphaEvolve for Error Correction</a>
+  <a href="873c1e98f639478f.html" class="prev-next">&larr; STMicroelectronics Launches ST54M Monolithic Mobile Chip with Post-Quantum Cryptography Accelerator</a>
   
   
-  <a href="201d83c02a168630.html" class="prev-next">Bipartite matching is in NC! &rarr;</a>
+  <a href="1877a0c8fb5808f2.html" class="prev-next">Classiq and TEA TEK Group Partner to Establish Quantum Computing Hub in Naples &rarr;</a>
   
 </div>
 

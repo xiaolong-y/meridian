@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My response to the White House executive order on QC — Meridian Reader</title>
+  <title>Welinq Integrates araQne Distributed Quantum Compiler with NVIDIA CUDA-Q for GPU-Accelerated Circuit Verification — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,45 +126,51 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="bb207681b178f00e.html" title="qBraid Integrates NVIDIA CUDA-Q Remote Targets, Expands GPU Fleet, and Deploys Google Cloud AlphaEvolve for Error Correction">&larr; prev</a>
-    <a href="201d83c02a168630.html" title="Bipartite matching is in NC!">next &rarr;</a>
+    <a href="5db784766068db25.html" title="Bull and Alice &amp; Bob Partner to Integrate Cat Qubit Processors into High-Performance Computing">&larr; prev</a>
+    <a href="9904d3849d1dd3da.html" title="QCentroid Enters Aviation and Telecommunication Consortia to Deploy QuantumOps Infrastructures">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">My response to the White House executive order on QC</h1>
+    <h1 class="article-title">Welinq Integrates araQne Distributed Quantum Compiler with NVIDIA CUDA-Q for GPU-Accelerated Circuit Verification</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>1d</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>11h</span>
       <span class="article-category">quantum</span>
-      <span>157 words</span>
-      <span>1 min read</span>
+      <span>443 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>My response to the White House executive order on QC<br>
-I’ve been getting emails from journalists asking me to comment on the new White House executive order on quantum computing. Alas, I don’t have time for a long response or interviews since I’m at a beautiful science camp in the California mountains, and heading soon to STOC’2026 in Salt Lake City. But I gave anyone who asked me the following statement, which I thought might be of interest to readers of this blog as well.<br>
-“I hope that at least some of the new funds made available from this Executive Order will go to basic, curiosity-driven academic research — the kind that led to the idea of quantum computing in the first place, and to the main quantum algorithms and other advances that everything builds on today — and not only to large organizations that have gotten good at capturing federal funds by repeating the requisite buzzwords.”</p>
+    <p>Quantum networking company Welinq has integrated its distributed quantum compiler, araQne, with the NVIDIA CUDA-Q hybrid quantum-classical software platform. Engineered to partition, map, and orchestrate monolithic quantum algorithms across heterogeneous processors, araQne addresses the hardware scaling limits of individual, isolated devices. The structural integration with NVIDIA CUDA-Q establishes a unified compilation-to-verification workflow, allowing developers to optimize multi-processor networks while utilizing graphics processing unit (GPU) simulation infrastructure to validate compiled architectures prior to deployment in quantum-augmented data centers.<br>
+[ Monolithic Circuit ] ──► [ araQne Hypergraph Partitioning ] ──► [ Optimized Distributed Subcircuits ] ──► [ CUDA-Q GPU Validation ]<br>
+Hypergraph Partitioning and Entanglement Cost Reduction<br>
+Distributed quantum computing links separate, modular Quantum Processing Units (QPUs) into a single, higher-capacity system mediated by classical and quantum communication tracks. To minimize the consumption of entangled Einstein-Podolsky-Rosen (EPR) pairs required for inter-QPU data and gate teleportation, araQne employs a hypergraph-based compilation model. Published in EPJ Quantum Technology by researchers R. Mengoni, W. Nadalin, and M. Rennela, the compiler combines circuit partitioning, gate reordering, and greedy gate-packing heuristics to mitigate routing overhead. When evaluated across multi-node benchmarks, this optimization scheme demonstrated structural reductions in EPR pair consumption compared to unoptimized baselines, reducing entanglement distribution costs by 10% for 8-QPU splits, 19% for 4-QPU networks, and 30% for 2-QPU clusters.<br>
+Sliced-Statevector Validation and GPU Performance Gain<br>
+Because complex gate reordering and packet grouping can introduce unintended compiling faults, Welinq developed a sliced-statevector verification pipeline natively accelerated by NVIDIA CUDA-Q’s GPU statevector simulator backend. Rather than attempting to process full, exponentially large system matrices, the verification utility decomposes the global circuit layout into fixed 20-qubit spatial slices. The validator then treats external operations acting on the slice as boundary-conditioned matrices and independently measures the projected statevectors before and after compiler reordering, flagging common errors such as missing operations, dropped controls, and incorrect targets.<br>
+This sliced-statevector verification protocol was stress-tested on random quantum circuits (RQCs) with a 35% two-qubit gate density to evaluate performance limits under un-structured, high-entropy conditions. When benchmarked on an NVIDIA L4 Tensor Core GPU against a standard central processing unit (CPU) simulation baseline, the NVIDIA CUDA-Q backend consistently reduced execution times by at least an order of magnitude. The performance scaling advantage held true across both experimental test axes, sustaining a clear runtime benefit when scaling a 100-qubit circuit up to 100 deep logical layers, as well as when validating a shallow 10-layer grid across widths expanding up to 1,000 qubits.<br>
+The technical benchmarking metrics, compiler source code derivations, and verification algorithms can be reviewed in the official Welinq Research Brief here and the corresponding peer-reviewed paper hosted via EPJ Quantum Technology here.<br>
+June 24, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9861" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/welinq-integrates-araqne-distributed-quantum-compiler-with-nvidia-cuda-q-for-gpu-accelerated-circuit-verification/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="bb207681b178f00e.html" class="prev-next">&larr; qBraid Integrates NVIDIA CUDA-Q Remote Targets, Expands GPU Fleet, and Deploys Google Cloud AlphaEvolve for Error Correction</a>
+  <a href="5db784766068db25.html" class="prev-next">&larr; Bull and Alice &amp; Bob Partner to Integrate Cat Qubit Processors into High-Performance Computing</a>
   
   
-  <a href="201d83c02a168630.html" class="prev-next">Bipartite matching is in NC! &rarr;</a>
+  <a href="9904d3849d1dd3da.html" class="prev-next">QCentroid Enters Aviation and Telecommunication Consortia to Deploy QuantumOps Infrastructures &rarr;</a>
   
 </div>
 
