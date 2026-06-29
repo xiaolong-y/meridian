@@ -139,37 +139,18 @@
       <span>Mohamed Abdel-Kareem</span>
       <span>2d</span>
       <span class="article-category">quantum</span>
-      <span>780 words</span>
-      <span>4 min read</span>
+      <span>65 words</span>
+      <span>1 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Bosonic hardware developer Alice & Bob has published a computer architecture blueprint authored by senior architect Kevin D. Kissell detailing a new “decoupled” processing methodology for runtime artificial intelligence (AI) inside fault-tolerant quantum computing (FTQC) stacks. The proposal addresses a fundamental computing obstacle: while machine learning and quantum Low-Density Parity-Check (qLDPC) decoding algorithms improve error mitigation, their classical computational overhead violates the strict, low-latency execution budgets required by high-speed superconducting hardware.<br>
-By separating deterministic, real-time error-mitigation mechanisms from longer-term asynchronous “policy” optimization routines, the architectural framework allows high-speed systems to leverage NVIDIA CUDA-Q and NVIDIA NVQLink topologies without introducing catastrophic processing delays into the physical qubit control loop.<br>
-                  ┌───► Synchronous Real-Time Loop (≤ 1 μs) ──► Immediate Syndrome Code Execution<br>
-[ QPU Measurements ]┤<br>
-                  └───► Asynchronous Decoupled Loop (Parallel) ─► ML Trend Profiling & Live Calibration<br>
-The Latency Trap of Advanced Error-Correcting Codes<br>
-As the quantum computing ecosystem transitions away from Noisy Intermediate-Scale Quantum (NISQ) architectures, research is focused on minimizing the immense physical-to-logical qubit overhead, which has historically reached up to a 1000:1 ratio. While novel topological variants like qLDPC codes compress this overhead down to a more favorable hundred-to-one scale, they introduce significant architectural trade-offs: highly complex non-local physical routing configurations and computationally heavy decoding matrices.<br>
-For fast quantum modalities—specifically Alice & Bob’s superconducting superconducting cat qubits—the temporal budget to decode error syndromes and execute feedback logic before state decoherence occurs is bound to a rigid 1-microsecond (μs) threshold. Standard data movement topologies that route raw measurement vectors away from low-level control instrumentation out to external accelerators, centralized CPUs, or networked GPU clusters generate context-switching latencies that completely break this real-time execution loop.<br>
-Decoupling Real-Time Mechanisms from Asynchronous Parameter Policy<br>
-To exploit the analytical advantages of AI without inducing decoder processing stalls, Alice & Bob’s architecture splits the control stack into two autonomous channels running in parallel. While physical quantum information cannot be duplicated due to the no-cloning theorem, classical measurement signals can be duplicated instantaneously at the hardware level:<br>
-- Synchronous Real-Time Loop (Solid Arc): This low-level channel processes raw syndrome measurements straight inside FPGA or ASIC blocks directly adjacent to the qubit readout hardware. It operates deterministically within the rigid 1-μs budget, running simplified hardware-level error tracking or basic repetition codes.<br>
-- Asynchronous Decoupled Loop (Broken Arc): Operating concurrently, a low-level hardware relay duplicates the classical time-series measurements, queuing them into secondary scalar processors or shared memory partitions. This decoupled channel is exempt from the 1-μs cycle budget, allowing high-performance GPUs and heavyweight machine learning classifiers to process extended data blocks over longer intervals.<br>
-Instead of inserting AI directly into the critical path of a cycle-by-cycle error decoder, the decoupled loop uses machine learning to dynamically optimize live hardware calibration. The AI engine continuously audits data trends, maps drift lines, and flags phase vulnerabilities across the physical trapping fields. It then feeds calculated correction variables back down into the synchronous firmware as structural operational parameter updates.<br>
-[ NVQLink Data Acquisition ] ──► [ RDMA Splitter ] ──┬──► [ GPU Memory / CUDA-Q Engine ] ──► AI Policy Tuning<br>
-                                                     └──► [ Low-Level Control Firmware ] ──► Real-Time Execution<br>
-Extending the NVIDIA NVQLink and CUDA-Q Platform Architecture<br>
-The implementation of this decoupled model utilizes NVIDIA NVQLink—an open hardware architecture designed to link quantum instrumentation directly with GPU infrastructure using high-performance Remote Direct Memory Access (RDMA) protocols. NVQLink compresses data transport times by bypassing standard CPU operating system context switches, bringing raw instrumentation readouts within a few microseconds of GPU memory.<br>
-While a few microseconds of latency remain too loose for cycle-by-cycle synchronous decoding on a superconducting transmon or cat qubit system, it matches the exact performance parameters needed for Alice & Bob’s decoupled calibration loops. To transition this workflow from an architectural prototype into a standard hardware blueprint, the firm is exploring three technical software methods within the NVIDIA CUDA-Q ecosystem:<br>
-- Low-Level RDMA Replicators: Hard-coding a hardware-specific duplication mechanism at the FPGA gate layer during direct memory transfers into the GPU.<br>
-- API Calibration Agents: Leveraging the cudaq-realtimeAPI to register an independent decoupling relay functioning as an automated calibration agent.<br>
-- Side-Channel Syndrome Aliasing: Modifying the high-level cudaq_qec.enqueue_syndromes()syntax to silently fork incoming measurement registers onto an isolated, decoupled processing side-channel.<br>
-By stabilizing subtle bosonic cat states through parallelized, background AI calibration loops, the architecture provides a practical pathway to combine high-performance accelerated supercomputing nodes with ultra-fast superconducting qubit frameworks.<br>
-The complete hardware-level latency profiles, code injection methodologies, and decoupled processing blueprints can be reviewed in the official Alice & Bob Engineering Briefing here, with broader industry analysis on microsecond quantum-to-GPU co-design frameworks across European supercomputing clusters tracked via the NVIDIA AI Infrastructure Briefing here.<br>
-June 26, 2026</p>
+    <p>Bosonic hardware developer Alice &amp;amp; Bob has published a computer architecture blueprint authored by senior architect Kevin D. Kissell detailing a new &#34;decoupled&#34; processing methodology for runtime artificial intelligence (AI) inside fault-tolerant quantum computing (FTQC) stacks. The proposal addresses a fundamental computing obstacle: while machine learning and quantum Low-Density Parity-Check (qLDPC) decoding algorithms improve error [...] The post Alice &amp;#038; Bob Proposes Decoupled AI Top</p>
+  </div>
+  <div class="fallback">
+    Full article extraction unavailable.
+    <a href="https://quantumcomputingreport.com/alice-bob-proposes-decoupled-ai-topologies-to-resolve-microsecond-control-loop-latencies-for-superconducting-cat-qubits/" target="_blank" rel="noopener">Read on original site &rarr;</a>
   </div>
   
 </article>
@@ -192,7 +173,7 @@ June 26, 2026</p>
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-06-29 03:29 UTC
+  Generated 2026-06-29 15:40 UTC
 </div>
 
 <script type="module">
