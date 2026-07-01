@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuiX Quantum Launches ‘Dedalo’ Photonic Architecture to Address Photon Loss via Single-Basis Logical Qubits — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="279fb2fe7b32b451.html" title="SpinQ Closes RMB 1 Billion (~$147 million USD) Series D Capitalization to Scale Fault-Tolerant Superconducting Quantum Computing Platforms">&larr; prev</a>
+    <a href="151c12e10fb6ded3.html" title="D-Wave Selected for $1.5 Million NSF Grant to Provide Dual-Rail Hardware for Yale-Led Fault-Tolerant ‘ERASE’ Project">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">QuiX Quantum Launches ‘Dedalo’ Photonic Architecture to Address Photon Loss via Single-Basis Logical Qubits</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>10h</span>
+      <span class="article-category">quantum</span>
+      <span>675 words</span>
+      <span>4 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Photonic hardware engineer QuiX Quantum has published a comprehensive hardware blueprint detailing Dedalo, a new full-stack system architecture designed to achieve universal, fault-tolerant photonic quantum computing. The roadmap targets the foundational physical bottleneck of optical quantum configurations—photon loss—by transitioning from raw probabilistic physical states to error-corrected logical qubits managed natively at room temperature.<br>
+By utilizing Complementary Metal-Oxide-Semiconductor (CMOS)-compatible silicon nitride (Si3N4) photonic integrated circuits (PICs) alongside standard telecommunications fibers, the system architecture establishes a modular, plug-and-play coprocessing footprint engineered for direct installation into standard 19-inch high-performance computing (HPC) server racks.<br>
+                  ┌──► Pseudo-Deterministic Photon Generator (SFWM micro-rings & FFCU switches)<br>
+[ Dedalo Core ] ──┼──► Primitive State Generator        (Photon distillation & small GHZ/Bell states)<br>
+                  └──► Universal Quantum Processor      (Type-I/II fusion networks & loss-tolerant beds)<br>
+The Architecture of Error-Heralded Measurement-Based Quantum Computing<br>
+Unlike solid-state modalities that rely on localized, gate-based physical interactions inside complex sub-kelvin dilution refrigerators, the Dedalo architecture operates within a Measurement-Based Quantum Computing (MBQC) framework. In an optical network, photons cannot be trapped easily and traditional two-qubit logic gates are inherently probabilistic. MBQC resolves this by bypassing gate execution entirely; computations are driven exclusively by a predefined sequence of single-qubit measurements performed across a highly entangled, continuous resource state known as a graph state.<br>
+To protect fragile quantum information from inevitable attenuation or absorption errors as light travels through silicon tracks, Dedalo implements an [[n,k,d]] stabilizer code layout. This protocol redundantly groups multiple physical photons into unified logical qubits capable of sustaining a structural loss threshold of d−1 photons without corrupting the computational matrix.<br>
+Because the architecture employs a discrete variable dual-rail encoding scheme—where a single photon passes through an on-chip Mach-Zehnder Interferometer (MZI) pair mapping computational states—the exact space and time coordinates of a missing photon are instantly flag-heralded upon measurement, allowing background classical processors to intercept, isolate, and correct erasure channels before phase-flip cascading occurs.<br>
+                                [ Technological Modality Profiling ]<br>
+Cryogenic Systems ──► Requires massive energy loading to sustain sub-kelvin transmon or spin lattices.<br>
+Dedalo Photonics  ──► Maximizes room-temperature tracking; uses compact ~4 K cryostats only for PNR readouts.<br>
+The Three-Tiered Photonic Manipulation and Pulse Routing Stack<br>
+The physical execution of the Dedalo platform is organized across three tightly synchronized, hardware-isolated modular subsystems:<br>
+- Pseudo-Deterministic Photon Generator: Multiple heralded photon generation loops operate concurrently on-chip. Individual micro-ring resonators execute spontaneous four-wave mixing (SFWM) to generate signal and idler photon pairs. As the idler photon hits an integrated detector, a high-speed Feed-Forward Control Unit (FFCU) triggers an array of electro-optical switches, routing the corresponding signal photon into the computation layer synchronously.<br>
+- Primitive State Generator: The incoming synchronous signal photons pass through an optical distillation filter to eliminate spatial variations and maximize particle indistinguishability. The refined photons enter localized state generation cells that probabilistically produce small entangled primitive states, such as 3-particle Greenberger-Horne-Zeilinger (3-GHZ) and Bell states, which are monitored by local heralding detectors.<br>
+- Universal Quantum Processor: An active fusion network leverages automated switching matrices to grab the successfully generated primitive states, routing them through on-chip silicon nitride delay lines to execute Type-I and Type-II fusion operations. This physical merging generates the overarching loss-tolerant logical resource state. The FFCU then applies dynamic phase adjustments to the MZI elements, performing logical-basis measurements to resolve the targeted computational workload.<br>
+To optimize the hardware stack for future utility-scale deployments, QuiX Quantum is partnering with European semiconductor foundries to integrate heterogeneous electro-optic materials for faster switching networks, implement low-dispersion waveguides to boost SFWM efficiency, and develop optimized facet geometries to compress chip-to-fiber insertion coupling losses.<br>
+While the first-generation Dedalo platform is structurally limited to Clifford-group logical basis measurements, the company’s long-range roadmap introduces parallelized, offline magic-state distillation pipelines to inject non-Clifford states into the resource fabric, establishing a scalable, modular pathway to achieve full fault-tolerant universality across distributed data center networks.<br>
+The full physical routing schematics, loss-threshold metrics, and component-level optimization logs can be reviewed in the official QuiX Quantum system architecture white paper here, with high-level corporate deployment timelines and telecom infrastructure compatibility profiles hosted in the QuiX Quantum Press Room here.<br>
+June 30, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/quix-quantum-launches-dedalo-photonic-architecture-to-address-photon-loss-via-single-basis-logical-qubits/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="279fb2fe7b32b451.html" class="prev-next">&larr; SpinQ Closes RMB 1 Billion (~$147 million USD) Series D Capitalization to Scale Fault-Tolerant Superconducting Quantum Computing Platforms</a>
+  
+  
+  <a href="151c12e10fb6ded3.html" class="prev-next">D-Wave Selected for $1.5 Million NSF Grant to Provide Dual-Rail Hardware for Yale-Led Fault-Tolerant ‘ERASE’ Project &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-07-01 03:02 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
