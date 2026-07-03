@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An American privacy emergency: Guest post from Cynthia Dwork et al. — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="08ae8475ef2c6430.html" title="University of Michigan-Led QuPID Project Advances to Phase 2 of NSF National Quantum Virtual Laboratory Competition">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">An American privacy emergency: Guest post from Cynthia Dwork et al.</h1>
+    <div class="article-meta">
+      <span class="article-source">Shtetl-Optimized</span>
+      <span>Scott</span>
+      <span>6h</span>
+      <span class="article-category">quantum</span>
+      <span>1979 words</span>
+      <span>10 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>An American privacy emergency: Guest post from Cynthia Dwork et al.<br>
+Scott’s foreword: Cynthia Dwork is Gordon McKay Professor of Computer Science at Harvard, and a pioneer in the fields of differential privacy and algorithmic fairness. On my recent travels to the SigmaWest science camp and then STOC, there was much talk about a recent Trump administration action that would ban not only differential privacy, but essentially all modern techniques for preserving privacy in large datasets, for example in the 2030 US Census. I realize that many of us have “outrage fatigue,” but this particular outrage hits extremely close to home for the CS theory community. So when Cynthia approached me at STOC to propose a guest post on the issue, of course I said yes. The post that she sent me, below, is cosigned by many other leaders in the field.<br>
+On June 4, 2026, the U.S. Secretary of Commerce issued a directive (DAO 216-26) relegating confidentiality protection in all Bureau of Economic Analysis (BEA) and U.S. Census Bureau publications to techniques dating back to the early 1970s, turning its back on over half a century of progress and protections for data subjects. Advances in confidentiality provision had enabled the Census Bureau to share increasing quantities of data at more granular detail. The order will result in less useful (or fewer available) statistics, weaker protection, or both. We write to illustrate the danger posed by the order and to mobilize the scientific community to speak out against it.<br>
+The acting force behind this order is political interest, not scientific merit. DAO 216-26 bypassed legally required administrative procedures. It fulfills a promise made by the architects of the Heritage Foundation’s Project 2025, and reflects both the rhetoric and misunderstandings of representatives of the Center for Renewing America (CRA), an organization founded by OMB Director Russell Vought. CRA’s explainer on the use of differential privacy in the 2020 Census is up-front about the stakes: “Even if the citizenship question is added to the Census, it will be impossible to ascertain the status of individuals so long as differential privacy is used.” But masking this sort of personal characteristics data is legally required by the Census Act (13 U.S. Code Section 9), which makes it a crime to “make any publication whereby the data furnished by any particular [individual] can be identified.” Confidentiality is also widely understood as critical to ensuring that people respond to the census.<br>
+DAO-216-26 bans differential privacy and other modern (and not so modern) techniques. It restricts disclosure avoidance techniques to “coarsening,” which it describes as “reducing the level of detail or specificity of published statistics, such as through rounding, aggregating (grouping), and/or the use of ranges.” “Suppression” (“expressly redacting certain values”) may also be used, but only as a “last resort.” DAO-216-26 forbids “noise infusion”, described as “methods that involve modifying a dataset by adding random values, or noise.”<br>
+Noise infusion was invented precisely to address the increasing demand for granular data in the face of confidentiality laws that forbid publishing reidentifiable data. Coarsening and suppression were satisfactory for most national, aggregate statistical series, like the Principal Federal Economic Indicators. However, these techniques failed when applied to business and demographic data at fine geographic or industrial detail. By forbidding noise infusion, the directive bans the disclosure avoidance techniques at the core of dozens of data releases over the last three decades. It bans input noise infusion, used in the Quarterly Workforce Indicators since 2002 and, until now, planned for the Bureau of Economic Analysis statistics [1]. It bans swapping, used for decennial census publications since 1990. It also bans differential privacy, the best currently known approach for obtaining the most data utility for any given level of privacy. Differential privacy was used for sharing data on commuting patterns (OnTheMap) since 2008 and for publications based on the 2020 Census. Until the recent directive, differential privacy was planned for the 2030 Census too. Many other products and procedures are implicated as well.<br>
+1. Illustrations<br>
+DAO-216-26 is incompatible with the Census Bureau’s dual mandate to provide confidentiality and fitness for use. To illustrate this, we recall and expand on an example due to Nathan Goldschlag, inspired by the County Business Patterns (CBP) data, which provides statistics on business activity broken down by industry and geography. Goldschlag describes three scenarios, illustrating the tension between providing useful information and maintaining confidentiality of responses as required by the Census Act.<br>
+· “There is only one brewery in a small county. If the CBP published the exact count of brewery employees in that county, it would be disclosing the information of one business (how many workers it employs), a clear violation of the law.2<br>
+· “There are two breweries in a small county, and the CBP again publishes the exact count of brewery employees. If I own one of those breweries, I could learn how many employees my competitor has, again violating the law.<br>
+· “There are more than two breweries in a small county, but the CBP chooses not to publish the total number of brewery employees out of concern that it might compromise the privacy of the businesses. If I’m a prospective brewery owner, I may deem the project too risky to pursue without information about the market I’m entering.”<br>
+In Goldschlag’s example, coarsening makes the published statistics useless. We now add a fourth scenario, showing that it also fails to maintain confidentiality. To keep things simple, assume none of us owns any of the businesses in the new example. The County has two towns with one brewery each, North Bend and South Bend. Furthermore, North Bend has a mobile bottling company and South Bend has a stationary bottling company. That’s a total of four beer-related business entities in the County. Two of these businesses, the North-Bend brewery and the South Bend bottling company, are publicly-owned.<br>
+- The CBP publishes five statistics:<br>
+- (A) The total number of employees in beer-related businesses in North Bend: Because there is only one brewing company in North Bend and only one bottling company in North Bend, the category is coarsened to “beer-related”.<br>
+- (B) The total number of employees in beer-related businesses in South Bend: Because there is only one brewing company in South Bend and only one bottling company in South Bend, the category is coarsened to “beer-related”.<br>
+- (C) The total number of employees in brewing only:  Because there is only one brewing company in each of North Bend and South Bend, the statistic is coarsened to the total number of employees in brewing only in the County.<br>
+- (D) The total number of employees in bottling only: Because there is only one bottling company in each of North Bend and South Bend, the statistic is coarsened to the total number of employees in bottling only in the County.<br>
+- (E) The total number of employees at publicly owned companies: Because there is only one publicly owned company in each of North Bend and South Bend, the statistic is coarsened to the total number of employees in publicly owned companies in the County.<br>
+ <br>
+- (A) The total number of employees in beer-related businesses in North Bend: Because there is only one brewing company in North Bend and only one bottling company in North Bend, the category is coarsened to “beer-related”.<br>
+We now have 5 equations in 4 unknowns. Using only 4 of these (A, B, C, and E), we can solve for the exact number of employees at each of the four companies with high school algebra.<br>
+In the above (fictional but realistic) scenario, the County Business Patterns were released with good-faith coarsenings for the geographical, business, and ownership categories. Nonetheless, even without inside knowledge of one of the companies’ number of employees, we can completely reconstruct all four numbers. What happened? The coarsenings interacted poorly. Noise infusion perturbs that set of equations, preventing exact reconstruction.<br>
+2. Impediments to Implementation<br>
+The Commerce Department now claims the directive’s return to the outdated “tradstat” traditional statistical techniques of the 70s is good for data consumers: “This update to our disclosure limitation method protects respondents and provides the public with more essential economic information.” (Emphasis added.) As we saw from Goldschlag’s example, coarsening does just the opposite.<br>
+And it can’t be fixed. Coarsening by definition reduces access to fine-grained information. Our example of three poorly interacting coarsenings shows that this sacrifice is for naught: without noise infusion, confidentiality is destroyed by elementary calculations. For population surveys, this is precisely what formal noise infusion methods, like differential privacy, protect against; this is the “fancy math” that Goldschlag mentions in his post and that holds personal characteristics, like citizenship status, in confidence.<br>
+3. Confidentiality is Critical for Federal Statistics<br>
+The scientific community continues to debate the best techniques for protecting the confidentiality of respondents’ data, but DAO-216-26 is not driven by science. It is driven by political interests. Those issuing this order are willing to risk the public’s trust in the process. We think that this is wrong-headed and dangerous.<br>
+Civil servants will do their best to comply with this order while still following the laws that require them to protect the confidentiality of respondents’ data. To balance these competing mandates, they may seek to produce less data or coarsen data so much that it is unusable. Or they might be pushed by political actors to publish data that can be easily unmasked, like in the brewery examples above. Regardless of their choices, they will be hard-pressed to guarantee respondents’ confidentiality, which will prompt many businesses and individuals to simply not answer. This is devastating for an agency that delivers democracy’s data.<br>
+Conclusion<br>
+Rather than political actors overruling the government’s own statisticians, we need deep investment in our nation’s statistical agencies, ensuring that agencies have the staff and support to improve their methods using the best available tools. Regardless of how the scientific community feels about any specific privacy-enhancing technique, we must collectively reject this anti-scientific approach to governing federal statistics. Too much is at stake.<br>
+How to Take Action<br>
+Share this post with others in your professional network and community.<br>
+Contact your Congressional representative and voice your concerns. Calling or writing to your representative is one of the most effective and easiest things a constituent can do that should only take a couple minutes of your time.<br>
+- Find your representative contact information here.<br>
+- State your concern. Here is a sample script: “My name is [Name], and I am a constituent from [City] in your district [ZIP CODE]. I am calling because I am concerned about the the U.S. Secretary of Commerce issued a directive (DAO 216-26) that wants to relegate confidentiality protection in all Bureau of Economic Analysis and U.S. Census Bureau data products and statistics to outdated and ineffective statistical techniques. If followed, this order will destroy the Commerce public data our nation relies on for important decisions, such as where to build necessary services for our community’s well-being. I want the DAO to be rescinded. I want proper administrative procedure to be followed. I want technical decisions such as the choice of method used to balance utility and confidentiality to be informed by professionals in the federal statistical agencies, not made unilaterally by political operatives.”<br>
+- Optional is stating what kind of constituent, such as a retired teacher or a working professional.<br>
+ <br>
+Volunteer to help preserve Census working papers and documentation. Pages explaining “noise infusion” and “differential privacy” are already going offline. Archive relevant methodology pages and technical documentation. You can also do this via the Internet Archive’s Wayback Machine (“Save Page Now”).<br>
+John Abowd <br>
+Aloni Cohen<br>
+Cynthia Dwork<br>
+Jae June Lee<br>
+Jayshree Sarathy<br>
+Adam Smith<br>
+Salil Vadhan<br>
+[1] BEA Working Paper WP2026-9, now purged by the Department of Commerce. As of 6/22 Google returns:<br>
+Bureau of Economic Analysis (BEA) (.gov)<br>
+https://bea.gov › files › papers › BEA-WP2026-9</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://scottaaronson.blog/?p=9902" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="08ae8475ef2c6430.html" class="prev-next">University of Michigan-Led QuPID Project Advances to Phase 2 of NSF National Quantum Virtual Laboratory Competition &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-07-03 02:34 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
