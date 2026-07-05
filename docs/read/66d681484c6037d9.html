@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QoreChain Implements Complete NIST Post-Quantum Cryptography Stack on Public Mainnet — Meridian Reader</title>
+  <title>University of Sydney and IBM Quantify Mid-Circuit Measurement Bottlenecks to Advance Fault-Tolerant Logic — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,51 +126,49 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="202d10ea009cb49e.html" title="xDots Showcases Room-Temperature Quantum Sensing System at Quantum Korea 2026">&larr; prev</a>
-    <a href="140b89421c9aa2f9.html" title="An American privacy emergency: Guest post from Cynthia Dwork et al.">next &rarr;</a>
+    
+    <a href="aa37600e6a72e418.html" title="LBNL Researcher Leverages 104 Qubits on IBM Heron to Simulate Subatomic Hadronization">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">QoreChain Implements Complete NIST Post-Quantum Cryptography Stack on Public Mainnet</h1>
+    <h1 class="article-title">University of Sydney and IBM Quantify Mid-Circuit Measurement Bottlenecks to Advance Fault-Tolerant Logic</h1>
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>1d</span>
+      <span>4h</span>
       <span class="article-category">quantum</span>
-      <span>395 words</span>
-      <span>2 min read</span>
+      <span>424 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Swiss-registered blockchain network QoreChain has recorded a transaction on its live public mainnet utilizing a complete, end-to-end post-quantum cryptography (PQC) stack. The transaction involved a transfer of 1,000 QOR executed on July 2, 2026, routing directly into a standard address generated via the open-source Keplr self-custody wallet. While individual decentralized protocols have previously implemented partial quantum-resistant signatures at the transaction edge, this network deployment marks a milestone by applying standardized post-quantum math across the protocol’s entire cryptographic path—covering signatures, key exchanges, and hash functions simultaneously.<br>
-                         [ QoreChain Full-Stack PQC Architecture ]<br>
-  Signature Layer   ──► ML-DSA-87 (FIPS 204 / Dilithium-5) Category 5 signature verification.<br>
-  Encapsulation     ──► ML-KEM-1024 (FIPS 203 / Kyber) quantum-safe asymmetric key exchange.<br>
-  Hashing Framework ──► SHAKE-256 state functions replacing traditional elliptic-curve primitives.<br>
-The comprehensive layer-1 deployment directly targets the “Harvest Now, Decrypt Later” vulnerability, where external actors record encrypted block data and public key histories from distributed ledgers today to compromise them retroactively once fault-tolerant quantum computers become available. Running on the Cosmos SDK v0.53 framework, the production mainnet (qorechain-vladi, EVM Chain ID 9801) integrates National Institute of Standards and Technology (NIST) FIPS 203 and 204 compliant algorithms natively within its genesis state layer. Rather than applying temporary application-level patches, the network’s specialized engineering pairs hybrid secp256k1 + ML-DSA-87 signatures with an AI-optimized PRISM Consensus engine that executes deterministic, on-chain reinforcement learning inference to dynamically tune node parameters.<br>
-To support general-purpose web3 deployment, the protocol pairs its quantum resistance with a triple-VM runtime environment that natively executes EVM, CosmWasm, and SVM smart contracts on a single chain with native cross-VM messaging. For decentralized application development, the node architecture deploys sidecar containers running a dedicated anomaly detection and risk scoring engine (QCAI) alongside standard JSON-RPC, REST, and gRPC endpoints. Operated under the Swiss DLT Act by the QoreChain Association in Rolle, Switzerland, the platform features a deflationary utility token model where 30% of all gas fees are permanently burned. The organization holds a FINMA no-action letter classifying its native asset, QOR, as a utility token.<br>
-The official mainnet transaction parameters, cryptographic signature metrics, and executive deployment statements can be reviewed here, and the on-chain block allocation ledger can be audited directly via the QoreChain Public Block Explorer here. The core engineering specifications, triple-VM parameters, and node deployment documentation can be found here, while preceding architectural development profiles can be accessed here.<br>
-July 3, 2026</p>
+    <p>A joint research collaboration between the University of Sydney Nano Institute and IBM Quantum has identified, isolated, and mitigated a major hardware engineering bottleneck hindering Fault-Tolerant Quantum Computing (FTQC). Published in Nature Communications by lead author Dr. Robin Harper and project lead Professor Stephen Bartlett, the study provides the first comprehensive quantitative benchmark of errors introduced directly by mid-circuit measurements (MCMs). The international project—co-funded by the U.S. government’s Intelligence Advanced Research Projects Activity (IARPA)—demonstrates an architectural workaround that dramatically suppresses localized noise, establishing a clearer pathway toward scalable quantum error correction (QEC).<br>
+                         [ MCM Circuit Optimization Metrics ]<br>
+  Hardware Fabric     ──► IBM Quantum Heron r2 superconducting processor (156-qubit system).<br>
+  Legacy Performance  ──► Idling noise during MCM feedback loops dropped logical survival below 90%.<br>
+  Optimized Pipeline  ──► Circuit redesign minimizes gate idling, pushing logical survival past 96%.<br>
+Quantum error correction requires a subset of physical qubits (ancilla qubits) to repeatedly audit and check the data-carrying qubits for phase and bit-flip errors without destroying the underlying superposition. This diagnostic step relies entirely on mid-circuit measurements, where specific qubits are intentionally collapsed to classical states at intermediate stages of a calculation to provide real-time error-telemetry feedback. However, because physical qubits are exceptionally fragile, the time required to complete an MCM forces all adjacent, non-measured qubits to enter an “idling” state. During this hardware delay, the idling qubits remain highly susceptible to environmental thermal noise and phase decoherence, meaning the very act of checking for errors historically introduced an accumulation of new physical faults.<br>
+To isolate this mechanism, the Sydney and IBM teams ran validation benchmarks on a physical 156-qubit IBM Quantum Heron r2 superconducting processor hosted inside an IBM Quantum System Two infrastructure. Their diagnostic data proved that measurement-induced idling noise is currently one of the primary physical limitations degrading logical gate fidelity on modern superconducting backends. To overcome this limitation, the researchers—including IBM quantum scientist Dr. Ben Brown and University College London (UCL) researcher Constance Lainé—redesigned the physical layout of the error-correction circuitry. By compacting the execution schedules to minimize the chronological time data qubits spend idling during ancilla readouts, the team successfully elevated logical qubit survival rates from below 90% up to more than 96% per individual error-correction cycle.<br>
+The official institutional research briefing, administrative project disclosures, and global talent exchange metrics can be reviewed through the University of Sydney News Portal here. The peer-reviewed physical findings, open-access datasets, and error-corrected gate failure benchmarks can be audited directly via Nature Communications here, while complementary hardware analysis can be accessed via HPCwire here.<br>
+July 4, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantumcomputingreport.com/qorechain-implements-complete-nist-post-quantum-cryptography-stack-on-public-mainnet/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/university-of-sydney-and-ibm-quantify-mid-circuit-measurement-bottlenecks-to-advance-fault-tolerant-logic/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
+  <span></span>
   
-  <a href="202d10ea009cb49e.html" class="prev-next">&larr; xDots Showcases Room-Temperature Quantum Sensing System at Quantum Korea 2026</a>
-  
-  
-  <a href="140b89421c9aa2f9.html" class="prev-next">An American privacy emergency: Guest post from Cynthia Dwork et al. &rarr;</a>
+  <a href="aa37600e6a72e418.html" class="prev-next">LBNL Researcher Leverages 104 Qubits on IBM Heron to Simulate Subatomic Hadronization &rarr;</a>
   
 </div>
 
