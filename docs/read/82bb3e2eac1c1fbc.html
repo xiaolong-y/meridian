@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diraq and imec Demonstrate Eight-Qubit Linear Array Fabricated on 300 mm CMOS Silicon Foundries — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="4e9b78feb0e1c532.html" title="Quantum Rings’ Open Quantum Product Now Available on the Qbraid Platform">&larr; prev</a>
+    <a href="6bb2869f9f372299.html" title="QUDORA and QAI Partner to Integrate Trapped-Ion Quantum Computer into South Korean AI Data Center">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Diraq and imec Demonstrate Eight-Qubit Linear Array Fabricated on 300 mm CMOS Silicon Foundries</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>10h</span>
+      <span class="article-category">quantum</span>
+      <span>392 words</span>
+      <span>2 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>��f�H�@3p\�u�V��Y����>�3�F�\���Z���Ջ4,4�		<br>
+���9�����~�������u�*s�}O�_�D`�2��Jr��pD%�G���5�!<<br>
+��AHuf!�etk0)�S1����J@a�r�Za}�I��i";� C��nQ�hhL��c�ZRH���_^�W�)CĦ<4'�l�{���UI�c+&]�V��l�ҵ��Ҷ�O��2H�i0�F�,P��k�a-7sb��!�2ILc��_@]����Ջ++j9pD�����aN.N�($�4fW�LBo�F��U�P�	9R?�Z�9{e7�/�cu\����9S8� �c�r�Le�?�������#�H�n-�Pٲ����u����u���b(i�w�����<�f���zw����k�e@��<br>
+��?P�Z���M���0�����+�U>�S�(�!_&��06G�]A��6Q����֡�	Pz��#O�c�����-r8��h��Y���d�w��֟�7α-���I�<br>
+0�4�������Z*ɍ�����I�@�S�t��dS�n�<br>
+�q!��,8��L��b_&��#�-O�����t�;eZP�"�b�x��R��J덩ѴHSڶ���S��Z�%\!뀅�p��'�zq{ݤB�ev��᫉2t�E�e6*�Ĉ.���`�шXn�%���6��(���\�K���<br>
+}0Aj��qNo��X"�47��Ρ�aw|~Ժ�-ki���ན!��j��X2ڱ3A�Z��;��/O��MU?�Ė��Cyr�#���kH)����!���b��_����#�b��$o���$"�J�ڐ�v��<$/l�C���\�P�rg��#�̔;��j(_YDp��r�I����~HD=�&,O��áȫ�����t2�#�D&��HJ/m��`?j��RI��O]jC�g���'"-��T�ꏬA��εq��t �8�"�H�����4"�dT��/2�y?L�G���0��.a�>"�<br>
+��֩6*xx�=�;�!I��i���0�<br>
+VwD���h#���"2m��Hj�K#�� �V�~ށD$0�` �7$����	��G���c%�Da_U$"�ci�-:���<br>
+^�*���#"m\4"���ͦT\q����l����h�5w�2�hi�vF!=��	y0S�J",�p+ƛ؟���OS��y�9]PN'�ҿq�_�w����	��ؾ�>����d�(x'}��,��I���u�nZ<���\��HDnT+��z-��Y[�L��4�\T��%:?b��S�nԬ���ˠ�HN	�u&��D�A���S����n�g�Ωl�b��{��)���"�k>8��=�G�{�nK��]����X�c��k�\���$"�qW���)����������~�hN$i�V���i�'l2K�,�%N�C�=�R�1'RU�t���#��<br>
+:��l4�Gy�eY<<$����:��m���9�ѽ��C�����o����� [�g�l$Cd���f|PU�q>��N)��Y=(�dT�5N�l��`�� O�1x�����ļm���<br>
+�H�)!0���ga=e+�-�������Nx�.t@�dR6��[����tc�`Ε��j�st����Y<br>
+�!,�x[���	JTH�<br>
+g�Z������"X`P�����\hK��ʕ	L�3<br>
+#��5�E�Ȅ�n�:,�K���{2�ޢ>��.��ڸV�[	=�/���eZD�+���d�29� (WcV��?]����S�L�D!��b��o6bJ�@RC�h��g@h��Z2ȗ��XX?��x� ��hX��`V�<�aYԕ�C�3�Il�9���#o���o����{w	�b����Ͽ���B���{���RZ�)��kZ��|��GWo��P�A<br>
+p�!3��AI@��c� y�L�a5��7�+��E 8��ǅ{p\��`j�������f�fU��<����%_@��V�	K� �<br>
+��5�S�cv�?��1���}X�0��n����q��G�P�Վ�·d��P�@cS2l#X"��x�?����8�W�Y>�g\%�yp�Q�-�>�ƙN��"bL��<br>
+M2�Kh�9Yu���!�ŗ�R�<�#u7��Xh˞�yJJH!�3�ge�%�t��̣��Z��JaĽkR��<br>
+5p�2�2�R7b��T*i��a�L�	.c7�Dĳ��i����:VR?���F_,�C�j��t��_i6W�"���b����ܿJtr�xMV�dՕ����Z:�PhO�)�����y����$���O�םSsݒ?o~��~��������,�}�~��д���w���$�Vag���H�ɬ6�ea.w�DmHkI�����>�Э$��1_w<br>
+>��)Y=T��3<br>
+*�ۥq���e�bM���:������e��<br>
+ެ3RC�m������ �d�k��mn�y�[:^H�?�A����3>��c���O��F��#���EQ�����<_���+Zm����1i>5��ؔA�9ԁ�4�Z����d�l�R�03F�9�<��j<br>
+,�`�����a����-�mCY��z֛�Lj*8d�{X^_x�:����=�6��Gߌ<br>
+��.���$��x&" �;���I�%���tY�ij7�<br>
+��n�����so���;^&�W��Oj'x��+�K�p��:��ܴ����(F	�����:�m��R�I��<�|bۊ���s�_��ͳ�x:�é/��JZ�2��^r������4��Y¢3�4�I �@�L|�JĪw}v}�2��z�H"��nE�.������F��{��ڣ�c�J�xG,CG@�n��h���z�G�C�^q+�i��x�r��&�6Т��l��+�K뗬-n+�ȕ�ąo�	Z�5��ss�&�I3H�Z=Q,�a�,K�\���taT9X�����!�ǆ�X�Rws�nob�Y+9婁�3��R�F�p\�t��˧�J�t�MGE��u4�^q6�G�b�J�L-s�u���^�c�G�e�D��,�Μļ	������ⲅݤO~dq�0�"�QE<��U���Ίr㐎{��Tx�<br>
+�ߣ�F���R�����0E��6�>yJ�@�{�K�.��Lz+�`m�<br>
+S7fƟ�5��:=�aG,j!uC�]�c��1|{�H��ԋU;�a�0�L�E0���	֑�����~?�l�R���dq�8`�Ŭ�օe�Ȑ�8�ٓrG�jAʚ)��*g�Rl�C�ϧ-���ڄDĲ�-�@\�MHDd��&��[o)I|����w���O�IDp�:0�(Ts�_!�'x.ID�3�)	+~� e>H�b�KC����a{|%k�l�Y������c{������x\�9����K%^{V��'��'���Xj�hc�"I�2�#���$_�t���a���H����qj}���Z3���3n#�6laU��h�煒+\���d�~������=��_��w��u��y���<br>
+�$���s�E�5���g�.pc%#�+�G�%�kX�5�²._)��^�P��B WR3�,8s�G���<br>
+k�$"�2�Rw�Α�\��ZD��>*dA8p֙Z����VZG��{�~y{��F�AD�4p��4����h��|�ai�(�4��@�����UTr��:�s�Z�.a�Μ8�&�mJ�q�ٛ��_g=p`�J2l��(X�	?OV<br>
+j�:Rp6�n�^��� 7�_������>0�ǒv�E.X��cK`��:t̂������1�γ�.Z��	H�8�t(ܯ��-2wX|��(��,d4d���D��.j&U纶ʊ��7�0�B3�ɖY��~��&���+9s&�{0#�Cgu�k��б��)�}\�˷�o/;�U)�4�Gd����gMJ�)U��m	�U%�9��I�Q�L����>)ۓ�����<br>
+�IQ�vC��`�.�<3�J�������x�$�h&l�WC�]������];�pk����|2���k�T�p{u����P]]�P�7ش�Yۥ}���p��]��9eZE��8��<br>
+����Z���3�2����8C �/�2P� L_��8jk�'�<br>
+��4<br>
+a(:G�� �$+7{���:nLv�0�y��WX�<��R����?���d2��8p��H���ۢ1L�|C��|{���Y���w�Ķ�ˣ��<br>
+��}������ O�D�q<br>
+',�Q�?���(I�}�����{���w��o���hZ�E>�Y���O��O=���@�O=й��?����#8Ĺ���R�Që�![*�5m����'�=����u�o)��oG��b�<br>
+3��#�<br>
+�,M�P4��<br>
+73�*,��v�¨��`V���J�g����^��-�<br>
+�i�A������E�%0J��V%%J#$��#n�	L�D�a�o"]c�,�s=֚#�1]PRc�8�wǂl`7�p�'�(�JxQ�y�&�4��#�5ѧGa|�	��^o�����<br>
+�	Vkx�J���7��"�N%��ԏ`�a�ɶ����p��>?N��%��e�an��)FH�����+2�_�,�/n8:H�r�%���df<�4/�p	|����*�0g�X:���Y)7�����ʊ��������͗��>;������������O���?ӻO��������:U��ٝ����W���/)Vo�i�z�]�W���'gW����-�?��]�gw�����}����������O��˛?V_O�Y����������g_������>\~}~?�����N�)D{'?�~Io����goo�7������4ۈ�?r�N�x�Z<_~翛M�#��`�V���������ǰ�:�L�O:��չ���hm��s̾-���l]�[b%�����]fAu�����b)��R�pAͽ�*��I/��=��X��:�����:D���_��P��lC�ׇ����wq#�>��[�E��LR����ʈ-ľM��}}��Jv��W���ux>�����gqs�01x�>�V�!?*���GE<br>
+�'� 5�J�Z������?�x|���� [�#J��k��c����i��f���㴼��&�h,�>�v�	�D�ʺSj�ި	��Z��N��3F"%c��i�F[�k>Dy��M�ߟRt�Qa�Kh��e����uyX&��/��ڴ	1[��N��g�r�Kb�R�cٷ\�����j�kz؊����Ee�w�ш̘FF�PE`ϮH��M�n6v�;�_hY���]l�E�"��2��d�bY�0��z{F�Ba؆R��$�-\�a�PP�Z�(�T���ӭ��r������͎�np�5�rc�-�6�l��$��2��3<br>
+V�9�E��L\�7�0��-�����<br>
+e����(�P<br>
+�v��JӒ���g�jƢV:J6���j�tS��j�D���#x�S^�6!�� ��������U��]�4Ӝ�u�ڞЯ�b�<br>
+6����`b���k�2�j�}��f^�Z���k��}���RfpN7t�Z3�*Ɵ�1�������?���14��p�0^2O�K#|��O��ޫc�<���O����ʗkK�-���n�R�Iv'�<br>
+�7؟Q*|clgjL�>�R䗑�p�u!S֕�m���_���- ����i��#�S���q�Is���h�Z|���~�'�pB'��!\0��������?�#�C��<�<0��9~�y�J^����W��"ĉk��C��ԢUC�k~;�4)����<br>
+����yE<%lX��#�:@B�H�ɴa�%�_�4а$^8�E�Qc�6�M��6�<br>
+��B�X����'5GR$u����j�#V�.d��&�� F1tM#ͤ��5����[e.������0T���v���v��;�R֢�V��J��Ǫ[�:h/L���<br>
+�ig�M�N�C���̿>J�{}Xf�Fm[������h�h�h�Gh�m�<br>
+Y?�mO�����i,���>0_�i��ӂ�#�<�j��X!��g4`^Uc���v'eƐ��	{��ezSn<br>
+�S���˸�2���p��_�1�=�9�Y �$s�D��H{�Յ�����R�(��)��5ɧ��<0Yg�l���b�/[<br>
+g��u�Þ����(�s�	�X5��ֵn���n��C8q'ڨ�������"�\>#W�`w�c)��;.G2s�1�s�1�s�1�s81GS���ȑ��(��<br>
+$3����������4��� ����;*/ǻq7���8�p�N�)�Hr%<br>
+O=��8��'c��3���<br>
+��O�bk��8��p�nC�q'��!�L��æ�L㊓���M���vsP)�]�WX�w��l�?7&�Y��<br>
+)������?�!���	�!���`�-Q�!F�P-B��-��g+7GR�wM�.(ҟ7��ٽ���ì%'K��O ?]E�bT,�0,���f�"#[������l/�����I����퀜��~�Z�.� s��g���sF�0��{*��2�x���֠tm<br>
+����i��e(u$E�$�nͱ��=d6[i��g1���q<br>
+��e(�C@���h�,q�z��������s�d*�f=fѭ�Ay'3[�DbV��ȃl��^�C�Ԇle6�?8�u���<�H��l�Y �k��#�N���L�Q�֜�Sm��*�R<br>
+�A����E�-1�`7"Ap��%~i��^0]4�}t�N�������cBv�d�D��=f���*�Z`c��S*�"V�/a��`�KԝRJ�������.��h��!��<br>
+d�����l$��(�r��l�0c@����d>x�b�v�q-�]�5F)�ӛ��x�����P/���0�15�[�����^|���غ���P����~x�m����kl֫iP�^Ȥ�O	�pd�a;������X���<br>
+-�CAP�v�N�S���:�e��pt�q�}0���O�hc��j<br>
+�5�s��P���C�I�e��������O������~_:c�Z��4ƦD�VB���ee|�IPA���>T�f*����0&\<br>
+���� 4��3����&��k��1-�:4U����O��)�Oaa囦CP�2�}��XZKЕ���Q6��>��'�<�&���Y�e��!�!�m��U�x����V>�U(�v����	�+�%P��O���1pոD6�����ѓJ����0�M���7C�۠���iq���}�x�c�~6twvS�$����C��9W���2.4A|�������z9�`��Y����Řa�&\N�p��/#D;6�U��u&�<br>
+�(�Y�Sl�F�4;k��f(��t��=sO��:R�U7_�<br>
+՜5����%�j����OӔ�	_}:�C[�Uy+B���m�n��j����H�QU�!f�&�h�,������WվjOS��7���2����<br>
+!U�)�0-��\�_Qt����k��T�@��!��t����W�����y�0��08�T�BS���������,s#���s�^klNO����}������n�Bi$��9�]~�W�Z��A�̲fQ8d�(^�̜Em.��9�q��S?�j���������^�7V�W�����0=c����LKEB����Mmo�?f#���}ORc)M�~���ox�~x���1��b���nζ�3��������oSB<�8��$'��$�)]�\4�j'ש�9P) �"U�d6D9����:�΅�VwQ�.��l�S��g�.���u��X���m�o��Ou%D��I_�Y�J�2��_B��0��JP+m�fOF#�s��'~�=y�)R5�͉>��<br>
+=7�:����Ӈ��.Űɗ�2�f4�A�p��J\U�;5�ۏ�X��]�U�息I�'#eW������#�<br>
+.��}�xYҌ�<���*&3��8�|OTg���h1��'�����37�e4�'F\�2���<br>
+�T	�e,�s-�1��FX�l��Mu8�r��HX��H��)H�R������/:���"�Kf<br>
+�,��	K9�G;b)d'PD��d������ѹ92�vwv'���l���(�(�o��4@�w��/y-����M���v��6ћ$��� �yph�Fn���ݵ�^`�>D��r������Vp���Bم�%���/�xG�-"s<br>
+�$��%�ci{��:=��'MW�ݾ��-e�1��ҭxv),��C�m-]���ψ"t�ڹ���!�<���=-ϓ���mN*/�7�i�ea�2m�ɢ�}7Rʥ�sR�*��k�26:��*�I�/;��Պc�.۞�0���;�rY�xu�G�_j"�{���A����������Bz��j!Ɣ�̷W�-�C�`H}��ݛ�R�]��Kun�C�ov��i�� 6�"u�]�����G|	�x����1��qp�z�]LvPi�˰��m��`��7��e��]+o\�f�'��%���';���s^gt<br>
+�:�9H��k��f�S��e�K�p��g�	y	?Z�ҽs��`��3��ȉ��w�N�����w v�x�p,:�;�v��M�0|�S���ڵ�?H-���vGU����ż�lȗ�t?>���q��xJ���F�}3pT�����?��G7;،uct����ٝ��ɚ6��,�S�_Nn�������	��y�6k.���>�6u����P>5%kg���l���́<br>
+rbH# ���v�i���߂8��j��O����m���Ԋ��{�R!a�A�z�ȤD�7�n!_��^��h��#T0�EL����)b�A�����J�B�+D�����L!�Dv|~}SK�A�4Z�7���=^Q��6�ZT��#��)� �J�#.�>���oo��R5�~�x�j	��@��u��	����Zܾ� ZSĨ.��)i��\j�p	U�������ri���?*DE���@>��ӒJ��[��|@��p�W�u<br>
+e�t�1�A�!�;� FD99�Z�]�%�ڡ�,�$C���F)!��'�J�c©Z�;�H��BB��m�u7@�p	�K<br>
+&?��ݼ?��jm�����<._t:aCc��r"�T-�1����AY��v�H�2�FmA�}o����]UR��m�-4�Dt<br>
+�V�pu�|8e�*�%<br>
+1�r�`��G] �����媐KĈDT��)	���͇Ԉ Ŕ�p͒����(eK�-j(�-�~g)��1Ҝ`y�NlC# ��2.�0�X��xI���m�	k���<br>
+xJ:�P#̘he�*��y����əyaYxu�qDY[�w� �R��,A��v	�!uGv@i�d���XL�F�/��<br>
+azM��}#����緸	8����鐵���3<br>
+���r���4L�q�;���l��*�l\;��#*jd�+͔�>b���q۹(�s��D�����F䖛�-Gn��О�V��D�����jF촗�W�]�)?�������Mz��ծF��s��L�.gt��i1pZ��L�$�b#p�q��E�S�U��&;�|���ǉ���~	�+˳�ϑ�Xt|��ה��'�b���Q^�f�N�Y�T>h���I�`�hv�)���D�X��g.��q���ʌ�[G�u2h#G"�a�H-Se<br>
+s��>�r�q$ǲ�q��W���"�1��W�<#�������q��q<br>
+��rx�̒��lh>	V���R�|w�E~��|�d�"�	 �j��:Bl>��N���,r*16P�F�[~�?ad*�\���O�*�v�'�D���hY�6��W��iFnrO6��˷y��~��5!fr�'��8M}GC1ƃ��cv[���Dz�q6��C��}wA�	D�gt:ڄ)�6��^�?�N!5��T2V�n�'uS��[�(���=LB'�鱎ū8���&�y�]�;�2����a�V�Jƫ���*�^5[6@%r6�JrP�'�?x���Z����o\N9�����Q2ഃ��O�zj+Nmlf��!s-xb^͢kۦ���!-{���<\Xfڈ�ѱ,?�F�Ԍ�����a�/���t�6Fb��<6�7�58xw�8�-EUkU�SC����#��>��1u�ц�e{B�vd�A�l~���V5h��`����<br>
+j�o(ڰ�#��u��*��ÆDX@��<br>
+�W�_<�sj"a�Ǵ��ְJ1�&�ᅷ�4���E8���b��<,��,k<{Mu�w�Ύ�!vN�S���J����E�pI:nDl�����G�C�B6�i����jf�~�J�:+���c�g<br>
+�N	p<z"1�}sOJ�S;]<���|�2^��;���Z9�\��Q0���w�i�.�ˡ���<���>u=^5��i��5�B�.A�������,:�|Ա	O{��1�`(��;Bh��s<br>
+���#{3���"M�1�,.Ne����!�Wk}uK0Vd�e��BD��уԻ���!�F$�"�X.C}%D^T�{��!��9o�D�<br>
+s^��h�x<�Y*<br>
+1b;.�\0��1(���o�s�ې;M���ƾc����l��a�Rf���+3QF����|��J��;���}C\6���	�e�C�7�	N�"��W���݉r��w�$^�<���M%��E�>�{cOz6�����ާ�SZ�51uM��݂�G��)��\R�'���"z1.@���	����h�����^VlSx�l���S&����r�������zz�I����W'5��ׯ?�aU�nK\���b�l���Rʶ-!>A�&�2è�J]ׇLض�������w����Wt��Ԩ�٨:�<br>
++�L�p����K�6<br>
+:[�m�� �"ӻ�U�W*wp�'�X��4���7v�����x{v����b���$�	���(�/�!���Ʌ�:�;9Gs,gO��K!�b����u&�r�'����a��/Tf�5!����}��APQ�2�L�JCH��H�邇)�[�W�^j�r��1&H�D�<��<br>
+�\�7���uPc�t�)>̜n�:�T����Cg�?ʄ��V���4�]$^0�T�4�>\d���r_���aB9P4�C�C1hq�p���~����!Z$�sgʡ��R:�Y�L�'3����k�m���N*�O��t����B��<br>
+�8�q��ǣ�pI��Z�DcC�7�A����y��n[m<br>
+��YV c����������R�x͇�d!���kV��EK ău��S)U�|,^��x-�8�-�I��R��}F�tV;�TW�[�l<br>
+f�sn&�sj�~WIfg;�� n�6 ;8�8���5���nI$9��P��D6��ggm4\"Ɲߊ��/�<���y�n��rv��w�t_<br>
+���w��:�}���C��L��'��>�܉D��i_n������6�g|���9�K'�2�E��eR�>�m��>�9$م�͑Ƣ<br>
+�2�Z@ф����F���"�=�ӭc<br>
+��b�w�B���;�橯$i��s�(j�WT�O(S�u���T���˚4b�<br>
+�2�D3rq��*�96�p5�$7�%�2I��<br>
+c�Sq�ߊ�3���#�G�fLZ���q��F����f<br>
+�I�	'�Y���n6�=�qgg,��M�<br>
+PB�u:z��:B�"�٨���<br>
+�I{�p��^�f@�Q�<����5�Z'&;�����%�;Y�f�gUn͋ܳs���[��d�˶%�<br>
+`$$�{*;���=�}�O)q�e��]�(��}p���g���^��T���O��ppk&(DU���גmғ��G��RX�N���\���F���;���I��˛�7�]����"��T�y��r��H�G��kI!q�=�Ek���C8YP���cXj�A"Vi�G��_�gq�ȑ9�θm�#m�̥7.2%O�gAd4��]v8�rl%��-A?���O"�K��tj@�BHV���Zq�]Mᒝ���wnG�*RJ�	��RzRy�^����v"�ޑ��#XMI��^��7��Q�L��Q>�0u����ug{����^�G���:C�hY�:�X֊Zy�F��Q�-#L2�R��6���T�Nj"�ړ4Ya���VsA^=�Za�/x�X($+��+��a�Ѿ����d�c���R,�$i�������R�'��wm�mhR�:��0��5�Ї���E�DvX�)�#���Y��D4"w��$\���:���g�܈�ō	j��/e�ݪ���롽��]\��a�_>�E�C�EF�o6�S��"K�b���k��KUY�'n��>_7k{;�O�����ʊ%MN1d�EM��j�!�[n��K�v�W0�R�7|��2�a/�fQ�ֿ.C=��Ko���G�9�8�0�"���i�s���M�������˒�/c�\�^GJ_�e�E��b5�����W��S��R��(���w���W\V��e�HY�������_�b���X���/c@l��/�`�si�Ū!�~X�1�T�F?�єAk��Dd���h�b�7n�]�>��z����>���GP��kW*~��CHv���}V���\�?����I��+ŐUS\5�qj�F?�j�u����	~s��<br>
+���dKq�uH6���~��DIvK�oξX�tU."�ԄÈVڳ6��S�$:$~��~�c�=Á��Duͨ\�v�q<br>
+ao��cY�!WK�k_^�BH*���GI�M$�i{�O˛���ŐP��@�2�T�(<br>
+w7��Bw����έXK�hYpV?��>b��/T��"��kU<br>
+�*�y�>E#Rط�����Kw�t��*�H�z|R_n���"�Ɍ6B���l����Gu�렚�UP�<br>
+&aw=�ٳX��L����%�]�<����z@�c�(Đb�w:n�o�-}����C'��Qǻ�jU�G�W�3#�Y�]�2�g9H��N�!��3���4щi���q�,'RQ��cb��"��#�OWW$GI ��lrj��R��J2����*L�0�l��`yU�h�Z���'c2�(5"�3\�	�ϰIHvؚC��xX����I����ڿV���KԿp�8�5%�K��Q��<br>
+L���<��E,�f�.�T�n�̲�Q������C��w�[�W"���ɑ���VO]�bk��"qpT�����VC6)ѐZj4���'���Љ�&H��>��}�,�? ���1g��@^�<br>
+*�.)����G��5�iX���#����4c���%�jL�J7BI���m{�5}�^���.:�,2�'��5��ܓ��	�o%��W�|a�Z;1��Gz����m��-iP�zP������Dy�H���m�-歌��z%(�rHܭ��Sgn}-��r�f��Tk�i��AmCp��V�E8��6���ŜP9���r�v:�=8&���5܊����ķ�I�JV����ŋ���*2�h��?�x��u��^s~utg�'��t���QCI�p|1X�Yi�!��^��R�u踫���N4<br>
+Ǹ5R����[S����N�D�8�[����w�6r��}�����^�s��H�7��w �A�@~�j�AG맾Q�Q,+b���ʽ��n��n���j�(^ܳ�ES����nD�q%F7�0]�swBMq|=��R����G�vGZiZ���Cm������tL>�����QU�!#R�z4R��?B��y_j���$j��@0(6�|��Q�0c(���d����6Ej��P�����;�ƕ(��xJ��xI�����TL�K� �b�KjX���W������>&�0,j�K���E����MB�O'��f��,�L�0�2�E��ZC�b�l<br>
+��h�m��L�([G�7Ю2C=E.�:��[HW�� r<br>
+,V�'�C��FOj�x� �� K[��i3�ðti����E���z�RnG���)��RBRF�始��f����"�U9��/�6.b��2��zR�g^�\/��/3����������v��}aύNp.B.RW��������g��c �����kM�<���~y������G_��W���U����"��	TP�]lU���U�줃t��6@���H�����?i Q�5�2w��%t���	���Z�8@�A�]�CdN�$p��b��$�)Ҏ�[@����&���7����/?�������wYa�<br>
+���	�o#	B,B�¬G��9�N0��$���j��o<br>
+�<��(?>�vw��l2T�.���`}UܧtY�s<�`gWp<br>
+��>!�����.��W���}���[a]��ZK�{pY��L���z<br>
+!�-Y�r�Bk�4Xb���^7*IS��Rd|p�ЛCT-tF��ǆ��B�۲�zĎ��gU5<br>
+��ڑ:�S�;۶b3`\�HP�-U���-s���F��vJ�H�X/67<br>
+�H�<br>
+&��me�q�����G�v��(�C��&��b'��jᑦ���7�R�o�'#-;Xa����h�R�=����/��t�m!�ȈHL�떄j>��yŚe��r�Cn�:V}^c"�M�L ��d�+?�(tE�S=Q�T��D�-$&E�J�;���nu����g��^Qvt������x�MCm��<br>
+C��V{��9=:L��eL�k3<br>
+<:-���X�����F	R��6�-*]��<br>
+F�K�@h?^���ö���LA�#1�E��Kn�)�<br>
+�ah� ����%��6	���N�[)���>0��"��4��6c��^qNO���-�<br>
+@+}�̴E01�SP�i���^�8�I��q��H�1�zT:PA�v�~�:N���P{47��<br>
+���<br>
+��V{p�-l�X<br>
+0�$���j�@�;�!�"���T�t+�c�Ol��=C�Z�I��o.2�⨖(p&�{b맻�7��wޚf3�<br>
+,��`�&��I�X<�sgM�0�F%�*��GJ�!/���%�f^�P's[��5�{��"`�����H���n7;����t��]1����F�/�U�`3Z~ط�Jrm���	�`��t�<br>
+�U�1^L`��t5�re��~#�\�%#���w�_d��^B;��=�xL�fT>�:Iu`�p��P~S�}����̔������D�O~XY�q=_5���js��J�U����(&���s��1��4����/�2�N<br>
+o�n�i<7��;Eb<br>
+BIn����ޜ�yVF%g~�&��+{�K�4)�<���|���mO{����v%��$�C6��u�,ʟ��%b����	ؽ>͵�Q���{>�k����]����M��36Y~���C�"wD�^���T�j��np��,zQ0m2���T�5 �u]\}��$�CE�E�<@9;�(s0#�"��#����b>��LaQ�ڑ��FF��e�\H��Lzqc&��?�h Qɜ���F�A��ww����fP���r����7��#c��v��ë�C��P�\ʚŴ�g�Vp�"���ӆ\�Y_�=�g�[c�ߑ!훃K;J��p�j:�6U����N͏ʹ�>cTR"m]����p�"/�����i��������O���3RM��Hͬ6T�'��6�6;��0[j��H�e�����(n>��=� |��m���yy6�N����3�i��f<br>
+pp�ˤ�Ϥuŀ�0�n}�E���s�f�d�8ٚ��<br>
+�1��H����'�=vy�*�2�kY�Ě�����<br>
+�a�}���+��&h7/���£?���b��x����@ǪJ�>�g3�_Ç��y�4�<br>
+U��Aˋ8�2�����FN���"�،hC�]f�����P���a��`�\��x�TR�[�r��tSҒ)z��}��(�����\B]AE���w>�c������|ٸ5,�ԡKc![�9�WM�Wv��~\4����ww��fnС�%HF���t��[Ky/f�l�J&�E�<br>
+gk�s�uٶ]/��!7�k<br>
+��w?�xx�W��?/�L��!��F��m��yu�_�n9�|�_::#7D�V~g�$�:9�G�죑U7OA�{g������&�9�i�<br>
+ɓ����uC��mf��/90�4t>���������)��:ʏ����W��ӛ7���oB���K�|�i`�����>�<�	�-�dO�+	堃��Zd4 �c���*��x2\d�	&^Y�����sO�E��0<br>
+����f��}�K%��(���K�j�4g������H�n8`l�ޢ��3&K���������<br>
+Һ����K.9:�VJ>��c�Y�����WS�����C�6H�.5����9=�����U�����0}�ف�4A٥6t���u�/0	�n��,A$�-��n0�mI��@�����s!<br>
+��H�I��q�)h0徙�7p�,�0�،o�4D�p�³O�2���(�<br>
+�3tg�[>s����$���bPב���jv4I������������b�mp��1 �Z�)ltl��$0<br>
+U���2��>�T==����(�2L�ut�^��hA��?��N�y_�_M1��~v�"Mh�Y������ZŨ�B���e�Uw�Ph�V���Ch�Nh5RJh�uB�˧�_���J���8wk�^3�YB;�vdg�,��n�]c+��$�ÓR]3Q���["B1 D_��פ�0	��y�����L\�R���VA�����#p�P��?R�+<br>
+��X����q;�a��[�%�P�iQ4�شwa3�|@�9���| �c��	�#�L�-�FxeՉ>x��C`RI��^g�����8��'�>�>�?)�|�υV�!�;���z)��7�	��U�V���Pӿ�ԲRh��"��^ZyC�`LG�����<br>
+�VݹkB�R�}	��ZŒ�J�U��1�խ�f��B��M�[���	���V��B���χЗB+q�ũg�!��t�M�'$��p�n�L'R�u��nZF�G�J>��Iud���Do�u�)����29�Y�%o��]�o0ũ�9�v�d���؋�]+���d^���NO��$�{�ж���=R�9~k��l�r,R;�+l����(���NP�б_�5���h�}ZPI\��]�þ�͐d�R�]8�}�175�h���ڤ�@*iPϦ��Τ��d%�r]=��1CF�&���cܳ$�ۃ�>O���dcM�<br>
+����O��uU����Q7**T>^�jB���p��t��yA뛩�M�y��F�������x�5���u������2"j�=�2Ta-���r6�:�+��J!���֩dR�/�O'5��n�90]&�KӢ�&=2l�@�@���`k���	Q���9CC�_�E�!&C�	�7�-���ic�^�G[pyH�����R��|x�4��߆H�F��X[YZmS݁5v������!:sEpV65�ޜv ةGH��۵�e��;Hz�L�uR����g����3v)85���]�tN�Cҗ<br>
+Z(7������s..n�;��"�I>��C����O�a����//n�B�B<br>
+�/K�O��ɿ"��m+Y��Fu}�{��kD�M���./.���G�1�-�Թ���~w�Uw�����������7e	ߐ�q�;��j��$�xt�u��  �5�xI�l�z46�O�J��J��m7�IS�yrcw��&}Iv��aA�e���9|��y.&dU����t,���na�#�U9���EaK������jC���R�^�y�bqQ�/:6�Ii�ÿW�3�M�U���w���ɟ��?�U<br>
+^��F�+�}��s��MH�D�0�}`l��ڰ[��b$-� ?k��s�{��,�B��$�:L���#Ӥ9�Go��$���eL����^��jW)�m1OPO��n!ux�c�!�7*v4Gq~�^.����Զ�f�`/8sq�b�7e�P�Q7FiOI[������Y���ʶ�{%�k�ӝ���j�~�!7�����P��D���-�13MY^%�Qql�5��R��!�t�D� �8�4��ш��+4��n�/�)������?�ĖBn�aco������(?>�{�#�x��	���d<�;�����ъaE���V�ʼ~yߚ��a��O�\g4?{ʗA>+l�(�ft�	��3���)������@��^���Tު�E��:aDi~`E<�*cX!B�9�ci�Ͱ��/'pQ�JޝVQ0��l��#����2<br>
+%��<br>
+2f�:�Qmo�&�]m���,K�ʣ�{�S<�nC+��ZɅ?����I�d��'���"xq��Tہ�I��!�tR@�J�H$N�j{�����p�ua���ߕʹ�I��xx�Ӌn}h^��؇���<br>
+�b��E�!UJ�9�Ȯ��<br>
+�#ͬ��U�5ecxX7���'!���b���9����6�5�܉Vrc�%�X��k	<br>
+Z�=T�˞d��?LDz���'�zU��s�1F�DT�[]�ug�i�M|�/��WL^s\�Na�,t��5���,��ޚ%��4���\���HjC���5��Q����zlWm'�<�c��Ux{Y=�r�29�B��a+����m�b��N0�5x@�\��s�7�ڿ_D{UÃP<8H1���h5�笺�w��9罚-�&��Duَ_t�K�C:W7��$pW����x;�|��Kv]�(��c�ޕI�3U��њd?�}t�-)�D�c>j㐡�e%C ߬<br>
+l��)��-��I�d�	����}���*�bM&<br>
+�M��*v�wzO�]��$�	���^�h��_di7V�/+|����-�eL��g�wo������>���x)a���QW���d�g�S�!��=���"��Í[��٘�T<br>
+��:Q�ƍ���=�_F0�<br>
+z�d	L�`�`e��j*�,��Y�{�]��'W�{U2��;ï<br>
+H��_����c|�\-�R��{���5[ʓ�a�K�Ė(����kƖ�Eެ�=1h�����?1�P�7��,�(�Y]/%�>��չ/Z�_tin\��lp�>�Q�^�N�ġ��q����������;�b�`O;�����*-�aT��7@n>���u���v<br>
+x�<����I��]�VdXS���US��P��q��*���r���)�]8�K��-�!�m�D(�u2/Ӆ�'(ZD��f&%K*��CP�����>�T�'=]vdZ������7'<br>
+�1��o�W�D�����S-�'W�7]k����l����`�ȴ��s!�Y����*<br>
+c�V��1ݎ�0]���	��܋��R���*Qg��ԇ1a8qm˽�?nۚ��@��8H����֛j4�Y[��f�v���?HU�s�SHȵ	�5����d��Ӱ6�y`Æ.�(�}�P����ϟ��V֢��FloK�����)�Lv��G��S�2�&���U�7$?��|����z�8�U�9�p�<br>
+�����ڇ|xŊv�GG�a��?�������/ᣮ��G�MCx����}�ªC�����+�\��D7�&�!֨C�rd.���#�|#�n�?A�L�����k;�W�U2�QN9�d�|HM��+�SJ�������Y���o�4�ޥ�=��������0)iÛ6��Kr�y� +���b���JU��,���r:T�R��n�ڵ �e�}�A��4��w����{�o��c���ڐ��_`�߷����}_̚�@ �7J�ILfs2����|k�Y��ޮ@���E�AC�)����'��K�����`�����X1��ZkO|����^��p�}k<br>
+��j�����`��U�w~�$I��h�ϔ�{?��8k�ͶG�m�m�嬙E?nрi�:���q���з��q4(�Iq��G��'�Q��C%-Sw��0m�{��32�h�h��eEѰ�u���������]i�i��%�G�a���Þpj�6��>�g�|=5���s�{/�k�.�P{������@��%�Jcܖ���?n3���%!S�n�E�Mݨ�Tw5����ew�C�n{Q3���:�.A��Rs^��mh<br>
+D��Q�`�ڮ���֔�L�do �\B���a��#�5�_zp]�m������G-�|�H9	F�Ct��������_.*�`�x�q����=�P~|l�Lnw�<br>
+�K�[dS���:�����Y��uLg��A��K�؟�dÈ��*4@�#7�k"T�Ȩ����n�Ňܪ��e?eiqb0�W��s�卼	�>/K�l�Lu���!�=ju���0��	�Ii��Ki�"���2<br>
+�<br>
+�f<br>
+�T����J�:�W���c�5(Zv�m�Ap��_�s*��u��	=�M��8!�]52y&4k2���QQWT�'fE�ۣJd�R���k��>���lʜkQ��dJ@��s�J܈QKm�K�/*��P�S�.�s�l6��s��U��EX.GY�������Ոѹ��"-^vm�)b�f�@C�Y��Z;���?$e��Cm�0��*+�D�/�q��ʘ*T�4i�`W�ԉ2~��:��ڼE�T2�}`��a��$"�1���b�~�։���6:<br>
+�<�����ZU�[� ��+�:S{a��Q��z�}��%T�N����y��-�($�oUh��x�))�����n�5�җ�w�R�`��'�rr�����8�����f}�t�`N�1~�c�?�P���wc���4��fE��J��k;k����@�������B��Ö��dT$z��K&�	�Ϝ�Z����<br>
+C%��8S_��b����2�@dA`YKe��z����,��CQ�N���8ko�"���V����v,���z��A*�/�v.�х$�^oB�YoBN��R���,�~�!/]9�xj;��<br>
+�����:*P�ʂ�o��ڝ;Vum�C��9����"P�NEQֶ}im�1ߕj��Ju2�v�l;�1�7c�6��e��*�,�����=%�2���C�i�����[%�2�(�xؚ��&���&,z�2*��ԥ����@Yf�z&"i��$%ڭ�<br>
+��i���2+��L0�Ń<[:�^���h�O#9.l�П���3B���J���~����u~�*�nU��z!Y<br>
+,{�����"�����[8N��ؔ�"���T��6`�.�u��]pHG��Z�Q���̷��1��Y_��JGw�$�k�8���jsH��B*8J�nL�����H��R�V���b+�x��-�B]Q1�C�"�0GÏ��p���i��%m��l�5H6�˾,��b		(��B�*�p1��&�H#s�0��PP��ⵅ+P�Ca;\��L����� �ר����� �<br>
+3�`���aiQuA�eX�e����M�?:�e��sƻi<br>
+�s�<br>
+b�A�(.X�Ka��b�!gqف��4-ZO�����8��c��-�]Q/F��%��K9�x���N��9%	�)f�u�֚�ǒ��k���ku��[8�D��"^{<br>
+Rj���]h��<br>
+�����Y뷟۰��U�PTH�D�2�;��PU�uO��S5�Q�dܹNmH>��j�`���P��&�q?��Ua��9 �T�%��<br>
+�ɟa1@!��K}��BvSs�C� �C��M@��wvS1���p�y<br>
+c�u��u�Ϧ�jo����q�;[��U�X���}�a�#^R��磾�0Ƣ)����m�)�_�HN!yz�Dc��u��i��<br>
+�)�K	&֬!�}%�3�5W��st);�]�W��g�>�����NOUDb!��Y��-��ɂ�RJ��������֪,�S�*�l1��V=b �X����Y�N6|L�ۄ�&�=7ӺP�;n�L��)���FW!�<br>
+1E�K���UY}wXM���K���RC��Ա�S������TS�w#�mD���)ϝT�����q�ԳVnxl�X(�7?�q����l��#���a+���h�9G��<br>
+or��i�ކ��%�!��vxo߸S�E)�˵'��TL?�T��T�?��D�+��"�CX�\5��5V�<br>
+l��mf�<br>
+e0s��	���Y%�p��0v#�`^l GW�ġ�9���8iם��B�,��X�R��-	]�H��-��C��[�����<�Z9�~���-�}��ߗ��&2������#��c|��/�@����p�Mױ�����+��6�ɔ?�Q�;��p֫c�W���}ym��@a��uǝ�����@%_��*w��bn-�\�dS��t��{&��	c_��*1����%�P}0���7�r���,��&��q%��͈�}}�3���}�힜w1	�w�y��b����w��~+og��j��V��v�CȬ4n'�9�81�y�Sj�!Ș��Kϸ��e�E"$�;�/hF��CsA��eyOGϼ�D�g>1t����A_�I�A�J��������3��a8��,�����[kɳc����%I�~�c�mUǿ�h�j0I<��Ƣ7S�xHakV��"��>C��d]��*I6��@�z�鹊��;�oA(~v��-���)Gy]�J�0�l�� [6yQ�MAQ�l�Q�/��XML�C�W^���W^��i�z�b���#��j����l�b�l��0Z6y6���b���+��&o��݁dz���]5�~5'�Y2 ޠ��R�e�+T6Eަ�zW(&J�P��Y6au����W	3�I����=���<�u:��B�+�Y;䕡�VS~�+:�Q$z��ǸV�E�E,@����o���s�.�o��Z����S|�\��Yt�UN9H"�M+k|��(�A�:g�1�ЖH��%(�;��Ϭ��Y�rT��io�3/]�%$�䙰"����|�T>�y�$r]r�"���l�H����U�c�6�U�<br>
+C���;���.)3F�S�Q8�(�k3��.r@�$�����T��%Iy��t>�om})��h8��N����g%�&����Y�iʲeߙW��u�r쒝Nn�2���Y߿���|��s"�v{��d��Үy�������Sbx]�<br>
+�+Ư�����w\4�����շ��V��5r>CAŞ]���ٟ*��{��载�����Lqq6jG1�{r��B�3�Eg����ҚM֒Prw�ҍ�LWD-��}����2.��I<br>
+�D#2Qq�ZjJ�%S���9�=�ɽ-�*��Y	�,6�'v:~��t��$1�s��#I�H�;�8/�g�$�s�*4��(�&̇<=1�%o�����rY#?�Uͼ�����N�t��5V��c\���Ɯ�1^�*� Ä^:�^�#���H6���<br>
+�L<br>
+"a/.f����Q�C�[ɼi �y:W� �[��V����mB�Q�p�T����4e	OO`8gou�zqB�$�]i���vc�� /�Ĺ'Cby�q4Б��t.�c��;[:۰�#N� q��=�7�����������F�Y,(~F�}Z���+�gm&��Z��N�)6"��YV����î�!��{-w���_o�F����*M�@��`�c�4.�4XGQ�`�菀D���MO)	֠�Æ��VR���VN��<։P�ץt�3���w����ȁ*�ۧ�B��4���s����%</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/diraq-and-imec-demonstrate-eight-qubit-linear-array-fabricated-on-300-mm-cmos-silicon-foundries/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="4e9b78feb0e1c532.html" class="prev-next">&larr; Quantum Rings’ Open Quantum Product Now Available on the Qbraid Platform</a>
+  
+  
+  <a href="6bb2869f9f372299.html" class="prev-next">QUDORA and QAI Partner to Integrate Trapped-Ion Quantum Computer into South Korean AI Data Center &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-07-10 02:36 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
