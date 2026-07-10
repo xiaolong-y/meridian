@@ -139,58 +139,23 @@
       <span>Qiskit</span>
       <span>141w</span>
       <span class="article-category">quantum</span>
-      <span>1995 words</span>
-      <span>10 min read</span>
+      <span>18 words</span>
+      <span>1 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Schrödinger’s cat meets Qiskit: Why do we never see cats that are both dead and alive?<br>
-By Maria Violaris, PhD student at the University of Oxford<br>
-Can a cat be dead and alive at the same time? In 1935, quantum physicist Erwin Schrödinger came up with a thought experiment showing that, according to quantum mechanics, a cat can exist in a superposition of being alive and dead. Schrödinger’s aim was to demonstrate the absurdity of quantum mechanics. In everyday life, we never see cats that are simultaneously alive and dead — indeed, we never see any large object in a state of quantum superposition. By modelling Schrödinger’s cat as a qubit and simulating his thought experiment on a quantum computer, we can resolve the apparent paradox, and explain how even a quantum mechanical cat will always be observed as either dead or alive.<br>
-Welcome back to the Quantum Paradoxes series, where we resolve quantum paradoxes using the tools of quantum computing. In addition to blog posts like this one, each instalment of the series includes a video on the Qiskit YouTube channel and a Qiskit code tutorial that shows you how to reproduce our simulations for yourself. So far, this series has covered five thought experiments ranging from the quantum bomb tester to the quantum pigeonhole paradox, and we’ve got plenty more on the way. This week, we’re centering our attention on perhaps the most famous thought experiment in the history of quantum mechanics. But before we see how quantum computing helps us resolve Schrödinger’s apparent paradox, let’s take a closer look at the original thought experiment.<br>
-Click here to watch “Schrödinger’s Cat Explained with Quantum Computing” on the Qiskit YouTube Channel.<br>
-Introducing Schrödinger’s cat<br>
-Imagine we put a cat inside a box along with a vial of poison, a small hammer and a radioactive atom. If the atom decays, it will trigger the hammer to smash open the vial of poison and the cat will die. If the atom does not decay, the hammer will not smash open the vial of poison and the cat will stay alive.<br>
-Importantly, the radioactive atom can be in a quantum superposition of “decaying” and “not decaying.” Since everything inside the box is ultimately made of atoms, let’s treat the entire box as a quantum system. As the radioactive atom interacts with the hammer, which interacts with the poison, which interacts with the cat, they all enter a big joint superposition.<br>
-This means the states of the atom, hammer, poison and cat have become quantum entangled. In one part of their overall state, the atom has decayed and the cat is dead. In the other part, the atom has not decayed and the cat is alive. We are left with a seemingly absurd conclusion that inside the box, the cat is in a superposition of being alive and dead at the same time!<br>
-The collapse postulate<br>
-The apparent paradox comes in when an observer looks inside the box. At that point, they will only see a living cat, or a dead one.<br>
-To explain this, quantum theorists developed the collapse postulate, which states that when you observe a quantum system in superposition, it undergoes an irreversible collapse into just one state, with some probability. Applying the collapse postulate to Schrödinger’s cat means that if anyone opens the box containing the cat and observes the cat’s state, their observation will cause a collapse so they only see either a living cat, or a dead one.<br>
-The idea that observation causes an irreversible collapse to a single state is often referred to as the “Copenhagen Interpretation” of quantum mechanics. This viewpoint is typically presented as the conventional explanation for why we see a single outcome, yet it fails to address the key questions of the Schrödinger’s cat thought experiment.<br>
-Is a cat an observer?<br>
-A natural question arises from this postulate: surely the cat itself is an observer? If so, the cat’s observation of the atom should be enough to collapse its state into being decayed or not decayed. The cat will then either be dead or alive, with no need for absurd, cat-sized superpositions.<br>
-The problem with this reasoning is that it breaks down when we apply it to smaller and smaller scales. Does the vial of poison count as an observer which can collapse the atom’s state? How about the hammer? We could even go down to the scale of using a single particle as a detector — one that changes state if the atom decays, and stays the same if it does not. Would this single-particle detector cause the radioactive atom’s state to collapse?<br>
-The Copenhagen interpretation has no answer to these questions. It does not say what counts as an observer, simply that observation somehow causes an irreversible collapse. It does not tell us whether hammers, vials of poison, or cats can be in a quantum superposition.<br>
-To answer these questions, we need theories of quantum mechanics that explicitly model the measurement process. These theories fall into two main categories, known as collapse theories and no-collapse theories.<br>
-Collapse theories<br>
-Collapse theories modify the laws of quantum mechanics, such that when we describe Schrödinger’s cat using these modified laws, they explicitly model the cause of collapse. Under these theories, it is specific properties of the system — e.g., mass, size, complexity, etc. — that cause the irreversible collapse into a single state. Whether or not hammers and cats can be in superpositions depends on each individual theory’s precise conditions for collapse.<br>
-The standard dynamical laws of quantum mechanics have been thoroughly studied, tested, and extended to incorporate special relativity. To date, the objective collapse proposals which modify quantum mechanics remain incomplete theories, and using them to recover all the results of standard quantum mechanics is an open problem.<br>
-No-collapse theories<br>
-An alternative approach is to take the existing theory of quantum mechanics at face value as a universal theory — meaning it applies to macroscopic objects, detectors, observers, and our environment. Then, observing Schrödinger’s cat actually corresponds to the observer (or measurement apparatus) becoming quantum entangled with the cat. The observer, cat and atom really do enter a big joint superposition of states.<br>
-Crucially, this measurement process is reversible — there is no irreversible collapse. The observer, cat and atom could in theory be unentangled, and return to their original states.<br>
-One version of quantum theory which uses this “no collapse” approach is Everettian quantum mechanics. Applying it to the Schrödinger’s cat thought experiment, we find that the act of observation precipitates the emergence of two branches of the universe — one where an observer sees an alive cat and one where an observer sees a dead cat. Hence, this is commonly known as the “many worlds” interpretation.<br>
-Other no-collapse versions of quantum theory include Bohmian mechanics, relational quantum mechanics, and QBism, amongst others. Explanations for the physical meaning of a superposition, and the emergence of measurement outcome probabilities, continue to be discussed and debated among quantum scientists.<br>
-Can Schrödinger’s cat come back from the dead?<br>
-If we treat observers and the environment as quantum systems, then there’s a clear explanation for why we never see cats being dead and alive in everyday life. As soon as an observer encounters that cat, they join its entangled superposition. As such, the observer only sees the cat being either dead or alive.<br>
-However, there is still a missing ingredient for universal quantum theory to explain our everyday experience: since measurements are reversible, measured objects can become unentangled. Schrödinger’s cat could become unentangled from the radioactive atom — it could even come “back from the dead” and return to a fixed alive state!<br>
-This problem is known as the emergence of classicality in quantum theory. How does a classical world where measurement results have fixed outcomes emerge if all the underlying laws of physics are quantum mechanical, and therefore reversible? Here we need to introduce the notion of decoherence.<br>
-Decoherence<br>
-To understand decoherence, I like to imagine the environment surrounding the observer as a collection of dominoes. As soon as we knock over one domino, it triggers a chain reaction that spreads out across the entire set until they have all been knocked over.<br>
-This is analogous to what happens after the observer measures Schrödinger’s cat. As the observer interacts with their environment, they cause a chain reaction where more and more of the environment surrounding them enters the giant entangled superposition with the cat.<br>
-Now, it is much easier to knock down all the dominoes than to stand them all back up. In a similar way, it is much easier for the information about whether the cat is alive or dead to spread out across the environment than it is to erase it from the environment. This is why the cat becomes effectively fixed into either the dead state or alive state: without quantum control over the environment, not even the most powerful technology can unentangle the cat from its environment.<br>
-We call this process decoherence, because the atom, cat and observer lose their quantum coherence once they interact with the environment. In general, when a system is measured by any part of the environment over which we have no quantum control, the system is projected into a single state, destroying its coherence.<br>
-Fighting the effects of decoherence is one of the key challenges of quantum computing. To preserve the coherent properties of the quantum states we use for computation, we want to keep them as isolated from the environment as possible. Once they interact with the environment, qubits decohere and become fixed into separate branches, where they are either in the |0> state or the |1> state.<br>
-Effective collapse<br>
-Decoherence gives the exact appearance of measurement causing an irreversible collapse: if we write down the state of Schrödinger’s cat mathematically, it is exactly the same whether it has undergone a reversible quantum measurement by its environment or an irreversible collapse.<br>
-A fact which is often under-appreciated in explanations of decoherence is that we do not actually need a large, macroscopic environment to cause the cat’s state to decohere. Using even a single-particle detector to store information about whether the cat is dead or alive would effectively collapse the cat’s state. The important property for this effective collapse is that we no longer have access to quantum control over the measurement device or environment. In general, quantum control over a larger device is more difficult, making it harder to unentangle from the measured system.<br>
-Schrödinger’s cat on a quantum computer<br>
-The Schrödinger’s cat thought experiment becomes much simpler when it is expressed via qubits and quantum circuits.<br>
-We can model the atom and the cat as qubits, which we can put into an entangled quantum superposition using basic quantum gates. Then we can model irreversible collapse by adding a measurement operation to the cat qubit, or model a quantum observer’s measurement by representing the observer as a third qubit that becomes entangled with the cat and the atom. Finally, we can model environment-induced decoherence by treating the environment as a large collection of qubits, which join in the entangled superposition.<br>
-Ultimately the quantum-computing representation of Schrödinger’s cat leads to the creation of states in a superposition of having a large number of qubits in the |0> state, and a large number of qubits in the |1> state. The technical term for these superposition states is actually “Schrödinger’s cat states” because of this thought experiment! Preparing good quality cat states turns out to be useful for some error-correction techniques.<br>
-To understand in detail how to represent Schrödinger’s thought experiment as a quantum circuit you can run on a quantum computer, and to learn how to code it yourself using Qiskit, have a watch of the Qiskit YouTube video, and see the Jupyter Notebook for the complete Qiskit code, ready to run.<br>
-Make sure to follow the Qiskit Blog and subscribe to our YouTube channel for lots more paradox-busting to come.</p>
+    <p>Sitemap<br>
+Open in app<br>
+Sign up<br>
+Sign in<br>
+Medium Logo<br>
+Get app<br>
+Write<br>
+Search<br>
+Sign up<br>
+Sign in</p>
   </div>
   
 </article>
@@ -213,7 +178,7 @@ Make sure to follow the Qiskit Blog and subscribe to our YouTube channel for lot
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-07-10 14:13 UTC
+  Generated 2026-07-10 19:23 UTC
 </div>
 
 <script type="module">
