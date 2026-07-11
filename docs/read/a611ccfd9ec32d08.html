@@ -137,32 +137,20 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>11h</span>
+      <span>17h</span>
       <span class="article-category">quantum</span>
-      <span>585 words</span>
-      <span>3 min read</span>
+      <span>62 words</span>
+      <span>1 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Zero-knowledge data security provider NordLocker has launched a structural overhaul of its primary private storage architecture, transitioning from a rigid, locker-centric file system to a decentralized, append-only journaling engine. Codenamed “Project Renaissance,” the platform rebuild replaces the company’s legacy monolithic file trees with an atomic metadata logging model. Internal engineering benchmarks indicate that the database optimization delivers up to a 10-fold increase in raw upload/download throughput alongside a 100-fold reduction in complex multi-file processing latency. The new core engine powers NordLocker’s entire client suite across Web Access, Windows, macOS, iOS, and Android applications.<br>
-                         [ Project Renaissance Technical Layout ]<br>
-  Core Database       ──► Append-only encrypted journal tracking atomic system events.<br>
-  Cryptographic Chain ──► Sequentially bound logs preventing silent structural tampering.<br>
-  Throughput Scaling  ──► >10x upload/download acceleration and 100x operational scaling.<br>
-  Security Posture    ──► Localized zero-knowledge processing with an isolated PQC abstraction layer.<br>
-The Mechanics of the Atomic Journaling Core<br>
-The underlying database issue affecting NordLocker’s legacy architecture was rooted in the structural behavior of its first-generation file “lockers.” Historically, each locker was treated as a monolithic, centralized block of encrypted metadata. Whenever a user added a single file, renamed an existing directory, or edited a document, the client software was forced to download, re-parse, and re-encrypt the metadata payload for that entire logical locker block. As user accounts scaled into tens or hundreds of thousands of files, this metadata overhead created significant latency bottlenecks, resulting in slow synchronization cycles and system performance degradation during bulk operations.<br>
-Project Renaissance bypasses this bottleneck by modeling its database logic after the low-level architecture of high-performance transactional filesystems. The storage layer treats every structural manipulation as an independent, atomic event appended to a cryptographic journal. Rather than re-evaluating an entire directory map, the engine logs individual micro-events—such as a file creation or directory move—and syncs only that specific fractional increment to the cloud. To enforce strict data integrity within this append-only pipeline, each discrete entry is cryptographically chained to the log hash immediately preceding it. This sequential binding ensures that an account’s history cannot be silently manipulated or back-dated by unauthorized actors. Furthermore, because all files are encrypted locally on the host device before data transmission, the system preserves its core zero-knowledge parameters.<br>
-Granular Hierarchies, Mobile Redesigns, and Quantum Isolation<br>
-Managed by Head of Product Aivaras Vencevičius, the structural rewrite enables several long-awaited usability updates across NordLocker’s operational layer:<br>
-- Root-Level Uploads: Eliminates mandatory first-level “locker” directories. Users can drop unstructured data payloads directly into the root storage layer and move files across arbitrary paths.<br>
-- Granular Object Sharing: Replaces coarse locker-level user permissions with individual folder and file-sharing capabilities. Folder access is isolated inside independent cryptographic sharing circles to prevent side-channel exposure, and secure public sharing links feature mandatory expiration timers and variable access control codes.<br>
-- Re-engineered Mobile Frameworks: The iOS and Android endpoints have been rebuilt from scratch to process the new journaling stream natively, integrating full Dark Mode capabilities, a dedicated multi-task transfer monitor, and multi-threaded background synchronization logic.<br>
-Beyond immediate file-system performance gains, Project Renaissance structures NordLocker’s core cryptography for the post-quantum era. The software engineers have decoupled the application’s underlying cryptographic subroutines, isolating quantum-sensitive mathematical primitives into a dedicated abstraction layer. This architectural barrier ensures that when lattice-based post-quantum cryptography (PQC) standards mature for global commercial adoption, the development team can hot-swap the platform’s public-key exchange mechanisms without requiring another systemic rewrite of the underlying journaling engine or file system layout.<br>
-Review the official corporate release and service deployment timelines here.<br>
-July 10, 2026</p>
+    <p>Zero-knowledge data security provider NordLocker has launched a structural overhaul of its primary private storage architecture, transitioning from a rigid, locker-centric file system to a decentralized, append-only journaling engine. Codenamed &#34;Project Renaissance,&#34; the platform rebuild replaces the company&#39;s legacy monolithic file trees with an atomic metadata logging model. Internal engineering benchmarks indicate that the database [...] The post NordLocker Deploys &amp;#8220;Project Renaissance&amp;</p>
+  </div>
+  <div class="fallback">
+    Full article extraction unavailable.
+    <a href="https://quantumcomputingreport.com/nordlocker-deploys-project-renaissance-architecture-to-implement-atomic-journaling-encrypted-cloud-platform/" target="_blank" rel="noopener">Read on original site &rarr;</a>
   </div>
   
 </article>
@@ -185,7 +173,7 @@ July 10, 2026</p>
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-07-11 13:10 UTC
+  Generated 2026-07-11 18:57 UTC
 </div>
 
 <script type="module">

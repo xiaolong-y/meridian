@@ -137,35 +137,20 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>10h</span>
+      <span>16h</span>
       <span class="article-category">quantum</span>
-      <span>663 words</span>
-      <span>4 min read</span>
+      <span>62 words</span>
+      <span>1 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Google Quantum AI has introduced a hardware-control framework that unifies real-time calibration with active quantum error correction (QEC), allowing an autonomous reinforcement learning (RL) agent to stabilize logical qubits during uninterrupted execution. Published in Nature (“Reinforcement learning control of quantum error correction“), the engineering milestone addresses the primary bottleneck facing fault-tolerant quantum computing (FTQCs): environmental drift and material non-stationarity, which degrade microscopic device calibration and typically force operators to take systems offline for disruptive maintenance.<br>
-By repurposing structural binary error-detection signals as a continuous, in-context training input, Google’s control system enables its next-generation Willow superconducting processor to continuously learn from its own faults. This eliminates traditional physics-based calibration routines and human-expert expert tuning windows in favor of non-disruptive, real-time optimization.<br>
-                         [ Google Willow RL Control Stack ]<br>
-  Hardware Node       ──► Willow superconducting processor running distance-5/7 surface & distance-5 colour codes.<br>
-  Algorithmic Pivot   ──► Merging error-detection events with active hardware parameter tuning.<br>
-  Optimization Vector ──► Factorized multivariate Gaussian policy distribution managing O(1,000) controls.<br>
-  Performance Floor   ──► 3.5-fold logical stability improvement; 20% reduction in base logical error rates.<br>
-The Mechanics of Multi-Objective Policy-Gradient Tracking<br>
-The core architectural hurdle in stabilizing a multi-qubit processor stems from the analog fragility of physical gates. To execute QEC protocols effectively, physical error rates must be held strictly below a designated fault-tolerant threshold (∼10-3 – 10-2). Standard optimization frameworks attempt to maintain this boundary by isolating individual control lines (e.g., microwave pulse amplitudes, XY frequencies, and CZ coupling phases) via directed acyclic graphs (DAGs). However, low-frequency thermal fluctuations, instrumentation drift, and microscopic material defects quickly invalidate these localized calibrations.<br>
-Google’s framework bypasses the scaling limits of direct Logical Error Rate (LER) tracking—which requires an exponentially large dataset to resolve as code distance increases—by constructing an efficiently computable local surrogate objective (C). This surrogate objective maps the average rate of error-detection events across the processor’s space-time detecting regions.<br>
-The learning pipeline runs iteratively across dedicated training epochs. The system applies small, simultaneous stochastic perturbations to more than 1,000 internal control parameters, which are modeled via a factorized multivariate Gaussian policy distribution. Because detecting regions maintain a sparse, localized relationship to nearby control lines, Google structures this problem as a bipartite factor graph.<br>
-When a specific perturbation causes a spike or drop in parity-flipped detector signals, a multi-objective parameter-exploring policy-gradient algorithm computes the localized gradient. By applying proximal policy optimization (PPO) paired with entropy regularization, the agent continuously adjusts the distribution mean (μ) to follow environmental drift profiles while maintaining an optimized exploration variance (σ2) to avoid local minima.<br>
-Empirical Benchmarks and Scalability Milestones<br>
-The unified RL architecture was experimentally validated across distance-5 and distance-7 surface codes, alongside a distance-5 colour code configuration on the Willow hardware architecture. The system achieved the following performance parameters:<br>
-- Record Suppressions: Fine-tuning an already optimized, expert-calibrated processor yielded an immediate 20% additional suppression of the logical error rate, surpassing the limits of pure physics-based system modeling.<br>
-- Logical Stability: Under targeted artificial drift profiles (including sinusoidal, step-like, and stroboscopic modulations), the agent stabilized the surface code layout, delivering a 3.5-fold improvement in logical stability when integrated with complementary decoder steering.<br>
-- QEC Threshold Floors: The architecture achieved record average logical errors per cycle of 7.72(9)×10−4 for the distance-7 surface code (decoded via the AlphaQubit2 neural network model) and 8.19(14)×10−3 for the distance-5 colour code.<br>
-To evaluate long-term viability, Google ran numerical scaling simulations up to a distance-15 surface code governing approximately 40,000 independent control parameters. The results confirmed that the gradient-descent convergence rate (γ) is governed by an exponential law (1 − Λ/Λ* ∝ e−γt) that is completely independent of total system size. This un-coupled scaling behavior is a direct product of the factor graph’s local sparsity, confirming that real-time autonomous RL control layers will scale predictably as computing systems transition toward fault-tolerant regimes containing tens of thousands of physical qubits.<br>
-Review the official research brief via the Yossi Matias LinkedIn post here, or audit the peer-reviewed publication directly through Nature here.<br>
-July 10, 2026</p>
+    <p>Overview of RL control. Google Quantum AI has introduced a hardware-control framework that unifies real-time calibration with active quantum error correction (QEC), allowing an autonomous reinforcement learning (RL) agent to stabilize logical qubits during uninterrupted execution. Published in Nature (&#34;Reinforcement learning control of quantum error correction&#34;), the engineering milestone addresses the primary bottleneck facing fault-tolerant [...] The post Google Research Stabilizes &amp;#8220;Will</p>
+  </div>
+  <div class="fallback">
+    Full article extraction unavailable.
+    <a href="https://quantumcomputingreport.com/google-research-stabilizes-willow-quantum-processor-using-continuous-reinforcement-learning-control-layers/" target="_blank" rel="noopener">Read on original site &rarr;</a>
   </div>
   
 </article>
@@ -188,7 +173,7 @@ July 10, 2026</p>
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-07-11 13:10 UTC
+  Generated 2026-07-11 18:57 UTC
 </div>
 
 <script type="module">
