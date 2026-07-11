@@ -137,20 +137,36 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>6h</span>
+      <span>11h</span>
       <span class="article-category">quantum</span>
-      <span>59 words</span>
-      <span>1 min read</span>
+      <span>536 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Quantum design-automation developer QC Design has published a comprehensive theoretical framework and software specification detailing its flagship architecture-simulation platform, Plaquette. Released in an academic paper on arXiv (&#34;Plaquette: A hardware-aware design platform for fault-tolerant quantum computers&#34;), the disclosure marks a shift from idealized, Clifford-only error approximations toward continuous, physics-rooted structural simulation of real-world physical qubit [...] The post QC</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/qc-design-publishes-unified-plaquette-framework-to-automate-hardware-aware-fault-tolerant-simulation/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Quantum design-automation developer QC Design has published a comprehensive theoretical framework and software specification detailing its flagship architecture-simulation platform, Plaquette. Released in an academic paper on arXiv (“Plaquette: A hardware-aware design platform for fault-tolerant quantum computers“), the disclosure marks a shift from idealized, Clifford-only error approximations toward continuous, physics-rooted structural simulation of real-world physical qubit imperfections. The company’s architecture addresses a persistent blind spot in quantum error correction (QEC): standard stabilizer simulators traditionally assume uniformly distributed, stochastic Pauli noise, an assumption that the paper demonstrates can underestimate logical error rates by more than an order of magnitude.<br>
+                         [ Plaquette Simulation Matrix ]<br>
+  Platform Paradigm   ──► Hardware-agnostic automation for CBQC, MBQC, and FBQC systems.<br>
+  Physical Noise      ──► Multi-state leakage, coherent over-rotations, and mode heating.<br>
+  Core Sampler Stack  ──► Stabilizer sampling, XPauli leakage solvers, and near-Clifford nodes.<br>
+  Computational Scale ──► Automated micro-compilation scaling up to tens of thousands of qubits.The Limitations of Idealized Pauli Noise Models<br>
+When hardware engineering teams design fault-tolerant quantum computers (FTQCs), they must prioritize which microscopic device imperfections to suppress to push their systems below the logical error threshold. However, real physical qubits do not experience simple bit-flip (X) or phase-flip (Z) errors in isolation. Instead, they suffer from complex open-system physical noise that varies by modality:<br>
+- Superconducting Transmons: Suffer from physical leakage out of the primary ∣0⟩ and ∣1⟩ computational subspace into higher energy levels.<br>
+- Neutral Atoms: Experience intermediate-state scattering during Rydberg gate execution.<br>
+- Trapped Ions: Induce motional heating as their underlying vibrational string modes absorb ambient phonons. arXiv<br>
+- Silicon Spin Qubits: Experience state leakage into localized crystalline valley sectors.<br>
+Traditional simulation workarounds, such as Pauli twirling or applying crude depolarizing noise stand-ins, obscure the actual underlying physical processes. These methods test an abstracted mathematical approximation rather than the actual physical device, requiring extensive custom software engineering for every minor adjustment to a hardware team’s fabrication recipe.<br>
+Automated Multi-Sampler Compilation<br>
+Led by Co-Founder and CEO Dr. Ish Dhand, QC Design addresses these simulation limitations by allowing teams to define their device physics exactly once—using Kraus operators, Hamiltonian-Lindblad dynamics, or experimentally reconstructed quantum channels. Plaquette’s compiler then automatically maps that unified error description into the exact or approximate numerical representations required by four distinct backend simulator classes:<br>
+- Stabilizer Samplers: For rapid, high-volume Pauli noise calculations.<br>
+- XPauli Samplers: A specialized, proprietary engine engineered to solve state leakage and environmental noise sectors.<br>
+- Near-Clifford Samplers: Tailored to capture coherent control over-rotations and miscalibrations. arXiv<br>
+- Full-State Simulators: Providing exact, unapproximated reference calculations for baseline validation.<br>
+By validating the XPauli and near-Clifford engines against full-state simulations up to the scale of tens of thousands of physical qubits, the framework successfully matches physical hardware test data within statistical uncertainty. This provides quantum hardware manufacturers with an automated design path to calculate authentic logical performance boundaries, allocate error budgets, and determine real physical-to-logical qubit overhead requirements across circuit-based (CBQC), measurement-based (MBQC), and fusion-based (FBQC) architectures.<br>
+Review the official corporate release updates on the QC Design Newsroom here and audit the complete academic paper directly via the arXiv here. You can also explore our previous coverage detailing the software suite’s architectural expansions here and review its adoption by hardware developers here.<br>
+July 10, 2026</p>
   </div>
   
 </article>
@@ -173,7 +189,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-07-11 07:50 UTC
+  Generated 2026-07-11 13:10 UTC
 </div>
 
 <script type="module">
