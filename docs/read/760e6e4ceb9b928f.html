@@ -139,18 +139,31 @@
       <span>Mohamed Abdel-Kareem</span>
       <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>73 words</span>
-      <span>1 min read</span>
+      <span>618 words</span>
+      <span>4 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Researchers from the MIT-IBM Computing Research Lab and IBM Quantum have developed a multimodal alignment framework that maps quantum unitary operators directly into the latent space of a large language model (LLM). Published as an IEEE QCE 2026 conference paper (&#34;Aligning Quantum Operators with Large Language Models&#34;), the architecture treats mathematical quantum operations as &#34;visual [...] The post MIT and IBM Project Quantum Unity Operators into Language Model Latent Spaces for Multimodal Cir</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/mit-and-ibm-project-quantum-unity-operators-into-language-model-latent-spaces-for-multimodal-circuit-synthesis/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Researchers from the MIT-IBM Computing Research Lab and IBM Quantum have developed a multimodal alignment framework that maps quantum unitary operators directly into the latent space of a large language model (LLM). Published as an IEEE QCE 2026 conference paper (“Aligning Quantum Operators with Large Language Models“), the architecture treats mathematical quantum operations as “visual inputs.” By translating these continuous numeric matrices into native word embeddings, the system enables an autoregressive LLM backbone to reason over, compile, and manipulate quantum states alongside natural language instructions.<br>
+                         [ IBM-MIT Quantum-Language Model ]<br>
+  Core Backbone       ──► Granite 4.0 Micro (3B parameters) utilizing an SFT next-token loss pipeline.<br>
+  Quantum Modality    ──► Real-valued 256x256 Pauli Transfer Matrices (PTM) mapped as patched image grids.<br>
+  Target Environment  ──► 4-qubit Clifford+T unitary synthesis within a 256-way Pauli-rotation basis.<br>
+  Operational Utility ──► 99.4% compilation success (Best-of-80); 91% zero-shot text-constraint compliance.<br>
+Cross-Modal Alignment of Pauli Transfer Matrices<br>
+Previous attempts to leverage generative AI in quantum information science have operated exclusively on symbolic, text-based proxies such as OpenQASM scripts, gate names, or Qiskit code repositories. These systems remain blind to the raw complex-valued matrices that define physical quantum transformations. The MIT-IBM framework bypasses this symbolic limitation by translating a target unitary matrix (U) into a real-valued Pauli Transfer Matrix (PTM). For a 4-qubit system, the PTM is a 256×256 real matrix that is invariant to global phase and composes multiplicatively.<br>
+The framework processes this matrix by treating it as a single-channel image layer:<br>
+- PTM Patch Tokenization: The 256×256 grid is partitioned into 16×16 non-overlapping patches, yielding 256 discrete visual patch vectors.<br>
+- Latent Space Projection: A linear layer compresses each patch into a hidden dimension (hv=768), which is then mapped into the LLM’s token embedding space via a two-layer multi-layer perceptron (MLP) projector.<br>
+- Stepwise Autoregressive “Peeling”: Rather than attempting to output an entire quantum circuit layout in a single pass, the model reads the re-encoded residual PTM at each inference step. It predicts exactly one π/8-Pauli rotation gate at a time in reverse execution order, left-multiplying the inverse PTM of its own prediction back onto the residual matrix until the channel fidelity (F=Tr(P)/4n) approaches 1.0.<br>
+Performance Scaling and Language-Conditioned Controls<br>
+The system was instantiated using a Granite 4.0 Micro 3-billion parameter model backbone and validated against exact 4-qubit Clifford+T compilation objectives. The supervised fine-tuning (SFT) pipeline demonstrated steady scaling metrics, with synthesis success rates jumping from 23.4% to 71.0% as the training dataset expanded to 9.2 million synthetic circuits. When pre-trained models were expanded to manage longer 30-gate depths and augmented with inference-time Best-of-N stochastic sampling, the architecture achieved a 99.4% overall synthesis success rate. This performance outperformed classical simulated-annealing solvers (SynthetiQ) and specialized reinforcement learning models (Gumbel AlphaZero), which typically experience sharp accuracy drops on gate depths exceeding 11 gates.<br>
+Beyond raw compilation, anchoring quantum operations within an LLM latent space enables language-conditioned circuit synthesis. By introducing natural language text prompts directly into the model’s token sequence (e.g., specifying token constraints like “Allowed T(q0, q2)”), operators can restrict which physical qubits a gate can interact with during compilation.<br>
+Tested against an out-of-distribution benchmark featuring constraint combinations entirely blacklisted during training, the pre-trained Granite model achieved 91% gate-level constraint compliance. When the constraint text was omitted, compliance dropped to 53%, confirming that the model actively conditions its mathematical matrix operations on plain language instructions. This dual-modality token space provides a foundational design pathway toward quantum-aware neural networks capable of translating abstract natural language requirements directly into physical hardware compilation layers.<br>
+Review the official research briefing via the Rogerio Feris LinkedIn update here. The complete preprint detailing the patch ablation metrics, cross-modal loss functions, and inference token architectures can be reviewed on the arXiv here.<br>
+July 10, 2026</p>
   </div>
   
 </article>
@@ -173,7 +186,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-07-12 08:11 UTC
+  Generated 2026-07-12 13:11 UTC
 </div>
 
 <script type="module">
