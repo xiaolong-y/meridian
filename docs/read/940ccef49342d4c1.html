@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My friend Mark Wise — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="b545e0dccbf6b2f6.html" title="Held Prize call for nominations (+ call for postdocs)">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">My friend Mark Wise</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Frontiers (Caltech)</span>
+      <span>preskill</span>
+      <span>4h</span>
+      <span class="article-category">quantum</span>
+      <span>1257 words</span>
+      <span>7 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Mark Wise, the John A. McCone Professor of High Energy Physics at Caltech, passed away on July 10 at age 72. At a recent memorial service, John Preskill made these remarks.<br>
+I’m John Preskill, Mark’s colleague on the Caltech physics faculty for more than four decades. Our friendship goes back even farther. My wife Roberta and I met Mark and Jackie not long after they arrived at Harvard in 1980. We’ve been friends since then. We attended the bris for both Barry and Jonathan during those Harvard days. Mark and Jackie have two boys and we have two girls who are a few years younger, who were thrilled to connect with Barry and Jonathan when the families would get together for occasions like Passover or Hanukkah or Thanksgiving. When the kids were little, Mark and I would sometimes muse about the potential for forging even closer family ties if those relationships blossomed.<br>
+That didn’t happen. But Mark would preside at each Seder with a light hand, sprinkling the occasion with corny jokes as was his style, and Jackie would be determined to make it to the end of that customized family-friendly Haggadah she had meticulously prepared. The children, meanwhile, would be wondering when they’d be able to continue their game of sock baseball.<br>
+Many of you know that Mark was deeply dedicated to his family and friends. I’ll make some brief remarks about three facets of Mark I know especially well: Mark the scientist, Mark the teacher and mentor, and Mark the colleague and friend.<br>
+Because of his self-deprecating manner, those of you are not scientists may not appreciate Mark’s stature as a physicist. He was one of the most influential figures in theoretical particle physics of his generation. It was not obvious things would turn out that way. Growing up in Toronto, Mark was an indifferent student, and his poor grades reflected that lack of interest. As a 9th grader, though, it struck him that he better change his ways and figure out how to make something of his life. He liked sports — the possibility of being a professional athlete was briefly considered, but discarded. Somehow he decided that science would be a better fit. I’m not sure why — he had recently failed math. But he worked hard and had inspiring teachers, so by the time he finished high school Mark was an excellent student, and he sailed into the University of Toronto well prepared to major in physics,<br>
+At U of T, Mark came under the influence of a young professor, Nathan Isgur, who would later become his close research collaborator. Under Nathan’s guidance, Mark sought admission to the PhD programs of the most prestigious US research universities, intent on a career devoted to deep exploration of the fundamental laws of physics. He was rejected everywhere he applied. He should have been discouraged. But he wasn’t. Mark shrugged and said: “It’s okay. I’ll stay another year in Toronto, I’ll get a master’s degree, I’ll apply again and I’ll get in somewhere.” And that’s what happened. He went to Stanford, where, under the kind tutelage of Fred Gilman, Mark took off like a rocket. Hired to the Caltech faculty in 1982, he was a tenured full professor three years later at the age of 31, and appointed as the John A. McCone Professor of High Energy Physics while still in his 30s.<br>
+Mark liked action movies, such as those starring Arnold Schwarzenegger or Clint Eastwood. In serious moments, we would sometimes ponder together why we’re successful at what we do, and Mark would always quote Clint Eastwood as Harry Callahan in Magnum Force: “A man’s got to know his limitations.” We would both laugh, but those were words of wisdom. Mark understood what he did well as a research scientist and what he was less good at. Finding problems he could solve that would have interesting consequences for experiments that had been done or could be done was where he excelled – he did it again and again. Mark never lost his zest for calculating things, often by hand with pen and paper, his head resting on one arm with his glasses pushed up onto his forehead as he scribbled. Getting to an answer that was experimentally relevant never stopped giving him a thrill.<br>
+Mark also never lost his sense of appreciation for the teachers and mentors who had inspired and helped him. Perhaps that’s why he became such a dedicated teacher and mentor himself. It’s hard to impress Caltech students, but Mark’s lectures where extremely popular, not just for their pedagogical value but also for the humanity and humor he displayed. Students had to pay attention because otherwise one might miss the jokes, which inevitably became known as “Wisecracks.” There is even an account on X with the handle @MarkWiseSays, curated by students who want to preserve Mark’s pithy lessons in physics and in life.<br>
+For example, Mark might say: “If you really get depressed, I recommend diagonalizing a 2×2 matrix.” For physics students, this is both funny and sage advice. Or he might say. “This calculation will knock your socks off.” A cliché you might hear from anyone. But who besides Mark would then proceed to remove his shoes, rip off his socks, hurl them at the blackboard, put his shoes back on and resume lecturing?<br>
+Most famously, Mark would come to class with an ample supply of coins. He would ask the class questions, sometimes about physics and sometimes random trivia, rewarding a student who gave an answer Mark approved of by tossing a coin. At first the coins were quarters. But Mark, who had a scholarly interest in finance as well as physics, eventually felt that due to inflation he needed to upgrade to dollar coins. These are harder to come by, so it took frequent visits to the bank to make sure he wouldn’t run out. His antics in class made Mark human and approachable, and students responded. Mark felt that many Caltech students don’t fully realize how smart they are. He saw part of his job as building their self-confidence and relieving their stress.<br>
+As a colleague and mentor to graduate students and postdoctoral scholars, Mark was highly collaborative. He believed that interactions with others sparked his creativity. He was never at all pompous. I know this started early. When we were in the Harvard Society of Fellows we were obligated to have dinner with the Senior Fellows on Monday nights. It was a rather stuffy occasion. And, though I don’t think they do this anymore, after a sumptuous meal we would literally retire for brandy and cigars. Once, while puffing on his cigar after dinner, Mark had an inspiration. He gathered up a few junior fellows and led them to a theater for a movie he thought everyone should see right away. The movie was Conan the Barbarian. And everyone had a blast. That was a perfect Mark moment.<br>
+As the news about Mark has spread, accolades have poured in from physicists all over the world. He was admired not just for his scientific brilliance, but almost as much for his quirky sense of humor and his kindness. Mark was a wonderful friend to many of us. When you were with him, you were sure to laugh and feel good. He touched the lives of countless colleagues, students and friends. We miss him terribly but there are so many memories that we’ll cherish. We are all so very fortunate to have known and loved Professor Mark Wise.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumfrontiers.com/2026/07/18/my-friend-mark-wise/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="b545e0dccbf6b2f6.html" class="prev-next">Held Prize call for nominations (+ call for postdocs) &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-07-18 18:58 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
