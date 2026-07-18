@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Majorana 2 – Microsoft’s Scalable Quantum Processor With Reliable, Long-Lasting Qubits — Meridian Reader</title>
+  <title>IBM Improves Qubit Reset by 25x and Releases Qiskit v2.5 — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,56 +126,57 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="a286f094d89cc18d.html" title="On hope">&larr; prev</a>
-    <a href="177414df5f2a25a8.html" title="Nicole’s guide to handling failure and rejection">next &rarr;</a>
+    
+    <a href="926a252b99d99b76.html" title="AT&amp;T Business and Palo Alto Networks Partner to Deliver Quantum-Resilient SASE Fabric">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Majorana 2 – Microsoft’s Scalable Quantum Processor With Reliable, Long-Lasting Qubits</h1>
+    <h1 class="article-title">IBM Improves Qubit Reset by 25x and Releases Qiskit v2.5</h1>
     <div class="article-meta">
-      <span class="article-source">Microsoft Quantum Blog</span>
-      <span>Chetan Nayak</span>
-      <span>6w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>2h</span>
       <span class="article-category">quantum</span>
-      <span>378 words</span>
+      <span>397 words</span>
       <span>2 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Figure 2. The new hybrid material stack, designed with AI, consists of lead atop a composite quantum well.<br>
- <br>
- <br>
-Advancing through DARPA's Quantum Benchmarking Initiative<br>
-The Defense Advanced Research Projects Agency (DARPA) previously advanced Microsoft as one of only two companies to the final phase of their rigorous program to evaluate quantum systems. The Microsoft Quantum team continues to make progress in DARPA’s Underexplored Systems for Utility-Scale Quantum Computing (US2QC), one of the programs that makes up their larger Quantum Benchmarking Initiative (QBI). <br>
- <br>
-DARPA’s US2QC program and its broader QBI represent a rigorous approach to evaluating quantum systems that could solve problems that are beyond the capabilities of classical computers. To date, the US2QC program has brought together experts from organizations including DARPA, Air Force Research Laboratory, Johns Hopkins University Applied Physics Laboratory, Los Alamos National Laboratory, Oak Ridge National Laboratory, Lawrence Berkeley National Laboratory, and Lawrence Livermore National Laboratory to verify quantum hardware, software, and applications. Going forward, the QBI is expected to engage with even more experts in the testing and evaluation of quantum computers.<br>
- <br>
-Previously, DARPA selected Microsoft for an earlier phase upon an assessment that we could plausibly build a utility-scale quantum computer in a reasonable timeframe. DARPA then evaluated the Microsoft Quantum team’s architectural designs and engineering plan for a fault-tolerant quantum computer. As a result of this careful analysis, DARPA and Microsoft executed an agreement to begin the final phase of the program. During this phase, Microsoft intends to build a fault-tolerant prototype based on topological qubits in years, not decades—a crucial acceleration step toward utility-scale quantum computing. <br>
- <br>
-Our accelerated roadmap to a scalable quantum machine<br>
-By overcoming formidable obstacles in physics, Majorana 1 was realized. Over the year that followed, the Microsoft Quantum team met the engineering challenges of manufacturing topological qubits with Majorana 2. Based on this rapid progress, we are accelerating our roadmap to a scalable, practical quantum computer—we have cut our timeline in half and now aim to reach this target by 2029. This achievement will mark a major milestone on the path to a transformative fault-tolerant quantum computer that has the potential to solve problems that affect all of humanity. <br>
- <br>
-Learn more about the latest advances from Microsoft Quantum</p>
+    <p>IBM has announced two major advancements this past week, spanning both its quantum hardware and software ecosystems.<br>
+Hardware: 25x Faster Qubit Resets<br>
+On the hardware front, IBM achieved a 25x speed improvement for qubit resetting on its latest processor. Rapid reset times are critical after a circuit finishes executing, as they prepare the machine for the next run. The faster this occurs, the more circuits the system can execute per second.<br>
+To quantify this efficiency, IBM introduced a new metric called Max Circuits per Second (MCPS). The company claims that for short circuits, MCPS has jumped from roughly 4,000 to 100,000. This 25x increase will significantly boost overall system throughput.<br>
+Accelerated reset times also enhance mid-circuit measurements. This capability allows a system to run part of a computation, measure a qubit mid-stream, and immediately reset it for reuse later in the same execution—a technique expected to be foundational for quantum error correction.<br>
+IBM has deployed this feature on its latest 120-qubit Nighthawk r2 processor. Thanks to the architecture’s tunable couplers, each qubit can be reset rapidly and independently without disrupting neighboring qubits. Furthermore, IBM’s internal testing shows an 11x reduction in initialization error rates.<br>
+Software: Qiskit v2.5 Launch<br>
+IBM’s second announcement marks the release of Qiskit version 2.5, which delivers enhanced performance, greater flexibility, and several new features to the open-source software platform.<br>
+Key highlights of the v2.5 release include:<br>
+- C API Classical Control Flow: Enables direct inspection from C of the classical control flow instructions used in dynamic circuits.<br>
+- Multi-IR Compilations: Introduces abstractions that allow users to build compilation pipelines utilizing multiple, distinct Intermediate Representations (IR).<br>
+- Fault-Tolerant Pipelines: Features dedicated fault-tolerant pipelines with preset pass managers, simplifying compilation to Pauli-Based Computation (PBC) and Clifford+T representations for fault-tolerant workflows.<br>
+- Faster Transpilation: Accelerates transpilation via algorithmic improvements, software optimizations, expanded multithreading, and new fidelity-focused passes.<br>
+Rebranding Notice<br>
+Alongside the software release, IBM announced it is renaming the Qiskit Runtime Service to the IBM Quantum Compute Service. While there are no technical changes associated with this rebranding, IBM introduced the new name to clearly differentiate its commercial cloud service from the open-source Qiskit software development kit (SDK).<br>
+Learn More: For additional details on the qubit reset breakthroughs, read the blog post by Jay Gambetta. To explore the full technical breakdown of the new software features, check out the Qiskit v2.5 release summary.<br>
+July 17, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/ibm-improves-qubit-reset-by-25x-and-releases-qiskit-v2-5/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
+  <span></span>
   
-  <a href="a286f094d89cc18d.html" class="prev-next">&larr; On hope</a>
-  
-  
-  <a href="177414df5f2a25a8.html" class="prev-next">Nicole’s guide to handling failure and rejection &rarr;</a>
+  <a href="926a252b99d99b76.html" class="prev-next">AT&amp;T Business and Palo Alto Networks Partner to Deliver Quantum-Resilient SASE Fabric &rarr;</a>
   
 </div>
 
