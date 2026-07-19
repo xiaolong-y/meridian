@@ -139,32 +139,18 @@
       <span>Mohamed Abdel-Kareem</span>
       <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>623 words</span>
-      <span>4 min read</span>
+      <span>65 words</span>
+      <span>1 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Quantum computing startup Quantum Source Alpha Labs (QS Labs) has published a comprehensive hardware blueprint on arXiv detailing a fault-tolerant, compound photon-atom quantum architecture. Co-authored by a 14-member scientific team, the research proposes a hybrid platform that utilizes cavity quantum electrodynamics (cavity QED) to resolve the fundamental scaling bottlenecks plaguing standalone photonic and matter-based quantum processing units (QPUs).<br>
-                         [ QS Labs Hybrid QPU Architecture ]<br>
-  Stationary Qubits   ──► Single Rubidium-87 (87Rb) atoms trapped in optical cavities.<br>
-  Flying Qubits       ──► Flying photons providing long-range, unrestricted connectivity.<br>
-  Core Gate Primitive ──► Symmetrized Duan-Kimble photon-atom Controlled-Phase (CZ) gate.<br>
-  Framework Model     ──► Measurement-Based Quantum Computing (MBQC) on an RHG lattice.<br>
-  Calculated Threshold──► ~2.6% photon loss per physical gate (~15% total trajectory loss).Eliminating Photonic Probability and Matter-Based Speed Penalties<br>
-To achieve fault-tolerant utility scale, a quantum computer must maintain millions of physical qubits operating below the error-correction threshold while enabling long-range connectivity to link distant qubits. Existing single-platform architectures force an architectural trade-off: matter-based qubits (superconducting circuits, trapped ions, neutral atoms) offer excellent local gate control but suffer from geometric routing constraints or slow millisecond-range shuttling speeds. Conversely, purely photonic engines offer near-infinite connectivity via linear optics but rely on probabilistic, heralded entangling gates that demand six orders of magnitude in extra physical hardware overhead.<br>
-The QS Labs blueprint eliminates this structural tension by assigning specific tasks to each qubit type based on their native physical properties:<br>
-- Near-Deterministic Cavity QED Gates: Instead of relying on probabilistic linear optics, the architecture uses a specialized photon-atom controlled-phase (CZ) gate. A single flying photon is routed into a high-finesse Fabry–Pérot optical cavity holding a stationary Rubidium-87 (87Rb) atom. The two systems couple strongly, allowing information to be exchanged reliably on a tens-of-nanosecond timescale.<br>
-- Hardware-Saving Atomic Reuse: The system runs natively within a Measurement-Based Quantum Computing (MBQC) framework to construct a three-dimensional Raussendorf–Harrington–Goyal (RHG) cluster state. The surface code’s bipartite sublattices are split between photons and atoms. Once an atom completes its local entangling gate sequence, its quantum state is mapped onto a photon for measurement, and the atom is instantly reset for the next computational cycle. This rapid recycling reduces the required number of physical cavities and control lines by over an order of magnitude.<br>
-- Unrestricted Connectivity for qLDPC Codes: Using photons for long-range networking eliminates the physical nearest-neighbor constraints that limit solid-state chips. This open connectivity allows the architecture to support hardware-efficient quantum Low-Density Parity-Check (qLDPC) codes, which require arbitrary long-distance routing to drastically minimize logical qubit overhead.<br>
-A Loss-Aware Decoding Model<br>
-The paper evaluates the architecture’s fault tolerance using a specialized noise model that accounts for hardware-specific, asymmetric loss processes rather than generic depolarizing noise approximations. Crucially, the model maps bond-loss propagation—a phenomenon where a lost photon silently corrupts adjacent error-correction stabilizer checks without triggering a standard error signature.<br>
-By feeding these asymmetric constraints into a loss-aware decoder, the system maintains stable error distance scaling. The simulations establish a photon-loss threshold of approximately 2.6% per physical gate, translating to a maximum allowable loss of 15% across a photon’s entire trajectory through the optical routing fabric.<br>
-Furthermore, the architecture natively executes the complete logical Clifford gate set (Hadamard, Phase, CNOT) transversally or fold-transversally at thresholds matching the identity channel. For universal fault-tolerant logic, the blueprint outlines two distinct native pathways to generate non-Clifford T-gates within the foliated cluster state: code teleportation and magic state cultivation.<br>
-While the engineering roadmap requires substantial scaling milestones—including high-density optical integration, advanced cavity fabrication, and high-speed classical switching—the hybrid blueprint unifies the physical layer and the fault-tolerance framework under a single, hardware-efficient design.<br>
-Review the complete technical preprint directly via the arXiv Quantum Physics here, and browse structural integration benchmarks on the Quantum Source Alpha Labs Research Blog here.<br>
-July 17, 2026</p>
+    <p>Quantum computing startup Quantum Source Alpha Labs (QS Labs) has published a comprehensive hardware blueprint on arXiv detailing a fault-tolerant, compound photon-atom quantum architecture. Co-authored by a 14-member scientific team, the research proposes a hybrid platform that utilizes cavity quantum electrodynamics (cavity QED) to resolve the fundamental scaling bottlenecks plaguing standalone photonic and matter-based quantum [...] The post Quantum Source Alpha Labs Proposes Hybrid Photon-At</p>
+  </div>
+  <div class="fallback">
+    Full article extraction unavailable.
+    <a href="https://quantumcomputingreport.com/quantum-source-alpha-labs-proposes-hybrid-photon-atom-blueprint-for-fault-tolerant-computing/" target="_blank" rel="noopener">Read on original site &rarr;</a>
   </div>
   
 </article>
@@ -187,7 +173,7 @@ July 17, 2026</p>
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-07-19 08:10 UTC
+  Generated 2026-07-19 13:09 UTC
 </div>
 
 <script type="module">
