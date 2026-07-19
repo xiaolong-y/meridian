@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NISQ and quantum supremacy did not fail — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="940ccef49342d4c1.html" title="My friend Mark Wise">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">NISQ and quantum supremacy did not fail</h1>
+    <div class="article-meta">
+      <span class="article-source">Shtetl-Optimized</span>
+      <span>Scott</span>
+      <span>5h</span>
+      <span class="article-category">quantum</span>
+      <span>791 words</span>
+      <span>4 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>NISQ and quantum supremacy did not fail<br>
+A week ago, a philosopher named Amit Hagar put out a preprint entitled The NISQ Trap: Eight Years of Demonstrations the Hardware was Built to Lose. Here’s the abstract:<br>
+With a single clear exception, every NISQ-era flagship demonstration of ‘quantum advantage’ has, within eighteen months of its announcement, been classically reproduced, shown to rest on classically tractable structure, or closed by a simulability theorem. Six theoretical results from 2024 through April 2026 explain the pattern: the regions of circuit-space NISQ hardware can run with sufficient fidelity coincide with the regions classical algorithms compress efficiently, because the features that admit one (low effective depth, strong algebraic structure, geometric locality) are the features that admit the other. This reading dates the NISQ programme from its 2018 articulation as an interim retreat from the unmet conditions of the 1996 threshold theorems, characterises the eight years that followed as a closed loop in which the demonstrations the hardware could run were drawn from regions classical methods could already reach, and locates the exit from the loop where the threshold theorems originally located it: in fault tolerance. The empirical pattern could in principle break with a demonstration that escapes the current simulability results. After eight years and more than thirty advantage-class announcements, the burden of producing such a demonstration falls to the defenders of NISQ.<br>
+You can also read some debates about the paper on SciRate here. I think it’s fair to say that the paper is purely polemical, without new ideas, and Pangram agrees with my suspicion (and that of a SciRate commenter) that significant portions of it are AI-generated.<br>
+Nevertheless, the basic thesis—that quantum supremacy in the NISQ (Noisy Intermediate Scale Quantum computing) era has been a failure, or even an example of pathological science—seems surprisingly widely shared, along with the opposite thesis that quantum computing already gives oodles of useful advantages for optimization and finance.<br>
+So it seems worth stating for the record that I have an extremely different view. I would say:<br>
+- Sampling-based quantum supremacy experiments, including those based on Random Circuit Sampling and BosonSampling, passed the point about two years ago where, absent a breakthrough in classical algorithms, they quite clearly are beating what can easily be simulated on any existing classical computer. Hagar seems to claim that these experiments have been killed by the October 2025 paper Classical simulation of noisy random circuits from exponential decay of correlation, but he ignores that the algorithm from that paper still needs time that’s exponential in the circuit depth (see Theorem 2).<br>
+- Indeed, simulating deep ~100-qubit random circuits, like those that Google and Quantinuum have now demonstrated experimentally, still seems pretty hopeless with any current classical method. This is particularly true for Quantinuum’s experiments, which had high enough gate fidelity to maintain a Linear Cross-Entropy score of order 1 (i.e., they’re no longer all that “noisy”). The central drawback of these experiments is no longer lack of confidence about quantum advantage; rather, it’s just that we only get samples as output, and directly verifying the quality of the samples seems just as intractable for a classical computer as spoofing the samples.<br>
+- As of this past year, however, we have some strong candidates for verifiable quantum advantage. One is the Google OTOC experiment, as even Hagar himself acknowledges (that’s his “single clear exception”). A second is the simulations of the 2D Fermi-Hubbard model on Quantinuum and Google machines, like this one. The 1D Fermi-Hubbard model can be classically simulated pretty easily (see here for example), but the 2D one still presents challenges, meaning that in some regimes, the best available estimates of certain observables apparently now come from quantum computers. I wish I could write about other examples that will be public shortly.<br>
+- Yes, the “real” goal remains, as it’s been since the 1990s, to build a scalable fault-tolerant quantum computer—and I’m glad that Hagar (unlike, say, Gil Kalai) never suggests that we’ve learned anything to rule that goal out. In the meantime, an intermediate goal would be to use NISQ devices to do physics and chemistry simulations that are commercially useful, or that help solve important scientific problems. The point of quantum supremacy experiments, you might say, is that by demonstrating the reality of quantum speedup about as clearly as it can be demonstrated with current hardware, they let us cleanly turn our attention to those more ambitious goals.<br>
+Anyway, my son and I need to catch a plane to Utah now, for the next iteration of the wonderful Epsilon Camp, where I’ll again be teaching theoretical computer science to 11- and 12-year-olds. But feel free to discuss in the comments! Nothing about world affairs in this thread please, just quantum supremacy.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://scottaaronson.blog/?p=9949" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="940ccef49342d4c1.html" class="prev-next">My friend Mark Wise &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-07-19 02:14 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
