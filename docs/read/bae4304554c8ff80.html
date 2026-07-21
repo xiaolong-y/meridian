@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tennessee Launces Comprehensive K–12 Quantum Education and Career Initiative — Meridian Reader</title>
+  <title>Joint Study by AWS, NVIDIA, LBNL, and NASA Establishes Framework for Quantum-HPC Integration — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,59 +126,58 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="19a8205bd5793447.html" title="Singapore’s pQCee Raises $3.9M Seed Round to Accelerate Global Crypto-Agility Deployment">&larr; prev</a>
-    <a href="309e8b3108d44c58.html" title="Quantinuum and Academic Partners Demonstrate First Universal Topological Gate Set via Non-Abelian Anyons">next &rarr;</a>
+    
+    <a href="fe12f641a76e5271.html" title="Bloch Quantum Tech Hub Secures $55M in Federal and Matching Grants to Build U.S. Quantum Supply Chain">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Tennessee Launces Comprehensive K–12 Quantum Education and Career Initiative</h1>
+    <h1 class="article-title">Joint Study by AWS, NVIDIA, LBNL, and NASA Establishes Framework for Quantum-HPC Integration</h1>
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>3d</span>
+      <span>5h</span>
       <span class="article-category">quantum</span>
-      <span>438 words</span>
+      <span>518 words</span>
       <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>The Chattanooga Quantum Collaborative (CQC) has launched TN QuantumWorks, one of the United States’ first comprehensive K–12 quantum technology and career awareness education initiatives. Developed by workforce education innovators Dr. Dane and Sheila Boyington of Thinking Media, the curriculum will be introduced as an active pilot program within Hamilton County Schools before expanding statewide. Supported by the Tennessee Department of Labor and Workforce Development, the program maps a complete public education-to-workforce pipeline designed to establish early digital literacy for the emerging quantum economy.<br>
-                         [ TN QuantumWorks Initiative Matrix ]<br>
-  Lead Organizer      ──► Chattanooga Quantum Collaborative (CQC).<br>
-  Curriculum Architect──► Thinking Media (Dr. Dane and Sheila Boyington).<br>
-  Initial Pilot Hub   ──► Hamilton County Schools (Franklin-Roberts Future Ready Center).<br>
-  Higher Ed Pathway   ──► University of Tennessee at Chattanooga (UTC).<br>
-  Hardware Testbed    ──► EPB Quantum Center (IonQ Forte Enterprise interface accessibility).<br>
-A Multiphase Framework from Kindergarten Through Graduation<br>
-Rather than focusing exclusively on high-level mathematical physics, the TN QuantumWorks framework targets progressive technology familiarity across three distinct public school learning blocks:<br>
-- Elementary School Foundation: Lower grade levels explore structural quantum ideas through hands-on discovery games, spatial reasoning exercises, and basic physical curiosity triggers to build early STEM confidence.<br>
-- Middle School Concept Introduction: Intermediate students transition to foundational computational concepts, moving past traditional binary processing rules to investigate properties like qubits and quantum superposition.<br>
-- High School Applied Integration: Upper-grade tracks focus on active quantum applications, advanced mathematical algorithms, and strategic career exploration. Advanced high school participants will have opportunities to actively write quantum programs and run test blocks on commercial hardware.<br>
-Leveraging Chattanooga’s Shared Infrastructure Core<br>
-The rollout integrates with Chattanooga’s expanding local infrastructure to expose students to commercial deep-tech operating assets. The region houses the EPB Quantum Center, the nation’s premier commercial quantum network infrastructure, which features an operational IonQ Forte Enterprise quantum processor. The pilot program links this infrastructure directly to local classrooms, enabling students to gain real-world exposure to operational quantum devices alongside regional educators who have completed specialized technical training loops through Sandia National Laboratories.<br>
-Furthermore, the K–12 program bridges directly into higher education and regional economic development networks. The University of Tennessee at Chattanooga (UTC) will absorb graduating cohorts into its dedicated undergraduate and graduate quantum certificate lines, while EPB and Vanderbilt University finalize plans for the joint Institute for Quantum Innovation research facility. By connecting public primary education, academic research tracks, and localized commercial networking assets, the collaborative model aims to cultivate a highly technical, regional workforce prepared for high-demand careers across cybersecurity, modern logistics, advanced manufacturing, and financial systems.<br>
-Review the official regional deployment briefing via Chattanooga Quantum Collaborative here.<br>
-July 17, 2026</p>
+    <p>A cross-institutional research team comprising scientists from Amazon Web Services (AWS), NVIDIA, Lawrence Berkeley National Laboratory (LBNL), and NASA has published a quantitative performance model to evaluate when quantum processing units (QPUs) must be tightly co-located with classical high-performance computing (HPC) supercomputers—and when standard remote cloud connectivity is fully sufficient.<br>
+Published on arXiv and highlighted on the AWS Quantum Technologies Blog, the study cuts through infrastructure speculation to provide a diagnostic tool that guides capital expenditure decisions as the industry transitions toward fault-tolerant systems.<br>
+Differentiating Real-Time Hardware Control from Application Workflows<br>
+A central contribution of the paper is explicitly separating quantum-classical connectivity into two distinct operational tiers:<br>
+- The Real-Time Control Level: Focuses on sub-microsecond hardware tasks, including physical qubit calibration and quantum error correction (QEC) syndrome decoding. Here, classical decoders must process error syndromes and apply corrections within strict physical limits. At this level, low-latency, tightly coupled physical co-location is non-negotiable; exceeding latency thresholds leads to immediate logical gate failure.<br>
+- The Application Level: Evaluates hybrid algorithms (such as variational solvers and sample-based diagonalizations) that iteratively exchange data between a classical host and a QPU. At this level, classical processing does not need to complete within sub-microsecond hardware limits, meaning network latency impacts total runtime performance rather than physical feasibility.<br>
+Evaluating Infrastructure Regimes: Compute-Bound vs. Communication-Bound<br>
+To determine whether a specific hybrid algorithm requires physical co-location with an HPC supercomputer, the authors decompose the total execution cycle into classical compute time, quantum compute time, and communication overhead. This framework establishes a diagnostic communication-to-computation ratio (Rcc) that defines two distinct operational regimes:<br>
+- Compute-Bound Workloads: Communication overhead is negligible relative to execution time. Co-locating the QPU next to a supercomputer offers no measurable performance gain, making standard cloud-based remote access fully sufficient.<br>
+- Communication-Bound Workloads: The workflow is bottlenecked by data transfer latency. Tight, low-latency physical integration materially improves total execution speed.<br>
+Benchmarking Near-Term Workloads and Future Fault Tolerance<br>
+Applying the model to published algorithmic benchmarks yielded concrete infrastructure conclusions:<br>
+- Sample-Based Quantum Diagonalization (SQD): Evaluated on IBM’s 77-qubit Heron processor for quantum chemistry, SQD demonstrated that because the heavy classical compute phase dominates the brief quantum measurement, communication overhead over standard wide-area networks is negligible—proving that remote cloud access works effectively.<br>
+- Quantum-Enhanced Markov Chain Monte Carlo (QE-MCMC): Benchmarked on a 10-qubit IBM device, QE-MCMC demonstrated high communication overhead under remote access due to rapid, repeated round-trips. However, while this workflow benefits from low-latency connectivity, the classical step requires minimal processing power, meaning it requires a low-latency connection rather than a full supercomputer.<br>
+- Fault-Tolerant Scaling: As QPUs scale to logical qubits, low-latency integration between QPUs and classical HPC resources becomes increasingly vital, as reaction times directly set the logical clock speed of fault-tolerant execution.<br>
+By defining specific crossover conditions—such as shot-budget reductions via amplitude estimation or the emergence of practical quantum memory—the open-source performance model provides a living framework for the HPC community to track hardware progress and plan infrastructure investments.<br>
+Review the complete theoretical paper on arXiv Physics here, and read the joint architectural analysis on the AWS Quantum Technologies Blog here.<br>
+July 20, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantumcomputingreport.com/tennessee-launces-comprehensive-k-12-quantum-education-and-career-initiative/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/joint-study-by-aws-nvidia-lbnl-and-nasa-establishes-framework-for-quantum-hpc-integration/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
+  <span></span>
   
-  <a href="19a8205bd5793447.html" class="prev-next">&larr; Singapore’s pQCee Raises $3.9M Seed Round to Accelerate Global Crypto-Agility Deployment</a>
-  
-  
-  <a href="309e8b3108d44c58.html" class="prev-next">Quantinuum and Academic Partners Demonstrate First Universal Topological Gate Set via Non-Abelian Anyons &rarr;</a>
+  <a href="fe12f641a76e5271.html" class="prev-next">Bloch Quantum Tech Hub Secures $55M in Federal and Matching Grants to Build U.S. Quantum Supply Chain &rarr;</a>
   
 </div>
 
