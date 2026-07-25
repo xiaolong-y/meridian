@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Archive 2026 — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="ada60886a71412af.html" title="News">&larr; prev</a>
+    <a href="b5e041a06533668f.html" title="Ratan Tata Innovation Hub AP Partners with WISER and QISE to Build Andhra Pradesh Quantum Startup Ecosystem">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">News Archive 2026</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>6h</span>
+      <span class="article-category">quantum</span>
+      <span>26412 words</span>
+      <span>133 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>March 31, 2026<br>
+EPB Joins Southeastern Quantum Collaborative to Support Regional Infrastructure Integration<br>
+EPB has joined the Southeastern Quantum Collaborative (SQC) to coordinate quantum research and workforce development across the region. This partnership utilizes the EPB Quantum Network to transition technologies from laboratories to industrial applications in energy, logistics, and defense. EPB is currently installing an IonQ Forte Enterprise quantum computer, which will provide the first integrated commercial access to both trapped-ion hardware and a photonics-based network. This infrastructure builds on collaborations with Oak Ridge and Los Alamos National Laboratories to develop quantum-resilient communications for power grid management. Read more in our full article here.<br>
+March 31, 2026<br>
+Alice & Bob and Partners Awarded $3.9M ARPA-E Grant for Quantum Magnet Design<br>
+Alice & Bob, in collaboration with Los Alamos National Laboratory and GE Vernova, has been awarded a $3.9 million ARPA-E grant to develop rare-earth-free permanent magnets. This three-year project aims to utilize cat-qubit hardware and hybrid quantum-classical algorithms to achieve a 10,000-fold speed-up in material simulation compared to current methods. By accurately modeling correlated electronic systems, the consortium seeks to find high-performance alternatives to neodymium magnets, which are subject to supply chain constraints. This effort supports the goal of enabling complex magnetic material calculations within a 24-hour window for industrial applications. Read more in our full article here.<br>
+March 31, 2026<br>
+Monarch Quantum Secures $55M Growth Round to Scale Integrated Photonics Production<br>
+Monarch Quantum has secured a $55 million growth round led by Serendipity Capital to scale production of its Quantum Light Engines. The San Diego-based company provides integrated photonic control systems designed to replace bulky laboratory optical assemblies for trapped-ion and neutral-atom architectures. With existing hardware contracts from Quantinuum, Infleqtion, and NASA, the firm has reached over $115 million in total capital and commitments within six months of its founding. This investment will expand manufacturing capacity and support the deployment of low-SWaP quantum hardware in non-laboratory environments. Read more in our full article here.<br>
+March 31, 2026<br>
+QuSecure Joins NIST NCCoE Consortium for Post-Quantum Cryptography Migration<br>
+QuSecure has joined the NIST National Cybersecurity Center of Excellence (NCCoE) consortium for its Migration to Post-Quantum Cryptography Project. The collaboration aims to assist organizations in identifying and replacing legacy public-key algorithms that are vulnerable to future quantum-based cryptanalysis. Using its QuProtect R3 platform, QuSecure will demonstrate the automated discovery of vulnerable cryptography and evaluate the performance of NIST-standardized quantum-resistant alternatives in laboratory environments. The results will be used to develop standardized migration playbooks, providing a technical baseline for the secure modernization of digital assets across various industry sectors. Read more in our full article here.<br>
+March 31, 2026<br>
+memQ Secures $10M Series A to Develop Distributed Quantum Networking Hardware<br>
+memQ has closed a $10 million Series A round to develop its Extensible Quantum Network Architecture (xQNA), aimed at connecting separate quantum processing units over standard optical links. This hardware suite includes Quantum Network Interface Controllers (QNICs) and memory modules designed to facilitate distributed quantum computing and secure networking. By utilizing commercial photonic integrated circuits, the modular architecture is intended to be qubit-agnostic and support “blind” cloud computing. The funding will accelerate the commercialization of this connectivity layer, which is currently being evaluated by hardware developers such as Atom Computing to scale neutral-atom systems. Read more in our full article here.<br>
+March 30, 2026<br>
+QuantX Labs Launches Optical Frequency Comb for Orbital Clock Demonstration<br>
+QuantX Labs has launched an optical frequency comb into orbit to serve as the critical interface for its TEMPO.Space optical atomic clock. Deployed aboard an Exotrail orbital transfer vehicle on a SpaceX mission, the payload is part of Australia’s KAIROS program to validate quantum timing hardware in space. The mission aims to demonstrate the frequency comb’s stability and its ability to down-convert optical oscillations into electronic signals under orbital conditions. This deployment is a foundational step toward launching a full-scale optical atomic clock later in 2026. Read more in our full article here.<br>
+March 30, 2026<br>
+UMass Amherst and UCSB Demonstrate Photonic Chip Technology for Miniaturized Quantum Systems<br>
+Researchers from UMass Amherst and UCSB have demonstrated an integrated system-on-a-chip technology that replaces room-sized laser and optical components with miniaturized photonic chips. By utilizing trapped-ion technology on a device roughly the size of a deck of cards, the team successfully performed qubit and clock operations with high-fidelity state preparation. The breakthrough, published in Nature Communications, uses active photonic compensation for laser drift to eliminate the need for bulky, vibration-isolated vacuum chambers. This miniaturization provides a scalable path for both millions-qubit fault-tolerant processors and portable optical clocks for high-precision navigation. Read more in our full article here.<br>
+March 30, 2026<br>
+IQM Secures €50 Million ($57.4 Million USD) Financing to Scale Superconducting Quantum Operations<br>
+IQM has secured €50 million in financing from BlackRock to accelerate its quantum computing technology, R&D, and global expansion. This funding supports IQM’s focus on full-stack superconducting quantum computers and on-premises hardware for research institutions and HPC centers. The financing aims to lower capital costs and advance fault-tolerant quantum computing. IQM is also preparing to go public via a merger with Real Asset Acquisition Corp. The company currently has over 300 employees across multiple continents. Read more in our full article here.<br>
+March 30, 2026<br>
+SBQuantum to Launch Diamond Quantum Magnetometer for MagQuest Challenge<br>
+SBQuantum is scheduled to launch a diamond quantum magnetometer into space to monitor Earth’s magnetic field as part of the final phase of the NGA’s MagQuest Challenge. Partnered with Spire Global, the mission utilizes nitrogen-vacancy (NV) centers in synthetic diamonds to provide miniaturized, high-precision monitoring for the World Magnetic Model. This quantum sensing approach offers a resilient alternative to GPS, remaining functional in environments where satellite signals are contested or degraded. The results of this flight phase will inform the NGA’s 2030 acquisition strategy for global magnetic data collection. Read more in our full article here.<br>
+March 28, 2026<br>
+Universal Logical Operations Implemented in Silicon Donor Quantum Processor<br>
+Researchers from the Shenzhen International Quantum Academy have demonstrated a silicon-based quantum processor capable of executing a universal set of logical gate operations. The system utilizes five phosphorus donor nuclear spins in an isotopically purified silicon-28 lattice to implement a [[4, 2, 2]] quantum error-detecting code. This architecture marks the first characterization of a universal logical gate set, including T-gates and CNOT operations, within a silicon spin platform. The processor’s utility was validated through a Variational Quantum Eigensolver algorithm to compute the ground-state energy of the water molecule (H2O). Read more in our full article here.<br>
+March 28, 2026<br>
+Toshiba and LQUOM Collaborate on Long-Distance Quantum Repeater Research<br>
+Toshiba and LQUOM have entered a joint research agreement to extend the range of Quantum Key Distribution (QKD) using quantum repeater technology. The project aims to integrate Toshiba’s high-speed QKD systems with LQUOM’s entanglement-based repeater architectures to overcome fiber-optic transmission distance limits. By combining established commercial security protocols with next-generation repeater nodes, the collaboration seeks to build the technical foundation for a large-scale quantum internet. This research is expected to enable secure, long-distance data transmission for critical sectors such as finance, healthcare, and energy. Read more in our full article here.<br>
+March 26, 2026<br>
+Resource Estimates for Quantum Discrete Logarithm Computations on 256-bit Elliptic Curves<br>
+A new technical paper for EUROCRYPT 2026 demonstrates that solving the Discrete Logarithm problem on 256-bit elliptic curves requires only 1,098 logical qubits, down from previous estimates of 2,124. This reduction is achieved through a space-optimized implementation of Shor’s algorithm that utilizes Legendre symbol output compression and a Residue Number System. While this approach significantly lowers the qubit threshold, it increases the total gate count to approximately 238.10 Toffoli gates. This trade-off provides a specialized path for executing cryptanalytic attacks on early, qubit-constrained fault-tolerant hardware. Read more in our full article here.<br>
+March 26, 2026<br>
+Open Quantum Design, Western Digital, and QuScript Form Open-Source Error Correction Working Group<br>
+Open Quantum Design, Western Digital, and QuScript have established an open-source working group to develop a full-stack quantum computer prototype focused on error correction. This collaboration integrates trapped-ion hardware with specialized algorithms and Western Digital’s expertise in decoder design to implement stable logical qubits. By making both hardware and software designs publicly available, the initiative aims to lower the barrier for fault-tolerant development. The group’s immediate goal is to demonstrate empirically reduced error rates through a transparent, hardware-agnostic framework. Read more in our full article here.<br>
+March 26, 2026<br>
+Open Quantum Design Launches Open-Source Hardware Repository for Trapped-Ion Quantum Computing<br>
+Open Quantum Design (OQD) has launched a public repository for its trapped-ion quantum hardware, providing detailed blueprints for its Blade Trap Assembly and Optical Circuit Boards. By hosting these designs on GitHub, the organization aims to standardize the physical components of quantum processors, such as laser delivery and signal control. The repository features LightFlow technology for modular optical routing, enabling researchers to bypass traditional “trial and error” in hardware fabrication. This release completes OQD’s mission to provide a fully open-source, full-stack ecosystem for rapid industry and academic iteration. Read more in our full article here.<br>
+March 26, 2026<br>
+IBM Quantum Processor Successfully Simulates Magnetic Material Dynamics<br>
+IBM and the U.S. Department of Energy (DOE) have successfully used a 50-qubit Heron processor to simulate the complex magnetic physics of a real-world crystal (KCuF3). The study is a watershed moment for the industry: for the first time, a quantum computer’s results weren’t just checked against a classical computer—they were checked against real physical data from the Spallation Neutron Source (SNS) at Oak Ridge. This proves that today’s “noisy” quantum computers are already accurate enough to help design the superconductors of tomorrow. Read more in our full article here.<br>
+March 26, 2026<br>
+Cleveland Clinic and IBM Implement Quantum Workflow for Protein Simulation<br>
+Cleveland Clinic and IBM have successfully simulated the electronic structure of the 303-atom Trp-cage miniprotein using a quantum-centric supercomputing workflow. This implementation utilizes the IBM Quantum Heron r2 processor alongside classical high-performance computing to address computational bottlenecks in biomolecular modeling. By employing wave function-based embedding and the sample-based quantum diagonalization algorithm, the team achieved energy prediction accuracy competitive with high-level classical benchmarks. This hybrid framework demonstrates a scalable path toward modeling larger molecules for pharmaceutical and materials science applications. Read more in our full article here.<br>
+March 26, 2026<br>
+Rigetti Computing Announces $100 Million UK Investment for 1,000-Qubit Milestone<br>
+Rigetti Computing is expanding its operations in the United Kingdom with a $100 million investment aimed at deploying a 1,000-qubit system within the next four years. This initiative aligns with the UK’s £2 billion National Quantum Strategy and targets a “TeraQuOp”—one trillion quantum operations—by 2035. By utilizing proprietary chiplet-based technology, the company intends to establish a high-performance, on-premises quantum research hub to support defense and enterprise applications. Read more in our full article here.<br>
+March 25, 2026<br>
+Silent Waves Launches Zephyr, a Traveling Wave Parametric Amplifier for Scaling Quantum Architectures<br>
+Silent Waves has launched Zephyr, a Traveling Wave Parametric Amplifier that integrates a microwave pump coupler directly into its architecture to reduce the physical footprint in dilution refrigerators. This design minimizes thermal dissipation and insertion loss by eliminating bulky external components in the quantum readout chain. Supported by the EU-funded SUPREME consortium, the Zephyr represents a modular step toward fully integrated, on-chip isolation for scaling fault-tolerant architectures. Read more in our full article here.<br>
+March 25, 2026<br>
+Atom Computing and Cisco Establish Collaboration for Distributed Quantum Architectures<br>
+Atom Computing and Cisco have signed a Memorandum of Understanding (MOU) to build the world’s first distributed neutral-atom quantum network. By linking multiple 1,000-qubit processors together using Cisco’s advanced networking protocols, the partners aim to bypass the physical limits of a single vacuum chamber. This “modular” approach effectively turns a collection of individual quantum computers into a single, massive super-machine capable of solving the world’s most complex problems. Read more in our full article here.<br>
+March 25, 2026<br>
+QpiAI Implements High-Speed Hardware Decoder for 64-Qubit Kaveri Processor<br>
+QpiAI has achieved a world-class benchmark in quantum error correction (QEC), deploying a custom hardware decoder for its 64-qubit Kaveri processor. By moving from software to a dedicated “union-find” hardware architecture, the Bengaluru-based startup has slashed decoding latency from 60 microseconds to just 1.5 microseconds. This breakthrough, supported by India’s National Quantum Mission (NQM), allows for real-time error correction within the delicate 100-microsecond coherence window of superconducting qubits. Read more in our full article here.<br>
+March 25, 2026<br>
+QpiAI to Deploy 25-Qubit Superconducting Quantum System at IIIT-Dharwad<br>
+QpiAI has been awarded a major contract to install its 25-qubit “Indus” quantum computing system at IIIT-Dharwad. This deployment, a key pillar of the Karnataka Quantum Roadmap, marks the second physical quantum computer in the state and moves India closer to its goal of a $20 billion quantum economy by 2035. By providing local, hardware-based access to students and enterprises, the center aims to break the reliance on foreign cloud providers and build a “Sovereign Quantum” workforce. Read more in our full article here.<br>
+March 25, 2026<br>
+QpiAI and Alliance University Establish AU QUASAR Experience Center in Bengaluru<br>
+QpiAI and Alliance University have launched the AU QUASAR Experience Center at the university’s Electronic City campus in Bengaluru. Announced on March 25, 2026, the facility is the first in India to house a commercially available 8-qubit superconducting quantum system within a university setting. By providing “Quantum Computing as a Service” (QCaaS) alongside academic degree programs, the center serves as a critical bridge between India’s National Quantum Mission (NQM) and the commercial needs of the aerospace, defense, and logistics sectors. Read more in our full article here.<br>
+March 25, 2026<br>
+Fujitsu and The University of Osaka Implement Early-FTQC Framework for Chemical Calculations<br>
+Fujitsu and The University of Osaka have reached a major milestone in quantum chemistry, unveiling a new framework that allows early fault-tolerant quantum computers (early-FTQC) to perform complex molecular energy calculations. Announced on March 25, 2026, the breakthrough combines the STAR architecture ver. 3 with a novel molecular model optimization technique. This synergy reduces the required qubit count by up to 80x and slashes computation times from several millennia to just 35 days, making the simulation of industrial catalysts like Cytochrome P450 a near-term reality. Read more in our full article here.<br>
+March 24, 2026<br>
+ZeroTier Launches Quantum-Secure Networking Platform at RSAC 2026<br>
+ZeroTier has officially launched ZeroTier Quantum at RSAC 2026, claiming the title of the world’s first end-to-end, quantum-secure networking platform. Built from the ground up in memory-safe Rust, the platform is designed to meet the NSA’s highest CNSA 2.0 standards. By embedding post-quantum cryptography (PQC) directly into a new transport protocol, ZeroTier allows defense, healthcare, and enterprise teams to “future-proof” their networks against quantum attacks without having to rebuild their entire infrastructure. Read more in our full article here.<br>
+March 24, 2026<br>
+National Reconstruction Fund Corporation Invests $20M AUD ($14M USD) in Silicon Quantum Computing<br>
+The National Reconstruction Fund Corporation (NRFC) has invested $20 million in Silicon Quantum Computing (SQC) to accelerate the production of the world’s most precise quantum chips. Announced on March 24, 2026, the deal highlights Australia’s intent to lead the “atomic-scale” semiconductor race. By manufacturing qubits with 0.13-nanometer precision—literally atom by atom—SQC is building a “Future Made in Australia” that bypasses the scalability limits of traditional hardware. Read more in our full article here.<br>
+March 24, 2026<br>
+ANELLO Photonics and Q-CTRL Partner to Deliver Quantum-Resilient Navigation for UAVs<br>
+ANELLO Photonics and Q-CTRL have joined forces to launch a world-first Quantum Navigation Solution (QNS) designed to keep drones on course even when GPS is jammed or spoofed. By combining ANELLO’s silicon photonics gyroscopes with Q-CTRL’s quantum magnetic sensors, the partnership creates a “layered” defense against electronic warfare. This tech allows UAVs to navigate using the Earth’s own magnetic field and high-precision “on-chip” motion sensing, providing a high-stakes alternative to satellite-dependent flight. Read more in our full article here.<br>
+March 24, 2026<br>
+Google Quantum AI Adopts Dual-Modality Strategy with Neutral Atom Expansion<br>
+Google Quantum AI has officially pivoted to a “dual-modality” strategy, adding neutral atom quantum computing to its legendary superconducting research program. The move aims to combine the lightning-fast speed of superconducting chips with the massive scalability of neutral atom arrays. By tapping JILA physicist Dr. Adam Kaufman to lead a new team in Boulder, Colorado, Google is betting that a two-pronged approach is the fastest way to reach a commercially useful quantum computer. Read more in our full article here.<br>
+March 23, 2026<br>
+Dell Technologies Integrates Quantum-Ready Security and AI Resilience Across Portfolio<br>
+Dell Technologies has launched a massive security overhaul to protect its entire portfolio against the twin threats of AI-driven hacking and future quantum computers. By baking Post-Quantum Cryptography (PQC) directly into the firmware of its PCs and doubling the speed of its PowerProtect recovery systems, Dell is moving toward a “Quantum-Ready” hardware fleet. The move aims to neutralize “Harvest Now, Decrypt Later” attacks before quantum computers are even powerful enough to launch them. Read more in our full article here.<br>
+March 23, 2026<br>
+QuSecure Deployment Cited as Real-World Precedent in SEC Post-Quantum Framework<br>
+QuSecure has been officially cited as the gold standard for “Quantum-Safe” banking in a new framework submitted to the U.S. SEC. The Post-Quantum Financial Infrastructure Framework (PQFIF) identifies the successful four-month deployment between QuSecure, Banco Sabadell, and Accenture as the only real-world proof that big banks can move to post-quantum cryptography (PQC) without breaking their existing systems. This move by the SEC’s Crypto Assets Task Force signals a shift from “planning for the future” to “securing our money right now.” Read more in our full article here.<br>
+March 23, 2026<br>
+Conductor Quantum Launches CODA MCP to Integrate Quantum Tools with AI Agents<br>
+Conductor Quantum has launched CODA MCP, a new server that turns AI agents into quantum researchers. By using the Model Context Protocol (MCP), popular AI tools like Claude, VS Code, and Cursor can now directly write, simulate, and run quantum circuits on over 1,000 qubits across IBM, IonQ, Rigetti, and more. This “bridge” allows a developer to simply tell an AI agent what they want to solve, and the agent takes care of the coding, hardware selection, and execution. Read more in our full article here.<br>
+March 22, 2026<br>
+Italian Competition Authority Launches Market Investigation into Quantum Computing<br>
+The Italian Competition Authority (AGCM) has launched a strategic market investigation (IC59) into the quantum computing sector to prevent “technological pre-emption” by global tech giants. Citing risks similar to those seen in the rapid expansion of AI, the authority is examining whether “hyperscalers” are using their current cloud dominance to lock in the emerging quantum market before it reaches maturity. The inquiry is a proactive move to ensure the sector—critical for future cybersecurity and biotechnology—remains competitive and open to specialized startups. Read more in our full article here.<br>
+March 21, 2026<br>
+SEEQC Reports Integrated Qubit Control Logic Operating at Millikelvin Temperatures<br>
+SEEQC has achieved a breakthrough in quantum scaling, successfully operating a full-stack quantum computer with integrated digital control logic at just 10 mK. Published in Nature Electronics, the study demonstrates that superconducting digital circuits can live right next to qubits without melting them or causing noise. By moving the “brain” of the computer into the freezer, SEEQC has found a way to cut the “wiring bottleneck” that has haunted quantum engineers for decades. Read more in our full article here.<br>
+March 21, 2026<br>
+TUMCREATE to Develop Open-Source RISC-V Processor with Integrated Post-Quantum Security<br>
+TUMCREATE is leading a new international charge to build the world’s first open-source, quantum-resistant super-chip. As part of the QUASAR-CREATE program, the research arm of the Technical University of Munich (TUM) is developing a 64-bit RISC-V processor with post-quantum security (PQC) baked directly into the hardware. By using GlobalFoundries’ 180nm process in Singapore, the team is creating a “transparent” and “unhackable” foundation for the digital world of 2030. Read more in our full article here.<br>
+March 21, 2026<br>
+BTQ Technologies Deploys BIP 360 on Bitcoin Quantum Testnet v0.3.0<br>
+BTQ Technologies has reached a major milestone in securing the future of Bitcoin, deploying BIP 360 on its Bitcoin Quantum testnet v0.3.0. This “Pay-to-Merkle-Root” (P2MR) upgrade is designed to fix a critical vulnerability in Bitcoin’s latest “Taproot” update that could leave it open to quantum hackers. By hiding public keys behind a Merkle tree, BTQ is building a “Quantum Shield” for the world’s most valuable blockchain. Read more in our full article here.<br>
+March 21, 2026<br>
+Canada Allocates $900M to Defence Industrial Strategy with Focus on Quantum Technologies<br>
+The Canadian Government has committed $900 million to a new Defence Industrial Strategy aimed at turning the nation’s quantum research into battlefield-ready technology. Managed by the National Research Council (NRC), the investment focuses on “dual-use” innovations—tech that works for both civilians and soldiers—to help Canada hit its 2% GDP defence spending target by 2026. This move ensures that the “Silicon Valley of the North” stays protected by the very quantum tools it invented. Read more in our full article here.<br>
+March 20, 2026<br>
+IBM Offers Special Promotion to Open Plan Users<br>
+IBM has supercharged its Quantum Open Plan with a massive new offer for “power beginners.” Users who have logged at least 20 minutes in the past year are now eligible for 180 minutes of free runtime over the next 12 months. In a significant shift, IBM is also letting these free-tier users access the ibm_kingston processor—a 156-qubit powerhouse from the Heron r2 family. This move is designed to let students and researchers replicate world-class “quantum utility” experiments without ever opening their wallets. Read more in our full article here.<br>
+March 19, 2026<br>
+Xanadu to List on Nasdaq and TSX Following Shareholder Merger Approval<br>
+Xanadu Quantum Technologies is set to become the world’s first publicly listed photonic quantum company after shareholders of Crane Harbor Acquisition Corp. (Nasdaq: CHAC) greenlit their merger. Trading is expected to begin on March 27, 2026, on both the Nasdaq and the Toronto Stock Exchange (TSX) under the ticker symbol “XNDU”. With over US$302 million in gross proceeds and a massive CAD$390 million government investment in the works, Xanadu is now fully capitalized to turn its “room-temperature” photonic computers into a global industrial reality. Read more in our full article here.<br>
+March 19, 2026<br>
+Who’s News: Strategic Appointments at Zapata Quantum, IonQ, Photonic Inc., Infleqtion, and QuiX Quantum<br>
+The quantum industry is seeing a massive wave of “C-suite” talent migration as companies move from R&D to full-scale commercialization. From Zapata’s new growth board to IonQ’s high-stakes government affairs push, these strategic appointments signal a shift toward global policy, defense contracts, and hardware-agnostic software stacks. Read more in our full breakdown here.<br>
+March 19, 2026<br>
+Horizon Quantum Computing Completes Merger with dMY Squared; Set to Trade on Nasdaq<br>
+Horizon Quantum Computing has finalized its business combination with dMY Squared Technology Group, Inc., marking a major milestone as the Singapore-based firm begins trading on the Nasdaq under the ticker symbol “HQ”. The merger, approved by shareholders on March 17, 2026, generated approximately $120 million in gross proceeds, providing the capital needed to scale the company’s mission of making quantum programming accessible to everyone. Read more in our full article here.<br>
+March 19, 2026<br>
+Qilimanjaro Announces SpeQtrum QaaS for Tri-Modal Quantum Computing<br>
+Qilimanjaro Quantum Tech has unveiled SpeQtrum QaaS, a first-of-its-kind “tri-modal” Quantum-as-a-Service platform. Operating out of its Barcelona data center, the platform provides cloud access to a hybrid powerhouse: digital quantum processors, analog processors based on fluxonium qubits, and classical HPC accelerators. By blending these three distinct technologies, Qilimanjaro aims to bypass the massive error-correction hurdles that slow down digital-only systems. Read more in our full article here.<br>
+March 19, 2026<br>
+Alice & Bob Reduces Quantum Qrror Correction Decoding Time via NVIDIA CUDA-Q Integration<br>
+Alice & Bob has achieved a massive 9.25x speedup in Quantum Error Correction (QEC) decoding by integrating with the NVIDIA CUDA-Q platform. By moving from a standard CPU to an NVIDIA GH200 Grace Hopper system, the time required to decode simulated syndrome data dropped from over 18 hours to just 1 hour and 57 minutes. This performance leap allows researchers to stress-test the “Elevator Codes” designed for cat qubits at a speed that was previously impossible, significantly accelerating the path toward fault-tolerant quantum computing. Read more in our full article here.<br>
+March 18, 2026<br>
+U.S. Department of Energy (DOE) Announces “Genesis Mission” Which Includes a Goal to Accelerate Quantum Advantage via AI<br>
+The U.S. Department of Energy (DOE) has launched the “Genesis Mission” (DE-FOA-0003612), a massive $293.76 million initiative to accelerate scientific discovery through the convergence of AI and Quantum Information Science (QIS). The program targets 30 challenge areas, with Challenges 7 and 8 serving as the twin engines for the next generation of quantum software and hardware. By using AI to “invent” new quantum algorithms and control fragile qubits, the DOE aims to move quantum technology out of the lab and into industrial-scale production. Read more in our full article here.<br>
+March 18, 2026<br>
+Xanadu, NRC, and U of T Target Battery Evolution via Quantum RIXS Simulations<br>
+Xanadu, the University of Toronto, and the National Research Council of Canada (NRC) have unveiled a breakthrough quantum algorithm to solve the “degradation mystery” of next-generation batteries. Announced on March 19, 2026, the research focuses on simulating Resonant Inelastic X-ray Scattering (RIXS)—a complex process used to study how high-capacity lithium-rich cathodes break down over time. By reducing the hardware requirements to fewer than 500 logical qubits, this algorithm moves quantum battery design from a distant dream to a near-term industrial reality. Read more in our full article here.<br>
+March 18, 2026<br>
+Technology Innovation Institute Integrates Quantum Cloud with NVIDIA CUDA-Q and Scales Annealing Simulations<br>
+The Technology Innovation Institute (TII) of the UAE has achieved a double-breakthrough, integrating its Quantum Computing Cloud Platform with NVIDIA CUDA-Q and simulating a record-breaking 500,000-qubit quantum annealing problem. Announced on March 18, 2026, this move plugs the UAE’s sovereign quantum hardware directly into the global AI and supercomputing fabric. By using NVIDIA’s GPUs to simulate half a million qubits, TII has created a “digital playground” for solving the world’s most massive optimization problems. Read more in our full article here.<br>
+March 18, 2026<br>
+Pasqal and Kipu Quantum Demonstrate Analog Counterdiabatic Optimization on 100 Qubits<br>
+Pasqal and Kipu Quantum have published a breakthrough study in npj Unconventional Computing, proving that “Analog Counterdiabatic” (ACQC) methods can solve complex optimization problems up to three times faster than standard methods. Using Pasqal’s Orion Alpha and QuEra’s Aquila neutral-atom processors, the team successfully solved the Maximum Independent Set (MIS) problem on systems of up to 100 qubits. This research provides a direct path to using today’s “noisy” quantum computers for real-world logistics and network resilience tasks. Read more in our full article here.<br>
+March 18, 2026<br>
+Rhonexum Raises $1M Pre-Seed to Solve the Quantum Cabling Bottleneck via Cryo-CMOS<br>
+Rhonexum, a spin-out from the AQUA Lab at EPFL, has secured $1 million in pre-seed funding to solve the “cabling bottleneck” that currently limits quantum computer scaling. Announced on March 18, 2026, the round was led by QDNL Participations with support from Venture Kick, SNSF, and FIT. By moving the control electronics directly into the deep freeze of the dilution refrigerator, Rhonexum is replacing thousands of bulky cables with tiny, “Cryo-CMOS” chips. Read more in our full article here.<br>
+March 18, 2026<br>
+Infleqtion Achieves 12-Logical-Qubit Milestone for Q4Bio Biomarker Discovery<br>
+Infleqtion has hit a major technical milestone in the race for “useful” quantum computing, successfully running biomarker discovery algorithms using 12 logical qubits on its Sqale neutral-atom system. Announced at NVIDIA GTC 2026, this achievement—part of the Wellcome Leap Q4Bio project—proves that quantum computers can now find “hidden” correlations in complex cancer data that classical supercomputers simply cannot see. Read more in our full article here.<br>
+March 18, 2026<br>
+FCAT and Xanadu Adapt Hidden Subgroup Problem for Real-World Data Analysis<br>
+Xanadu and the Fidelity Center for Applied Technology (FCAT®) have taken one of the most abstract concepts in quantum math—the Hidden Subgroup Problem (HSP)—and turned it into a practical tool for real-world data analysis. Announced on March 18, 2026, the joint research moves beyond the “perfect math” required by Shor’s Algorithm to allow quantum systems to find patterns in the messy, “noisy” data found in global finance and commerce. Read more in our full article here.<br>
+March 18, 2026<br>
+QuiX Quantum and Q-Alliance to Establish Italian Photonic Quantum Hub<br>
+QuiX Quantum and Q-Alliance have signed a Memorandum of Understanding (MoU) to establish Italy’s first Photonic Quantum Hub at the National Center “Volta” in Lombardy. This partnership, announced on March 18, 2026, marks a critical step in Italy’s National Strategy for Quantum Technologies. By bringing QuiX Quantum’s room-temperature photonic hardware to the heart of the Italian industrial landscape, the hub aims to build a “sovereign” European quantum ecosystem that doesn’t need giant refrigerators to operate. Read more in our full article here.<br>
+March 17, 2026<br>
+OTI Lumionics Establishes Iterative Qubit Coupled Cluster Benchmark on NVIDIA Blackwell GPUs<br>
+OTI Lumionics has set a new high-water mark for classical quantum chemistry by migrating its Iterative Qubit Coupled Cluster (iQCC) algorithm to NVIDIA Blackwell GPUs. Announced on March 17, 2026, the breakthrough delivered a 90x performance boost, slashing the simulation time for complex catalysts from several days to just 65 minutes. By simulating a 112-qubit Hamiltonian on a single classical machine, OTI Lumionics has effectively “raised the bar” for what a quantum computer must achieve to prove its worth. Read more in our full article here.<br>
+March 17, 2026<br>
+SDT Launches Korea’s First Commercial Quantum-AI Hybrid Data Center via NVIDIA NVQLink<br>
+SDT has inaugurated South Korea’s first commercial Quantum-AI Hybrid Data Center in Gangnam, Seoul, marking a massive leap for the nation’s “sovereign” tech strategy. Announced on March 17, 2026, the facility houses “Kreo,” a 20-qubit superconducting quantum computer that is fully integrated with NVIDIA DGX B200 GPU servers. By linking these systems through NVIDIA NVQLink, SDT has created a high-speed “highway” that allows GPUs and qubits to work together in real-time, solving complex problems in logistics and materials science that neither could handle alone. Read more in our full article here.<br>
+March 17, 2026<br>
+Scaleway QaaS Achieves Full NVIDIA CUDA-Q Compatibility for Hybrid Quantum Development<br>
+Scaleway has officially achieved full compatibility between its Quantum-as-a-Service (QaaS) platform and the NVIDIA CUDA-Q runtime, marking a major milestone for European digital sovereignty. Announced on March 17, 2026, the integration allows developers to write code once and run it seamlessly across a hybrid landscape of high-performance NVIDIA Blackwell Ultra GPUs and physical quantum processors from IQM and AQT. By removing the “plumbing” of infrastructure management, Scaleway is positioning itself as the primary sovereign cloud hub for the continent’s quantum researchers. Read more in our full article here.<br>
+March 17, 2026<br>
+Quantum eMotion and JMEM Tek Partner for Quantum-Secure System-on-Chip Platform<br>
+Quantum eMotion (QeM) and Taiwan-based JMEM Tek have joined forces to develop a “unclonable” Quantum-Secure System-on-Chip (SoC). Announced on March 17, 2026, the $2.5 million (CAD) project is backed by the National Research Council of Canada (NRC IRAP). By embedding quantum-grade randomness and silicon-based “fingerprints” directly into hardware, the partnership is building a hardware Root of Trust designed to be immune to both physical tampering and future quantum hacking. Read more in our full article here.<br>
+March 17, 2026<br>
+Qblox Launches U.S. Manufacturing for Quantum Control Systems<br>
+Qblox has officially planted its flag in the U.S. with a new manufacturing and fulfillment hub in Canton, Massachusetts. Through a strategic partnership with Prodrive Technologies, the company will begin shipping “Made in America” quantum control systems starting April 1, 2026. This move is a direct response to the growing demand for supply-chain resilience and domestic procurement standards required by the Department of Energy and U.S. National Labs. Read more in our full article here.<br>
+March 17, 2026<br>
+UK Government Commits £2 Billion ($2.67 Billion USD) to National Quantum Scaling and Procurement<br>
+The UK Government has dropped a massive £2 billion ($2.67 billion USD) investment to turn the country into a global quantum superpower by the 2030s. Announced on March 17, 2026, the package includes a world-first £1 billion procurement programme designed to buy quantum computers directly from the companies that build them. This move shifts the UK from “funding research” to “buying hardware,” ensuring that the next generation of supercomputers is built and owned on British soil. Read more in our full article here.<br>
+March 16, 2026<br>
+Classiq Integrates NVIDIA CUDA-Q to Accelerate Hybrid Workflows<br>
+Classiq has integrated its quantum software platform with the NVIDIA CUDA-Q framework, achieving a massive performance leap for hybrid quantum-classical workflows. By combining Classiq’s high-level functional modeling with NVIDIA’s GPU acceleration, the partnership has slashed execution times for complex financial simulations from 67 minutes to just 2.5 minutes. This integration allows researchers to automate the transition from “functional intent” to hardware-ready circuits, ensuring that quantum workloads can finally keep pace with the speeds of modern high-performance computing (HPC) environments. Read more in our full article here.<br>
+March 16, 2026<br>
+memQ Launches Extensible Distributed Quantum Compiler (xDQC) via NVIDIA CUDA-Q<br>
+memQ has officially launched its roadmap for the Extensible Distributed Quantum Compiler (xDQC), a groundbreaking software layer built on NVIDIA CUDA-Q. This is the first compiler designed specifically to treat a cluster of quantum computers as one single, massive machine. By intelligently “routing” quantum information between different fridges and chips, memQ is moving the industry away from small, lonely processors toward a “Quantum Internet” of interconnected nodes. Read more in our full article here.<br>
+March 16, 2026<br>
+IonQ and KISTI Partner to Advance Quantum-HPC Infrastructure in South Korea<br>
+IonQ and the Korea Institute of Science and Technology Information (KISTI) have formed a powerful strategic alliance to build South Korea’s sovereign Quantum-HPC ecosystem. Announced on March 17, 2026, at NVIDIA GTC, the partnership will plug IonQ’s trapped-ion hardware directly into KISTI’s national supercomputing backbone using NVIDIA NVQLink. This creates a “super-hybrid” machine where quantum qubits act as high-speed accelerators for the country’s most complex AI, chemistry, and logistics tasks. Read more in our full article here.<br>
+March 16, 2026<br>
+Quantum Machines Introduces Open Acceleration Stack for Hybrid Computing<br>
+Quantum Machines has unveiled the Open Acceleration Stack, a first-of-its-kind modular framework that plugs classical accelerators (like GPUs and FPGAs) directly into the heart of the quantum control system. Announced on March 16, 2026, this “QEC-native” architecture is designed to handle the massive, real-time data processing needed to fix quantum errors on the fly. By slashing communication latency between classical and quantum chips to the microsecond level, Quantum Machines is making the “logical qubit” an industrial reality. Read more in our full article here.<br>
+March 16, 2026<br>
+IQM and Zurich Instruments Develop Real-Time QEC via NVIDIA NVQLink<br>
+IQM Quantum Computers and Zurich Instruments have launched a landmark project to build a real-time Quantum Error Correction (QEC) demonstrator, powered by the NVIDIA NVQLink platform. Announced on March 16, 2026, the collaboration integrates IQM’s 20-qubit superconducting processor with Zurich Instruments’ new ZQCS control system to create a “closed-loop” feedback system. By slashing communication latency between quantum and classical hardware to under 4 microseconds, the project creates a technical blueprint for the fault-tolerant, industrial-grade quantum data centers of the future. Read more in our full article here.<br>
+March 16, 2026<br>
+PsiQuantum Integrates NVIDIA CUDA-Q for GPU-Accelerated Fault-Tolerant Simulation<br>
+PsiQuantum has integrated NVIDIA CUDA-Q into its Construct software suite, delivering a massive performance boost for fault-tolerant quantum simulation. Announced on March 16, 2026, this integration allows researchers to simulate large-scale quantum circuits up to 450x faster than on traditional CPUs. By leveraging the power of NVIDIA’s GPUs, PsiQuantum is providing the “digital wind tunnel” needed to stress-test the complex algorithms that will eventually run on its million-qubit photonic quantum computers. Read more in our full article here.<br>
+March 16, 2026<br>
+Pasqal and NVIDIA Integrate CUDA-Q for Slurm-Native HPC Workflows<br>
+Pasqal has officially made quantum computing “Slurm-native,” integrating NVIDIA CUDA-Q with its Quantum Resource Management Interface (QRMI). Announced on March 16, 2026, this move allows Pasqal’s neutral-atom processors to be treated as standard accelerators within high-performance computing (HPC) environments. For the first time, a supercomputer administrator can schedule a quantum job just like they schedule a GPU job—using the industry-standard Slurm tool. Read more in our full article here.<br>
+March 16, 2026<br>
+ORCA Computing Accelerates Photonic Simulation with NVIDIA cuTensorNet<br>
+ORCA Computing has officially plugged into the NVIDIA ecosystem, integrating the cuTensorNet library and cuQuantum SDK to supercharge photonic quantum simulation. This is a massive win for the photonic sector, which has often been overshadowed by qubit-based models. By using NVIDIA’s GPU-accelerated tensor network methods, ORCA can now simulate massive photonic circuits with a level of speed and detail that was previously impossible. Read more in our full article here.<br>
+March 16, 2026<br>
+Kvantify, Atom Computing, and Aarhus University Launch EarlyBIRDD Project<br>
+Kvantify, Atom Computing, and Aarhus University have launched EarlyBIRDD, a DKK 37.7 million project aimed at revolutionizing drug discovery through early fault-tolerant quantum computing. Funded by a DKK 30 million investment from Innovation Fund Denmark, the consortium will develop hardware-optimized algorithms and user-friendly software to solve the “binding affinity” problem—a critical bottleneck in predicting how drug candidates interact with proteins. By co-developing these tools alongside Atom Computing’s neutral-atom hardware, the project seeks to slash pharmaceutical R&D costs by up to 50% and secure Denmark’s position as a global leader in the quantum life sciences. Read more in our full article here.<br>
+March 16, 2026<br>
+Syngenta and QuantumBasel Partner to Advance Agricultural Molecular Modeling<br>
+Syngenta has joined forces with QuantumBasel to explore how quantum computing can transform agricultural R&D and crop protection. Announced on March 16, 2026, at the World Agri-Tech Innovation Summit, the partnership will embed Syngenta’s scientists within Switzerland’s first commercial quantum hub to model complex molecular interactions that are beyond the reach of classical computers. By leveraging QuantumBasel’s algorithmic expertise and advanced hardware, Syngenta aims to accelerate research cycles and design more resilient, sustainable solutions for farmers facing a rapidly changing climate. Read more in our full article here.<br>
+March 16, 2026<br>
+Xanadu and TELUS Collaborate on Sovereign Quantum Data Centre Infrastructure<br>
+Xanadu Quantum Technologies and TELUS have signed an MOU to build Canada’s first sovereign hybrid quantum-classical infrastructure. By integrating Xanadu’s photonic quantum processors directly into TELUS’s nationwide PureFibre network and data centres, the partnership ensures that sensitive AI, cybersecurity, and drug discovery data remains domestically controlled and secure. Supported by the Project OPTIMISM initiative and Xanadu’s upcoming US$500 million public listing, the venture establishes a secure, national foundation for Canada’s most critical digital assets. Read more in our full article here.<br>
+March 16, 2026<br>
+C12 Adopts QC Design’s Plaquette to Develop Fault-Tolerant Architectures<br>
+C12 has entered into a strategic partnership with QC Design to accelerate its path toward fault-tolerant quantum computing using the Plaquette design-automation platform. Announced on March 16, 2026, the collaboration allows C12 to simulate its unique carbon nanotube (CNT) spin-qubit architecture under realistic, “noisy” conditions. By plugging into Plaquette, C12 is moving from the laboratory physics phase into the rigorous engineering required to build large-scale, error-corrected quantum processors. Read more in our full article here.<br>
+March 16, 2026<br>
+Infleqtion Deploys 100-Qubit Sqale Platform at UK National Quantum Computing Centre<br>
+Infleqtion has officially delivered the UK’s only operational 100-physical-qubit quantum system to the National Quantum Computing Centre (NQCC) in Oxford. Built on the Sqale neutral-atom architecture, this system is now the centerpiece of the UK’s national quantum testbed. With a record-breaking 99.73% two-qubit gate fidelity, Infleqtion is not just aiming for more qubits, but for “better” qubits that can finally support large-scale, error-free calculations. Read more in our full article here.<br>
+March 16, 2026<br>
+KEEQuant Launches Commercial-Grade Chip-Scale QKD Technology<br>
+KEEQuant has officially launched its commercial-grade chip-scale Quantum Key Distribution (QKD) technology, signaling a massive shift in how we secure global telecommunications. By shrinking bulky optical assemblies onto a single Photonic Integrated Circuit (PIC), KEEQuant is making quantum-secure communication affordable and scalable for the first time. Backed by the EU’s SEQRET project, the company is set to begin hardware shipments in late 2026, helping to build Europe’s “unhackable” quantum internet (EuroQCI). Read more in our full article here.<br>
+March 14, 2026<br>
+Quantinuum Implements High-Rate Iceberg Codes on Helios Processor<br>
+Quantinuum has reached a spectacular milestone in quantum error correction (QEC) by implementing “Iceberg Codes” on its new 98-qubit Helios processor. In a result that defies the “qubit overhead” curse, Quantinuum managed to squeeze 48 error-corrected logical qubits out of just 98 physical qubits—a near 2:1 ratio. This “beyond break-even” performance means the logical qubits are actually 10x to 100x more reliable than the physical qubits they are made of. Read more in our full article here.<br>
+March 14, 2026<br>
+UCSB’s Eddleman Quantum Institute Awards Funding for Superconductivity and Spacetime Modeling<br>
+UC Santa Barbara (UCSB) has supercharged its quantum research ecosystem with a new round of funding from the Eddleman Quantum Institute (EQI). Announced on March 14, 2026, this investment supports high-risk, high-reward projects ranging from atomic-scale superconductors to simulating the physics of curved spacetime. Following the 2025 Nobel Prize win by UCSB’s own Michel Devoret and John Martinis, this funding cements the university’s role as the “quantum capital” of Southern California. Read more in our full article here.<br>
+March 13, 2026<br>
+PsiQuantum and National Cancer Center Japan Partner to Scale Quantum Healthcare Applications<br>
+PsiQuantum and the National Cancer Center Japan (NCC Japan) have formed a heavyweight alliance to bring “utility-scale” quantum computing to the front lines of cancer research. By combining PsiQuantum’s advanced photonic hardware roadmap with NCC Japan’s clinical expertise, the partnership aims to use quantum simulations to discover new drugs and optimize patient treatments with a level of accuracy that classical computers simply cannot reach. Read more in our full article here.<br>
+March 13, 2026<br>
+Quantum Computing Inc. and Ciena Partner for Quantum-Secured Optical Networking at OFC 2026<br>
+Quantum Computing Inc. (QCi) and Ciena have stolen the spotlight at OFC 2026 by unveiling a “quantum-safe out of the box” optical networking solution. By merging Ciena’s high-capacity Waveserver platform with QCi’s advanced quantum authentication, the duo has demonstrated a way to secure data moving at 1.6 Tb/s against both today’s hackers and tomorrow’s quantum computers. This partnership effectively creates a “physical and mathematical fortress” for global fiber networks. Read more in our full article here.<br>
+March 13, 2026<br>
+Qrypt Extends Quantum-Secure Encryption to NVIDIA Jetson Platforms<br>
+Qrypt has officially brought its “everlasting” security to the edge, integrating its BLAST Protocol into the NVIDIA Jetson platform. Supporting the Jetson Orin Nano and the high-end Jetson Thor, Qrypt is creating a quantum-secure shield that stretches from the massive AI data center (powered by BlueField-3 DPUs) all the way to the robots and drones in the field. By using quantum laws to generate keys that never actually travel over the internet, Qrypt is making edge AI practically unhackable. Read more in our full article here.<br>
+March 13, 2026<br>
+Qrypt Releases Post-Quantum VPN for NVIDIA Jetson Robotics<br>
+Qrypt has released a specialized Post-Quantum VPN for the NVIDIA Jetson ecosystem, specifically targeting the high-stakes world of robotics and autonomous systems. Launched on March 13, 2026, the solution aims to prevent “Harvest Now, Decrypt Later” (HNDL) attacks on long-lived assets like drones and warehouse robots. By combining standard NIST algorithms with Qrypt’s proprietary BLAST protocol, the VPN offers a “fail-safe” security layer that doesn’t choke the real-time performance these machines need to move safely. Read more in our full article here.<br>
+March 13, 2026<br>
+SEALSQ and Parrot Expand Partnership to Secure Drones with PQC<br>
+SEALSQ Corp and Parrot SA have officially expanded their partnership to build the world’s first “quantum-hardened” professional drones. By embedding Post-Quantum Cryptography (PQC) directly into the hardware of Parrot’s next-gen tactical UAVs, the duo is protecting sensitive flight data and video feeds from future “Q-Day” decryption. This move ensures that Parrot’s drones—already favorites for defense and public safety—meet the strictest new security standards from the NSA (CNSA 2.0) and NATO. Read more in our full article here.<br>
+March 13, 2026<br>
+Quantinuum Expands to Singapore with New R&D Centre and Helios Deployment<br>
+Quantinuum has officially landed in Southeast Asia, establishing a major R&D and Operations Centre in Singapore. This isn’t just a satellite office; it is the new home of Helios, Quantinuum’s first hardware installation outside of the United States. By bringing its world-leading QCCD (Quantum Charge-Coupled Device) architecture to the Lion City, Quantinuum is positioning Singapore as a global “command center” for quantum-driven pharmaceuticals, finance, and materials science. Read more in our full article here.<br>
+March 13, 2026<br>
+Institut quantique Joins Qblox Excellence Center Program to Advance Distributed Quantum Computing<br>
+Institut quantique (IQ) at the Université de Sherbrooke has officially joined the Qblox Excellence Center program, marking a major expansion of this elite research network into North America. Announced on March 13, 2026, the partnership focuses on the next frontier of the industry: Distributed Heterogeneous Quantum Computing. By plugging Qblox’s modular control stacks into IQ’s world-class Quantum FabLab (QFL), the duo is building a playground for the future of “hybrid” quantum-classical power. Read more in our full article here.<br>
+March 12, 2026<br>
+Maybell Quantum Launches ColdCloud® Distributed Cryogenic Platform<br>
+Maybell Quantum has officially launched ColdCloud®, a revolutionary “distributed” cryogenic platform designed to solve the biggest bottleneck in quantum computing: the fridge. By centralizing cooling power and distributing it to modular nodes, Maybell has created a system that cools down in hours instead of days and uses 90% less electricity. This is the infrastructure the industry needs to move quantum computers out of the physics lab and into the 24/7 world of the industrial datacenter. Read more in our full article here.<br>
+March 12, 2026<br>
+QphoX Launches Quantum Transducer for Distributed Long-Distance Networking<br>
+QphoX has officially launched the world’s first commercial Quantum Transducer, a device that acts as a “quantum translator” between superconducting processors and the outside world. This hardware solves one of the hardest problems in physics: converting delicate microwave quantum signals (from inside a fridge) into optical signals (that travel through standard fiber-optic cables). With IBM as its first major customer, QphoX is providing the missing link needed to build a “Quantum Internet” and connect modular computers over long distances. Read more in our full article here.<br>
+March 12, 2026<br>
+Riverlane Publishes QEC Technology Roadmap to Accelerate Utility-Scale Quantum Computing<br>
+Riverlane has released a definitive Quantum Error Correction (QEC) Roadmap, claiming their tech can pull the arrival of useful quantum computers forward by up to five years. By tackling the “data avalanche”—the mountain of errors that currently kills quantum calculations—Riverlane is building the “shield” that will allow quantum computers to run for hours or days rather than milliseconds. Their goal? To move from millions to trillions of error-free operations over the next decade. Read more in our full article here.<br>
+March 12, 2026<br>
+IBM Publishes Reference Architecture for Quantum-Centric Supercomputing<br>
+IBM has officially published its definitive Reference Architecture for Quantum-Centric Supercomputing (QCSC). This is the first comprehensive manual for building the “Hybrid Data Center,” moving beyond single quantum experiments toward a unified world where QPUs, GPUs, and CPUs work as a single machine. By standardizing how these different processors talk to each other, IBM is turning the “quantum computer” into a “quantum accelerator”—a specialized chip that plugs into a supercomputer just like a modern GPU. Read more in our full article here.<br>
+March 11, 2026<br>
+IBM, Signal, and Threema Partner to Fortify Messaging Against Quantum Threats<br>
+IBM Research has formed a high-stakes alliance with Signal and Threema to “quantum-proof” the world’s most private conversations. Unveiled at the Real-World Crypto (RWC) 2026 conference, this collaboration moves beyond just protecting message text; it targets the “holy grail” of messaging privacy: securing group metadata. By using advanced math to hide who is in a group and who the admins are, the team is ensuring that even the service providers themselves can’t “see” the structure of your private chats. Read more in our full article here.<br>
+March 11, 2026<br>
+RIKEN and IBM Demonstrate Quantum-Centric Supercomputing at Scale<br>
+RIKEN and IBM have shattered records in the world of high-performance computing, successfully linking the massive Fugaku supercomputer with an on-premises IBM Quantum Heron processor. In a feat of “Quantum-Centric Supercomputing” (QCSC), all 7.6 million cores of Fugaku worked in a continuous, high-speed loop with the quantum hardware to simulate the electronic structure of iron-sulfur molecules. This isn’t just a lab experiment; it’s the most accurate chemistry simulation ever performed on a quantum computer, proving that the “Hybrid Age” has truly arrived. Read more in our full article here.<br>
+March 11, 2026<br>
+JIJ Europe Collaborates with ORCA Computing, bp, and NQCC on Energy Optimization<br>
+JIJ Europe has launched a high-impact collaboration with ORCA Computing, bp, and the National Quantum Computing Centre (NQCC) to tackle one of the energy industry’s most expensive headaches: the Unit Commitment problem. Under the SparQ programme, the consortium is using photonic quantum computers to figure out exactly when to turn power generators on and off to meet electricity demand at the lowest possible cost. By blending JIJ’s advanced optimization software with ORCA’s light-based hardware, they are building a “smarter” grid for the future. Read more in our full article here.<br>
+March 11, 2026<br>
+Xanadu Partners with ARLIS for Quantum Zero Trust Architecture<br>
+Xanadu Quantum Technologies has officially joined forces with the Applied Research Laboratory for Intelligence and Security (ARLIS) at the University of Maryland to build a “quantum-proof” security blueprint for the U.S. government. Under the Air Force’s SEQCURE program, Xanadu is applying the NIST SP800-207 “Zero Trust” standard to its photonic quantum systems. This means moving away from traditional firewalls and toward a system where every single pulse of light and line of code is constantly verified. Read more in our full article here.<br>
+March 11, 2026<br>
+Xanadu and ETRI Partner for Fault-Tolerant Quantum Algorithm Design<br>
+Xanadu Quantum Technologies has expanded its international footprint, partnering with South Korea’s Electronics and Telecommunications Research Institute (ETRI) on a two-year project to master Fault-Tolerant Quantum Computing (FTQC). Backed by a South Korean government grant, the duo is focusing on the “pre-game” of quantum computing: Resource Estimation. By upgrading Xanadu’s PennyLane and Catalyst software, they are building a “quantum architect’s toolkit” that can predict exactly how many qubits and gates a complex algorithm needs before it ever touches a piece of hardware. Read more in our full article here.<br>
+March 11, 2026<br>
+IonQ and University of Cambridge Establish Quantum Innovation Centre<br>
+IonQ and the University of Cambridge have announced a landmark research agreement to establish the IonQ Quantum Innovation Centre. Anchored at the prestigious Ray Dolby Centre within the Cavendish Laboratory, this partnership aims to turn world-class physics into world-class industry. By hosting IonQ’s massive 256-qubit system on-site, the center will serve as the UK’s primary hub for translating quantum research into hardware, networking, and security solutions. Read more in our full article here.<br>
+March 11, 2026<br>
+IQM Deploys 20-Qubit Quantum Computer at Aalto University<br>
+IQM Quantum Computers has officially deployed Aalto Q20, a 20-qubit superconducting quantum computer, at Aalto University in Finland. This marks the fourth IQM system to land in the Finnish ecosystem, further solidifying the nation’s status as a global quantum heavyweight. By placing the hardware directly on campus and linking it to the LUMI supercomputer, IQM is giving European researchers a powerful “on-premise” tool to build the next generation of quantum-accelerated apps. Read more in our full article here.<br>
+March 11, 2026<br>
+DARPA Expands Quantum Benchmarking Initiative (QBI) with New Stage A Solicitation<br>
+DARPA is officially casting a wider net for the future of quantum computing, issuing a new solicitation (DARPA-PA-26-02-02) to bring fresh blood into its Quantum Benchmarking Initiative (QBI). The goal is ambitious: DARPA wants to prove, with cold hard data, that a “utility-scale” quantum computer—one that actually produces more value than it costs to run—can exist by 2033. This new Stage A call is specifically looking for “outsider” architectures and novel qubit types that haven’t yet been put through the DARPA wringer. Read more in our full article here.<br>
+March 10, 2026<br>
+IonQ and ARLIS Partner to Develop Zero Trust Framework for Quantum Systems<br>
+IonQ and the Applied Research Laboratory for Intelligence and Security (ARLIS) have launched a major new initiative to build a Zero Trust Architecture (ZTA) for quantum computers. Sponsored by the U.S. Air Force, the SEQCURE program (Securing Experimental Quantum Computing Usage in Research Environments) aims to replace “old-school” perimeter security with a model of continuous verification. This ensures that as quantum computers like the upcoming IonQ Tempo scale to handle top-secret government data, the hardware and software are “locked down” at every single step. Read more in our full article here.<br>
+March 10, 2026<br>
+Xanadu and AMD Execute Hybrid Quantum CFD Simulations for Aerospace<br>
+Xanadu Quantum Technologies and AMD have achieved a major breakthrough in aerospace engineering by successfully executing a hybrid quantum-classical Computational Fluid Dynamics (CFD) simulation. By integrating Xanadu’s PennyLane software with the AMD DevCloud, the team managed to speed up complex quantum math by a staggering 25x using AMD GPUs. This collaboration is a direct attack on the massive “computational walls” that currently slow down the design of next-generation aircraft and spacecraft. Read more in our full article here.<br>
+March 10, 2026<br>
+Xanadu Awarded $2.0M ARPA-E Grant for Quantum Battery Research<br>
+Xanadu Quantum Technologies has secured a $2,027,507 grant from the U.S. Department of Energy’s ARPA-E to supercharge the future of battery technology. As part of the Quantum Computing for Computational Chemistry (QC3) program, Xanadu is teaming up with the University of Chicago to develop a photonic simulation platform that could solve the “energy density” puzzle. By aiming for a 100x speedup over today’s best classical supercomputers, this project is designed to help scientists see exactly how batteries degrade at the atomic level. Read more in our full article here.<br>
+March 9, 2026<br>
+Eros Innovation and enQase Launch Sovereign Quantum-Safe Trust Layer<br>
+Eros Innovation and enQase have officially launched a strategic joint venture to build the Eros Sovereign Trust Layer, a “quantum-safe fortress” for India’s cultural and AI assets. By combining enQase’s full-stack quantum hardware and software with Eros’s massive media ecosystem, the partners are creating a secure foundation for Large Cultural Models (LCMs). This initiative ensures that over 1.5 trillion rights-cleared cultural tokens—including voices and digital identities—remain safe from future “Q-Day” decryption threats. Read more in our full article here.<br>
+March 9, 2026<br>
+ZeroRISC Releases Open-Source PQC Hardware-Software Stack<br>
+ZeroRISC, alongside the Max Planck Institute and Academia Sinica, has released a production-grade, open-source Post-Quantum Cryptographic (PQC) stack. This release is a major win for the “open silicon” movement, providing a hardware-accelerated blueprint for securing chips against future quantum attacks. By combining the Cryptolib library with a custom Asymmetric Cryptography Coprocessor (ACC), ZeroRISC has managed to make quantum-safe math fast enough for tiny, embedded devices. Read more in our full article here.<br>
+March 9, 2026<br>
+PQShield Releases 5KB RAM Post-Quantum Cryptography Implementation<br>
+PQShield has set a new benchmark for embedded security at Embedded World 2026, unveiling a post-quantum cryptography (PQC) implementation with a tiny 5KB RAM footprint. This update to their PQMicroLib-Core library proves that you don’t need a supercomputer to stay safe from quantum threats; even the simplest medical wearables and payment terminals can now run “unhackable” math. Read more in our full article here.<br>
+March 9, 2026<br>
+Zurich Instruments Launches ZQCS Quantum Control System to Address the Logical Qubit Scaling Challenge<br>
+Zurich Instruments has officially launched the ZQCS Quantum Control System, a high-density “command center” for the world’s most ambitious quantum computers. By packing over 1,000 control channels into a single rack and utilizing an industrial-grade AdvancedTCA (ATCA) architecture, the ZQCS is designed to solve the “wiring nightmare” that usually occurs when trying to scale from physical to logical qubits. This system isn’t just a signal generator; it’s a real-time brain capable of the sub-microsecond feedback needed for true quantum error correction. Read more in our full article here.<br>
+March 7, 2026<br>
+China Open-Sources “Origin Pilot”: The First Domestically Developed Quantum OS<br>
+China has just released Origin Pilot, the world’s first domestically developed quantum operating system available for public local download. Developed by Origin Quantum in Hefei, this “soft heart” of the quantum stack is now open-source, moving away from the cloud-only models of Western giants like IBM and Google. By making the OS free to download and install locally, China is looking to set a global standard and build a sovereign quantum ecosystem that is completely independent of international export restrictions. Read more in our full article here.<br>
+March 7, 2026<br>
+QVLS-iLabs Secures €15M ($17.4M USD) Second Phase Funding for German Quantum Transfer<br>
+QVLS-iLabs, the “Future Cluster” of the Hannover–Braunschweig region, has officially unlocked €15 million ($17.4M USD) in second-phase funding from the German government. As a crown jewel of the Clusters4Future initiative, this investment is all about “The Great Transition”—moving trapped-ion quantum computers and hyper-precise sensors out of the university basement and onto the industrial factory floor. By focusing on “on-premise” systems, QVLS-iLabs is ensuring that German industry doesn’t just use quantum power, but owns it. Read more in our full article here.<br>
+March 7, 2026<br>
+UKRI Launches £76 Million ($102 Million USD) National Compute Resource Initiative<br>
+UK Research and Innovation (UKRI) has officially launched a £76 million ($102 million USD) initiative to build four new National Compute Resources (NCRs) across the United Kingdom. This investment is the first major step in the UK Compute Roadmap, a 2025 plan to turn the UK into a “computing superpower.” By splitting the money between four university hubs, the government is ensuring that everyone from a first-year PhD student to a high-tech startup has the “digital horsepower” they need to solve global problems. Read more in our full article here.<br>
+March 7, 2026<br>
+QuantrolOx and MAHE Establish “Q-HUB” to Bolster Indo-European Quantum Ecosystem<br>
+QuantrolOx and the Manipal Academy of Higher Education (MAHE) have joined forces to launch Quantum-Hub@MAHE (Q-HUB) in Bengaluru. This seven-figure, university-led initiative is designed to be the “Silicon Valley” of Indian quantum hardware. By using an open-architecture approach, Q-HUB isn’t just buying a quantum computer; it’s building a domestic ecosystem that can design, scale, and manufacture its own systems. Scheduled for a September 2026 inauguration, the hub aims to put India on the global map for quantum engineering. Read more in our full article here.<br>
+March 5, 2026<br>
+Kvantify Secures €7M ($8.1M USD) Total Funding to Scale Quantum Drug Discovery Platform<br>
+Kvantify, the Copenhagen-based quantum software house, has successfully closed its latest funding round, bringing its total “war chest” to €7 million ($8.1M USD). With heavy-hitting support from the European Innovation Council (EIC) and the newly formed Delphinus Venture Capital, Kvantify is doubling down on Qrunch—its platform for “noisy” quantum drug discovery. The goal is simple: use today’s imperfect quantum computers to solve chemical equations that are too complex for even the world’s biggest classical supercomputers. Read more in our full article here.<br>
+March 5, 2026<br>
+Kvantify and Danish Universities Launch DKK 17.4M ($2.7M USD) Quantum Software Project<br>
+Innovation Fund Denmark has greenlit a powerhouse collaboration between Kvantify, Aarhus University, and Aalborg University, injecting DKK 17.4 million ($2.7M USD) into the ODAQS project. Standing for “Optimal Design Automation towards a Performant Quantum Software Stack,” this initiative is essentially building a “universal translator” for quantum computers. By using AI to automate how quantum programs are written, the project aims to let pharmaceutical researchers run complex simulations without needing to be quantum physicists themselves. Read more in our full article here.<br>
+March 5, 2026<br>
+SCSP Launches Bipartisan Commission on U.S. Quantum Primacy (CUSP)<br>
+The Special Competitive Studies Project (SCSP) has officially launched the Commission on U.S. Quantum Primacy (CUSP), a high-level, bipartisan coalition designed to ensure the United States wins the “Quantum Space Race.” Co-chaired by SCSP President Ylli Bajraktari alongside Senators Todd Young (R-IN) and Ben Ray Luján (D-NM), the commission represents a rare alignment of political, military, and industrial giants aimed at turning quantum science into national security muscle. Read more in our full article here.<br>
+March 5, 2026<br>
+IBM and Researchers Synthesize First “Half-Möbius” Molecule Validated by Quantum Computing<br>
+In a feat of “atom-by-atom” engineering, an international team led by IBM Research and the University of Manchester has synthesized the first-ever molecule with a half-Möbius electronic topology. This exotic C13 Cl2 structure—a ring of 13 carbon and 2 chlorine atoms—features electrons that travel in a corkscrew pattern, requiring four complete loops to return to their starting phase. To prove this structure existed, researchers used an IBM Heron quantum processor to simulate the interactions of 32 electrons, a task that currently exceeds the limits of exact classical modeling. Read more in the full Science article here.<br>
+March 5, 2026<br>
+QCi Finalizes $5 Million Acquisition of NuCrypt to Expand Quantum Communications Portfolio<br>
+Quantum Computing Inc. (Nasdaq: QUBT) has just added another piece to its “quantum empire” by finalizing the $5 million acquisition of NuCrypt, LLC. Coming just a month after its massive $110M purchase of Luminar Semiconductor, this deal secures QCi’s position in the Quantum Communications market. By combining NuCrypt’s 20 years of experience in secure signal processing with QCi’s high-tech TFLN chips, the company is creating a “sovereign” American pipeline for ultra-secure, unhackable communication systems. Read more in our full article here.<br>
+March 5, 2026<br>
+Quantum Computing Inc. Reports Fourth Quarter and Full-Year 2025 Financial Results<br>
+Quantum Computing Inc. (Nasdaq: QUBT) has just closed its most transformative year to date, reporting its fourth-quarter and full-year 2025 financial results. With a massive $1.52 billion cash position and the strategic acquisition of Luminar Semiconductor, QCi is no longer just a “quantum startup”—it is now a vertically integrated industrial powerhouse. By controlling everything from the laser-on-a-chip to the final quantum processor, QCi is betting that its room-temperature photonic systems will outscale the massive, frozen “fridges” of its competitors. Read more in our full article here.<br>
+March 5, 2026<br>
+QCi Completes $110M Acquisition of Luminar Semiconductor to Create Vertically Integrated Photonics Powerhouse<br>
+Quantum Computing Inc. (Nasdaq: QUBT) has officially completed its $110 million all-cash acquisition of Luminar Semiconductor, Inc. (LSI). This strategic move transforms QCi into a vertically integrated powerhouse, controlling the entire “photonics signal chain”—from the initial light generation to final detection. By combining its own thin-film lithium niobate (TFLN) technology with LSI’s expertise in lasers and advanced packaging, QCi is betting on a future of compact, room-temperature quantum hardware that can live in a standard data center rather than a massive cryogenic fridge. Read more in our full article here.<br>
+March 5, 2026<br>
+Rigetti Computing Reports Fourth Quarter and Full Year 2025 Financial Results<br>
+Rigetti Computing (Nasdaq: RGTI) has closed 2025 with a strategic pivot toward high-fidelity hardware and a thriving on-premises business. Despite a slight dip in annual revenue, the company smashed technical records by achieving 99.9% gate fidelity at speeds 1,000 times faster than trapped-ion rivals. With nearly $600 million in the bank and massive international orders from India and Japan, Rigetti is moving from “experimentation” to “deployment.” Read more in our full article here.<br>
+March 4, 2026<br>
+Viewbix Completes Acquisition of Quantum X Labs, Pivots to Quantum Technology<br>
+Viewbix Inc. (Nasdaq: VBIX) officially completed its pivot from ad-tech to the quantum frontier by finalizing the acquisition of Quantum X Labs Ltd. This “reverse-merger” style move brings a massive portfolio of Israeli quantum hardware and AI software—including tech for “unjammable” navigation and “universal” error correction—directly onto the Nasdaq. To fuel this new era, Viewbix also closed a $1.4 million private placement, signaling that it is ready to move these laboratory breakthroughs into the global market. Read more in our full article here.<br>
+March 4, 2026<br>
+Record Fidelity Achieved for Entangled Logical Qubits on IBM Hardware<br>
+A research powerhouse consisting of Quantum Elements, USC, IBM, and RWTH Aachen has just published a paper in Nature Communications that might have solved one of the most annoying problems in quantum computing: “ZZ crosstalk.” By using a clever new trick called Normalizer Dynamical Decoupling (NDD), they achieved a record 98% fidelity for entangled logical qubits on a 127-qubit IBM processor. This proves that we can actually make logical qubits that are “healthier” than the physical qubits they are made of—a major step toward building a real, error-proof quantum computer. Read more in our full article here.<br>
+March 4, 2026<br>
+Pasqal to Go Public via $2 Billion Business Combination with Bleichroeder Acquisition Corp II<br>
+In a landmark move for the European quantum sector, Pasqal has officially announced its intent to go public on the Nasdaq via a merger with Bleichroeder Acquisition Corp. II (Nasdaq: BBCQ). The deal values the French neutral-atom pioneer at a $2.0 billion pre-money valuation, signaling that investors are betting big on the scalability of atom-based processors over superconducting alternatives. This transaction marks the second major European quantum “unicorn” to head toward a U.S. listing this year, following Xanadu’s recent move. Read more in our full article here.<br>
+March 4, 2026<br>
+Diasense Receives €1.3M ($1.5M USD) to Industrialize Quantum Diamond Microscopy<br>
+Diasense, a Copenhagen-based quantum pioneer, has secured €1.3 million ($1.5M USD) from the BioInnovation Institute (BII) to solve a trillion-dollar problem: finding invisible flaws in the world’s most advanced microchips. By using the quantum properties of diamonds, Diasense has built a “magnetic microscope” that can see through solid silicon to detect electrical leaks and structural failures that stop traditional scanners in their tracks. With this new funding, the company is preparing its hardware for the high-speed, sub-5nm production lines of the world’s top semiconductor foundries. Read more in our full article here.<br>
+March 4, 2026<br>
+QuSecure Awarded $3.9M TACFI Contract for Quantum-Resilient USAF Communications<br>
+QuSecure, Inc. has secured a $3.9 million TACFI (Tactical Funding Increase) contract from AFWERX to safeguard the U.S. Air Force’s most sensitive strategic assets. This contract specifically targets the Air Force Global Strike Command (AFGSC), which manages the nation’s nuclear-capable B-52 bombers. By pushing for a high-level Impact Level 6 (IL6) authorization, QuSecure is building a “quantum shield” around classified and air-gapped networks, ensuring that today’s top-secret data can’t be decrypted by the quantum computers of tomorrow. Read more in our full article here.<br>
+March 4, 2026<br>
+QuSecure Awarded Position on $151B Missile Defense Agency SHIELD Contract<br>
+QuSecure, Inc. has hit a massive home run, winning a spot on the $151 billion Missile Defense Agency (MDA) SHIELD contract. This “indefinite-delivery” contract is essentially a giant bucket of money that the U.S. government can use to buy any advanced defense tech it needs. For QuSecure, it’s the ultimate validation of its QuProtect R3™ platform, proving it can scale its “quantum shield” across the world’s most complex missile defense networks. Read more in our full article here.<br>
+March 3, 2026<br>
+Bluefors Launches Modular Cryogenic Platform for Large-Scale Qubit Integration<br>
+Bluefors has unveiled its Modular Cryogenic Platform, a system that essentially turns the “fridge” into a Lego-like expandable city for qubits. Formally presented at the APS Global Physics Summit in March 2026, this platform solves the biggest physical bottleneck in quantum scaling: the stationary, cramped space inside traditional refrigerators. By allowing modules to snap together, Bluefors is providing the infrastructure for the first 100,000+ qubit systems to live in standard data centers. Read more in our full article here.<br>
+March 3, 2026<br>
+NVision Establishes Quantum-Enhanced MRI Hub at University of Cambridge<br>
+NVision Imaging Technologies is bringing a “quantum metabolic” lens to the University of Cambridge. By establishing a new research hub centered on the POLARIS™ platform, the partnership aims to make MRI scans 10,000 times more sensitive. This technology doesn’t just look at the shape of a tumor; it watches the metabolism of the cells in real-time. For patients with cancer or MS, this could mean knowing if a treatment is working in just a few days, rather than waiting months for a follow-up scan. Read more in our full article here.<br>
+March 3, 2026<br>
+Illinois Quantum and Microelectronics Park Launches ‘On-Ramp’ Program for Early Tenant Entry<br>
+The Illinois Quantum and Microelectronics Park (IQMP) has officially launched its “On-Ramp” program, a masterstroke in urban and industrial planning. Rather than making the world’s leading quantum firms wait for the 128-acre South Side Chicago campus to be finished, the IQMP is opening up specialized labs across the city now. This “move-in-ready” approach ensures that giants like IBM, Pasqal, Diraq, and Quantum Machines are already hard at work in Chicago before the first permanent brick is even laid. Read more in our full article here.<br>
+March 3, 2026<br>
+Phasecraft Joins DARPA’s Quantum Benchmarking Initiative to Audit Utility-Scale Timelines<br>
+Phasecraft, the London-based pioneer of ultra-efficient quantum algorithms, has joined DARPA’s Quantum Benchmarking Initiative (QBI). In a high-stakes “audit” of the quantum industry, Phasecraft will use its proprietary software to determine exactly how many logical qubits are needed to reach utility-scale quantum computing by 2033. This move is designed to cut through the industry “hype” and provide the U.S. government with a realistic roadmap for its multi-billion dollar quantum investments. Read more in our full article here.<br>
+March 3, 2026<br>
+Australian Consortium to Develop Quantum ‘Brain-on-Chip’ Platform for Alzheimer’s Discovery<br>
+The University of Melbourne is leading an ambitious Australian consortium to build a “Quantum Brain-on-Chip”—a platform that could revolutionize how we treat Alzheimer’s and other neurological diseases. By combining 3D “mini-brains” with ultra-sensitive diamond quantum sensors, the team can watch the electrical firing of human neurons in real-time without touching them. This $2.1 million project aims to “kill” ineffective drugs in the lab long before they reach expensive, failed human trials. Read more in our full article here.<br>
+March 3, 2026<br>
+Leiden Cryogenics and OrangeQS Unveil ‘Mini-Fridge’ for Rapid Quantum Chip Testing<br>
+Leiden Cryogenics and Orange Quantum Systems (OrangeQS) have completed the Quper project, unveiling a revolutionary tabletop “mini-fridge” that brings industrial-speed testing to the quantum world. By shrinking a massive dilution refrigerator into a compact, inverted tabletop design, the team has cut the time it takes to cool a quantum chip to near-absolute zero down to just hours. This “fast-turnaround” system is designed to break the biggest bottleneck in quantum R&D: waiting days for a freezer to get cold. Read more in our full article here.<br>
+March 2, 2026<br>
+Qoro Launches Solo: A Cloud Platform for Parallelized Quantum Simulation<br>
+Qoro Quantum has officially launched Solo, a self-serve cloud platform that turns months of quantum simulation into minutes. By using a “SaaS-ified” approach, Solo allows developers to run thousands of quantum jobs in parallel across CPUs, GPUs, and QPUs simultaneously. For industries like finance and logistics that have “outgrown” standard servers but aren’t yet ready for full-scale quantum hardware, Solo provides a critical bridge. Read more in our full article here.<br>
+March 2, 2026<br>
+The Pinnacle Architecture: Efficient Fault-Tolerant Quantum Computing via QLDPC Codes<br>
+Iceberg Quantum has unveiled the Pinnacle Architecture, a breakthrough design that could bring the era of “useful” quantum computing forward by a decade. By ditching the standard “surface code” for more advanced Quantum Low-Density Parity Check (QLDPC) codes, Pinnacle requires 10 times fewer physical qubits to solve world-changing problems. From breaking RSA-2048 encryption to simulating complex materials, the Pinnacle Architecture proves that we don’t need millions of qubits to achieve quantum utility—we just need smarter architecture. Read more in our full article here.<br>
+March 2, 2026<br>
+Japan and Singapore Partner to Develop Hybrid Quantum-HPC Platforms<br>
+Japan and Singapore have officially launched a three-year partnership to build the “operating system” for the next generation of supercomputing. By linking Japan’s world-famous Fugaku supercomputer with Singapore’s growing quantum network, the two nations are developing the hybrid middleware needed to seamlessly switch tasks between classical chips and quantum processors. This collaboration aims to make quantum power a practical reality for industries ranging from logistics to decarbonization. Read more in our full article here.<br>
+February 28, 2026<br>
+Pasqal and Welinq Launch €4M ($4.7M USD) InterQo Project to Network Neutral-Atom Processors<br>
+Pasqal and Welinq have officially launched the InterQo project, a €4 million ($4.7M USD) mission to build the “Quantum Ethernet” of the future. By connecting separate neutral-atom processors via light, the duo aims to bypass the physical limits of single-chip computers. This move shifts the focus from “vertical scaling” (adding qubits to one chip) to “horizontal scaling” (building clusters of chips), a strategy that could finally pave the path toward million-qubit systems. Read more in our full article here.<br>
+February 28, 2026<br>
+Classiq and SKKU’s QCenter Launch Quantum Software Education Initiative in Korea<br>
+Classiq and the QCenter at Sungkyunkwan University (SKKU) have inked a deal to revolutionize how South Korea trains its quantum workforce. Moving away from tedious, manual gate-level coding, the partnership introduces the Classiq platform—which uses high-level modeling to “automate” quantum circuit design. This collaboration is a cornerstone of Korea’s national strategy to build a sovereign, industrial-grade quantum ecosystem. Read more in our full article here.<br>
+February 27, 2026<br>
+D-Wave Reports Fourth Quarter and Year-End 2025 Results: Revenue Surges 179% Amid Strategic Evolution to Dual-Platform Provider<br>
+D-Wave Quantum Inc. (NYSE: QBTS) has reported a transformative 2025, marked by a 179% surge in annual revenue and a bold pivot into a “dual-platform” provider. By acquiring Quantum Circuits, Inc. (QCi), the longtime leader in quantum annealing is now officially a player in the race for error-corrected gate-model systems. With over $30 million in bookings in January 2026 alone, D-Wave is moving its headquarters to Florida and positioning itself as the “go-to” for both immediate industrial optimization and long-term fault-tolerant computing. Read more in our full article here.<br>
+February 27, 2026<br>
+Who’s News: Board Appointments and Other Management Additions at Xanadu, Photonic Inc., Qunnect, IonQ, and SkyWater<br>
+The quantum industry is undergoing a “corporate maturation” phase, moving away from purely academic leadership toward seasoned titans of defense, semiconductor manufacturing, and public markets. From Xanadu’s pre-IPO board stacked with Pentagon and Reddit veterans to IonQ’s aggressive federal hiring spree, these management shifts signal that quantum companies are preparing for the rigorous demands of public listing and national security contracts. Read more in our full article here.<br>
+February 27, 2026<br>
+Monarch Quantum Selected to Support NASA JPL’s First Space-Based Quantum Gravity Gradiometer<br>
+Monarch Quantum, Inc. has been chosen to provide the “beating heart”—the laser-optical subsystems—for NASA’s Jet Propulsion Laboratory (JPL) and its historic Quantum Gravity Gradiometer Pathfinder (QGGPf) mission. By shrinking a room-sized laboratory experiment into a ruggedized, chip-scale Quantum Light Engine™, Monarch is helping enable the first orbital deployment of a sensor so sensitive it can map groundwater from space and navigate without GPS. Read more in our full article here.<br>
+February 26, 2026<br>
+QED-C and NIST Finalize Research to Compact and Optimize Quantum Control Electronics<br>
+The Quantum Economic Development Consortium (QED-C) and NIST have successfully wrapped up a major research push to shrink the “spaghetti” of wires and electronics that currently surround quantum computers. By coordinating with industry leaders like Rigetti, Amphenol RF, Maybell, and XMA, the program has delivered a blueprint for a much smaller, more efficient quantum “control room.” This is a crucial step toward moving quantum computers out of massive labs and into standard data center racks. Read more in our full article here.<br>
+February 26, 2026<br>
+QUDORA and ParityQC Partner to Optimize Trapped-Ion Quantum Algorithms<br>
+QUDORA and ParityQC have formed a strategic alliance to solve one of the most persistent problems in quantum computing: the “noise” created by inefficient software. By combining QUDORA’s Near-Field Quantum Control (NFQC) hardware with ParityQC’s Parity Twine optimization framework, the partners aim to run more complex algorithms on existing trapped-ion systems with fewer errors. This “hardware-aware” approach is designed to make European quantum computers faster and more reliable for on-premise use in supercomputing centers. Read more in our full article here.<br>
+February 26, 2026<br>
+Xanadu and Lockheed Martin Launch Joint Research Initiative for Quantum Machine Learning<br>
+Xanadu and Lockheed Martin have launched a joint research initiative to rewrite the rules of generative AI using Quantum Machine Learning (QML). While today’s AI (like ChatGPT) requires billions of data points and massive power plants, this collaboration is focused on “low-data” environments where information is scarce—such as top-secret defense simulations or early-stage drug discovery. By using photons to perform complex math that classical computers find “prohibitive,” the partnership aims to prove that quantum systems can be smarter, not just faster. Read more in our full article here.<br>
+February 26, 2026<br>
+IonQ Deploys Romania’s National Quantum Communication Infrastructure (RoNaQCI)<br>
+IonQ (NYSE: IONQ) has reached a major milestone in European cybersecurity with the successful deployment of the Romanian National Quantum Communication Infrastructure (RoNaQCI). Covering over 1,500 kilometers, this network is now one of the most extensive of its kind, representing more than 20% of Europe’s total terrestrial quantum secured links. By using Quantum Key Distribution (QKD), Romania is effectively “future-proofing” its government, healthcare, and research data against both classical hackers and future quantum threats. Read more in our full article here.<br>
+February 25, 2026<br>
+IonQ Reports Fourth Quarter and Full Year 2025 Financial Results: First Pure Play Quantum Company to Surpass $100M Annual Revenue<br>
+IonQ (NYSE: IONQ) has shattered expectations, becoming the first pure-play quantum computing company to surpass $100 million in annual revenue. With a massive $3.3 billion “war chest” and the pending acquisition of the SkyWater foundry, IonQ is no longer just building computers—it’s building a sovereign, vertically integrated quantum empire. From selling 100-qubit systems to South Korea to launching national networks in Europe, 2025 was the year IonQ moved from the lab to the Fortune 500 conversation. Read more in our full article here.<br>
+February 25, 2026<br>
+Quobly and Entropica Labs Form Strategic Alliance to Advance Silicon-Based Fault Tolerance<br>
+Quobly, a French developer of silicon-based quantum processors, and Entropica Labs, a Singaporean quantum software specialist, have formed a strategic alliance to accelerate the development of fault-tolerant quantum systems. By combining Quobly’s “spin-qubit” hardware with Entropica’s error-correction software, the duo aims to build industrial-grade computers that utilize existing semiconductor manufacturing. As part of the deal, Quobly is establishing Singapore as its official regional hub for Asian operations. Read more in our full article here.<br>
+February 25, 2026<br>
+Keeper Security Integrates Kyber to Provide Quantum-Resistant Identity Protection<br>
+Keeper Security has joined the ranks of global tech leaders by integrating Kyber, the NIST-finalized lattice-based cryptographic standard, across its platform. This upgrade is specifically designed to neutralize “Harvest Now, Decrypt Later” threats, where encrypted data is stolen today to be cracked by future quantum computers. By layering Kyber on top of its existing architecture, Keeper ensures that passwords, secrets, and privileged access remain secure in the post-quantum era. Read more in our full article here.<br>
+February 24, 2026<br>
+4colors Research Secures UK Space Agency and NQCC SparQ Contracts for Optimization<br>
+4colors Research, a Cambridge-based optimization specialist, has secured two high-profile contracts that put quantum-enhanced math at the heart of the UK’s space and aviation sectors. By tackling “unsolvable” scheduling problems for the UK Space Agency and carbon-cutting logistics for Airbus, the firm is moving from award-winning theory into mission-critical applications. Read more in our full article here.<br>
+February 24, 2026<br>
+Quantcore Secures £2.5M ($3.4M USD) to Establish Sovereign Niobium-Based Quantum Hardware Manufacturing<br>
+Quantcore, a spin-out from the University of Glasgow, has secured £2.5 million ($3.4M USD) in seed funding to become the UK’s first sovereign manufacturer of niobium-based superconducting quantum hardware. By moving away from standard aluminum components, Quantcore is building a more resilient and energy-efficient foundation for the UK’s quantum infrastructure, directly supporting national security and high-performance computing goals. Read more in our full article here.<br>
+February 23, 2026<br>
+IonQ Selected for Missile Defense Agency SHIELD IDIQ Contract<br>
+IonQ (NYSE: IONQ) has been qualified for the Missile Defense Agency (MDA) SHIELD contract, an massive $151 billion procurement vehicle. This selection marks a transformation for IonQ—it is no longer just a “quantum computer maker,” but a diversified defense prime. By leveraging its newly integrated subsidiaries—Capella Space, Skyloom, and Vector Atomic—IonQ is offering the MDA a “quantum-ready” stack that covers everything from satellite imagery and laser communications to un-jammable navigation. Read more in our full article here.<br>
+February 23, 2026<br>
+NQFF and Qolab Collaborate on Wafer-Scale Cryogenic Filters for Quantum Scaling<br>
+The National Quantum Federated Foundry (NQFF) in Singapore and Qolab have joined forces to tackle one of the most stubborn physical barriers in quantum computing: the “bulk” of cryogenic wiring. By developing wafer-scale cryogenic low-pass filters, the partnership aims to replace the hand-assembled, chunky components currently found in dilution refrigerators with sleek, mass-produced silicon filters. This is a critical step for moving from today’s experimental chips to the millions of qubits required for fault-tolerant computing. Read more in our full article here.<br>
+February 23, 2026<br>
+IQM to List on U.S. Exchange via Merger with Real Asset Acquisition Corp.<br>
+IQM Finland Oy has announced a landmark merger with Real Asset Acquisition Corp. (Nasdaq: RAAQ), set to make it the first European quantum computing company to list on a U.S. exchange. Valued at $1.8 billion, the deal provides IQM with a war chest of over $450 million in cash to scale its “full-stack” superconducting technology. With 21 systems already sold to some of the world’s most elite supercomputing centers, IQM is moving from an experimental European leader to a global industrial heavyweight. Read more in our full article here.<br>
+February 23, 2026<br>
+Australian Government Allocates $12.7M AUD ($9M USD) to Industrialize Quantum Prototypes<br>
+The Australian Government has committed $12.7 million to propel eight quantum projects from the laboratory to the real world. Under Stage 2 of the Critical Technologies Challenge Program (CTCP), these grants fund working prototypes designed to tackle major hurdles in mining, healthcare, and energy. By focusing on “field-ready” hardware, Australia is moving to cement its position as a global leader in the industrialization of quantum technology. Read more in our full article here.<br>
+February 21, 2026<br>
+Quantum Elements Secures Additional Funding for AI-Driven Development Platform<br>
+Quantum Elements, a Los Angeles-based startup focused on streamlining quantum application development has received new funding. The investment, structured as a SAFE, also includes participation from QDNL Participations, Quantacet, R-Squared Ventures, and Firgun Ventures. Quantum Elements is developing Constellation, a platform designed to bridge the gap between abstract circuit design and physical hardware. For the remainder of our report on this investment click here.<br>
+February 21, 2026<br>
+UCalgary Joins National Quantum Co-laboratory to Expand Distributed Research Infrastructure<br>
+The University of Calgary (UCalgary) has officially joined the National Quantum Co-laboratory, a move that synchronizes Canada’s four most powerful quantum research hubs. By linking UCalgary’s Institute for Quantum Science and Technology (IQST) with established centers at Waterloo, UBC, and Sherbrooke, the partnership creates a unified, “coast-to-coast” network of infrastructure. This expansion aims to turn Canada into a global leader by providing researchers and industry partners with shared access to high-end labs and a “quantum-ready” talent pool. Read more in our full article here.<br>
+February 21, 2026<br>
+Tectonic Labs Releases PQ Wallet and Post-Quantum Audit Services for EVM Chains<br>
+Tectonic Labs has launched PQ Wallet, a first-of-its-kind browser extension that brings Falcon-512 quantum-resistant signatures to the Ethereum Virtual Machine (EVM) ecosystem. By operating at the application layer, the wallet allows users to secure their digital assets against future quantum threats without waiting for a massive overhaul of the Ethereum network. Alongside the wallet, the firm has introduced PQ Audits to help blockchain protocols map their “cryptographic bill of materials” and prepare for a staged migration to post-quantum standards. Read more in our full article here.<br>
+February 21, 2026<br>
+MerLin: Framework for Differentiable Photonic Quantum Machine Learning<br>
+Quandela has released MerLin 0.3, an open-source framework designed to turn photonic quantum machine learning (QML) from a research experiment into a disciplined engineering field. By integrating directly with PyTorch, MerLin allows developers to train photonic circuits—like phase shifters and beam-splitters—using the same gradient-based optimization tools used for classical AI. With a library of 18 reproduced state-of-the-art papers, MerLin provides the standardized benchmarks needed to prove exactly where and when photonic quantum systems outperform classical ones. Read more in our full article here.<br>
+February 19, 2026<br>
+SEALSQ Increases Strategic Investment in EeroQ to Advance “Quantum Made in USA” Strategy<br>
+SEALSQ Corp (NASDAQ: LAES) has doubled down on its partnership with EeroQ, finalizing a second strategic investment to accelerate a “Quantum Made in USA” roadmap. By combining SEALSQ’s post-quantum semiconductor expertise with EeroQ’s unique “electrons on superfluid helium” hardware, the companies aim to build a fully vertical, sovereign security stack. This partnership centers on a radical new hardware design that could eventually fit a million-qubit processor onto a chip the size of a thumbnail. Read more in our full article here.<br>
+February 19, 2026<br>
+Tower Semiconductor and Xanadu Industrialize Silicon Photonic Quantum Stack<br>
+Tower Semiconductor and Xanadu have entered a new phase of their partnership, focusing on the high-volume industrialization of silicon photonic quantum chips. By utilizing Tower’s established 200mm foundry infrastructure, the duo is moving Xanadu’s photonic designs from the laboratory to the production line. This collaboration is a critical step toward fault-tolerant quantum computing, ensuring that the “guts” of a quantum computer can be manufactured with the same precision and scale as modern smartphone chips. Read more in our full article here.<br>
+February 19, 2026<br>
+Quantum eMotion to Transition Trading Operations to NYSE American Exchange<br>
+Quantum eMotion Corp. (TSXV: QNC) is set to elevate its market presence by transitioning its trading operations to the NYSE American exchange. Scheduled to begin trading under the ticker “QNC” around February 24, 2026, the move highlights the company’s shift from R&D to the commercialization of its “Entropy-as-a-Service” model. By listing on a major U.S. exchange, the firm aims to attract greater institutional interest in its unique quantum-safe hardware. Read more in our full article here.<br>
+February 19, 2026<br>
+AQT Integrates IBEX Q1 Trapped-Ion QPU into Scaleway Sovereign Cloud<br>
+Alpine Quantum Technologies (AQT) and Scaleway have achieved a milestone for European technological sovereignty by integrating the IBEX Q1 trapped-ion quantum computer into Scaleway’s cloud platform. This partnership allows European researchers and companies to run quantum workloads on a “sovereign cloud,” ensuring that sensitive data never leaves European jurisdiction. By combining AQT’s high-fidelity hardware with Scaleway’s classical cloud power, the duo is creating a powerful hybrid environment for the next generation of industrial applications. Read more in our full article here.<br>
+February 19, 2026<br>
+D-Wave Integrates into Southeastern Quantum Collaborative to Drive Regional Quantum Hardware Deployment<br>
+D-Wave Quantum Inc. has joined the Southeastern Quantum Collaborative (SQC) as an inaugural member, marking a significant step in establishing the Southeastern U.S. as a powerhouse for “field-ready” quantum applications. By integrating its Advantage2™ annealing system directly into Davidson Technologies’ Huntsville facility, D-Wave is providing the region’s defense and aerospace giants with the hardware needed to solve massive logistical and mission-planning challenges in real-time. Read more in our full article here.<br>
+February 19, 2026<br>
+Photonic Inc. Secures Firgun Ventures Investment and Demonstrates World-First Quantum Teleportation<br>
+Firgun Ventures, a new London-based specialist fund dedicated to investing in quantum start-ups has announced its first investment, backing Photonic Inc. Also, Photonic Inc. announced with telecom company Telus that it had demonstrated quantum teleportation over 30 km of active metropolitan fiber (TELUS’ PureFibre network). For more details about these two events read our full article here.<br>
+February 18, 2026<br>
+MicroAlign Secures €2.5M ($3M USD) EIC Funding for Industrialization of Quantum Fiber Arrays<br>
+MicroAlign has secured a €2.5 million ($3M USD) Accelerator Grant and equity investment from the European Innovation Council (EIC) to solve one of the most persistent bottlenecks in photonic quantum computing: the precise alignment of optical fibers. As photonic chips become more complex, they require thousands of connections that must be aligned with nanometer precision. MicroAlign’s “active alignment” technology is moving from pilot stages to high-volume production to meet this demand. Read more in our full article here.<br>
+February 18, 2026<br>
+IBM Ventures Invests in SQK and QodeX Quantum for Specialized Software Development<br>
+IBM Ventures has announced strategic investments in SQK and QodeX Quantum, two emerging startups from the Alchemist Chicago and Duality accelerators. This move is part of IBM’s broader “regional anchor” strategy in Illinois, centered on the Illinois Quantum and Microelectronics Park (IQMP). By backing these specialized software developers, IBM aims to pull quantum technology out of the lab and into high-stakes industries like oncology and enterprise AI. Read more in our full article here.<br>
+February 18, 2026<br>
+Palm Beach County Receives $1M Federal Funding to Expand Quantum Ecosystem<br>
+Palm Beach County is rapidly transforming into a primary high-tech corridor, securing over $3 million in new federal funding to anchor its quantum ecosystem. Combined with state grants and major corporate relocations like D-Wave, the region is building a “Quantum Coast” that bridges academic research with industrial deployment. Read more in our full article here.<br>
+February 18, 2026<br>
+Aliro Raises $15 Million to Advance Physics-Based Network Security<br>
+Aliro has secured $15 million in an oversubscribed funding round led by Gutbrain Ventures, with backing from Cisco Investments and others. The company is pivoting network security away from traditional “mathematical hurdles” toward physics-based enforcement. By using entanglement protocols, Aliro provides a way for networks to verify trust through the laws of physics, making unauthorized access or spoofing physically impossible. Read more in our full article here.<br>
+February 18, 2026<br>
+Qunnect and Cisco Demonstrate Quantum Entanglement over a Quantum Network in New York City<br>
+Qunnect and Cisco have achieved a major milestone in quantum infrastructure, successfully demonstrating high-fidelity entanglement swapping over the GothamQ network in New York City. Spanning 17.6 km of standard telecom fiber under the streets of Manhattan and Brooklyn, the system reached record-breaking swapping rates of over 5,400 pairs per hour with 99% fidelity. This demonstration proves that quantum networking can survive the “noise” of a major city, clearing the path for connected quantum data centers. Read more in our full article here.<br>
+February 18, 2026<br>
+SEALSQ and Lattice Deliver Unified TPM-FPGA Architecture for Post-Quantum Security<br>
+The partnership between SEALSQ and Lattice Semiconductor marks a significant leap in “hardening” the edge of our digital world. By merging a dedicated Post-Quantum Cryptography (PQC) chip with a programmable FPGA, they have created a “crypto-agile” anchor that can evolve alongside changing security laws. Read more in our full article here.<br>
+February 18, 2026<br>
+Quantonation Closes €220 Million ($260 Million USD) Second Fund to Scale Physics-Based Technologies<br>
+Quantonation Ventures has closed its second flagship fund, Quantonation II, at €220 million, surpassing its initial target and becoming the world’s largest dedicated quantum investment vehicle by assets under management. This new fund marks a shift from early-stage research to the “industrialization” of quantum tech, focusing on scaling hardware, software, and supply chains. Backed by major institutions like Toshiba and the European Investment Fund, Quantonation is positioning itself as the primary engine for the next phase of the global quantum economy. Read more in our full article here.<br>
+February 18, 2026<br>
+UK Dstl Completes Trials for Next-Generation Atomic Clock Technology<br>
+The UK’s Defence Science and Technology Laboratory (Dstl) has successfully concluded trials for next-generation atomic clock technology, a critical move to ensure UK forces can navigate even when GPS is jammed or denied. By using light waves to energize atoms, these clocks provide a timing reference far more stable than current military standards. The trials, which included participants like the Royal Navy and Far Field Exploits, successfully tested these devices in “unattended” long-term operations, proving they are ready for the harsh realities of the field rather than just the lab. Read more in our full article here.<br>
+February 17, 2026<br>
+An Italian Court Annuls a Previous €47 Million ($55.6M USD) Award to IBM for Providing a Quantum Computer at the University of Salerno<br>
+The government of Campagna, Italy had issued a tender in February 2025 to receive proposals to provide a quantum computer at the University of Salerno. The proposals were submitted in February and in September an award was issued to IBM for their bid totaling €47 Million. Subsequently, that bid was challenged in court and has recently been annulled. Additional details about this including the rationale for the annulment and potential next steps can be seen in our report here.<br>
+February 17, 2026<br>
+Infleqtion Goes Public on NYSE via SPAC Merger, Raising $550 Million<br>
+Infleqtion has officially become the first neutral-atom quantum company to go public, beginning trade on the New York Stock Exchange under the ticker “INFQ.” Following a successful merger with Churchill Capital Corp X, the company is now armed with over $550 million in new funding. This move signals a major shift for the industry, as Infleqtion moves to scale its unique dual-threat portfolio of quantum computing and high-precision quantum sensing for aerospace, defense, and energy. Read more in our full article here.her<br>
+February 17, 2026<br>
+Pasqal Delivers Italy’s First Neutral Atom Quantum Computer<br>
+Pasqal has officially delivered a 140-qubit neutral atom quantum computer to the CINECA supercomputing center in Bologna, marking Italy’s first on-site system of this kind. This deployment is a strategic move to integrate quantum processing units (QPUs) with Leonardo, one of the world’s fastest supercomputers. By combining Pasqal’s hardware with Leonardo’s classical power, researchers can now tackle massive optimization and materials simulation problems that were previously out of reach. Read more in our full article here.<br>
+February 17, 2026<br>
+Kipu Quantum Launches Rimay for Industrial Quantum-Enhanced Machine Learning<br>
+Kipu Quantum, based in Berlin, has officially launched Rimay, a quantum-enhanced feature extraction service designed to boost the accuracy of classical machine learning (ML) models. By utilizing a specialized quantum protocol called “digitized counterdiabatic driving,” Rimay extracts hidden data correlations that classical systems often miss. Currently optimized for IBM Quantum’s 156-qubit processors, the service is already showing double-digit accuracy gains in sectors like manufacturing and energy. Read more in our full article here.<br>
+February 17, 2026<br>
+Comcast, Classiq, and AMD Demonstrate Quantum-Optimized Internet Resilience<br>
+Comcast, Classiq, and AMD have successfully completed a technical trial demonstrating how quantum algorithms can solve the “NP-hard” problem of internet routing resilience. By utilizing a hybrid quantum-classical approach, the team identified vertex-disjoint backup paths—routes that share no common physical hardware—to ensure that traffic remains uninterrupted even if multiple network sites fail simultaneously. This trial proves that quantum software is no longer just theoretical; it is a practical tool for maintaining a stable, autonomous internet. Read more in our full article here.<br>
+February 17, 2026<br>
+Delta Gold Technologies and Penn State Partner on Scalable Gold-Based Quantum Materials Research<br>
+Delta Gold Technologies has entered a strategic $3 million partnership and licensing agreement with Penn State University to pioneer a new class of quantum materials: gold nanoclusters. Often called “super atoms,” these solid-state materials mimic the high-performance spin properties of trapped ions but offer a much easier path to mass manufacturing. By controlling the molecules surrounding the gold core, researchers have unlocked tunable spin polarization, creating a stable, scalable foundation for future quantum processors. Read more in our full article here.<br>
+February 16, 2026<br>
+C12 Demonstrates Tunable Metal–Insulator Transition in Ultra-Clean Carbon Nanotubes<br>
+French quantum startup C12 has achieved a significant technical milestone in materials science, demonstrating a tunable metal–insulator transition in ultra-clean, suspended carbon nanotubes (CNTs). Published in Nature Communications on February 16, 2026, the study proves that the electronic properties of high-purity nanotubes can be precisely manipulated via an external electrostatic field, providing a robust path toward low-disorder spin qubits. Read more in our full article here.<br>
+February 14, 2026<br>
+Single-Shot Parity Readout of a Minimal Kitaev Chain: A Breakthrough in Majorana Qubits<br>
+An international team led by QuTech and CSIC has achieved a historic milestone in topological quantum computing: the first single-shot, real-time readout of a Majorana qubit. Published in Nature on February 11, 2026, the study proves that we can finally “look inside” the protected state of a Majorana particle without destroying the very information we’re trying to measure. By using a quantum capacitance technique to distinguish between even and odd parity, the researchers have unlocked the “measurement primitive” needed to turn theoretical Majorana modes into functional, scalable hardware. Read more in our full article here.<br>
+February 14, 2026<br>
+Singapore Budget 2026: S$37 Billion (US$29.3 Billion) RIE 2030 Plan Anchors Quantum as a Strategic Pillar<br>
+In his Budget 2026 address on February 12, Prime Minister Lawrence Wong cemented Singapore’s position as a global quantum leader by unveiling the S$37 billion (US$29.3 billion) RIE 2030 plan. This massive 32% increase in research funding transforms an “early bet” into a strategic pillar of the nation’s economic strategy. The most striking outcome is Singapore’s selection as the first international host for Quantinuum’s “Helios” system—one of the world’s most powerful quantum computers. Read more in our full article here.<br>
+February 14, 2026<br>
+Leiden University and QuantaMap Introduce Multi-Modal Quantum Microscope<br>
+Physicists at Leiden University and the startup QuantaMap have introduced a groundbreaking diagnostic tool for the quantum industry: the Tapping-Mode SQUID-on-Tip (TM-SOT) microscope. Nicknamed “Tortilla,” this is the first instrument capable of simultaneously mapping temperature, magnetism, topography, and electrical currents at the nanoscale in a single scan. By providing a “root-cause” analysis of why individual qubits fail, this technology aims to drastically reduce the fabrication cycles for quantum processors. Read more in our full article here.<br>
+February 13, 2026<br>
+Florida Awards $4.95M to Establish State’s First Quantum Workforce Training Center<br>
+Florida has awarded $4.95 million to Palm Beach State College (PBSC) to establish the state’s first public Quantum Systems Certification Program. This investment, part of a broader $8 million push into high-tech sectors, will transform a historic downtown West Palm Beach building into a modern Quantum Innovation Center. By partnering with IBM Quantum, the college aims to build a “Quantum Coast” in South Florida, training nearly 1,000 students over the next decade for roles in cybersecurity, finance, and aerospace. Read more in our full article here.<br>
+February 13, 2026<br>
+UCLA Launches SoCal Quantum Alliance to Anchor Regional Innovation<br>
+UCLA has launched the SoCal Quantum Alliance (SQA), uniting Southern California’s academic and industrial giants to turn the “Quantum Coast” into a global tech epicenter. With heavyweights like Caltech, USC, Boeing, and IBM on board, the alliance will be anchored by a massive 40,000-square-foot Quantum Innovation Hub at the new UCLA Research Park. Directed by Professor Jason Petta, the hub aims to bridge the gap between lab experiments and commercial products in sensing, security, and materials. Read more in our full article here.<br>
+February 13, 2026<br>
+Xanadu Slashes Resource Barriers for Chemistry’s Nonadiabatic Frontier<br>
+Xanadu has unveiled a breakthrough quantum algorithm that simulates chemistry by breaking the “Born-Oppenheimer” barrier. By treating electrons and nuclei as a single coupled system, the algorithm allows for the simulation of complex photochemical reactions (like those in solar cells) that are impossible for classical computers. This technical leap comes as Xanadu announces a $3.6 billion merger with Crane Harbor Acquisition Corp to go public on the Nasdaq and TSX, marking a major milestone for the photonic quantum sector. Read more in our full article here.<br>
+February 13, 2026<br>
+NSF Launches $100M National Quantum and Nanotechnology Research Infrastructure (NQNI) Program<br>
+The U.S. National Science Foundation (NSF) has launched the National Quantum and Nanotechnology Research Infrastructure (NQNI), a $100 million initiative to build a nationwide network of 16 open-access research sites. Succeeding the long-standing NNCI program, the NQNI is specifically designed to give small businesses, community colleges, and academic labs access to the “heavy machinery” of quantum development—like advanced lithography and cryogenic testing—that is usually too expensive for individual organizations to own. Read more in our full article here.<br>
+February 13, 2026<br>
+Who’s News: Strategic Leadership Updates at PsiQuantum, Q.ANT, Quantum Algorithms Institute, Qblox, QuSecure, Unitary Foundation, and Q-CTRL<br>
+The quantum leadership landscape is undergoing a massive transformation as the industry shifts from laboratory development to large-scale infrastructure and national security deployment. From PsiQuantum recruiting a former AMD executive to manage its billion-dollar site builds, to Q-CTRL bringing on an atomic interferometry expert to lead “unjammable” navigation, the “Who’s News” of mid-February 2026 highlights a sector maturing at high speed. Read more in our full roundup here.<br>
+February 13, 2026<br>
+Iceberg Quantum Raises $6 Million Seed Round and Launches Pinnacle Architecture to Accelerate the Fault-Tolerant Era and Factor RSA-2048 Integers with 100,000 Qubits<br>
+Iceberg Quantum, a Sydney-based architecture firm, has emerged from stealth with a $6 million Seed round and the launch of Pinnacle, a blueprint for fault-tolerant quantum computing that could slash hardware requirements by 10x. Backed by LocalGlobe, Blackbird, and DCVC, the company claims its architecture can factor RSA-2048 integers with fewer than 100,000 physical qubits—a task previously thought to require millions. With new offices in Berlin and the U.S., Iceberg is positioning itself as the “architectural brain” for the world’s leading hardware providers. Read more in our full article here.<br>
+February 12, 2026<br>
+Europe Launches Euro-Q-Exa Quantum Computer at LRZ to Strengthen Digital Sovereignty<br>
+Europe has officially launched Euro-Q-Exa, Germany’s first EuroHPC-hosted quantum computer, at the Leibniz Supercomputing Centre (LRZ) in Munich. Built by IQM Quantum Computers, the 54-qubit system is a cornerstone of the EU’s “digital sovereignty” push, offering locally owned hardware for sensitive research in climate modeling and medicine. With a roadmap to exceed 150 qubits by late 2026, Euro-Q-Exa is designed to work in tight lockstep with the SuperMUC-NG supercomputer to solve problems too complex for classical machines alone. Read more in our full article here.<br>
+February 11, 2026<br>
+Chiral Raises €10M ($12M USD) to Scale Robotic Nanomaterial Integration for Post-Silicon Computing<br>
+Chiral Nano AG (Switzerland) has secured €10 million ($12M USD) in seed funding to scale the world’s first robotic platform for the wafer-scale integration of nanomaterials. Led by Crane Venture Partners, the capital will be used to move their AI-powered assembly system—capable of placing materials like carbon nanotubes and graphene with sub-micron accuracy—into industrial cleanrooms. This technology aims to break the “Moore’s Law” bottleneck by making post-silicon materials manufacturable at scale. Read more in our full article here.<br>
+February 11, 2026<br>
+NIST Allocates Over $3 Million to SBIR Phase II Projects Advancing Quantum and AI<br>
+NIST has awarded $3.19 million to eight small businesses under its SBIR Phase II program to prototype next-gen technologies in Quantum, AI, and Semiconductors. A standout awardee, Icarus Quantum, received $400,000 to commercialize a “noise-free” single-photon source that could jump-start quantum networking by increasing entanglement success rates from 1% to over 70%. These 24-month projects are designed to turn lab breakthroughs into market-ready products for defense, healthcare, and infrastructure. Read more in our full article here.<br>
+February 11, 2026<br>
+Classiq Releases Version 1.0 to Formalize Quantum Software Engineering<br>
+Classiq has reached a major milestone with the release of Classiq 1.0, a “production-ready” version of its platform designed to turn quantum programming into a disciplined engineering field. Moving beyond experimental code, Classiq 1.0 introduces “correct-by-construction” enforcement, expanded support for the Qmod modeling language, and a hardware-aware compiler that adapts models to specific backends automatically. This release aims to bridge the gap between classical domain expertise and quantum hardware, ensuring that software remains durable even as the hardware landscape shifts. Read more in our full article here.<br>
+February 11, 2026<br>
+QuiX Quantum and Artilux Collaborate to Advance Energy-Efficient Photonic Quantum Computing<br>
+QuiX Quantum (Netherlands) and Artilux (Taiwan) have signed an MoU to develop energy-efficient photonic quantum computing. By integrating Artilux’s germanium silicon (GeSi) photonic detectors into QuiX’s hardware, the partnership aims to slash the cooling requirements for quantum systems. This move is designed to make quantum processors more “data-center friendly,” reducing the need for massive cryogenic setups and lowering the total cost of ownership for commercial-scale deployment. Read more in our full article here.<br>
+February 10, 2026<br>
+Orange Business and Cisco Collaborate on Crypto-Agile PQC Networking<br>
+Orange Business and Cisco have joined forces to launch Post-Quantum Cryptography (PQC) secured network solutions, marking a major step in European quantum readiness. Using Cisco 8000 Series Secure Routers, Orange is now offering PQC-secured WAN services, with managed Cisco SD-WAN capabilities expected by Q3 2026. This collaboration targets the “Harvest Now, Decrypt Later” threat by making network control and data planes quantum-safe through simple software updates. Read more in our full article here.<br>
+February 10, 2026<br>
+Infleqtion and NASA JPL to Launch World’s First Space-Based Quantum Gravity Sensor<br>
+Infleqtion and NASA JPL are joining forces for the Quantum Gravity Gradiometer Pathfinder (QGGPf) mission, the world’s first attempt to put a standalone quantum gravity sensor in space. With $20 million in funding, the mission will use atom interferometry to map Earth’s mass changes—like melting ice and shifting groundwater—with sensitivity 10 times higher than classical tools. This “space-grade” milestone comes just as Infleqtion heads to a crucial shareholder vote on February 12, 2026, for its merger to list on the NYSE (symbol: INFQ). Read more in our full article here.<br>
+February 10, 2026<br>
+Nu Quantum Opens Trapped-Ion Networking Laboratory in Cambridge<br>
+Nu Quantum has opened Europe’s first industrial trapped-ion networking laboratory in Cambridge, UK. This facility serves as the headquarters for their Entanglement Fabric roadmap, doubling the company’s research space following their record-breaking $60 million Series A. The lab’s primary mission is to validate Qubit-Photon Interface (QPI) technology, which uses ultra-precise microcavities to link separate quantum processors together into a single, modular supercomputer. Read more in our full article here.<br>
+February 10, 2026<br>
+QuEra 2026 Survey: 62% of Organizations Face Classical Limits as Production Deployment Stalls<br>
+QuEra Computing has published its 2026 Quantum Readiness Survey, uncovering a “quantum execution gap”: while 62% of organizations are hitting the wall with classical computing, only 13% have actually moved quantum projects into production. The report highlights a “preparedness paradox,” where overall readiness confidence has dropped as businesses realize the true complexity of integrating quantum into legacy systems. Despite a massive talent shortage, the expectation for long-term utility remains high, particularly in molecular simulation and chemistry. Read more in our full article here.<br>
+February 10, 2026<br>
+Infleqtion Finalizes $6.2M ARPA-E Contract for Quantum Grid Optimization<br>
+Infleqtion has finalized a $6.2 million ARPA-E contract to launch the ENCODE project, a first-of-its-kind initiative using quantum computing to optimize the U.S. power grid. By deploying its 1,600-qubit neutral-atom arrays alongside the Superstaq software layer, Infleqtion aims to solve grid-dispatch problems that are currently overwhelming classical solvers like Gurobi. This green-tech milestone arrives as the company prepares to list on the NYSE (symbol: INFQ) on February 17, following its merger with Churchill Capital Corp X. Read more in our full article here.<br>
+February 7, 2026<br>
+Paul Scherrer Institute and ETH Zurich Demonstrate Fault-Tolerant Lattice Surgery on Superconducting Qubits<br>
+The Paul Scherrer Institute (PSI) and ETH Zurich have successfully demonstrated fault-tolerant lattice surgery on a 17-qubit superconducting processor. In a study published in Nature Physics, the team used a rotated distance-three surface code to perform a “split” operation—a crucial maneuver for entangling logical qubits without breaking error-correction protocols. This experiment proves that lattice surgery can manage the physical constraints of fixed-layout chips, clearing a major hurdle for scaling up superconducting quantum computers. Read more in our full article here.<br>
+February 5, 2026<br>
+QUICHE Project: UK–Germany Consortium to Integrate Quantum Workflows into ORCA Software<br>
+The QUICHE Project (Quantum Integrated Chemistry) has been launched as a bilateral UK–Germany partnership to integrate quantum computing workflows directly into the ORCA chemistry software suite. By combining the expertise of Quantum Motion (silicon qubits), Riverlane (error correction), and FACCTs (ORCA developers), the project will allow over 100,000 scientists to run quantum-informed simulations for battery and solar cell materials. This “end-to-end” pipeline aims to automate the translation of complex chemical data into optimized quantum circuits. Read more in our full article here.<br>
+February 5, 2026<br>
+Quantum Motion Establishes European Subsidiary in San Sebastian<br>
+Quantum Motion has officially expanded its European footprint with a new subsidiary in San Sebastian, Spain. Located within the newly inaugurated nanoGUNE Quantum Tower, the site will serve as a hub for developing silicon-spin quantum processors. By utilizing standard 300 mm CMOS manufacturing, Quantum Motion aims to integrate quantum dots with “cryoelectronics”—classical control circuits that live inside the refrigerator—to eliminate the wiring bottlenecks that plague other quantum modalities. Read more in our full article here.<br>
+February 5, 2026<br>
+Infleqtion Advances to Phase 3 of Wellcome Leap Q4Bio Challenge for Precision Oncology<br>
+Infleqtion has advanced to the final stage of the Wellcome Leap Q4Bio Challenge, securing $2 million to validate a quantum-enabled biomarker discovery platform for oncology. Partnering with UChicago and MIT, the project uses a hybrid quantum routine called HRQAOA to sift through complex head-and-neck cancer data—DNA, RNA, and pathology images—to predict how patients will respond to treatment. This clinical validation coincides with Infleqtion’s upcoming public listing on the NYSE (symbol: INFQ) via a merger with Churchill Capital Corp X, expected to close on February 13, 2026. Read more in our full article here.<br>
+February 5, 2026<br>
+QuantX Labs and Adelaide University Finalize Resilient Optical Clock Research<br>
+QuantX Labs, in collaboration with the University of Adelaide and the Defence Trailblazer initiative, has finalized a major research project to move optical atomic clocks from the lab to the field. By leveraging research from the Institute for Photonics and Advanced Sensing (IPAS), the team has matured the TEMPO platform—a ruggedized, portable quantum clock designed to provide precision timing in “GNSS-denied” environments (where GPS is jammed or unavailable). Read more in our full article here.<br>
+February 5, 2026<br>
+Who’s News: Leadership Updates at IQM, IonQ, Q.ANT, Haiqu, and More<br>
+The quantum industry is seeing a major wave of executive movement as companies pivot from R&D to global commercialization. From IQM’s shift to a single-CEO model under Dr. Jan Goetz to IonQ’s strategic hiring of Domenico Di Mola and Dr. Tom Harty to lead networking and hardware, the “Who’s News” of early 2026 reflects a sector hardening its leadership for the long haul. Read more in our full roundup here.<br>
+February 4, 2026<br>
+Quantum Machines to Establish R&D Hub at Illinois Quantum and Microelectronics Park<br>
+Quantum Machines (QM) has officially partnered with the Illinois Quantum and Microelectronics Park (IQMP) to establish a flagship R&D hub in Chicago. Initially operating from the IQMP On-Ramp facility, QM will deploy its OPX1000 control platform to pioneer “hardware-control co-design.” This initiative is a cornerstone of Illinois’ $500 million quantum infrastructure push, aiming to reduce error-correction latency and scale silicon-based processors in collaboration with Diraq. Read more in our full article here.<br>
+February 4, 2026<br>
+SQC Launches Quantum Twins Simulator and Reports 15,000-Qubit Register Fabrication<br>
+Silicon Quantum Computing (SQC) has launched Quantum Twins™, an analogue quantum simulator that uses a massive 15,000-qubit register to replicate complex molecular and material interactions. Published in Nature, the study details a 100 × 150 lattice of atom-based quantum dots patterned with 0.13-nm precision. Beyond the simulator, SQC reported a staggering manufacturing throughput of 250,000 qubit registers in eight hours, signaling a pivot toward industrial-scale semiconductor production. Read more in our full article here.<br>
+February 4, 2026<br>
+QT Sense Secures €4M ($4.7M USD) for Nanodiamond-Based Cellular Sensing Platform<br>
+QT Sense, based in Groningen, has raised €4 million to scale Quantum Nuova, a sensing platform that uses fluorescent nanodiamonds to look inside living cells. By leveraging quantum magnetometry, the system can monitor metabolic shifts and oxidative stress in real-time at single-cell resolution—a huge leap over traditional methods that require killing the tissue first. With backing from Cottonwood Technology Fund and QDNL Participations, QT Sense is now moving this tech into a commercial discovery tool for drug development and oncology research. Read more in our full article here.<br>
+February 4, 2026<br>
+Silicon Quantum Computing (SQC) Demonstrates Scaling Advantage with 11-Qubit Processor<br>
+Silicon Quantum Computing (SQC) has achieved a major breakthrough in the silicon modality, demonstrating an 11-qubit atom processor where performance actually improves as the system scales. Published in Nature, the research showcases single-qubit gate fidelities of up to 99.99% using phosphorus atoms precision-placed via STM lithography. This “scale-up fidelity” milestone, combined with SQC’s recent delivery of a rack-mounted system to the Australian Defence sector, positions the company as a leader in the race toward industrial-grade silicon quantum computing. Read more in our full article here.<br>
+February 4, 2026<br>
+Welinq Releases Commercial Entangled Photon Pair Source Following First Sale<br>
+Welinq has commercially launched its rack-mounted Entangled Photon Pair Source, marking its second major hardware milestone following the QDrive quantum memory. The first unit has already been delivered to a leading European institution. Designed for data center integration, the system generates dual-wavelength pairs—one for telecom fiber transmission and its entangled partner for coupling with atomic qubits—enabling the high-fidelity interconnection of remote quantum processors. Read more in our full article here.<br>
+February 3, 2026<br>
+Infleqtion and UW–Madison Demonstrate 99.93% Qubit Readout Fidelity via Quadrupole Transition<br>
+Infleqtion and the University of Wisconsin–Madison have achieved a record-breaking 99.93% readout fidelity for neutral-atom qubits. By utilizing a “forbidden” electric-quadrupole (E2) transition in cesium atoms, the team successfully performed non-destructive imaging while keeping atoms cooled to 5.3 μK, resulting in a 99.54% atom retention rate. This breakthrough, published in Physical Review Letters, provides a path to the fast, mid-circuit measurements required for quantum error correction. Read more in our full article here.<br>
+February 3, 2026<br>
+South Carolina Establishes University-Led Applied Quantum Projects in Transition to Execution Phase<br>
+South Carolina has moved into the “execution phase” of its quantum strategy, decentralizing state-level coordination into university-led research hubs. Backed by a $15 million state appropriation, the University of South Carolina (USC) and Clemson University have launched specialized labs to apply quantum sensing to the power grid, optimize industrial software, and secure “smart city” infrastructure. This transition shifts the focus from general advocacy to building a workforce and hardware testbed within the state. Read more in our full article here.<br>
+February 3, 2026<br>
+Cavendish Laboratory and FormationQ Launch Applied Quantum Program Using IonQ Platforms<br>
+The Cavendish Laboratory at the University of Cambridge and FormationQ have launched the Quantum Technologies Accelerated Alignment Initiative, a two-year program to transition physics research into industrial tools. Funded by a £1.675 million gift from FormationQ, the initiative provides researchers with direct access to IonQ’s trapped-ion hardware. The program focuses on hardening quantum systems for real-world use, advancing quantum sensing, and building the workforce frameworks necessary for mass adoption. Read more in our full article here.<br>
+February 3, 2026<br>
+Diraq Secures $20M AUD ($14M USD) NRFC Investment for Silicon Quantum Commercialization<br>
+Diraq has secured a $20 million AUD ($14 million USD) investment from Australia’s National Reconstruction Fund Corporation (NRFC). This equity injection is designed to anchor Diraq’s advanced manufacturing in Australia while accelerating the commercialization of its silicon spin qubit technology. By leveraging standard 300mm CMOS processes, Diraq aims to deliver its first quantum computer by 2029, with a long-term goal of reaching utility-scale performance by 2033. Read more in our full article here.<br>
+February 3, 2026<br>
+Zapata Secures Global Patent for Quantum Intermediate Representation Interoperability Framework<br>
+Zapata Quantum (OTC: ZPTA) has secured global patent protection for its Quantum Intermediate Representation (QIR) framework, with grants now active in Canada, Europe, Israel, and Australia. Functioning as a “universal translator” for quantum code, the framework allows developers to run a single algorithm across any hardware backend—from superconducting to trapped-ion—without rewriting code. This milestone strengthens Zapata’s position as a key architect of the hybrid quantum-classical stack, following recent collaborations with the University of Maryland and participation in DARPA’s Quantum Benchmarking program. Read more in our full article here.<br>
+February 2, 2026<br>
+EU Allocates €50M ($59M USD) to SUPREME Consortium for Superconducting Quantum Industrialization<br>
+The European Union has launched the SUPREME consortium with a €50 million ($59 million USD) budget to industrialize superconducting quantum technology. Coordinated by VTT (Finland), the project aims to bridge the “lab-to-fab” gap by moving quantum devices to TRL-6 and MRL-6 levels. The cornerstone of the initiative is the demonstration of a 3D-integrated 200-qubit module, supported by a consortium of 23 partners including IQM, Infineon, Alice & Bob, and Fraunhofer. Read more in our full article here.<br>
+February 2, 2026<br>
+EPB Launches Quantum Computing Fellowship Supported by $4 Million NIST Grant<br>
+EPB (Chattanooga, TN) has launched its Quantum Computing Fellowship, funded by a $4 million NIST grant, to train an initial cohort of eight fellows in developing quantum solutions for local utilities. In partnership with IonQ, the program utilizes the on-site IonQ Forte Enterprise system—a 36-algorithmic-qubit (#AQ 36) rack-mounted machine—to focus on real-world utility applications. Led by Paul Smith, the fellowship coincides with the 2026 commercial launch of “EPB Quantum Computing,” offering businesses access to both quantum networking and processing power. Read more in our full article here.<br>
+February 2, 2026<br>
+QuEra and Roadrunner Venture Studios Establish $4M Quantum Testbed in New Mexico<br>
+QuEra Computing and Roadrunner Venture Studios have launched a $4 million partnership to build a neutral-atom quantum testbed in Albuquerque, New Mexico. As part of a larger $300 million state-wide investment, the project will create two major facilities: a Photonics and Optics Testing Center (POTC) for laser validation and a Classical Compute User-Access Facility for hybrid workloads. This hub will allow the Roadrunner Quantum Coalition—including Sandia and Los Alamos National Labs—to iterate on quantum hardware without starting from scratch. Read more in our full article here.<br>
+January 30, 2026<br>
+Quobly Establishes Canadian Subsidiary to Accelerate Silicon Spin Qubit Industrialization<br>
+Quobly, the Grenoble-based silicon spin qubit pioneer, has officially expanded into North America with a new subsidiary in Sherbrooke, Quebec. By joining the DistriQ quantum hub and partnering with C2MI and the Institut Quantique, Quobly aims to leverage Canada’s advanced microelectronics ecosystem to solve the “materials-to-manufacturing” bottleneck. This expansion is a key pillar of their 2032 roadmap to deliver a fault-tolerant universal quantum computer using standard FD-SOI semiconductor processes. Read more in our full article here.<br>
+January 29, 2026<br>
+Spain Invests €9.75M ($11.6M USD) in Nu Quantum to Establish Distributed Quantum Networking Hub<br>
+Nu Quantum has secured a €9.75 million ($10.6 million USD) investment from the Spanish government to establish a distributed quantum networking hub in Madrid. Part of a larger $60 million Series A, this funding will focus on industrializing the Quantum Networking Unit (QNU)—a rack-mounted system that links separate quantum computers to work as one. Led by founder and CEO Dr. Carmen Palacios-Berraquero, the Madrid facility will also develop Photonic Integrated Circuits (PICs) to create high-speed, low-loss “Entanglement Fabric™” for the European quantum ecosystem. Read more in our full article here.<br>
+January 29, 2026<br>
+Stanford Researchers Develop Cavity-Array Microscope for Parallel Atom-Array Interfacing<br>
+Stanford University researchers, led by physicists Jon Simon and Adam Shaw, have pioneered a cavity-array microscope that allows for the simultaneous, high-speed readout of hundreds of individual neutral-atom qubits. By integrating a microlens array (MLA) within a large 34 cm resonator, the team created over 40 strongly coupled optical modes—and tested a prototype with up to 500—to extract data from atoms in parallel. This hardware breakthrough eliminates the need for slow, sequential scanning or fragile nanophotonics, clearing a major hurdle for scaling networked quantum supercomputers. Read more in our full article here.<br>
+January 29, 2026<br>
+Numana Commissions Kirq Quantum Communication Testbed in Quebec City<br>
+Numana has officially commissioned the third site of its Kirq quantum communication testbed in Quebec City, completing a high-tech “loop” that connects with existing sites in Montreal and Sherbrooke. Hosted at COPL-ULaval and the National Optics Institute (INO), and supported by $6.5 million in government funding, the network allows researchers to test quantum and post-quantum protocols in real-world conditions. With infrastructure provided by Nokia Canada, the project aims to bridge the gap between terrestrial fiber and satellite quantum links. Read more in our full article here.<br>
+January 29, 2026<br>
+Qilimanjaro Launches EduQit: On-Site Modular Quantum Computing for Research and Education<br>
+Qilimanjaro Quantum Tech has released EduQit, a modular “build-your-own” quantum computer designed to bring physical hardware directly into university labs. Moving beyond remote cloud access, EduQit allows students to interact with the entire stack—from dilution refrigerators and microwave electronics to QPUs based on Qilimanjaro’s proprietary fluxonium qubits. This “lab-in-a-box” approach is intended to bridge the gap between quantum theory and the gritty operational reality of superconducting systems. Read more in our full article here.<br>
+January 28, 2026<br>
+IonQ to Acquire Seed Innovations for AI-Driven Quantum Infrastructure Scaling<br>
+IonQ (NYSE: IONQ) has entered into a definitive agreement to acquire Seed Innovations, a Colorado-based R&D firm specializing in machine learning (ML) and cloud architecture. Closing on January 30, 2026, the acquisition integrates Seed’s AI-driven software expertise into IonQ’s Quantum Infrastructure division. Under the leadership of Frank Backes, the team will focus on using deep ML to predict system abnormalities and automate the scaling of quantum workloads across major cloud providers. This move continues IonQ’s aggressive “Full-Stack” verticalization strategy. Read more in our full article here.<br>
+January 28, 2026<br>
+IonQ Completes Skyloom Acquisition to Enable Distributed Quantum Entanglement<br>
+IonQ (NYSE: IONQ) has officially finalized its acquisition of Skyloom Global Corp., a specialist in space-based laser communications. By integrating Skyloom’s SDA-qualified optical terminals (like the V’ger and Scotty models), IonQ is building the hardware foundation for distributed quantum entanglement. This acquisition allows IonQ to connect remote trapped-ion processors into a single unified network, reducing latency for space-to-ground quantum data and positioning the company to deliver full-stack, quantum-secure infrastructure for defense and aerospace markets. Read more in our full article here.<br>
+January 27, 2026<br>
+Classiq and C12 Integrate Software Platform with Spin Qubit Digital Twin<br>
+Classiq and C12 have integrated C12’s Callisto digital twin into the Classiq platform, allowing developers to design algorithms for carbon nanotube (CNT) spin qubits. Using Classiq’s Qmod language, researchers can now simulate up to 13 noisy qubits based on C12’s specific hardware parameters, including realistic models for phonon interaction and charge noise. This partnership makes CNT spin qubits a supported modality alongside superconducting and photonic backends, helping to bridge the gap between software design and C12’s unique cQED-based hardware. Read more in our full article here.<br>
+January 27, 2026<br>
+D-Wave Announces HQ Relocation, $20M System Sale, and Defense Performance Breakthroughs<br>
+D-Wave Quantum Inc. utilized its Qubits 2026 conference to announce a major pivot toward industrial-scale deployment, headlined by a headquarters relocation to Boca Raton, Florida. The move is anchored by a $20 million agreement with Florida Atlantic University (FAU) to install an on-site Advantage2™ system. D-Wave also unveiled a breakthrough in national security, demonstrating that its hybrid solvers could plan missile defense intercepts 10x faster than classical methods, significantly improving threat mitigation in high-density simulations. Read more in our full article here.<br>
+January 26, 2026<br>
+Qunova Launches HI-VQE Chemistry Algorithm on AWS Marketplace for Braket Integration<br>
+Qunova Computing has launched its HI-VQE (Handover Iterative Variational Quantum Eigensolver) algorithm on the AWS Marketplace, integrating it with Amazon Braket. This move allows industrial users in pharma and materials science to run high-precision chemistry simulations across multiple hardware types, including IonQ, Rigetti, and QuEra. By eliminating Pauli word measurements, the algorithm reportedly achieves a 1,000x improvement in efficiency, enabling “chemical accuracy” on current NISQ devices. Read more in our full article here.<br>
+January 26, 2026<br>
+IonQ to Acquire SkyWater Technology in $1.8 Billion Vertical Integration Transaction<br>
+IonQ has announced a definitive agreement to acquire SkyWater Technology for $1.8 billion in a landmark vertical integration move. By merging its trapped-ion design expertise with SkyWater’s domestic foundry capabilities, IonQ has accelerated its roadmap, pulling forward the functional testing of its 200,000 physical qubit QPU to 2028. This deal secures a DMEA Category 1 Trusted domestic supply chain, positioning IonQ to lead high-stakes defense and government quantum initiatives while maintaining SkyWater’s pure-play foundry model. Read more in our full article here.<br>
+January 24, 2026<br>
+Deep33 Ventures Launches $150 Million Fund for U.S.-Israel Deep Tech Corridor<br>
+Deep33 Ventures has emerged from stealth with a $150 million fund aimed at building a “deep tech corridor” between the U.S. and Israel. Focusing on the physical foundations of AI—Quantum, AI Infrastructure, Energy, and Robotics—the fund addresses hardware and energy bottlenecks. Led by an expert-heavy team including Col. (Res.) Joab Rosenberg, the firm has already backed five companies, including Quamcore (superconducting quantum chips) and CyberRidge (post-quantum encryption). Read more in our full article here.<br>
+January 23, 2026<br>
+QMill: Projecting Verifiable Quantum Advantage via 48-Qubit NISQ Algorithms<br>
+QMill has announced simulation results for a 48-qubit algorithm that claims to achieve verifiable quantum advantage on near-term NISQ hardware. By requiring only 99.94% gate fidelity—a significant drop from the industry-standard 99.99%—the algorithm is designed to outperform exascale supercomputers like El Capitan while remaining classically verifiable on a standard laptop. Led by Mikko Möttönen, the team is now preparing to transition this “noise-resilient” architecture into cloud-integrated products for logistics and energy grid optimization. Read more in our full article here.<br>
+January 23, 2026<br>
+Keyfactor and IBM Consulting Launch Joint Solution for Enterprise Quantum-Safe Modernization<br>
+Keyfactor and IBM Consulting have launched a joint enterprise solution to accelerate the transition to post-quantum cryptography (PQC). The partnership merges Keyfactor’s automated discovery and certificate lifecycle tools (including EJBCA and SignServer) with IBM’s Quantum Safe Migration Orchestrator to create a comprehensive Cryptographic Bill of Materials (CBOM). This solution helps organizations identify vulnerable assets, prioritize remediation with risk scoring, and establish Cryptographic Centers of Excellence (CCoEs) for long-term “crypto-agility.” Read more in our full article here.<br>
+January 23, 2026<br>
+ZenaTech Advances Proprietary Quantum Hardware Platform for Defense and Government Sectors<br>
+ZenaTech, Inc. (Nasdaq: ZENA) has officially begun procurement for its first proprietary five-qubit quantum computer prototype, designed to handle the massive data volumes generated by its ZenaDrone systems. Targeted at U.S. Defense and Homeland Security, the platform aims to provide real-time, quantum-enhanced analysis for military surveillance and threat detection. Expected to be operational by late 2026, this vertically integrated hardware will anchor ZenaTech’s AI-driven defense projects, including Eagle Eye and Zena AI, moving the company toward end-to-end sovereign intelligence solutions. Read more in our full article here.<br>
+January 23, 2026<br>
+Arqit Launches ‘Encryption Intelligence’ to Automate Discovery for Post-Quantum Migration<br>
+Arqit Quantum Inc. (Nasdaq: ARQQ) has commercially launched Encryption Intelligence (EI), an automated tool designed to build a real-time cryptographic inventory for enterprises. Developed to combat the “Store Now, Decrypt Later” (SNDL) threat, the platform identifies legacy algorithms and hidden risks across cloud and OT environments. Validated by its participation in the UK National Cyber Security Centre (NCSC) PQC Pilot, Arqit’s solution provides the continuous visibility necessary to create a prioritized, compliant migration roadmap. Read more in our full article here.<br>
+January 23, 2026<br>
+Chicago State University Launches Illinois’ First Public University Quantum and Semiconductor Credentials<br>
+Chicago State University (CSU) has launched Illinois’ first public university programs in Quantum Information Science & Engineering (QISE) and Semiconductor Technology, approved by the Illinois Board of Higher Education. Designed to bridge a 100,000-job gap by 2030, these credentials provide a direct talent pipeline to the Illinois Quantum & Microelectronics Park (IQMP). With support from the NSF-backed Mic2ExL consortium and partners like PsiQuantum, CSU is focusing on making the quantum economy accessible to underrepresented students and adult learners through flexible, hands-on training. Read more in our full article here.<br>
+January 22, 2026<br>
+Microsoft Opens Applications for 2026 Quantum Pioneers Program Targeting Measurement-Based Computing<br>
+Microsoft has opened applications for the 2026 Quantum Pioneers Program (QuaPP), a research initiative led by Dr. Chetan Nayak that focuses on measurement-based quantum computing (MBQC). The program aims to advance topological qubits by funding up to five research proposals with $200,000 USD each. Research areas include topological qubit dynamics, innovative readout components, and measurement-based error correction. Open to global university professors, the application deadline is January 31, 2026, with funding set to start in August. Read more in our full article here.<br>
+January 22, 2026<br>
+IBM Releases Qiskit v2.3 with Expanded C API and Fault-Tolerant Primitives<br>
+IBM has officially launched Qiskit v2.3, a major update designed to bridge the gap between quantum software and High-Performance Computing (HPC) environments. The release centers on a significantly expanded C API, featuring new objects like QkDag and QkTarget that allow for low-level circuit optimization directly in C. By completing the internal refactor of its data model into Rust, IBM has also enhanced the speed and scalability of circuit-to-hardware mapping, ensuring Qiskit is prepared for the high-throughput requirements of fault-tolerant systems. Read more in our full article here.<br>
+January 22, 2026<br>
+Microsoft Releases Open-Source Quantum Development Tools for Error Correction and Chemistry<br>
+Microsoft has released an updated, open-source Quantum Development Kit (QDK) specifically engineered for fault-tolerant applications. Integrated with VS Code and GitHub Copilot, the kit features a specialized QDK for Chemistry that utilizes “chemistry-aware” algorithms to drastically reduce circuit depth—sometimes shrinking gate counts from thousands to single digits. A major highlight is the introduction of a qubit-virtualization system that generates stable logical qubits from physical hardware. This system is currently being applied to Atom Computing’s neutral-atom platform to create the Magne system, with full performance benchmarks set for release on January 26, 2026, in Copenhagen. Read more in our full article here.<br>
+January 22, 2026<br>
+Montana State University’s QCORE Secures $31.5 Million AFRL Contract for Quantum Infrastructure<br>
+Montana State University (MSU) has been awarded a $31.5 million contract by the Air Force Research Laboratory (AFRL) to expand its QCORE facility. This funding follows a $26.7 million grant from 2023, solidifying the Bozeman-based hub as a leader in transitioning quantum sensors, materials, and secure networking from lab prototypes to deployable hardware. With on-site hardware like the Rigetti Novera and ORCA PT Series, QCORE is one of the few global sites operating multiple quantum modalities alongside a dedicated network test bed. Read more in our full article here.<br>
+January 22, 2026<br>
+Nexus Launches Global Platform for Verified Quantum and Deep-Tech Investment<br>
+Nexus has launched a global platform to connect quantum and deep-tech startups with verified investors, backed by a partnership with Global Quantum Intelligence (GQI). The platform provides a unique verification layer that audits technical claims and benchmarks startups to increase transparency in a complex market. With over 45 companies already registered and $350 million in available funding represented, Nexus aims to streamline capital acquisition through a specialized matchmaking algorithm. Read more in our full article here.<br>
+January 22, 2026<br>
+SpinQ Technology Secures Hundreds of Millions of RMB in Series C Funding for Superconducting Scale-Up<br>
+SpinQ Technology, based in Shenzhen, has raised hundreds of millions of RMB in a Series C funding round to scale its superconducting quantum hardware. Co-led by a consortium including Longli Technology and Jadex Capital, the investment will drive the development of the “Shaowei” superconducting chip series, targeting a 100-qubit processor. SpinQ is unique in the industry for its “dual-driven” strategy: it maintains a steady revenue stream by exporting portable NMR quantum computers to 40+ countries while simultaneously deploying high-performance superconducting systems to markets in the Middle East and Europe. Read more in our full article here.<br>
+January 21, 2026<br>
+Europe Launches €50 Million ($58.4 Million USD) ‘Photonics for Quantum’ (P4Q) Pilot Line to Industrialize Quantum Photonic Chips<br>
+Europe has launched the €50 million ($58.4 million USD) Photonics for Quantum (P4Q) pilot line to move quantum photonic technologies from the lab into industrial-scale production. Coordinated by the University of Twente and funded by the EU’s Chips Joint Undertaking alongside national governments, the project involves 29 partners—including imec, CEA-Leti, and Thales. P4Q focuses on maturing production for materials like silicon nitride and thin-film lithium niobate, aiming for high-level manufacturing readiness (MRL-8). This infrastructure will provide a standardized pathway for startups and SMEs to build the photonic chips required for quantum computing, sensing, and secure communications. Read more in our full article here.<br>
+January 21, 2026<br>
+Saudi Arabia’s KAUST Establishes National Quantum Foundry for Quantum Hardware Fabrication<br>
+KAUST has launched the KAUST Quantum Foundry in Saudi Arabia, a dedicated facility aimed at transitioning quantum hardware from bespoke lab experiments to commercial-grade, reproducible manufacturing. By offering specialized cleanroom access and implementing Process Design Kits (PDKs), the Foundry provides a standardized framework for designing superconducting, photonic, and hybrid quantum systems. Integrated with the National Transformation Institute (NTI), the initiative is designed to accelerate the commercialization of quantum tech to solve national challenges in energy, health, and water security. Read more in our full article here.<br>
+January 21, 2026<br>
+Ability Engineering Technology Joins Chicago Quantum Exchange to Strengthen Infrastructure Supply Chain<br>
+Ability Engineering Technology (AET) has joined the Chicago Quantum Exchange (CQE) as a corporate partner to scale the domestic supply chain for quantum-ready infrastructure. The Illinois-based manufacturer, specializing in high-precision cryogenic systems and vacuum chambers, will collaborate with members like Argonne National Laboratory and Fermilab to transition quantum hardware from lab prototypes to industrial deployment. As part of the Bloch Quantum Tech Hub, AET will also support regional workforce development and standardized manufacturing for next-generation systems. Read more in our full article here.<br>
+January 21, 2026<br>
+Alice & Bob Introduce ‘Elevator Codes’ for Resource-Efficient Fault Tolerance<br>
+Alice & Bob has introduced “Elevator Codes,” a new quantum error correction (QEC) architecture that leverages the unique noise bias of cat qubits to achieve a massive reduction in hardware requirements. Detailed in a study by Diego Ruiz and Peter Shanahan, the architecture uses a “vertical” movement strategy—the “elevator”—to check for errors across different layers of the code. This approach allows Alice & Bob to target 100 logical qubits using only 1,500 physical qubits, a significantly smaller footprint than traditional 2D surface codes, while reducing logical error rates by 10,000x. Read more in our full article here.<br>
+January 20, 2026<br>
+Coherent and Quside Demonstrate Scalable, Verifiable Quantum Entropy for Data Security<br>
+Coherent Corp. and Quside have successfully demonstrated a mass-manufacturable quantum entropy source, integrating Coherent’s 6-inch VCSEL manufacturing platform with Quside’s Quantum Random Number Generation (QRNG) technology. Unlike standard generators that rely on predictable algorithms, this system measures quantum phase fluctuations in lasers to provide “true” randomness. A key innovation is real-time entropy monitoring, which mathematically verifies that the randomness is truly quantum before generating cryptographic keys. This scalable, verifiable root of trust is designed to be integrated into consumer electronics and data centers, with a live demo scheduled for Photonics West 2026. Read more in our full article here.<br>
+January 20, 2026<br>
+Lightwave Logic and QPICs Partner to Accelerate Photonic Quantum Chip Development<br>
+Lightwave Logic and QPICs have signed an MOU to integrate high-stability electro-optic (EO) polymers into photonic integrated circuits (PICs) for quantum computing and sensing. This collaboration, a key part of the Elevate Quantum Tech Hub in Colorado, focuses on creating Process Design Kits (PDKs) that allow customers to manufacture silicon-compatible quantum solutions with high-speed modulation and low power consumption. Led by Dr. Chris Myatt, QPICs aims to provide a turnkey fabrication service that moves quantum photonics from the lab to industrial-scale production. Read more in our full article here.<br>
+January 20, 2026<br>
+D-Wave Finalizes $550 Million Acquisition of Quantum Circuits to Accelerate Dual-Platform Roadmap<br>
+D-Wave Quantum Inc. has completed its $550 million acquisition of Quantum Circuits Inc., positioning itself as the industry’s first “dual-platform” provider. By merging its dominant quantum annealing technology with Quantum Circuits’ gate-model hardware, D-Wave aims to offer a 49-qubit system featuring dual-rail qubits by late 2026. This architecture uses hardware-integrated error detection to convert energy loss into “erasure” errors, potentially reducing physical qubit overhead by 200x. With Yale pioneer Dr. Rob Schoelkopf joining as Chief Scientist, D-Wave is set to unveil its integrated roadmap at the Qubits 2026 conference in late January. Read more in our full article here.<br>
+January 20, 2026<br>
+Rigetti Computing Receives $8.4 Million Order for 108-Qubit Quantum Computer from India’s C-DAC<br>
+Rigetti Computing has received an $8.4 million order to deliver a 108-qubit quantum computer to India’s C-DAC (Centre for Development of Advanced Computing). The system, based on Rigetti’s modular chiplet-based architecture, will be installed on-premises at C-DAC’s Bengaluru facility in the second half of 2026. This acquisition is a cornerstone of India’s Hybrid HPC-Quantum Mission, enabling local researchers to develop sovereign, full-stack quantum solutions integrated directly into the nation’s supercomputing infrastructure. Read more in our full article here.<br>
+January 20, 2026<br>
+Universidad Politécnica de Madrid and Q*Bird Launch Spain’s First Multi-Node MDI-QKD Network<br>
+Universidad Politécnica de Madrid (UPM) and QBird have launched Spain’s first multi-node MDI-QKD network, connecting sites at INTA and the Ministry of the Interior. Using a hub-and-spoke topology with QBird’s Falqon® Series hardware, the network removes the need for “trusted nodes” and eliminates detector-based vulnerabilities. This deployment within the MadQCI framework serves as a critical pilot for EuroQCI, demonstrating that scalable, quantum-secure communication is ready for metropolitan government and critical infrastructure. Read more in our full article here.<br>
+January 20, 2026<br>
+Horizon Quantum and Alice & Bob Partner to Streamline Fault-Tolerant Software Development<br>
+Horizon Quantum Computing and Alice & Bob have formed a strategic alliance to integrate Alice & Bob’s cat qubit emulators into Horizon’s Triple Alpha development environment. This partnership allows developers to test quantum error correction (QEC) protocols on a “virtual version” of Alice & Bob’s hardware, which claims to reduce physical qubit overhead by 200x. The collaboration comes as Horizon Quantum prepares for a Nasdaq listing via a merger with dMY Squared Technology Group, backed by a $110 million PIPE that includes participation from IonQ. Read more in our full article here.<br>
+January 17, 2026<br>
+Quobly and TNO Partner to Optimize Silicon Spin Qubit Manufacturing<br>
+Quobly and TNO have joined forces to industrialize silicon spin qubits, focusing on the “materials-to-manufacturing” bottleneck. By combining Quobly’s CMOS-compatible designs with TNO’s advanced materials analysis and cryogenic testing (via its QITT facility), the partnership aims to mitigate hardware defects and accelerate development loops. This collaboration strengthens the quantum corridor between Grenoble and Delft, positioning silicon spin technology to transition from lab-scale prototypes to high-yield, industrial production. Read more in our full article here.<br>
+January 17, 2026<br>
+SEEQC to Go Public via Merger with Allegro Merger Corp. at $1 Billion Valuation<br>
+SEEQC, the New York-based developer of digital quantum-classical chips, has announced a definitive merger agreement with Allegro Merger Corp. at a $1 billion valuation. Supported by a $65 million PIPE, the deal aims to scale SEEQC’s proprietary Single Flux Quantum (SFQ) technology, which integrates control and readout functions directly onto chips inside the cryostat. By eliminating the “wiring bottleneck” of bulky external electronics, SEEQC is positioning itself as a critical infrastructure provider for the broader quantum industry. The transaction is expected to close in Q2 2026. Read more in our full article here.<br>
+January 16, 2026<br>
+Who’s News: Strategic Leadership Appointments at Infleqtion, Quantinuum, IonQ, and Xanadu<br>
+The quantum sector saw a massive wave of executive moves on January 16, 2026, as major players prepare for public listings and utility-scale deployment. From military veterans joining the sensing space to SaaS heavyweights moving into quantum field engineering, these appointments signal a shift from “R&D-led” to “commercial-ready” leadership. Read more in our full article here.<br>
+January 16, 2026<br>
+Diffraqtion Secures $4.2 Million Pre-Seed to Bypassing Optical Limits in Space Imaging<br>
+Diffraqtion, an MIT and University of Maryland spinout, has raised $4.2 million in pre-seed funding and non-dilutive contracts to deploy satellite constellations equipped with a novel quantum camera. The round was led by QDNL Participations, with a significant DARPA SBIR Direct-to-Phase 2 contract and a first-place win at SLUSH 100 contributing to the total. Based on the research of co-founder Prof. Saikat Guha, the technology offers 20x higher resolution and 1,000x faster processing than conventional systems, aiming to revolutionize space domain awareness and Earth observation. Read more in our full article here.<br>
+January 15, 2026<br>
+SEALSQ and Kaynes SemiCon Establish SEALKAYNESQ Ltd to Secure India’s Semiconductor Supply Chain<br>
+SEALSQ Corp and Kaynes SemiCon have launched SEALKAYNESQ Ltd, a joint venture to build India’s first secure semiconductor personalization center in Gujarat. The facility will integrate SEALSQ’s Quantum Shield™ and post-quantum cryptography (PQC) into Indian-made silicon, specifically targeting mission-critical sectors like defense and finance. By combining SEALSQ’s QS7001 processors with Kaynes’ established manufacturing infrastructure—which recently shipped India’s first commercial packaged chips in late 2025—the JV aims to deliver “secure-by-design” hardware that is future-proofed against quantum threats. Commercial production of these quantum-resilient chips is slated for the second half of 2026. Read more in our full article here.<br>
+January 15, 2026<br>
+SEALSQ and Quobly Announce Potential $200 Million Acquisition to Build Secure Silicon Quantum Systems<br>
+SEALSQ Corp has signed a non-binding MOU for the potential majority acquisition of French quantum pioneer Quobly in a deal that could reach $200 million. The move, funded by SEALSQ’s $100 million Quantum Fund, aims to merge Quobly’s CMOS-compatible silicon spin qubits with SEALSQ’s post-quantum security expertise. Based in Grenoble and leveraging CEA-Leti technology, Quobly is currently advancing its Q100T program to produce a 100-qubit chip by 2027 using standard 300mm manufacturing. This vertical integration targets a “secure-by-design” platform for sovereign European defense and financial infrastructure. Read more in our full article here.<br>
+January 15, 2026<br>
+Colorado School of Mines Launches First Undergraduate Quantum Systems Engineering Degree in the United States<br>
+Colorado School of Mines is launching the first undergraduate Quantum Systems Engineering degree in the U.S., designed to address the specialized workforce shortage in the quantum sector. Starting in Fall 2026, the program shifts focus from traditional theoretical physics to a systems-level engineering approach, covering the full technology lifecycle from state preparation to readout. Supported by the Elevate Quantum consortium—including industry giants like IonQ and Quantinuum—students will engage in year-long, industry-sponsored capstone projects and utilize the Quantum Commons hub in Arvada for hands-on fabrication. Read more in our full article here.<br>
+January 15, 2026<br>
+Equal1 Secures $60 Million to Deploy Silicon-Based Quantum Servers into High Performance Computing Environments<br>
+Equal1 has raised $60 million in a funding round led by the Ireland Strategic Investment Fund to deploy its silicon-based Bell-1 quantum servers into high-performance computing (HPC) environments. Utilizing its UnityQ hybrid quantum-classical silicon-on-chip (QSoC) architecture, Equal1 manufactures processors using standard CMOS techniques, allowing the hardware to operate in standard data center racks without massive dilution refrigerators. As a key milestone, the company is delivering a Bell-1 unit to the European Space Agency in Italy to demonstrate its utility as a modular accelerator for complex industrial workloads. Read more in our full article here.<br>
+January 15, 2026<br>
+Project Eleven Secures $20 Million Series A to Protect Digital Assets from Quantum Threats<br>
+Project Eleven has secured $20 million in a Series A round led by Castle Island Ventures, valuing the firm at $120 million. The funding—supported by Coinbase Ventures and Quantonation—will be used to protect blockchain assets from quantum threats. Led by Alex Pruden and Conor Deegan, the startup has already launched “yellowpages,” a registry for post-quantum Bitcoin keys, and successfully open-sourced a quantum-resistant Solana testnet using ML-DSA signatures. Their goal is to lead the migration of decentralized networks away from elliptic curve cryptography toward a foundation based on quantum-resilient paradigms and “quantum money.” Read more in our full article here.<br>
+January 15, 2026<br>
+PsiQuantum and Airbus Collaborate to Advance Fault-Tolerant Algorithms for Aerospace<br>
+PsiQuantum and Airbus have announced a strategic collaboration under the Airbus QuLAB project to develop fault-tolerant algorithms for aerospace. The partnership focuses on computational fluid dynamics (CFD), specifically utilizing a Quantum Lattice Boltzmann Algorithm (QLBM) to simulate incompressible fluid flows. By mapping fluid density directly onto qubits, this method aims to solve complex aerodynamic problems—like drag and vibration—faster than classical supercomputers. Airbus is utilizing PsiQuantum’s new Construct software suite to optimize these algorithms for photonic error-correction frameworks, preparing for the arrival of million-qubit systems. Read more in our full article here.<br>
+January 15, 2026<br>
+EeroQ Demonstrates Scalable Control Architecture Capable of Controlling One Million Qubits with Less than 50 Control Lines<br>
+EeroQ has demonstrated a major breakthrough in quantum scalability, showcasing a control architecture capable of managing one million qubits with fewer than 50 control lines. Using its Wonder Lake chip—manufactured at SkyWater Technologies using 130nm process technology—EeroQ leverages electrons on superfluid helium as qubits. By utilizing an Addressable Gate Array (AGA) and CCD-like transport sequences, the team successfully shuttled electron packets across 128 channels using only 14 control voltages. This logarithmic scaling approach solves the “wire problem” that plagues other modalities, positioning electrons-on-helium as a highly manufacturable path toward large-scale, fault-tolerant quantum processors. Read more in our full article here.<br>
+January 14, 2026<br>
+Honeywell Announces Quantinuum LLC Plan to Confidentially Submit Draft Registration Statement for Proposed Initial Public Offering<br>
+Honeywell has announced that its majority-owned subsidiary, Quantinuum LLC, plans to confidentially submit a draft registration statement on Form S-1 with the SEC for a proposed Initial Public Offering (IPO). This move marks a pivotal shift for the sector as the first major traditional IPO following a wave of SPAC listings. Formed from the 2021 merger of Honeywell Quantum Solutions and Cambridge Quantum, the company is backed by a powerhouse roster including J.P. Morgan, NVIDIA, IBM, and Amgen. The capital from the offering is intended to accelerate the scaling of Quantinuum’s H-Series trapped-ion hardware and its QCCD architecture toward universal, fault-tolerant quantum computing. Read more in our full article here.<br>
+January 13, 2026<br>
+Welinq Executes First Commercial Sale of QDrive Quantum Memory to Slovak Academy of Sciences<br>
+Welinq has announced the first commercial sale of its QDrive quantum memory to the Slovak Academy of Sciences, marking a key transition from research to infrastructure. The rack-mountable system, which utilizes laser-cooled rubidium atoms and operates at room temperature, will be integrated into the Slovak Quantum Communication Infrastructure (skQCI). With a world-record 90% storage-and-retrieval efficiency, the QDrive acts as a critical buffer for synchronization across network nodes, supporting Slovakia’s goal of a quantum-secure backbone for national institutions and advancing Welinq’s vision for distributed quantum data centers. Read more in our full article here.<br>
+January 13, 2026<br>
+Xanadu and Thorlabs Partner to Scale Optical Components for Photonic Quantum Computing<br>
+Xanadu Quantum Technologies has partnered with Thorlabs to develop custom optical fiber components designed to solve phase and polarization stability issues in photonic qubits. By leveraging Thorlabs’ industrial manufacturing, Xanadu aims to reduce optical loss and qubit overhead for its Aurora modular systems. This collaboration comes as Xanadu prepares for a public listing via a $3.1 billion merger with Crane Harbor Acquisition Corp (CHAC), a move expected to provide $500 million in proceeds to fund its roadmap toward a 100,000-qubit fault-tolerant system by 2029. Read more in our full article here.<br>
+January 13, 2026<br>
+Haiqu Raises $11 Million Seed Round to Launch Hardware-Aware Quantum Operating System<br>
+Haiqu has raised $11 million in a seed round led by Primary Venture Partners to launch its hardware-aware quantum operating system. The software aims to reduce the cost of running near-term quantum applications by up to 100x through “error shielding” and circuit optimization at the middleware layer. This funding follows a successful 2025 pilot with IBM and the Bank of Montreal, where Haiqu loaded 500 data features onto a 128-qubit processor for anomaly detection. With the hiring of former Microsoft Quantum PM Antonio Mei, Haiqu is now opening an Early Access Program to help enterprises run complex workloads on existing NISQ hardware. Read more in our full article here.<br>
+January 12, 2026<br>
+Q*Bird Secures €7.5 Million ($8.75 Million USD) in Blended Finance from EIC Accelerator to Scale Quantum Secure Networks<br>
+Q*Bird, a Delft-based quantum networking firm, has secured €7.5 million ($8.75 million USD) in blended finance from the EIC Accelerator to scale its NEXUS project. The funding supports the development of Measurement-Device-Independent Quantum Key Distribution (MDI-QKD), a hub-and-spoke architecture that eliminates detector-based vulnerabilities and removes the need for “trusted nodes.” Already deployed at the Port of Rotterdam, QBird’s technology aims to provide a sovereign, continental-scale quantum infrastructure for Europe, bridging the gap between isolated pilots and a federated quantum internet. Read more in our full article here.<br>
+January 12, 2026<br>
+SEEQC Establishes US-Taiwan Quantum Technology Ecosystem to Accelerate Chip-Based Scaling<br>
+SEEQC has launched a strategic US-Taiwan quantum ecosystem to scale its chip-based Single Flux Quantum (SFQ) platform. The initiative pairs SEEQC’s digital control IP with Taiwan’s semiconductor manufacturing giants; Kinpo Group is co-developing room-temperature electronics, while ITRI handles the production of superconducting control processors. Additionally, National Taiwan University and UC Berkeley are collaborating on a TSMC tape-out to integrate classical and quantum logic on a single System-on-Chip (SoC). This “allied supply chain” aims to bypass the energy bottlenecks of current cryogenic systems and move quantum hardware into high-volume commercial production. Read more in our full article here.<br>
+January 12, 2026<br>
+University of Maryland and Zapata Quantum Partner on Formal Verification for Quantum Algorithms<br>
+The University of Maryland and Zapata Quantum have launched a collaboration to introduce formal verification into quantum software, moving away from error-prone manual coding. Led by Yudong Cao and Runzhou Tao, the initiative uses mathematical proofs to ensure that high-level algorithms—starting with Shor’s algorithm—accurately match their executed quantum circuits. By establishing a “verification-first” model, the partnership aims to provide reliable resource benchmarks for fault-tolerant hardware and create a template for mission-critical applications in chemistry, finance, and materials science. Read more in our full article here.<br>
+January 12, 2026<br>
+Forward Edge-AI Expands Global Partner Network to Accelerate Post-Quantum Migration<br>
+Forward Edge-AI has expanded its global partner network to accelerate the migration to post-quantum cryptography (PQC), adding major partners like Microsoft, Lumen, and Cubic. At the heart of this expansion is the Isidore Quantum® platform, a “plug-and-play” hardware solution that secures data without requiring a full network re-architecture. Validated through 23 military pilots, the system meets CNSA 2.0 standards, offers sub-0.5ms latency, and reduces total cost of ownership by 60%. This rollout aims to provide immediate protection against “Harvest Now, Decrypt Later” threats for critical infrastructure and defense sectors. Read more in our full article here.<br>
+January 12, 2026<br>
+Polaris Quantum Biotech Study Demonstrates Quantum Advantage Over Generative AI in Drug Discovery<br>
+Polaris Quantum Biotech (PolarisQB) has published a study on ChemRxiv demonstrating that its QuADD platform, powered by D-Wave’s quantum annealing, significantly outperforms classical Generative AI in drug discovery. Using the blood-clotting enzyme Thrombin as a case study, QuADD generated 3,000 molecular candidates in just 30 minutes, compared to 40 hours for the AI-based BInD model. The quantum-generated molecules showed superior binding affinity and higher synthetic feasibility, prompting clinical-stage biopharma Auransa to adopt the platform to accelerate the design of “correct-first” molecular leads. Read more in our full article here.<br>
+January 10, 2026<br>
+Rigetti Computing Announces a Delay in the General Availability of Its Cepheus-1-108Q Processor<br>
+Rigeiti has announced a delay in the general availability of their Cepheus-1-108Q processor which is a 108 qubit quantum computer consisting of 12 nine-qubit modules. It can be thought of as the extension of the company’s previous Cepheus-1-36Q processor which is composed of four nine-qubit modules that was deployed in August of last year. More details are available in the remainder of our article here.<br>
+January 10, 2026<br>
+Monarch Quantum Launches to Deliver Integrated Photonics Engines for the Quantum Ecosystem<br>
+Monarch Quantum, Inc. has officially launched in San Diego to address the “fragile laser bench” bottleneck by delivering integrated Quantum Light Engines™. Led by industry veteran Dr. Timothy Day, the company consolidates complex optical components into factory-aligned, modular subsystems that perform critical functions like qubit trapping and coherent control. Designed to be “drop-in” solutions for trapped-ion, neutral-atom, and vacancy-center platforms, these engines aim to accelerate the transition of quantum hardware from lab prototypes to mass-manufacturable commercial systems. Read more in our full article here.<br>
+January 10, 2026<br>
+Researchers at KAIST and POSTECH Develop Direct-Printed Vertical Nanolasers for Quantum Security<br>
+A research team from KAIST and POSTECH has developed a groundbreaking 3D printing technique for vertical perovskite nanolasers, offering a new path for high-density optical computing and quantum security. Published in ACS Nano, the team used “ultra-fine electrohydrodynamic” printing to create pillar-shaped nanostructures with an extremely low lasing threshold of 2.98 μJ cm⁻². Led by Professors Ji Tae Kim and Junsuk Rho, the researchers demonstrated that tuning the height of these nanowires allows for customizable emission colors, enabling anti-counterfeiting labels and secure optical patterns that are nearly impossible to replicate. Read more in our full article here.<br>
+January 10, 2026<br>
+Singapore and Japan Form Strategic Quantum Alliance; Yaqumo and Entropica Labs Announce Hardware-Software Partnership<br>
+Singapore and Japan have signed a landmark Memorandum of Cooperation (MOC) to accelerate quantum innovation, marking Singapore’s first government-to-government agreement in the sector. Signed by Ministers Josephine Teo and Onoda Kimi, the alliance focuses on shared research infrastructure and cross-border pilots. To anchor the partnership, Japanese hardware startup Yaqumo and Singapore’s Entropica Labs launched a collaboration to co-design fault-tolerant cold-atom quantum computers, integrating Yaqumo’s neutral-atom architecture with Entropica’s error correction and optimization software to lower the qubit overhead for practical computation. Read more in our full article here.<br>
+January 8, 2026<br>
+Senators Introduce Bipartisan National Quantum Initiative Reauthorization Act of 2026<br>
+A bipartisan group of U.S. Senators has introduced the National Quantum Initiative Reauthorization Act of 2026, extending the federal quantum framework through 2034. Led by Senators Maria Cantwell and Todd Young, the bill formally authorizes NASA quantum R&D for the first time and mandates the creation of new NIST and NSF research centers. With a heavy focus on supply chain resilience and international cooperation, the act establishes “prize challenges” to bridge the gap between lab breakthroughs and commercial applications in energy, healthcare, and finance. Read more in our full article here.<br>
+January 8, 2026<br>
+Icarus Quantum Secures $400,000 SBIR Phase II Award to Scalable Quantum Interconnects<br>
+Icarus Quantum has been awarded a $400,000 SBIR Phase II grant from NIST to develop commercial-grade, high-efficiency photon sources for quantum interconnects. Spun out of NIST in 2022, the company utilizes Indium Arsenide (InAs) quantum dots to achieve deterministic light generation with efficiencies exceeding 70%, vastly outperforming traditional probabilistic sources. This “on-demand” entanglement capability is essential for scaling distributed quantum networks and supporting advanced error-correction schemes like QLDPC. Read more in our full article here.<br>
+January 8, 2026<br>
+Argonne National Laboratory and Intel Deploy 12-Qubit Silicon Quantum Dot Processor<br>
+Argonne National Laboratory and Intel have successfully deployed the 12-qubit “Tunnel Falls” quantum dot processor, a milestone published in Nature Communications. Developed via the Q-NEXT center, the processor utilizes Intel’s standard 300mm silicon manufacturing and EUV lithography, achieving a 95% yield for quantum dot devices. This partnership leverages high-volume semiconductor techniques to produce silicon spin qubits, which benefit from long coherence times and a small footprint. Argonne will now use the system as an open-science testbed to optimize multi-qubit control and inform the development of next-generation, large-scale processors. Read more in our full article here.<br>
+January 7, 2026<br>
+The Bloch Quantum Advances to Final Stage of Department of Defense Tech Hubs Competition<br>
+The Bloch Quantum, a coalition led by the Chicago Quantum Exchange, has advanced to the final stage of the U.S. Economic Development Administration (EDA) Tech Hubs competition. One of only 11 proposals selected, the initiative aims to secure the domestic quantum supply chain and bridge the gap between R&D and manufacturing across Illinois, Wisconsin, and Indiana. If winners are announced in Q2 2026, the hub will scale the “Quantum Prairie” by expanding the Chicago Quantum Network and the Illinois Quantum & Microelectronics Park, which hosts the DARPA-Illinois Quantum Proving Ground. Read more in our full article here.<br>
+January 7, 2026<br>
+D-Wave Quantum to Acquire Quantum Circuits Inc. for $550 Million to Accelerate an Error-Corrected Gate-Model Roadmap<br>
+D-Wave Quantum Inc. has signed a definitive agreement to acquire Quantum Circuits Inc. for $550 million, a move that establishes a first-of-its-kind dual-platform strategy. By integrating Yale spin-out Quantum Circuits’ dual-rail qubit architecture—which features hardware-native error detection—with its own scalable cryogenic control, D-Wave aims to deliver its first commercial gate-model system by late 2026. Superconducting pioneer Dr. Rob Schoelkopf will lead the R&D center in New Haven to scale this unified stack, offering customers both annealing for optimization and error-corrected universal computation. Read more in our full article here.<br>
+January 7, 2026<br>
+Infleqtion Files SEC Registration for Public Listing via Churchill Capital Corp X Merger<br>
+Infleqtion has filed its Form S-4 registration statement with the SEC, a major step toward its public listing via a merger with Churchill Capital Corp X (CCCX). The deal, expected to close in Q1 2026, could provide over $540 million in proceeds and will see the company list under the ticker “INFQ.” Strategically, Infleqtion has already surpassed its 2026 roadmap by demonstrating 12 logical qubits with error detection and is integrating NVIDIA’s NVQLink to bridge quantum and GPU-accelerated computing for national security and PNT applications. Read more in our full article here.<br>
+January 6, 2026<br>
+Photonic Inc. Secures $130 Million USD to Accelerate Distributed Silicon-Quantum Architecture<br>
+Photonic Inc. has raised $130 million (USD) in a funding round led by Planet First Partners, bringing its total capital to approximately $271 million (USD). The investment, which includes new backers RBC and TELUS alongside returning partner Microsoft, will accelerate the development of the company’s Entanglement First™ Architecture. Utilizing silicon spin qubits based on “T center” defects, Photonic’s platform natively integrates quantum networking to enable any-to-any connectivity via telecom fiber. This architecture aims to deliver commercial-scale, fault-tolerant quantum computing through efficient QLDPC error correction and further integration with Microsoft Azure. Read more in our full article here.<br>
+January 6, 2026<br>
+D-Wave Systems Demonstrates On-Chip Cryogenic Control for Gate-Model Qubits<br>
+D-Wave Quantum Inc. has successfully demonstrated on-chip cryogenic control for gate-model qubits, a major technical leap toward solving the “wiring bottleneck” in superconducting systems. By repurposing its proven annealing control architecture, D-Wave integrated control logic directly onto a fluxonium qubit chip using a multichip package developed with NASA JPL. This multiplexed approach allows for the management of thousands of qubits with minimal wiring, maintaining high fidelity and low thermal load. The milestone confirms D-Wave’s unique position as the only firm scaling both annealing and gate-model hardware on a unified technological stack. Read more in our full article here.<br>
+January 5, 2026<br>
+University of Iowa Awarded $1.5 Million Department of Defense Grant for Quantum Materials Fabrication<br>
+The University of Iowa has received nearly $1.5 million from the U.S. Department of Defense (DoD) to bolster its quantum materials research and fabrication infrastructure. Funded via the Air Force Office of Scientific Research (AFOSR), the grant will equip the university’s MATFab Facility with advanced lithography and “nano-sandwiching” systems to develop heterogeneous nanoscale materials for sensing and communication. Led by PIs Ravitej Uppu, John Prineas, and Thomas Folland, the project also includes a regional summer school to train the next generation of the quantum workforce. Read more in our full article here.<br>
+January 4, 2026<br>
+Moscow State University and Rosatom Test 72-Qubit Neutral-Atom Quantum Prototype<br>
+Lomonosov Moscow State University (MSU) and Rosatom have successfully tested a 72-qubit neutral-atom quantum prototype, a key milestone in Russia’s national quantum roadmap. Utilizing rubidium atoms trapped in optical tweezers, the system features a unique three-zone register architecture—Computing, Storage, and Readout—to minimize crosstalk and improve reliability. While current two-qubit gate accuracy stands at 94%, the modular design is intended to support future error correction as the platform scales toward several hundred qubits by 2030. Read more in our full article here.<br>
+January 2, 2026<br>
+US Office of Naval Research Awards $9M MURI Grant to Advance Entangled Quantum Sensor Networks<br>
+The Office of Naval Research (ONR) has awarded a $9 million MURI grant to a University of Michigan-led consortium to develop distributed entangled quantum sensor networks. The project, titled “DISCO-DEQS,” aims to use quantum entanglement and error correction to surpass the Standard Quantum Limit in measurement sensitivity and bandwidth. Led by Prof. Zheshen Zhang, the multi-university team will integrate control theory and experimental testbeds to create resilient sensing systems for GPS-denied navigation, secure telecommunications, and high-precision monitoring. Read more in our full article here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/news-archive-2026/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="ada60886a71412af.html" class="prev-next">&larr; News</a>
+  
+  
+  <a href="b5e041a06533668f.html" class="prev-next">Ratan Tata Innovation Hub AP Partners with WISER and QISE to Build Andhra Pradesh Quantum Startup Ecosystem &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-07-25 19:04 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
