@@ -139,7 +139,7 @@
       <span>Qiskit</span>
       <span>143w</span>
       <span class="article-category">quantum</span>
-      <span>1754 words</span>
+      <span>1760 words</span>
       <span>9 min read</span>
     </div>
   </div>
@@ -183,7 +183,8 @@ qc_test.cx(0,1)<br>
 qc_test.measure_all()<br>
 with pulse.build(backend) as pulse_test:<br>
   pulse.call(qc_test)<br>
-pulse_test.draw()We can visualize the pulse schedule as follows:<br>
+pulse_test.draw()<br>
+We can visualize the pulse schedule as follows:<br>
 Furthermore, we can build parameterized quantum pulse circuits (see example code below). Here, we use the drag pulse shape from a single qubit gate, since drag pulse is the native pulse in IBM’s superconducting quantum machines. By using drag pulses, we can avoid population leaking outside of the computational subspace. However, we can also build a parameterized pulse from scratch depending on our needs.<br>
 from qiskit.pulse import Schedule, GaussianSquare, Drag, Delay, Play, ControlChannel, DriveChannel<br>
 def drag_pulse(backend, amp, angle):<br>
@@ -194,7 +195,8 @@ def drag_pulse(backend, amp, angle):<br>
   sigma_parameter = x_pulse.parameters[‘sigma’]<br>
   beta_parameter = x_pulse.parameters[‘beta’]<br>
   pulse1 = Drag(duration=duration_parameter, sigma=sigma_parameter, beta=beta_parameter, amp=amp, angle=angle)<br>
-  return pulse1How to simulate the pulse circuit with Qiskit Dynamics<br>
+  return pulse1<br>
+How to simulate the pulse circuit with Qiskit Dynamics<br>
 To run the pulse circuit using Qiskit Dynamics, first we need to initialize Qiskit Dynamics itself.<br>
 from qiskit_dynamics import Solver, DynamicsBackend<br>
 from qiskit_dynamics.backend import default_experiment_result_function<br>
@@ -209,9 +211,11 @@ Array.set_default_backend(“jax”)<br>
 pulse_backend = DynamicsBackend.from_backend(gate_backend, evaluation_mode=”sparse”)<br>
 solver_options = {“method”: “jax_odeint”, “atol”: 1e-6, “rtol”: 1e-8}<br>
 pulse_backend.set_options(solver_options=solver_options)<br>
-pulse_backend.configuration = lambda: gate_backend.configuration()After the initialization, let’s try to run the pulse_test (the Bell state circuit we showed in the last section) on Qiskit Dynamics.<br>
+pulse_backend.configuration = lambda: gate_backend.configuration()<br>
+After the initialization, let’s try to run the pulse_test (the Bell state circuit we showed in the last section) on Qiskit Dynamics.<br>
 results = pulse_backend.run(pulse_test).result()<br>
-counts = results.get_counts()Pulse based VQE for Ground State Energy of H2<br>
+counts = results.get_counts()<br>
+Pulse based VQE for Ground State Energy of H2<br>
 We will now perform ground state energy estimation for the H2 molecule using our Pulse-based VQE. We’ll need to start with the following preprocessing steps:<br>
 - Use ‘sto-3g’ Gaussian equations to fit the spin orbital of the H2 molecule with bond length equals 0.735.<br>
 - Through the Fermionic mapping, we get the Pauli strings and corresponding coefficients that describe the problem. Based on these Pauli strings, we can generate the observable layer for the VQE algorithm.<br>
@@ -229,7 +233,8 @@ driver = PySCFDriver(<br>
   spin=0,<br>
   unit=DistanceUnit.ANGSTROM<br>
 )<br>
-qmolecule = driver.run()We define the VQE and build our own custom pulse ansatz. Then we can use the Qiskit Dynamics module to obtain the results of the estimated energy of H2. (For more details regarding implementation based on the PAN [1] algorithm, please refer to this pulse-level VQE tool based on Qiskit-Pulse and Qiskit-Dynamics.)<br>
+qmolecule = driver.run()<br>
+We define the VQE and build our own custom pulse ansatz. Then we can use the Qiskit Dynamics module to obtain the results of the estimated energy of H2. (For more details regarding implementation based on the PAN [1] algorithm, please refer to this pulse-level VQE tool based on Qiskit-Pulse and Qiskit-Dynamics.)<br>
 def vqe(params,pauli_dict,pulse_backend, backend,n_qubit,n_shot):<br>
   print(“params in def chemistry in vqe.py: “, params)<br>
   # assert(len(params)%2==0)<br>
@@ -253,7 +258,8 @@ def vqe(params,pauli_dict,pulse_backend, backend,n_qubit,n_shot):<br>
     expect = vqe_one(prepulse, n_qubit, n_shot, pulse_backend, backend, key, value)<br>
     expect_values.append(expect)<br>
   print(“E for cur_iter: “,sum(expect_values))<br>
-  return sum(expect_values)Here is a plot showing the convergence of estimated energy while training pulse-based VQE for the H2 molecule.<br>
+  return sum(expect_values)<br>
+Here is a plot showing the convergence of estimated energy while training pulse-based VQE for the H2 molecule.<br>
 Conclusion<br>
 Pulse-level VQE offers a promising avenue for quantum optimization. By shifting the focus from gate-level parameters to quantum pulse parameters, we can address several challenges inherent in quantum computing, such as calibration and rotation errors.<br>
 We hope this blog post provides you with a deeper understanding of pulse-level VQE and its advantages. Stay tuned for more insights into the fascinating world of quantum computing!<br>
@@ -284,7 +290,7 @@ References<br>
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-07-31 13:56 UTC
+  Generated 2026-07-31 19:21 UTC
 </div>
 
 <script type="module">
