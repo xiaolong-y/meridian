@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast with Cierra Lunde and Mike Kilroy from HKA Marketing Communications — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="d76baebdaf5d414f.html" title="NSF Awards UC San Diego $18 Million MRSEC Grant for Quantum Materials Development in $108 Million National Materials Initiative">&larr; prev</a>
+    <a href="d00f360b155c2081.html" title="Cleveland Clinic and IBM Develop Quantum Machine Learning Model for Cancer Neoantigen Prediction">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Podcast with Cierra Lunde and Mike Kilroy from HKA Marketing Communications</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>2h</span>
+      <span class="article-category">quantum</span>
+      <span>5001 words</span>
+      <span>26 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Passion is Key for Communicating Quantum<br>
+Overview<br>
+With the growing momentum and investment in the quantum sector, now is the time to tell a clear and compelling story about this powerful technology. That’s the advice from HKA Marketing Communications leaders Cierra Lunde, Director, Strategic Content, and Mike Kilroy, Executive Vice President, who explain why the key to success is passion for quantum. In this episode of The Quantum Spin by HKA, Cierra describes her path to quantum tech and the strategies she uses to make quantum computing understandable for everyone. While Cierra has become a world-class communicator in a relatively short period of time, Mike weighs in based on his three decades in tech PR, including the last 7 years of quantum at HKA.<br>
+00:00 Welcome to Quantum Spin<br>
+00:34 Meet the New Director<br>
+01:25 Why Now for Quantum<br>
+03:15 Cierra’s Quantum Journey<br>
+05:16 Stories the Public Needs<br>
+07:08 Humanizing the Science<br>
+09:15 Multi Platform Strategy<br>
+12:13 GEO and Website Basics<br>
+14:48 How HKA Helps Now<br>
+16:11 Trends to Watch<br>
+18:52 Advice for Quantum Companies<br>
+21:49 Wrap Up and Where to Listen<br>
+Mike Kilroy is the Executive Vice President of HKA Marketing Communications and a veteran PR executive with decades of experience in leading award-winning communications programs for top-tier, mid-sized and emerging technology companies. Mike was instrumental in the agency transitioning to representing the quantum industry back in 2019. He leads the team and oversees the strategic direction and tactical execution for all clients.<br>
+Cierra Lunde is the Director of Strategic Content at HKA Marketing Communications, a deep tech journalist, a data analyst and a passionate advocate for deep tech.<br>
+She created The Daily Qubit newsletter and founded Universum Labs, a platform that uses emerging technologies to drive scientific discovery and innovation with open-access tools. Cierra is a founding member of the Quantum and AI Learning and Innovation Alliance. She has carved her own path in science and technology and believes that access to science and discovery is a fundamental right.<br>
+Transcript<br>
+[00:00:00] Veronica: Hello, and welcome to The Quantum Spin by HKA. I’m Veronica Combs. I’m a writer and an editor here at the agency. I get to talk every day with really smart people working on really fascinating subjects, everything in the Quantum industry, from hardware to software. On our podcast, we focus in on quantum communication, and by that I don’t mean making networks safe from hacking or entangling photons over long distance, but talking about the technology.<br>
+[00:00:26] How do you explain these complicated concepts to people who don’t have a background in science and engineering but want to understand all the same?<br>
+[00:00:34] Today we have a different episode for you. We have a new exciting development here at the agency. I’m very excited to share, as you may already know, that we have a new director of strategic content. Cierra Lunde is brand new to HKA, although she was on our podcast about a year and a half ago.<br>
+[00:00:51] So I’m so excited that you’re a colleague now, Cierra. Welcome to HKA.<br>
+[00:00:56] Cierra: Thank you so much. Really happy to be back here, Veronica, especially after so much has happened within the past year and a half. Thank you for having me back on the podcast, and I look forward to the discussion.<br>
+[00:01:07] Veronica: So I’m also excited to have with us today, our executive vice president, Mike Kilroy. He has been working on quantum technologies, getting the word out about these companies for longer than anyone I know, and he is a great leader for our agency.<br>
+[00:01:20] So glad to have you in the conversation also today, Mike.<br>
+[00:01:23] Mike: Thank, thank you very much, Veronica. Great to be here.<br>
+[00:01:25] Veronica: So, content is important, we all know this, and, certainly even more so for quantum companies which are trying to get the word out about what they do and why it’s important, and why everyone needs to, to start developing internal quantum expertise.<br>
+[00:01:38] But Mike, I thought maybe you could tell us a little bit about why we’re doing this now.<br>
+[00:01:42] Mike: Yes, absolutely. Just to give people a little background I’ve been in tech PR for over three decades. I’ve done deep tech PR for the last fifteen or so years, and I’ve been in quantum for the last seven years.<br>
+[00:01:54] I have a good feeling for when a technology’s maturing and ready to go. It just feels like the commercial value in quantum is starting to reach a boiling point. The road toward reaching commercial value is really starting to get close, and I think a lot of people are starting to feel it, even governments around the world are starting to see it.<br>
+[00:02:11] It’s your chance now for all quantum companies to get out there and tell your story. It’s the most opportune time. It’s really almost a do or die time. I think enterprises are really starting to place their bets on where they want to go and who they want to use, what modality they want to try, and what software they want to use.<br>
+[00:02:26] I don’t think there’s been any more opportune time to communicate your story to everybody. It just can’t be overemphasized now. So that segues perfectly to bringing Cierra on board HKA.<br>
+[00:02:38] She’s one of the best quantum communicators in the world. She has a complete knack for understanding the science, understanding the technology, understanding the market at the same time, and who the audience is. All those things are so important and very rare to find in one person, and Cierra is that person.<br>
+[00:02:54] We’re just very happy to have her and to help our clients not just communicate through public relations but also through content marketing, which we’ve done in the past, but Cierra is really, dedicated and a real pro.<br>
+[00:03:06] Veronica: Yes. I was so excited because Cierra does have that background of understanding the science, but also having a perspective on the business world and just being a very clear and sharp communicator.<br>
+[00:03:15] So Cierra, when I first met you, you were the editor of The Daily Qubit, but you’ve had a lot of different experiences. Tell us why you’re in this role.<br>
+[00:03:24] Cierra: Absolutely. First, thank you so much. Those were very kind and generous words from both of you. That means a lot to me. So I studied physics in university, fell in love with quantum mechanics.<br>
+[00:03:34] I ended up going on a bit of a non-traditional path, away from physics originally, but I found my way back to science through technology actually, because I realized that it was quite easy to build a technical skill set with available resources online. And at one point in my life, I just felt so pulled towards writing and science, and I really wanted to get back into it, and I decided to start with quantum computing because that had really piqued my interest at the time.<br>
+[00:03:58] So I started The Daily Qubit, which was my entry into the world of quantum computing. Since then, I’ve had a really interesting experience being part of the quantum industry. I’ve been a quantum journalist, a quantum data analyst, both for a major quantum publication, as well as director of strategic content for the major quantum publication.<br>
+[00:04:19] I’ve also traveled around the world speaking at different events about quantum to people who are both within the quantum industry and people who are wanting to hear more about the quantum industry. I’ve also done the Quantum World Tour, where I’ve gotten to kind of understand how national ecosystems are formed and while they’re building up their quantum capability.<br>
+[00:04:39] So everything has really centered around a lot of talking, a lot of writing and a lot of learning. So it’s been an incredible experience. I love quantum mechanics, and I absolutely love working in quantum technology<br>
+[00:04:54] Veronica: Yes. Whenever I feel stuck at my desk, I just check out your LinkedIn to see where you are at any given day.<br>
+[00:05:00] I think you were in Poland recently, and now you – I think you’ve been to Singapore and maybe Saudi Arabia as well–so a real view into the global ecosystem.<br>
+[00:05:09] Cierra: Yeah. I was just in Poland, in Germany, and I just got back from Switzerland, so it’s been, oh great … an interesting year. Yeah.<br>
+[00:05:16] Veronica: So given your perspective on the industry and your knowledge of, your understanding of quantum mechanics and science, what stories do you think are not being told about the quantum industry here in the middle of 2026?<br>
+[00:05:30] Cierra: That’s a great question. So I think when it comes to quantum technology, we focus within the quantum industry a lot on the technical challenges. But the issue that I think we tend to not do as much or as well in certain cases is how do we translate the technical, bottlenecks and the technical challenges to a broader public?<br>
+[00:05:51] Something that I’d really like to see quantum companies do more of is communicating to the broader public about why it’s important to care about quantum technology. It’s one of those things where there’s a very large group of people that thinks quantum technology is a specialist technology that most people won’t touch or interact with.<br>
+[00:06:10] And it’s true that most people will not touch or interact with a quantum computer, but the applications that we’re envisioning for quantum computers specifically will have a large impact and will touch a lot of communities. I would like to see more work done around educating the broader public about where they can expect to see impact in their daily lives because of the things that quantum technologies will enable.<br>
+[00:06:33] Veronica: Right. I was talking with a podcast guest recently about battery research, and you know, you can tell someone, “You know how EV batteries explode sometimes and no one wants that in their garage? We need the capability of quantum machines to figure out these new, uh, materials and build better batteries and improve safety.”<br>
+[00:06:53] And then I think that’s one way to get into it without having to go into the chemistry of batteries and the challenges of rare earth materials and all that. But yeah, we’re always looking for ways to tell the story that will, like you said, bring people in and see the broader relevance. Mike and I always enjoy talking with the actual physicists at companies and the engineers and the chemists who are doing the work.<br>
+[00:07:15] Have you found that talking with the people doing the day-to-day work is a good way to get some of those stories out?<br>
+[00:07:20] Cierra: Yes, I do, actually. And so something that I love about having conversations with scientists is they’re incredibly passionate about their work, and if you want to sit down with a scientist and get them to talk to you about what they’re doing, they’re usually incredibly excited to do so.<br>
+[00:07:36] And it’s really neat to kind of see someone go through the progression of explaining this thing that seems really niche and really dense, but they’re really excited about it. Whenever I speak to those groups of people, it’s important to understand that there’s a lot of technical jargon that comes with that.<br>
+[00:07:49] There’s a lot of terms that are very much used within scientific communities that don’t translate well to broader audiences. And so my work is really to be the middle person that’s taking, taking the information from the scientists, really understanding their passion, their vision, what they want to accomplish, and then pulling from that the significance and the impact that that will have on the broader community, and along the way, translating some of those terms that don’t always translate well to the broader public.<br>
+[00:08:14] The best conversations that I’ve had within the quantum industry have been trying to really get the human element. So being in laboratories and really getting close to the work and the people who are doing the work and allowing them just the space and the time to talk about how they got into this.<br>
+[00:08:30] People have really intensely passionate stories about why they’re working in quantum technology, and they’re very, they’re very close to it, and it takes someone who’s really close to it and really passionate about it because there is so much skepticism. We have really long timelines. It can be difficult to understand at times.<br>
+[00:08:46] So really being able to get the human side and then bring that to a more general public is really, I think, really important, and it’s also something I really enjoy doing.<br>
+[00:08:55] Veronica: And I think the scientists are always sort of a reality check, right? Like we’re always looking to highlight, you know, progress and milestones, and this is a real breakthrough, and they’re really a voice of, “Well, yes, that’s important, but these are our next challenges,” and they sort of balance out the hype, I think, in a really, really powerful way.<br>
+[00:09:14] Cierra: Absolutely.<br>
+[00:09:15] Veronica: Mike and I have worked with obviously traditional journalists, but we’ve also worked with podcasters and YouTubers and Substack writers and, um, you really do have to communicate across all platforms today. Just putting your information out there once or promoting your company only on your website or maybe on your, your X account is just not enough anymore.<br>
+[00:09:34] Do you have any advice for companies who are trying to reach across platforms, Cierra, to get the word out in all these different ways?<br>
+[00:09:42] Cierra: Absolutely. I think that there are a few different things that companies need to understand when it comes to their communication. Um, you’re communicating because you want to reach the correct audience, which can be difficult in quantum because we need to identify, some companies are needing to build their credibility, so they need to reach more of the investor audience or the academic audience.<br>
+[00:10:02] And then there are more developed quantum companies that need to reach their end users, and that’s an entirely different audience that requires an entirely different strategy, and these people aren’t always on the same platform. And most quantum companies actually need to do both, so they need to take in the full breadth of things that are available to them.<br>
+[00:10:19] The other thing that I really want quantum companies to understand is that the way that people are getting their information and their data these days is changing right before our eyes. So we know that whereas we used to do Google searches, we would rely on traditional SEO practices, we’re now using LLMs quite a bit to get summaries of updates, to get our news.<br>
+[00:10:39] And so it’s important to ensure that you’re still building a really solid foundation on your own website. You’re writing really credible, fact-based pieces that have real data, real credible data because you want to show up in those search engines so that you’re discoverable. And then in order to reach your audience, you have to really get creative with the platforms that you’re on.<br>
+[00:10:59] I find that most of the quantum industry should be on LinkedIn. That’s definitely the one that I would recommend the most. But there is an argument to be made for Instagram or short-form video, whether that’s YouTube or Instagram or TikTok. And then of course, if you need to reach quantum developers, where are they?<br>
+[00:11:16] Cierra: Usually on Reddit or also some sort of combination of short-form video. It’s not enough to do one. You need all of it. You need the long-form content, you need the social media, you need lots of different ways to take in media. It requires a lot.<br>
+[00:11:29] Mike: I would just like to add to what Cierra just said. It’s a lot about finding those audiences that is tough, and I think the key is a lot of it is attracting the right audience, right? So you really have to have content that attracts the audience. And, people and clients will ask, “Well, who’s our audience?”<br>
+[00:11:43] Well, it’s obviously the quantum team leaders in enterprises and, you know, research institutions. But, it could be the lower-level technical specialist who goes, “I think we gotta use these guys,” their software is amazing. And there’s always a person in the C-suite who’s starting to see quantum as a have-to-do right now, and they’re going to start deciding who they use as a company.<br>
+[00:12:01] So I guess what I’m just saying, choices are being made of what vendors are going to use now. I think that’s starting to happen. So, uh, so anything you can do to make sure you’re out there and visible and you’re giving compelling content is really important<br>
+[00:12:13] Veronica: And we used to talk about SEO, you know, search engine optimization, but now we’re all thinking about GEO, which is generative engine optimization, and that’s, that’s basically making sure that the LLMs know about your company and hopefully return accurate and hopefully positive information if you’re querying Grok or ChatGPT or Gemini or Copilot or any of the, any of the engines out there.<br>
+[00:12:37] And it’s really interesting to think about how this shifts things because each engine tends to favor a different source. Some like Wikipedia, some prefer Reddit, some are more Google results-centric.<br>
+[00:12:52] That’s really something that we’ve been thinking about and, I think one really easy thing is Wikipedia, right? I think not all quantum companies have a Wikipedia page, but they certainly need one if they want ChatGPT to recommend their work or their product. Cierra, did you have any thoughts on this generative engine optimization that is a new thing we’re all thinking about here in the marketing world?<br>
+[00:13:12] Cierra: Yeah, absolutely. I think that when it comes to generative AI, it’s going to feed back to people who are searching for information. It will feed back whatever it interprets the messaging for your company,<br>
+[00:13:24] the messaging, the FAQs, all of these are really, really important because your site is going to be scraped to be included in generative AI, and so you want to make sure that your messaging is consistent. There’s very factual information about what your company is doing, not vague statements, but very specific statements about what your company is doing, what sorts of industries it serves, what sorts of end users you’re looking to target.<br>
+[00:13:47] This is a place where we’ve started to see a lot of companies in general kind of deprioritize the website and really lean on generative content on the website that can be very vague and doesn’t provide a lot of value.<br>
+[00:14:00] And so this is a place that I think companies should really, really understand how that information is used and that this should be high on their list of something they need to keep.<br>
+[00:14:10] Veronica: Yeah, for sure. I mean, it used to be your website and LinkedIn, and then it was website, LinkedIn, Reddit, and then website, LinkedIn, Facebook, Twitter, X, you know, the list just keeps growing.<br>
+[00:14:22] And Like you said, you have to be present and accurate on all, all those sources to really get attention of the LLMs. The other factor is frequency.<br>
+[00:14:32] One of the reports I read was that the engines like frequency,<br>
+[00:14:37] Veronica: We used to always focus on page views, right? Unique monthly visitors. But now you have to cast a broader net and think about all the sources, not just the biggest ones. Mm-hmm. Yep.<br>
+[00:14:48] Mike, what can we help these companies with now that we have Cierra on board?<br>
+[00:14:53] Mike: The LLM part is huge. All companies have to figure that out now like they figured out search in the past, so this is going to be huge.<br>
+[00:14:59] PR is a huge part of it, media relations, securing the sources for their stories. But like you said, all these other sources they’re using and including your own content. That’s where we can play a critical role in taking care of both your communications externally on the media relations front, and then your own external communications coming strictly from you.<br>
+[00:15:19] You’re going to need both, companies need to understand that. And again, the time is now. I’m not into making sales pitches generally. But I just know that with all the momentum happening and the advances every day, you have got to get out there in an aggressive, very smart, strategic way, and that’s what Cierra specializes in on the content marketing front, and we’ve been specializing in, you know, for a long time and doing a great job on the media relations front.<br>
+[00:15:44] Veronica: Yes. Small but mighty. That’s HKA.<br>
+[00:15:48] Mike: Yeah. And I always tell people we’re the only, you know, media agency in the world that has so many people dedicated to the quantum industry every day. You can be the largest communications agency in the world, you don’t have the numbers that we have dedicated to this every day.<br>
+[00:16:02] And it does take that to understand everything. It takes that knowledge to really do the right job<br>
+[00:16:09] Veronica: For sure. For sure. Cierra, are there any topics that you’re keeping a particularly close eye on, or any scientific advances or partnerships in the quantum world?<br>
+[00:16:19] Cierra: Oh, yeah, I love that question.<br>
+[00:16:21] I recently read an article on the use of AI to help generate quantum circuits and why we should be really wary of that, and how this relates back to the scaling challenges with AI and the amount of data that it consumes, and I find this really interesting. So since the beginning, I’ve really enjoyed this kind of convergence between AI and quantum.<br>
+[00:16:41] When I started in quantum, people were saying this was really far off and not something that we really needed to talk about prevalently, and across the two years that I’ve been specifically in quantum, this has changed a lot, and we’re starting to see a lot of progress. So I’m always super interested to see applications that involve both quantum and AI, whether that’s AI for quantum or quantum for AI.<br>
+[00:17:01] What I’ve also started to realize over the course of the past year specifically, is the more that I involve myself in the quantum industry, the more I realize that there were other conversations outside of the technology, the technical parts itself, that are really relevant, such as what sort of lessons can we take from AI to understand, um, more around responsible technology development, which is super, super relevant for quantum.<br>
+[00:17:25] And then how do technologies like quantum change the way that we think about education? And so these are two topics that are also very near and dear to my heart, and that I’ve had a lot of conversations about recently.<br>
+[00:17:36] Veronica: Yes, and on the education angle, we were talking the other day about developers and how, the challenge for lots of the quantum companies is introducing developers to their software, to their hardware, you know, moving up the abstraction layer so you don’t have to understand physics to, to work with the quantum hardware.<br>
+[00:17:50] I’ve been spending more time on some of the developer websites and on GitHub and just checking out the activity and seeing what’s going on there, so that seems like another area to watch this year. Absolutely. Well, Mike, do you have any recommendations for the quantum industry in general about communicating in this little next few months?<br>
+[00:18:08] Mike: I just want to support what Cierra was saying about just loving the quantum industry.<br>
+[00:18:12] That’s what’s needed to really do a good job. You have to really love it. The key is wanting to understand it.<br>
+[00:18:17] And there’s been many that we know that just don’t take the time or effort because they just don’t enjoy it, you know? So I think we really enjoy it, and I share Cierra’s enthusiasm for the whole industry and where it’s all going. And I do have to say, I’m taking my first vacation of the year, and I still am going to check out the Quantum Chapel in Barcelona that has the quantum computer from Qilimanjaro with the Barcelona supercomputer.<br>
+[00:18:40] I have to see that for myself. So that’s the enthusiasm I think that we have in HKA.<br>
+[00:18:45] Veronica: Yes. We’re all looking forward to your pilgrimage to the Quantum Chapel here in Barcelona, Mike.<br>
+[00:18:49] Mike: Yes.<br>
+[00:18:50] Veronica: Eager to hear a report back. Cierra, what about you? What advice do you have to quantum technology companies trying to get the word out about their work?<br>
+[00:18:59] Cierra: Yeah. The enthusiasm. I know I said this, Mike, you said this, and I’m going to say it again. The love is paramount because there are so many challenges we’re up against. We face challenges on where we’re getting money because we need money. Long term, quantum doesn’t always appeal to the traditional venture capital route because you need lots of money for a long period of time before you get a payoff.<br>
+[00:19:18] We need to figure out the workforce thing. That’s a whole problem that we have to figure out. There’s a lot of engineering challenges across all of the modalities. Um, there’s the question of how do you educate your end user? How do you get them to understand that they should start thinking about quantum technology?<br>
+[00:19:33] There’s of course, all of the concerns we have with the implementation of PQC and how do we educate people about the urgency of that so that you really, really, really have to love what you’re doing because there are a lot of challenges. The other thing that I would really advise for quantum companies is to strike the right balance.<br>
+[00:19:49] So you cannot sacrifice accuracy or scientific rigor with how you communicate. It has to be scientifically accurate. If you take any shortcuts with scientific accuracy, it’s downhill from there. And then the other part is you have to do this while still keeping the language broad and accessible.<br>
+[00:20:07] And this is incredibly difficult to do because there is this kind of layer of education that needs to exist in order to reach more people. I’m obviously incredibly biased because I love quantum and I work in quantum, but I do find that quantum technology is very unique in that– there really is an art to how you communicate about quantum, and this is something I’m very passionate about and, and why I wanted to work with HKA because I know they’re really passionate about it.<br>
+[00:20:29] Mike: I would just add that sometimes clients don’t understand it’s hard work. Communication is hard work, and I think there’s a sense that, you know, if you hire a lawyer, I’m going to listen to the lawyer.<br>
+[00:20:38] If I hire an accountant, I’m going to listen to the accountant. But anybody can do communications, and it’s not really true. You have to have the expertise, and you have to have the knowledge, and we have all that knowledge of communicating, but also the knowledge of the industry. That’s a big combination that I’ve yet to see anyone even match, match what we do.<br>
+[00:20:53] You have to point yourself in the right direction. You have to think strategically and then think tactically of how to get your story out and how to continue to keep getting your story out ’cause, you know, your audiences are a fickle beast.<br>
+[00:21:04] The media’s a fickle beast. They can forget what you do, forget your modality, forget your approach very quickly if you’re not constantly out there<br>
+[00:21:12] Veronica: Yes, you do have to be creative, you have to be open to different platforms, you have to find the reporters and the analysts and the substackers and the YouTubers who have that passion and are just really curious about the science and the progress and the potential and, um, I think that’s why you can’t just dust off your standard tech marketing plan.<br>
+[00:21:29] You really have to know the industry and the challenges and the funding and the workforce and the government investment, all those things. That is what makes it such a unique industry and why HKA has spent so much time and invested so much effort in developing this expertise and helping our clients get the word out and attract investors or clients or whatever they need to make progress.<br>
+[00:21:49] I’m really excited about working with you, Cierra, and I’m so glad you’ve joined us here at HKA, and I know you’ll be writing for The Quantum Spin blog and, hopefully we’ll, we’ll have another conversation soon on the podcast. So thank you both so much for joining me today.<br>
+[00:22:02] Cierra: Thank you for having me again. It’s been great.<br>
+[00:22:04] Mike: Thank you, Veronica<br>
+Host Veronica Combs is a quantum tech editor, writer and PR professional. She manages public relations for quantum computing and tech clients as an account manager with HKA Marketing Communications, the #1 agency in quantum tech PR. You can find them on X, formerly known as Twitter, @HKA_PR. Veronica joined HKA from TechRepublic, where she was a senior writer. She has covered technology, healthcare and business strategy for more than 10 years. If you’d like to be on the podcast yourself, you can reach her on LinkedIn, Veronica Combs, or you can go to the HKA website and share your suggestion via the Contact Us page.<br>
+August 1, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/podcast-with-cierra-lunde-and-mike-kilroy-from-hka-marketing-communications/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="d76baebdaf5d414f.html" class="prev-next">&larr; NSF Awards UC San Diego $18 Million MRSEC Grant for Quantum Materials Development in $108 Million National Materials Initiative</a>
+  
+  
+  <a href="d00f360b155c2081.html" class="prev-next">Cleveland Clinic and IBM Develop Quantum Machine Learning Model for Cancer Neoantigen Prediction &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-08-01 13:15 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>

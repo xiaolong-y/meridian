@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleveland Clinic and IBM Develop Quantum Machine Learning Model for Cancer Neoantigen Prediction — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="dd6df7cdfc6ebaec.html" title="Podcast with Cierra Lunde and Mike Kilroy from HKA Marketing Communications">&larr; prev</a>
+    <a href="8909ce4d6fb5de18.html" title="IonQ Completes Acquisition of SkyWater Technology, Establishing Vertically Integrated Quantum Platform">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Cleveland Clinic and IBM Develop Quantum Machine Learning Model for Cancer Neoantigen Prediction</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>3h</span>
+      <span class="article-category">quantum</span>
+      <span>587 words</span>
+      <span>3 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Researchers from the Cleveland Clinic and IBM Research have developed a quantum machine learning framework to predict which tumor gene mutations generate immunogenic neoantigens—abnormal cell-surface proteins that trigger a therapeutic T-cell immune response. Published in Science Advances under the title “Quantum convolutional HLA immunogenic peptide prediction (Q-CHIPP): Next-generation neoantigen prediction with quantum neural network,” the study combines quantum convolutional neural networks (QCNNs) with biomedical domain knowledge to address data scarcity and overfitting in precision immuno-oncology.<br>
+Predicting immunogenic neoantigens remains a major challenge in developing personalized cancer vaccines and targeted immunotherapies. While a single tumor can express thousands of mutant candidate peptides, only a tiny fraction are bound by the major histocompatibility complex (MHC) and subsequently recognized by T-cell receptors (TCRs). Classical machine learning models frequently suffer from overfitting when trained on small, noisy biological datasets, yielding poor predictive generalization when evaluated against previously unidentified antigens. The joint team tackled this data-inefficiency bottleneck by designing a QCNN architecture capable of extracting meaningful biological patterns from training sets with as few as 150 samples.<br>
+                      [ Q-CHIPP Dual-Model Combinatorial Architecture ]<br>
+  Classical Neoantigen Inputs ──► Binary 5-Bit Amino Acid Encoding ──► Quantum State Mapping<br>
+                                                                             │<br>
+         ┌───────────────────────────────────────────────────────────────────┴──────────────────────────────────┐<br>
+         ▼                                                                                                      ▼<br>
+  MHC Class I Binding Model                                                                  T-Cell Immunogenicity Model<br>
+  (Positions 2, 4, 5, 9)                                                                     (Positions 3, 5, 6, 7)<br>
+         │                                                                                                      │<br>
+         └─────────────────────────────────┬────────────────────────────────────────────────────────────────────┘<br>
+                                           ▼<br>
+                       Combinatorial Filter: Positive-in-Both<br>
+                                           │<br>
+                                           ▼<br>
+                 Predicted Immunogenic Neoantigen Burden & Clinical Stratification<br>
+The Q-CHIPP framework integrates two distinct QCNN models targeting HLA-A*02:01-restricted 9-mer peptides. The first model predicts peptide-MHC binding using anchor-site residues (amino acid positions 2, 4, 5, and 9), while the second predicts TCR recognition using contact-site residues (positions 3, 5, 6, and 7). To prevent binding characteristics from confounding immunogenicity predictions, the TCR model was trained exclusively on experimentally confirmed MHC binders. A peptide is classified as an immunogenic neoantigen only when both independent QCNN channels return a positive prediction.<br>
+To execute the algorithms on pre-fault-tolerant quantum hardware, the team implemented empirical noise mitigation strategies—including Pauli twirling, dynamical decoupling, and controlled shot-based sampling (up to 20,000 shots per circuit execution)—alongside a warm-start transfer protocol where simulator-optimized weights were fine-tuned directly on physical QPUs. The researchers scaled their approach to full-length 9-mer peptide modeling across 46 qubits on the IBM Quantum System One deployed at the Cleveland Clinic. Under identical parameter constraints and low sample sizes, the error-mitigated QCNN achieved a 6% increase in classification accuracy over parameter-matched classical convolutional neural networks.<br>
+                       [ Full-Length Peptide QCNN Circuit Execution ]<br>
+  Full 9-Mer Sequence Input  ──► 45 Classical Bits (9 Amino Acids × 5 Bits) + 1 Padding Bit<br>
+                                 │<br>
+                                 ▼<br>
+  IBM System One Hardware    ──► 46-Qubit Pyramid Circuit (Alternating Convolutions & Pooling)<br>
+                                 │<br>
+                                 ▼<br>
+  Error Mitigation Stack     ──► Pauli Twirling + Dynamical Decoupling + 20,000 Shots / Pass<br>
+The researchers validated Q-CHIPP’s clinical relevance by evaluating a cohort of 111 HLA-A*02:01-positive lung cancer patients treated with immune checkpoint inhibitors, processing 209,889 candidate peptides via a sliding window around somatic mutations. Patient stratification based on Q-CHIPP’s predicted immunogenic neoantigen burden demonstrated a statistically significant separation in overall survival (P = 0.0085), outperforming standard NetMHCpan binding rank thresholds (P = 0.0275). Notably, Q-CHIPP identified 25,542 unique candidate immunogenic peptides missed by classical benchmark models, showing strong selection for key TCR-interaction residues at position 7.<br>
+Review the open-access study in Science Advances here, explore research updates on the Cleveland Clinic Lerner Research Institute Portal here, and examine our previous coverage of Cleveland Clinic and IBM’s quantum workflow for protein simulation here and heterogeneous quantum-classical computing for molten salts here.<br>
+August 1, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/cleveland-clinic-and-ibm-develop-quantum-machine-learning-model-for-cancer-neoantigen-prediction/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="dd6df7cdfc6ebaec.html" class="prev-next">&larr; Podcast with Cierra Lunde and Mike Kilroy from HKA Marketing Communications</a>
+  
+  
+  <a href="8909ce4d6fb5de18.html" class="prev-next">IonQ Completes Acquisition of SkyWater Technology, Establishing Vertically Integrated Quantum Platform &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-08-01 13:15 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
