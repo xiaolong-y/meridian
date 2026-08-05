@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IonQ and EPB Partner to Establish Tennessee Quantum Communications Research Center — Meridian Reader</title>
+  <title>Quantum Corridor, Ciena, and Toshiba Validate 1.6 Tb/s Quantum-Safe Encryption on Live Fiber Network — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,49 +126,59 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="0d469b7028515e7c.html" title="JIJ Raises $5.2 Million, Expands Qamomile Software Platform, and Joins Quantinuum Partner Program">&larr; prev</a>
-    <a href="bead977aec24606d.html" title="Fujitsu, Monash University, and CSIRO Form Australia–Japan Quantum Research Partnership">next &rarr;</a>
+    
+    <a href="0c00a9d775a61bd9.html" title="D-Wave and Nasdaq Verafin Partner to Develop Quantum Applications for Financial Crime Detection">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">IonQ and EPB Partner to Establish Tennessee Quantum Communications Research Center</h1>
+    <h1 class="article-title">Quantum Corridor, Ciena, and Toshiba Validate 1.6 Tb/s Quantum-Safe Encryption on Live Fiber Network</h1>
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>1d</span>
+      <span>3h</span>
       <span class="article-category">quantum</span>
-      <span>325 words</span>
-      <span>2 min read</span>
+      <span>479 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Quantum hardware and networking company IonQ (NYSE: IONQ) and Chattanooga electric power and telecommunications provider EPB have announced plans to launch the Tennessee Quantum Communications Research Center. Based in Chattanooga, Tennessee, the research and development innovation laboratory will be directly connected to an operational fiber optic communications network. The initiative aims to integrate commercial quantum memory units directly into live telecommunications infrastructure to support long-distance quantum information storage and routing.<br>
-The center will be funded through a $15 million, five-year financial commitment from IonQ and staffed by IonQ research scientists. EPB will supply the live fiber optic network testbed and act as the primary commercialization partner, translating laboratory R&D into public- and private-sector use cases across the Tennessee Valley corridor. The project is projected to generate a regional economic impact up to two to three times the initial investment and support approximately two dozen direct and indirect jobs.<br>
-A core focus of the new facility is the installation of commercial quantum memory hardware directly onto an active network. Quantum memories store and retrieve quantum states over fiber optic channels, serving as foundational building blocks for interconnecting discrete quantum processors across extended distances. Establishing on-network R&D capabilities is designed to accelerate the development of quantum repeaters, distributed quantum computing architectures, and quantum network protocols.<br>
-The Tennessee Quantum Communications Research Center expands upon existing collaborations between EPB and IonQ at the downtown EPB Quantum Center. The facility already houses the EPB Quantum Network—a fiber-optic quantum key distribution and validation environment—alongside an on-premises IonQ Forte Enterprise trapped-ion quantum computer currently undergoing preparations for commercial deployment.<br>
-The initiative connects ongoing quantum research activities across regional universities, national laboratories, and commercial facilities in Tennessee. Future development plans include linking external quantum research nodes, educational centers, and enterprise facilities directly to EPB’s quantum networking infrastructure.<br>
-Review the official joint announcement on IonQ Investor here, and examine our previous coverage of IonQ and EPB’s Quantum Innovation Center Launch here.<br>
-August 4, 2026</p>
+    <p>Midwest network infrastructure developer Quantum Corridor, optical networking provider Ciena (NYSE: CIEN), and Toshiba have completed a field trial of high-speed quantum-safe optical encryption across a live commercial network. Conducted on Quantum Corridor’s production fiber network connecting data center nodes between Chicago, Illinois, and Hammond, Indiana, the trial validated 1.6 Terabits per second (Tb/s) of encrypted optical capacity secured simultaneously by post-quantum cryptography (PQC) and Quantum Key Distribution (QKD).<br>
+The field deployment utilized Ciena’s Waveserver platform powered by WaveLogic 6 Extreme (WL6e) coherent optics to deliver wire-speed, optical-layer AES-256-GCM encryption. The platform ran NIST-certified post-quantum cryptographic algorithms in tandem with Toshiba’s QKD servers, which continuously fed quantum-generated symmetric key material directly into Ciena’s optical encryption system. The trial operated alongside existing WaveLogic 5 Extreme (WL5e) 800G encrypted traffic over the same RLS photonic line system, demonstrating that legacy 800G optical links can be upgraded to support PQC algorithms via software without replacing physical line hardware.<br>
+                      [ Live 1.6 Tb/s Hybrid Quantum-Safe Architecture ]<br>
+  Chicago Data Center (ORD 10) ◄──────────────── 21.8 km Metro Fiber ────────────────► Hammond Data Center (Digital Crossroad)<br>
+                                                       │<br>
+         ┌─────────────────────────────────────────────┴─────────────────────────────────────────────┐<br>
+         ▼                                                                                           ▼<br>
+  Physical Layer Security (Toshiba QKD)                                     Algorithmic Security (NIST PQC)<br>
+  • Real-Time Symmetric Key Generation (1-s Rotation).                      • Software-Upgradable PQC Protocols.<br>
+  • Optical Fiber Co-Propagating Multiplexing.                              • AES-256-GCM Optical Layer Encryption.<br>
+  • Interoperable ETSI API Key Injection via Ciena.                         • Ciena WaveLogic 6 Extreme (1.6 Tb/s).<br>
+Key Technical Insights from Ciena and Quantum Corridor Discussions<br>
+Recent commentary from Ciena portfolio marketing and Quantum Corridor Chief Product Officer Patrick Scully highlights several operational dynamics behind the deployment:<br>
+- Hybrid Defense-in-Depth: The trial represents the first time a 1.6 Tb/s live channel has been secured simultaneously with both PQC (mathematical defense) and QKD (physics-based defense), neutralizing “harvest now, decrypt later” threats where adversaries store intercepted data for future quantum decryption.<br>
+- Coexistence Over Single Fiber Pairs: The deployment successfully validated Toshiba’s photonic multiplexing capability, enabling Dense Wavelength Division Multiplexing (DWDM) QKD channels and classical data traffic to coexist over a single fiber pair without requiring dedicated dark fiber infrastructure.<br>
+- Crypto-Agility & Reduced Upgrade Friction: By embedding encryption directly into the optical transport layer via compact modules on the Waveserver platform, enterprises can achieve compliance with government mandates—such as those from the U.S. and France’s ANSSI—through simple software upgrades, avoiding the massive cost and complexity of replacing thousands of edge routers.<br>
+The accomplishment builds on Quantum Corridor and Toshiba’s previous cross-state QKD demonstration. As a member of the Bloch Tech Hub and the Chicago Quantum Exchange ecosystem, Quantum Corridor is scaling its planned 263-mile fiber network to serve research universities, defense contractors, financial institutions, and AI workloads requiring high-bandwidth, quantum-resistant data transmission.<br>
+Review the official trial announcement on Ciena Investor here, inspect the leadership interview on the Ciena Insights Blog here, and examine our previous coverage of Quantum Corridor and Toshiba’s First Cross-State QKD Demonstration here.<br>
+August 5, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantumcomputingreport.com/ionq-and-epb-partner-to-establish-tennessee-quantum-communications-research-center/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/quantum-corridor-ciena-and-toshiba-validate-1-6-tb-s-quantum-safe-encryption-on-live-fiber-network/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
+  <span></span>
   
-  <a href="0d469b7028515e7c.html" class="prev-next">&larr; JIJ Raises $5.2 Million, Expands Qamomile Software Platform, and Joins Quantinuum Partner Program</a>
-  
-  
-  <a href="bead977aec24606d.html" class="prev-next">Fujitsu, Monash University, and CSIRO Form Australia–Japan Quantum Research Partnership &rarr;</a>
+  <a href="0c00a9d775a61bd9.html" class="prev-next">D-Wave and Nasdaq Verafin Partner to Develop Quantum Applications for Financial Crime Detection &rarr;</a>
   
 </div>
 
