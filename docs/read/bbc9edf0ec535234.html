@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qarakal Quantum Unveils “Pangaea” Modular Architecture to Cut Qubit Overhead by 10X — Meridian Reader</title>
+  <title>D-Wave Demonstrates Two-Qubit Gate Breakthrough for Dual-Rail Erasure Qubits in Nature — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,56 +126,56 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="bbc9edf0ec535234.html" title="D-Wave Demonstrates Two-Qubit Gate Breakthrough for Dual-Rail Erasure Qubits in Nature">&larr; prev</a>
-    <a href="5b4a6d9fa436625e.html" title="Wise guy">next &rarr;</a>
+    <a href="18be132f1f2c20c4.html" title="enQase and Light Rider Partner to Deliver Integrated Quantum-Safe Communications Architecture">&larr; prev</a>
+    <a href="2d8c3ddf90515478.html" title="Qarakal Quantum Unveils “Pangaea” Modular Architecture to Cut Qubit Overhead by 10X">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Qarakal Quantum Unveils “Pangaea” Modular Architecture to Cut Qubit Overhead by 10X</h1>
+    <h1 class="article-title">D-Wave Demonstrates Two-Qubit Gate Breakthrough for Dual-Rail Erasure Qubits in Nature</h1>
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>1d</span>
+      <span>12h</span>
       <span class="article-category">quantum</span>
-      <span>356 words</span>
-      <span>2 min read</span>
+      <span>531 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Israeli quantum startup Qarakal Quantum Ltd. has officially launched Pangaea, a modular, three-dimensional superconducting quantum computing architecture engineered to reduce the physical qubit requirements of fault-tolerant systems by an order of magnitude. Published in an arXiv pre-print titled “The Pangaea Architecture: Fault-Tolerant Heterogeneous Topological Codes via a Quantum Bus,” the design resolves the long-standing routing bottleneck of two-dimensional lattice surgery by introducing an IP-protected quantum bus to mediate logical operations between physically separated 2D topological code patches.<br>
-Rather than relying on direct physical adjacency, Pangaea uses an auxiliary gauge-code strip as its quantum bus. The bus reconstructs multi-qubit joint Pauli operators and supports native operations between heterogeneous topological code families (such as joint parity measurements between surface codes and color codes) while preserving nearest-neighbor physical connectivity. By replacing traditional planar lattice surgery, the architecture scales multi-qubit interactions using O(dNL) physical qubits for NL distance-d logical qubits—a significant reduction from the O(d2NL) footprint required by standard 2D surface-code layouts.<br>
-                      [ Pangaea Modular Bus Architecture ]<br>
-                                        │<br>
-     ┌──────────────────────────────────┴──────────────────────────────────┐<br>
-     ▼                                                                     ▼<br>
-  Specialized Code Patches (Memory/Logic)                 Auxiliary Gauge-Code Quantum Bus<br>
-  • Surface Codes & Color Codes.                         • Mediates Long-Range Joint Parity Measurements.<br>
-  • Dedicated Functional Module Roles.                   • Native 15-to-1 Magic-State Distillation Module.<br>
-  • Hardware Specialization per Patch.                   • Scales at O(dNL) vs O(d2NL) Physical Qubits.<br>
-In fault-tolerance simulations using pseudo-threshold noise models at a scale of 50 logical qubits, Pangaea achieved a matched logical error rate using 10 times fewer physical qubits than planar surface-code architectures. The architecture also demonstrated measurement-based fault-tolerant CNOT primitives and a native 15-to-1 magic-state distillation module, significantly lowering wiring density, control electronics overhead, and cryogenic cooling requirements.<br>
-Qarakal Quantum’s architecture-first approach reflects an industry shift away from monolithic processor scaling toward modular, backplane-connected system design—drawing an analogy to classical bus architectures. By allowing computational, memory, and routing modules to be configured and scaled independently, Pangaea provides a streamlined pathway for enterprises and research institutions to execute large-scale fault-tolerant quantum algorithms on near-term hardware footprints.<br>
-Review the official launch announcement on GlobeNewswire here, examine the pre-print research paper on arXiv here, and explore technical details via the Qarakal Quantum Architecture Hub here.<br>
-August 5, 2026</p>
+    <p>Quantum hardware developer D-Wave Quantum Inc. (NASDAQ: QBTS) has published peer-reviewed research in Nature demonstrating a fast, high-fidelity two-qubit entangling gate for superconducting dual-rail cavity qubits. Titled “An entangling gate for dual-rail erasure qubits,” the study validates a foundational milestone in D-Wave’s gate-model development strategy. Led by Chief Scientist Dr. Robert Schoelkopf, Chief Development Officer Dr. Trevor Lanting, and CEO Dr. Alan Baratz, the research addresses the physical qubit overhead of fault-tolerant quantum computing by converting dominant photon loss events into hardware-detectable erasure errors at known spacetime locations.<br>
+The experimental demonstration introduces a Swap–Wait–Swap (SWS) controlled-phase (CZ) gate executed between dual-rail cavity qubits linked via a tunable transmon coupler. Operating at a gate speed of approximately 500 nanoseconds, the SWS protocol temporarily swaps a cavity photon into the coupler to exploit strong dispersive shifts before restoring the excitation. The gate achieved an overall physical fidelity of approximately 99.9%, with an erasure rate of ∼ 0.5% per gate and post-selected residual Pauli errors below 0.1%. The architecture preserves a strong noise bias: bit-flip errors were suppressed down to the 10-6 level (parts per million), while dephasing errors dominated residual noise. Furthermore, the gate exhibits benign leakage propagation—where photon loss to the vacuum state (∣00⟩) deactivates the dispersive interaction—allowing surface-code syndrome extraction cycles to defer erasure checks to the end of a round without sacrificing code distance or triggering correlated error cascades.<br>
+                      [ D-Wave Gate-Model Fault-Tolerance Roadmap ]<br>
+                                            │<br>
+     ┌──────────────────────────────────────┼──────────────────────────────────────┐<br>
+     ▼                                      ▼                                      ▼<br>
+  2026 (DR17)                            2028 (DR181)                           2032 (100 Logical)<br>
+  • 17 Dual-Rail Physical Qubits.       • 181 Dual-Rail Physical Qubits.      • 100 Fault-Tolerant Logical Qubits.<br>
+  • 2x Logical Error Reduction.         • 2,000x Error Suppression Factor.    • >1 Million Logical Operations.<br>
+  • Hardware-Level Erasure Tracking.     • Scalable Blueprint & Real-Time Dec. • Commercial Quantum AI & Chemistry.<br>
+Surface-code numerical simulations leveraging these experimental parameters demonstrate that D-Wave’s dual-rail architecture can achieve an error reduction factor (Λ) of 10 for each increment in error correction code distance. A (Λ) value of 10 indicates that logical error rates drop by a factor of 10 with each additional error-correction layer, significantly easing physical qubit requirements compared to standard transmon or planar surface-code implementations. This hardware-level error awareness allows fault-tolerant logical qubits to be constructed with substantially lower physical qubit counts and simplified classical decoding overheads.<br>
+The breakthrough directly underpins D-Wave’s multi-year gate-model development roadmap, complementing its commercial quantum annealing platforms. The roadmap targets a 17-physical-qubit system (DR17) in 2026 delivering a 2× logical error reduction, a 49-physical-qubit system (DR49) in 2027 with a 20× reduction, and a 181-physical-qubit system (DR181) in 2028 providing a 2,000× error suppression factor as a blueprint for fault-tolerant scaling. By 2030, D-Wave plans to complete a 10-logical-qubit system for initial fault-tolerant algorithm execution, culminating in a 100-logical-qubit system by 2032 capable of executing over 1 million logical operations for quantum chemistry, materials science, and quantum AI applications. The gate-model platform will be accessible via D-Wave’s Leap™ quantum cloud service, supported by real-time quantum-classical control and the Quantum Circuit Description Language (QCDL).<br>
+Review the complete peer-reviewed study in Nature here, inspect system architecture specifications on the D-Wave Gate-Model Portal here, and read the official announcement on the D-Wave Newsroom here.<br>
+August 6, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantumcomputingreport.com/qarakal-quantum-unveils-pangaea-modular-architecture-to-cut-qubit-overhead-by-10x/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/d-wave-demonstrates-two-qubit-gate-breakthrough-for-dual-rail-erasure-qubits-in-nature/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="bbc9edf0ec535234.html" class="prev-next">&larr; D-Wave Demonstrates Two-Qubit Gate Breakthrough for Dual-Rail Erasure Qubits in Nature</a>
+  <a href="18be132f1f2c20c4.html" class="prev-next">&larr; enQase and Light Rider Partner to Deliver Integrated Quantum-Safe Communications Architecture</a>
   
   
-  <a href="5b4a6d9fa436625e.html" class="prev-next">Wise guy &rarr;</a>
+  <a href="2d8c3ddf90515478.html" class="prev-next">Qarakal Quantum Unveils “Pangaea” Modular Architecture to Cut Qubit Overhead by 10X &rarr;</a>
   
 </div>
 
