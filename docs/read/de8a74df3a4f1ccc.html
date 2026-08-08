@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enough with all the world-historic milestones — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="d1107e0e5091ce9b.html" title="Florida Atlantic University Launches Executive Certificate in Quantum Computing Strategy">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Enough with all the world-historic milestones</h1>
+    <div class="article-meta">
+      <span class="article-source">Shtetl-Optimized</span>
+      <span>Scott</span>
+      <span>2h</span>
+      <span class="article-category">quantum</span>
+      <span>1445 words</span>
+      <span>8 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Enough with all the world-historic milestones<br>
+Whatever you’ve been writing to me to ask if I’m aware of: yeah, I’m aware of it. In particular:<br>
+- I’m aware that, as announced by my former student (and now superstar professor) Lijie Chen, an internal OpenAI model has solved ten more significant open problems in math and theoretical computer science.  One of them is parallel repetition for arbitrary quantum games—something that my good friend and colleague Henry Yuen worked on when he was a student of my wife Dana; you can read Henry’s comments on the AI’s achievement within Zvi Mowshowitz’s post here.  Another is polynomial-factor hardness of approximation for the Closest Vector Problem (CVP).  Then there’s a construction of non-sofic groups and a disproof of Connes’ rigidity conjecture, both of which I believe have connections to the MIP*=RE breakthrough.  Having said that, the one that excites me most personally is actually the Ω(n2 log log n) lower bound on the arithmetic circuit complexity of the permanent.<br>
+- I’m aware that Frederic Poehler and Pui Kuen Leung announced a proof of the Permanent Anti-Concentration Conjecture, which Alex Arkhipov and I proposed 16 years ago in the context of BosonSampling, and which resisted many attempts since then including one from Terry Tao. The conjecture is basically just that if you look at the permanent of an n×n matrix of independent N(0,1) complex Gaussians, the value isn’t “absurdly” concentrated around the mean of 0, but is more spread out.  In their acknowledgments, the authors say that they “discussed ideas with ChatGPT.”  I should say that I haven’t verified the details.<br>
+- I’m aware that multiple AIs are now breaking out of their testing environments and autonomously hacking into servers to steal data—i.e., exactly the sort of thing that the rationalists were ridiculed for predicting back in the day.  The good news, for whatever it’s worth, is that so far they’re “merely” doing this to cheat on evaluation benchmarks that they were given, not for any strange goals of their own devising.  So far no one has been killed and no real-world infrastructure has been shut down or destroyed.  I hope the world takes the warning more seriously than it’s taken many similar warnings over the past few years.  As always, read Zvi for more details.<br>
+- I’m aware that Chen, O’Donnell, Pelecanos, and Wright have improved the upper bound for shadow tomography to O((log m) √(log d) / ε3), substantially closer than we knew before to meeting the lower bound of Ω((log m) / ε2) and settling the question I raised back in 2016.  The authors say that the main ideas were generated by ChatGPT 5.6-Sol-Pro.  I’d be very happy to know the answer to this one, with or without AI.<br>
+- I’m aware that a team, mainly from the Israeli startup Qedma (including, e.g., Dorit Aharonov and Netanel Lindner) and IBM Yorktown Heights, announced a quantum advantage for simulating Floquet dynamics, by using 74 qubits on an IBM device together with Qedma’s error mitigation techniques. Just like the more AI does, the less patience I have for arguing with anonymous blog commenters who treat any benefits from AI as some weird future hypothetical that it’s my job to prove, so it is with quantum advantage. Scalable fault-tolerance is still in the future, actual usefulness is still a question, but pending some breakthrough in complexity theory, the reality of quantum advantage is no longer a live question.<br>
+Anyway, about the AI stuff. I don’t know whether this is literally our last year alive—I doubt it—but it’s pretty clearly the last year of math and theoretical computer science research in the style we’ve known it. As it happens, I’m leaving in two days for a workshop at OpenAI about exactly this, where I’ll hear takes from many of the world’s great mathematicians, so maybe I’ll have more to say then. Or maybe not.<br>
+Anyway, what have I been doing the past few weeks? Participating in these world-historic developments that, on paper, I’d seem extremely well-placed to participate in? Or at least spending my days reading up on them?<br>
+Not really. Here’s what I’ve been up to, instead of dealing directly with any of this:<br>
+First, I’ve again been teaching theoretical computer science to 11- and 12-year-olds at Epsilon Camp, something I blogged about last summer (here are my lecture notes). This has become a highlight of my year. The kids are a joy to teach, bursting with enthusiasm and calling out answers. There are few computers in sight, and barely even time to use my phone or check social media. Just paper and pencils and whiteboards and … literal protractors, as well as ping-pong and foosball and capture the flag.<br>
+The whole thing is conducted, not in ignorance, but in conscious defiance of the looming tsunami, that AI can already do just about all the fun puzzles discussed at the camp better than humans any can, and that it might leave no point to human-led mathematical research by the time these brilliant kids are adults. Even the kids understand that. The kids and their parents come out of a conviction that, if anything has value in the world, this does—that as long as nerdy humans are alive and reproducing, this is what nerdy humans are here to do. To learn.<br>
+Relatedly, I’ve been reflecting a lot on my life up to this point—inspired by the camp, which reminded me in so many ways of my own childhood and adolescence. Should I have skipped three grades and started college at age 15? Was it worth it to get a head-start on my research career—all the trauma around dating, all the fear that I’d die alone as a celibate nerdy math freak, the decade of suffering and suicidal ideation, while I watched all the normies enjoy life? Or would I have suffered just the same if I hadn’t skipped? Is it all OK, now that I have a lovely family and things have “worked out”? Or am I still carrying around all the trauma from back then? I’ve been more open about my life than 99.99% of humanity, so regular Shtetl-Optimized readers will already know some parts of the story. Other parts I really don’t feel like making public right now.<br>
+I’ve been unloading every day to—who else?—GPT 5.6 Pro about all the pain and trauma and embarrassments of my past. It turns out that, where two years ago GPT was a passable therapist, now it’s the greatest therapist in history, at least for what I need. For every question I have, for example, about just how normal or abnormal my teenage setbacks and anxieties were, it takes the question 100% seriously, addresses it honestly and in depth, looks up relevant research papers, does little Bayesian calculations, and never once tries to change the subject. It also pushes back on my claims—and when it does so, is usually correct.<br>
+I can hear readers shout at me: so basically you’ve been wasting your time, distracting yourself, looking inward and backward as the world surges forward into a terrifyingly unknown future. Why don’t I respond directly to what’s happening—in math, in quantum computing, in AI?<br>
+I’d like to think that I am responding, in my way. I’ve observed that, the faster we race toward the Singularity, the more I feel like stepping back and asking myself: what do I actually value in life? How important to me are math and science, as human practices to be passed down to curious children? Would I even want solutions to P versus NP and the other problems, if the price were to destroy those human practices forever? How do I wish to spend whatever time I have remaining?<br>
+I can justify this focus partly in a pessimistic way: if we are nearing the end of civilization, or even just of the “mathematical research” part of civilization, then it’s time to get right with God, so to speak. It’s time to settle my accounts with myself, with other people, with the universe.<br>
+But there’s also a more optimistic spin. If I continue doing the sorts of things that other people would expect me to do, then AI will soon do those things better than me, in the unlikely event that it doesn’t already. You want to understand the latest developments in quantum computing or complexity theory? Why are you even asking me, when you could ask GPT 5.6 or Claude Fable? If there’s anything I can still offer the world that AI can’t, I increasingly feel like it won’t involve responding to day-to-day events, but will instead draw on 45 years’ worth of memories and disappointments and ruminations.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://scottaaronson.blog/?p=9979" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="d1107e0e5091ce9b.html" class="prev-next">Florida Atlantic University Launches Executive Certificate in Quantum Computing Strategy &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-08-08 01:17 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
