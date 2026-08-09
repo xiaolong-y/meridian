@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bipartite matching is in NC! — Meridian Reader</title>
+  <title>UCLA-Led Consortium Secures $4 Million NSF Grant for 60 Logical Qubit Trapped-Ion Architecture — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,55 +126,56 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="003198210e05d822.html" title="My response to the White House executive order on QC">&larr; prev</a>
-    <a href="9ec4a1e77cd711a1.html" title="Majorana 2 – Microsoft’s Scalable Quantum Processor With Reliable, Long-Lasting Qubits">next &rarr;</a>
+    <a href="c51bdf09bce145c7.html" title="TuringQ Planning to IPO and In Race to Become China’s First Public Quantum Firm">&larr; prev</a>
+    <a href="bf3f64008dce9a66.html" title="Who’s News: Strategic Appointments at Horizon Quantum, Quantum Computing Inc., and Uviquity">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Bipartite matching is in NC!</h1>
+    <h1 class="article-title">UCLA-Led Consortium Secures $4 Million NSF Grant for 60 Logical Qubit Trapped-Ion Architecture</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>6w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>dougfinke</span>
+      <span>17h</span>
       <span class="article-category">quantum</span>
-      <span>577 words</span>
+      <span>447 words</span>
       <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Bipartite matching is in NC!<br>
-Since I’m a good mood today—at a beautiful science camp with my kids, high in the mountains near Big Bear Lake in California—I thought I’d blog about something positive. Last week, five authors (Chatterjee, Ghosh, Gurjar, Raj, and Thierauf) posted a major paper to the Electronic Colloquium on Computational Complexity, which shows (or anyway, credibly claims to show) that the Bipartite Matching problem is in the complexity class NC. Assuming this stands, it resolves a central problem in parallel algorithms and derandomization that’s been open since the 1980s.<br>
-In Bipartite Matching, you’re given a list of n men and n women, you’re told who’s willing to date whom, and your goal is to<br>
-- decide whether it’s possible to pair everyone off with a willing partner, and<br>
-- if they are, actually pair them off.<br>
-One of the great early discoveries of combinatorial algorithms, taught in every introductory algorithms course, is that this problem is solvable in time polynomial in n, even though the naïve, brute-force approach would require examining n! possibilities.<br>
-(Note that in the bipartite version, we assume that the men and women are all straight. If the men and women can be LGBT, we get the problem of matching in general graphs, which again turns out to be solvable in polynomial time, but now the algorithm is much more sophisticated, and was a major discovery of Edmonds in the 1960s.)<br>
-Anyway, the question is whether we can do even better than polynomial time: in particular, can we solve the problem in time polynomial in log(n), given polynomially many parallel processors?<br>
-Back in the 1980s, first Karp, Upfal, and Wigderson, and then (via a very different method) Mulmuley, my former PhD adviser Umesh Vazirani, and Umesh’s brother Vijay Vazirani managed to show that the answer is yes, but only if the parallel processors additionally get access to random bits, and only need to succeed with high probability.<br>
-The new achievement is to derandomize the Mulmuley-Vazirani-Vazirani algorithm, and show that problems 1 and 2 above are both solvable in deterministic polylogarithmic time with parallel processing (in other words, in the complexity class NC).<br>
-No, I don’t understand how it works yet. If anyone does, feel free to explain in the comments! Or ask your favorite AI to generate a summary. If I run out of options, at some point I might actually try reading the paper.<br>
-(Note: Thanks to Gil Kalai for some corrections to an earlier version of this post.)<br>
-One other announcement: Today is the day of primary elections in NYC! Virtually all of my smartest friends who work on AI governance and safety are extremely excited about the Congressional campaign of Alex Bores—indeed, it would be little exaggeration to say that they consider him the last best hope of humankind. Bores has been a national leader on trying to regulate AI, to the extent that Marc Andreessen’s “Leading the Future” anti-AI-regulation PAC has spent millions of dollars trying to sink his candidacy. Outside of AI, Bores seems like a sane, conventional Democrat, i.e. the kind I like, and much more moderate than his base on Israel (note that his main opponent is also such). Without commenting on Bores’ views on every possible issue, I’ll simply say: if you live in New York’s 12th Congressional District (comprising a huge chunk of central Manhattan), and you care about AI safety, please consider a vote for Bores while there’s still time.</p>
+    <p>The National Science Foundation (NSF) has selected a multidisciplinary team led by the University of California, Los Angeles (UCLA) to receive $4 million in funding. Awarded through the NSF’s National Quantum Virtual Laboratory (NQVL) initiative, the grant will support a new project titled FTL: Accelerating Fault-Tolerant Quantum Logic. The project’s central objective is to design a fault-tolerant quantum computer capable of deploying 60 logical (error-protected) qubits, establishing a blueprint for digital quantum simulations that exceed the capabilities of current classical supercomputers.<br>
+Addressing Environmental Noise Through Logical Qubit Design<br>
+Contemporary quantum processing units (QPUs) remain strictly limited by noise and environmental decoherence. Minimal thermal fluctuations or minor material defects disrupt qubit superposition, introducing calculation errors that compound rapidly over long coherence times. While individual physical qubits are inherently fragile, fault-tolerant architectures address this vulnerability by grouping multiple physical qubits into a single logical qubit. This redundant encoding allows quantum error correction (QEC) protocols to detect, track, and mitigate errors in real time without destroying the underlying quantum state.<br>
+QCCD Trapped-Ion Strategy and Full-Stack Codesign<br>
+The FTL project bases its hardware design on a trapped-ion Quantum Charge-Coupled Device (QCCD) architecture. In a QCCD system, individual charged atomic ions are dynamically shuttled across a specialized chip-based trap. This approach offers strong, all-to-all connectivity and high gate fidelities by bringing target pairs of ions together for entangling operations while isolating non-interacting qubits.<br>
+To make 60 logical qubits achievable within realistic hardware boundaries, the project focuses heavily on full-stack codesign. Led by principal investigator Eric Hudson alongside co-leaders Jens Palsberg and Wesley Campbell, the consortium unites expertise spanning atomic physics, chip fabrication, compilation, control electronics, and quantum algorithm design. By co-optimizing the physical trap layout alongside software compilers and QEC protocols, the team aims to significantly reduce the physical-to-logical qubit overhead traditionally required for error mitigation.<br>
+Target Applications and Strategic Partnerships<br>
+The primary application target for the proposed system is digital quantum simulation. Reliable, fault-tolerant simulation of complex quantum many-body systems is widely considered one of the earliest paths to practical quantum advantage, offering potential breakthroughs in materials science, molecular chemistry, drug discovery, and fundamental physics.<br>
+The FTL project brings together a broad coalition of academic, national laboratory, and commercial partners:<br>
+- Academic Institutions: UCLA, UC Berkeley, Cornell University, University of Maryland, and UC Santa Barbara.<br>
+- Research & Commercial Partners: Georgia Tech Research Institute, SRI International, Quantinuum, Nvidia, Daylight Solutions, and IonQ.<br>
+By aligning physical sciences and computer engineering across these organizations, the project aims to establish an open academic framework for scalable, fault-tolerant quantum computing while expanding national access to next-generation quantum testbeds.<br>
+For more information, visit the press announcement posted on the UCLA Newsroom site here.<br>
+August 8, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9851" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/ucla-led-consortium-secures-4-million-nsf-grant-for-60-logical-qubit-trapped-ion-architecture/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="003198210e05d822.html" class="prev-next">&larr; My response to the White House executive order on QC</a>
+  <a href="c51bdf09bce145c7.html" class="prev-next">&larr; TuringQ Planning to IPO and In Race to Become China’s First Public Quantum Firm</a>
   
   
-  <a href="9ec4a1e77cd711a1.html" class="prev-next">Majorana 2 – Microsoft’s Scalable Quantum Processor With Reliable, Long-Lasting Qubits &rarr;</a>
+  <a href="bf3f64008dce9a66.html" class="prev-next">Who’s News: Strategic Appointments at Horizon Quantum, Quantum Computing Inc., and Uviquity &rarr;</a>
   
 </div>
 
