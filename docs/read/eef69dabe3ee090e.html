@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interacting collaborators reveal noninteracting fermions — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="de8a74df3a4f1ccc.html" title="Enough with all the world-historic milestones">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Interacting collaborators reveal noninteracting fermions</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Frontiers (Caltech)</span>
+      <span>Logan Hillberry</span>
+      <span>2h</span>
+      <span class="article-category">quantum</span>
+      <span>2078 words</span>
+      <span>11 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>By day, I work as an experimentalist on laser-cooling molecules1, but I’ve never fully surrendered my theoretical-physics license. I started as an undergraduate in Lincoln Carr’s group at the Colorado School of Mines in Golden, CO. I learned from his expertise in simulations and complex systems. Since then I’ve moonlighted as a theorist while also pursuing an unrelated PhD and, now, an unrelated postdoc position. With Nicole Yunger Halpern and other collaborators, we devised a quantum circuit whose dynamics looked complex when run on a quantum computer. It took six years and five collaborators across four countries to discover that, for the right settings, these complex dynamics could be understood when viewed from the right angle.<br>
+Some time ago, I told you about quantum cellular automata (QCA). These quantum machines are built from one-dimensional strings of qubits. A qubit changes its state depending on the state of its two nearest neighbors. Different rules are encoded into three-qubit gates that change a central qubit based on the state of its left and right neighbors. Some rules induce change for many combinations of neighbor states. Others, less. We apply this neighborhood-constrained update in two waves, first to every other qubit, then to the ones skipped in the first wave. This is a common quantum circuit structure called a brickwork pattern. We call one rule the Goldilocks QCA: A qubit is updated if one of its neighbors is a 0 while the other is a 1 (activity); otherwise the qubit does not change its state (inactivity).<br>
+Repeating brickwork layers of the Goldilocks rule, we found, balances activity and inactivity to be “just right,” as Goldilocks might say. Striking this balance produced surprisingly rich patterns of quantum correlation. The same type of network structure is found in complex classical systems like metabolic pathways, social networks, and brain activity. What’s more, the observed patterns of connectivity persist through thousands of circuit layers while other QCA tend towards uniformity.<br>
+Our new paper, Integrability of Goldilocks quantum cellular automata, answers a question that’s been lurking underneath that first result for the last several years. Why does this balance produce such rich and persistent structure? Some Goldilocks QCA, we prove, map onto free fermions, one of the simplest examples of exactly solvable quantum dynamics. How does uncovering this simplification explain the persistent complex patterns? The answer follows from the concept of conservation laws. Piecing together this understanding required assembling an international team of experts who generously shared their knowledge and time. I’ll tell a bit of this scientific story through the lens of our collaboration’s history.<br>
+A key inspiration for this work started with a May 2020 video call with Norman Margolus, an MIT-affiliated researcher and pioneer of using cellular automata to model real systems. In the 1980s he worked on a custom computer chip called CAM-6, and later CAM-8, that was dedicated to simulating massive arrays of cellular automata with the limited computational resources of the era2. He proudly showed us beautiful pictures of cellular automata simulating phenomena like optical refraction and chemical reactions.<br>
+He told us a story about trying to mimic fluid flow with the simple local rules of classical cellular automata. These models, called lattice gas automata, were first defined on a square lattice. While they did show fluid-like behavior, these models did not quite correctly conserve momentum3. Moving to a hexagonal lattice fixed up these problems and the community was able to devise cellular automata that quantitatively modeled continuum fluid flow.<br>
+Part of that story stuck with me: conservation laws are fundamental ingredients of a physical model. Our Goldilocks quantum cellular automata, we observe, exhibit persistent complex structures. Could some conservation law be behind these observations? If found, could these conservation laws be harnessed for more efficient simulations? Going even further, could there be enough conservation laws to exactly solve the dynamics (at least in principle)? This property would buy the system membership in a special class called integrable systems.<br>
+An integrable system conserves enough quantities, often called charges in the quantum setting, that you can compute its future state from its conservation laws and its initial conditions. Two-body gravitational orbits are a classic example. The initial positions and velocities set the orbital energy and angular momentum in the center-of-mass reference frame. Those two conserved quantities let you write down an exact equation for the orbit’s shape.<br>
+A chaotic system, by contrast, may conserve energy and even a few other quantities, but not enough for us to solve for the state arbitrarily far in the future. To find out what a chaotic system does, you have to evolve the equations of motion approximately—one small time step at a time. Chaotic systems are the norm in nature; integrable ones are rare. To illustrate their qualitative differences, compare the regularity of the above orbit to the trend towards uniformity in the above lattice-gas simulation. In the quantum regime, physicists still don’t fully agree on the precise definition of integrability, though conservation of many independent quantities is a strong indicator.<br>
+In August 2020, Nicole emailed Lorenzo Piroli about his preprint on QCA, now published as Phys. Rev. Lett. 125, 190402. Lorenzo was a postdoc at the Max Planck Institute for Quantum Optics in Garching, Germany when we first met. He is now an associate professor at the University of Bologna and expert in many-body quantum dynamics. The correspondence that unfolded set the blueprint for the research effort that followed. One of us would ask a question, and Lorenzo would respond incredibly fast with accurate and useful detail. He started working with us to understand why the Goldilocks QCA dynamics appeared so unique. Lorenzo would suggest computations, I would implement them, and we would discuss what the results meant.<br>
+Then came an echo of the collaboration’s inception. In May 2021, Nicole pointed out a relevant preprint from Tomaž Prosen, now published in Chaos 31, 093101. Tomaž is a Slovenian physicist at the University of Ljubljana and a leading researcher in the fields of quantum chaos and integrability. I sent an email about the connections between our work and his. He responded with enthusiasm. He shared some code that would, through exhaustive search, find quantities conserved by our QCA.<br>
+The code’s brute-force approach meant the algorithm could only find conservation laws defined over, at most, a 5-qubit subsystem. A tantalizing signal emerged: the number of conserved quantities supported by 5 qubits exceeded the number supported by 3 qubits. Having more and more conserved quantities as you look at larger neighborhoods is a signature of integrability. Soon after, Tomaž proved one of our Goldilocks QCA is integrable using a well-established toolkit from statistical mechanics called Yang-Baxter integrability. He built a parametric transfer matrix, essentially a machine that spits out a new conserved quantity every time you turn its mathematical crank4.<br>
+But there was a wrinkle. The transfer matrix generates charges that mutually commute, meaning you can measure them simultaneously. For example, you can know a quantum particle’s kinetic energy and momentum simultaneously because those operators commute. Yet, the search algorithm kept finding charges that did not commute with each other, like a particle’s position and momentum. The only explanation was that our QCA has more charges than the transfer matrix method guarantees, and more than are minimally required for integrability. This extra-conservation-law property, called superintegrability, also shows up in two-body gravitational orbits. In addition to energy and angular momentum, orbits conserve the Runge-Lenz vector. Nicole is an expert on noncommuting charges, so this is where one of her main research efforts entered the QCA collaboration.<br>
+Next came a key insight from Lorenzo: the automaton we had been considering was one member of a larger family of integrable Goldilocks QCA. He showed this using a Jordan-Wigner transformation, a mathematical dictionary that translates between the language of qubits and the language of fermions. Complexity in the qubit language transformed into simplicity in the fermion language. Under this translation, our QCA mapped to noninteracting, or free, fermions: particles that never bump into or influence each other. That lack of interaction is what makes free-fermion dynamics easy to calculate. A system of free fermions is a well-known example of superintegrability.<br>
+Along the way, Lorenzo recruited his friend and collaborator Eric Vernier, a CNRS researcher based in Paris, France. He is an expert on vertex models. The classical version of the six-vertex model was developed in the 1930s to explain a troubling mystery: Water ice appears to have more entropy than permitted by the third law of thermodynamics at near-zero temperature. In the six-vertex model, a water molecule’s oxygen atom is envisioned at every vertex in a square lattice. Each molecule contributes two hydrogen ions, to use Baxter’s terminology, that fall along the lattice edges. Intermolecular hydrogen bonds between adjacent molecules slightly alter the intramolecular O-H bonds. To maintain electrical neutrality, each oxygen (lattice vertex) has two nearby and two far-away hydrogen ions (four edges), leading to six possible ice vertices. The vertices are commonly visualized in three ways: 1) as the dots representing hydrogen ions located on edges near or far from each vertex, 2) as electric dipole arrows pointing into (“ion is close”) or out of (“ion is far”) each vertex, or 3) as thick (downward- and leftward-pointing dipoles) and thin (upward- and rightward-pointing dipoles) edges. Despite the model’s simplicity (2D square lattice) compared to real ice (3D tetrahedral lattice), it agrees with experimentally measured entropy values to better than 2%.<br>
+More recently, vertex models have been adapted from two-dimensional classical crystals to one-dimensional quantum systems that evolve in time. Eric showed us how the ice vertices relate to QCA circuit rules. In doing so, Eric uncovered an even larger set of integrable Goldilocks QCA than that found by Lorenzo. Eventually, Lorenzo’s Jordan-Wigner transformation method and Eric’s six-vertex method agreed on the complete family of integrable Goldilocks QCA.<br>
+We finally had our Avengers-style collaboration: individual heroes brought together to wield their unique strengths. With Lincoln’s supervision, I developed the QCA models and performed the computations. Lorenzo found the Jordan-Wigner transformation. Tomaž found the first signals of integrability and delivered a set of conservation laws. Nicole brought her expertise in quantum thermodynamics, clarifying how the noncommuting charges constrain dynamics. Eric made the six-vertex connection. We drafted and redrafted the paper until it balanced the scientific story, the analytical derivations, and the numerical evidence.<br>
+Because the discovered family of Goldilocks QCA maps to free fermions, we can efficiently simulate them classically. I simulated 256 qubits on my laptop this way. These large simulations were satisfying: I had worked with this model for years with an order of magnitude fewer qubits and even saw the dynamics implemented on Google’s Sycamore-era hardware with 23 qubits. Most Goldilocks QCA are consistent with chaos rather than integrability, and therefore hard to simulate classically. Therefore, our work gives experimentalists a tunable model: dial in integrable dynamics for something checkable at large qubit number. Set up chaotic dynamics for a potential demonstration of quantum advantage.<br>
+While preparing this post, I opened my old email account to check the timeline set out above. I looked through nearly six years of email chains, some with hundreds of messages, full of logistics for coordinating each author’s ever-changing time zone, and dozens of calculations and results that never made it into the paper. This collaboration helped me grow as a researcher in a big way.<br>
+I found old emails where Nicole was coaching me on messaging potential collaborators. I can hardly believe she dedicated so much effort to mentoring me. We have never met in person, despite our shared work starting when I was an undergraduate and she was a graduate student more than a decade ago. If you know Nicole, you can probably believe it easily. I had similar moments with each collaborator. They all gave their time and expertise generously over the many years this paper took to come together.<br>
+As I continue my efforts in experimental physics, I will pay forward the effort and generosity shared with me by this collaboration. I may even keep my theoretical-physics license for a while longer.<br>
+- “By day” doesn’t mean “by daylight.” Laser labs are almost always in a windowless basement. ↩︎<br>
+- CAM-6 featured 32 kB of cell-state memory (CAM-8 had 8 MB ), far less than the memory currently used by this author’s numerous open browser tabs. ↩︎<br>
+- The coarse-grained momentum flux tensor was anisotropic. ↩︎<br>
+- Logarithmic derivatives of the parametric transfer matrix generate the conserved charges. ↩︎</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumfrontiers.com/2026/08/09/interacting-collaborators-reveal-noninteracting-fermions/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="de8a74df3a4f1ccc.html" class="prev-next">Enough with all the world-historic milestones &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-08-10 07:26 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
