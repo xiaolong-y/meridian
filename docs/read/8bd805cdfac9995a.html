@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Honda Invests in Japanese Quantum Algorithm Startup Quemix — Meridian Reader</title>
+  <title>Hefei Startup and USTC Demonstrate 16-Qubit On-Chip Photonic MBQC Architecture — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,48 +126,56 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="a73ae85f1426669d.html" title="D-Wave Reports Its Q2 2026 Financial Results Showing Bookings Surge, Technical Progress, and Quantum Circuits Acquisition Impact">&larr; prev</a>
-    <a href="de8a74df3a4f1ccc.html" title="Enough with all the world-historic milestones">next &rarr;</a>
+    
+    <a href="eca7defb8da11bab.html" title="QuSecure’s QuProtect R3 PQC Platform Added to Carahsoft’s GSA Schedule Contract">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Honda Invests in Japanese Quantum Algorithm Startup Quemix</h1>
+    <h1 class="article-title">Hefei Startup and USTC Demonstrate 16-Qubit On-Chip Photonic MBQC Architecture</h1>
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
-      <span>dougfinke</span>
-      <span>3d</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>7h</span>
       <span class="article-category">quantum</span>
-      <span>289 words</span>
+      <span>391 words</span>
       <span>2 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Quemix Inc., a Tokyo-based quantum software and algorithm startup and consolidated subsidiary of TerraSky Co., Ltd., announced it has secured an investment from Honda Motor Co., Ltd. The funding, provided through Honda’s global open innovation initiative, Honda Xcelerator Ventures, aims to accelerate the practical deployment of quantum computing for next-generation materials development.<br>
-This investment builds on an established and successful research partnership between Quemix and Honda. In May 2025, the two companies jointly developed a novel quantum state readout technique, which was followed in June 2026 by a breakthrough quantum algorithm designed to exponentially accelerate Density Functional Theory calculations, a cornerstone method in computational chemistry and materials science. Building on this momentum, Quemix plans to leverage its advanced algorithm technologies to transition quantum methods from experimental research directly into practical automotive materials development processes.<br>
-The primary initial focus will be accelerating the development of next-generation battery materials to support Honda’s long-term goal of achieving carbon neutrality by 2050. Established in 2019, Quemix specializes in algorithms for fault-tolerant quantum computing and computational materials science. The company holds patents for Probabilistic Imaginary-Time Evolution, a quantum chemistry calculation algorithm with mathematically proven acceleration, and is targeting full commercial applicability in materials simulation by 2030.<br>
-Automotive manufacturers continue to be active early adopters of quantum computing for electrochemistry and battery simulation. Honda’s direct equity stake in Quemix deepens their technical alignment and signals a shift from exploratory joint research toward integrating domain-specific quantum software directly into industrial materials development workflows. Additional details can be reviewed via the original press releases published on the official Quemix website.<br>
-For additional details, read the original press releases from Quemix or review their past joint technical announcements on quantum readout and accelerated DFT algorithms.<br>
-August 8, 2026</p>
+    <p>Chinese startup Hefei Guizhen Chip Technology Co., Ltd. (硅臻芯片), in collaboration with Professor Ren Xifeng‘s team at the Chinese Academy of Sciences (CAS) Key Laboratory of Quantum Information at the University of Science and Technology of China (USTC), has published research demonstrating a 16-qubit measurement-based quantum computing (MBQC) system on a single silicon photonic chip. Detailed in an August 2026 pre-print (“On-chip generation of multi-qubit graph states with high-dimensional encoded single photons“), the experiment achieved a 98.7% average identification probability executing Grover’s search algorithm across four search targets—outperforming the prior 4-qubit on-chip photonic MBQC benchmark of 80.8% set by the University of Stuttgart (“Measurement-Based Quantum Computing on a Photonic Chip“).<br>
+To overcome the exponential coincidence-rate loss that occurs when attempting to entangle multiple distinct single-photon sources, the Guizhen Chip and USTC team utilized high-dimensional path encoding. By routing each photon across 16 distinct waveguide paths on a standard silicon-on-insulator (SOI) platform, the chip encodes a 4-level qudit (carrying 4 qubits of quantum information) per photon. This 4-photon, 16-qubit architecture avoids probabilistic multi-photon interactions during execution:<br>
+- High-Dimensional Compression: 4 photons carry a 16-qubit Greenberger-Horne-Zeilinger (GHZ) and cluster graph state, reducing multi-photon coincidence demands from O(216) to O(24).<br>
+- Genuine Multipartite Entanglement: Entanglement witnessing certified genuine multipartite entanglement across 10 of the 16 path-encoded qubits.<br>
+- Programmable MBQC Layers: Four layers of Mach-Zehnder interferometers and thermo-optic phase shifters execute adaptive single-qubit measurements driven by real-time classical feedback loops.<br>
+                    [ High-Dimensional Path-Encoded Photonic MBQC ]<br>
+                                           │<br>
+     ┌─────────────────────────────────────┴─────────────────────────────────────┐<br>
+     ▼                                                                           ▼<br>
+  Silicon Waveguide Path Encoding (4 Qubits/Photon)             Adaptive Measurement Layers (MBQC Model)<br>
+  • 4 Photons routed through 16 Waveguide Modes.                • Mach-Zehnder Interferometer Arrays.<br>
+  • Generates 16-Qubit GHZ & Cluster Resource States.           • Real-time Adaptive Thermo-Optic Phase Shifting.<br>
+  • Certified 10-Qubit Genuine Multipartite Entanglement.       • 98.7% Grover Search Algorithm Accuracy.<br>
+While high-dimensional path encoding bypasses multi-photon coincidence bottlenecks, it amplifies photon-loss penalties: losing a single photon dissipates 4 qubits of state information simultaneously. The pre-print remains subject to formal peer review to verify experimental transmission loss profiles and entanglement witnessing metrics. If validated, high-fidelity 16-qubit on-chip resource-state generation provides a critical component-level demonstration for fusion-based quantum computing (FBQC) architectures pursued by global photonic hardware developers.<br>
+Review the report on Tech Times here, examine the USTC high-dimensional encoding paper on arXiv here, and inspect the University of Stuttgart MBQC research on arXiv here.<br>
+August 11, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantumcomputingreport.com/honda-invests-in-japanese-quantum-algorithm-startup-quemix/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/hefei-startup-and-ustc-demonstrate-16-qubit-on-chip-photonic-mbqc-architecture/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
+  <span></span>
   
-  <a href="a73ae85f1426669d.html" class="prev-next">&larr; D-Wave Reports Its Q2 2026 Financial Results Showing Bookings Surge, Technical Progress, and Quantum Circuits Acquisition Impact</a>
-  
-  
-  <a href="de8a74df3a4f1ccc.html" class="prev-next">Enough with all the world-historic milestones &rarr;</a>
+  <a href="eca7defb8da11bab.html" class="prev-next">QuSecure’s QuProtect R3 PQC Platform Added to Carahsoft’s GSA Schedule Contract &rarr;</a>
   
 </div>
 
