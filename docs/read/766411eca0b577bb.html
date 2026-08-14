@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy 250th! — Meridian Reader</title>
+  <title>Quantinuum, NVIDIA, and Pfizer Validate Generative Quantum AI (GenQAI) Framework for Pharmaceutical R&amp;D — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,52 +126,60 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="7338cb05c1437b9a.html" title="Announcing BQP Partners: my and my brother’s new angel-investing venture">&larr; prev</a>
-    <a href="140b89421c9aa2f9.html" title="An American privacy emergency: Guest post from Cynthia Dwork et al.">next &rarr;</a>
+    <a href="d2b7a614232fe1bf.html" title="Mitsui &amp; Co. and Mitsubishi Electric Benchmark Approximate and Logical QFT on Quantinuum Helios">&larr; prev</a>
+    <a href="3772bcc0b8c518cf.html" title="EPFL Integrates Quantinuum Trapped-Ion Cloud Access into SCITAS HPC Platform">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Happy 250th!</h1>
+    <h1 class="article-title">Quantinuum, NVIDIA, and Pfizer Validate Generative Quantum AI (GenQAI) Framework for Pharmaceutical R&amp;D</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>5w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>6h</span>
       <span class="article-category">quantum</span>
-      <span>581 words</span>
+      <span>412 words</span>
       <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Happy 250th!<br>
-I’m at the New Jersey shore with family and friends, where we’ve spent this Fourth of July eating hot dogs, playing miniature golf, and wading into the ocean that my great-grandparents crossed to escape calamities they knew about and much greater calamities that they didn’t. Tonight we’ll see the fireworks, weather permitting.<br>
-And yes, on the crowded beach today you can find people sporting MAGA and “45-47” hats, and even a giant “Trump 2028” flag—a stark reminder of the millions who would redefine the meaning of our 250-year-old experiment to something dark and authoritarian, the opposite of what its founders intended. Of course, those forces find mirror images on the left end of the political spectrum, where one can find millions more who fully agree with MAGA about the failures of liberalism and the Enlightenment, differing only on the secondary question of which racist thugs should rule instead.<br>
-Despite everything, I don’t believe that both factions together constitute a majority. Even on the beach, the MAGA hats are vastly outnumbered by “250” banners and girls in stars-and-stripes bikinis, Americans who just want to celebrate.<br>
-Despite everything, I remain thoroughly American if I’ve ever been anything, and invested in the country’s future if I’ve ever been invested in anything.<br>
-JD Vance and his friends, who might rule the country after the predictable failure of “Trump 2028,” make a huge deal about “Heritage Americans.” Of course the point of such phrases is to exclude those like me, and recent immigrants, and even (incredibly) JD’s own wife. On reflection, though: could I, too, count as a Heritage American at this point? After all, my family has now been here for half the country’s history. My grandfather, who grew up in poverty, became a professional boxer in Philadelphia and Atlantic City during the Great Depression. He then joined the Army and ended up clearing German mines in North Africa and Italy in WWII. He was assigned to a company of Southerners, who had never met a Jew and were shocked that my grandfather didn’t have horns—but by the war’s end, my grandfather and the relatively few others in his company who remained alive had become best friends. My grandfather told me that he could understand the German POWs who they captured tolerably well, since German was similar enough to Yiddish, but who he could never understand was the British.<br>
-As for me, I grew up in the town of Washington Crossing, PA, maybe a mile’s walk from where this happened (and where it’s still reenacted every Christmas):<br>
-My earliest childhood hero (that I can remember) was Ben Franklin, whose institute in Philadelphia I visited often. I didn’t even recognize as unusual at the time how the founding of the country didn’t feel like a remote abstraction to me, but was all around me, as if it was yesterday.<br>
-That the founders of the United States created the model for all time of how to bend the arc of human history a little bit away from its usual horribleness, of how to overthrow a despotism without instituting an even worse despotism in its place, of how to found a new civilization on ideas and principles rather than raw power … is one of those things that seemed true to me as a child and that still seems true to me today.<br>
-May this greatest experiment continue for another 250 years. May it triumph against all those within and without who would see it destroyed.</p>
+    <p>Researchers from Quantinuum, NVIDIA, and Pfizer Inc. have validated a Generative Quantum AI (GenQAI) framework designed to automate and accelerate quantum circuit synthesis for pharmaceutical research and electronic structure modeling. In their paper, “Learning to Prepare Molecular Ground States with Transformer Models“, the hybrid architecture combines classical High-Performance Computing (HPC), generative transformer models, and quantum processing units (QPUs) to compute ground-state preparation circuits for complex active pharmaceutical ingredients (APIs).<br>
+The multi-institutional team introduced ADAPT-GQE, a generative AI model trained on quantum chemistry datasets generated via GPU-accelerated classical supercomputing. The model predicts complete ground-state quantum circuits for imipramine—a tricyclic antidepressant used as an industry benchmark for forced degradation and shelf-life stability studies—executing the resulting circuits on Quantinuum’s 98-qubit Helios-1 trapped-ion hardware.<br>
+                   [ GenQAI / ADAPT-GQE Quantum Circuit Synthesis Pipeline ]<br>
+                                              │<br>
+     ┌────────────────────────────────────────┼────────────────────────────────────────┐<br>
+     ▼                                        ▼                                        ▼<br>
+  HPC Data Generation (NVIDIA CUDA-Q)      Generative AI Circuit Synthesis          QPU Execution & Validation<br>
+  • GPU-Accelerated ADAPT-VQE Circuits.    • Fine-Tuned NVIDIA Nemotron Models.     • Quantinuum Helios-1 Processor.<br>
+  • OpenMM & MACE-OFF MD Conformers.       • Gemma 3 / Nemotron-Nano Transformer.   • InQuanto Chemistry Platform.<br>
+  • 12 to 16 Active-Space Qubit Maps.       • 3-4 Orders of Magnitude Speedup.       • Validated Imipramine Ground State.<br>
+The experiment resolves a fundamental computational bottleneck in near-term variational quantum algorithms (VQEs):<br>
+- Bypassing Iterative Gradient Calculations: Standard adaptive algorithms like ADAPT-VQE require evaluating thousands of operator gradients and re-optimizing parameter landscapes at every step, rendering calculations for systems exceeding ~15 qubits computationally prohibitive. ADAPT-GQE uses generative transformers (fine-tuned Nemotron and Gemma 3 architectures) to synthesize compact, low-energy circuit structures in a single forward pass.<br>
+- Orders-of-Magnitude Acceleration: The AI-synthesized circuits achieved or exceeded the ground-state accuracy of reference ADAPT-VQE training data while reducing circuit generation time by 3 to 4 orders of magnitude across 12-, 14-, and 16-qubit active spaces.<br>
+- Reinforcement Learning (RL) Optimization: By applying Group Relative Policy Optimization (GRPO) directly to generated circuit outputs, the model learned to propose novel operator sequences that improved upon the accuracy of the underlying ADAPT-VQE training baseline.<br>
+- State-of-the-Art Hardware Execution: The framework compiled synthesized circuits for imipramine conformers via Quantinuum’s InQuanto™ software platform and executed them on the Helios-1 trapped-ion processor, demonstrating the feasibility of AI-driven quantum algorithm generation on commercial QPUs.<br>
+This collaboration between research teams at Quantinuum, NVIDIA, and Pfizer’s Chemical R&D division establishes an open-source reference framework for automating utility-scale quantum computational chemistry.<br>
+Review the pre-print study on arXiv here, and explore the technical announcement on the Quantinuum Blog here.<br>
+August 14, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9909" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/quantinuum-nvidia-and-pfizer-validate-generative-quantum-ai-genqai-framework-for-pharmaceutical-rd/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="7338cb05c1437b9a.html" class="prev-next">&larr; Announcing BQP Partners: my and my brother’s new angel-investing venture</a>
+  <a href="d2b7a614232fe1bf.html" class="prev-next">&larr; Mitsui &amp; Co. and Mitsubishi Electric Benchmark Approximate and Logical QFT on Quantinuum Helios</a>
   
   
-  <a href="140b89421c9aa2f9.html" class="prev-next">An American privacy emergency: Guest post from Cynthia Dwork et al. &rarr;</a>
+  <a href="3772bcc0b8c518cf.html" class="prev-next">EPFL Integrates Quantinuum Trapped-Ion Cloud Access into SCITAS HPC Platform &rarr;</a>
   
 </div>
 
