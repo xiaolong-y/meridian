@@ -137,33 +137,20 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>12h</span>
+      <span>18h</span>
       <span class="article-category">quantum</span>
-      <span>412 words</span>
-      <span>3 min read</span>
+      <span>64 words</span>
+      <span>1 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Researchers from Quantinuum, NVIDIA, and Pfizer Inc. have validated a Generative Quantum AI (GenQAI) framework designed to automate and accelerate quantum circuit synthesis for pharmaceutical research and electronic structure modeling. In their paper, “Learning to Prepare Molecular Ground States with Transformer Models“, the hybrid architecture combines classical High-Performance Computing (HPC), generative transformer models, and quantum processing units (QPUs) to compute ground-state preparation circuits for complex active pharmaceutical ingredients (APIs).<br>
-The multi-institutional team introduced ADAPT-GQE, a generative AI model trained on quantum chemistry datasets generated via GPU-accelerated classical supercomputing. The model predicts complete ground-state quantum circuits for imipramine—a tricyclic antidepressant used as an industry benchmark for forced degradation and shelf-life stability studies—executing the resulting circuits on Quantinuum’s 98-qubit Helios-1 trapped-ion hardware.<br>
-                   [ GenQAI / ADAPT-GQE Quantum Circuit Synthesis Pipeline ]<br>
-                                              │<br>
-     ┌────────────────────────────────────────┼────────────────────────────────────────┐<br>
-     ▼                                        ▼                                        ▼<br>
-  HPC Data Generation (NVIDIA CUDA-Q)      Generative AI Circuit Synthesis          QPU Execution & Validation<br>
-  • GPU-Accelerated ADAPT-VQE Circuits.    • Fine-Tuned NVIDIA Nemotron Models.     • Quantinuum Helios-1 Processor.<br>
-  • OpenMM & MACE-OFF MD Conformers.       • Gemma 3 / Nemotron-Nano Transformer.   • InQuanto Chemistry Platform.<br>
-  • 12 to 16 Active-Space Qubit Maps.       • 3-4 Orders of Magnitude Speedup.       • Validated Imipramine Ground State.<br>
-The experiment resolves a fundamental computational bottleneck in near-term variational quantum algorithms (VQEs):<br>
-- Bypassing Iterative Gradient Calculations: Standard adaptive algorithms like ADAPT-VQE require evaluating thousands of operator gradients and re-optimizing parameter landscapes at every step, rendering calculations for systems exceeding ~15 qubits computationally prohibitive. ADAPT-GQE uses generative transformers (fine-tuned Nemotron and Gemma 3 architectures) to synthesize compact, low-energy circuit structures in a single forward pass.<br>
-- Orders-of-Magnitude Acceleration: The AI-synthesized circuits achieved or exceeded the ground-state accuracy of reference ADAPT-VQE training data while reducing circuit generation time by 3 to 4 orders of magnitude across 12-, 14-, and 16-qubit active spaces.<br>
-- Reinforcement Learning (RL) Optimization: By applying Group Relative Policy Optimization (GRPO) directly to generated circuit outputs, the model learned to propose novel operator sequences that improved upon the accuracy of the underlying ADAPT-VQE training baseline.<br>
-- State-of-the-Art Hardware Execution: The framework compiled synthesized circuits for imipramine conformers via Quantinuum’s InQuanto™ software platform and executed them on the Helios-1 trapped-ion processor, demonstrating the feasibility of AI-driven quantum algorithm generation on commercial QPUs.<br>
-This collaboration between research teams at Quantinuum, NVIDIA, and Pfizer’s Chemical R&D division establishes an open-source reference framework for automating utility-scale quantum computational chemistry.<br>
-Review the pre-print study on arXiv here, and explore the technical announcement on the Quantinuum Blog here.<br>
-August 14, 2026</p>
+    <p>Researchers from Quantinuum, NVIDIA, and Pfizer Inc. have validated a Generative Quantum AI (GenQAI) framework designed to automate and accelerate quantum circuit synthesis for pharmaceutical research and electronic structure modeling. In their paper, &#34;Learning to Prepare Molecular Ground States with Transformer Models&#34;, the hybrid architecture combines classical High-Performance Computing (HPC), generative transformer models, and quantum [...] The post Quantinuum, NVIDIA, and Pfizer Validate Ge</p>
+  </div>
+  <div class="fallback">
+    Full article extraction unavailable.
+    <a href="https://quantumcomputingreport.com/quantinuum-nvidia-and-pfizer-validate-generative-quantum-ai-genqai-framework-for-pharmaceutical-rd/" target="_blank" rel="noopener">Read on original site &rarr;</a>
   </div>
   
 </article>
@@ -186,7 +173,7 @@ August 14, 2026</p>
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-08-15 01:00 UTC
+  Generated 2026-08-15 06:34 UTC
 </div>
 
 <script type="module">
