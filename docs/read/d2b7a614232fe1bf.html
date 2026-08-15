@@ -126,7 +126,7 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    
+    <a href="090b0fe9a2f27747.html" title="Florida State University Launches Florida’s First Graduate Certificate in Quantum Information Science &amp; Technology">&larr; prev</a>
     <a href="766411eca0b577bb.html" title="Quantinuum, NVIDIA, and Pfizer Validate Generative Quantum AI (GenQAI) Framework for Pharmaceutical R&amp;D">next &rarr;</a>
   </div>
 </nav>
@@ -137,20 +137,31 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>6h</span>
+      <span>12h</span>
       <span class="article-category">quantum</span>
-      <span>64 words</span>
-      <span>1 min read</span>
+      <span>374 words</span>
+      <span>2 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Japanese industrial conglomerates Mitsui &amp;amp; Co. and Mitsubishi Electric have published joint experimental benchmarks evaluating the Quantum Fourier Transform (QFT) on Quantinuum’s 98-qubit Helios trapped-ion quantum computer. Detailed in a co-authored white paper (&#34;Experimental Evaluation of the Quantum Fourier Transform on a Trapped-Ion Quantum Computer&#34;), the team executed both physical-qubit approximate QFT and Steane-encoded logical [...] The post Mitsui &amp;#038; Co. and Mitsubishi Electric</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/mitsui-co-and-mitsubishi-electric-benchmark-approximate-and-logical-qft-on-quantinuum-helios/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Japanese industrial conglomerates Mitsui & Co. and Mitsubishi Electric have published joint experimental benchmarks evaluating the Quantum Fourier Transform (QFT) on Quantinuum’s 98-qubit Helios trapped-ion quantum computer. Detailed in a co-authored white paper (“Experimental Evaluation of the Quantum Fourier Transform on a Trapped-Ion Quantum Computer“), the team executed both physical-qubit approximate QFT and Steane-encoded logical QFT circuits.<br>
+The experiment evaluates hardware scaling and algorithmic utility across two computational regimes:<br>
+- Physical Qubit Approximate QFT (Up to 98 Qubits): The researchers executed approximate QFT circuits up to the processor’s full 98 physical qubit capacity. By setting the small-angle phase rotation truncation parameter (degs=5), the system preserved a non-zero target-state probability (Ptarget=0.143 at 98 qubits) while applying leakage-detection (LD) post-selection to mitigate environmental physical errors.<br>
+- Logical QFT with Steane Code (Up to 12 Logical Qubits): Using the 7-qubit Steane error-correcting code ([[7,1,3]]), the team instantiated up to 12 logical qubits across 84 physical qubits. Evaluating error-detection post-selection against active error correction, the team observed that error detection achieved higher logical target-state probabilities (PLtarget = 0.934 for 4 logical qubits, 0.774 for 8 logical qubits) at the cost of reduced shot acceptance rates (31% at 8 logical qubits, 8% at 12 logical qubits).<br>
+- Logical T-Gate Implementation Trade-Offs: In a two-logical-qubit QFT test, the team compared non-fault-tolerant direct analog rotations with fault-tolerant code-switching state injection (using 30 physical qubits across quantum Reed-Muller and Steane blocks). Direct analog rotation yielded higher output fidelity under current physical noise levels, highlighting the operational overheads associated with full fault-tolerant gate construction.<br>
+                    [ Physical vs. Logical QFT Execution Benchmarks ]<br>
+                                            │<br>
+     ┌──────────────────────────────────────┴──────────────────────────────────────┐<br>
+     ▼                                                                             ▼<br>
+  Physical Approximate QFT (degs=5)                              Logical QFT (Steane Code)<br>
+  • Executed across 18 to 98 Physical Qubits.                   • Scaled from 2 to 12 Logical Qubits.<br>
+  • P_target = 0.976 (18q) ➔ 0.143 (98q).                        • Uses 7 Physical Qubits per Logical Qubit.<br>
+  • Uses Leakage-Detection Post-Selection.                      • Evaluates Direct Analog vs. Code-Switching T-Gates.<br>
+The joint research team developed custom quantum error correction software using Quantinuum’s Guppy® hybrid programming language alongside pytket® compilation toolchains, evaluating cross-layer design trade-offs between physical gate noise, code distance overhead, and post-selection acceptance rates.<br>
+Review the technical white paper via Mitsubishi Electric here, and explore executive insights on the Quantinuum Blog here.<br>
+August 14, 2026</p>
   </div>
   
 </article>
@@ -162,7 +173,9 @@
 
 
 <div class="bottom-nav">
-  <span></span>
+  
+  <a href="090b0fe9a2f27747.html" class="prev-next">&larr; Florida State University Launches Florida’s First Graduate Certificate in Quantum Information Science &amp; Technology</a>
+  
   
   <a href="766411eca0b577bb.html" class="prev-next">Quantinuum, NVIDIA, and Pfizer Validate Generative Quantum AI (GenQAI) Framework for Pharmaceutical R&amp;D &rarr;</a>
   
@@ -171,7 +184,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-08-14 18:49 UTC
+  Generated 2026-08-15 01:00 UTC
 </div>
 
 <script type="module">
