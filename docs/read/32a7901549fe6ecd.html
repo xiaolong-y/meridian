@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NTT DOCOMO Deploys Second D-Wave Production Quantum Application to Optimize Telecom Network Signaling — Meridian Reader</title>
+  <title>OTI Lumionics and Samsung Advanced Institute of Technology Achieve 200+ Logical Qubit Quantum Emulation on Single Server Hardware — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,41 +126,44 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="29ad3836a7c678b9.html" title="Texas Quantum Partners and Samara Unveil Site Master Plan for Occam Foundry Tech Campus in Austin">&larr; prev</a>
-    <a href="71ea64aba4fc65b7.html" title="Quantum Motion Expands to Maryland’s Discovery District to Scale US Commercial and Defense Operations">next &rarr;</a>
+    <a href="8bc986751e759645.html" title="IonQ Collaborates with CMC Microsystems to Expand Cloud Quantum Access Across Canada">&larr; prev</a>
+    <a href="29ad3836a7c678b9.html" title="Texas Quantum Partners and Samara Unveil Site Master Plan for Occam Foundry Tech Campus in Austin">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">NTT DOCOMO Deploys Second D-Wave Production Quantum Application to Optimize Telecom Network Signaling</h1>
+    <h1 class="article-title">OTI Lumionics and Samsung Advanced Institute of Technology Achieve 200+ Logical Qubit Quantum Emulation on Single Server Hardware</h1>
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>10h</span>
+      <span>6h</span>
       <span class="article-category">quantum</span>
-      <span>295 words</span>
+      <span>399 words</span>
       <span>2 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Japanese telecommunications operator NTT DOCOMO has deployed its second commercial, production-grade quantum application powered by D-Wave Quantum Inc. (NASDAQ: QBTS). Operating on D-Wave’s hybrid quantum annealing platform via the Leap™ cloud service, the application optimizes Tracking Area Lists (TA-Lists) across mobile networks, reducing daily peak location registration signaling by 65.3% and paging signaling load by 7.0%.<br>
-                [ NTT DOCOMO Network Signaling Optimization Pipeline ]<br>
-                                          │<br>
-     ┌────────────────────────────────────┴────────────────────────────────────┐<br>
-     ▼                                                                         ▼<br>
-  Production App 1: Single Tracking Area Paging              Production App 2: Multi-Tracking Area TA-Lists<br>
-  • In-Zone Paging Signal Optimization.                     • Multi-Base-Station Boundary Optimization.<br>
-  • 15% Reduction in Paging Load.                           • 65.3% Peak Location Registration Reduction.<br>
-  • Hybrid Annealing Execution via Leap™.                    • 7.0% Paging Signal Reduction (333 Base Stations).<br>
-Multi-Objective Network Optimization<br>
-Telecommunication networks organize geographic base stations into Tracking Area Lists (TA-Lists) to manage device handoffs and call routing. Optimizing TA-Lists presents a complex combinatorial challenge because location registration signals (triggered when a device crosses tracking boundaries) and paging signals (broadcast to locate devices for incoming connections) move in opposite directions—reducing one typically increases the other.<br>
-- Benchmark Problem Size: In a operational benchmark spanning 333 base stations, three TA-Lists, and nine tracking areas, D-Wave’s hybrid quantum-classical solver executed the multi-objective optimization in approximately five minutes.<br>
-- Operational Integration: NTT DOCOMO has integrated the generated network configurations directly into its day-to-day network planning and live operational infrastructure, supporting over 93 million mobile subscriptions across Japan.<br>
-- Expanding Production Use Cases: This deployment builds on DOCOMO’s initial D-Wave production application, which targeted paging efficiency within individual tracking areas, expanding quantum annealing from isolated use cases to network-wide infrastructure optimization.<br>
-Review the announcement on the D-Wave Press Room here, and examine our previous coverage of NTT DOCOMO and D-Wave Reporting 15% Mobile Network Performance Improvement here.<br>
+    <p>Quantum software and materials discovery company OTI Lumionics, in collaboration with the Samsung Advanced Institute of Technology (SAIT), has published research benchmarking its proprietary Iterative Qubit Coupled Cluster (iQCC) algorithm in the Journal of the American Chemical Society (JACS). Detailed in the paper (“Large-Scale Quantum Computing Emulation for Accurate Triplet States of Ir(III) and Pt(II) Phosphorescent Emitters“), the team demonstrated 200+ logical qubit quantum algorithm emulations on accessible, non-supercomputing classical hardware to design materials for organic light-emitting diode (OLED) displays.<br>
+                    [ OTI Lumionics & SAIT Quantum Emulation Stack ]<br>
+                                           │<br>
+     ┌─────────────────────────────────────┼─────────────────────────────────────┐<br>
+     ▼                                     ▼                                     ▼<br>
+  Hardware Efficiency Benchmarks       iQCC Algorithmic Precision          Material Discovery Applications<br>
+  • 200+ Qubit Emulation on 1 CPU.     • Mean Absolute Error = 0.05 eV.    • 14 OLED Heavy-Metal Emitters.<br>
+  • 32-Core AMD Processor / 800GB RAM. • R² = 0.94 vs. Experiment.       • Ir(III) & Pt(II) Phosphors.<br>
+  • NVIDIA Blackwell: 90x Speedup.     • Solves Multireference States.     • T1 ➔ S0 Gap Predictions.<br>
+Algorithmic Benchmarks and Hardware Acceleration<br>
+The study benchmarked iQCC against classical methods—including Density Functional Theory (DFT), Time-Dependent DFT (TD-DFT), Coupled-Cluster Singles and Doubles (CCSD), and Completely Renormalized Coupled-Cluster (CR-CC(2,3))—across 14 phosphorescent transition-metal organometallic complexes. While standard single-reference classical methods broke down due to spin contamination and multireference character in the triplet (T1) excited states, iQCC maintained variational stability.<br>
+Hardware execution efficiency and algorithmic metrics include:<br>
+- Single-CPU Execution: Executed emulations scaling up to 200 logical qubits using an optimized C++ codebase on a single commercial 32-core AMD CPU chip with 800GB of RAM, bypassing the need for high-performance computing (HPC) supercomputer clusters.<br>
+- NVIDIA Blackwell Acceleration: Implementing iQCC on NVIDIA Blackwell system architectures yielded a 90x performance increase over classical CPU environments, reducing complex 112-qubit ground-state calculations to approximately one hour.<br>
+- Predictive Accuracy: Achieved a Mean Absolute Error (MAE) of 0.05 eV and a correlation coefficient (R2) of 0.94 relative to experimental photoluminescence spectra, outperforming CR-CC(2,3) (MAE = 0.29 eV) and DFT variants.<br>
+- Ansatz Scaling: Optimized variational quantum circuits containing over 1.5 million parameters and more than 10 million 2-qubit entangling gates without resorting to orbital partitioning schemes.<br>
+By raising the performance baseline for classical emulation of fault-tolerant quantum algorithms, the joint research establishes a rigorous, application-level target for future physical quantum processors to surpass in molecular electronic-structure calculations.<br>
+Review the peer-reviewed research in the Journal of the American Chemical Society here, and read the announcement on GlobeNewswire here.<br>
 August 18, 2026</p>
   </div>
   
@@ -168,16 +171,16 @@ August 18, 2026</p>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantumcomputingreport.com/ntt-docomo-deploys-second-d-wave-production-quantum-application-to-optimize-telecom-network-signaling/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/oti-lumionics-and-samsung-advanced-institute-of-technology-achieve-200-logical-qubit-quantum-emulation-on-single-server-hardware/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="29ad3836a7c678b9.html" class="prev-next">&larr; Texas Quantum Partners and Samara Unveil Site Master Plan for Occam Foundry Tech Campus in Austin</a>
+  <a href="8bc986751e759645.html" class="prev-next">&larr; IonQ Collaborates with CMC Microsystems to Expand Cloud Quantum Access Across Canada</a>
   
   
-  <a href="71ea64aba4fc65b7.html" class="prev-next">Quantum Motion Expands to Maryland’s Discovery District to Scale US Commercial and Defense Operations &rarr;</a>
+  <a href="29ad3836a7c678b9.html" class="prev-next">Texas Quantum Partners and Samara Unveil Site Master Plan for Occam Foundry Tech Campus in Austin &rarr;</a>
   
 </div>
 
