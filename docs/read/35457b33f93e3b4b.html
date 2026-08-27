@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast with Venture Investor Russ Fein — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="b50a91022640499b.html" title="Italian Council of State Rejects Region Appeal, Resetting €61.2M Campania Quantum Tender">&larr; prev</a>
+    <a href="3656cf1a42a4d531.html" title="University of Padova and ThinkQuantum Demonstrate 18-km Intermodal Free-Space QKD with Room-Temperature Detectors">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Podcast with Venture Investor Russ Fein</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Doug Finke</span>
+      <span>6h</span>
+      <span class="article-category">quantum</span>
+      <span>5718 words</span>
+      <span>29 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>A VC’s POV: Investing in Quantum<br>
+Overview<br>
+Venture investor Russ Fein moved to Colorado for family reasons – landing in the heart of one of America’s biggest quantum ecosystems was an unexpected bonus. This new homebase was the perfect place to pursue his pandemic research project: quantum tech. Russ tracks advances in quantum hardware and software on his Substack newsletter, The Quantum Leap, and guides investment decisions at Corporate Fuel. Russ is also CFO and a board member at Colorado-based Vescent. He spoke with The Quantum Spin about why he likes investing in the “picks and shovels” opportunities in the quantum sector.<br>
+00:00 Welcome to Quantum Spin<br>
+00:34 Meet Russ Fein<br>
+01:08 How Russ Found Quantum<br>
+02:46 Inside The Quantum Leap<br>
+03:39 How Investors Evaluate Quantum<br>
+05:53 Why Vescent Won Him Over<br>
+08:58 Vescent Tech Lasers to Clocks<br>
+11:16 Investor Misconceptions<br>
+13:31 Colorado Quantum Hub<br>
+16:55 Policy Funding and Supply Chain<br>
+19:14 Benchmarking Quantum Computers<br>
+23:10 Pitching Quantum to Investors<br>
+26:08 Error Correction to Watch<br>
+27:34 Closing and Where to Listen<br>
+Transcript<br>
+[00:00:00] Veronica: Hello, and welcome to the quantum spin by HKA. I’m Veronica Combs. I’m a writer and an editor here at the agency. I get to talk every day with really smart people working on really fascinating subjects, everything in the Quantum industry, from hardware to software. On our podcast, we focus in on quantum communication, and by that I don’t mean making networks safe from hacking or entangling photons over long distance, but talking about the technology.<br>
+[00:00:26] How do you explain these complicated concepts to people who don’t have a background in science and engineering but want to understand all the same?<br>
+[00:00:34] Today I am talking with Russ Fein. Russ is a venture investor with Corporate Fuel Partners, and he is actively involved with Essent, one of the firm’s first quantum investments. So thank you so much for joining me today, Russ. Great to talk to you. So I found you via your Substack, which is called The Quantum Leap.<br>
+[00:00:54] Several years ago now, when I was trying to get my head around all the different modalities, you had a great chart that talked about superconducting qubits and trapped ion qubits and neutral atoms and all the things. So I’ve been a reader of your Substack ever since. So your background is in finance and management.<br>
+[00:01:11] Russ: Right. I don’t think there’s much discussion of qubits in those courses, in those- No, no, no … the, uh, areas of expertise. So how did you get to quantum? Yeah. Thank you for mentioning the blog. I’m not a physicist, although I’ve always been a bit of a quantum geek. I’ve always been fascinated by relativity and string theory and quantum mechanics.<br>
+[00:01:30] And so as sort of a hobbyist, I would read about those from time to time over the years. I read a mainstream article early in the pandemic about quantum computing, and I was just gobsmacked, and I thought, “Oh my goodness, this is a generational wealth opportunity. As an investor, I can’t miss out on this.”<br>
+[00:01:46] I somewhat missed the investment opportunities of the PC age and the dot-com age. I participated a little bit, but not really meaningfully enough, and I didn’t want to miss it this time. And I thought, “Boy, I’m, I’m curious about quantum, but how can I learn more about it? Well, the best way to learn is to teach.”<br>
+[00:02:02] And I figured if I could write a blog that my friends and family could understand, then I must really understand it. And at the time, early in the pandemic, being locked down, there was lots of free time on my hands, and there’s an amazing number of resources on the internet if you’re a little bit creative and, and I was.<br>
+[00:02:18] And so I went down the rabbit hole as deep as I could and consumed everything I could and started writing about it. And, and the writing helped– like I said, it helped inform me, it helped educate me. Also, it was a great tool to get access to quantum executives. I could call any company or quantum executive virtually and say, “Hey, I’m thinking about writing a blog about you and your company,” and invariably they would talk to me, and so it was a great way to elbow my way into the room as well.<br>
+[00:02:46] Veronica: How far out do you plan your posts? There’s certain themes that I’ve re- revisited over the years as the technology’s evolved. The post that you mentioned, which was sort of a summary of the qubit modalities, I did that a couple of times, sort of every year or 18 months, and they were among my most read pieces, so that was a good signal to me.<br>
+[00:03:05] Russ: And that space has evolved so much that in my recent revisiting of those, I had to dedicate a whole post to each one of the modalities and then sort of a catch-all, um, other modalities. So I think I’ve got five of those that I’ve recently written. And again, you know, helps refresh my knowledge and ref- some of the state-of-the-art changes in the industry.<br>
+[00:03:24] And as an investor and as somebody in the capital market space, I also try to cover capitalization in the industry, investments and M&A trends, things like that, so I’ve got some recurring themes that I cover on the capital market side as well. So as an investor, how do you evaluate quantum companies? It’s a pretty fascinating space, and it is very dynamic.<br>
+[00:03:45] There’s no playbook. We’re all making this up as we go. It may sound cliché, but the most important thing always in any investment is the team. I’d rather have an A team with a B company than, than the reverse; somewhat learned that lesson the hard way. A lot of it comes down to both the credentials and previous experiences of the senior team, as well as just sort of the connection, the interpersonal dynamics.<br>
+[00:04:09] That’s by far the most important thing. The second thing I look at, you know, quantum, uh, is a bit of a bucket term, but there’s lots of submodalities, as you know. There’s quantum computing, which gets a lot of the conversations and headlines, but there’s networking and sensing and timing, and then there’s all the people that supply the important components to those end uses.<br>
+[00:04:29] There’s different niches within the industry, and so you need to understand within the given target market of a company, how much risk have they burned down. If they’ve got some great ideas, they just need capital to do the experiments, that’s much earlier than somebody who already has commercial traction.<br>
+[00:04:46] So a lot of it depends on what the investor’s ri-risk appetite is in terms of that product life cycle. Another thing I, I often find that’s a bit of a tripwire is many times physicists will come and say, “Hey, we did this hero experiment. We got this great result. We want to now build a company around it And doing a one-off hero experiment in a very controlled lab environment does not necessarily translate to commercial traction.<br>
+[00:05:15] And so you really have to un-understand what are they doing? What was that experiment? How far along does that take you? And then finally, in somewhat of an extreme example, I, I hear this so many times, people come to me and say, “Hey, we’ve got a beta product or a first-time experiment, you know, we’re 90% of the way there.”<br>
+[00:05:32] And I think to myself, well, that’s ambitious of you, but you’re probably about 10% of the way there. Getting- … a, a very difficult sort of physics achievement to a commercial readiness is much more difficult and much longer and much more expensive than many people expect. So you need to understand where you are on that evolution as well, and make sure you’re getting it at the right time.<br>
+[00:05:53] Veronica: You mentioned that Vescent was one of your first quantum investments, I believe. Vescent is a really cool company in Denver or Boulder, out there in Colorado somewhere. Golden. Yeah. Yeah. Golden, okay. That was my third guess. So what does Vescent do? Vescent is a “picks and shovels” business, meaning they supply the enabling components to almost everybody in quantum.<br>
+[00:06:13] Russ: In fact, I met Scott Davis, the CEO and founder, co-founder at an industry event. We hit it off and he said, “Oh, you’re a venture investor. Let me buy you lunch, come see Vescent.” And I don’t think he thought that I would follow up, but I did. And he gave me a tour and he gave me a quick slideshow, and he got to slide five or whatever number it was, and it was a list of their customers.<br>
+[00:06:34] And I thought to myself, I’m investing in this company. They’re selling to everybody. And I thought that was a great validation of Vescent’s capabilities, that all these people are willing to pay Vescent money for their components. But it also puts Vescent in a great position. They’ve got what I call catbird seat.<br>
+[00:06:51] They see what the industry needs are, where their pain points are, where the trends are going, where the technologies are moving, and it gives them a great roadmap for their own product evolution. And so I liked Scott. He had assembled an amazing team, both technically and personally. And they had never taken outside capital, so he was checking me out as much as I was checking him out.<br>
+[00:07:12] And it took over a year from us meeting to actually doing an investment. I led a $5 million seed round invest, and it was their first outside capital. And everything Scott and company had promised me and what the use of proceeds of the $5 million was and what the plans were, about two and a half, half years later, it’s all been executed on.<br>
+[00:07:30] It’s done exactly what it said and performed exactly as it said it would. And the future roadmap is really exciting. So it was a great investment, and I joined the management team as part of that. The, the thesis of my firm is if you can find these amazing entrepreneurs and technical companies, they often forget about some of the nuts and bolts of, you know, GAAP accounting, audited financials, and flash reports, and budget variance analyses, and margin by customer, margin by product.<br>
+[00:08:01] You know, a lot of the stuff that I sort of take for granted I’ve been doing my whole career, and I did learn in graduate school. These companies don’t necessarily have that or focus on that. And so I joined the board, and I joined as the CFO, and I now have audited financial statements. We have a very rigorous monthly budget versus actual analysis.<br>
+[00:08:19] We have flash reports every Monday. We are now digging into margin by every product, by every customer. And so, you know, if you, if you want to fix something, you have to be able to measure it. And so I’ve brought that measurement skill set to Vescent, and I think it’s been a great win-win investment to date.<br>
+[00:08:38] And Vescent’s about to do another fundraise to grow even faster. They have more orders than they can fill. They need to expand their- Wow … capacity. They need to bring in some more sales and marketing resources, especially on a global basis. So it’s sort of a crossroads, and it’s been an exciting journey, and I, I’m excited to continue the journey with them.<br>
+[00:08:58] Veronica: So they do lots of things, but I know one of their product lines is atomic clocks, right?<br>
+Russ: Vescent’s been around for a while, and they perfected the control electronics, if you will. So much of quantum is driven by the photon, either a, you know, in a photonic quantum computer, the photons are driving the algorithms.<br>
+[00:09:18] Russ: In trapped ions and, and neutrals, the lasers are what are controlling the qubits. For quantum networking, you need lasers. So the lasers and the control electronics has been Vescent’s specialty for a long time. Before I invested, they were selling control electronic boxes, you know, sort of roughly $5,000 items, selling to everybody.<br>
+[00:09:40] As they started thinking about how we could better penetrate the quantum market, they thought, “Well, instead of just selling components, why don’t we sell solutions?” The first solution they came up with, which is a sort of an amalgam of their legacy product base, is something called a frequency comb. This is a very fancy kind of laser, but it’s a really core enabling technology for many of the quantum computing players, and it’s really just the same core competencies that they were selling in one form factor repackaged in a new form factor.<br>
+[00:10:10] And so we now have full solutions for all, all of the trapped ion and neutral atom quantum computing companies are buying these, these frequency comb setups to control their lasers and improve their uptime. And, and that’s been a great business, but we can also– Vescent’s now again reconfiguring this core competency and products into an optical clock, and that product’s going to come to market in Q1 of next year.<br>
+[00:10:33] So much of the world is dependent on precision time. We kinda take for granted much of the time today is derived from GPS. GPS timing is basically cesium beam atomic clocks. I don’t want to get too technical, but that’s a technology that’s been around for decades. There’s literally cesium beam clocks in the Smithsonian.<br>
+[00:10:53] That’s how old the technology is. It’s really ripe for disruption, and Vescent has an optical clock coming to market that’s a hundred times more precise than the cesium beam, basically the same form factor and price point, and could do things like advanced radar and, and other advances in precision timing.<br>
+[00:11:14] Veronica: Wow. Wow, that’s really exciting. Going back to the investor perspective, what do you think investors miss about quantum technology? What’s a common misconception?<br>
+So Vescent is doing an A round right now, so we’re talking to a lot of investors, and it’s interesting how some of them are very sophisticated, but they say they understand quantum or they want to get into quantum, but they really don’t.<br>
+[00:11:37] Russ: And I just had one ask, the first question they asked about the customer base was, “What’s the customer retention metrics?” And so that’s the, that’s the first mistake. This, this is not software. There is quantum software, and that’ll be a separate niche with its own upside once the hardware is ready for it.<br>
+[00:11:55] But many investors misunderstand what quantum is all about, or they were so successful in the software realm that they want to apply those learnings, those metrics to this realm. And hardware is very different than software, especially hardware like that in quantum. It’s a very sophisticated, cutting edge thing that has a very different life cycle and economics than software.<br>
+[00:12:18] So that’s the biggest mistake, is people think they want to get into quantum, but they don’t really understand quantum, so they don’t know what questions to ask, and they don’t know how to evaluate the businesses. That’s number one. The other thing is people confuse that quantum is just quantum computing, and that quantum computing is all about some sort of quantum advantage, which is somewhat true, but quantum is much more nuanced than that.<br>
+[00:12:40] There’s so many other parts of the quantum ecosystem that have great promise. Vescent has $14 million in revenues last year. That’s pretty rare for a quantum company. Quantum is not some giant bucket. Investors really need to understand the nuances amongst the different sub-sectors and think about the investment dynamics differently depending on the sub-sector Right, right.<br>
+[00:13:04] Veronica: I was thinking about your comment about translating software expertise into this hardware realm, and we find a lot of the same things when it comes to talking about quantum technology. Just because you’ve helped some big software company promote their work, you just can’t use that same playbook. You really do have to understand the technology, understand the market, understand the investor, and shape your communication strategy around that.<br>
+[00:13:27] There is no one-size-fits-all. That’s right. That’s a very good point. So Colorado is a very cool state in general, but it’s got a very strong quantum ecosystem. I believe you’re based in Colorado as well? Yes. So, tell me what’s happening out there. Yeah, you know, it’s funny, I’ve been in Colorado now quite four years.<br>
+[00:13:45] Russ: I came here for personal reasons, family, and my wife does better in the dry climate that we have here in Colorado. I moved here and found a nice house in a nice community, and I’ve got a granddaughter nearby. So that all worked out. And then I got here and realized, wow, this is the quantum eco center. In fact, Vesant is a co-signer on an initiative called Elevate Quantum, which is the nation’s only federally funded quantum tech hub.<br>
+[00:14:11] I signed the application on Vesant’s behalf, which I’m proud of, and it’s more than just a designation and ecosystem. Elevate Quantum’s main mission is to bring together all of the quantum players, the national labs, the universities, the commercial players, uh, you know, everything in between. And so educate people, educate the workforce, grow opportunities for entrepreneurs, for the industry at large.<br>
+[00:14:34] Partly that’s because the Boulder ecosystem contains the University of Colorado at Boulder and NIST, which is the National Institute of Standards and Technologies, which is the nation’s primary lab for standards. CU and NIST put something together called JILA, which is a program where a lot of the current players in quantum got their PhDs.<br>
+[00:14:58] So they got their PhDs and then loved the community and state. And so a lot of the companies you read about, Infleqtion, Atom Computing, Quantinuum, now IonQ is building a facility here. A lot of the companies that are at the forefront of quantum are here because their founders got educated and got PhDs at NIST.<br>
+[00:15:20] At JILA. The last four physicists Nobel Prize winners came from this area. Carl Wieman, Eric Cornell, you know, developed the Bose-Einstein condensate. The person who did that experiment was the first person to see it, was another co-founder of Vescent. Jan Hall, who created the frequency comb, won a Nobel Prize for that.<br>
+[00:15:41] It’s an amazing device. Vescent’s CTO, um, was Jan Hall’s last student. We like to joke that Kurt, you know, broke Jan, that Jan couldn’t take it anymore after Kurt, which is just a friendly joke, but he’s a brilliant man, and that was an amazing, um, Nobel Prize. And then the first quantum gates, the first trapped ion experiments were done by Dave Wi-Dave Wineland, and he got the Nobel Prize.<br>
+[00:16:03] So that, that legacy sort of DNA, if you will, of atomic molecu-molecular optical physics, you know, comes from this area, and it’s just led to a whole big ecosystem. Vescent is a core player here. Mabl, Mabl makes the Dilfridges. They are here. A lot of other important companies are based here, so it’s a great place to be.<br>
+[00:16:24] There’s all sorts of social events and formal and informal networking opportunities, and it’s a very open community. So if you come to town, you know, it’s pretty easy to get invited to things or get tours with companies. It’s a pretty welcoming ecosystem. Right. Right. Yes, I know Maybell and Quantinium are there and understand their connections to, to JILA and to NIST, and I thought it was really interesting that IonQ is now building a headquarters out there.<br>
+[00:16:51] Veronica: That really shows the power of Colorado and Denver and Golden and Boulder. We had been tracking the current administration’s interest in the quantum sector, and we were sort of all waiting for these executive orders, and they came out at the end of June. And, you know, we were all excited to see that sort of vote of confidence for the industry, that commitment to, to some funding.<br>
+[00:17:11] What was your reaction to those initiatives? Yeah, I think it’s a great signal. It’s a great start. They weren’t very specific, so that’s my only, my only, um, negative. But the fact that the president is dedicating resources and, and monies to quantum is really great for quantum. So I, I hope and expect it will lead to financial opportunities.<br>
+[00:17:33] Russ: The supply chain was one of the two executive orders that were just signed, and it was very encouraging. I think that quantum computing is going to have vulnerabilities because the supply chain needs to be as robust as possible for these companies to meet their timelines. My fear is that a lot of the cutting-edge newer companies that have good products haven’t quite perfected their operations yet, and their supply chain and their vendor network, et cetera.<br>
+[00:18:00] I think the administration focusing on supply chain will help that. So I’m encouraged that there was an announcement last month about a $2 billion funding initiative. Companies like IonQ Computing got 100 million of that. IBM got a billion of it. So that was real money dedicated to real quantum activities, and in fact, it included instances where the government took equity positions in some of these companies.<br>
+[00:18:25] And so really betting on the upside for the taxpayer, and so I expect we’ll see more of that from these two newer executive orders and look forward to those details. Yes. Yes. Good to have Dario Gil up there in DC, shepherding the quantum industry for all of us. Sure. That foundry that their IBM is going to have as related to that, that funding, I’m really keeping an eye on that too.<br>
+[00:18:50] Veronica: That does seem to be the next step, right? You can’t just build one-offs anymore, now you have to have products- That’s right … that will work every time and be calibrated correctly. I was talking to one of our clients and they were talking about how AI can help with some of this calibration, because I think the calibration process takes quite a while when you’re starting up the hardware, and it is, again, that’s just another way that<br>
+[00:19:10] quantum is different. Right. It’s not a push button yet. It’s getting there, but not quite there yet. Right. There was one specific, uh, the Department of Energy is supposed to identify technical specifications for a quantum computer aimed at transformative science, scientific applications. That takes us back to the benchmark issue.<br>
+[00:19:25] What do I look for in one of these machines? Yeah. Do you have any thoughts on that requirement?<br>
+Russ: That’s, yeah, it’s a tricky one. I’ve written about that a bunch. In classical computing, you can calculate, you know, operations per second, and it’s pretty generically accepted that’s a good benchmark, and most classical computers kind of operate somewhat similarly, so you can compare, you know, A to B and have a pretty good understanding.<br>
+[00:19:49] Russ: In quantum, it’s very different. No one’s really developed any standards, and different companies are espousing different things. My readers and early sort of investors get trapped on this all the time. It’s not just about qubits. A lot of the early press is about, you know, how many qubits will you have, when<br>
+[00:20:05] it’s the number of qubits, it’s the quality of those qubits, and then it’s the speed of how you do things, and there’s trade-offs amongst different modalities. It’s sort of very hard to compare apples and oranges. Companies like IBM has the quantum volume metric and a CLOPS metric. IonQ has their algorithmic metric.<br>
+[00:20:23] NIST is coming up with some standard bench marching problems to operate against. Everybody’s sort of trying to come up with metrics that combine the speed, the quality, and the quantity, but no one’s really done it in a way that’s completely acceptable yet. The other thing is I think people are waiting for the ChatGPT moment of quantum, where suddenly anybody can use a quantum computer and it does something useful.<br>
+[00:20:50] Quantum’s going to be much more, more subtle than that. I think when people talk about commercial quantum advance, when you can run a useful problem on a quantum machine that couldn’t be run otherwise, I think there’s lots of starts and stops to all of that. I think improvements in results is really what’s going to matter the most, and I’m not sure how you measure that.<br>
+[00:21:12] I think you’re going to see quantum commercial advantage in subtle ways, perhaps a 10% improvement in weather forecasting or, you know, 5% savings in your logistics planning because you can use a quantum computer to help with the traveling salesperson problem, things like that. So it’s subtle and, and I don’t know yet who’s going to come up with sort of the measurement yardstick, and I don’t know how the government’s going to use all of this.<br>
+[00:21:39] But it’d be great if the industry could coalesce around a metric that we could all understand what it meant. We’re not quite there yet. Yes. I did notice that in that funding news a month or so ago, they did pick one company for every modality.<br>
+[00:21:56] Veronica: IBM’s getting a lot of money for their superconducting, but the government definitely has not picked a winner yet, at least. Yeah.<br>
+Russ: in terms of qubit modality. I’m not sure, Veronica, that there’s going to be… You know, there’s m- there’s multiple modalities. Mm-hmm.<br>
+[00:22:11] Russ: There’s trapped ions and photonic, et cetera. I’m not sure one is going to win, and then I’m not sure one company is going to win. I think there’s going to be certain applications that perhaps trapped ions are better for than superconducting, and vice versa. And there may be solutions, now I hear about two species, you know, uh, quantum computing.<br>
+[00:22:30] Maybe there’ll be multiple modality quantum computing. And so I think, I think there’s, there’s like Over 80, there’s probably close to 100 different quantum computing companies, and they’re not all going to win, but- Right … IBM are not going to lose either. It’s not going to be winner take all. So I’m curious to see how that all plays out.<br>
+[00:22:50] Veronica: I think it really does depend on the use case, right? Sometimes you would need a qubit that lasted longer, sometimes you would need speed, and- Right. So yeah, I agree. It’s not just a VHS versus Betamax, even though we all like to fall back on that analogy. Yeah. Yeah. It’s interesting, like you said, there’ll be subtle advantages.<br>
+[00:23:08] Russ: No, I agree. That’s a good point. What have you found in writing the Quantum Leap Substack in terms of explaining quantum technology? Do you have any advice for companies when they’re meeting with investors and trying to get them to spend money on them? Yeah. Challenging for scientists and quantum physicists, people trying to advance companies, the world of finance is a black box to them.<br>
+[00:23:27] Just as for many investors, quantum is a black box, the reverse is true. And so for– if you’re an entrepreneur in a quantum company, you gotta understand your audience, your investor. Not all investors are the same. Some only like to invest in later stage, some only like to invest in early stage. Some like to write, you know, $1 million checks, some like to write, you know, checks 20 million or greater.<br>
+[00:23:48] So you sort of have to know who you’re talking to and what their sweet spot is, and you may not be a fit. It’s better to know that right away than to kinda waste an hour to try to convince somebody that there’s, you know, your square peg is going to fit in their round hole. So that’s, that’s, that’s sort of the number one thing.<br>
+[00:24:06] There’s plenty of information on the internet. You can ask the AI engines, you know, “Give me a briefing on this investment firm and this person I’m going to meet.” You know, give you some background, and then ask the questions up front. And Scott Davis always asks when he’s, when he’s pitching investors, you know, “How much quantum do you know?”<br>
+[00:24:22] And he’ll cater his pitch to that level, which is really important. The other thing is, you as a scientist, you as a physicist might be really enamored with some technical result you’ve achieved. But investors are not going to care if they don’t know how you’re going to go to market with that. We like to say at Corporate Fuel, you know, are the dogs eating the dog food?<br>
+[00:24:43] That’s the big test. You could have the best dog food in the world, but if the dogs won’t eat it, then what’s the point? So you need to be able to articulate your go-to-market strategy. Who’s going to buy it? How much are they going to pay? Can you make enough margin at that price? All those kinds of things. You have to really think through that and convince the investors that you may not have all the answers, but you at least know the questions and you’ve started to think through it and you’ve got some plans on how to get there.<br>
+[00:25:08] And then the last point, I kind of alluded to this before, when someone says they think that their prototype means they’re 90% of the way there. You know, science is not the same as operations. It’s really hard to take some of these really sophisticated Control electronics and put them in a box where someone can just, you know, plug it in and it just works, is really hard.<br>
+[00:25:31] That’s when they learned the hard way. Somebody, you know, R&D’d, they designed this great product, and then they handed it off to manufacturing to go assemble it, and they started to put it together, and they realized that the, the way that it was configured, they couldn’t get enough torque on the screwdriver- Oh, wow<br>
+[00:25:44] to screw the thing in. Yeah. Some little things you’d never think about, you know, from a designing for manufacturing, maybe you think it, you know, so far down the road ’cause you just, you just basically did some, some first time experiments. But you have to always be thinking about how I’m going to make a product out of this.<br>
+[00:26:00] How do I think about that? How do I design for that? Getting some people on your team that have operational experience will be really important. And is there any work you’re tracking throughout the rest of this year? There’s been a great, somewhat recent surge in error correction, and, you know, that’s a bit of a bucket phrase.<br>
+[00:26:20] It means different things to different companies, and logical qubits versus physical qubits are not always the same ratios, and so there’s a lot of nuance. We’re in the NISQ era now, and noisy, intermediate stage quantum, you can’t really do much with noisy qubits. You can learn about how gates run, but you’re not going to run any important algorithms.<br>
+[00:26:40] But as you start to get error correction, you transform to a whole new world, and some of the roadmaps some of the leading quantum computing companies are talking about are pretty exciting. So, through this year, I’m excited to see how people are implementing error correction and what kind of improvements they are having.<br>
+[00:26:58] What’s their roadmap achievement relative to what they said they’d get to in terms of logical qubits. Once you get to around 50 logical qubits, you are suddenly in a realm where you can’t replicate results on a classical computer, and that’s when I think the excitement’s going to start. I think we’re very close to that.<br>
+[00:27:15] Veronica: Yes, it has been really interesting to watch the error correction progress. People are getting so creative about, you know, using something you would think of as a roadblock. It’s more of a tool to use to take a different approach to error correction or to think about the problem differently. So there is- Yeah<br>
+[00:27:29] so much creativity in the field, and it’s really exciting to see that. Yeah, it is exciting. So thank you so much, Russ, for joining us today. It’s really great to hear about Colorado and Corporate Field Partners. And again, I would encourage folks to subscribe to The Quantum Leap Substack if you want to keep track of what’s happening in the industry.<br>
+[00:27:47] Russ: Yeah. Thanks, Veronica. I’m a big fan of yours and of HKA. You guys are one of the unique players in the world to really just focus on marketing exclusively in quantum, which I think is, was a smart move that Hillary made, and I’ve been a fan of the firm for many years and look forward to doing things together in the future.<br>
+[00:28:02] And thanks for having me on the show.<br>
+Host Veronica Combs is a quantum tech editor, writer and PR professional. She manages public relations for quantum computing and tech clients as an account manager with HKA Marketing Communications, the #1 agency in quantum tech PR. You can find them on X, formerly known as Twitter, @HKA_PR. Veronica joined HKA from TechRepublic, where she was a senior writer. She has covered technology, healthcare and business strategy for more than 10 years. If you’d like to be on the podcast yourself, you can reach her on LinkedIn, Veronica Combs, or you can go to the HKA website and share your suggestion via the Contact Us page.<br>
+August 26, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/podcast-with-venture-investor-russ-fein/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="b50a91022640499b.html" class="prev-next">&larr; Italian Council of State Rejects Region Appeal, Resetting €61.2M Campania Quantum Tender</a>
+  
+  
+  <a href="3656cf1a42a4d531.html" class="prev-next">University of Padova and ThinkQuantum Demonstrate 18-km Intermodal Free-Space QKD with Room-Temperature Detectors &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-08-27 06:59 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>

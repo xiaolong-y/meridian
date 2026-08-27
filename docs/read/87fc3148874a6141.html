@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole’s guide to writing and editing — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="4d99973911625df1.html" title="CypherGenics Launches FASTKAT Platform for Post-Quantum Identity and Encryption">&larr; prev</a>
+    <a href="ecab5eac89054f9e.html" title="Quantum X Labs Launches “Qatacomb” Quantum-Native Security Research Initiative">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Nicole’s guide to writing and editing</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Frontiers (Caltech)</span>
+      <span>Nicole Yunger Halpern</span>
+      <span>7h</span>
+      <span class="article-category">quantum</span>
+      <span>3751 words</span>
+      <span>19 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Freshman year of college, I took a writing seminar from German-literature professor Ellis Shookman. Professor Shookman loved Mozart’s music, he told us early in the term. He listened to Mozart on the radio while driving from campus to Boston. Static might mar the transmission, but he could often turn up the volume and continue enjoying the program. Sometimes, the static worsened during the drive. It could worsen and worsen, until Professor Shookman’s frustration outweighed his delight at listening. He’d switch off the radio.<br>
+As Professor Shookman loved listening to Mozart’s music, he loved reading about students’ ideas. Yet static can mar a piece of writing: infelicities in grammar, structure, composition, word choice, and more. If enough infelicities obscure the writing, the frustration of reading outweighs the benefits. Professor Shookman will quit reading.<br>
+Professor Shookman marked up our essays with a blue pencil that achieved the status of legend among his students. If you’ve written a paper I’ve coauthored, you’ve probably received PDF drafts replete with green highlighting.1 A sticky note explains the reason for each highlighting: “Singular–plural mismatch.” “Active voice >> passive voice.” “Let’s clue the reader in as to this formula’s meaning before lobbing the math at them.”<br>
+Over the past year, I’ve catalogued the suggestions I write most often on paper drafts. The comments embody principles gleaned from Strunk and White’s The Elements of Style; the Physical Review style guide; other writing guides I esteem; literature whose writing I esteem;2 collaborations with professional editors; and writing instructors, including Professor Shookman. Each section below begins with more-important principles, shading into more-nuanced ones.<br>
+Please use and disseminate these principles. Train your favorite large-language model (LLM) on them, and have the LLM critique your manuscripts. Instruct it to use green highlighting if you wish. Even if the LLM suggests fixes initially, tell it to stop offering suggestions later, so that you can devise the solutions: train not only the LLM, but also yourself. I hope to enjoy your papers as much as Professor Shookman enjoyed his sonatas.<br>
+- <br>
+        Organization<br>
+        <br>
+  - Motivate your work; then, present it; and then, explain its physical significance.<br>
+  - Begin each paragraph with a topic sentence.<br>
+  - Begin each section, apart from the introduction and conclusion, with (i) a statement of the takeaway and (ii) an outline of the section. When outlining a section, hyperlink to each subsection. Similar guidelines concern subsections and subsubsections.<br>
+  - <br>
+                Before presenting a piece of math, sketch its meaning and origin. This strategy enables the reader to understand the math as soon as they encounter it. If you throw math at the reader without introducing it, the reader will have to squint at the symbols for a while to figure out what the expression means and where it comes from.<br>
+                <br>
+    - Example: To calculate the average work, we substitute the Hamiltonian formula (10) into the definition (12): [equation].<br>
+  - Most citations belong at the ends of (i) sentences and (ii) phrases concluded with commas. Put a citation elsewhere only if you have a compelling reason for doing so.<br>
+  - <br>
+                Bridge each component of your writing to the next component; the next shouldn’t sound like a non sequitur.<br>
+                <br>
+    - <br>
+                        Suppose that the next sentence refers to (i) a topic mentioned in the previous sentence and (ii) a new topic. Mention (i) before (ii).<br>
+                        <br>
+      - Example: Smith et al. applied control theory to the extent possible. The attempt led to intractable equations, unlike our approach.<br>
+      - Example of a broken bridge: Smith et al. applied control theory to the extent possible. Our approach does not involve intractable equations, unlike theirs.<br>
+  - <br>
+                        Suppose that the next sentence refers to (i) a topic mentioned in the previous sentence and (ii) a new topic. Mention (i) before (ii).<br>
+                        <br>
+  - <br>
+                Whenever you tell a story, tell it from start to finish, step by step. Derivations, proofs, and descriptions of experiments qualify as stories.<br>
+                <br>
+    - This guideline extends to descriptions of experimental setups and of mathematical objects. For example, imagine referring to an element of a subgroup of the group generated by some operators. Did you have to read the preceding sentence multiple times to process it? The sentence begins at the end of a story, then rewinds to the story’s beginning. This structure impedes understanding. The subgroup forms the context for the subgroup element, which one can’t grasp until hearing about the subgroup. The subgroup participates in a similar relationship with the group, as does the group with its generators. Therefore, one should introduce the generators, then the group, then the subgroup, and then the subgroup element.<br>
+- <br>
+        Word choice<br>
+        <br>
+  - <br>
+                Use strong, specific words, rather than weak words.<br>
+                <br>
+    - Verbs and nouns are stronger than adjectives and adverbs.<br>
+    - Choose specific verbs (e.g., “prepare,” “evolve,” and “measure”), rather than vague, general verbs (e.g., variants of “to be” and “take,” as in “take a measurement”).<br>
+  - Avoid statements such as “we investigate,” “we study,” and “we analyze.” Such statements don’t relate that you’ve accomplished anything. State what you’ve accomplished. Verbs such as “prove,” “test,” “confirm,” “discover,” and “find” achieve this goal.<br>
+  - Adverbs such as “importantly” and “remarkably” pollute scientific writing with the authors’ opinions. Demonstrate that a claim is important or that a result is remarkable; then, leave readers to draw their own conclusions. Those conclusions will coincide with yours if you’ve demonstrated your point.<br>
+  - Use the active voice, rather than the passive voice. Take responsibility for your work. Editors of high-impact scientific journals have endorsed this advice.<br>
+  - <br>
+                Refer to yourself when necessary and only when necessary.<br>
+                <br>
+    - <br>
+                        Example of unnecessary reference to self: We use the superscript “max” to signify the maximal Fisher information.<br>
+Preferable alternative: The superscript “max” signifies the maximal Fisher information.<br>
+    - <br>
+                        Example of unnecessary reference to self: Our results establish several opportunities for future research. First, we can implement the experimental proposals.<br>
+Preferable alternative: Our results establish several opportunities for future research. First, one can implement the experimental proposals.<br>
+    - You may use the first-person plural when escorting the reader through a derivation.<br>
+    - Example: We substitute from Eq. (1) into Eq. (2).<br>
+  - <br>
+                        Example of unnecessary reference to self: We use the superscript “max” to signify the maximal Fisher information.<br>
+  - If you’re the only author, don’t use the plural (“we,” “our,” etc.). The usage is inaccurate and misleading. It portrays you as dodging responsibility for your work by dispersing that responsibility across the scientific community.<br>
+  - Avoid dangling modifiers.<br>
+  - <br>
+                Pair every verb with the appropriate noun.<br>
+                <br>
+    - <br>
+                        Example of grammatically incorrect text: Equation (1) follows by calculating the sum.<br>
+                        <br>
+      - One should pair the verb “calculate” with the noun “we,” because “we” undertook the calculating. However, this example’s author omitted the noun out of squeamishness about using the first person in a scientific document. Hence the sentence says that the equation calculates the sum. Equations can’t calculate sums.<br>
+    - <br>
+                        Examples of correct alternatives<br>
+                        <br>
+      - We derived Eq. (1) by calculating the sum.<br>
+      - Equation (1) follows from the evaluation of the sum.<br>
+      - Calculating the sum yields Eq. (1).<br>
+  - <br>
+                        Example of grammatically incorrect text: Equation (1) follows by calculating the sum.<br>
+                        <br>
+  - Avoid empty subjects.<br>
+  - <br>
+                Include no unnecessary words.<br>
+                <br>
+    - “So-called” is unnecessary.<br>
+    - “Note that” and “We note that” are unnecessary.<br>
+    - “We have that,” used as a preface to a mathematical statement, is unnecessary. One can better serve the reader by prefacing the mathematical statement with (i) a derivation or (ii) a prose description of the statement.<br>
+    - Never write “is equal to”; “equals” is more concise.<br>
+    - Never write “is able to”; “can” is more concise.<br>
+    - Never write “gives an upper bound to” or “places an upper bound on”; “upper-bounds” is more concise. Analogous statements concern lower bounds.<br>
+    - Never write “a large number of”; “many” is more concise. Never write “a small number of”; “few” is more concise.<br>
+    - Never write “We refer to [symbol] as [name]”; “we call [symbol] [name]” is more concise.<br>
+    - Never write “as long as”; “if” is more concise.<br>
+    - The symbol means “greater than”; and , “greater than or equal to.” Don’t translate into “strictly greater than”; the “strictly” is unnecessary. Analogous statements concern and .<br>
+  - Avoid contractions, which are too informal for professional writing.<br>
+  - The possessive is not a contraction and belongs in professional writing. It facilitates conciseness.<br>
+  - <br>
+                Use the word “for” only when it belongs. Physicists often write “for” when they mean “if,” “per,” “at,” or something else.<br>
+                <br>
+    - <br>
+                        Example of inappropriate use: The function vanishes for odd arguments.<br>
+Corrected statement: If the argument is odd, the function vanishes.<br>
+    - <br>
+                        Example of inappropriate use: We performed 10 trials for each parameter value.<br>
+Corrected statement: We performed 10 trials per parameter value.<br>
+    - <br>
+                        Example of inappropriate use: The function is smaller for small x values.<br>
+Corrected statement: The function is smaller at small x values.<br>
+  - <br>
+                        Example of inappropriate use: The function vanishes for odd arguments.<br>
+  - Write “we evolve the state,” “we measure,” etc. only if you’re an experimentalist who undertakes those actions. Alternatives include “Consider measuring,” “Suppose the system evolves,” and the command tense (e.g., “One can measure this quantity as follows: prepare the qubit in . Evolve it under …”).<br>
+  - The condition defines a regime, not a limit. The conditions and define limits and are inequivalent to .<br>
+  - Write “first,” “second,” “last,” etc., not “firstly,” “secondly,” “lastly,” etc. (I defer in this matter to The Elements of Style.)<br>
+  - Humans can assume, suppose, etc. Mathematical expressions, protocols, etc. can’t.<br>
+  - One multiplies factors together and sums terms. Don’t call factors terms and vice versa.<br>
+  - If you mean “X equals Y,” say so. Don’t write “X agrees with Y,” “X matches Y,” or “we identify X with Y.” The latter three phrases are vaguer, and two of them contain more words, than “X equals Y.”<br>
+  - <br>
+                Regarding the words “general” and “generally”:<br>
+                <br>
+    - A general object subsumes every example of that object. If any example behaves unlike a supposedly general object, don’t call the object general.<br>
+    - <br>
+                        Many claims contain the term “general,” “generally,” or “in general” but don’t need the term.<br>
+                        <br>
+      - Example of a sentence that contains “generally”: The terms generally commute.<br>
+      - Equivalent, more concise sentence: The terms commute.<br>
+    - Physicists tend to use the words “general” and “generic” differently. By “general,” physicists usually mean “subsuming every example.” By “generic,” we usually mean “typical,” or “common.”<br>
+  - <br>
+                “Then” makes sense (i) in discussions of chronology and (ii) in if–then statements. Don’t use “then” outside these contexts.<br>
+                <br>
+    - Example of inappropriate use: “Define Then Y.”<br>
+    - Examples of appropriate alternatives <br>
+      - Define This definition implies Y.<br>
+      - If then Y.<br>
+      - Define such that Y.<br>
+  - Don’t justify any equation with “we used that [such-and-such is true],” which violates the rules of grammar. Grammatically correct alternatives include “We applied [a property],” “The equation follows from [a property],” and “…since [such-and-such is true].”<br>
+  - <br>
+                Regarding tense:<br>
+                <br>
+    - When describing what you’ve accomplished, use only one tense.<br>
+    - Experiments happened in the past, so describe them in the past tense.<br>
+    - <br>
+                        When describing a proof’s steps, use the present tense.<br>
+                        <br>
+      - Example: We Taylor-approximate the function about . Substituting into Eq. (1) yields [equation].<br>
+  - <br>
+                Nouns, verbs, and adjectives should agree about whether a quantity is singular or plural.<br>
+                <br>
+    - Example of singular–plural mismatch: The equations are a rule for evolving the cellular automaton.<br>
+    - Example alternative: The equations form a rule for evolving the cellular automaton.<br>
+  - <br>
+                “Admit of” means “allow for,” or “permit.” The phrase needs the “of.”<br>
+                <br>
+    - Example: The formula admits of the following interpretation.<br>
+- <br>
+                Use strong, specific words, rather than weak words.<br>
+                <br>
+- <br>
+        Punctuation<br>
+        <br>
+  - Consider any list that contains at least three items. If no item contains a comma, separate the items with commas. If any item contains a comma, separate the items with semicolons.<br>
+  - In American English, periods and commas belong inside quotation marks. (Example: She told me, “Have a good day.”) In British English, periods and commas belong outside quotation marks. (Example: She told me, “Have a good day”.)<br>
+  - To write quotation marks in LaTeX, don’t use your keyboard’s quotation-mark key; use the appropriate keys.<br>
+  - <br>
+                Regarding hyphens:<br>
+                <br>
+    - The hyphen (-) feeds into punctuation of three types: the hyphen (-), the en dash (–), and the em dash (—).<br>
+    - The hyphen appears in some compound words, as in “non-negative.”<br>
+    - <br>
+                        In American English, em dashes can separate ideas within a sentence. Don’t separate any em dash from neighboring text with a space.<br>
+                        <br>
+      - Example of appropriate use: The sample—the only product of this experiment—barely survived.<br>
+      - Example of inappropriate use: The sample — the only product of this experiment — barely survived.<br>
+      - Example of appropriate use: He told me only one sample had survived—hardly what I wanted to hear.<br>
+    - <br>
+                        This article specifies how to use the en dash. One use is “to separate the names of two or more people used as a compound modifier.”<br>
+                        <br>
+      - Example: Feynman–Kitaev clock<br>
+    - Hyphenate compound adjectives.<br>
+    - <br>
+                        If an adverb ends in “-ly,” it probably shouldn’t precede a hyphen.<br>
+                        <br>
+      - Example of inappropriate hyphenation: strongly-coupled systems<br>
+    - Follow a prefix with a hyphen if and only if the Physical Review style guide indicates that you should.<br>
+  - A complete clause must follow any semicolon (unless the semicolon separates items in a list).<br>
+- <br>
+        Math<br>
+        <br>
+  - Introduce only necessary notation, which readers will have enough trouble remembering. If a mathematical symbol appears only once, eliminate it. If a symbol appears only twice, try to eliminate it.<br>
+  - Every sentence must obey the rules of English grammar, punctuation, and syntax, regardless of whether the sentence contains mathematical symbols. All math-containing sentences must end with punctuation marks. If a sentence contains a list of mathematical expressions, precede the final expressions with an “and.” If the list contains at least three mathematical expressions, separate them with commas.<br>
+  - Introduce almost every mathematical symbol before you use it. If you introduce a symbol after using it, the reader will encounter the first use, stop, feel confused for a while, tentatively continue, find the definition, return to the earlier use to understand it, and then progress again. This back-and-forth breaks up the reading process. You may define a mathematical symbol after using it only if (i) the symbol is very common, known to nearly all physicists, and unmistakeable and (ii) defining the symbol earlier would disrupt the text’s flow.<br>
+  - <br>
+                If you define a new function, denote it by only one letter. (I defer in this matter to the Physical Review style guide.)<br>
+                <br>
+    - Example:<br>
+    - Examples of disallowed notation: ,<br>
+  - <br>
+                Suppose that a superscript or subscript stands for a word or phrase without representing any variable or constant. The superscript/subscript must not be italicized. (I defer in this matter to Physical Review style guide.)<br>
+                <br>
+    - Example: Let denote the measurement outcome.<br>
+  - <br>
+                If a variable or constant appears in a superscript, parenthesize it. The parentheses communicate that the superscript isn’t an exponent.<br>
+                <br>
+    - Example: Let denote the Pauli- operator of qubit .<br>
+    - If a superscript is not italicized (stands for a word or phrase), don’t parenthesize it.<br>
+  - <br>
+                Regarding the definition of a symbol :<br>
+                <br>
+    - If you write alone on one side of a defining equation, use \coloneqq or \eqqcolon: \coloneqq [expression], or [expression] \eqqcolon . The symbols \coloneqq and \eqqcolon relate more information than does , encoding directionality.<br>
+    - Use if does not appear alone on its side of the equation: [function of ] [result of replacing with its definition in the equation’s left-hand side].<br>
+  - <br>
+                Refer to the Cartesian axes using the formatting “[italicized letter]-axis.” Don’t include any hat, boldface, or \vec symbol.<br>
+                <br>
+    - Example: -axis<br>
+  - Avoid denoting any index by , which means to physicists. Use instead, unless you’re writing for engineers (who denote by ).<br>
+  - Don’t use the lowercase letter l (“ell”) as an index; readers might mistake it for a one. Use (\ell) instead.<br>
+  - Give every set-off equation a number. Readers (and coauthors) may want to refer to the equation easily when discussing the paper. Save them (and us) from having to say, e.g., “that equation halfway down page three.”<br>
+  - When writing a set-off mathematical expression, use the align environment, not the equation environment. Using the align environment, one can easily extend an expression across multiple lines.<br>
+  - <br>
+                Regarding a set-off mathematical expression that extends across multiple lines:<br>
+                <br>
+    - <br>
+                        Format the expression as follows by default.<br>
+                        <br>
+      - Put an & symbol immediately leftward of the first = sign or analogous symbol (e.g., ).<br>
+      - If any subsequent line begins with another = sign (or analogous symbol), put an & immediately leftward of the symbol. (I’ll stop writing “or analogous symbol.”)<br>
+      - Suppose that a subsequent line begins with a , –, , or . Find the symbol immediately rightward of the initial = sign. Begin the new line directly below that symbol.<br>
+ <br>
+      - Example:<br>
+    - <br>
+                        Modify the default formatting if necessary (a) to reduce the number of lines used in a PRL submission or (b) if the initial = appears awkwardly far to the right.<br>
+                        <br>
+      - Example of (b):<br>
+    - <br>
+                        Suppose a new line begins with a term or factor, such as the  in the example under (A). Put the corresponding , –, , or  at the beginning of the new line, not at the end of the previous line.<br>
+                        <br>
+      - Examples of inappropriate placement:<br>
+  - <br>
+                        Format the expression as follows by default.<br>
+                        <br>
+  - The symbol means “approximately equals”; and ~, “scales as.” Approximations convey more information than scaling relations do.<br>
+  - Use big-O-type notation or ~ symbols, not both; they’re partially redundant.<br>
+  - <br>
+                \ldots, rather than \cdots, should stand in for elements that fit a pattern.<br>
+                <br>
+    - Example:<br>
+  - <br>
+                When using \ldots as in the previous rule, present at least two initial examples of the pattern. One can’t define the pattern.<br>
+                <br>
+    - Contains insufficient examples: For example, if is odd, then and fit the template.<br>
+  - Parentheses (), square brackets [], and curly braces {} are delimiters. If you nest them, do so in the order dictated by the Physical Review style guide.<br>
+  - If delimiters enclose a symbol, it shouldn’t protrude above or below them (unless the delimiters would have to be grotesquely enormous). Use the \left and \right commands if the delimiters appear on the same line.<br>
+  - <br>
+                An operator  isn’t a matrix; a matrix represents an operator in terms of a particular basis. Therefore, no equals sign should interrelate an  and a matrix. An arrow can.<br>
+                <br>
+    - Example:<br>
+  - Every real number is complex. Don’t say “complex” if you mean “nonreal.”<br>
+- <br>
+        More mechanics of writing<br>
+        <br>
+  - Use concise sentences, as advocated for in The Elements of Style. The reader can hold only so many ideas in their head at once.<br>
+  - <br>
+                Structure sentences simply, as advocated for in The Elements of Style. The reader should be able to grasp each sentence easily.<br>
+                <br>
+    - Avoid nesting ideas within a sentence, to avoid convoluting the sentence’s structure.<br>
+    - Example of sentence with convoluted, nested structure: Any model of equilibrium and nonequilibrium behaviors of systems observed in tabletop experiments and high-energy colliders must obey the laws of relativistic quantum mechanics.<br>
+    - Visualization of the nesting: [Any model of ([(equilibrium and nonequilibrium) behaviors] of {systems observed in [(tabletop experiments) and (high-energy colliders)]})] must obey [the laws of (relativistic quantum mechanics)].<br>
+  - The ideal paper title has the structure of a newspaper headline: it presents a claim, containing a subject and a predicate.<br>
+  - <br>
+                Regarding abbreviations:<br>
+                <br>
+    - Don’t abbreviate the first word in any sentence.<br>
+    - Abbreviate “Figure,” “Section,” “Professor,” and “Appendix” if such a word appears partway through a sentence.<br>
+    - Don’t abbreviate “Sections.”<br>
+  - <br>
+                Regarding acronyms:<br>
+                <br>
+    - Write every acronym in capital letters, as per the Physical Review style guide.<br>
+    - Introduce each acronym the first time you use it.<br>
+    - Thereafter, use only the acronym, not the spelled-out phrase, throughout the rest of the document’s main text. You may spell out the phrase in section, figure, and table titles if doing so improves the document’s clarity.<br>
+  - Every paragraph should contain at least three sentences.<br>
+  - Wherever you insert a blank line into your LateX code, a new paragraph begins in the corresponding PDF. Insert a blank line only if you wish to begin a new paragraph. This advice applies immediately before and after set-off equations.<br>
+  - Never begin a subsection immediately after a section title. Between the two titles, overview the section. Analogous rules govern subsections and subsubsections.<br>
+  - <br>
+                Put the word “only” in the appropriate place.<br>
+                <br>
+    - For example, suppose you’ve sampled data at a point in parameter space and sampled data at no other points. “We sampled data only at ” is correct; “We only sampled data at ” is probably not. The latter claim means that (i) you might have sampled data at and (ii) you did nothing to the data apart from sample it: you didn’t analyze the data, discuss the data, etc.<br>
+- <br>
+        When in doubt, consult the Physical Review style guide or The Elements of Style.<br>
+        <br>
+  - If those references don’t contain the information you seek, search for it in online writing guides. Not all such guides have equal merit, however. Lean toward guides written by human editors or published by college writing centers.<br>
+1 Collaborators have wondered why I use green; a student guessed it’s my favorite color. It isn’t; but I bleed green, having graduated from the Big Green, also known as Dartmouth College. Sometimes, I highlight certain pieces of text for one reason (e.g., to point out logical inconsistencies) and other text for another reason (e.g., to point out grammatical inconsistencies). Green distinguishes the first highlightings, while orange distinguishes the second: when not bleeding Dartmouth green, I bleed Caltech orange.<br>
+2 Don’t learn how to write from physics papers.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumfrontiers.com/2026/08/26/nicoles-guide-to-writing-and-editing/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="4d99973911625df1.html" class="prev-next">&larr; CypherGenics Launches FASTKAT Platform for Post-Quantum Identity and Encryption</a>
+  
+  
+  <a href="ecab5eac89054f9e.html" class="prev-next">Quantum X Labs Launches “Qatacomb” Quantum-Native Security Research Initiative &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-08-27 06:59 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
