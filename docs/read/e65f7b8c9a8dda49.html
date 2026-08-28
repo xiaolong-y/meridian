@@ -137,20 +137,35 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>2h</span>
+      <span>13h</span>
       <span class="article-category">quantum</span>
-      <span>59 words</span>
-      <span>1 min read</span>
+      <span>482 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Illustration of the problem formalism and multi-basis encoding approach Researchers from Singapore’s Agency for Science, Technology and Research (A*STAR) and the National University of Singapore (NUS) have introduced a hybrid quantum-classical framework that compresses the qubit footprint required for structure-based drug discovery. Published on arXiv (arXiv:2608.19868), the study demonstrates resource-efficient bio-molecular docking—identifying optimal binding configurations [...] The post A*ST</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/astar-and-nus-researchers-achieve-qubit-compression-for-bio-molecular-docking-on-ibm-hardware/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Researchers from Singapore’s Agency for Science, Technology and Research (A*STAR) and the National University of Singapore (NUS) have introduced a hybrid quantum-classical framework that compresses the qubit footprint required for structure-based drug discovery. Published on arXiv (arXiv:2608.19868), the study demonstrates resource-efficient bio-molecular docking—identifying optimal binding configurations between a ligand and a target protein—on digital NISQ hardware using IBM’s 156-qubit Heron r2 processor (ibm_kingston).<br>
+| [ Warm-Start Full-Basis Encoding (W-S FBE) Framework ] |  |  | <br>
+|---|---|---|<br>
+| Optimization Mapping | Quantum Qubit Encoding | Hardware & Verification | <br>
+| • Maximum Vertex-Weighted Clique (MVWCP) | • Full-Basis Encoding (3 Variables / Qubit) | • IBM Heron r2 Processor (ibm_kingston) | <br>
+| • Binding Interaction Graph (BIG) Construction | • ⌈N/3⌉ Physical Qubit Requirement | • 1stp (Biotin, N=18 Solved via 6 Qubits) | <br>
+| • QUBO / Ising Cost Hamiltonian Reduction | • qDRIFT-Inspired MPS Warm-Start | • 9aw2 (Benzamidine, N=14 Solved via 5 Qubits) | <br>
+Three-Variable Qubit Compression via Full-Basis Encoding<br>
+Molecular docking requires searching vast combinatorial spaces to find mutually compatible pharmacophore interaction sets. While classical approaches recast docking as a Maximum Vertex-Weighted Clique Problem (MVWCP) on a compatibility graph, traditional quantum mappings assign one binary variable per physical qubit, quickly exceeding near-term hardware limits:<br>
+- Full-Basis Encoding (FBE): Rather than reading out a single observable per qubit (⟨σz⟩), FBE assigns classical variables across all three orthogonal Bloch-sphere expectation values (⟨σx⟩, ⟨σy⟩, ⟨σz⟩). This allows up to three decision variables to be hosted on a single physical qubit, reducing an N-variable optimization problem to just ⌈N/3⌉ physical qubits.<br>
+- Mathematical Proof of Pure Product Ground States: The authors provide a rigorous proof establishing that at least one global minimizer of the continuous FBE objective can always be represented as a pure product state. This proves that complex multi-qubit entanglement is not required to represent the optimal discrete solution, justifying shallow unitary variational circuits.<br>
+- Stochastic Imaginary-Time Evolution Warm-Start: To bypass barren plateaus and accelerate training convergence, the optimization initializes via a Trotterized stochastic drift (qDRIFT) imaginary-time evolution step calculated classically using Matrix Product States (MPS).<br>
+Execution on IBM Heron QPU and Benchmark Systems<br>
+The team validated the framework on two biologically relevant protein-ligand complexes derived from the Protein Data Bank (PDB):<br>
+- Streptavidin–Biotin Complex (1stp): Mapped to an N=18 binding interaction graph and executed on the IBM Heron processor using 6 physical qubits.<br>
+- Trypsin–Benzamidine Complex (9aw2): Mapped to an N=14 binding interaction graph and executed on hardware using 5 physical qubits.<br>
+For both complex structures, the hardware measurements recovered the exact ground-truth clique assignments calculated by classical graph solvers under real gate infidelities and readout errors, outperforming standard two-basis (ZX) encodings under identical circuit-depth and training budgets.<br>
+The research was supported by the National Research Foundation, Singapore, and A*STAR’s Quantum Innovation Centre (Q.InC).<br>
+Review the complete open-access paper on arXiv:2608.19868 here.<br>
+August 27, 2026</p>
   </div>
   
 </article>
@@ -173,7 +188,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-08-27 21:42 UTC
+  Generated 2026-08-28 08:48 UTC
 </div>
 
 <script type="module">
