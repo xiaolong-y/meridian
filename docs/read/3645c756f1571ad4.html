@@ -137,31 +137,20 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>5h</span>
+      <span>12h</span>
       <span class="article-category">quantum</span>
-      <span>399 words</span>
-      <span>2 min read</span>
+      <span>66 words</span>
+      <span>1 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>IBM Quantum has officially launched Qiskit Fermions (v0.1.0), an open-source software library and transpiler extension designed to express fermionic operators, construct domain-specific fermionic circuits, and optimize mappings to qubit architectures. Built on a high-performance Rust core with Python and C bindings, the package addresses the compilation gap between interacting particle physics—such as quantum chemistry and condensed matter simulation—and standard qubit-based processors.<br>
-| [ Qiskit Fermions 0.1.0 Architecture & Key Capabilities ] |  |  | <br>
-|---|---|---|<br>
-| Core Framework & Language | Transpilation Strategy | Ecosystem & Tooling Integration | <br>
-| • High-Performance Rust Core | • Domain-Specific Fermionic Circuits | • ffsim (Fock-Space Simulation) | <br>
-| • Python API & C Bindings | • Delayed Fermion-to-Qubit Synthesis | • SQD (Sample-based Quantum Diagonalization) | <br>
-| • Apache License 2.0 (Open Source) | • Ancilla-Assisted Flow-Set Encodings | • qDRIFT & SqDRIFT Algorithms | <br>
-Structure-Preserving Transpilation and Constant-Depth Scaling<br>
-In conventional quantum chemistry workflows, a fermionic Hamiltonian is mapped to qubits (e.g., via Jordan-Wigner transformations) before time evolution algorithms are implemented. Qiskit Fermions reverses this sequence by maintaining operations within a domain-specific “fermionic circuit” layer throughout early compilation. The transformation into qubit gates is delayed until the final transpilation phase, preserving physical symmetries and particle-number conservation rules deeper into the compilation pipeline.<br>
-- Constant-Depth Fermi-Hubbard Dynamics: By using local flow-set encodings assisted by ancilla qubits, the package converts groups of particle-hopping terms into single-qubit rotations. In 1D Fermi-Hubbard time-evolution benchmarks, two-qubit gate depth remains constant at 12 across system sizes ranging from 4 to 100 sites, whereas conventional Jordan-Wigner Trotterization reaches a depth of 407 at 100 sites.<br>
-- Pluggable Encodings: Researchers can utilize built-in conversion passes or define custom fermion-to-qubit mappings without altering high-level algorithmic logic.<br>
-- Native ffsim Simulation: Integrates directly with ffsim to simulate circuits within the compact fermionic Fock space rather than the full $2^N$ qubit Hilbert space, accelerating local validation.<br>
-Ecosystem Alignment and Modular Workflows<br>
-Developed by IBM researchers Max Rossmannek, Jennifer Glick, and Robert Davis, Qiskit Fermions functions as part of IBM’s broader “utility mapping tools” initiative—reusable domain modules designed to bridge complex physical problem definitions with fault-tolerant and error-mitigated execution. The tool connects directly with Sample-based Quantum Diagonalization (SQD) addons for ground-state energy estimation and randomized compilation techniques like SqDRIFT.<br>
-Access the open-source repository on GitHub here and review official documentation via Qiskit Documentation here.<br>
-August 29, 2026</p>
+    <p>IBM Quantum has officially launched Qiskit Fermions (v0.1.0), an open-source software library and transpiler extension designed to express fermionic operators, construct domain-specific fermionic circuits, and optimize mappings to qubit architectures. Built on a high-performance Rust core with Python and C bindings, the package addresses the compilation gap between interacting particle physics—such as quantum chemistry and [...] The post IBM Releases Open-Source Qiskit Fermions 0.1.0 to Preserve</p>
+  </div>
+  <div class="fallback">
+    Full article extraction unavailable.
+    <a href="https://quantumcomputingreport.com/ibm-releases-open-source-qiskit-fermions-0-1-0-to-preserve-system-structure-during-transpilation/" target="_blank" rel="noopener">Read on original site &rarr;</a>
   </div>
   
 </article>
@@ -184,7 +173,7 @@ August 29, 2026</p>
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-08-29 20:23 UTC
+  Generated 2026-08-30 03:20 UTC
 </div>
 
 <script type="module">
