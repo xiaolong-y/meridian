@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Universe, the Uncanny, and Fashion — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="87fc3148874a6141.html" title="Nicole’s guide to writing and editing">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">The Universe, the Uncanny, and Fashion</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Frontiers (Caltech)</span>
+      <span>Sola Mahfouz</span>
+      <span>55m</span>
+      <span class="article-category">quantum</span>
+      <span>1082 words</span>
+      <span>6 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>⚛⚛⚛<br>
+In the beginning there was a question. Actually, no, in the beginning there was language. The question came later, presumably as one of its side effects. Since then we have asked about nearly everything, though the answers have done little to alter our circumstances. Human existence has always seemed strange to me. We arrive without consent, in a place not of our choosing, then spend decades asking why, until we close our eyes and enter the abyss of nothingness.<br>
+Some people accept this situation very well. I did not.<br>
+Until my mid-teens, I tenaciously found one solution in fashion. If I could not understand who I was, I could at least decide what version I could become. Clothes gave form to something otherwise difficult to locate. Desire, after all, begins with a lack.<br>
+It was only later that physics presented a solution to the same lack, only with more elaborate mathematics.<br>
+Quantum mechanics tells us that the world beneath the familiar world does not behave as we experience it. A thing can resist being one thing, certainty begins to dissolve, and reality becomes strangely unfamiliar. The uncanny begins very close to home.<br>
+It is in this uncanniness that fashion and physics, liminally, meet for me: both begin with a human being standing before something they cannot understand, the universe in one case, the self in the other, and trying to make a form out of it.<br>
+But even this distinction, on closer inspection, begins to collapse; for our desire to understand the universe has always concealed a deeper desire to understand the self that stands within it.<br>
+All roads eventually lead back to the interests you had as a child, or so I say.<br>
+I would squint into the dark, my mind already at work. I would imagine the next thing I would wear, project its color and fabric onto the ceiling.<br>
+Then, go to the bazaar, Rangrizano Dana, where, as the Kandaharis like to say, everything is sold except one’s mother and father.<br>
+The designs that had existed only in my head, after night upon night of theorizing and calculating, were finally beginning to take shape. The alleys of Rangrizano Dana were full of fabric of different textures and colors.<br>
+Once the fabric was bought, came the tailoring. Tailors hold a special place in Afghanistan. Some are stars in their own right, the kind you have to book an appointment with. And once you get there, another matter comes up: making the tailor promise not to show your design to another woman. Everyone wants to wear something unique. So, naturally, there is a lot of secrecy.<br>
+The designs themselves would either be described or sketched. Somewhere between what was imagined and what the tailor could make, something would emerge. And the day the tailor shipped your clothes was really a day of revelations.<br>
+Time passed, which is another way of saying the object of my desire changed. The same attention once spent on cut, texture, and appearance turned, little by little, toward the fabric of space and time.<br>
+Studying physics, I organized my process in the same way. There was again an idea that existed first in the mind, and then the problem of giving it form.<br>
+Only now the materials were different. Instead of cloth, there was mathematics; instead of the tailor’s table, the blackboard and chalk. And, standing before it, more often than not, a badly dressed physicist covered in chalk dust. All the libidinal energy of the universe, you might say, had been sublimated into equations.<br>
+Fashion had, in some ways, been the more serious pursuit. There was something at stake: you wanted to look better than everyone else. Physics, by comparison, could be surprisingly playful.<br>
+Alice sends a particle to Bob. The sound of those names would tickle my Pashto ear then, and still cracks me up now. Cats are placed in boxes, both dead and alive. Observers hover near black holes or sometimes even, whooooooosh, fall into them.<br>
+So, in this way, in my mind’s eye, the physicist has become a rather more amusing figure: a tailor of space and time. The universe, of course, is a notoriously difficult client (perhaps even more difficult than a Kandahari woman making her tailor promise not to show her design to anyone else).<br>
+He begins, as any tailor must, with an imagined shape. Mathematics is his chalk, his scissors, his needle. With it he marks the fabric, cuts it, folds it, joins one piece of reality to another. Some constructions fall upon the universe with elegance. Others bunch at the shoulder, pull at the waist, or refuse altogether to button, and must be altered, or thrown away completely.<br>
+A tailor works against the resistance of the human body; a physicist against the resistance of the universe.<br>
+Imagine, then, a physicist seated at the edge of a black hole, spectacles low upon his nose, sewing little cloaks from the fabric of spacetime.<br>
+“How many dimensions will you need?” asks Alice.<br>
+“That depends upon the suit,” he replies.<br>
+For AdS/CFT, suppose we are making a three-dimensional garment. The tailor of the universe never begins with three dimensions. Before him lies only the flat, two-dimensional fabric, with all its degrees of freedom spread upon the board.<br>
+It is then, in a less sartorial language, we might call the disentangling and entangling of degrees of freedom; the tailor coaxes a third dimension out of the flat cloth. This is the secret embroidery of the holographic idea: what appears to the wearer as a three-dimensional world is encoded in a fundamentally two-dimensional way.<br>
+Bob tries this newly fashioned quantum garment on before entering the black hole.<br>
+“Too tight,” he says. “See if there is more degree of freedom.”<br>
+The physicist frowns, takes up his chalk, and makes another small mark, with some disentangling and entangling here and there.<br>
+What could have been wrong? Well, perhaps the group theory has been chosen badly, the symmetry is broken, and a representation must be changed, a seam opened, a dimension added, or one cunningly concealed.<br>
+Alice watches him work, the almighty tailor of the universe, making change without a change.<br>
+“But how do you know when the suit is right?”<br>
+And with that, the physicist looks at her.<br>
+“What do you want? Do you want to put me out of work? Unknowing is the lack that drives us to make more suits. If we knew the suit was right, that would be the end of everything.”</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumfrontiers.com/2026/08/31/the-universe-the-uncanny-and-fashion/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="87fc3148874a6141.html" class="prev-next">Nicole’s guide to writing and editing &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-08-31 22:23 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
