@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PsiQuantum and Brookhaven National Lab Partner to Develop Fault-Tolerant Algorithms on Construct Platform — Meridian Reader</title>
+  <title>SEALSQ Integrates wolfTPM Support into Post-Quantum Silicon Semiconductor Platform (QVault TPM) — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,56 +126,59 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="be1f8a70363cedc8.html" title="QuSecure Achieves TRL-7 at U.S. Army Project Convergence Capstone 6 for QuProtect R3">&larr; prev</a>
-    <a href="4e36cc8f4b3c58b4.html" title="LLMs and self-referentiality">next &rarr;</a>
+    <a href="9df8dafea50018e2.html" title="Classiq Expands in Taiwan via Go-to-Market Partnerships with Scientek and Kensho">&larr; prev</a>
+    <a href="e0b61640582064ac.html" title="George Mason University Partners with TreQ to Install $7.7M Open-Architecture Quantum QPU in Virginia">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">PsiQuantum and Brookhaven National Lab Partner to Develop Fault-Tolerant Algorithms on Construct Platform</h1>
+    <h1 class="article-title">SEALSQ Integrates wolfTPM Support into Post-Quantum Silicon Semiconductor Platform (QVault TPM)</h1>
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>22h</span>
+      <span>44m</span>
       <span class="article-category">quantum</span>
-      <span>311 words</span>
-      <span>2 min read</span>
+      <span>448 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Photonic quantum hardware developer PsiQuantum and the U.S. Department of Energy’s (DOE) Brookhaven National Laboratory have established a strategic software collaboration to accelerate the development of fault-tolerant quantum algorithms and scientific applications. Under the agreement, Brookhaven scientists will utilize PsiQuantum’s open-access Construct software platform to design and optimize resource requirements for utility-scale quantum workloads.<br>
-| [ PsiQuantum & Brookhaven National Lab Partnership Scope ] |  |  | <br>
+    <p>Post-quantum semiconductor hardware vendor SEALSQ Corp (NASDAQ: LAES) and embedded cryptography developer wolfSSL Inc. have announced native wolfTPM software support for SEALSQ’s QVault TPM hardware security chip. Designed to implement post-quantum cryptography (PQC) primitives in silicon under the Trusted Computing Group’s (TCG) TPM 2.0 v1.85 specification, the integration provides an open-source software layer to execute hardware-isolated PQC operations across embedded systems and edge hardware.<br>
+| [ SEALSQ QVault TPM & wolfTPM Architecture Overview ] |  |  | <br>
 |---|---|---|<br>
-| Software & Tooling Stack | Federal Initiative Alignment | Target Research Domains | <br>
-| • PsiQuantum Construct Platform | • DOE Quantum Genesis Initiative | • Materials Science & Chemistry | <br>
-| • Open-Access Quantum Circuit Compiler | • Target FTQC Capability by 2028 | • High-Energy Physics Simulations | <br>
-| • Fault-Tolerant Resource Estimator | • Broader DOE Genesis AI Mission | • Quantum-Safe Cryptography | <br>
-Supporting the DOE Quantum Genesis Initiative<br>
-The collaboration directly aligns with the DOE’s Quantum Genesis initiative—a federal program aimed at deploying a fault-tolerant, scientifically relevant quantum computing capability by 2028 as part of the broader, AI-focused Genesis Mission. The partnership connects public sector national laboratory research directly with commercial fault-tolerant software engineering:<br>
-- Fault-Tolerant Algorithm Design: Brookhaven researchers will use Construct to map complex scientific problems onto logical qubit architectures, compiling quantum circuits and calculating exact physical resource overheads (such as T-gate counts and error-correction budgets).<br>
-- Construct Open-Access Availability: First released publicly as a free platform in May 2026, Construct provides developers with a full suite of software tools to construct, simulate, and optimize fault-tolerant quantum subroutines prior to hardware availability.<br>
-- Public-Private Leadership: Led by Gabriella Carini (Associate Laboratory Director for Discovery Technologies at Brookhaven) and Heath Bumgardner (VP of Government Relations at PsiQuantum), the project serves as a model for public-private integration across DOE national laboratories.<br>
-Review the official press release via PsiQuantum here.<br>
-September 2, 2026</p>
+| Silicon & Hardware Features | Software & Tooling Integration | PQC Algorithm Implementations | <br>
+| • 80 MHz 32-bit RISC-V Secure Core (QFN32) | • Native wolfTPM Driver Stack (GitHub PR #570) | • ML-DSA-44/65/87 (FIPS 204 / Dilithium) | <br>
+| • TCG TPM 2.0 Spec v1.85 / PC Client Compliant | • Interactive pqc_ctrl Diagnostic CLI Tool | • Hash-ML-DSA (Pre-Hashed Message Signing) | <br>
+| • Pre-Provisioned RSA2048/ECC EK Certificates | • Unified Wrapper APIs ( wolfTPM2_* ) | • ML-KEM-512/768/1024 (FIPS 203 / Kyber) | <br>
+Hardware Core Architecture and Cryptographic Key Isolation<br>
+The QVault TPM architecture centers on an 80 MHz 32-bit RISC-V secure core designed for Common Criteria (CC) EAL5+ assurance levels, FIPS 140-3, and NIST SP 800-90B entropy validation. As classical public-key infrastructure (RSA and ECC) faces degradation from quantum algorithms, the integration bridges physical silicon security with low-level software control:<br>
+- Hardware Isolation Boundary: Private keys for ML-DSA and ML-KEM are generated, stored, and executed inside the QVault TPM hardware boundary. Private keys are never exported to system memory, mitigating side-channel key extraction vulnerabilities.<br>
+- Pre-Provisioned Chain of Trust: Devices ship factory-provisioned with Endorsement Keys (EK) and signed EK Certificate Chains (RSA2048, ECC P256, ECC P384) tied directly to SEALSQ’s Root Certificate Authority for platform attestation.<br>
+- Developer Diagnostic Tooling: Incorporates a dedicated pqc_ctrl CLI utility within wolfTPM, allowing developers to execute hardware self-tests, verify parameter sets across all NIST key strengths, generate entropy, and evaluate Platform Configuration Registers (PCRs).<br>
+- Physical Silicon Verification: The software stack underwent functional verification on physical SEALSQ QVault TPM silicon and wolfSSL’s firmware TPM test framework, validating ML-DSA signing/verification and ML-KEM encapsulation/decapsulation cycles.<br>
+Target Verticals and Commercial Rollout Timeline<br>
+The combined architecture targets high-integrity embedded platforms requiring secure boot, firmware update validation, and encrypted telemetry across automotive ECUs, industrial SCADA gateways, smart grid meters, telecom CPEs, and connected medical instruments. Sampling and general hardware availability for the QVault TPM silicon are scheduled for November 2026. The wolfTPM software layer is available open-source via GitHub repository PR #570.<br>
+Review official technical details on SEALSQ here, inspect platform specifications on SEALSQ QVault TPM here, and inspect software pull requests via wolfTPM GitHub.<br>
+September 3, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantumcomputingreport.com/psiquantum-and-brookhaven-national-lab-partner-to-develop-fault-tolerant-algorithms-on-construct-platform/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/sealsq-integrates-wolftpm-support-into-post-quantum-silicon-semiconductor-platform-qvault-tpm/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="be1f8a70363cedc8.html" class="prev-next">&larr; QuSecure Achieves TRL-7 at U.S. Army Project Convergence Capstone 6 for QuProtect R3</a>
+  <a href="9df8dafea50018e2.html" class="prev-next">&larr; Classiq Expands in Taiwan via Go-to-Market Partnerships with Scientek and Kensho</a>
   
   
-  <a href="4e36cc8f4b3c58b4.html" class="prev-next">LLMs and self-referentiality &rarr;</a>
+  <a href="e0b61640582064ac.html" class="prev-next">George Mason University Partners with TreQ to Install $7.7M Open-Architecture Quantum QPU in Virginia &rarr;</a>
   
 </div>
 
