@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Congressman Langworthy Introduces American Quantum Competitiveness Act (H.R. 10163) — Meridian Reader</title>
+  <title>Rigetti and Purdue University Demonstrate Quantum Preconditioning Framework for Constrained Optimization — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,58 +126,56 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="fa8b7344cd2a137c.html" title="A Four Step Process for End Users to Leverage Quantum Technology">&larr; prev</a>
-    <a href="8fbb43e14ae9e998.html" title="IonQ, NVIDIA, and qBraid Demonstrate 54% Error Reduction in Mid-Circuit Quantum Simulations">next &rarr;</a>
+    
+    <a href="4700c637a3d939be.html" title="Pasqal and True Nexus Encode Protein Gelation Structures on Neutral-Atom QPUs">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Congressman Langworthy Introduces American Quantum Competitiveness Act (H.R. 10163)</h1>
+    <h1 class="article-title">Rigetti and Purdue University Demonstrate Quantum Preconditioning Framework for Constrained Optimization</h1>
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>1d</span>
+      <span>9h</span>
       <span class="article-category">quantum</span>
-      <span>375 words</span>
-      <span>2 min read</span>
+      <span>449 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>U.S. Congressman Nick Langworthy (R-NY-23) has introduced H.R. 10163: The American Quantum Competitiveness Act, federal legislation establishing the U.S. Department of Commerce as the lead federal agency for commercial quantum technology, manufacturing, and supply chain resilience. Referred to the House Committee on Energy and Commerce, the bill directs the Secretary of Commerce to develop a national competitiveness strategy and protect domestic supply chains against reliance on covered foreign adversaries.<br>
-| [ American Quantum Competitiveness Act (H.R. 10163) Key Provisions ] |  |  | <br>
+    <p>Quantum computing developer Rigetti Computing and researchers from Purdue University have published joint research extending Rigetti’s quantum preconditioning framework to hard-constrained combinatorial optimization problems. By using two-point variable correlations extracted from shallow Quantum Approximate Optimization Algorithm (QAOA) circuits to modify the objective function of commercial Mixed-Integer Programming (MIP) solvers, the team demonstrated that quantum preconditioning can guide classical branch-and-bound searches to near-optimal solution thresholds up to 100 times faster than unpreconditioned runs.<br>
+| [ Rigetti & Purdue Quantum Preconditioning Architecture ] |  |  | <br>
 |---|---|---|<br>
-| Federal Authority & Lead Role | Supply Chain & Foreign Adversaries | National Strategy & Reporting | <br>
-| • Designates Commerce Secretary as Principal Advisor | • Defines Critical Components (Hardware/Software) | • Triennial National Competitiveness Strategy | <br>
-| • Oversees Commercial Scaling & Deployment | • Restricts Dependence on Covered Nations (China) | • Legislative & Policy Recommendations to Congress | <br>
-| • Promotes Private Sector Capital Investment | • Coordinates Sourcing via Trusted Allies (NATO/EU/OECD) | • Public Industry & Academic Consultations | <br>
-Establishing Commerce Leadership and Trusted Supply Chains<br>
-While fundamental quantum R&D is coordinated across federal science agencies, H.R. 10163 establishes a dedicated framework for the commercialization and manufacturing phase of quantum systems:<br>
-- Designation of Federal Lead: Mandates the Secretary of Commerce to act as the primary advisor to the President on policy governing commercial manufacturing, deployment, private investment, and scaling of quantum computing, sensing, and communications technologies.<br>
-- Trusted Supply Chain Framework: Directs Commerce to identify critical quantum inputs—including cryogenic refrigerators, photonics, lasers, and semiconductor substrates—and establish risk-reduction measures to eliminate single-point vulnerabilities from covered foreign nations.<br>
-- Allied Coordination: Encourages formal supply chain agreements with “trusted suppliers” and foreign partners across NATO, the European Union, and the OECD.<br>
-Industry Endorsements and Regional Impact<br>
-The legislation is backed by the Quantum Industry Coalition (QIC)—which represents commercial quantum leaders including IBM, Alphabet (Google), and Microsoft—as well as regional innovation hubs like the NY SMART I-Corridor and research universities across Western New York (including the University of Rochester, RIT, University at Buffalo, Syracuse University, and RPI).<br>
-Review the full press release via the Office of Congressman Nick Langworthy here, and inspect legislative text on Congress.gov (H.R. 10163) here.<br>
-September 1, 2026</p>
+| Quantum Feature Extraction | Classical MIP Solver Integration | Benchmark Performance & Scaling | <br>
+| • QAOA Two-Point Correlations (Zij) | • Retains Original Hard Balance Constraint | • Near-Optimal Threshold (ε = 0.01) Reached ~100× Faster | <br>
+| • Reshapes Objective Matrix (Wij → Zij) | • Solved via Commercial MIP Solvers (Gurobi) | • Major Acceleration Realized at Shallow Depth (p = 1) | <br>
+| • Soft Constraint Penalty (ρ) Tuning | • Incumbents Evaluated on Original Cost Function | • Lowers Fitted Exponential Base for Scaling | <br>
+Augmenting Branch-and-Bound via Quantum Correlation Matrices<br>
+Combinatorial optimization under hard constraints—such as graph partitioning for parallel scientific computing and logistics routing—remains NP-hard, forcing exact classical solvers like Gurobi to navigate massive search trees. The quantum preconditioning framework uses a gate-based QPU as a structure-learning pre-processor rather than a standalone solver:<br>
+- Correlation Matrix Generation: The algorithm runs a shallow QAOA circuit on the problem graph, enforcing balance constraints as a soft penalty parameter (ρ) within the cost Hamiltonian. Measuring the resulting quantum state yields a two-point correlation matrix (Zij) that captures pairwise decision-variable alignments.<br>
+- Hard-Constrained MIP Execution: The correlation matrix replaces the original edge-weight matrix (Wij) in the objective function. Gurobi then solves this preconditioned problem while enforcing the original balance constraint as an explicit, uncompromised hard constraint.<br>
+- Accelerated Incumbent Discovery: Callback trajectory data shows that the preconditioned objective allows the classical solver’s branch-and-bound algorithm to make better branching decisions and discover high-quality feasible solutions significantly earlier in the search process.<br>
+Benchmark Results and Parameter Transferability<br>
+Evaluated across 50 dense, all-to-all connected graph instances (n = 40), the framework enabled Gurobi to reach solutions within 1% of the baseline global optimum in under a second—compared to hours for unpreconditioned runs. Notably, the majority of the preconditioning advantage was captured at p = 1, minimizing circuit depth and exposure to quantum gate noise. To avoid high variational optimization costs as problem sizes scale, the team successfully transferred rescaled QAOA parameters (γℓ ∝ 1/√n) optimized at n = 20 to larger graph instances without performance degradation.<br>
+Review the full research paper on arXiv (arXiv:2608.28842) here.<br>
+September 2, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantumcomputingreport.com/congressman-langworthy-introduces-american-quantum-competitiveness-act-h-r-10163/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/rigetti-and-purdue-university-demonstrate-quantum-preconditioning-framework-for-constrained-optimization/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
+  <span></span>
   
-  <a href="fa8b7344cd2a137c.html" class="prev-next">&larr; A Four Step Process for End Users to Leverage Quantum Technology</a>
-  
-  
-  <a href="8fbb43e14ae9e998.html" class="prev-next">IonQ, NVIDIA, and qBraid Demonstrate 54% Error Reduction in Mid-Circuit Quantum Simulations &rarr;</a>
+  <a href="4700c637a3d939be.html" class="prev-next">Pasqal and True Nexus Encode Protein Gelation Structures on Neutral-Atom QPUs &rarr;</a>
   
 </div>
 

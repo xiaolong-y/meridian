@@ -137,20 +137,32 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>9h</span>
+      <span>17h</span>
       <span class="article-category">quantum</span>
-      <span>71 words</span>
-      <span>1 min read</span>
+      <span>422 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>IBM Quantum has announced the official release of IBM Quantum Nighthawk r2 (deployed as ibm_phoenix), its fastest quantum processing unit (QPU) to date. Built on a square-lattice architecture, the 120-qubit processor introduces a high-speed dissipative qubit reset framework that eliminates long inter-circuit idle periods, achieving a maximum circuit throughput of over 100,000 circuits per second—a [...] The post IBM Releases Nighthawk r2 QPU Featuring Active Dissipative Qubit Reset and 25x Circu</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/ibm-releases-nighthawk-r2-qpu-featuring-active-dissipative-qubit-reset-and-25x-circuit-throughput/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>IBM Quantum has announced the official release of IBM Quantum Nighthawk r2 (deployed as ibm_phoenix), its fastest quantum processing unit (QPU) to date. Built on a square-lattice architecture, the 120-qubit processor introduces a high-speed dissipative qubit reset framework that eliminates long inter-circuit idle periods, achieving a maximum circuit throughput of over 100,000 circuits per second—a 25x speedup over IBM’s Heron QPU fleet (~4,000 circuits per second).<br>
+| [ IBM Quantum Nighthawk r2 Hardware Architecture & Metrics ] |  |  | <br>
+|---|---|---|<br>
+| Physical Hardware Elements | Dissipative Reset Architecture | Roadmap & Benchmark Milestones | <br>
+| • 120 Programmable Qubits | • High-Dynamic-Range Tunable Couplers | • 7,500+ Gate Circuit Execution (Roadmap Goal) | <br>
+| • 218 Inter-Qubit Couplers | • Effective T1 Reduced from ~200 µs to ~25 ns | • 25x Lower Initialization Error (~3×10-3 Layer Error) | <br>
+| • 120 Independent Reset Elements (458 Total) | • Neighbor-Safe Active Thermal Cooling | • 12x Speedup on Neutron-Scattering Simulations | <br>
+Dissipative Reset Architecture and Neighbor-Safe Initialization<br>
+In previous processor generations, quantum circuits relied on conditional resets using π-pulses and measurement cycles, requiring idle times of hundreds of microseconds between executions to prevent state leakage. Nighthawk r2 replaces conditional reset with dedicated dissipative reset gadgets paired to each programmable qubit:<br>
+- Active Cold-Environment Coupling: Activating the reset coupler connects the qubit to a cold bath, dropping its effective relaxation time (T1) from 200 microseconds down to ~25 nanoseconds. Inter-circuit idle times are reduced to as little as 1 microsecond.<br>
+- 25x Initialization Error Suppression: Actively cooling qubits to their ground state before circuit execution reduces state initialization errors by ~25x while maintaining Heron-class 2-qubit gate error rates (~3×10-3).<br>
+- adjacent qubits on the square lattice, enabling dynamic mid-circuit resets essential for space-time quantum error correction (QEC) checks.<br>
+7,500-Gate Executions and Quantum Advantage Benchmarks<br>
+Developed by IBM researchers Holger Haas, David McKay, and Robert Davis, Nighthawk r2 ticked off a primary 2026 IBM Quantum Roadmap target by demonstrating accurate observable estimation via Probabilistic Error Amplification (PEA) on circuits containing over 7,500 gates.<br>
+The system was also used to demonstrate beyond-classical computational utility through doped Clifford sampling advantage experiments (developed with UChicago). In practical application benchmarks, Nighthawk r2 delivered a 12x speedup for physical neutron-scattering simulations, generating material spectra for direct laboratory comparison in 60 seconds.<br>
+Access the processor via IBM Quantum Platform here, review the technical announcement on IBM Quantum Blog here, and register for the September 10 performance webinar via ON24 Registration here.<br>
+September 2, 2026</p>
   </div>
   
 </article>
@@ -173,7 +185,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-09-03 02:44 UTC
+  Generated 2026-09-03 10:40 UTC
 </div>
 
 <script type="module">
