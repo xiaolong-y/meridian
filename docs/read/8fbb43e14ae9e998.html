@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael Rabin memorial conference — Meridian Reader</title>
+  <title>IonQ, NVIDIA, and qBraid Demonstrate 54% Error Reduction in Mid-Circuit Quantum Simulations — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,63 +126,60 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="e99c42efa1cfdbe8.html" title="Better than gold">&larr; prev</a>
-    <a href="eef69dabe3ee090e.html" title="Interacting collaborators reveal noninteracting fermions">next &rarr;</a>
+    <a href="a7e1f12a916a4799.html" title="Congressman Langworthy Introduces American Quantum Competitiveness Act (H.R. 10163)">&larr; prev</a>
+    <a href="daebc3d1be9abd90.html" title="MIT Quantum Initiative Launches Gordon and Betty Moore Foundation-Backed Postdoctoral Fellowship">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Michael Rabin memorial conference</h1>
+    <h1 class="article-title">IonQ, NVIDIA, and qBraid Demonstrate 54% Error Reduction in Mid-Circuit Quantum Simulations</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>2w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>223 words</span>
-      <span>2 min read</span>
+      <span>460 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Friend-of-the-blog (well, mainly just friend) Adi Akavia has asked me to publicize that she’s helping to organize an exciting CS conference called Mind-IL at Tel Aviv University on October 26, in memory of the Israeli-American Turing Award winner Michael O. Rabin, who passed away in April.  Please note that October 26 is the day before the Israeli election, for any Israeli citizenship holders living abroad who might want an academic excuse to come to Israel and vote.<br>
-Update (August 19): Avi Wigderson also asked me to advertise a conference, to be held September 16-18 at Bletchley Park in the UK, to commemorate the 90th anniversary of Alan Turing’s “On Computable Numbers” paper.<br>
-		<br>
-				<br>
-				<br>
-					<br>
-						This entry was posted<br>
-												on Sunday, August 16th, 2026 at 3:45 pm						and is filed under Announcements, Complexity.<br>
-						You can follow any responses to this entry through the RSS 2.0 feed.<br>
-													You can leave a response, or trackback from your own site.<br>
-						<br>
-					<br>
-				<br>
-			 <br>
-		 <br>
-	<br>
-	<br>
-	<br>
- <br>
-You can use rich HTML in comments!  You can also use basic TeX, by enclosing it within $$ $$ for displayed equations or \( \) for inline equations.<br>
-All comments are treated, by default, as personal missives to me, Scott Aaronson---with no expectation either that they'll appear on the blog or that I'll reply to them.</p>
+    <p>Trapped-ion hardware provider IonQ (NYSE: IONQ), high-performance computing leader NVIDIA, and quantum software startup qBraid have published joint research demonstrating an application-native error mitigation framework for deep Trotterized quantum chemistry. Executed on an IonQ Barium-based development system (similar to the forthcoming IonQ Tempo architecture) alongside GPU-accelerated classical computing, the team achieved a 54% reduction in logical error rates compared to direct physical Trotter executions during a 6-qubit encoded simulation step.<br>
+| [ IonQ–NVIDIA–qBraid Error Mitigation Framework ] |  |  | <br>
+|---|---|---|<br>
+| Algorithmic Architecture | Physical & Hybrid Hardware Stack | Key Benchmark Findings | <br>
+| • Generalized Superfast Encoding (GSE) | • Barium Trapped-Ion QPU (IonQ Tempo Class) | • 54% Lower Logical Error Rate vs. Direct Trotter | <br>
+| • Clifford Noise Reduction (CliNR) Protocol | • NVIDIA GH200 Grace Hopper Superchip | • 0% Fidelity Gain if Measurements Are Deferred | <br>
+| • Active Mid-Circuit Measurement (MCM) | • CUDA-Q & cuStabilizer Software Libraries | • ML Model Selected Top Stabilizers from 57k Samples | <br>
+Arresting Cascading Noise via Active Mid-Circuit Intervention<br>
+Simulating complex fermionic systems in chemistry and materials science requires Trotterization—a technique that breaks continuous time-evolution into deep sequences of quantum gates. In conventional NISQ executions, physical noise accumulates exponentially across successive Trotter steps, destroying the target signal (“the deep Trotter dilemma”). The joint research addresses this bottleneck by replacing long, non-local Jordan-Wigner strings with localized encodings and active error detection:<br>
+- Generalized Superfast Encoding (GSE): Maps fermionic operators to qubits using lower Pauli weights and local Majorana loop stabilizers, reducing circuit depth requirements and providing an inherent error-detecting structure.<br>
+- Clifford Noise Reduction (CliNR): Prepares verified Bell+Clifford resource states, measures local stabilizers, and teleports the accepted Clifford operations onto the data register before hook errors propagate through the code block.<br>
+- The Mid-Circuit Measurement (MCM) Mandate: Rather than waiting for the algorithm to finish, in-flight MCM measures ancilla qubits mid-circuit, resets them to zero for reuse, and discards or corrects corrupted operations dynamically.<br>
+Zero-Advantage Threshold for Passive Post-Selection<br>
+Crucially, empirical hardware data showed that the 54% fidelity improvement dropped entirely to zero when stabilizer readouts were deferred to the end of the circuit (passive post-selection). This confirms that active, mid-circuit fault detection—rather than post-processing verification overhead alone—drives the observed quantum advantage.<br>
+ML-Guided Stabilizer Selection on NVIDIA Hardware<br>
+To solve the combinatorial challenge of choosing which stabilizer pairs to measure across deep circuits, the researchers trained a machine-learning model on an NVIDIA GH200 GPU using 57,536 samples (992 pairs per graph). During inference, the model rapidly scored 105 candidate stabilizer pairs to select optimal verification operators, significantly outperforming random selection strategies.<br>
+Review the full technical paper on arXiv here, and read the announcement on IonQ Blog here.<br>
+September 1, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=10014" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/ionq-nvidia-and-qbraid-demonstrate-54-error-reduction-in-mid-circuit-quantum-simulations/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="e99c42efa1cfdbe8.html" class="prev-next">&larr; Better than gold</a>
+  <a href="a7e1f12a916a4799.html" class="prev-next">&larr; Congressman Langworthy Introduces American Quantum Competitiveness Act (H.R. 10163)</a>
   
   
-  <a href="eef69dabe3ee090e.html" class="prev-next">Interacting collaborators reveal noninteracting fermions &rarr;</a>
+  <a href="daebc3d1be9abd90.html" class="prev-next">MIT Quantum Initiative Launches Gordon and Betty Moore Foundation-Backed Postdoctoral Fellowship &rarr;</a>
   
 </div>
 

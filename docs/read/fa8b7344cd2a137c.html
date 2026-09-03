@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Four Step Process for End Users to Leverage Quantum Technology — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="ef4404fbbd033cd7.html" title="PsiQuantum and Brookhaven National Lab Partner to Develop Fault-Tolerant Algorithms on Construct Platform">&larr; prev</a>
+    <a href="a7e1f12a916a4799.html" title="Congressman Langworthy Introduces American Quantum Competitiveness Act (H.R. 10163)">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">A Four Step Process for End Users to Leverage Quantum Technology</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Doug Finke</span>
+      <span>1d</span>
+      <span class="article-category">quantum</span>
+      <span>1214 words</span>
+      <span>7 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>By Doug Finke<br>
+You may be a manager in a large enterprise and have been reading popular press reports on quantum technology and wondering if it is something that you might use to improve your operations to make them more effective and efficient. It is a good question. Because while quantum has great potential, it can be quite confusing for a non-expert to understand and apply it by themselves. Global Quantum Intelligence (GQI) believes there will be immense economic value that will be enjoyed by end users of the technology, but figuring how and where it can be utilized within your own organization may not be obvious.<br>
+To help guide users through this quandary, GQI has developed a four-step process that can help an end user go from curiosity to deployment with a sequence we call Discover, Decide, Execute, Incorporate. The remainder of this blog will describe those steps in more detail.<br>
+Discover<br>
+It is not only important to discover what quantum tech is capable of; it is just as important to understand your organization’s operating environment and pain points. A good way to do that is to interview others within your organization and ask about any computational problems that have excessively long run times, produce inaccurate results, or are not possible with your current computing environment. It is sometimes helpful to review your current computer usage and identify any applications that have unusually long runtimes.<br>
+At the same time, you can start educating yourself about the quantum computing landscape. Particularly helpful is to review the lists of potential use cases that have already been identified for your industry, get familiar with the different computing modalities to understand their strengths and weaknesses, learn about the potential vendor field of hardware, software, and consulting firms that can help you implement a solution, and stay abreast of current developments on the Quantum Computing Report website.<br>
+Decide<br>
+With a better understanding of quantum computing use cases and potential areas for improvement in your organization, you can start to narrow down the use cases and put together a plan on how this can be implemented.<br>
+The first step would be to review the possible use cases that you have uncovered and make an ROI estimate to see which ones, if any, are worthwhile. If a classical solution can provide an equally good solution, then it probably isn’t worth creating a quantum solution. And if the benefits of the solution don’t justify the quantum related expenses, then it may not be worthwhile either.<br>
+Assuming you have found a potential application, it is then time to start putting together a plan on how to implement a solution. You need to figure out how to put together a team that will work on the problem. Some companies will decide to create an in-house innovation team to develop the solution, while others may opt to find external technical consultants to help them.<br>
+You will also need to investigate potential quantum providers to see what they can or cannot do for you. Various application libraries are available, both open source, and vendor provided that may accelerate project implementation and these should be investigated. A project budget needs to be established that understands all associated costs including manpower, software license fees, and machine time.<br>
+Putting all these things together a team will need to create a full project plan that includes performance, cost, and compatibility assessments including how the quantum application will fit in with the rest of the organization’s IT systems. Once you have a well thought out plan, your next step is to take it to management for approval to proceed.<br>
+Execute<br>
+You’ve identified a target application, you have assembled a team to start working on it, and you have scoped out what partners you will work with and what software libraries that you want to use. Here are some tips on how to make the execution as successful as possible.<br>
+First, start out with a “toy” model that you can use to test out the proof of concept. A “toy” model is one that solves a similar problem, but with fewer data elements. It can be used to test out the algorithm you are using while reducing machine time charges and provide faster feedback on how the solution being developed is working.<br>
+You should consider trying the solution on different platforms to see which one works the best. Different quantum platforms have different strengths and weaknesses. Some have faster gate speeds while others have higher qubit fidelities. To start off, it is wise to try a few different providers to see which one might be the best fit for your application. Often, it is possible to change to a different platform by a simple change in one line of code. And most hardware platforms can accept or translate programs written in Qiskit.<br>
+As you proceed, you will want to start focusing your development efforts on one platform and start using larger more realistic sized models. There is still a lot of work needed to optimize the solution and test it for accuracy and compatibility. You may want to test out your solution using synthetic data, particularly where confidentiality is required. But as you proceed you will arrive at a point where you have implemented a successful proof-of-concept solution that meets your goals and is ready for the final step.<br>
+Incorporate<br>
+Some may think that once you have in hand a working solution, putting it into production will be easy. In fact, the opposite is often true. Integrating a new solution with the rest of the IT system may require a lot of detailed work to ensure the quantum solution is compatible with the rest of your IT infrastructure.<br>
+It is important to have the rest of your organization on-board to ensure that they accept the new solution and use it to its full advantage. This will often require additional effort in documentation and training for those who were not involved in the development of the solution.<br>
+Before moving the solution into a full production situation, you should continue the testing to check for compatibility, performance, and unwanted side effects. In this testing, you should try to come up with unusual “corner cases” which are scenarios that you might not normally seen in production, but have a small possibility of coming up. It is quite instructive to see how the new solution handles these situations.<br>
+After the new solution, is put into production, you should continue to look for potential improvements. As the users become more used to the system, they may provide additional suggestions on new features or ease-of-use issues that might you might consider. And additional ways to continue improving performance can also be sought.<br>
+Conclusion<br>
+Quantum technology will have a wide impact in the future on how organizations operate and the benefits they will reap for leveraging it. Those end users that start working with the technology early will likely obtain the greatest benefits. But one doesn’t have to rush into it with a large team and with minimal planning in order get involved. By taking the structured approach of Discover, Decide, Execute, and Incorporate as discussed in this blog you can cultivate a well-planned program that can help maximize your benefits while minimizing your risks.<br>
+September 1, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/a-four-step-process-for-end-users-to-leverage-quantum-technology/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="ef4404fbbd033cd7.html" class="prev-next">&larr; PsiQuantum and Brookhaven National Lab Partner to Develop Fault-Tolerant Algorithms on Construct Platform</a>
+  
+  
+  <a href="a7e1f12a916a4799.html" class="prev-next">Congressman Langworthy Introduces American Quantum Competitiveness Act (H.R. 10163) &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-09-03 02:44 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
