@@ -139,29 +139,18 @@
       <span>Mohamed Abdel-Kareem</span>
       <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>449 words</span>
-      <span>3 min read</span>
+      <span>58 words</span>
+      <span>1 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Quantum computing developer Rigetti Computing and researchers from Purdue University have published joint research extending Rigetti’s quantum preconditioning framework to hard-constrained combinatorial optimization problems. By using two-point variable correlations extracted from shallow Quantum Approximate Optimization Algorithm (QAOA) circuits to modify the objective function of commercial Mixed-Integer Programming (MIP) solvers, the team demonstrated that quantum preconditioning can guide classical branch-and-bound searches to near-optimal solution thresholds up to 100 times faster than unpreconditioned runs.<br>
-| [ Rigetti & Purdue Quantum Preconditioning Architecture ] |  |  | <br>
-|---|---|---|<br>
-| Quantum Feature Extraction | Classical MIP Solver Integration | Benchmark Performance & Scaling | <br>
-| • QAOA Two-Point Correlations (Zij) | • Retains Original Hard Balance Constraint | • Near-Optimal Threshold (ε = 0.01) Reached ~100× Faster | <br>
-| • Reshapes Objective Matrix (Wij → Zij) | • Solved via Commercial MIP Solvers (Gurobi) | • Major Acceleration Realized at Shallow Depth (p = 1) | <br>
-| • Soft Constraint Penalty (ρ) Tuning | • Incumbents Evaluated on Original Cost Function | • Lowers Fitted Exponential Base for Scaling | <br>
-Augmenting Branch-and-Bound via Quantum Correlation Matrices<br>
-Combinatorial optimization under hard constraints—such as graph partitioning for parallel scientific computing and logistics routing—remains NP-hard, forcing exact classical solvers like Gurobi to navigate massive search trees. The quantum preconditioning framework uses a gate-based QPU as a structure-learning pre-processor rather than a standalone solver:<br>
-- Correlation Matrix Generation: The algorithm runs a shallow QAOA circuit on the problem graph, enforcing balance constraints as a soft penalty parameter (ρ) within the cost Hamiltonian. Measuring the resulting quantum state yields a two-point correlation matrix (Zij) that captures pairwise decision-variable alignments.<br>
-- Hard-Constrained MIP Execution: The correlation matrix replaces the original edge-weight matrix (Wij) in the objective function. Gurobi then solves this preconditioned problem while enforcing the original balance constraint as an explicit, uncompromised hard constraint.<br>
-- Accelerated Incumbent Discovery: Callback trajectory data shows that the preconditioned objective allows the classical solver’s branch-and-bound algorithm to make better branching decisions and discover high-quality feasible solutions significantly earlier in the search process.<br>
-Benchmark Results and Parameter Transferability<br>
-Evaluated across 50 dense, all-to-all connected graph instances (n = 40), the framework enabled Gurobi to reach solutions within 1% of the baseline global optimum in under a second—compared to hours for unpreconditioned runs. Notably, the majority of the preconditioning advantage was captured at p = 1, minimizing circuit depth and exposure to quantum gate noise. To avoid high variational optimization costs as problem sizes scale, the team successfully transferred rescaled QAOA parameters (γℓ ∝ 1/√n) optimized at n = 20 to larger graph instances without performance degradation.<br>
-Review the full research paper on arXiv (arXiv:2608.28842) here.<br>
-September 2, 2026</p>
+    <p>Quantum computing developer Rigetti Computing and researchers from Purdue University have published joint research extending Rigetti&#39;s quantum preconditioning framework to hard-constrained combinatorial optimization problems. By using two-point variable correlations extracted from shallow Quantum Approximate Optimization Algorithm (QAOA) circuits to modify the objective function of commercial Mixed-Integer Programming (MIP) solvers, the team demonstrated that quantum preconditioning [...] The po</p>
+  </div>
+  <div class="fallback">
+    Full article extraction unavailable.
+    <a href="https://quantumcomputingreport.com/rigetti-and-purdue-university-demonstrate-quantum-preconditioning-framework-for-constrained-optimization/" target="_blank" rel="noopener">Read on original site &rarr;</a>
   </div>
   
 </article>
@@ -184,7 +173,7 @@ September 2, 2026</p>
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-09-04 02:41 UTC
+  Generated 2026-09-04 10:30 UTC
 </div>
 
 <script type="module">
