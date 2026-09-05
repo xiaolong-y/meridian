@@ -139,18 +139,29 @@
       <span>Mohamed Abdel-Kareem</span>
       <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>68 words</span>
-      <span>1 min read</span>
+      <span>412 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>The RIKEN Center for Computational Science (R-CCS) has officially adopted the enterprise quantum software development kit QURI SDK Enterprise from Tokyo-based algorithm developer QunaSys Inc. as the primary software layer for Japan’s national JHPC-quantum project. Funded by the New Energy and Industrial Technology Development Organization (NEDO) under the Ministry of Economy, Trade and Industry (METI), [...] The post RIKEN Integrates QunaSys QURI SDK Enterprise into Japan&amp;#8217;s JHPC-quantum Pl</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/riken-integrates-qunasys-quri-sdk-enterprise-into-japans-jhpc-quantum-platform/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>The RIKEN Center for Computational Science (R-CCS) has officially adopted the enterprise quantum software development kit QURI SDK Enterprise from Tokyo-based algorithm developer QunaSys Inc. as the primary software layer for Japan’s national JHPC-quantum project. Funded by the New Energy and Industrial Technology Development Organization (NEDO) under the Ministry of Economy, Trade and Industry (METI), the integration connects the supercomputer Fugaku and the ROQUO GPU cluster with on-premises and cloud-hosted quantum processing units (QPUs).<br>
+| [ RIKEN JHPC-quantum Hardware & Software Infrastructure ] |  |  | <br>
+|---|---|---|<br>
+| High-Performance Computing Nodes | Quantum Hardware Backends | Distributed Simulation & Middleware | <br>
+| • Supercomputer Fugaku (Kobe, A64FX) | • IBM Quantum System Two ( ibm_kobe ) | • QunaSys QURI SDK Enterprise Stack | <br>
+| • ROQUO Cluster (540 NVIDIA GB200 GPUs) | • Quantinuum System Model H2 (Reimei) | • mpiQulacs Parallel Circuit Simulator | <br>
+| • Managed via RIKEN R-CCS / NEDO Framework | • Heterogeneous Trapped-Ion & Superconducting QPUs | • NVIDIA cuQuantum GPU Accelerator Backend | <br>
+Hybrid Algorithm Execution across Heterogeneous QPUs and GPUs<br>
+Connecting high-performance classical supercomputers with quantum processing units requires unified middleware capable of handling multi-node job dispatch, parallel simulation, and hybrid variational loops. QURI SDK Enterprise resolves these operational bottlenecks across RIKEN’s compute nodes:<br>
+- Native Hybrid Algorithm Libraries: Incorporates QunaSys’s proprietary Quantum Selected Configuration Interaction (QSCI) and ADAPT-QSCI algorithm suites, targeting active space electronic structure calculations for materials science, quantum chemistry, and computer-aided engineering (CAE).<br>
+- Multi-Node Distributed Simulation: Offloads classical circuit simulation via mpiQulacs using Message Passing Interface (MPI) across Fugaku’s A64FX compute nodes, alongside cuQuantum-accelerated state-vector and tensor-network simulation across ROQUO’s 135 NVIDIA GB200 NVL4 nodes (540 Blackwell GPUs).<br>
+- Cross-Platform QPU Portability: Enables unified workflow compilation targeting both superconducting architectures (IBM Quantum System Two at R-CCS) and trapped-ion systems (Quantinuum System Model H2 at RIKEN’s Wako campus) without requiring backend-specific code rewrites.<br>
+Strategic Context within Japan’s Society 5.0 Roadmap<br>
+Operated under NEDO’s “Project for Research and Development of Enhanced Infrastructures for Post 5G Information and Communications Systems,” the deployment follows the initial operational launch of the ROQUO GPU cluster in June 2026. The software layer is accessible to selected academic and industrial research groups under the JHPC-quantum Test User Program to establish scalable workflows for hybrid supercomputing.<br>
+Review the official press releases via QunaSys here and the RIKEN Center for Computational Science here, and access technical documentation via QURI SDK Documentation here.<br>
+September 4, 2026</p>
   </div>
   
 </article>
@@ -173,7 +184,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-09-05 14:31 UTC
+  Generated 2026-09-05 19:54 UTC
 </div>
 
 <script type="module">
