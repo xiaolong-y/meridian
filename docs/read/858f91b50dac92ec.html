@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael Rabin memorial conference — Meridian Reader</title>
+  <title>Qedma and HQC² Demonstrate 30–50× Error Mitigation Advantage in Quantum Chemistry Benchmark — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,63 +126,54 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="e99c42efa1cfdbe8.html" title="Better than gold">&larr; prev</a>
-    <a href="eef69dabe3ee090e.html" title="Interacting collaborators reveal noninteracting fermions">next &rarr;</a>
+    <a href="4ddb9e58e4fb8bc3.html" title="Quobly and Absolut System Execute Industrial Cryogenic Roadmap for Silicon Spin-Qubit Computers">&larr; prev</a>
+    <a href="c19e1a8ee4ac6018.html" title="La Luce Cristallina Launches Quantum Paraelectric Strontium Titanate on Insulator Wafer Platform">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Michael Rabin memorial conference</h1>
+    <h1 class="article-title">Qedma and HQC² Demonstrate 30–50× Error Mitigation Advantage in Quantum Chemistry Benchmark</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>3w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>9h</span>
       <span class="article-category">quantum</span>
-      <span>223 words</span>
-      <span>2 min read</span>
+      <span>467 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Friend-of-the-blog (well, mainly just friend) Adi Akavia has asked me to publicize that she’s helping to organize an exciting CS conference called Mind-IL at Tel Aviv University on October 26, in memory of the Israeli-American Turing Award winner Michael O. Rabin, who passed away in April.  Please note that October 26 is the day before the Israeli election, for any Israeli citizenship holders living abroad who might want an academic excuse to come to Israel and vote.<br>
-Update (August 19): Avi Wigderson also asked me to advertise a conference, to be held September 16-18 at Bletchley Park in the UK, to commemorate the 90th anniversary of Alan Turing’s “On Computable Numbers” paper.<br>
-		<br>
-				<br>
-				<br>
-					<br>
-						This entry was posted<br>
-												on Sunday, August 16th, 2026 at 3:45 pm						and is filed under Announcements, Complexity.<br>
-						You can follow any responses to this entry through the RSS 2.0 feed.<br>
-													You can leave a response, or trackback from your own site.<br>
-						<br>
-					<br>
-				<br>
-			 <br>
-		 <br>
-	<br>
-	<br>
-	<br>
- <br>
-You can use rich HTML in comments!  You can also use basic TeX, by enclosing it within $$ $$ for displayed equations or \( \) for inline equations.<br>
-All comments are treated, by default, as personal missives to me, Scott Aaronson---with no expectation either that they'll appear on the blog or that I'll reply to them.</p>
+    <p>Quantum error mitigation software provider Qedma Quantum Computing and the HQC² research consortium—comprising the University of Copenhagen (KU), Technical University of Denmark (DTU), and University of Southern Denmark (SDU)—have published an experimental benchmark demonstrating a 30× to 50× reduction in energy estimation error for quantum chemistry calculations on superconducting quantum hardware. Presented at Q2B Copenhagen 2026, the study evaluated Qedma’s characterization-based QESEM (Quantum Error Suppression and Error Mitigation) software layer on IBM’s Aachen quantum processor, computing the potential energy surface (PES) of a symmetrically stretched water molecule.<br>
+The research team mapped a chemically motivated, orbital-optimized variational ansatz—the single-layer perfect-pairing tiled unitary product state (pp-tUPS)—onto an 8-qubit register corresponding to a (4,4) active space in the STO-3G basis set. Unmitigated QPU executions routinely overestimated the ground-state energy by roughly 500 mHa due to cumulative gate infidelities and decoherence. By integrating QESEM’s noise-aware transpilation and unbiased quasi-probabilistic error cancellation (PEC) algorithms, the team brought energy estimation errors systematically down to within 100 mHa, 30 mHa, and under chemical accuracy (~1.5 mHa) relative to statevector references as target precision constraints were tightened.<br>
+| [ Water Molecule (H₂O) Potential Energy Surface Experimental Benchmarks ] |  |  | <br>
+|---|---|---|<br>
+| Execution & Mitigation Tier | Energy Estimation Error (vs. Statevector) | Mitigation Factor / Target Accuracy | <br>
+| Raw QPU Execution (IBM Aachen) | ~500 mHa Overestimation | Baseline Unmitigated Hardware Noise | <br>
+| QESEM Loose Precision Target (0.1 Ha) | ~30 mHa to 100 mHa Error Range | 30× Error Reduction; Moderate Sampling Overhead | <br>
+| QESEM Tight Precision Target (0.01 Ha) | ~1.5 mHa (Chemical Accuracy Horizon) | 50× Error Reduction; Reaches Target Chemical Accuracy | <br>
+Unlike heuristic error mitigation protocols that fail to provide formal mathematical guarantees, QESEM applies characterization-based, noise-aware transpilation that directly mitigates non-Clifford fractional rotation gates without requiring conversion into longer Clifford gate sequences. This preserves active circuit volume while systematically eliminating systematic noise bias. While the study highlighted the substantial QPU sampling overhead required to achieve sub-millihartree precision on current hardware, it demonstrated that characterization-driven QEM can extract quantitative molecular properties and smooth potential energy surfaces prior to full fault-tolerant hardware deployment.<br>
+Funded in part by the Israel Innovation Authority under the Eureka Q-CHEMION project and the Novo Nordisk Foundation, the collaboration leverages HQC²’s open-source SlowQuant computational chemistry suite to calculate ground- and excited-state molecular properties on near-term devices. The benchmark follows Qedma’s recent joint demonstrations with IBM and Quantinuum showing quantum advantage in modeling 2D Floquet physics beyond the limits of classical supercomputers.<br>
+Review the official news announcement on Qedma here, access the technical research paper on arXiv PDF here, read our coverage of Qedma’s QESEM Integration with Quantinuum Hardware here, and examine our previous analysis of IBM and Qedma’s Floquet Physics Quantum Advantage Benchmarks here.<br>
+September 9, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=10014" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/qedma-and-hqc%c2%b2-demonstrate-30-50x-error-mitigation-advantage-in-quantum-chemistry-benchmark/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="e99c42efa1cfdbe8.html" class="prev-next">&larr; Better than gold</a>
+  <a href="4ddb9e58e4fb8bc3.html" class="prev-next">&larr; Quobly and Absolut System Execute Industrial Cryogenic Roadmap for Silicon Spin-Qubit Computers</a>
   
   
-  <a href="eef69dabe3ee090e.html" class="prev-next">Interacting collaborators reveal noninteracting fermions &rarr;</a>
+  <a href="c19e1a8ee4ac6018.html" class="prev-next">La Luce Cristallina Launches Quantum Paraelectric Strontium Titanate on Insulator Wafer Platform &rarr;</a>
   
 </div>
 
