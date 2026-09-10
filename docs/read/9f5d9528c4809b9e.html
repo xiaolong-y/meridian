@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael Rabin memorial conference — Meridian Reader</title>
+  <title>IonQ Publishes End-to-End Fault-Tolerant Resource Estimate for Shor’s Algorithm on 256-Bit Elliptic Curves — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,63 +126,49 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="e99c42efa1cfdbe8.html" title="Better than gold">&larr; prev</a>
-    <a href="eef69dabe3ee090e.html" title="Interacting collaborators reveal noninteracting fermions">next &rarr;</a>
+    <a href="273ea121fc8a0203.html" title="IonQ Debuts Sixth-Generation Superion QPU Architecture Featuring On-Chip Electronic Control and CMOS Integration">&larr; prev</a>
+    <a href="5777b7b1854f1cf0.html" title="IonQ Raises Full-Year 2026 Revenue Outlook to $450 Million–$460 Million Post-SkyWater Consolidation">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Michael Rabin memorial conference</h1>
+    <h1 class="article-title">IonQ Publishes End-to-End Fault-Tolerant Resource Estimate for Shor’s Algorithm on 256-Bit Elliptic Curves</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>3w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>223 words</span>
-      <span>2 min read</span>
+      <span>468 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Friend-of-the-blog (well, mainly just friend) Adi Akavia has asked me to publicize that she’s helping to organize an exciting CS conference called Mind-IL at Tel Aviv University on October 26, in memory of the Israeli-American Turing Award winner Michael O. Rabin, who passed away in April.  Please note that October 26 is the day before the Israeli election, for any Israeli citizenship holders living abroad who might want an academic excuse to come to Israel and vote.<br>
-Update (August 19): Avi Wigderson also asked me to advertise a conference, to be held September 16-18 at Bletchley Park in the UK, to commemorate the 90th anniversary of Alan Turing’s “On Computable Numbers” paper.<br>
-		<br>
-				<br>
-				<br>
-					<br>
-						This entry was posted<br>
-												on Sunday, August 16th, 2026 at 3:45 pm						and is filed under Announcements, Complexity.<br>
-						You can follow any responses to this entry through the RSS 2.0 feed.<br>
-													You can leave a response, or trackback from your own site.<br>
-						<br>
-					<br>
-				<br>
-			 <br>
-		 <br>
-	<br>
-	<br>
-	<br>
- <br>
-You can use rich HTML in comments!  You can also use basic TeX, by enclosing it within $$ $$ for displayed equations or \( \) for inline equations.<br>
-All comments are treated, by default, as personal missives to me, Scott Aaronson---with no expectation either that they'll appear on the blog or that I'll reply to them.</p>
+    <p>Trapped-ion quantum platform developer IonQ (NYSE: IONQ) has published an architectural resource estimation study providing a fully compiled, end-to-end blueprint for executing Shor’s algorithm to solve the 256-bit elliptic curve discrete logarithm problem (ECDLP) on the secp256k1 curve. Utilizing an optimized variant of its fault-tolerant “Walking Cat” architecture based on quantum low-density parity-check (qLDPC) codes, the study demonstrates that a physical device comprising 19,397 physical qubits can solve the discrete logarithm for secp256k1—the cryptographic curve underpinning Bitcoin and wider blockchain infrastructure—in 25.7 days per attempt with a 63.3% heuristic single-run success probability.<br>
+At the logical circuit layer, the research team optimized point-addition arithmetic circuits for pseudo-Mersenne primes by combining conditionally-inverted adders for in-place multiplication with a Karatsuba-split modular squarer. These optimizations reduced the execution requirements down to 1,457 logical qubits and 39 million Toffoli gates (consuming 273 million T-states), down from prior baseline limits of 58 million Toffoli gates. To prevent computational errors from accumulating, the study derives rigorous mathematical lower bounds on algorithmic success probabilities that hold with confidence at least 1 – 2-128, incorporating phase and computational basis approximation errors across all modular arithmetic operations.<br>
+To overcome runtime bottlenecks where sequential Toffoli gates would otherwise require over 400 days of execution time, IonQ introduced a two-level magic state factory producing CCZ states directly in qLDPC memory rather than synthesizing Toffolis from individual T-gates. Paired with depth-one CCZ state injection, non-overlapping cat-state measurement channels, and Clifford frame clearing via a pipelined logical CliNR protocol, the architecture accelerates Toffoli execution times by a factor of 31× (down to 29.5 ms per gate). The system uses four CCZ factories consuming 1,276 physical qubits to deliver a continuous state supply with an average production time under 28 ms.<br>
+The compiler toolchain models physical-layer execution constraints without abstracting away routing overheads, Clifford operations, or hardware decoherence. The compilation pipeline accounts for 2D ion shuttling, physical qubit transport, syndrome extraction schedules, and a specialized Swap-Loss model using Leakage and Loss Reduction Units (LLRUs) that eliminate the need for dedicated beacon qubits. High-density Q102 qLDPC memory blocks (encoding 22 logical qubits into 102 data qubits) are paired with integrated routing to restrict total routing overhead to under 5% of the end-to-end execution runtime.<br>
+The publication highlights the prospective vulnerability of elliptic-curve digital signature algorithms (ECDSA) governing authentication, code signing, and root-of-trust hierarchies, emphasizing that signature compromises present forward-looking exploitation risks rather than retroactive decryption threats. IonQ notes that post-quantum signature standards such as ML-DSA and SLH-DSA remain mathematically unaffected, urging enterprise migration ahead of fault-tolerant hardware systems targeted on its roadmap for the 2028 timeframe.<br>
+Review the official press release here, access the full technical research paper here, read our earlier coverage of fault-tolerant trapped-ion and neutral-atom blueprints here, and examine our analysis of the original Walking Cat architecture here.<br>
+September 8, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=10014" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/ionq-publishes-end-to-end-fault-tolerant-resource-estimate-for-shors-algorithm-on-256-bit-elliptic-curves/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="e99c42efa1cfdbe8.html" class="prev-next">&larr; Better than gold</a>
+  <a href="273ea121fc8a0203.html" class="prev-next">&larr; IonQ Debuts Sixth-Generation Superion QPU Architecture Featuring On-Chip Electronic Control and CMOS Integration</a>
   
   
-  <a href="eef69dabe3ee090e.html" class="prev-next">Interacting collaborators reveal noninteracting fermions &rarr;</a>
+  <a href="5777b7b1854f1cf0.html" class="prev-next">IonQ Raises Full-Year 2026 Revenue Outlook to $450 Million–$460 Million Post-SkyWater Consolidation &rarr;</a>
   
 </div>
 
