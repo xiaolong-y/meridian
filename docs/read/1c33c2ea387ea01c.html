@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9/11 in Berkeley — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="4d488055beae4998.html" title="Patenting Quantum Computing Innovations: Lessons from Four Core Quantum Algorithms – Part 1">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">9/11 in Berkeley</h1>
+    <div class="article-meta">
+      <span class="article-source">Shtetl-Optimized</span>
+      <span>Scott</span>
+      <span>3h</span>
+      <span class="article-category">quantum</span>
+      <span>996 words</span>
+      <span>5 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>9/11 in Berkeley<br>
+Note: Of course I’ve been glued all week to the dramatic developments in AI. I’m working on a post about them. I’m not good at reacting to things in a timely way. So today, I’ll do my post marking the tragedy a quarter-century ago that we all commemorate. Please feel free to share your 9/11 memories in the comments. Also, Shana Tova to those who celebrate!<br>
+The morning of September 11, 2001, I was a second-year PhD student at Berkeley, who woke up late in his dorm room at International House, after a long night spent closing in on the proof of the quantum lower bound for finding collisions.<br>
+Rolling over to my laptop, I saw a flurry of weird emails, including one from Prof. Christos Papadimitriou saying that “we’re a community, and we’ll all support each other,” and another from Prof. Luca Trevisan (whose algorithms course I was then TA’ing) saying “on a day like this, it’s impossible to think about algorithms. Class is cancelled.”<br>
+Confused, I clicked over to the New York Times and saw the picture of the burning towers, and read numbly about what was already over by the time I’d woken up. I checked in with my mom, made sure relatives and friends in the NYC area were OK. My dad was at a company event in Atlanta, and would need to drive home because of the national grounding of flights.<br>
+One of my earliest memories in life, from age 5, is of ascending to the top of the World Trade Center. Growing up an hour’s drive from NYC, it wasn’t an exotic place to me.<br>
+I soon learned that one of the dead was Danny Lewin, the ex-IDF captain, theoretical computer scientist, and cofounder of Akamai who had his throat slashed on one of the planes while trying to fight the hijackers, making him the day’s first casualty. I’d never met Danny but already knew many people in common with him. A few years later I’d be humbled to win the student paper award that was named in Danny’s memory.<br>
+Anyway, at Berkeley on 9/11, I wandered over to Soda Hall just to be with other people. A few students showed up for office hours, wanting help with their algorithms homework, which I found hard to believe, but I did my best to concentrate, as the computer screens around me showed the burning towers.<br>
+That evening, I went to a vigil for the victims in Sproul Plaza. But the “vigil,” such as it was, quickly dispensed with mourning and prayers and turned to applauded speeches about how the US must respond with love rather than war, and must turn the other cheek. Meanwhile, a student communist organization was handing out flyers explaining that the victims were mostly “wealthy capitalists and the workers who tried to rescue them.” This while smoke still blanketed NYC and the desperate search for survivors continued. I left the vigil early.<br>
+Until that day, I had thought of myself as basically a “leftist,” one whose #1 issue was the existential risk of climate change. Sure, I disagreed with my fellow leftists about issues from nuclear power to gifted education to Israel, but those were just intra-left disputes.<br>
+The year before, I had created the website “In Defense Of NaderTrading,” in a desperate attempt to intervene in history and cause Al Gore to become president rather than George W. Bush. When Bush “won,” by the infamous 537 votes in Florida, I considered it a victory for horribleness that would never be surpassed by anything else in my lifetime (ha). I couldn’t imagine any politician who was more the antithesis of everything I believed in than Bush. This view, of course, did not particularly stand out at Berkeley.<br>
+In the days after 9/11, though, it became obvious that I could not be a “leftist” in the Berkeley sense. Some of my fellow students felt that Osama bin Laden made a lot of great points, that the attacks were basically justified, and that at any rate, we in Amerikkka had done much worse to provoke them, including by supporting the genocidal settler-colony called “Israel,” which for all we know secretly masterminded the 9/11 attacks anyway (although again, if bin Laden had done them, he would’ve been justified).<br>
+Around the same time came the Second Intifada, when a wave of suicide bombings in Israeli buses and pizza parlors and university cafeterias thrilled and energized some Berkeley students to the extent that they took over a Holocaust Remembrance Day event with bullhorns to make it about the Nakba, smashed the windows of the Hillel building, and beat up a couple of students wearing kippot. That was how thoroughly anti-Nazi they were.<br>
+I finished my PhD at Berkeley in 2004 having learned about more than quantum computing. I’d learned that, while American academia had pockets that truly were crucial refuges and oases for nerds like me, it also harbored people who would gladly see me and my relatives and my fellow Americans killed for the sake of their ideological vision. And I’d learned that I had my own ideological vision, which was that such people could go fuck themselves.<br>
+It deeply pained me to be on the same side of anything as George W. Bush — especially because I knew that 9/11 had happened on his watch, that he had ignored all the warnings, and that he was grossly incompetent to manage the resulting wars against jihadism (just how incompetent, I didn’t know at the time). But as flawed as Bush was, I knew that I wanted to preserve rather than destroy the civilization of which he was a temporary steward. And I think the value and fragility of our civilization is the main lesson from that day that I’d like to convey to my kids, for whom of course 9/11 is just another historical event to learn about in school, like the Boston Tea Party or the Alamo.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://scottaaronson.blog/?p=10071" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="4d488055beae4998.html" class="prev-next">Patenting Quantum Computing Innovations: Lessons from Four Core Quantum Algorithms – Part 1 &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-09-11 20:25 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
