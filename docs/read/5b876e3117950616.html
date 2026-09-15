@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Better than gold — Meridian Reader</title>
+  <title>Quandela and NVIDIA Outline Photonic QPU Integration Architecture via NVQLink — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,64 +126,53 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="8db56c9f1076f41f.html" title="Anthropic’s LLM watermarking">&larr; prev</a>
-    <a href="898efbcbd461300a.html" title="Michael Rabin memorial conference">next &rarr;</a>
+    <a href="276428ff17738bce.html" title="BlueQubit Launches $150,000 “Quantum Flywheel” Compute Grant Program Supported by AWS, IBM, and NVIDIA">&larr; prev</a>
+    <a href="669acf430c1295cb.html" title="Anyon Computing Unveils Open-Source Real-Time Control Plane Powered by NVIDIA NVQLink">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Better than gold</h1>
+    <h1 class="article-title">Quandela and NVIDIA Outline Photonic QPU Integration Architecture via NVQLink</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>3w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>10h</span>
       <span class="article-category">quantum</span>
-      <span>227 words</span>
+      <span>382 words</span>
       <span>2 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>What’s about the only thing more badass than a 17-year-old winning a gold medal at the International Olympiad in Informatics (IOI)?<br>
-That 17-year-old intentionally forfeiting his gold medal by wearing an Israeli flag while the medal was announced, defying the IOI’s boycott of Israel (for background on this boycott, see my post from 2024).<br>
-Kol HaKavod (mad respect) to Yotam Budnik, who incredibly, has also won a Gold Medal (which he was allowed to keep, apparently) at the International Math Olympiad.  And congratulations to the entire Israeli team, which (incredibly) would apparently have had a higher overall score than the US team, had it been allowed to compete as an official team at all.<br>
-		<br>
-				<br>
-				<br>
-					<br>
-						This entry was posted<br>
-												on Thursday, August 20th, 2026 at 11:27 am						and is filed under Announcements, Rage Against Doofosity.<br>
-						You can follow any responses to this entry through the RSS 2.0 feed.<br>
-													You can leave a response, or trackback from your own site.<br>
-						<br>
-					<br>
-				<br>
-			 <br>
-		 <br>
-	<br>
-	<br>
-	<br>
- <br>
-You can use rich HTML in comments!  You can also use basic TeX, by enclosing it within $$ $$ for displayed equations or \( \) for inline equations.<br>
-All comments are treated, by default, as personal missives to me, Scott Aaronson---with no expectation either that they'll appear on the blog or that I'll reply to them.</p>
+    <p>Photonic quantum computing developer Quandela and NVIDIA have published a joint technical white paper outlining an architectural framework to integrate photonic Quantum Processing Units (QPUs) into classical AI and High-Performance Computing (HPC) environments using NVIDIA NVQLink. Presented at IEEE Quantum Week 2026 in Toronto, the paper defines a progressive operational model for co-locating photonic QPUs alongside GPU and CPU supercomputing nodes within data centers.<br>
+The technical integration links Quandela’s proprietary Quantum System Controller (QSC)—which governs real-time FPGA pulse control and optoelectronic routing for its MosaiQ QPU—directly to NVIDIA GPU nodes using NVQLink’s low-latency interconnect architecture. Built on Remote Direct Memory Access over Converged Ethernet (RoCE) operating at sub-4-microsecond round-trip latency budgets, the setup permits microsecond-scale execution loops between GPU classical nodes and QPU control electronics. This enables GPU-accelerated state-vector and tensor-network dynamics simulations, real-time quantum error correction (QEC) decoding, and automated QPU pulse calibration to execute within a unified host process running NVIDIA CUDA-Q and the open-source MerLin Quantum Machine Learning (QML) framework.<br>
+| [ Quandela & NVIDIA Hybrid Photonic Architecture Parameters ] |  |  | <br>
+|---|---|---|<br>
+| System Layer | Hardware & Transport Stack | Software & Algorithmic Framework | <br>
+| Photonic QPU Control | • Quandela Quantum System Controller (QSC) • FPGA Real-Time Optoelectronic Control | • Direct Hardware Driver Execution • Scalable Spin-Optical QPU Integration | <br>
+| Interconnect Infrastructure | • NVIDIA NVQLink (RoCE Transport Protocol) • Sub-4 Microsecond Round-Trip Latency | • Microsecond GPU-QSC Real-Time Callbacks • RDMA Low-Latency Network Coupling | <br>
+| Hybrid Compute Stack | • NVIDIA Hopper / Blackwell GPU Nodes • MosaiQ & SPOQC Photonic Hardware | • NVIDIA CUDA-Q & cuQuantum SDKs • MerLin Photonic QML Framework & Digital Twins | <br>
+The white paper structures commercial adoption across three phases: Access (cloud-hosted experimentation), Integration & Discovery (on-premises GPU-QPU co-location and application profiling), and Scale (deployment of fault-tolerant SPOQC spin-optical architectures). Under CTPO Jean Senellart and NVIDIA Director of Quantum Product Sam Stanwyck, the demonstrator expands Quandela’s hardware integration roadmap following its June low-latency benchmarks and previous HPC deployment agreements across European supercomputing centers.<br>
+Review the news release via Quandela Newsroom here, download the joint white paper on Quandela Technical Papers here, and examine our previous analysis of NVIDIA’s NVQLink Integration Across the Quantum Ecosystem here.<br>
+September 14, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=10020" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/quandela-and-nvidia-outline-photonic-qpu-integration-architecture-via-nvqlink/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="8db56c9f1076f41f.html" class="prev-next">&larr; Anthropic’s LLM watermarking</a>
+  <a href="276428ff17738bce.html" class="prev-next">&larr; BlueQubit Launches $150,000 “Quantum Flywheel” Compute Grant Program Supported by AWS, IBM, and NVIDIA</a>
   
   
-  <a href="898efbcbd461300a.html" class="prev-next">Michael Rabin memorial conference &rarr;</a>
+  <a href="669acf430c1295cb.html" class="prev-next">Anyon Computing Unveils Open-Source Real-Time Control Plane Powered by NVIDIA NVQLink &rarr;</a>
   
 </div>
 
