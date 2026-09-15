@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast with Sumit Kapur, CEO of Zapata Quantum — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="b4492b58d8b7c51c.html" title="Photonic Inc. Unveils Project VANGUARD Proposal for CA$500M (US$359.1M) Semiconductor Facility in Canada">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Podcast with Sumit Kapur, CEO of Zapata Quantum</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Doug Finke</span>
+      <span>6h</span>
+      <span class="article-category">quantum</span>
+      <span>3897 words</span>
+      <span>20 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Yuval’s guest today is Sumit Kapur, CEO of Zapata Quantum. They speak about the company’s remarkable phoenix-from-the-ashes story — surviving a quantum winter and a failed SPAC to rebuild as a focused quantum applications company. They discuss Zapata’s partnerships, their landmark cancer research published on the cover of Nature Biotech, and Zapata’s work on using agentic AI to accelerate quantum resource estimation. Sumit walks through the quantum journey for enterprises, from Quantum Application Intelligence to Quantum Application Engineering, shares his view on how the challenges in quantum have shifted, and much more.<br>
+Key takeaways<br>
+- Zapata’s 2024 SPAC deal brought in almost no equity capital but added over $20 million in liabilities, forcing the company to restructure at the end of 2024 and rebuild.<br>
+- Zapata’s KRAS-targeting cancer research with Dana-Farber, University of Toronto, and St. Jude’s was named a top 10 paper of 2025 and put on the cover of Nature Biotech in December 2025.<br>
+- Zapata is working with NVIDIA to apply agentic AI to quantum resource estimation, aiming to compress a process that took over a year of PhD-level work during the DARPA benchmarking program.<br>
+- Kapur splits the enterprise quantum journey into Quantum Application Intelligence (deciding which applications matter and when) and Quantum Application Engineering (building proofs of concept and co-developing IP with the customer).<br>
+Transcript<br>
+Yuval Boger: Hello, Sumit. Thank you for joining me today.<br>
+Sumit Kapur: Hello, Yuval. Really good to be here. Thanks for having me.<br>
+Yuval: So who are you and what do you do?<br>
+Sumit: Yeah. I’m the CEO of Zapata Quantum. We’re a company that accelerates the discovery, development, and deployment of quantum applications. We’ve actually been doing it since 2018. We spun out of Harvard’s Quantum Lab at that time, and since then, we’ve done some of the most foundational work in the space with folks like DARPA, BP, BMW, and now we have a partnership with QuEra, which I’ll be excited to talk about today as well.<br>
+Yuval: And you know, they say that quantum is one heck of a ride, but I think that Zapata is really the champion there. Could you fill us in on all the corporate things that have happened in the last couple years?<br>
+Sumit: Yes, absolutely. Thanks for nudging me on that. You know, really, it has been one heck of a ride, and I haven’t been here for all of it, to be perfectly fair. But we have an incredible team of technical leaders that really have been there since the very beginning.<br>
+And honestly, they say timing is everything in business, and if I’m honest, I think we were too early the first go-around. We came out in the 2017, 2018 timeframe, and at that time, the idea was that fault-tolerant quantum computing was a few years out, and we didn’t really make those kinds of aggressive timeframes.<br>
+And people had — you know, we made a great deal of technical progress, but maybe not as much as people had thought in that first era. And so we entered into a bit of a quantum winter. And so I think what you’re referring to is our ability to have endured that quantum winter.<br>
+You know, we had an interesting ride, because really, while I did say, kind of tongue in cheek a bit, that we were too early, the truth is that I think it was very beneficial for us to be that early. We were there at the timeframe when much of the IP was not created, when much of the foundational approaches were being developed in conjunction with DARPA.<br>
+So we really were there for all of that, and that’s something that we get to benefit from today, and the industry gets to benefit from. And obviously so much of the connective tissue that we formed with folks like QuEra comes from that era. But really, what ended up happening is we went public via SPAC in 2024.<br>
+That was in April of 2024 that we did the de-SPAC transaction. I joined in May of 2024, right after that. The SPAC — you know, many SPACs don’t work out as anticipated, and this one certainly didn’t. It brought in almost no equity capital and brought in 20-plus million dollars of liabilities.<br>
+And so not only were we facing the quantum winter, but we had a really, really difficult setup from a financial perspective. We ended up going through 2024, and at the end of 2024, realizing we needed to restructure the business, which is what we did. We’re now two years out. When I joined in May of 2024, the plane was kind of dipping, and I thought, “Okay, maybe let’s bring the plane back up.”<br>
+Instead of bringing the plane back up, we literally kind of crashed the plane. Put the plane completely back together, and now it’s back up and running. So it really is a phoenix rising from the ashes story. And it’s something that we’re really happy to have been able to do, because now we get to remake the business with all the learnings that we had from the prior period.<br>
+So it’s an exciting journey to be a part of, so thanks for bringing that up.<br>
+Yuval: And in the company I work for, I think we always had a lot of appreciation for the people that were in Zapata, and it’s really nice to see several of them coming back to sort of Zapata version two. So, congratulations. Thank you.<br>
+Sumit: Thank you, thank you. Yeah, we hold high regard for you guys as well. All those same guys — Johnny, Yudong, JRF, and others on the team. Really excited.<br>
+Yuval: Quantum technology is sometimes referred to as perpetually five years away. What do you tell customers that say that to you? They come and say, “Well, we hear about Zapata,” or, “We’re excited to have you back. How can you help us, and how soon will that be?”<br>
+Sumit: Yeah. Look, it’s interesting to be talking to you about that because I’m really excited about some of the direction that QuEra is setting for the industry with the Libra announcement.<br>
+You know, I think it’s targeted for 2028, a megaquop delivered via AWS. These are things that were not around. People were not saying this kind of thing five years ago. So I will tell you that despite the fact that there is this idea that quantum is always five years out, the tone in the industry, especially from folks that had for a long time been quite skeptical, has shifted.<br>
+And people have now understood that we’ve gotten to a place where we have proven quantum advantage. Not particularly quantum utility — we’ll get to that — but proven quantum advantage, where we know quantum computers will solve problems faster than classical computers. Now we have to get to quantum utility.<br>
+And quantum utility — I think there’s two challenges in getting to quantum utility. One is getting to the scale of fault-tolerant quantum computers that are really going to drive quantum utility, and that’s where what QuEra is doing is extraordinary. The ambitious timeframes that you’re setting to get Libra out, and then to do gigaquop, I think it’s 2029, 2030, something like that.<br>
+But you guys are really pushing the envelope in the neutral atom world. And so we’re really excited to be partnering with QuEra in that regard. But that’s one regard — the scaling of the hardware. And I will say now “scaling,” because many folks in the industry on the hardware side have realized that now we’re to the point where it’s an engineering challenge to be resolved. The scaling of these computers is now an engineering challenge, and humans are really good at solving engineering challenges. It’s no longer an if, but a when, and exactly how we’re gonna do it.<br>
+So that’s really reassuring. That’s one thing I’ll say about the perpetual five-year timeframe. We’ve now resolved the challenges down to engineering challenges. The other piece is finding the actual applications to run on these machines, and that’s really exciting. That’s what we love to do — connecting real-world use cases with computational approaches to develop a quantum hypothesis and then benchmark that hypothesis, doing resource estimation and doing it in a much more efficient manner than we did it in the DARPA era.<br>
+That’s what we’re all about. And so we’re addressing that challenge as well. So to folks that say it’s always five years out, I’ll tell you that at this time the nature of the challenges has changed. It’s now become an engineering challenge and no longer an if. And now it’s all about creating the applications, and we’re moving quickly on that.<br>
+One last point on that — BCG estimates that 90% of the value will accrue to the 10% early movers. When we’ve talked to folks in industry, the ones who are really moving quickly, they understand that. They don’t want to be left behind. And now is the time to really push forward. So it’s an exciting timeframe.<br>
+Yuval: Let’s assume for the purpose of this question that the hardware exists, is available, and you can run whatever it is that you need within the published capabilities of the system. And let’s assume that I am a leader in a financial institution that’s coming to you. Walk me through the process, and specifically, if you can, how long does each step take? When do I start, and when can I see something that convinces me that this is going to work for me? And ultimately, when do you think I can move such a solution into production?<br>
+Sumit: Yeah, that’s a great question. Really, what you’re talking about is the quantum journey, obviously. And various organizations are at different stages of their quantum journey. So our job is to progress a customer, an enterprise, an organization along the quantum journey. And to break it down into two very high-level pieces, we call the first piece Quantum Application Intelligence, or QAI.<br>
+That’s where we’re resolving questions, and we’re answering primarily three questions: Which applications matter, or are going to be the likely application candidates for a particular industry? When are they going to matter? And then how should I develop a strategic roadmap to pursue them?<br>
+So that’s kind of Quantum Application Intelligence. And then there’s the other side, which is once you progress a little bit further, then you’re moving into QAE, or Quantum Application Engineering, and that’s where we’re actually going through the process of developing much more rigorously scoped and articulated use cases, developing proofs of concept, and actually co-developing IP, co-developing algorithms, and putting this out there.<br>
+In terms of the entire process and what it looks like and timeframes, going end-to-end is something that we were particularly proud to have been able to do with DARPA. When we did the DARPA quantum benchmarking program, that was really landmark work in the space, and it had three technical areas — TA1, TA1.5, and TA2 — three phases.<br>
+And really that drove us all the way end-to-end. I can paint it as three vertical layers: the why, which is the use cases to be resolved; the what, which is the algorithms and applications to resolve those use cases; and then the how, which is actually the hardware.<br>
+And so we went all the way from top to bottom, end to end. But unfortunately, that took multiple years and many, many PhDs. This is a very, very complex problem, and I think one thing we learned from DARPA was just how arduous this is. And one thing that Yudong likes to say is it’s a bit of a contrived path because you need many, many different domain experts.<br>
+You need domain experts in the problem areas that are being resolved. You need quantum algorithm scientists, quantum software engineers, classical engineers to provide the utility benchmarks — all sorts of pieces all the way through. So it’s a long process. And one piece of that that takes a long time is resource estimation. In any case, a year plus is what it took with DARPA. We’re looking to compress that to where Quantum Application Intelligence is something that can happen in a matter of months. Because realistically, it takes some time to form the context around what problems could be solved and think about the potential quantum hypotheses.<br>
+So that’s months, and then another order of months to actually produce workable proofs of concept and things that are actually getting you down to some rigorous understanding of what can be done when.<br>
+Yuval: You mentioned various kinds of disciplines or expertise required for that solution, from understanding the business — whether it’s a chemist or a financial person — all the way to those that actually operate or write the program that runs on the machine. Which of these competencies do you have at Zapata? I mean, to what extent do you need to bring in external competencies, especially as it relates to business-specific things?<br>
+Sumit: Yeah, it’s a great question. So we are certainly developing a degree of the expertise that reaches into industry somewhat.<br>
+And so quantum chemistry — that’s something that’s near and dear to our hearts. That’s the quantum lab that we were born out of. We have a good bit of quantum chemistry experience in-house and some understanding of the problems to be solved. Now, when we get into a particular organization, then we’re diving into exactly how they solve their problems and exactly which problems are the ones that are most important to them.<br>
+So we’re not gonna have the same level of domain proficiency that they do, but we have enough to be able to interface, enough to be able to connect the dots and connect them with computational solutions. A quote that I love, which I heard at another quantum conference, was a quote from John von Neumann.<br>
+And he said — this was around the time of the advent of the digital computer — “The most important applications are likely to be the ones that are most difficult to predict, because those are the ones that are so far afield from what’s now possible.” And he wouldn’t have predicted that what we’d be using digital computers for is what we’re doing now with telecommunications, cryptography — well, he probably would have predicted cryptography — but many things that we do now with social networking and AI and things that were hard to predict. But similarly with quantum, we have these new computational paradigms that enable new ways of doing things, and there’s going to be new use cases.<br>
+The ones that are gonna be most important are gonna be the ones that are hard to predict, which means we have to bring the industry in and enable them to understand what may be possible so they can start to connect the potential dots in their world. And so coming back to your question, yes, we have a great deal of quantum algorithm scientist expertise, quantum software engineering, classical engineering — all of that. But the domain expertise, we go into it, but we need more support from the enterprise side to really make the picture full.<br>
+Yuval: How often do you say no to a customer? So a serious customer has a problem — how often do you find yourself saying, “We can’t help you anytime soon, you’re asking things that are way beyond the capabilities of existing machines,” or for other reasons?<br>
+Sumit: Yeah. I wouldn’t say that our approach is in saying no, but we are grounded in rigor.<br>
+For us, technical rigor is incredibly important. It’s really easy for folks that aren’t scientists to come out there and make big proclamations, and I think that’s probably the context when you’re asking this question — big proclamations of various things that could be done with quantum computers and not be technically rigorous about it.<br>
+We’ve had, since our beginning, a deep commitment to technical rigor. We’ve got 60-plus patents, 40-plus peer-reviewed papers. We really love being — we call ourselves kind of badass nerds. We’re really nerdy and really love to be technically rigorous.<br>
+And so we will provide very accurate answers in that regard. But it’s not about saying no, it’s about saying when, and it’s about also providing a toolkit so that these folks can really see on an ongoing basis how potential application areas are advancing for them as the space advances. So for us, it’s really providing that dynamic, rigorous intelligence so that they can progress and be realistic about it.<br>
+Yuval: What is your IP policy when working with a customer? So a customer could say, “Hey, we’re working together. I’m showing you some of the insides,” and maybe some IP that comes out of it. Who owns the IP in these projects typically?<br>
+Sumit: Yeah, I mean, typically at the end of the day, it’s really important that the customer is able to grow from this process. And so co-developing IP so that the customer can own the IP that they’re committing to do this work on is really important. So not to say that we don’t have a great deal of IP ourselves, but we understand that if you’re gonna make the commitment to work with someone like us, you sure as heck better get strong IP out of it, because that’s really why you start the work and do it in advance of these systems being available.<br>
+So yeah, it’s a great question, and it’s something important to us that customers understand.<br>
+Yuval: The resurrection of Zapata is fairly recent, but putting the resurrection aside, what is the thing you’re most proud of that happened in the last, say, 12 months?<br>
+Sumit: Yeah. Well, a few things. One is some of the recognition that our work has gotten. So for example, our work in drug discovery, quantum cancer research that we did with Dana-Farber, University of Toronto, St. Jude’s, and others — that was recognized as one of the top 10 papers of 2025 and was actually on the cover of Nature Biotech, the most prestigious journal in biotech, in December of 2025.<br>
+So that’s something that we’re really proud of, just to see the recognition that the space got, that our approach is getting, and that we were actually able to work with all these folks to create a number of candidates that were viable for inhibiting the KRAS mutation, which is one of the primary mutations causing some of the most dangerous cancers in children, which is why St. Jude’s is involved. And there were a few of those compounds that were worth experimentally producing physically, and some that showed binding activity. So that’s why it was on the cover of Nature Biotech in December. That’s something we’re really proud of.<br>
+Another thing we’re very proud of is the work we’re doing with NVIDIA. We’re partnered with NVIDIA to apply agentic AI to the problem of quantum resource estimation. And we think that quantum resource estimation is under-recognized as one of the most important bottlenecks to be resolved in making the application discovery and development process more efficient.<br>
+And so we’re working with NVIDIA scientists and rapidly advancing our approaches there to apply AI to the problem of resource estimation, which will compress the timeframes that we saw in DARPA materially. So those are a couple examples.<br>
+Yuval: Do you feel that Zapata is a products company? A consulting company? Where on that spectrum do you fall?<br>
+Sumit: Firmly in the product camp. That’s the work that we’re doing — developing these products that can be deployed, that the customers can use on an ongoing basis to move through the QAI, Quantum Application Intelligence, and Quantum Application Engineering cycles.<br>
+So we’re developing the tooling. Yes, we come in with humans in the loop to ensure that the tooling is used effectively, but in general, what we are is a products company.<br>
+Yuval: You’re headquartered in Massachusetts. What, if anything, do you feel is unique about Massachusetts as it relates to quantum?<br>
+Sumit: Yeah, well, the existence of partners like QuEra. I mean, obviously, it’s really amazing just to see — I was Harvard undergrad myself, and Harvard Business School. I’d say so much attention gets paid to the West Coast now in terms of how much progress is happening in technology.<br>
+But I think MIT, Harvard, Tufts, others — there’s plenty of academic focus on this space. And obviously so much of the science came foundationally from these kinds of universities. So having that kind of academic commitment is amazing.<br>
+And then the companies that come out of it — folks like QuEra, obviously, folks like Zapata. And there’s also a good bit of biotech. Given the applications of quantum to areas like drug discovery, having that kind of nexus there as well is really valuable.<br>
+Yuval: As we get closer to the end of our conversation, I want to go back to QAI. What types of applications do you feel are closest to being realized with a quantum computer?<br>
+Sumit: Yep. Well, we break the world up into two camps. There’s kind of quantum native applications, where you’re using a quantum computer to actually solve problems of quantum physics, and then there’s quantum mapped, where you’re using a quantum computer to solve not a quantum physics problem, but you’re mapping it onto quantum physics.<br>
+So quantum native — you’re obviously talking about things like drug discovery, materials research, industrial chemicals, batteries, superconductors, polymers. These are areas where people are really actively looking for computational solutions to surpass what’s now possible. And so I think that’s very near term.<br>
+Then moving on to quantum mapped, I think quantum mapped in general is a bit further off. Obviously, you have cryptography that’s gonna be — Q-day is the big day that everybody’s watching out for, and so that’s near term.<br>
+But then coming a bit later are the things like optimization, simulation, machine learning, where you’re using the computers for more mapped domains. Financial simulations, defense simulations — the simulation realm could be very interesting near term as well. But in general, computational fluid dynamics as well. I think the nearer term is some of the quantum native. Then you’ve got quantum mapped coming in with cryptography leading the charge and then some of the simulations.<br>
+Yuval: And last, I want to ask you a hypothetical. If you could have dinner with one of the quantum greats, dead or alive, who would that person be?<br>
+Sumit: Well, I mean, probably Richard Feynman. Just such a fascinating individual. And to see what he thought of how far we’ve come since the 50 years — I think roughly 50 years — since he actually seeded the idea. To have a conversation with him about where we are — I mean, he was such a bold pusher of frontiers, and to tell him where we are in the frontier and to get his take would be incredible.<br>
+Yuval: Wonderful. Sumit, thank you so much for joining me today.<br>
+Sumit: Thank you, Yuval. Really enjoyed the conversation.<br>
+Yuval Boger is the Chief Commercial Officer of QuEra Computing.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/podcast-with-sumit-kapur-ceo-of-zapata-quantum/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="b4492b58d8b7c51c.html" class="prev-next">Photonic Inc. Unveils Project VANGUARD Proposal for CA$500M (US$359.1M) Semiconductor Facility in Canada &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-09-15 03:08 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
