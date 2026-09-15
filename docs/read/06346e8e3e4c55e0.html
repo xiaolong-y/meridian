@@ -137,20 +137,25 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>8h</span>
+      <span>13h</span>
       <span class="article-category">quantum</span>
-      <span>65 words</span>
-      <span>1 min read</span>
+      <span>374 words</span>
+      <span>2 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>A collaboration including MITRE, Quantum Brilliance, NVIDIA, and SandboxAQ has developed a GPU-accelerated digital twin framework for quantum sensor error attribution, detailed in an arXiv preprint. This framework automates error budgeting by evaluating sensitivity, accuracy bias, and parameter-drift robustness, identifying key performance limiters for NV diamond ensembles and validating on a cesium OPM array for biomagnetic imaging. The research highlights that optimizing for sensitivity alone </p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/mitre-quantum-brilliance-nvidia-and-sandboxaq-introduce-gpu-accelerated-digital-twin-framework-for-quantum-sensor-error-attribution/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>A multi-institution collaboration led by MITRE—alongside Quantum Brilliance, NVIDIA, and SandboxAQ—has published an open-system simulation framework to automate mechanism-resolved error budgeting for quantum sensors. Detailed in a preprint published on arXiv (arXiv:2608.28519), the methodology evaluates three simultaneous Measures of Performance (MoPs)—sensitivity (ηB), systematic accuracy bias (β), and parameter-drift robustness (Rlin)—from a single propagation of the Tangent Master Equation (TME). The computational core is accelerated by NVIDIA GPUs using the cuQuantum cuDensityMat backend.<br>
+The framework resolves how interacting physical error mechanisms combine by applying cooperative-game Shapley value allocations to open quantum system models. Applied across nitrogen-vacancy (NV) diamond ensembles, the attribution demonstrates that performance limiters invert depending on the targeted metric: T₂* spin dephasing limits sensitivity (accounting for ~89% of the budget), ground-state thermal zero-field splitting shifts (ΔDgs(T)) limit systematic accuracy, and acousto-optic optical modulator leakage (ε) limits drift robustness. Along a fixed sensitivity locus (100 pT/√Hz), the recovered-field bias ranges over two orders of magnitude (8 to 1500 nT at a ΔT = 0.1 K drift specification), demonstrating that optimizing for sensitivity alone fails to guarantee accuracy targets.<br>
+| [ Multi-Platform Quantum Sensor Error Attribution Parameters ] |  |  | <br>
+|---|---|---|<br>
+| Sensing Platform & Modality | Open-System Physics & Solver Engine | Primary Metric Limiters & Attribution | <br>
+| NV Diamond Ensemble (Magnetometry & Spectroscopy) | • 10-Level Lindblad Model & TME • NVIDIA cuQuantum cuDensityMat GPU Batching | • Sensitivity: T₂* Dephasing (89% Share) • Accuracy: Thermal Shift ΔDgs(T) (282 nT / 0.1 K) • Robustness: Optical Leakage ε (96% Share) | <br>
+| Scalar Cesium OPM Array (Biomagnetic MCG Imaging) | • Ground-State Breit-Rabi Hamiltonian • 26-Channel Unshielded Cardiac Array | • Atomic Floor: ~1.1 fT/√Hz Spin Projection • System Floor: ~4.4 pT/√Hz via Software CMR • Clinical Target: 5 mm Dipole Localization Error | <br>
+The framework was validated cross-platform on an unshielded 26-channel scalar cesium optically pumped magnetometer (OPM) array developed by SandboxAQ for magnetocardiography (MCG). The digital twin showed that clinical millimeter-scale arrhythmia localization is limited by ambient noise rejection rather than the atomic spin-projection floor (~1.1 fT/√Hz), verifying that software common-mode rejection (CMR) suppressing noise to ~4.4 pT/√Hz satisfies the 5 mm surgical ablation target.<br>
+Review the research preprint on arXiv here.<br>
+September 14, 2026</p>
   </div>
   
 </article>
@@ -173,7 +178,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-09-15 16:10 UTC
+  Generated 2026-09-15 20:51 UTC
 </div>
 
 <script type="module">
