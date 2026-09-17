@@ -137,20 +137,26 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>8h</span>
+      <span>15h</span>
       <span class="article-category">quantum</span>
-      <span>62 words</span>
-      <span>1 min read</span>
+      <span>374 words</span>
+      <span>2 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>A collaboration between ORNL, IonQ, NVIDIA, and UT Knoxville introduced DQAOA-GPT, a generative AI framework that synthesizes quantum optimization circuits, eliminating iterative parameter-tuning. This framework significantly reduces circuit synthesis runtime to a constant 28 seconds and doubles solution quality for higher-order unconstrained binary optimization (HUBO) problems, as presented at IEEE Quantum Week 2026. DQAOA-GPT replaces traditional trial-and-error with a transformer model traine</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/ionq-ornl-nvidia-and-ut-knoxville-advance-ai-driven-generative-quantum-circuit-synthesis/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>A research collaboration led by Oak Ridge National Laboratory (ORNL) alongside IonQ (NYSE: IONQ), NVIDIA, and the University of Tennessee, Knoxville (UT) has introduced DQAOA-GPT, a generative AI framework that synthesizes quantum optimization circuits directly to eliminate iterative parameter-tuning loops in distributed quantum algorithms. Presented at IEEE Quantum Week 2026 in Toronto, the paper received a Best Paper Award for demonstrating constant-time circuit synthesis for subproblem evaluations across scaling quantum domain widths.<br>
+The framework replaces the traditional trial-and-error variational loop of the Distributed Quantum Approximate Optimization Algorithm (DQAOA) with a transformer model trained on high-performing circuit profiles. For each subproblem, the generative transformer outputs candidate quantum circuits directly, which are evaluated in a fixed 10-candidate sampling step before updating global solution parameters. Benchmarked on a 100-variable higher-order unconstrained binary optimization (HUBO) problem using single NVIDIA H200 GPUs via NVIDIA CUDA-Q and the cuQuantum SDK, conventional variational circuit optimization times escalated from 34 seconds (4 qubits) to over 11 minutes (12 qubits), whereas the generative DQAOA-GPT approach maintained a constant synthesis runtime of approximately 28 seconds regardless of subproblem qubit count while doubling overall solution quality.<br>
+| [ DQAOA-GPT vs. Variational Quantum Circuit Synthesis Baseline ] |  |  | <br>
+|---|---|---|<br>
+| Optimization Metric | Traditional Variational DQAOA | Generative DQAOA-GPT Framework | <br>
+| Circuit Synthesis Runtime | • 4 Qubits: ~34 Seconds • 12 Qubits: >11 Minutes (>19.4× Growth) | • 4 to 12 Qubits: ~28 Seconds (Constant Runtime) • Zero Iteration Parameter Optimization Loop | <br>
+| Solution Quality Scaling | • Degrades/Stagnates Due to Tuning Latency Costs | • Approx. 2× Improvement in HUBO Answer Quality | <br>
+| Compute Stack Baseline | • Variational Classical Optimizer Loop (GPU) | • Transformer Circuit Synthesis + CUDA-Q Scoring | <br>
+By eliminating the classical optimization bottleneck, DQAOA-GPT enables hybrid algorithms to scale subproblem sizes without incurring prohibitive execution overheads. The framework serves as a scalable software layer across GPU-accelerated HPC systems and IonQ’s trapped-ion hardware pipeline, paving the way for larger real-world scientific and industrial optimization workloads.<br>
+Review the official press release via IonQ Newsroom here, inspect the peer-reviewed research preprint on arXiv here, and examine our prior coverage of IonQ’s IEEE Quantum Week 2026 HPC/AI Research Portfolio here.<br>
+September 16, 2026</p>
   </div>
   
 </article>
@@ -173,7 +179,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-09-17 03:09 UTC
+  Generated 2026-09-17 10:57 UTC
 </div>
 
 <script type="module">

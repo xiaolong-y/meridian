@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Held Prize call for nominations (+ call for postdocs) — Meridian Reader</title>
+  <title>Oracle Launches Java 27 Featuring Hybrid Post-Quantum Cryptography for TLS 1.3 — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,58 +126,51 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="940ccef49342d4c1.html" title="My friend Mark Wise">&larr; prev</a>
-    <a href="7338cb05c1437b9a.html" title="Announcing BQP Partners: my and my brother’s new angel-investing venture">next &rarr;</a>
+    
+    <a href="f4fadf82c1eb5f8c.html" title="QuTech Spinout Q*Bird Rebrands to Falqon Systems to Commercialize Quantum Secure Networks">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Held Prize call for nominations (+ call for postdocs)</h1>
+    <h1 class="article-title">Oracle Launches Java 27 Featuring Hybrid Post-Quantum Cryptography for TLS 1.3</h1>
     <div class="article-meta">
-      <span class="article-source">Shtetl-Optimized</span>
-      <span>Scott</span>
-      <span>9w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>5h</span>
       <span class="article-category">quantum</span>
-      <span>559 words</span>
-      <span>3 min read</span>
+      <span>339 words</span>
+      <span>2 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Held Prize call for nominations (+ call for postdocs)<br>
-Here at the National Academy of Sciences, it seems that my first job is to serve on the selection committee for the prestigious Michael and Sheila Held Prize in combinatorial and discrete optimization and related areas. The committee chair, my former MIT colleague Madhu Sudan (now at Harvard), invited me to share the following message here on Shtetl-Optimized. (I’d add: put in the effort to nominate someone, and you can actually influence how things go!)<br>
-Dear Colleagues<br>
-I am writing to seek nominations for the 2027 Michael and Sheila Held Prize. The scope of the prize and nomination needs are described below. If you intend to nominate someone I would appreciate a heads up by email to madhu@cs.harvard.edu one month before the deadline (so email by Sept 8, 2026) to let me know your nomination is coming. (We may also reach out to you in response to coordinate multiple/overlapping nominations.)<br>
-The Held prize honors outstanding, innovative, creative, and influential research in the areas of combinatorial and discrete optimization, or related parts of computer science, such as the design and analysis of algorithms and complexity theory. This $100,000 prize is intended to recognize recent work (defined as published within the last eight years, i.e., on or after October 6, 2018).<br>
-All nominations must be submitted online by Monday, October 5, 2026 and include:<br>
-1. Nomination letter describing the candidate’s work and why he or she should be selected for the award. No more than three (3) pages.<br>
-2. Curriculum vitae. No more than two (2) pages.<br>
-3. Bibliography listing no more than twelve (12) of the nominee’s most significant publications.<br>
-4. Suggested citation. A 50-word summary stating why the nominee should be considered for this award.<br>
-5. Two letters of support. No more than one letter of support can be written by someone of the same primary work institution as the nominee.<br>
-The Held Prize is given to a person or a set of persons, as supported by a paper or a body of work. Unless otherwise stated, preference will be given to scientists who may be earlier in their careers or those whose work has not been recognized by other prizes or awards. Nomination restrictions can be found here. Joint nominations will only be considered when nominees have collaborated closely on the paper to be recognized by the award. If nominating multiple individuals for a paper with additional authors, please clearly explain the reason for nominating those chosen, as well as the reason for excluding other collaborators, if applicable.<br>
-Please feel free to circulate this call further within your department<br>
-Best<br>
-Madhu Sudan, on behalf of The Michael and Sheila Held Prize Selection Committee<br>
-And while I have your attention, a second CS theory announcement: David Soloveichik, my wonderful friend and colleague in UT Austin’s Electrical and Computer Engineering Department, has funding for a postdoc for 1-2 years, to work on the thermodynamics of computation here at UT. This is a topic that I’ve been trying to learn more about as well, so I might get involved too! David writes, “the big picture is to think of thermodynamics (energy dissipation / entropy production) as CS complexity measures like time and space usage.” If you’re on the postdoc market and this sounds potentially up your alley, email David to learn more.</p>
+    <p>Oracle (NYSE: ORCL) has announced the general availability of Java 27 (Oracle JDK 27), introducing significant security, runtime, and developer updates across the Java ecosystem. A central focus of the release is advancing enterprise post-quantum cryptography (PQC) readiness to protect global cloud, microservice, and enterprise applications against “harvest now, decrypt later” security threats.<br>
+Heading the security updates is JEP 527: Post-Quantum Hybrid Key Exchange for TLS 1.3, which integrates hybrid key exchange algorithms natively into the javax.net.ssl APIs. By combining classical key exchange with quantum-resistant key encapsulation mechanisms, Java 27 enables default quantum protection for network communications without requiring application code rewrites. Additionally, Oracle announced Oracle Jipher 20, now included in the Oracle Java Verified Portfolio (JVP), which wraps a FIPS 140-3 validated OpenSSL cryptographic module supporting NIST-standardized ML-KEM (Kyber) and ML-DSA (Dilithium) algorithms.<br>
+| [ Java 27 PQC & Cryptographic Security Enhancements ] |  |  | <br>
+|---|---|---|<br>
+| Enhancement / Feature | Implementation Mechanism | Security & Operational Benefit | <br>
+| JEP 527 (Hybrid TLS 1.3) | Native integration via javax.net.ssl standard APIs | Defends TLS network streams against future quantum decryption without breaking legacy compatibility. | <br>
+| Oracle Jipher 20 | FIPS 140-3 validated OpenSSL module in Java Verified Portfolio | Adds native support for NIST ML-KEM and ML-DSA algorithms in regulated enterprise environments. | <br>
+| JEP 538 (PEM Encodings) | Third preview for encoding cryptographic objects | Streamlines management and interoperability of quantum-safe keys, certificates, and CRLs. | <br>
+Beyond security enhancements, JDK 27 incorporates performance and language optimizations, including JEP 534 (Compact Object Headers by Default) to reduce JVM heap footprints and JEP 523 (G1 Default Garbage Collector Across All Environments). The updates establish a migration pathway as Oracle executes its roadmap to backport comparable PQC capabilities to long-term support (LTS) Java distributions.<br>
+Review the official release announcement via Oracle Newsroom here, inspect the technical breakdown on the Java Product Management Blog here, access developer resources on Dev.java here, and explore full platform documentation at Oracle Java here.<br>
+September 16, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://scottaaronson.blog/?p=9940" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/oracle-launches-java-27-featuring-hybrid-post-quantum-cryptography-for-tls-1-3/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
+  <span></span>
   
-  <a href="940ccef49342d4c1.html" class="prev-next">&larr; My friend Mark Wise</a>
-  
-  
-  <a href="7338cb05c1437b9a.html" class="prev-next">Announcing BQP Partners: my and my brother’s new angel-investing venture &rarr;</a>
+  <a href="f4fadf82c1eb5f8c.html" class="prev-next">QuTech Spinout Q*Bird Rebrands to Falqon Systems to Commercialize Quantum Secure Networks &rarr;</a>
   
 </div>
 
