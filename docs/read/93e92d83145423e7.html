@@ -137,20 +137,27 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>6h</span>
+      <span>11h</span>
       <span class="article-category">quantum</span>
-      <span>64 words</span>
-      <span>1 min read</span>
+      <span>406 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Oxford Quantum Circuits (OQC) has launched Erado, an open-source Qiskit simulator for erasure noise and post-selection, integrated into their QCaaS SDK. This tool allows researchers to simulate erasure-aware noise models and evaluate quantum error mitigation techniques, with accompanying research showing postselection can fully mitigate erasure noise below 3.0% error rates, outperforming single-rail architectures. Erado offers flexible simulation modes and precise parameter controls for analyzin</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/oxford-quantum-circuits-releases-erado-an-open-source-qiskit-simulator-for-erasure-noise-and-post-selection/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Superconducting quantum computing hardware provider Oxford Quantum Circuits (OQC) has released erado, an open-source Python library designed to simulate erasure noise, dual-rail qubit encodings, and post-selection strategies on arbitrary Qiskit circuits. Integrated directly into OQC’s Quantum Computing as a Service (QCaaS) SDK as a 16-qubit AerSimulator backend, the tool allows algorithm developers and researchers to benchmark erasure-aware noise models and evaluate quantum error mitigation techniques ahead of physical execution.<br>
+The release is accompanied by a companion research paper titled “The limits of erasure-based postselection for quantum error mitigation“ (Griffiths et al., arXiv:2606.31428). The study demonstrates that postselection can fully mitigate the erasure channel when erasure check error rates remain below 3.0%. Crucially, the authors show that a postselected dual-rail system can surpass the fundamental noise floor at the kiloquop (1,000 quantum operations) scale where a comparable single-rail architecture fails, justifying the approach for Noisy Intermediate-Scale Quantum (NISQ) algorithms prior to full Quantum Error Correction (QEC). Beyond OQC, erasure-detection methodologies and dual-rail architectures are being actively pursued across the ecosystem, including by D-Wave Systems (following its acquisition of Quantum Circuits Inc.) and Q-CTRL.<br>
+| [ OQC Erado Simulator Architectural & Configuration Parameters ] |  |  | <br>
+|---|---|---|<br>
+| Parameter / Flag | Functional Specification | Simulation Mechanics & Impact | <br>
+| erasure_rate | Per-gate erasure probability (0.0 to 1.0) | Triggers non-computational state transition; compounds with total erasable gate count. | <br>
+| post_selection | Boolean filter flag (Default: False ) | When enabled, discards detected erasure shots and automatically retries until target shot count is met. | <br>
+| false_negative_rate | Detector inaccuracy probability (0.0 to 1.0) | Models missed erasures, allowing corrupted state measurements to leak into final results. | <br>
+| idling_error | Idle period padding via IdlingErrorConfig | Inserts idle gates into circuit layers to model environment-induced decoherence during idle states. | <br>
+The library provides two primary simulation modes: CIRCUIT_SAMPLER for exact statevector sampling and TRANSPILER_PASS for memory-efficient execution on larger circuit widths. By providing precise parameter controls over false-positive and false-negative detector rates, erado enables researchers to quantify the exact trade-off boundary where the shot-rejection overhead of post-selection remains computationally profitable compared to standard noisy sampling.<br>
+Review the technical deep-dive on OQC Technical Blog here, read the research paper on arXiv (arXiv:2606.31428) here, access the open-source repository on GitHub here, inspect package releases via PyPI here, and view developer documentation on OQC QCaaS SDK Docs here.<br>
+September 17, 2026</p>
   </div>
   
 </article>
@@ -173,7 +180,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-09-18 10:31 UTC
+  Generated 2026-09-18 15:46 UTC
 </div>
 
 <script type="module">
