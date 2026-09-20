@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quantum B Secures European Patent for Quantum Conference Key Agreement Protocol — Meridian Reader</title>
+  <title>IBM Research Demonstrates Hybrid Spacetime PEC to Reduce Error-Mitigation Sampling Overhead by 63× — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,53 +126,54 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="9c6d5c427b03a31a.html" title="Diraq and Dell Technologies Partner to Integrate Silicon QPUs with High-Performance Classical Computing">&larr; prev</a>
-    <a href="308f9166ae90fca0.html" title="Pasqal and LG CNS Sign Three-Year MoU to Integrate Neutral-Atom QPUs into AI Data Center Infrastructure">next &rarr;</a>
+    <a href="381af78342a3447b.html" title="Who’s News: Strategic Appointments at Quantum Motion, SQC, Lawrence Semiconductor, and Pasqal">&larr; prev</a>
+    <a href="e69aee1ab6c3247d.html" title="University of Pennsylvania Demonstrates Single-Gate Parallel Entanglement on Room-Temperature Diamond Quantum Register">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Quantum B Secures European Patent for Quantum Conference Key Agreement Protocol</h1>
+    <h1 class="article-title">IBM Research Demonstrates Hybrid Spacetime PEC to Reduce Error-Mitigation Sampling Overhead by 63×</h1>
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>1d</span>
+      <span>10h</span>
       <span class="article-category">quantum</span>
-      <span>319 words</span>
-      <span>2 min read</span>
+      <span>467 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Quantum cryptography and security developer Quantum B, Inc. (formerly Quantum Blockchains) has been granted European Patent EP 4462727 (Application EP23461579) by the European Patent Office (EPO). The patent covers a Quantum Conference Key Agreement (QCKA) protocol designed to establish distributed consensus across independent network nodes using multipartite quantum entanglement, providing an alternative to classical consensus mechanisms like proof-of-work or voting algorithms.<br>
-The patented architecture utilizes a central quantum server that emits time-bin encoded photons transformed into multi-qubit Greenberger-Horne-Zeilinger (GHZ) states. Participating network nodes receive qubit measurement outcomes over quantum links while coordinating over classical Internet channels. By executing local measurements on distributed GHZ states, nodes derive correlated bit values to verify and execute operations on shared data blocks when locally calculated values achieve majority consensus across the network.<br>
-| [ Quantum B Patent EP 4462727 Technical Specifications ] |  |  | <br>
+    <p>In a technical briefing and accompanying paper published on arXiv (arXiv:2609.13108), researchers at IBM Quantum introduced Spacetime Probabilistic Error Cancellation (Spacetime PEC), a hybrid error-handling framework that layers Probabilistic Error Cancellation (PEC) on top of post-selected Quantum Error Detection (ED). The protocol addresses a critical scalability bottleneck in near-term quantum computing, establishing a continuous spectrum between physical-qubit error mitigation and full fault-tolerant quantum computing (FTQC) by systematically removing single-location errors from the PEC sampling exponent using circuit syndrome information.<br>
+Traditional PEC eliminates noise-induced bias by sampling inverted noise channels, but its sampling overhead (Γ) grows exponentially with total physical circuit noise. Conversely, error-detecting checks discard runs with non-trivial syndromes but leave residual unmitigated logical errors. IBM’s Spacetime PEC resolves this tradeoff by formulating a sparse spacetime Pauli-Lindblad noise representation across both space and time. By accounting for single-location faults that trigger error checks at first order and higher-order syndrome-canceling combinations at second order, the method reconciles post-selection state rejection with the linear operator combinations required by PEC.<br>
+The practical implementation builds upon IBM’s broader advances in Doped Clifford Sampling (DCS) and spacetime codes—detailed in a companion study (Martiel et al., arXiv:2607.25941) and supported by the open-source release of Qiskit Paulice<br>
+| [ IBM Spacetime PEC Experimental Performance Benchmarks (ibm_aachen) ] |  |  | <br>
 |---|---|---|<br>
-| System Component | Quantum Hardware & State Generation | Consensus & Network Protocol | <br>
-| • Entanglement Architecture | • Time-bin encoded photon emission • Multi-qubit time-bin GHZ states | • Multi-node quantum state distribution • Centralized/server-assisted dispatch | <br>
-| • Verification Model | • Local qubit measurement outcomes • Entanglement-derived correlations | • Classical channel bit-exchange • Quantum-correlated majority voting | <br>
-| • Target Applications | • Multi-party data sharing platforms • Low-trust distributed databases | • Enterprise blockchain networks • Multi-organization consensus nodes | <br>
-Under CEO Mirek Sopek and co-inventor Miriam Kosik, the Łódź and Lublin-based company developed the protocol to lower the communication overhead required for classical multi-party synchronization. The patent milestone supports Quantum B’s broader hardware and software portfolio—which includes its emulated Quantum Key Distribution (pQKD) hardware platform—and its ongoing participation in the EU-funded POSEIDON project focused on post-quantum digital identity protection.<br>
-Review the official news release via Quantum B Documentation here and inspect patent application documentation at the European Patent Office Register here.<br>
-September 18, 2026</p>
+| Trotter Depth / Circuit Scope | Standard PEC Overhead (ΓPEC) | Spacetime PEC Overhead (ΓED+PEC) & Gain | <br>
+| • 2 Trotter Steps (Hexagonal Ising) | • ΓPEC = 44.1 | • ΓED+PEC = 12.1 (3.7× reduction) | <br>
+| • 4 Trotter Steps (Hexagonal Ising) | • ΓPEC = 1,941 | • ΓED+PEC = 122 (15.9× reduction) | <br>
+| • 6 Trotter Steps (648 CZ Gates) | • ΓPEC = 85,545 | • ΓED+PEC = 1,359 (63.0× reduction) | <br>
+Experimental validation for Spacetime PEC was conducted on the 27-qubit heavy-hex superconducting processor ibm_aachen across a six-plaquette hexagonal lattice using n = 22 data qubits and k = 27 check qubits. Executing Trotterized transverse-field Ising dynamics up to 6 Trotter steps (incorporating 648 CZ gates), Spacetime PEC recovered ideal mean magnetization values within statistical uncertainty while reducing total sampling overhead—including syndrome post-selection costs—by up to 63-fold compared to standard PEC alone. These runtime capabilities are supported by client-side directed execution tools in the IBM Quantum Compute Service, including qiskit-noise-learning, qiskit-mitigation, and Samplomatic, alongside soft-information IQ-point extraction via the Executor primitive.<br>
+Review the research blog on IBM Quantum Blog here, inspect the Spacetime PEC preprint on arXiv (Spacetime PEC) here, examine the Doped Clifford Sampling paper on arXiv (Doped Clifford Sampling) here, explore open-source tools on Qiskit GitHub here, review our previous report on IBM Demonstrating Trusted Quantum Advantage here, and read our prior analysis of IBM’s Release of Qiskit Paulice for Spacetime Error Detection here.<br>
+September 19, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://quantumcomputingreport.com/quantum-b-secures-european-patent-for-quantum-conference-key-agreement-protocol/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/ibm-research-demonstrates-hybrid-spacetime-pec-to-reduce-error-mitigation-sampling-overhead-by-63x/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="9c6d5c427b03a31a.html" class="prev-next">&larr; Diraq and Dell Technologies Partner to Integrate Silicon QPUs with High-Performance Classical Computing</a>
+  <a href="381af78342a3447b.html" class="prev-next">&larr; Who’s News: Strategic Appointments at Quantum Motion, SQC, Lawrence Semiconductor, and Pasqal</a>
   
   
-  <a href="308f9166ae90fca0.html" class="prev-next">Pasqal and LG CNS Sign Three-Year MoU to Integrate Neutral-Atom QPUs into AI Data Center Infrastructure &rarr;</a>
+  <a href="e69aee1ab6c3247d.html" class="prev-next">University of Pennsylvania Demonstrates Single-Gate Parallel Entanglement on Room-Temperature Diamond Quantum Register &rarr;</a>
   
 </div>
 
