@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview with Matthias Troyer, Vice President &amp; Technical Fellow at Microsoft — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="df3e4ef25fff127c.html" title="Microsoft Opens 15,000-Square-Foot Quantum Research Center and Hardware Makerspace in Maryland Discovery District">&larr; prev</a>
+    <a href="d7fa19e44f8dcc61.html" title="Zapata Quantum Unveils Quantum Pilot Platform for Automated Application Discovery and Resource Estimation">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Interview with Matthias Troyer, Vice President &amp; Technical Fellow at Microsoft</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Doug Finke</span>
+      <span>8h</span>
+      <span class="article-category">quantum</span>
+      <span>6989 words</span>
+      <span>35 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Overview<br>
+In this interview, Global Quantum Intelligence’s George Schwartz and Microsoft’s Matthias Troyer discuss the primary pathways, economic realities, and technical bottlenecks associated with scaling quantum computing to achieve practical utility. They analyze the viability of various qubit architectures—highlighting why Microsoft favors topological and neutral atom technologies over alternatives like transmons—and evaluate target applications, concluding that quantum chemistry offers true commercial value while big data, machine learning, and optimization face significant speed and data I/O limitations. Additionally, Troyer addresses the necessity of accelerating transitions to post-quantum cryptography, details how AI integration can help resolve critical classical embedding problems in molecular simulations, and advocates for evaluating quantum developments using holistic metrics—specifically end-to-end cost in “dollars per solution” and a four-dimensional framework for measuring logical qubit capabilities.<br>
+Transcript<br>
+George Schwartz:<br>
+At GQI, we’re tracking the quantum ecosystem, and we’re seeing all these incredible different modalities, projections, a lot of things that happen at this conference of QEC, all these different types of improvements in decoding, for example with Nvidia, what you were showing today in your talk about all the parallels between CPU and a QPU. We want to stay in pace with the industry as possible and really want to get insights and also your thoughts here about fault tolerance, utility scale, and you had really great points about when you’re working at scaling, how do you make it cost effective. To have the discussion going in that direction, I can let you comment a little bit in general and then I can have maybe some specific questions.<br>
+Matthias Troyer:<br>
+So that’s for background for you, for understanding, or do you want to publish something based on that? Just for context for me.<br>
+George Schwartz:<br>
+We’re probably going to write up the transcript, but more just for understanding. One thing we often do is a lot of technical due diligence with a lot of different players in the industry, and we see that, for example, there’s an absence in the ecosystem of a benchmark that people are thinking about. There’s been these talks about logical qubits, Quantinuum had this fantastic talk earlier from Sandia about their new terms of quops, Preskill had their idea of quops, which is the same acronym, which is a little bit confusing. Maybe let’s go to a first question here to help guide the conversation.<br>
+We see that you guys are obviously very bullish with Majoranas for obvious reasons, but you’ve also had some chats with some of the atom folks, neutrals and trapped ions. Can you speak to some of the current strengths of those architectures that you particularly like, and if those strengths you think will be enduring as you’re reaching towards fault tolerance and utility scale?<br>
+Matthias Troyer:<br>
+I think the strength of the topo(logical) qubit is, you heard me maybe in the talk about here, is that the control at scale will be easiest there. And that goes back then to the cost issues, right? What will it cost to do a calculation? That’s what DARPA really pushed hard first, because that was back in ’21 before the quantum benchmarking program started. That’s when DARPA asked us and said, “Look, Matthias, we have convinced ourselves that there is no commercial application for quantum computing because it will be too expensive, and there’s no technology with a clear path to scale. Seeing that, quantum is only a threat to crypto, and if that’s the case, then we should actually stop funding in quantum computing.”<br>
+George Schwartz:<br>
+That would make a lot of scientists here sad.<br>
+Matthias Troyer:<br>
+It makes sense. If there’s no commercial application, if there’s no commercial value ever, then okay, let’s do quantum science, wonderful science experiments, but we don’t have to push it towards building a logical qubit or quantum computer. But if there is a potential for commercial value, then somebody will build it, and then the US should be first. So it was that binary. And they had said at that point that they had convinced themselves that there’s no path, no application, and no path to scale, but Microsoft keeps saying chemistry is the application. I keep saying that. They would like to understand why, because their estimates showed that it’s not. And also they don’t think that transmons will scale or spin qubits or others, but we invest in the topological qubit, and their problem is they don’t understand about it. That then started the quantum benchmarking program, where they also looked at what could the applications be. Then it came to the same point, it’s quantum simulations, chemistry, materials. They confirmed that. The question still is, as I mentioned in the talk, is it cheap enough? That’s the big challenge. The value is clear, what people would pay, thousands for a key simulation. Can you do it at that price point? And that’s where we have a clear path that with topological qubits we get there.<br>
+Now, one could also get there with others. We looked at many technologies. We have transmon qubits at Microsoft. We have spin qubits at Microsoft. We decided not to embrace them because we didn’t see that path to scale. But then we saw that there’s progress on the neutral atoms. And that progress seemed promising, and that’s why we partnered with Atom Computing, because there we think there is a great opportunity for that technology to be the first one to reach the first utility scale. Because it’s easier to scale atoms than scaling solid state, and it’s easier scaling free space optics than scaling wires. And it’s also easier because actually the clock speeds are slower. That means doing the control stack is easier, the decoding is easier, because it’s slow! This is a great place to start. Currently, over the next two years, three years, the best technology I see are the neutral atoms.<br>
+George Schwartz:<br>
+There’s a few things I wanted to unpack there. At the beginning, you mentioned, and in your talk as well, that perhaps one of the greatest values is simulating chemistry, and obviously there is the ideas in cryptography, but there’s also things in optimization and machine learning. I think it was at some point you were a bit critical of the quadratic speedup of some algorithms. With the developments in QEC and these different resource estimates from physical to logical, do you not think those can be more cost effective?<br>
+Matthias Troyer:<br>
+They are, but you still need billions to trillions of transistor switches to do a logical gate operation. That hasn’t changed. It might have shifted it by a factor of 10 or so. But in the meantime, in the last three years, GPUs have become 10 times more powerful. And the comparison always has been against a single GPU. That was against the GPU in the paper we had from three years ago. The current GPUs are 10 times more powerful. So there’s the race, and if the cost over time for a quadratic speedup for a small problem is, what we had then is when it’s a single 16-bit floating point operation, it’s a month. When it’s 1,000 operations, which is a simple cost function, it’s centuries. If the centuries goes to decades, it still doesn’t make a difference. So the more than quadratic speedup is still there. Then if a machine costs 100 million, for that you can buy many GPUs. There’s a big enough gap that the quadratic speedup limit will remain. And the same with I/O. It is just more costly to load data into a quantum computer. It will always be, because a logical qubit will always be more complex than a transistor. If you could get a logical qubit to be as cheap as a transistor with all of the control, then it might change, right? But that’s not what was going to happen. Simply the readout processing you need to do, all of the electronics there. There’s no way that big data will ever be an application for standard methods that are linear or quadratic, simply because I/O is so much slower.<br>
+George Schwartz:<br>
+Okay, right.<br>
+Matthias Troyer:<br>
+Because the clock speeds are slower. And with optimization, there have been papers around for 25 years that show that there’s a quadratic upper bound. There’s lots of quantum-inspired progress in algorithms where quantum ideas get developed for optimization that then get dequantized into new classical ideas. There’s huge impact that quantum algorithms have in optimization to develop new classical algorithms.<br>
+George Schwartz:<br>
+On that point of quantum chemistry, we’ve seen a lot of initiatives of integrating HPC with potentially QPUs, so maybe you can touch on which aspect in the workflow do you see the QPU providing the most value in chemistry simulations? We have these classical things like DFT, DMRG that are perhaps the gold standard in terms of chemistry simulations. Where do you think the QPU is going to provide the most benefit?<br>
+Matthias Troyer:<br>
+For that, I’d like you to look at the paper we wrote on our QDK for chemistry, where we have implemented open source the entire workflow from the science problem with Copilot all the way down to getting the structure right that we do with classical force fields first, then refine it with DFT. Then one goes through it, and looks at chemical reactions. We look at the reaction path first with ML force fields, then with DFT, then coupled cluster for refinement. And then we see where it’s not good enough, and that’s where we’ll use the quantum computer. It will basically replace DMRG, for example. It will be a more accurate, more scalable version of DMRG, or full CI. That’s where you could say is technically the niche. With that then, you could ask the question: do you need it, or could you do it with DMRG? And the paper has shown that. The Garner Channel also said, ‘Hey, I can do it.’ He believes it, he trusts it, but others will say, ‘No, I don’t believe it.’ Ultimately, that’s the wrong question to ask, because ultimately the question is: will the person in the lab believe what you do? Will it be predictive? And for that, the question is not will someone be able to do something classically, but will it get something that is predictive. When you start a project upfront, you don’t know if the configurations you run into will be classically tractable. You don’t know whether for that molecule you can trust DMRG, or whether you can trust coupled cluster. You simply don’t know it, and that’s why you always want to in the end use the quantum computer to get the confidence that the answer is right. While you can say the place is doing full CI, DMRG more scalably, that is too narrow, because the bigger question is: you can use it to make the entire computational chemistry workflow predictive. And that’s the game changer.<br>
+George Schwartz:<br>
+Okay. And we kind of think that scale is going to be tera-quop devices that are going to be thousands of logical qubits with very low error rates. We see that maybe before even mega, maybe giga-quop, that’s more straightforward, but then you still potentially have some concerns of control as you say, you have all these beams for Rydberg. Do you see a path for those neutrals to get to those tera-quop scales that are going to enable this?<br>
+Matthias Troyer:<br>
+I think they will get to the scale where we can do chemistry. The question is at which price point. That’s unclear. For the small machine, neutrals are the easiest to build. The Majorana devices, small machines will be cheaper, for sure. But as you scale, there’s a crossover. They will always remain useful, because for certain things you do smaller problems, they don’t need the big machines. There’s always a use also for CPUs and not just high-end GPUs, because certain tasks don’t need GPUs. Certain tasks can use a cell phone CPU. Certain tasks just use a laptop. Some tasks need a supercomputer. Some tasks will need quantum computers; some of them will run well on neutral atoms. Some of them will need something more powerful.<br>
+George Schwartz:<br>
+As it gets very powerful, one thing that we see through the community is there needs to be some classical verification, at least to some scale. Can you speak to how Microsoft is trying to develop that ability to simulate even larger molecules, like a digital twin if you will, up to some scale? Once we get to something of tera-quop, that’s going to be impossible, and that’s one of the reasons why we do it. But can you speak to those developments?<br>
+Matthias Troyer:<br>
+For validating the chemistry calculation, or for validating the quantum computer?<br>
+George Schwartz:<br>
+Validating the chemistry calculations to some scale.<br>
+Matthias Troyer:<br>
+I think that’s the same way we validate any classical supercomputer. Do you know how we do that?<br>
+George Schwartz:<br>
+I can’t speak immediately off the top of my head.<br>
+Matthias Troyer:<br>
+How do we validate HPC systems at scale? I do a calculation, for example fluid dynamics, that nobody else can do.<br>
+George Schwartz:<br>
+Potentially build up a system and actually just have the fluids running and then make the measurement, or in this case make the pharmaceutical and test it.<br>
+Matthias Troyer:<br>
+For HPC for fluid flows and other things, I run the program on a small machine, I test it, and then when I’m testing HPC codes, I look at certain limiting cases that I can solve within reasonable boundaries, special cases that I can solve on a laptop, and then I run it distributed, massively parallel, and I want to check whether in the cases where I know the answer, I get the right answer back. I can test it by running certain problems for which I know the solution, that are exactly solvable. That way I get confidence that the algorithm has no bug in it. There’s no way you can actually test something on a new machine that nobody else has done, but we’ve lived with that for the last century as we built computers that are bigger and more powerful. We find ways to get confident that they work. If your question now is, can you check whether the quantum computer works, then you can for example use Shor’s algorithm, do a calculation where you then can check whether you found the factors. There are certain things where you can check it. The chemistry algorithm is not that, but you can run a smaller chemistry problem that you solved classically on a quantum computer to see whether you get the same answers. You can run certain limiting cases like you can run it for free electrons without interaction, that you can solve with pen and paper and compare. You can say let me use only the Coulomb term and other things, bits and pieces, that you check all the components. And if all the components work, then it should work. It’s the same as for classical HPC testing. The way you can do that is by using the best classical tools. Of course you compare against DMRG as well. You see that to a certain size it should agree; beyond that it should disagree, and then likely it’s the DMRG that’s wrong. It’s the same as HPC testing. In the QDK for chemistry, we have the classical tools, the best ones in there. And in the end, we’ll use agents to run the simulations in Discovery or other platforms, and the agents can compare the results.<br>
+George Schwartz:<br>
+You briefly mentioned Shor just right now, and also you mentioned that Microsoft is making a huge push to make sure you’re PQC compliant by 2029. NSA has been pushing that timeline as well, and we see incredible advancements in RSA and ECC resource estimates. If you were a betting man, which modality would you think would be able to run ECC and by when?<br>
+Matthias Troyer:<br>
+We decided to pull in the timeline to 2029 because we think that there’s a potential threat in the year after or soon after. Not that we can get there, but there are roadmaps where we think that with certain technologies, be it Majorana, be it neutral atoms, we could be there by potentially 2030.<br>
+George Schwartz:<br>
+So that’s Microsoft’s bet then.<br>
+Matthias Troyer:<br>
+It’s not that we will be there. That’s on the roadmap, but when you talk about security and crypto, the question is not what is the timeline by which you can promise a customer that you’ll have it, but what is the timeline by which potentially somebody investing huge resources could maybe get there. We think with neutral atoms, there is a path of getting there. Of course it will take a long time to run it. While it might be very expensive, somebody could with big resources potentially do it. That’s why we said we have to pull in the timeline.<br>
+George Schwartz:<br>
+I’ll end with one last question. If you had a utility-scale quantum computer right now that you could run any chemistry calculation on, what would it be? What would you want to simulate tomorrow that you would love to have an answer for, of any problem under the sun, be it commercially viable or not?<br>
+Matthias Troyer:<br>
+Right now? I would just finally finish the problem that I didn’t solve for my master’s thesis!<br>
+George Schwartz:<br>
+Fair enough!<br>
+Matthias Troyer:<br>
+Because there was a problem I got then, and we couldn’t solve it because there was a sign problem in quantum Monte Carlo, so we had to change the topic. Let’s start with a science problem. Because while I would like to do an interesting commercial problem, we’re not there yet. If you gave me a utility-scale quantum computer today, I could not solve any commercially interesting chemistry problem. Do you know why?<br>
+George Schwartz:<br>
+I wouldn’t have an immediate answer for that, no. Why?<br>
+Matthias Troyer:<br>
+Because there’s so much we still have to do on the classical side, and the main thing is we have to get the embedding right. It’s the same problem with DMRG or with full CI. We look at a molecule, a material, we look at an active space where it’s strongly correlated, then we pull out that active space and we solve it. That’s what the chemists call the static correlations. We solve that small subset of 50 orbitals or 100 orbitals exactly, and get the exact perfect answer for that. But that doesn’t tell us anything about the real molecule, because now I have to embed it back into the full molecule. It’s not just a molecule with only 50 orbitals. It is bigger. Now there’s the embedding problem, and currently with current methods, the embedding error is too big. So that even if you solved the quantum problem exactly, the embedding problem would make the answer unreliable.<br>
+George Schwartz:<br>
+Could current modern AI or QPUs help solve that embedding problem?<br>
+Matthias Troyer:<br>
+One approach to solving the embedding problem, or what chemists call the dynamic correlation problem, is to simulate more of the molecule, simulate the entire one. If you could go to 1,000 orbitals, then you do the active core, plus the things around, until it gets really weakly correlated, and then you can do it. If you could go to thousands of orbitals, going from 100 to 1,000, the qubit number scales by a factor of 10, the computational effort and thus the cost scales by a factor of 1,000.<br>
+George Schwartz:<br>
+You wouldn’t have a quasiconformant potentially for some of the weakly correlated if it’s not quite as correlated?<br>
+Matthias Troyer:<br>
+Yes, but right now the way we truncate it to 50 orbitals, the embedding error is still too high. It’s about 10 times higher than what we need it to be. One way to solve this is just taking in more of the surrounding pieces so that we have a bigger distance where on the edge it becomes weakly correlated, and then the embedding becomes easier. But we’re still too close to that when you look at 50 orbitals. If you go to 1,000 orbitals, then we know how to tackle the embedding. But that’s an order of magnitude on the qubit number; that’s three orders of magnitude in cost. Now if the small calculation costs $1,000, the big one is a million. We need to find better classical embedding methods. Even if we have that, the molecule doesn’t typically live in vacuum; it’s in solution. The solvation problem, which is a long-standing problem in biochemistry, also has to be tackled. That’s where AI can likely help. We have to solve these embedding problems: the embedding of the active quantum space into the full molecule, and embedding of the molecule into the environment. As long as the core problem was the static quantum correlation, there is a problem that the rest is all also large enough, but it’s not the limiting factor, because we didn’t get the energies right. Now once the energies of the active space are right, then the embedding errors are now the next large challenge. Those are problems we have to tackle in parallel with building the quantum computer.<br>
+Once we have that, let’s say they’re solved, there’s so much you can do. It depends on what you want to do. You can change chemistry to green chemistry, replacement for PFAS materials. More importantly, you could look for catalysts to capture carbon from the air and reverse global warming. You can look at metabolomics in the body, cure diseases. It’s endless. But the key thing is that you wouldn’t do that by solving all this problem on a quantum computer. We solve it with quantum simulation. But if a quantum simulation needs a big quantum computer and it costs thousands of dollars and it will run for a few hours, if you then need to explore a million different things, the cost is a billion! And the runtime is forever. It’s not just writing a paper where I put in some results, that’s where DARPA told me two years ago, ‘Matthias, you are too optimistic; you are off by five orders of magnitude.’ I said, ‘Most people call me the quantum pessimist, because I’m telling people you need 100,000 to a million qubits for chemistry, so it’s not just 100, but it’s more, and it’s hard.’ Most people see me as the quantum skeptic, when I’m actually the quantum optimist who said there is commercial value here, but it will take a scale, and I think we understand the scale now. But then DARPA came to me and said, ‘No, Matthias, you are off by factor 10 to the 5. You’re too optimistic by five orders of magnitude.’ I asked why, and they said, ‘Because when you look at a chemical reaction, it’s not just one calculation you do. First you have to do three calculations to be sure you found the ground state, and so when you sum it all up, it’s hundreds of thousands of calculations.’ My answer there was, ‘You’re totally right. It’s actually a bigger challenge than I dared to say even, but you’re wrong as well, because first of all, I can make the algorithm a factor 100 faster, but the real thing is we need the quantum simulations to be accurate. Just as we can accelerate the classical simulations by using AI, we can accelerate the quantum simulations by using AI.<br>
+We now use DFT calculations, coupled clusters, we use it to train a model, and then we use that first to explore reactions and molecules, and then in the end when I have something, then I validate it. We’ll be able to do the same with quantum computing simulations. Instead of always using the quantum computer, we can accelerate the quantum computation by training AI models. I’m using the data to train AI models to refine the AI model with quantum data to make AI models that predict the outcome of the quantum computation. That will be cheaper, and that will scale better. We’ll use it for a few things, train the AI models that can predict it, and then I give that to agents, and these agents will then solve the problems for me. It’s this AI acceleration that I mentioned first at my keynote in ’24 at IEEE Quantum Week.’<br>
+George Schwartz:<br>
+This leads actually to just one last question. You talked about responsible quantum computing, and there’s also a bit about responsible AI development, and as you pointed out very astutely, the treatments for cancer by definition are poison. With this massive growth in the quantum computing industry, which is incredibly exciting, how do we make sure we put reliable safeguards to make sure we do responsible quantum computing, especially if it’s AI-assisted?<br>
+Matthias Troyer:<br>
+We have the paper on that that we can share later with you that we published already two years ago, three years ago. My point there is, there are so many conferences and workshops now on responsible quantum computing and ethical quantum computing, and how do we do it responsibly? I’m telling you it’s a bigger problem than you might think it is, but it’s not a quantum problem. There is a quantum aspect to it, and the quantum aspect is crypto, because building the quantum computers, we are breaking current public key cryptography. We have to accelerate the transition to post-quantum crypto globally, for every country in the world. That is responsible quantum computing; that’s one aspect to it. With that, I don’t want people to use my quantum computer to run Shor’s algorithm, so we put in filters into our software stack that check whether this could be malware, like a virus check, and it’s not perfect, but one can flag things or quarantine things. We put in filters for Shor, because I don’t want it. Right now the filter is easy: if the system has 50 logical qubits, on 50 logical qubits I’m not breaking a key, so it passes. But the architecture that you’re building has that layer built in. With that, you also don’t want to let people run any arbitrary computation, because you want to actually be able to check what it is. That’s one aspect, that’s the crypto-specific one. But we want to enable all the other applications like chemistry. Chemistry is dual-use.<br>
+George Schwartz:<br>
+Yeah.<br>
+Matthias Troyer:<br>
+So what do you do there? We can’t just filter out certain applications like DMRG or the quantum algorithm, because I don’t know what it’s used for. I can’t even filter by the molecule, because a cancer drug is…<br>
+George Schwartz:<br>
+Dual-use by nature.<br>
+Matthias Troyer:<br>
+Is dual-use by nature, exactly. You can’t even say every chemical is dual-use, so you cannot tell it from the computation itself. What you have to do is you have to discern user intent: who is the user, who are the users, what are the use cases? That means you need something around a Know Your Customer approach, like is done in banking, like is done for sensitive AI tools. That’s where we have to actually learn from what do we do to protect us from the misuse of AI, and actually it is the same problem, because the same question of dual-use in chemistry, if AI can help with chemistry, the problem is here already. It’s not something new, it’s the same thing as we have for AI. When you think about it that way, we also don’t talk about, ‘We need responsible GPU computing, we have CPUs and now we have GPUs so we need responsible GPU computing, and we need responsible FPGA computing, and we need responsible ASIC computing.’ No. We don’t talk about that. We talk about the application—responsible AI—so it has to really be tied to the applications. That’s where basically responsible development in science, if with the frontier AI models now and in the future, quantum will just add something to it to make it more powerful, but the challenge is here that bad actors can just use AI to develop new weapons, and they are doing it. That’s the problem to solve. Quantum can just adopt the same principles. With that, I’ve talked at conferences and workshops on responsible quantum computing, and I ask the people, ‘The same problem we have here, we have it today with AI. The problem is here now, today. Quantum isn’t different. Why don’t you work on that problem? Why do you write papers on the quantum aspects when the same problem exists today?’ We saw it with Mithril now, it’s a huge problem, the problem is here, and the answer two years ago was, ‘I would have to do something now and I don’t know how, and it’s too hard.’ In that sense, quantum is the escape. I’d like to bring that discussion back to responsible computing. Whoever talks about responsible quantum computing, I think just wants to find a topic to write a paper about without really having to solve the problem.<br>
+Matthias Troyer:<br>
+I have a bit more time with you. For logical qubits we put out a paper last night with John Martinis thinking about how should we look at all the logical qubit demonstrations and the path to the utility scale logical qubit. We put out not just, you need more than metrics, more than just a qubit number. Or a fidelity. Or a speed. You need to view it holistically on the path to what is needed for utility scale. For that you need a qubit that has a path to scale where you can make it with more physical qubits. It gets better. With more logical qubits in the system it doesn’t degrade due to crosstalk or whatever so that it’s scalable.<br>
+With that we think about four different dimensions where you should measure a qubit. One is of course the qubit fidelity. How good is it? How does it get better when you use more physical qubits and change the code distance?<br>
+The second axis is scale, the qubit number. At the end of course one has to scale to the size that we need. But already here on these two dimensions there are tradeoffs. With the same physical qubit budget you can either make more logical qubits or fewer but better logical qubits. That’s why I say it is not just one point somewhere but there are these two dimensions, there’s a frontier here where you can push either towards more or better ones. Just mentioning numbers or fidelities isn’t helpful for the path.<br>
+There’s another axis and that axis is performance. How fast is the logical qubit. But I don’t call it speed or clock speed because ultimately there’s a tradeoff also between cost. What will matter at the end is basically the cost for logical operation. Cost performance or the price performance direction. You could build certain qubits that are very good but don’t scale. Or you can have qubits that are extremely good but slow. There are tradeoffs also in speed. Also for decoding. If I could have a decoder that’s extremely good but it takes a long time then it slows it down. There are tradeoffs in speed and quality as well.<br>
+Matthias Troyer:<br>
+The last axis that is rarely discussed is what we call capability. When you look at all the logical qubit demonstrations there are certain ones that are simply post selection. Detect errors and post selection. That will not scale. We want something that is repeated correction because that’s the only thing that will scale. But even there we see about five different stages.<br>
+The simplest one is you prepare a logical quantum state. State preparation and measurement. I build a cat state or something. The minimal capability is you prepare a logical state and you measure it.<br>
+The next step in capability that we argue in the paper that came out last night is you want to keep memory alive. Memory just a qubit, there are papers that just show I can keep a qubit alive with the surface code. Just on the memory. Most applications and most demos of logical qubits so far are just quantum memory. Keep the qubit alive for longer than physical.<br>
+It gets harder when you go to gate operations because the decoder becomes much harder when you do gate operations. The next step is doing Clifford gates. Showing that you don’t just have a logical qubit but you have a logical qubit with repeated error correction on which you can actually do computations. That you can do logical gate operations on the logical qubits. And that these gate operations are better than the physical ones. That’s for Clifford gates which are the easiest ones.<br>
+The next step is doing the same for universal gates. Doing non-Clifford. Doing fault tolerant non-Cliffords.<br>
+The fifth and final step is doing all of that with real-time feedback. That I can do a measurement and then based on the measurement I do a branch in my program. That I do an if statement based on a quantum measurement. The reason why that is a big step is it needs the real-time decoding. Most of the logical qubit demonstrations that have been done so far, people took the logical circuit, translated it manually into a physical qubit circuit that one runs on a NISQ machine, one gets the results, and in post-processing one does the decoding. If I do that that’s a great experiment, a great science experiment that demonstrated this implemented a logical qubit. But in a computer I need that to run real time so that I can measure and then I can do an if statement and what I do next depends on that. It’s this real time feedback. That’s the final capability step.<br>
+George Schwartz:<br>
+On these capabilities, is there a particular algorithm, VQE, Shor for example, phase estimation, or generally a QFT that you guys are thinking need to be benchmarked against? Because for example even with the universal non-Clifford gates depending on your application you might need faster reaction times versus if you don’t and that’s a push and pull that we’ve seen.<br>
+Matthias Troyer:<br>
+Yeah, So even for that when you just have a resource state and you want to use and inject it, you always need the feedback. You have a T state it might have worked or not and depending on the injection you have to do an S correction afterwards. You will always need that capability for any application. It might not be at the algorithm level but the T injection needs it already.<br>
+What I’ve been talking about now is just asking the question when somebody says I have this topological qubit here that you say you have demonstrated what? State preparation? A memory experiment? A Clifford experiment? Or non-Clifford? Or you actually have shown that you can do the real-time feedback. We need to go all the way for the application in the end. Right now most logical qubits don’t have that yet. It’s fine but we should map out where are they along that capability direction. That’s just qualitative for now.<br>
+Matthias Troyer:<br>
+After that comes your question what is the application benchmark. I think that is just like DARPA does what is the cost for a calculation. The simple metric in the end is dollars per solution end-to-end. Not time or this and that but really I didn’t like it when at first they made me calculate the cost but ultimately that’s when one really starts seeing the engineering tradeoffs. Their push for cost is so important to drive the field forward. The ultimate metric is dollars per solution. That’s not dollars for the current machine but for the planned machine at scale that you have. What will ultimately once you build multiple machines, not the first one, but when they build multiple machines, steady state and building the n plus first machine, what is the cost for calculating. That’s where you can compare technologies.<br>
+That’s where you see that certain technologies if I need a thousand cryostats in a big warehouse as some roadmaps show then you can just say the cost is likely a few billion dollars for that and if you want to amortize that over a few years then it’s a billion dollars a year. A billion dollars a year that is 100,000 dollars per hour.<br>
+George Schwartz:<br>
+Better be working on some hard chemistry problems!<br>
+Matthias Troyer:<br>
+Now, the cost will be likely high so that may not be the way to go. That means we have to bring the cost down and so metrics of dollars for the benchmark I think is the valuable one. Because we’ve seen some papers saying I can do Shor with 10,000 qubits. Yes if you wait a century and more. There’s always spacetime tradeoffs. Or I can do it in less than an hour. Yes if you use that size machine. Then it gets interpreted as I can do it with 10,000 qubits and in an hour. That’s where moving the fields towards understanding the cost is important.<br>
+George Schwartz:<br>
+Would you advocate that when these research estimation papers come out that there should be a very clear indication of what’s the dollar cost to actually run this?<br>
+Matthias Troyer:<br>
+What we have in the recent version of QE and what we’ll publish a paper is that in the tools we have you can put in these are the costs of my machine, fixed cost per qubit, operating cost, and the tools we have can spit out the cost for the application in dollars. If you put in the assumptions you have, you think your machine with a cryostat will cost about 50 million so you can take it and say I think they put in per cryostat 10,000 qubits and now you can calculate the cost and you get to very interesting conclusions. We will not put in numbers but will show how you can do that and then you can run benchmarks on these things.<br>
+We will publish that with source code for chemistry, we publish it with the source code for Shor, we have that for a while already and we’ve done it. We’ve been asked not to publish it yet but then when we saw that actually AI can write the same code! Now we will and then you can just use the tools we have and say with these assumptions on the qubit and these assumptions on the QEC codes and you can say what if I could find a code with these properties I put it in and what if my machine cost that much and what if my clock speed is that and it spits out afterwards the cost in dollars. That’s where it should get to and that’s what DARPA is also asking from all performers in QBI, tell us the cost in dollars for these applications.<br>
+When it gets to application that is the only sensible metric I think. Because the rest is all vanity metrics. I can do it in an hour if you give me a billion dollars. I can do it with that many qubits if you let me wait a millennium. That’s where the dollar cost is really a good grounding metric. Of course it’s assumptions and that’s where you can put in assumptions and play with it and explore.<br>
+Matthias Troyer:<br>
+What we’ve seen is that this really helped us focus the engineering efforts. It helped our partners really when we worked with the partner when we asked them for the dollar cost they ran through it and came back to us a month later and said we changed our engineering roadmap. That is where the field has to go.<br>
+For the logical qubit really having all those four dimensions, the number of qubits, the fidelity, the performance or speed, and what am I showing, state preparation, memory, Clifford gates, non-Clifford or even feedback.<br>
+George Schwartz:<br>
+All in a logical sense not physical.<br>
+Matthias Troyer:<br>
+Logical yes. You can say I have the largest number of logical qubits that can do state preparation, wonderful you pushed far along this axis. Others say I have the best logical qubits but fewer. There are many paths to the goal in this four dimensional space. But we have to understand all the demonstrations around that and that I think would be interesting maybe also for you to map out or to clarify that demonstration has shown state preparation here, there’s memory here, there’s this and map out where in the space the progress is and it should all be celebrated whoever pushes which direction. But when people say you have 50 logical qubits and they have 90 logical qubits, it’s not just the number there are differences here.<br>
+George Schwartz:<br>
+It’s the number thing that gets hung up on.<br>
+Matthias Troyer:<br>
+So that’s where I think you could have a big impact by clarifying really where are these demonstrations.<br>
+George Schwartz:<br>
+We’ll get to work and make sure we do that. Although four dimensional plots are sometimes hard to show people.<br>
+Matthias Troyer:<br>
+Hard so we might have to simplify it to three dimensions or showing 3D cross section but just showing in space you could be four axes right you can do four axes and show it somewhere.<br>
+George Schwartz:<br>
+We were trying to simplify the quantum for all the engineers so that we can help everyone but then a four dimensional plot. But this has been great thank you Matthias once again.<br>
+Matthias Troyer:<br>
+Thank you.<br>
+September 22, 2026</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/interview-with-matthias-troyer-vice-president-technical-fellow-at-microsoft/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="df3e4ef25fff127c.html" class="prev-next">&larr; Microsoft Opens 15,000-Square-Foot Quantum Research Center and Hardware Makerspace in Maryland Discovery District</a>
+  
+  
+  <a href="d7fa19e44f8dcc61.html" class="prev-next">Zapata Quantum Unveils Quantum Pilot Platform for Automated Application Discovery and Resource Estimation &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-09-23 10:43 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
