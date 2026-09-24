@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A new chapter for Qiskit algorithms and applications — Meridian Reader</title>
+  <title>Classiq, INGL, and IonQ Advance Quantum Optimization for Natural Gas Transmission Networks — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,47 +126,51 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="2c9cd317131160fe.html" title="A Christmas Closed-Timelike-Curve: Could the story of Scrooge actually happen in a quantum universe?">&larr; prev</a>
-    <a href="06e08f724bb318f8.html" title="Quantum Glasses, a Qiskit Ecosystem package for Bloch sphere simulations">next &rarr;</a>
+    
+    <a href="9ea099138196a514.html" title="CGI and D-Wave Partner to Commercialize Enterprise Quantum Optimization Across Transportation, Logistics, and Retail">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">A new chapter for Qiskit algorithms and applications</h1>
+    <h1 class="article-title">Classiq, INGL, and IonQ Advance Quantum Optimization for Natural Gas Transmission Networks</h1>
     <div class="article-meta">
-      <span class="article-source">Qiskit Blog</span>
-      <span>Qiskit</span>
-      <span>147w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>5h</span>
       <span class="article-category">quantum</span>
-      <span>79 words</span>
-      <span>1 min read</span>
+      <span>474 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>In recent months, the Qiskit Ecosystem has undergone a series of changes, additions, migrations, and upgrades all driven by a common goal: to provide the community with a greater role in the development of algorithms and applications. To align with this goal, we have moved the applications repositories, relocated the algorithms in Qiskit into their own repository, and welcomed external partners as additional maintainers to the repositories. This blog post delves into the hows and whys of these c</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://medium.com/qiskit/a-new-chapter-for-qiskit-algorithms-and-applications-5baff541e826?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Quantum software company Classiq Technologies and state-owned utility Israel Natural Gas Lines Ltd. (INGL) have published joint research applying hybrid quantum-classical optimization to natural gas pipeline delivery. Published on arXiv (arXiv:2609.00825), the study demonstrates a Quantum Approximate Optimization Algorithm (QAOA) workflow to maximize gas throughput across pipeline networks under non-linear hydraulic and physical constraints, validated with physical hardware execution on the IonQ Forte-1 trapped-ion quantum computer.<br>
+Managing natural gas transmission requires optimizing nodal pressure configurations to maximize customer delivery while adhering to conservation of mass at junction nodes, directional flow consistency, and minimum endpoint delivery pressures. Governed by the non-linear Panhandle-B equation, the combinatorial complexity of discretized pressure assignments grows exponentially with network size (2nd state space for d decision nodes discretized across n qubits). Classiq and INGL formulated the problem as a Quadratic Unconstrained Binary Optimization (QUBO) model using a second-degree polynomial approximation of the Panhandle-B flow exponent (αPB = 0.51).<br>
+The workflow was synthesized using Classiq’s platform and tested on a representative six-node, five-directed-edge gas transmission network. In simulator-based testing with p = 30 QAOA layers, the algorithm successfully recovered the maximum-throughput valid operating point, matching classical reference solutions. To test near-term hardware feasibility, a reduced 10-qubit problem instance was deployed on the IonQ Forte-1 QPU. Remarkably, using a shallow p = 2 QAOA layer setup to limit gate noise, the QPU returned physically valid candidate operating points that bracketed the continuous classical optimum within a single pressure-discretization step.<br>
+| [ Classiq & INGL Gas Network QAOA Implementation Benchmarks ] |  |  | <br>
+|---|---|---|<br>
+| Execution Profile | Circuit Depth & Qubit Allocation | Optimization Performance & Accuracy | <br>
+| Full Simulation Model (Classiq Simulator) | • 5 Decision Nodes (d = 5) • 3 Qubits/Node (n = 3, 8 pressure levels) • 15 Logical Qubits (215 = 32,768 states) • Depth: p = 30 QAOA layers | • Recovered maximum-throughput valid operating point • Validated against classical exhaustive evaluation and hydraulic simulation • COBYLA convergence in 50–60 iterations | <br>
+| QPU Hardware Execution (IonQ Forte-1) | • 2 Decision Nodes (Fixed customer pressure) • 6 Decision Qubits + 4 Auxiliary Qubits • 10 Logical Qubits Total • Ultra-shallow depth: p = 2 QAOA layers | • Top 2 valid hardware outcomes: (qBVS1, qBVS2) = (5, 4) and (4, 3) • Solutions bracketed continuous classical optimum • Verified compatibility with SIMONE hydraulic software | <br>
+The research is designed to complement rather than replace established engineering tools like the SIMONE hydraulic modeling software, serving as an automated global search engine to identify promising candidate operating scenarios for engineering-grade verification. The initiative demonstrates how near-term quantum processors can tackle complex energy grid and utility infrastructure planning challenges.<br>
+Review the full press release on Classiq Insights here and read the technical preprint on arXiv (Gas Network QAOA) here.<br>
+September 23, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://medium.com/qiskit/a-new-chapter-for-qiskit-algorithms-and-applications-5baff541e826?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/classiq-ingl-and-ionq-advance-quantum-optimization-for-natural-gas-transmission-networks/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
+  <span></span>
   
-  <a href="2c9cd317131160fe.html" class="prev-next">&larr; A Christmas Closed-Timelike-Curve: Could the story of Scrooge actually happen in a quantum universe?</a>
-  
-  
-  <a href="06e08f724bb318f8.html" class="prev-next">Quantum Glasses, a Qiskit Ecosystem package for Bloch sphere simulations &rarr;</a>
+  <a href="9ea099138196a514.html" class="prev-next">CGI and D-Wave Partner to Commercialize Enterprise Quantum Optimization Across Transportation, Logistics, and Retail &rarr;</a>
   
 </div>
 

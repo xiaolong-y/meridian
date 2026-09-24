@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A new chapter for Qiskit algorithms and applications — Meridian Reader</title>
+  <title>Independent Cross-Stack Benchmark Evaluates Commercial Quantum Error Management on 156-Qubit IBM Heron Hardware — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,47 +126,55 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="2c9cd317131160fe.html" title="A Christmas Closed-Timelike-Curve: Could the story of Scrooge actually happen in a quantum universe?">&larr; prev</a>
-    <a href="06e08f724bb318f8.html" title="Quantum Glasses, a Qiskit Ecosystem package for Bloch sphere simulations">next &rarr;</a>
+    <a href="06eb99deda4a16a7.html" title="Global Survey Finds 90% of Quantum Companies Rely on Cross-Border Supply Chains">&larr; prev</a>
+    <a href="96b3170b3672ff9c.html" title="Q-CTRL Executes 100-Qubit Quantum Fourier Transform Using Convolutional Compilation Strategy">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">A new chapter for Qiskit algorithms and applications</h1>
+    <h1 class="article-title">Independent Cross-Stack Benchmark Evaluates Commercial Quantum Error Management on 156-Qubit IBM Heron Hardware</h1>
     <div class="article-meta">
-      <span class="article-source">Qiskit Blog</span>
-      <span>Qiskit</span>
-      <span>147w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>6h</span>
       <span class="article-category">quantum</span>
-      <span>79 words</span>
-      <span>1 min read</span>
+      <span>548 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>In recent months, the Qiskit Ecosystem has undergone a series of changes, additions, migrations, and upgrades all driven by a common goal: to provide the community with a greater role in the development of algorithms and applications. To align with this goal, we have moved the applications repositories, relocated the algorithms in Qiskit into their own repository, and welcomed external partners as additional maintainers to the repositories. This blog post delves into the hows and whys of these c</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://medium.com/qiskit/a-new-chapter-for-qiskit-algorithms-and-applications-5baff541e826?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>An independent benchmarking study published on arXiv (arXiv:2608.05202) provides a protocol-level evaluation of commercial quantum error suppression and error mitigation software stacks. Conducted by researchers from The Catholic University of America, University of Deusto, and Universidad de los Andes, the paper compares native IBM Qiskit Runtime primitives against third-party managed pipelines in the Qiskit Functions Catalog—specifically Q-CTRL Performance Management and Qedma QESEM. All experiments were executed on ibm_pittsburgh, a 156-qubit IBM Quantum Heron r3 superconducting processor.<br>
+The benchmark evaluates two execution models: sampling tasks (bitstring counts) via Sampler interfaces, and observable expectation values via Estimator interfaces. To ensure like-for-like comparisons, IBM and Q-CTRL configurations operated under matched shot budgets (215 = 32,768 shots per instance), while Qedma QESEM was configured through its native precision-and-time-budgeted interface (0.1 precision target, 600-second QPU time cap). Abstract workloads were submitted across all providers within identical hardware calibration windows.<br>
+In the Sampler Track, tested across Bernstein–Vazirani (25–75 qubits), Quantum Phase Estimation (10–30 counting qubits), GHZ-state preparation (25–50 qubits), and Randomized Mirror Circuits (25–100 qubits), Q-CTRL’s autonomous suppression pipeline delivered the highest exact-output success probabilities across all 12 test cases. On 30-qubit Quantum Phase Estimation (QPE), where raw and measurement-twirled IBM runs yielded zero exact-match shots out of 32,768 (0.00% success), Q-CTRL maintained a 12.69% exact success probability. On 100-qubit Randomized Mirror Circuits, Q-CTRL retained a 76.45% exact 100-bit target string success rate, compared to 9.14% on IBM raw execution.<br>
+| [ Estimator Track Accuracy & QPU Overhead Benchmarks (TFIM 25–75 Qubits) ] |  |  | <br>
+|---|---|---|<br>
+| Software Stack Configuration | Error Metrics vs. MPS Exact Reference | Error Reduction & QPU Runtime | <br>
+| IBM Raw Execution (SamplerV2 / EstimatorV2 Level 0) | • Magnetization MAE (mX): 0.1484 • Correlator MAE (cZZ): 0.0282 • Overall MAE: 0.0883 | • 1.00× (Baseline) • Reported QPU Time: ~17.8 seconds per job | <br>
+| IBM TREX + Twirling (Resilience Level 1 + Gate Twirling) | • Magnetization MAE (mX): 0.1026 • Correlator MAE (cZZ): 0.0587 • Overall MAE: 0.0807 | • 1.09× Error Reduction • Reported QPU Time: ~28.0–37.8 seconds per job | <br>
+| Q-CTRL Performance Management (Autonomous Suppression Pipeline) | • Magnetization MAE (mX): 0.0376 • Correlator MAE (cZZ): 0.0194 • Overall MAE: 0.0285 | • 3.10× Error Reduction • Reported QPU Time: ~28.0 seconds per job | <br>
+| Qedma QESEM (Characterization & Unbiased Mitigation) | • Magnetization MAE (mX): 0.0278 • Correlator MAE (cZZ): 0.0097 • Overall MAE: 0.0188 | • 4.70× Error Reduction • Reported QPU Time: ~211–311 seconds per job | <br>
+In the Estimator Track, evaluated on an eight-layer Transverse-Field Ising Model (TFIM) circuit at 25, 50, and 75 qubits against an exact Matrix Product State (MPS) reference, Q-CTRL and Qedma QESEM reduced aggregate mean absolute error (MAE) by factors of 3.10× and 4.70× over raw execution, respectively. However, the two third-party stacks demonstrated distinct resource-accuracy profiles: Q-CTRL achieved its error reduction using 28 seconds of QPU time per job (matching IBM baseline runtime), whereas Qedma QESEM achieved the highest precision by consuming 211 to 311 seconds of QPU time per job (7.5× to 11.1× the runtime of Q-CTRL).<br>
+Review the research preprint on arXiv (Quantum Error Management Benchmark) here and explore cloud primitive specifications at IBM Qiskit Runtime here and here.<br>
+September 23, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://medium.com/qiskit/a-new-chapter-for-qiskit-algorithms-and-applications-5baff541e826?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/independent-cross-stack-benchmark-evaluates-commercial-quantum-error-management-on-156-qubit-ibm-heron-hardware/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="2c9cd317131160fe.html" class="prev-next">&larr; A Christmas Closed-Timelike-Curve: Could the story of Scrooge actually happen in a quantum universe?</a>
+  <a href="06eb99deda4a16a7.html" class="prev-next">&larr; Global Survey Finds 90% of Quantum Companies Rely on Cross-Border Supply Chains</a>
   
   
-  <a href="06e08f724bb318f8.html" class="prev-next">Quantum Glasses, a Qiskit Ecosystem package for Bloch sphere simulations &rarr;</a>
+  <a href="96b3170b3672ff9c.html" class="prev-next">Q-CTRL Executes 100-Qubit Quantum Fourier Transform Using Convolutional Compilation Strategy &rarr;</a>
   
 </div>
 

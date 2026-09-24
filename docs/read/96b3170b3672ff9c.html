@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A new chapter for Qiskit algorithms and applications — Meridian Reader</title>
+  <title>Q-CTRL Executes 100-Qubit Quantum Fourier Transform Using Convolutional Compilation Strategy — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,47 +126,54 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="2c9cd317131160fe.html" title="A Christmas Closed-Timelike-Curve: Could the story of Scrooge actually happen in a quantum universe?">&larr; prev</a>
-    <a href="06e08f724bb318f8.html" title="Quantum Glasses, a Qiskit Ecosystem package for Bloch sphere simulations">next &rarr;</a>
+    <a href="a68ee9043465832a.html" title="Independent Cross-Stack Benchmark Evaluates Commercial Quantum Error Management on 156-Qubit IBM Heron Hardware">&larr; prev</a>
+    <a href="1e2a7a9e90193494.html" title="German Government Selects QUDORA-Led Consortium for €122 Million ($138.8 USD) NFQC-1k Trapped-Ion Quantum Computer Project">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">A new chapter for Qiskit algorithms and applications</h1>
+    <h1 class="article-title">Q-CTRL Executes 100-Qubit Quantum Fourier Transform Using Convolutional Compilation Strategy</h1>
     <div class="article-meta">
-      <span class="article-source">Qiskit Blog</span>
-      <span>Qiskit</span>
-      <span>147w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>6h</span>
       <span class="article-category">quantum</span>
-      <span>79 words</span>
-      <span>1 min read</span>
+      <span>526 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>In recent months, the Qiskit Ecosystem has undergone a series of changes, additions, migrations, and upgrades all driven by a common goal: to provide the community with a greater role in the development of algorithms and applications. To align with this goal, we have moved the applications repositories, relocated the algorithms in Qiskit into their own repository, and welcomed external partners as additional maintainers to the repositories. This blog post delves into the hows and whys of these c</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://medium.com/qiskit/a-new-chapter-for-qiskit-algorithms-and-applications-5baff541e826?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Quantum infrastructure software provider Q-CTRL has demonstrated an experimental execution of the Quantum Fourier Transform (QFT) subroutine on up to 100 physical qubits. Published on arXiv (arXiv:2608.05435), the research presents a constructive compilation architecture termed the Convolutional QFT. Executed on the IBM Heron R3 superconducting processor ibm_boston, the demonstration resolves periodic signal frequencies across a 2100-dimensional Hilbert space, marking the largest experimental execution of a functional QFT algorithm on quantum hardware to date.<br>
+A primary bottleneck in scaling subroutines like the QFT on near-term and fault-tolerant architectures is the two-qubit gate overhead required to route interactions across restricted connectivity layouts. Standard direct implementations on linear nearest-neighbor (LNN) topologies incur substantial routing penalties compared to all-to-all connected architectures. Q-CTRL’s compilation strategy eliminates this routing overhead entirely on LNN layouts by leveraging identity cancellations, matching the theoretical baseline of an all-to-all architecture using n2 – n two-qubit CX gates for a full n-qubit QFT, and d(2n – d – 1) CX gates for an Approximate QFT (AQFT) retaining the d largest phase rotation angles.<br>
+To optimize execution on physical hardware, the authors refined the LNN layout into the Convolutional AQFT by incorporating a single ancilla qubit and two additional CX gates. The addition of the ancilla reverses the directional dependency chain of initial entangling operations, allowing the algorithm to synthesize as a compact, translation-invariant kernel circuit gadget spanning d + 2 qubits. As the kernel steps along the quantum register with a stride length of 1, it minimizes the average number of two-qubit gates in the causal light-cone history of each physical qubit, suppressing noise propagation into downstream logic.<br>
+| [ QFT Compilation Strategies & Performance Benchmarks (ibm_boston) ] |  |  | <br>
+|---|---|---|<br>
+| Compilation Strategy & Metrics | CX Gate Complexity & Depth | Experimental Fidelity & Signal Fidelity | <br>
+| All-to-All Baseline | • CX Count: n2 – n • AQFT CX: d(2n – d – 1) | • Theoretical baseline (requires all-to-all physical connectivity) | <br>
+| Low-CX LNN Compilation | • CX Count: n2 – n • AQFT CX: d(2n – d – 1) | • Zero routing overhead on linear nearest-neighbor topologies • CX Depth: (2d – 1)n – d(d + 1) + 3 | <br>
+| Convolutional AQFT (Q-CTRL Hardware Implementation) | • CX Count: n2 – n + 2 • AQFT CX: d(2n – d – 1) + 2 | • 50 Qubits: 11.4% Process Fidelity (10.8× signal peak) • 80 Qubits: 1.8% Process Fidelity (7.5× signal peak) • 100 Qubits: Target state remains mode output (Signal-to-Noise > 1) | <br>
+During execution, qubits participate briefly in the dense convolutional kernel before entering long idle windows. These idle periods were protected against decoherence and crosstalk using Q-CTRL’s robust, crosstalk-suppressing dynamical decoupling sequences integrated with ‘as late as possible’ (ALAP) gate scheduling. In experimental benchmarks across 20 randomly sampled target frequencies, the Convolutional QFT achieved a readout-mitigated process fidelity of 11.4% at 50 qubits and 1.8% at 80 qubits. Up to 100 qubits, the correct integer frequency bitstring consistently emerged as the highest-probability measurement outcome above background noise.<br>
+Review the research preprint on arXiv (Convolutional QFT) here.<br>
+September 23, 2026</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://medium.com/qiskit/a-new-chapter-for-qiskit-algorithms-and-applications-5baff541e826?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/q-ctrl-executes-100-qubit-quantum-fourier-transform-using-convolutional-compilation-strategy/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="2c9cd317131160fe.html" class="prev-next">&larr; A Christmas Closed-Timelike-Curve: Could the story of Scrooge actually happen in a quantum universe?</a>
+  <a href="a68ee9043465832a.html" class="prev-next">&larr; Independent Cross-Stack Benchmark Evaluates Commercial Quantum Error Management on 156-Qubit IBM Heron Hardware</a>
   
   
-  <a href="06e08f724bb318f8.html" class="prev-next">Quantum Glasses, a Qiskit Ecosystem package for Bloch sphere simulations &rarr;</a>
+  <a href="1e2a7a9e90193494.html" class="prev-next">German Government Selects QUDORA-Led Consortium for €122 Million ($138.8 USD) NFQC-1k Trapped-Ion Quantum Computer Project &rarr;</a>
   
 </div>
 
