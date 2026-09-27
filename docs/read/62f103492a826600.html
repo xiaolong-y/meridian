@@ -137,20 +137,25 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>11h</span>
+      <span>17h</span>
       <span class="article-category">quantum</span>
-      <span>67 words</span>
-      <span>1 min read</span>
+      <span>365 words</span>
+      <span>2 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>ETSI&#39;s new report, TR 104 171, addresses vulnerabilities in Quantum Random Number Generators (QRNGs) due to practical hardware limitations. It provides guidelines across the QRNG lifecycle, including the Entropy Zero Trust (EZT) framework to mitigate side-channel attacks. The report also sets priorities for future standardization, such as API command sets and integration with post-quantum cryptography. The post ETSI Identifies Technical Limitations and Implementation Vulnerabilities in Quantum R</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/etsi-identifies-technical-limitations-and-implementation-vulnerabilities-in-quantum-random-number-generators-etsi-tr-104-171/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>The European Telecommunications Standards Institute (ETSI) Technical Committee Cyber Security (TC CYBER) has released a Technical Report, ETSI TR 104 171 (Implementation Guidelines for Quantum Random Number Generators). The document addresses a key vulnerability in quantum cybersecurity: while quantum physical processes are non-deterministic, practical hardware implementations, detector dead times, thermal noise, and side-channel leakage can reintroduce predictability into Quantum Random Number Generator (QRNG) outputs if not properly audited and conditioned.<br>
+The report establishes guidelines spanning the complete QRNG lifecycle, including physical modeling of the Quantum Entropy Source (QES), real-time conditional min-entropy estimation, randomness extraction (using seeded Toeplitz hashing or multi-source extractors), operational health monitoring, and physical tamper resistance. To mitigate side-channel vectors—such as optical injection “blinding” attacks, RF electromagnetic interference, and power-analysis probing—ETSI introduces the Entropy Zero Trust (EZT) framework. Under EZT, every stage of the entropy pipeline is treated as untrusted and subject to continuous hardware verification, runtime attestation, and cryptographic signing.<br>
+| [ ETSI TR 104 171 Framework & Classification Matrix ] |  |  | <br>
+|---|---|---|<br>
+| Standardization Domain | Core Requirement & Engineering Controls | Classification & Metrics | <br>
+| Entropy Zero Trust (EZT) | • Layered verification across QES, hardware RoT, drivers, and API • Hardware Root of Trust (TPM/eFuse) for boot attestation | • TL-0: Raw unverified source • TL-2: EZT-compliant platform • TL-3: Critical/military grade | <br>
+| Side-Channel Defense | • Optical isolators against photodetector blinding • EMI/magnetic shielding and voltage regulation monitoring | • Active power/voltage fault monitoring • Continuous statistical sampling (≥1 Hz) | <br>
+| SWaP & Performance | • Common command interface & op-codes for control plane • PQC + QRNG integration architectures | • Throughput: Class I (≤100k) to Class V (≥1G) • Power: Class A (≤100mW) to Class D (2-10W) | <br>
+Chaired by Mark Pecen (ETSI TC Quantum), the committee outlined priorities for subsequent normative Technical Specifications, including standardized API command sets, logging protocols, Common Criteria/FIPS 140-3 alignment, and integration models pairing certified QRNG entropy pools with post-quantum cryptography (PQC) standards such as ML-KEM and ML-DSA.<br>
+Review the press release via ETSI Newsroom here and download the complete publication via the ETSI TR 104 171 Standard Document PDF here.</p>
   </div>
   
 </article>
@@ -173,7 +178,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-09-26 20:38 UTC
+  Generated 2026-09-27 03:22 UTC
 </div>
 
 <script type="module">
