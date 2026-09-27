@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcus theory and Marcus practice — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="abcdfe6532909136.html" title="Quantum Computers Need More than “Magic”">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Marcus theory and Marcus practice</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Frontiers (Caltech)</span>
+      <span>Nicole Yunger Halpern</span>
+      <span>1h</span>
+      <span class="article-category">quantum</span>
+      <span>869 words</span>
+      <span>5 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Rudy Marcus was 91 years old when I took a course from him. His age was, arguably, not his most remarkable quality.<br>
+The course took place during the second spring of my PhD. I was completing not only the academic year, but also my course requirements. Why not, I figured, indulge in traditional statistical mechanics? Statistical mechanics neighbors, and partially overlaps with, thermodynamics. Modern approaches to statistical mechanics include fancy toolkits imparted in physics courses: the renormalization-group method; Ginzburg–Landau theory; and the latter theory’s successor, topological order. I craved a more traditional approach, as won’t surprise readers of this blog. So I ditched the physics course list and signed up for Chemistry 166.<br>
+Rudy didn’t disappoint. He began the course with a tradition passed down from a founder of thermodynamics: Boltzmann’s H theorem. The theorem amounts to the first argument ever published for the second law of thermodynamics: every (sufficiently large) closed, isolated system’s entropy increases or remains constant; it doesn’t decrease. Rederiving Boltzmann’s H theorem, I felt as I would while holding a lace collar worn by Queen Elizabeth I: as though I were touching history.<br>
+Rudy proceeded through more of the greatest hits in statistical mechanics. For instance, the Fokker–Planck and Langevin equations describe random processes. Examples include the subject of one of Einstein’s most famous papers: the motion of a pollen grain suspended in a liquid and buffeted by the liquid’s molecules. Chemistry 166 provided much of the bread and butter, meat and potatoes, and even tofu and edamame of a thermodynamicist’s education.<br>
+Rudy advanced step by step, rederiving every result in class. He recommended a textbook; but I refer to my lecture notes, rather than to the text, to refresh my memory about course topics nowadays. When I encounter complex integrals (a certain type of calculus) in statistical mechanics, I think back to Rudy’s treatment of them. The course also crystallized my understanding of the fluctuation–dissipation theorem, which describes systems perturbed slightly out of equilibrium; examples include a magnet subjected to a weak magnetic field.1 For the course’s final project, I studied quantum master equations—which featured in a Quantum Frontiers post afterward.<br>
+No less than his explanations of science, Rudy’s enthusiasm for science impressed itself upon me. Again, he taught Chemistry 166 at age 91. He continued to collaborate on research. Whenever I saw him, even after the course ended, he asked for news about quantum information theory—which he didn’t work on.<br>
+Two and a half years after the course, Rudy gave a speech at a dinner in honor of a couple’s engagement. The groom was pursuing a PhD in applied physics, and the bride worked as an engineer. The groom asked if Rudy had advice for young scientists. Rudy responded immediately: plenty of science remains to be done, so keep exploring.<br>
+During his speech, Rudy described his upbringing in Montreal. His high school had produced a “who’s who” of Canadians, in his words—and not because the school demanded high tuitions or offered tutors and social connections. Discrimination pushed Jewish working-class children out of other schools and into Baron Byng, where some students worked hard enough to thrive. Alumni include artists; judges; physicists; William Shatner, who played Captain Kirk in the original Star Trek series…and Rudy Marcus.<br>
+Which leads me to the quality arguably more remarkable than Rudy’s teaching Chemistry 166 at age 91: he’d won a Nobel Prize in chemistry. Unlike most chemists, Rudy worked as a theorist, rather than an experimentalist. He developed a framework now called Marcus theory. It predicts the rate at which electrons hop between molecules. I can’t tell you much more about Marcus theory because I don’t know much more about it: Rudy had enough humility that, to my memory, he mentioned his theory only once in class, in passing.<br>
+Although I know little about Marcus theory, I’ve seen much of Marcus practice. In 2022, I emailed Rudy to ask where a holiday card could reach him. The pandemic had isolated enough people that I’d determined to reach out to more acquaintances. Rudy replied, “I have been working at home, meeting twice a week on zoom with my now small research group.” He was 98 years old. His curiosity, learning, mentoring, and exploring continued.<br>
+Rudy passed away this July, five days before his 103rd birthday. I hope to learn Marcus theory someday. But I’d be even more grateful to undertake Marcus practice for even a decent fraction of the time for which he did.<br>
+1How rapidly does the system respond to the perturbation? This nonequilibrium response depends on a correlation function evaluated on an equilibrium state, according to the fluctuation–dissipation theorem. To understand why, imagine preparing the system in a thermal state, perturbing the system at an early time, and measuring the system later. What information can you extract about the perturbation? A two-time correlation function encodes this information. Imagine Fourier-transforming a two-time correlation function. The Fourier transform is proportional to a second derivative of a free energy, according to the fluctuation–dissipation theorem. (The second derivative should sound plausible because it depends on a two-time correlation function.) Second derivatives of free energies equal response functions, such as the magnetic susceptibility. Therefore, a nonequilibrium response depends on an equilibrium correlator.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumfrontiers.com/2026/09/27/marcus-theory-and-marcus-practice/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="abcdfe6532909136.html" class="prev-next">Quantum Computers Need More than “Magic” &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-09-27 20:49 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
