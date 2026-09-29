@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast with Steve Gibson, President of Americas at JIJ — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="22c8a9fb76d1ea25.html" title="My “Knowmads” podcast on science and AI">&larr; prev</a>
+    <a href="0bfc021d3588d345.html" title="Quobly and CEA-Leti Strengthen Collaboration via FAMES Pilot Line to Scale 300 mm Silicon Spin-Qubit Platform">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Podcast with Steve Gibson, President of Americas at JIJ</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Doug Finke</span>
+      <span>17h</span>
+      <span class="article-category">quantum</span>
+      <span>3331 words</span>
+      <span>17 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Yuval Boger’s guest is Steve Gibson, President of Americas at JIJ, a Japan-based optimization company whose founders came from Professor Nishimori’s lab. Steve shared how JIJ spans the spectrum from classical to quantum-inspired to quantum computing, and discussed how the company is now using AI to make its optimization tools more accessible to customers who lack in-house quantum expertise. We explored the state of quantum readiness, and how organizations should start preparing now for the business and technical changes quantum will require. Steve also outlined his mission to bring JIJ’s capabilities and deep research talent from Japan to the US and European markets, provided advice for US executives doing business with Japan, and much more.<br>
+Key takeaways<br>
+- Steve Gibson says about 80% of JIJ’s commercial optimization engagements run on classical or quantum-inspired solvers, with only 20% actually using quantum hardware, reflecting where the technology currently delivers practical value.<br>
+- In a UK national program test, JIJ decomposed a problem to run partly on a quantum photonic system; the quantum-assisted approach wasn’t faster than the best classical method but produced a slightly better answer, which Gibson uses as his working definition of ‘advantage’ today.<br>
+- Gibson believes quantum computing’s arrival is inevitable but the timing is still uncertain after being ‘five years away’ for the six years he’s been in the industry; he notes hardware providers are converging around a 2029-2031 timeframe and argues organizations should start preparing data, legal, and compliance readiness now, not just run technical pilots.<br>
+- JIJ is building AI tools to translate customer problems into optimization terms without requiring in-house quantum expertise, a shift Gibson hopes moves the company from a services-heavy model toward a more scalable software product model.<br>
+Transcript<br>
+Yuval Boger: Hey, Steve. Thank you for joining me today.<br>
+Steve Gibson: Hey, good morning. It’s a pleasure to be here.<br>
+Yuval: So who are you and what do you do?<br>
+Steve: So my name’s Steve Gibson. I am the president of Americas at JIJ. JIJ is primarily an optimization company, but we also do some quantum machine learning applications and research, and have built a stack that spreads across classical, quantum, and quantum-inspired.<br>
+I recently joined the company about a month and a half ago, and my role is to help bring those technologies and expertise out of Japan, which is where our HQ is, into the US, and also support the EU and then kind of global sales operations.<br>
+Yuval: Does JIJ have any customers today?<br>
+Steve: Yeah, so we have a number of customers. The majority is in the Japanese region at the moment. We’ve recently done some announcements with things like Kobelco and a few others in the manufacturing logistics space. We’ve done some work in Europe with the energy sector and finance sector. A lot of it’s in the optimization space, but then, as I said, we also have a dedicated research team that’s looking to push the boundaries on the quantum side.<br>
+Yuval: I personally know JIJ because JIJ is part of the QuEra Quantum Alliance that I lead, but it sounds like it’s one of the best-kept secrets in quantum.<br>
+Steve: I will be honest with you. When I first started, before I looked under the hood, I knew about JIJ. I’ve known them for four years, and I know they’ve got an incredible team there. But the more I’m learning, the more I’m discovering. They have done a lot and are very well known in the Japanese region, but they’re not as well known in the US and EU region. And so that’s what I’m hoping to do — to help people recognize the name and find out about the work that they’ve done.<br>
+Yuval: You mentioned optimization, and I think that in optimization there’s quantum and there’s quantum-inspired, and maybe some degrees in between. If you look at the majority of the projects that JIJ has done, where do they fall on that spectrum?<br>
+Steve: Yeah, so it varies. We’ve got some projects that sit purely in the classical space. So we cover the spectrum from classical to quantum-inspired to quantum. Quantum-inspired is obviously running on classical infrastructure using quantum algorithms. And so we have our own solver that sits in the quantum-inspired space. I would say around about 80% of the more commercial engagements end up sitting in the classical or quantum-inspired space, and then 20% is in that more traditional quantum space, if that makes sense.<br>
+Yuval: Would you say that these projects are early proof of concepts just to show that quantum or quantum-inspired kind of works? Or do any of them provide advantage over purely classical solvers?<br>
+Steve: So I see where you’re going with the questioning, no worries. I would say it depends on your definition of advantage. The way I look at advantage is, have I improved something versus what is being done today? And so in a lot of cases, the answer is yes, we’ve definitely seen some improvements. We published a paper through some of the work we did with a UK national program on getting a quantum photonic system to slightly outperform what was a classical implementation.<br>
+It wasn’t faster, but it got a better overall answer. And so as the technology matures and becomes faster or more scalable, you’re then able to plug in those more performant systems into those same problems. So really what we focus on is, can we solve your problem today, and can we also set you up as the technology changes over time?<br>
+So not making any claims of quantum advantage, but I think there are advantages that you can have over existing systems and be able to plug in both technologies at the same time.<br>
+Yuval: Is there an area of optimization that you feel is particularly useful for quantum these days? I mean, optimization is such a big topic.<br>
+Steve: It is. And so the way I look at it is there are some problems, particularly in the combinatorial space, where classical computers reach limits in what they can do. And so then it all comes down to formulation. But I would say that’s the same across all optimization spaces. If you try and attack different problems with exactly the same types of solutions, you’re not going to get the best answer. You’ve got to really look at every single problem in a different way, and look at whether you’re solving the full problem.<br>
+Am I decomposing it down into sub-problems? What’s the best way to get to the best answer? When you do really huge, complex problems, you can’t just throw everything even at the classical system. You still have to break it down. And so it’s not just the computer aspect, it’s also the software engineering side. It’s understanding the constraints associated with it. And so I think it varies is probably the best answer.<br>
+Yuval: Before JIJ, you were maybe, what, six years at Strangeworks?<br>
+Steve: Yeah, I think I’ve just come up to what would’ve been my six-year anniversary at Strangeworks, yeah.<br>
+Yuval: What have you learned about quantum during that time, and how does it apply to what you do at JIJ?<br>
+Steve: So my background, originally aerospace engineer, became entrepreneur in fintech, and then data science. I’m not a physicist by training, and I try and make sure that’s clear when I have conversations with folks, and make sure I bring in — if someone wants to get really technical and really detailed, I bring in a physicist for those conversations.<br>
+I think some of the things that I’ve learned the most from some of the incredible people that I’ve worked with over time is it’s not about going deep into the math and deep into the understanding, but bringing it up and saying, “How do I apply some of these techniques to some of the problems that are there today?”<br>
+My aerospace background — obviously quantum has so many different applications in the aerospace sector, but it doesn’t matter what industry you look at, there’s areas that this technology is going to impact and affect. It’s all about identifying where you can apply these technologies in the different industries.<br>
+And so the biggest thing I think I’ve learned over my time is, when you’re having a conversation with someone, how do you look at where can I apply these technologies depending on the given customer and the given industry?<br>
+Yuval: And as it relates to quantum readiness, I’m sure that many companies do pilots. If you met a new customer today and they wanted your honest assessment of, “Is quantum five years away? Is it tomorrow morning? How should I prepare for it?” What would you tell them?<br>
+Steve: What I would say is, definitely you should be preparing for it. No different than the ChatGPT moment happened in AI, and those companies that were not ready are still behind the curve, right? And so you want to be ahead of the technology curve no matter what you’re doing.<br>
+As far as quantum readiness, when is it going to be? It’s very hard to say, and I’ve been in it for six years, and it’s been five years away for those six years, right? So in theory, it should be here.<br>
+What I will say is when I started, there were only a few machines. A couple became public. I saw the launch of Amazon Braket, which is a great system that allows early access. And so the commercial availability of the technology has changed so much in the last six years, and it’s very easy to be able to access those things.<br>
+That being said, each of the computers that are online — and now there’s a lot of them — they are all kind of coalescing around the same 2029 through 2031 timeframe, and a lot of them seem to be hitting the milestones pretty well.<br>
+And so I would say it is an inevitability. It’s not a question of if, but when. And I think we have a good idea of that when. And it takes a long time for organizations to change the way they work. How do you manage the data compliance, getting legal on board? It’s not just the technical aspects, but it’s also the actual business readiness.<br>
+I think you’ve got to get your whole organization wrapping your head around the new data structures, the new data transfers, things like that. You aren’t just able to plug and play these quantum computers. You have to think about them differently. And so from a readiness perspective, that takes time, and it can take years in some cases, depending on the organization and the teams that you have.<br>
+So yeah, I think you have to start preparing for it. It’s going to happen. Hopefully it happens around that time because I will still be in this industry, and I’m looking forward to when that happens.<br>
+Yuval: How does a project with JIJ look? How long, or what are the key stages?<br>
+Steve: Yeah, so discovery is the main key — you start there trying to understand what is it you’re trying to solve or trying to improve. And the way I approach it is with honesty. I want to make sure that if you come to us, and it’s not a fit or the scale of your problem doesn’t match what you’re trying to do, I’m going to be honest. I’m going to have that conversation with you and say, “Maybe our technology will be able to change what you’re doing in the future, but right now, this is the scale that it’s at.” Or there may be other areas of the business that are more applicable and earlier on. Starting with discovery and helping them understand what that technology is all about is where I start.<br>
+And then POC into more or longer-term engagements. We have a new approach, which is a center of excellence, and we have a couple of customers that are going in that direction, which is you bring both education and application to try and completely upskill your team. Not every customer wants to do that though. Some customers just want the answer — does it work or does it not? And so depending on the type of customer depends on the type of engagement. There is no one shoe fits all, if that makes sense.<br>
+Yuval: Do you see JIJ as a products company or a services consulting company?<br>
+Steve: So it started out, I would say, more as a services company based on the work that we’ve done. That being said, we have a number of software technologies out there. Some are open source and actually have a lot of end users and some people submitting to it. We then have our closed-source software. At the moment, we are transitioning those, thanks to the joys that AI has brought.<br>
+One of the biggest barriers for most customers is approachability. How do I get started if I don’t understand the technology? And so we’re combining what we’ve got now with AI to make it easier for organizations to explain their problems in terms that are relevant to them. Previously, you had to have an engineer in every single domain that understood the absolute details so that they could do that translation between common terms.<br>
+And so now by doing that, we can effectively put the control more in the hands of the customers and go more towards that product direction. We are a software company. Our goal is to be a software company, but from an application standpoint and customer perspective, most customers don’t necessarily have expertise in-house, and so they can’t use that software on their own.<br>
+My hope is that AI allows us to make that transition and be more focused on the products and the services that we’re able to provide, rather than having to do the education. But we’ll never shy away from it because it also provides us with value. We take a lot of the knowledge from the customers and the approaches that we take — not customer data, just the knowledge and approach — and then create them into what is effectively a repository of knowledge that we can then upskill AI agents with. That’s the crux of what we’re doing right now.<br>
+Yuval: What advice can you give to US executives that want to work with Japanese companies, whether end users or technology providers?<br>
+Steve: The biggest advice I think I can give you is, just because they are 14 hours ahead doesn’t mean that they can’t understand your problems and can’t understand what it is you’re going through. Yes, it’s different cultures, but the business problems and the problems that you’re trying to solve are very similar no matter where you are in the world. We have very good experience in what we’ve done in the ecosystem that we’ve built out in Japan. And so what I would say is, let us help you and bring some of that expertise to be able to support your organization for whatever it is that you’re doing.<br>
+Yuval: Speaking of ecosystem and partnering, where do you look to grow JIJ’s partnerships? What kind of partners are you looking to add, if any?<br>
+Steve: Partnership is an important piece of this ecosystem. I spent the previous six years building up partners and relationships in the hardware space, in the systems integration space, and with the cloud providers.<br>
+From my perspective, I want to get closer to the US hardware companies and teams, and have closer collaborations on the research side. One of the great things that JIJ brings is it’s born from a number of physicists. We have over 60% of our staff who are technical. And so we’re able to do a level of research that I’ve previously never been able to do.<br>
+We can do real deep collaborations and push some of the technologies, in collaboration with the hardware partners, to see where best we can make these applications for the end users. Particularly on the hardware partner side, that’s an area that we’re looking to partner, as well as obviously the system integrators. And I have relationships with some of those already.<br>
+Yuval: One of the problems with quantum optimization, I think, is that classical optimizers are really good. Are there particular areas that you see a shortfall in the capabilities of classical optimizers that you think quantum is going to be able to solve?<br>
+Steve: Classical optimizers are good and they continue to improve. I know you’ve had folks on the show that talk about the barrier to the optimization side continuing to grow. As GPUs become more performant, it’s going to be harder and harder to prove that quantum advantage in the optimization space.<br>
+What I’d say is when you look at a quantum processor, don’t think of it as a rip and replace. You’re not going to put every single part of a problem onto a quantum processor, whether that be optimization, machine learning, whatever application it may be. Some of the approaches that you can do from a decomposition perspective — putting the more complex combinatorial pieces onto the quantum processors that then perform the unique approaches in that quantum space — is where I think you will see some of that advantage. That’s some of the work that we did with that UK national program.<br>
+It was more about decomposition of the problem to fit onto a quantum computer. And when we actually took that same approach with the best in class from a classical standpoint, the classical worked better doing it monolithically than it did on the decomposition. But the decomposition approach ended up slightly eking out on performance.<br>
+So everything’s going to be a case-by-case basis, and that’s why I always say don’t just throw one tool at it — look at all the tools in your toolbox and apply them accordingly. Benchmarking and understanding matter, because it’s not going to be that quantum works for everything and every problem. It’s going to remain as a co-processor. No different than we still use CPUs even though GPUs are around. All of these technologies come together to further everything that we do in society.<br>
+Yuval: The name JIJ, where does that come from? How do I spell it?<br>
+Steve: Yeah. So it is just the letters — capital J, capital I, capital J. We previously had it with a lowercase i, lowercase j, but people were unsure how to pronounce it. It comes from the Ising model. Our two founders were Yu Yamashiro and Kohji Nishimura. They came from Professor Nishimori’s lab, who’s kind of the father of annealing. And so in true scientific company culture, we embraced the name from the Ising model. It doesn’t have a Q in it, which is different than a lot of quantum companies, so it makes it different, but you still have some explaining to do on who JIJ are.<br>
+Yuval: And last, hypothetical — if you could have dinner with one of the quantum greats, dead or alive, who would that be?<br>
+Steve: Honestly, and this one I can actually hopefully do at one point, is Professor Nishimori. I work in a company full of physicists, and physicists think very differently than the business side. Being able to talk to him and get some stories about some of the team that we have, but also be able to understand a little bit more about what makes him tick — I mean, it will help me personally. I think that would be a great opportunity. Also, I hear he’s a very wonderful guy to have dinner with.<br>
+Yuval: Steve, thank you for joining me, and good luck in your new venture.<br>
+Steve: Thank you very much. I appreciate the time.<br>
+Yuval Boger is the Chief Commercial Officer of QuEra Computing.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/podcast-with-steve-gibson-president-of-americas-at-jij/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="22c8a9fb76d1ea25.html" class="prev-next">&larr; My “Knowmads” podcast on science and AI</a>
+  
+  
+  <a href="0bfc021d3588d345.html" class="prev-next">Quobly and CEA-Leti Strengthen Collaboration via FAMES Pilot Line to Scale 300 mm Silicon Spin-Qubit Platform &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-09-29 12:06 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
