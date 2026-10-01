@@ -137,20 +137,28 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>19h</span>
+      <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>70 words</span>
-      <span>1 min read</span>
+      <span>667 words</span>
+      <span>4 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Cloudflare is becoming a public Certificate Authority (CA) to secure the web against quantum threats by introducing an open, automated, and high-scale issuance service. This initiative will provide both classical TLS certificates and next-generation Merkle Tree Certificates (MTCs) to prevent widespread web outages and combat &#34;harvest now, decrypt later&#34; adversary campaigns. By acquiring GlobalSign&#39;s Root CA key material and applying for inclusion in major root programs, Cloudflare aims to establ</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/cloudflare-launches-public-certificate-authority-to-secure-the-web-against-quantum-threats/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Connectivity cloud company Cloudflare (NYSE: NET) has announced its intention to become a public Certificate Authority (CA), introducing an open, automated, and high-scale issuance service designed to transition the Web Public Key Infrastructure (Web PKI) into the post-quantum era. Announced during the company’s annual Birthday Week, the initiative establishes an independent, globally trusted certificate provider capable of issuing both classical TLS certificates and next-generation Merkle Tree Certificates (MTCs) to prevent widespread web outage risks and combat “harvest now, decrypt later” adversary campaigns.<br>
+To ensure day-one device reach across legacy smartphones, operating systems, and unpatched embedded hardware, Cloudflare has signed a definitive agreement to acquire established, publicly trusted Root CA key material from GlobalSign (trusted across browsers since 2012). Concurrently, Cloudflare has formally submitted applications for inclusion in the official root programs of Google Chrome, Apple, Microsoft, and Mozilla. By combining GlobalSign’s legacy root coverage with new post-quantum root store applications, Cloudflare establishes immediate backward compatibility while building standing under emerging browser policies, such as Chrome’s recently announced Quantum-Resistant Root Program.<br>
+The core structural innovation of Cloudflare’s public CA lies in solving the Post-Quantum Signature Scaling Problem. Standard post-quantum signature algorithms (such as ML-DSA or SLH-DSA) produce signatures up to 40× larger than classical RSA or ECDSA keys, adding massive network overhead that threatens to degrade TLS handshake speeds and flood public Certificate Transparency (CT) logs. Cloudflare addresses this via Merkle Tree Certificates (MTCs)—a standards-based specification co-authored by Cloudflare within the IETF PLANTS working group.<br>
+| [ Cloudflare Post-Quantum Public CA Architecture & System Capabilities ] |  |  | <br>
+|---|---|---|<br>
+| Infrastructure Layer | Core Protocol & Technical Specifications | Operational Impact & Web PKI Advantages | <br>
+| • Post-Quantum Issuance | • Merkle Tree Certificates (MTCs) • Batching certificates into append-only Merkle trees • Compact inclusion proofs (<1 kB) replacing full PQ signatures | • Eliminates 40× post-quantum payload bloat • Landmark-relative certificates deliver a 9% TLS handshake speedup over classical chains | <br>
+| • Automated Lifecycle | • ACME First (fork of Boulder framework) • Mandatory RFC 9773 (ARI) renewal signaling | • Zero-downtime background certificate rotations • Enables instant mass revocations during security incidents without subscriber site outages | <br>
+| • Transparency & Trust | • “Issue by Logging” Architecture • Independent Mirroring Cosigners (Rust-based Azul log) • Reproducible software builds & HSM attestations | • Merges certificate issuance with CT logging as a first-party requirement • Live public dashboard replaces static, point-in-time point audits | <br>
+| • Root Material & Reach | • Acquired GlobalSign Root CA key material • Pending Chrome, Apple, Microsoft, & Mozilla root inclusions | • Ubiquitous trust across legacy clients (since 2012) and future quantum-resistant root stores | <br>
+MTCs redesign the PKI paradigm from “log what you issue” to “issue by logging.” Instead of signing every certificate individually with heavy post-quantum keys, the CA batches certificate requests into an append-only Merkle tree, signing only the tree head checkpoint. During a TLS handshake, the web server presents a lightweight inclusion proof (a short sequence of cryptographic hashes) linking its public key to a trusted landmark subtree distributed out-of-band to browsers. In production trials conducted with Chrome Beta 146 across Cloudflare domains, landmark-relative MTCs demonstrated a 9% net performance speedup at the median over classical signature chains while maintaining cryptographic auditability.<br>
+Operating as its own “Customer Zero,” Cloudflare will route its global edge network—terminating TLS for over 20% of global web traffic—through the new CA stack. Classical certificate issuance will begin upon completion of browser root approval processes, while production Merkle Tree Certificate issuance is scheduled for Q1 2027. The acquisition of GlobalSign’s Root CA key material is expected to close within two months, establishing an independent, post-quantum safety net for the global Internet.<br>
+Review the primary release via Cloudflare Press Room here, inspect technical engineering details on the Cloudflare CA Architecture Blog here, examine Merkle Tree Certificate specifications on Cloudflare MTC Deep-Dive here, and explore enterprise migration pathways via Cloudflare Post-Quantum Cryptography Portal here.</p>
   </div>
   
 </article>
@@ -173,7 +181,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-10-01 03:52 UTC
+  Generated 2026-10-01 12:23 UTC
 </div>
 
 <script type="module">
