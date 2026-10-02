@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Important changes to Qiskit documentation and learning resources — Meridian Reader</title>
+  <title>ORNL Develops LuGo Algorithm on Frontier Supercomputer, Reducing Quantum Circuit Gate Counts by 95% for Computational Fluid Dynamics — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,47 +126,51 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="ca848ed189237007.html" title="Schrödinger’s cat meets Qiskit: Why do we never see cats that are both dead and alive?">&larr; prev</a>
-    <a href="b97ccd4560535286.html" title="A guide to the Qiskit circuit library">next &rarr;</a>
+    
+    <a href="45128dbe298ffd25.html" title="Patenting Quantum Computing Innovations – Part 4: Entanglement Swapping">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Important changes to Qiskit documentation and learning resources</h1>
+    <h1 class="article-title">ORNL Develops LuGo Algorithm on Frontier Supercomputer, Reducing Quantum Circuit Gate Counts by 95% for Computational Fluid Dynamics</h1>
     <div class="article-meta">
-      <span class="article-source">Qiskit Blog</span>
-      <span>Qiskit</span>
-      <span>154w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>48m</span>
       <span class="article-category">quantum</span>
-      <span>75 words</span>
-      <span>1 min read</span>
+      <span>472 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Today, we’re announcing important changes to Qiskit.org that you should be aware of. Starting on November 29, 2023, Qiskit Documentation and Qiskit educational resources will live on IBM Quantum Platform and will be removed from Qiskit.org. We will be slowly moving content over until then.Qiskit is, first and foremost, an open source programming language and technology for programming quantum computers. We remain committed to our open source community, and value the contributions they have made </p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://medium.com/qiskit/important-changes-to-qiskit-documentation-and-learning-resources-7f4e346b19ab?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Computational scientists at the Oak Ridge National Laboratory (ORNL) have introduced LuGo, an enhanced Quantum Phase Estimation (QPE) algorithmic framework designed to mitigate circuit-depth bottlenecks in quantum computational fluid dynamics (CFD). Developed using the Department of Energy’s (DOE) Frontier exascale supercomputer at the Oak Ridge Leadership Computing Facility (OLCF) and validated via the Quantum Computing User Program (QCUP), the algorithm achieves a greater than 95% reduction in total quantum gate operations required to solve fluid flow differential equations.<br>
+A primary bottleneck in applying the Harrow-Hassidim-Lloyd (HHL) quantum linear system solver to fluid dynamics—such as the Hele-Shaw flow equation governing viscous fluids between parallel plates—is the high circuit depth associated with conventional QPE encoding. Standard implementations for these fluid equations required approximately 2,000,000 logic gates, introducing severe noise and decoherence risks. LuGo restructures the hybrid workflow by shifting heavy initialization routines onto classical HPC nodes prior to quantum state mapping. By performing classical preprocessing on a single node of the 2-exaflop Frontier system, the team compressed the required quantum gate count down to 91,000 gates.<br>
+| [ ORNL LuGo Algorithm Benchmark & Execution Specifications ] |  |  | <br>
+|---|---|---|<br>
+| Technical Metric / Resource | Operational Parameters & Performance | Engineering Impact & CFD Scope | <br>
+| • Quantum Gate Compression | • Reduced from 2,000,000 to 91,000 logic gates • >95% reduction in quantum circuit depth | • Mitigates gate-induced noise and phase decoherence in QPE routines | <br>
+| • Classical Preprocessing HPC | • OLCF Frontier (2 exaflops peak, 1 node used) • NERSC Perlmutter (113 petaflops) | • Streamlines state preparation before state encoding onto quantum registers | <br>
+| • QPU Hardware Validation | • Quantinuum H-1 (Trapped-Ion) • IBM Marrakesh & Sherbrooke (Superconducting) • IQM Garnet & Sirius (Superconducting) | • Evaluated cross-platform QPE performance across trapped-ion and superconducting QPUs via QCUP | <br>
+| • Peer Review & Recognition | • Published in Future Generation Computer Systems (Vol. 178, 2026) • Awarded 2026 R&D 100 Award | • Establishes scalable pre-processing baseline for fault-tolerant linear system solvers | <br>
+The team validated LuGo across multiple commercial quantum hardware platforms provided through the DOE Quantum User Expansion for Science and Technology (QUEST) initiative. Experimental evaluations were executed on Quantinuum’s H-1 trapped-ion processor alongside IBM (Marrakesh, Sherbrooke) and IQM (Garnet, Sirius) superconducting devices. Shifting the data-transformation load to classical pre-processing provides a practical route toward executing high-dimensional fluid, aerodynamics, microfluidics, and groundwater flow simulations on early error-corrected and error-mitigated quantum processors.<br>
+Review the full laboratory release on the Oak Ridge Leadership Computing Facility Newsroom here, inspect the peer-reviewed research manuscript in Future Generation Computer Systems here, examine comprehensive academic literature via the Quantum Algorithms for CFD Review on arXiv here, and read our previous coverage on the Department of Energy’s national laboratory quantum access calls here.</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://medium.com/qiskit/important-changes-to-qiskit-documentation-and-learning-resources-7f4e346b19ab?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/ornl-develops-lugo-algorithm-on-frontier-supercomputer-reducing-quantum-circuit-gate-counts-by-95-for-computational-fluid-dynamics/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
+  <span></span>
   
-  <a href="ca848ed189237007.html" class="prev-next">&larr; Schrödinger’s cat meets Qiskit: Why do we never see cats that are both dead and alive?</a>
-  
-  
-  <a href="b97ccd4560535286.html" class="prev-next">A guide to the Qiskit circuit library &rarr;</a>
+  <a href="45128dbe298ffd25.html" class="prev-next">Patenting Quantum Computing Innovations – Part 4: Entanglement Swapping &rarr;</a>
   
 </div>
 

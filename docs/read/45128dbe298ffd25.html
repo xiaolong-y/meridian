@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patenting Quantum Computing Innovations – Part 4: Entanglement Swapping — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="d17007de1e326a66.html" title="ORNL Develops LuGo Algorithm on Frontier Supercomputer, Reducing Quantum Circuit Gate Counts by 95% for Computational Fluid Dynamics">&larr; prev</a>
+    <a href="bad8c0e4354cc0b7.html" title="How a Large IT Consulting Company Works with Quantum">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Patenting Quantum Computing Innovations – Part 4: Entanglement Swapping</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Doug Finke</span>
+      <span>9h</span>
+      <span class="article-category">quantum</span>
+      <span>730 words</span>
+      <span>4 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>By Sinan Utku<br>
+Example 3: Entanglement Swapping<br>
+Entanglement swapping is a quantum process in which two particles that have never interacted become entangled. This is achieved by performing a Bell-state measurement on one particle from each of two independent entangled pairs. The measurement projects the remaining two particles—those not directly measured—into an entangled state, conditioned on the measurement outcome.<br>
+This technique enables entanglement to be extended across larger distances by linking shorter entangled segments. While entanglement swapping itself does not transmit information, it can be combined with classical communication and quantum protocols such as teleportation to transfer quantum states over long distances, or quantum key distribution for the secure distribution of cryptographic keys. The technique forms the basis for “quantum repeaters,” which are expected to play a central role in future quantum communication networks.<br>
+A quantum repeater system that includes entanglement swapping functionality might carry out the following:<br>
+- storing a qubit of a first entangled qubit pair at a first node in the system, and storing a qubit of a second entangled qubit pair at a second node;<br>
+- carrying out at an intermediate node a Bell-state measurement on the second qubit from the first node and the second qubit from the second node, which projects the qubits stored at the first and second nodes into an entangled state; and<br>
+- classically transmitting the Bell state-measurement result from the intermediate node to the first (or second) node.<br>
+The eligibility of such an invention could be challenged on the basis that it is primarily directed to a natural law. In particular, given the centrality of the Bell state measurement in achieving entanglement swapping, a patent examiner or judicial decision maker could find that the invention merely invokes the fundamental quantum-mechanical principle that measurement of entangled systems produces correlated outcomes in accordance with Bell-state projections. A Bell-state measurement essentially implements a well-established physical process governed by the laws of quantum mechanics rather than a human-created rule. For this reason, the patent examiner or judicial decision maker could characterize the invention as being abstract based on the rationale that it merely projects a quantum system into entangled states or reveals their correlations, without the recitation of a specific, technically inventive implementation, or an improvement in an apparatus, protocol, or technological processing. The patent examiner or judicial decision maker might also underscore the risk of preemption of all practical uses of Bell-state measurements in quantum communications based on a granted patent to this invention.<br>
+The patent eligibility of the invention could also be challenged for abstractness based on the rationale that it is only directed to communication using qubits or information processing of qubits. Courts have found inventions to be abstract where they amount to the manipulation, transmission, or correlation of information.[i] The patent examiner or judicial decision maker could find that entanglement and the Bell state measurement correspond to abstract information processing steps, and that classical channel communication is conventional and routine and does not correspond to any specific technological improvement.<br>
+The applicant, on the other hand could argue that the quantum repeater system embodies specific, hardware-based improvements to a communication system, rather than merely reciting an abstract protocol. In particular, the applicant could argue that the invention improves communication over the communication channel or network by extending the effective transmission range of entanglement on which the relevant quantum communication protocol for transmitting information relies. The odds of a finding of patent eligibility could be increased by specifying hardware elements relating to the relevant quantum communication protocol that would be used together with the quantum repeater system, such as, for example, those for implementing quantum teleportation or quantum key distribution. Focusing on structural and operational improvements to the repeater hardware and network infrastructure may help in establishing that the invention is directed to a patent-eligible technological advance rather than an abstract idea or natural law.<br>
+[i] Elec. Power Grp., LLC v. Alstom S.A., 830 F.3d 1350, 1353–54 (Fed. Cir. 2016) (holding the invention ineligible where it was directed to merely “collecting information, analyzing it, and displaying certain results of the collection and analysis”.)<br>
+Sinan Utku is a Special Counsel, Covington and Burling LLP; Instructor, Bilkent University Law School. Nothing in this article should be construed as reflecting the official views, opinions, or positions of any organisation or institution with which the author is affiliated. The author writes in a personal capacity only.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/patenting-quantum-computing-innovations-part-4-entanglement-swapping/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="d17007de1e326a66.html" class="prev-next">&larr; ORNL Develops LuGo Algorithm on Frontier Supercomputer, Reducing Quantum Circuit Gate Counts by 95% for Computational Fluid Dynamics</a>
+  
+  
+  <a href="bad8c0e4354cc0b7.html" class="prev-next">How a Large IT Consulting Company Works with Quantum &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-10-02 11:51 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
