@@ -137,26 +137,20 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>1d</span>
+      <span>2d</span>
       <span class="article-category">quantum</span>
-      <span>472 words</span>
-      <span>3 min read</span>
+      <span>69 words</span>
+      <span>1 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Computational scientists at the Oak Ridge National Laboratory (ORNL) have introduced LuGo, an enhanced Quantum Phase Estimation (QPE) algorithmic framework designed to mitigate circuit-depth bottlenecks in quantum computational fluid dynamics (CFD). Developed using the Department of Energy’s (DOE) Frontier exascale supercomputer at the Oak Ridge Leadership Computing Facility (OLCF) and validated via the Quantum Computing User Program (QCUP), the algorithm achieves a greater than 95% reduction in total quantum gate operations required to solve fluid flow differential equations.<br>
-A primary bottleneck in applying the Harrow-Hassidim-Lloyd (HHL) quantum linear system solver to fluid dynamics—such as the Hele-Shaw flow equation governing viscous fluids between parallel plates—is the high circuit depth associated with conventional QPE encoding. Standard implementations for these fluid equations required approximately 2,000,000 logic gates, introducing severe noise and decoherence risks. LuGo restructures the hybrid workflow by shifting heavy initialization routines onto classical HPC nodes prior to quantum state mapping. By performing classical preprocessing on a single node of the 2-exaflop Frontier system, the team compressed the required quantum gate count down to 91,000 gates.<br>
-| [ ORNL LuGo Algorithm Benchmark & Execution Specifications ] |  |  | <br>
-|---|---|---|<br>
-| Technical Metric / Resource | Operational Parameters & Performance | Engineering Impact & CFD Scope | <br>
-| • Quantum Gate Compression | • Reduced from 2,000,000 to 91,000 logic gates • >95% reduction in quantum circuit depth | • Mitigates gate-induced noise and phase decoherence in QPE routines | <br>
-| • Classical Preprocessing HPC | • OLCF Frontier (2 exaflops peak, 1 node used) • NERSC Perlmutter (113 petaflops) | • Streamlines state preparation before state encoding onto quantum registers | <br>
-| • QPU Hardware Validation | • Quantinuum H-1 (Trapped-Ion) • IBM Marrakesh & Sherbrooke (Superconducting) • IQM Garnet & Sirius (Superconducting) | • Evaluated cross-platform QPE performance across trapped-ion and superconducting QPUs via QCUP | <br>
-| • Peer Review & Recognition | • Published in Future Generation Computer Systems (Vol. 178, 2026) • Awarded 2026 R&D 100 Award | • Establishes scalable pre-processing baseline for fault-tolerant linear system solvers | <br>
-The team validated LuGo across multiple commercial quantum hardware platforms provided through the DOE Quantum User Expansion for Science and Technology (QUEST) initiative. Experimental evaluations were executed on Quantinuum’s H-1 trapped-ion processor alongside IBM (Marrakesh, Sherbrooke) and IQM (Garnet, Sirius) superconducting devices. Shifting the data-transformation load to classical pre-processing provides a practical route toward executing high-dimensional fluid, aerodynamics, microfluidics, and groundwater flow simulations on early error-corrected and error-mitigated quantum processors.<br>
-Review the full laboratory release on the Oak Ridge Leadership Computing Facility Newsroom here, inspect the peer-reviewed research manuscript in Future Generation Computer Systems here, examine comprehensive academic literature via the Quantum Algorithms for CFD Review on arXiv here, and read our previous coverage on the Department of Energy’s national laboratory quantum access calls here.</p>
+    <p>Scientists at Oak Ridge National Laboratory (ORNL) developed LuGo, an algorithm that significantly reduces the number of quantum gate operations needed for computational fluid dynamics (CFD) by over 95%. This was achieved by using classical supercomputers like Frontier for heavy initialization routines before quantum processing, cutting down 2,000,000 logic gates to 91,000. LuGo was validated on various quantum hardware platforms and is a step towards practical high-dimensional fluid simulations</p>
+  </div>
+  <div class="fallback">
+    Full article extraction unavailable.
+    <a href="https://quantumcomputingreport.com/ornl-develops-lugo-algorithm-on-frontier-supercomputer-reducing-quantum-circuit-gate-counts-by-95-for-computational-fluid-dynamics/" target="_blank" rel="noopener">Read on original site &rarr;</a>
   </div>
   
 </article>
@@ -179,7 +173,7 @@ Review the full laboratory release on the Oak Ridge Leadership Computing Facilit
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-10-04 04:02 UTC
+  Generated 2026-10-04 16:25 UTC
 </div>
 
 <script type="module">
