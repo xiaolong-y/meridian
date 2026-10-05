@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My new course at UT Austin: AI Alignment Theory — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="fa1f23e09fe187c8.html" title="Who’s News: Strategic Appointments at Quantum eMotion, Pasqal, Royal Bank of Canada, and 01 Quantum Inc.">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">My new course at UT Austin: AI Alignment Theory</h1>
+    <div class="article-meta">
+      <span class="article-source">Shtetl-Optimized</span>
+      <span>Scott</span>
+      <span>5h</span>
+      <span class="article-category">quantum</span>
+      <span>2630 words</span>
+      <span>14 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>My new course at UT Austin: AI Alignment Theory<br>
+This semester, I’ve been teaching a brand-new course, entitled CS395T AI Alignment Theory. Here’s the course description:<br>
+The astounding progress of AI over the past decade has been accompanied by a rising fear: do we really understand how to align and control powerful AI systems—how to get them reliably to do what we wanted, or would want them to do on reflection, rather than merely what we said? If we succeed at building general-purpose superhuman intelligences along the current paradigm, should we expect that development to go well for humanity? Can we modify the design, training, monitoring, or scaffolding of those intelligences to help ensure that it goes well? While there’s been a great deal of recent empirical work touching on these questions, this course will concentrate mainly on theoretical and mathematical foundations. As a warning, the theoretical foundations of AI alignment have not yet gelled into any one coherent body of results accepted as canonical by the field. Nevertheless, in this course, we’ll read and debate many of the conceptual and mathematical works that have been most influential in the AI alignment field, from both before and during the current LLM revolution. Student presentations, reports, and projects will play a central role.<br>
+I vividly remember encountering Eliezer Yudkowsky and his Sequences 20 years ago. I remember thinking: even if these people talk and act like crazy cultists, still, let me bend over backwards to be epistemically virtuous, and entertain their ideas on their merits, as very few academics would. Even if, of course, I ultimately end up rejecting the ideas, on the simple ground that powerful AI is such an absurdly remote prospect that it’s almost impossible to say anything useful about it today, outside the realm of speculative fiction.<br>
+For my failure to see what was coming, it seems like an appropriate punishment that I’m now, in 2026, effectively teaching a course on Yudkowsky Studies. And it’s the most important course I can teach.<br>
+Well, for some definition of “teach.” The thing about AI alignment is that there’s no textbook (though apparently ILIAD is working on one), no core of nontrivial theorems considered canonical by the field, no real body of mathematical theory at all. This makes it extremely different from the courses I’m used to teaching, like Quantum Information Science or Computability and Complexity.<br>
+So we’ve been running the course as a discussion seminar. Every session, a “rapporteur” presents an AI alignment research paper or other reading; then I and others ask questions and discuss. Some of the readings (like Omohundro on the “basic AI drives,” or Hadfield-Menell et al. on the off-switch game) predate the current LLM revolution, while others (like the METR report on the HuggingFace incident or Dario Amodei’s “We Must Pace the Frontier”) are so timely that they were only released while the course was underway. Most are somewhere in between.<br>
+I expected to have to make a case to students about why AI alignment is a pressing concern, why it’s no longer science fiction, etc. There was huge demand for the course, and while of course there’s a selection effect, the students who’ve shown up have been extremely engaged, sometimes criticizing the assigned papers for not taking existential risk seriously enough.<br>
+Perhaps unsurprisingly, we didn’t get that criticism about our very first assigned reading, which was Eliezer Yudkowsky’s 2022 essay AGI Ruin: A List of Lethalities—one the most canonical statements of what Eliezer believes and why that’s shorter than a book. Which brings me to the topic of the rest of this post! Our rapporteurs are not merely presenting the papers in class; they’re also submitting written reports about what the papers said, what their own thoughts were, and what were the highlights of the class discussion. And, with student permission, I’ll be sharing those reports on this blog!<br>
+So, without further ado, I present to you our first report, on Eliezer’s list of lethalities, by Tennyson Bardwell, who I thank for his work. Feel free to discuss in the comment section; some of the students might also chime in. Expect more reports here over the coming weeks.<br>
+“AGI Ruin: A List of Lethalities” by Eliezer Yudkowsky: Rapporteur Report by Tennyson Bardwell<br>
+UT Austin has a new Computer Science course this fall. Alongside familiar graduate-level classes such as Advanced Computer Networks and Convex Optimization sits CS 395T: AI Alignment Theory, taught by Scott Aaronson. This is one of a growing number of AI Alignment courses taught at academic institutions. Just as concerns over catastrophic consequences for misaligned AGI systems reach a broader public discourse, Eliezer Yudkowsky—one of the loudest voices in the field and author of the first assigned reading in Professor Aaronson’s course—is declaring the cause hopeless.<br>
+Thus, the students of AI Alignment Theory began their semester by reading a laundry list of critical problems in AI Alignment research, how failure to solve those problems will result in catastrophic consequences, and the reasons to be pessimistic about both past and future progress on these problems. The essay by Eliezer, titled AGI Ruin: A List of Lethalities and posted to his popular community-driven website LessWrong in 2022, is divided into three sections.<br>
+Section A roughly describes the magnitude of the AI Alignment problem. That is, the magnitude of the consequences for a complete failure to align an AGI system to human values before construction. It posits that AGI would quickly catch up to all human knowledge simply by learning from existing human productions (colloquially referred to as “eating the internet”) and then, nearly as quickly, begin to meaningfully surpass human knowledge. AlphaGo Zero is presented as a model both for how this might happen, and how it might be difficult to correctly predict beforehand. Many believed that AlphaGo’s success in the board game Go was chiefly attributed to its ability to learn from the extensive history of human-played games. Less than a year after AlphaGo beat the best human player, the successor system AlphaGo Zero surpassed the original AlphaGo. Unlike its predecessor, AlphaGo Zero was trained in just three days by exclusively playing against itself without seeing a single human game.<br>
+This quick ramp from AGI to super-intelligence would pose a different sort of problem than humans are generally used to dealing with. Unlike traditional problems in science and engineering, the consequence for a failed attempt might not leave room for another try. An intelligent entity with a misaligned goal would be well aware that it stands in opposition to humans, and might act deceitfully until in a position to act openly against humans without jeopardizing its own survival. Since most goals benefit from control of power and resources, it seems likely that nearly any goal-driven intelligence would have ample opportunity to be misaligned with human desires.<br>
+Section B describes reasons why, by default, any AGI that humans build using current methods is likely to be unaligned even if considerable attention is paid to the topic. This “current method” is gradient descent. That is, incremental progress with respect to some loss function which “punishes” a model for undesirable behavior. A notoriously elusive property of such trained models is the ability to generalize out of their training distributions. To train a primitive model to be aligned to humans might involve learning a great many behavioral rules. However, the sorts of rules needed to keep a drastically smarter agent in check might not always be relevant to simpler models (e.g., “do not emotionally dysregulate humans you speak with” might not be relevant to a simpler model that is less able to reliably get under the skin of humans it operates with, or which is assigned tasks in training which do not benefit from such anti-social behavior).<br>
+Eliezer focuses on the misalignment of humans with their creators (evolution or evolutionary pressures) as a critical data point for reasoning about misaligned intelligent systems. Despite being a generally slow process, evolution eventually created a runaway intelligent system (Homo sapiens) which proceeded to dominate the globe, decimate related species, and eventually (it is forecasted) effectuate population decline. That last development is arguably in opposition to the sole imperative demanded by evolution: to reproduce.<br>
+Section B also makes time for criticism of the most popular paths toward AI alignment, including interpretability (unworkable, and attempting to train on it evokes Goodhart’s law, incentivizing deceit), using multiple AIs to maintain a balance of power (it is not clear how multiple strong AIs unaligned with humanity results in better outcomes for the weak humans), and corrigibility (it seems impossible to motivate an AI system to effect outcomes without also motivating it to desire its own survival to effectuate said outcomes).<br>
+Section C describes a bleak state of affairs in which veterans in AI alignment are unsatisfied with current progress and do not have a plan to deliver tangible solutions before the advent of AGI systems. In particular, Eliezer describes recent results as showy but useless. He believes that even with additional funding, the lack of appropriate evaluation mechanisms will prevent the most effective researchers from rising to the top.<br>
+A summary of the landscape, as described by Eliezer, in the flowchart below.<br>
+Figure 1: A flow chart of (select) paths described by Eliezer in his essay. A common feature of this flow chart is that many “good states”—such as disabling a misbehaving AGI or choosing not to build an AGI—are not “final” states in the sense that they are not permanent solutions. Such a state merely represent the avoidance of a single potential disaster, rather than the emergence of a new stable world state. Hence, these nodes posses back-arrows.<br>
+Despite the bleak content, Eliezer’s colorful prose inspired a lively class discussion. Before this discussion started, a survey was taken of the class’s predictions for various outcomes of the AGI in the coming years (with the full results below in figure 2). This survey asked students for their opinion of a number of statements. Each of these individual statement, if true, would reduce concerns of catastrophic AI-driven disasters. For example, when asked “How much do you agree with the statement: Humans will choose to not build AGI” half of respondents said they strongly disagreed with high confidence (agreement = 1, confidence = 5). Students also generally disagreed with the statements:<br>
+- “AGI will not be technically feasible in our lifetime”<br>
+- “(hyper-)AGI will not make extremely obviously unethical decisions”<br>
+- “No reason is individually sufficient, but taken together they provide justification to not fear AGI”<br>
+There was a divergence in responses regarding interpretability, corrigibility, and “other” AI alignment research. In the latter two cases, a plurality of respondents (about a quarter) agreed strongly with statements that such research would defang AGI (agreement = 4, confidence=4), while most other responses express various levels of agreement with low confidence. However, when asked about the likelihood of interpretability research defanging AI, the pessimistic voices were more united. A quarter of responses still expressed the same optimism, but roughly half expressed pessimism (agreement ≤ 2) with half of those expressing at least moderate confidence (confidence ≥ 4). Based on the following discussion, this might have been caused by more familiarity with interpretability research, including first-hand experience.<br>
+The only statement with general agreement was “(hyper-)AGI will understand human intentions better than we can code it.” However, it should be noted that no statement such as “AGI will respect human desires, as it understand them” was asked on the survey.<br>
+Figure 2: Class Survey Results; conducted before a class-wide discussion. Note that students were instructed to answer confidence = 1 when they had not previously considered the statement, to answer confidence = 3 when they felt there were strong arguments on both sides, and to answer confidence = 5 when they possessed well-considered resolve.<br>
+After the survey was completed, the results were displayed as an open discussion began. Similar to recent empirical research from frontier labs, interpretability research received more airtime than in Eliezer’s article. Students disagreed first about the definition of interpretability: whether it refers to the ability to interpret a model’s behavior solely by its weights, to interpration via repeated probing of the model in a sandbox, or whether it can also refer to the modern chain-of-thought traces. Regardless of how it was defined, however, participants were either pessimistic or very pessimistic about interpretability research broadly. One student criticized common misunderstandings of chain of thought. Rather than being a verbatim copy of the models internal dialog, it is instead a superficial summary of the complete thought state and routinely produced gibberish, such as rarely used Chinese characters in the middle of otherwise English reasoning.<br>
+A popular topic was the exact shape and speed of a recursive self-improvement loop. If it takes place slowly, then what might we learn from “near misses” such as the Hugging Face incident? The number of near misses we are able to learn from before AI possesses sufficient power to prevent further iterations could depend on this curve, with some students arguing that the sheer number of humans, as well as their default robustness in the physical world compared to AI systems means that AI-driven extinction events are still a long way off. Bolstering this “slow take-off” opinion are rumors that AI already plays a major role in model development which could be interpreted as the start of this process.<br>
+Some criticized a focus on “solving ethics” as a needlessly high bar that distracts from the more mundane tasks dominating AI alignment work. In particular, the student volunteer who presented this paper (and the author of this report) included a section on “Ethical Dilemmas” in their presentation. Among arguments against focusing on abstract moral philosophy, Professor Aaronson cites Eliezer to emphasize that any alignment at all is difficult, not just in morally gray cases:<br>
+When I say that alignment is difficult, I mean that in practice, using the techniques we actually have, “please don’t disassemble literally everyone with probability roughly 1” is an overly large ask that we are not on course to get.<br>
+In response, I argue that some examination of everyday decisions with a critical lens—such as telling white lies to loved ones or consuming animal products—can help disabuse us of the notion that goodness emerges in every sufficiently intelligent agent.<br>
+One of the most interesting discussions was about the difference between state-of-the-art LLMs and the theorized AI agents long discussed in rationalist discourse. Since current LLMs “mimic the human distribution,” they come preloaded with extensive understanding of human social norms and moral behavior. This makes constitutional alignment (the current practices of using system prompts to establish ground rules) extremely effective. This might either fundamentally change the orthogonality thesis, or provide a new tool to better approximate human judgment in complicated situations.<br>
+Of all the points made, the one I found most interesting was simply (paraphrased):<br>
+I think human-alignment is just very tractable<br>
+Here, “human-alignment” refers not to AI alignment with human values, but cooperation between different humans. More specifically, it refers to the ability for human societies to choose not to rush recklessly into larger-and-larger AI systems. In an academic course focused on the technical problem of AI alignment, this was a reminder to not completely discard policy discussions in the believe that they lack any value. After all, many destructive technologies have been previously contained by international agreements. Notable examples include nuclear weapons and engineered plagues. However, even this was a contentious topic. The main criticisms were (1) the extreme “dual-use” nature of AIs for both peaceful growth and warfare, and (2) the greater danger for AI escapes even after taking precautions to prevent it. However, in the interest of ending on an optimistic note—unlike the assigned reading—it is on this belief in human cooperation that I will leave you.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://scottaaronson.blog/?p=10125" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="fa1f23e09fe187c8.html" class="prev-next">Who’s News: Strategic Appointments at Quantum eMotion, Pasqal, Royal Bank of Canada, and 01 Quantum Inc. &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-10-05 03:47 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
