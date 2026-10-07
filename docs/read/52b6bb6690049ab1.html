@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming soon: Qiskit 1.0! — Meridian Reader</title>
+  <title>Jülich Supercomputing Centre Benchmark Evaluates Quantum Error Correction Primitives Across Quantinuum, IBM, and IQM Hardware — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,47 +126,67 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="70cb23508ea7f281.html" title="The Qiskit blog is moving!">&larr; prev</a>
-    <a href="2c9cd317131160fe.html" title="A Christmas Closed-Timelike-Curve: Could the story of Scrooge actually happen in a quantum universe?">next &rarr;</a>
+    <a href="408eed3b450db7c7.html" title="Infineon and ZuriQ Deepen Partnership to Industrialize 2D Trapped-Ion Penning Micro-Trap Chips">&larr; prev</a>
+    <a href="b5679812dc953f2e.html" title="Korea Quantum Computing (KQC) to Go Public on Nasdaq via $80 Million SPAC Merger with Charlton Aria">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Coming soon: Qiskit 1.0!</h1>
+    <h1 class="article-title">Jülich Supercomputing Centre Benchmark Evaluates Quantum Error Correction Primitives Across Quantinuum, IBM, and IQM Hardware</h1>
     <div class="article-meta">
-      <span class="article-source">Qiskit Blog</span>
-      <span>Qiskit</span>
-      <span>146w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>7h</span>
       <span class="article-category">quantum</span>
-      <span>77 words</span>
-      <span>1 min read</span>
+      <span>420 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>By Abby Mitchell, Jake Lishman, Luciano Bello, Matthew Treinish &amp;amp; Blake JohnsonQiskit 1.0 will be released in February 2024 🎉This is a huge milestone, the culmination of six years of open-source efforts, all made possible by the continued enthusiasm of thousands of users and the ongoing support of hundreds of contributors.In this article you’ll find the following:What this upcoming major version means for usersHow to test out 1.0 functionality before the stable releaseHow to upgrade to Qiski</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://medium.com/qiskit/coming-soon-qiskit-1-0-a8d59c3533a4?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>A benchmark study published by researchers at Germany’s Jülich Supercomputing Centre (JSC) has evaluated key Quantum Error Correction (QEC) primitives—including mid-circuit measurement (MCM), qubit reset, dynamic feed-forward control, and spectator idling—across ten commercial quantum processing units (QPUs) from Quantinuum, IBM, and IQM.<br>
+The study, titled “Evaluating the performance of QEC primitives on quantum processors at large width and depth“ (arXiv:2610.05928), introduces a low-sampling algorithmic benchmark utilizing a Linear-Ramp Quantum Approximate Optimization Algorithm (LR-QAOA) framework. By mapping the interaction and check structures of distance-scaled surface codes, triangular color codes, and bivariate-bicycle quantum Low-Density Parity-Check (qLDPC) codes directly into the algorithm, the researchers measured effective depolarizing error rates (λeff) accumulated during repeated syndrome-extraction rounds.<br>
+[ Jülich Supercomputing Centre QEC Primitive Benchmark Findings ]<br>
+QPU Platform / Vendor<br>
+MCM Overhead & Error Rate (λeff)<br>
+Tested Code Structures & Scale<br>
+• Quantinuum (Helios-1, H2-1)<br>
+• MCM error contribution comparable to two-qubit gate error rates (λeff ~0.22% to 0.49%)<br>
+• Color codes up to d=11 (91 data qubits) • Surface codes up to d=9 (81 data qubits) • qLDPC BB48 (48 data qubits, 44 MCMs/layer)<br>
+• IBM Quantum (Heron & Eagle QPUs)<br>
+• Generational gains on Heron (ibm_boston); MCM error rate remains ~10x baseline two-qubit gates (λeff ~1.1% to 3.2%)<br>
+• Surface codes up to d=5 (25 data qubits) • Validated against logical memory runs on ibm_phoenix (ρs ~0.83 to 0.88)<br>
+• IQM Quantum (Emerald, Garnet)<br>
+• Signal decay accelerated beyond 2-data-qubit chains due to conditional control and routing constraints<br>
+• 1D MCM chains and minimal triplet configurations<br>
+According to the findings, Quantinuum’s trapped-ion systems demonstrated the strongest overall performance across the tested QEC primitives, maintaining algorithmic signal clarity (r = 0.733) on a 91-data-qubit triangular color code requiring 45 MCM operations per layer across 98 physical qubits. Additionally, the researchers validated the benchmark on an 11-patch surface-code (d=3) memory experiment on ibm_phoenix, establishing a high correlation (ρs = 0.83 to 0.88) between the low-shot LR-QAOA metric and actual logical error survival probabilities (PL).<br>
+Review the full pre-print manuscript on arXiv here.<br>
+In GQI Portal<br>
+The players behind the news<br>
+The team that writes QCR tracks every company, deal and technology in the GQI Factory, GQI's verified database of the quantum industry. Next up: every story linked to its players, coming to QCR's paid plans.<br>
+Players →Companies and institutions across the quantum industry, by segment.<br>
+Scorecards →How the players compare on hardware, software, funding and more.<br>
+Newsletter<br>
+QCR Alerts in your inbox<br>
+The latest reporting and analysis from Quantum Computing Report. Free, unsubscribe any time.</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://medium.com/qiskit/coming-soon-qiskit-1-0-a8d59c3533a4?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/julich-supercomputing-centre-benchmark-evaluates-quantum-error-correction-primitives-across-quantinuum-ibm-and-iqm-hardware/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="70cb23508ea7f281.html" class="prev-next">&larr; The Qiskit blog is moving!</a>
+  <a href="408eed3b450db7c7.html" class="prev-next">&larr; Infineon and ZuriQ Deepen Partnership to Industrialize 2D Trapped-Ion Penning Micro-Trap Chips</a>
   
   
-  <a href="2c9cd317131160fe.html" class="prev-next">A Christmas Closed-Timelike-Curve: Could the story of Scrooge actually happen in a quantum universe? &rarr;</a>
+  <a href="b5679812dc953f2e.html" class="prev-next">Korea Quantum Computing (KQC) to Go Public on Nasdaq via $80 Million SPAC Merger with Charlton Aria &rarr;</a>
   
 </div>
 
