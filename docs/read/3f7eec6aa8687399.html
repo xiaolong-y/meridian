@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patenting Quantum Computing Innovations – Part 5: Shor’s Algorithm and Conclusions — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="deb6b872492692a6.html" title="U.S. Department of Energy Unveils Quantum Genesis Priority Applications to Guide Fault-Tolerant Scientific Utility">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Patenting Quantum Computing Innovations – Part 5: Shor’s Algorithm and Conclusions</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Doug Finke</span>
+      <span>1h</span>
+      <span class="article-category">quantum</span>
+      <span>1136 words</span>
+      <span>6 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>By Sinan Utku<br>
+Example 4: Shor’s Algorithm<br>
+Shor’s algorithm efficiently factors large integers into their prime factors by reducing the problem to a period-finding task, which can be solved much more efficiently on a quantum computer than on a classical one. The algorithm involves preparing a quantum superposition of inputs and preparing a quantum gate to evaluate a modular exponentiation function. It then applies quantum phase estimation to extract the period of this function. This involves applying controlled powers of the quantum gate for modular exponentiation and then performing an inverse quantum Fourier transform to obtain information about the period. Once the period is determined, a classical algorithm uses it to relatively easily compute the prime factors of the integer. Because Shor’s algorithm is exponentially faster than the best known classical factoring algorithms, it poses a significant threat to widely used public-key cryptosystems such as RSA, which rely on the difficulty of factoring large integers.<br>
+A quantum computer decrypting RSA-encrypted communications without the benefit of a key might carry out Shor’s algorithm:<br>
+- prepare a first quantum register with eigenvalue qubits that are initialized to a computational basis state, and a second quantum register that are initialized by eigenvector qubits that correspond to the product number that is desired to be factored;<br>
+- apply a Hadamard gate to each of the eigenvalue qubits placing them in a superposition state;<br>
+- apply a series of powers of a unitary operation that is associated with a modular exponentiation transform to the second quantum register, where application of each power of the unitary operation is controlled by a corresponding eigenvalue qubit, and the eigenvalue qubits are modified through phase kick-back;<br>
+- perform an inverse quantum Fourier transform on the first quantum register to carry out quantum phase estimation and obtain an estimate of a phase corresponding to the base unitary operator U acting on the second quantum register;<br>
+- derive a period parameter from the phase estimate and determine prime factors corresponding to the product number using the derived period parameter; and<br>
+- decrypt the encrypted message using the determined prime factors, the relevant public key and the product number.<br>
+It is likely that the patent eligibility this invention would be challenged. Specifically, it would likely be found, at least initially, to be abstract for being directed to a mathematical method for solving a number‑theoretic problem rather than to a technological improvement to a machine. The algorithmic components of Shor’s algorithm comprise a sequence of mathematical operations, such as period finding via quantum phase estimation and the inverse quantum Fourier transform. Carrying out these mathematical operations on a quantum computer likely does not confer patent eligibility in the absence of specific improvements to the operation of the quantum computer itself. Arguably, the only improvement of the algorithm is to the mathematical processing – i.e., more efficiently factoring a number using a quantum computer. A critical PTO examiner would likely characterize the invention as using conventional and known quantum computing processes, such as superposition, controlled unitary gates and the quantum Fourier transform, to carry out an improved mathematical method. Such a PTO examiner would likely also emphasize the risk of whole scale preemption of the use of foundational mathematical principles that might arise from the patenting of such an invention. Thus, there is a good chance that this invention would ultimately be found to be ineligible under current law.<br>
+Interestingly, the PTO, in an example it provided in a guidance document, stated that that an invention directed to RSA-encryption (which could be characterized as being a functional complement of Shor’s algorithm) is patent eligible.[i] This example was directed to a method for establishing cryptographic communications between a first computer terminal and a second computer terminal, and the invention carried out steps including (i) receiving a plaintext word signal; (ii) transforming the plaintext word signal into message blocks; (iii) encoding each message block using a mathematical process; and (iv) transmitting the resultant ciphertext to the second computer terminal over a communications channel. The PTO in its guidance initially indicated that the invention was abstract. However, it found that the inclusion of steps like receiving the plaintext word signal at the first computer terminal, transforming the plaintext word signal to message block word signals, and transmitting the encoded ciphertext word signal to the second computer terminal over a communication channel, integrated an otherwise abstract invention into a practical application that is patentable. In particular, it found that “the combination of additional elements use the mathematical formulas and calculations in a specific manner that sufficiently limits the use of the mathematical concepts to the practical application of transmitting the ciphertext word signal to a computer terminal over a communication channel.”[ii]<br>
+Given the PTO’s guidance, one could argue that the Shor’s algorithm invention set forth above improves the recited decryption computer by making it more efficient, e.g., compared to a decryption computer running a classical algorithm in the absence of the relevant RSA decryption key. Nevertheless, under the current Mayo/Alice framework, it will be an uphill battle to convince the examiner or the judicial decision maker that the invention is directed to anything other than essentially an ineligible improved mathematical method for factoring numbers.<br>
+Conclusions<br>
+Quantum computing appears to be on the threshold of an explosive innovative stage that likely will yield result in usefully operational quantum computers. Patent protection of innovations in the hardware of these quantum computers as well as the algorithms running on them will be critical in ensuring robust growth and development of the industry. However, the uncertain state of patent eligibility law in the US is a barrier to protecting many of these inventions. There is patent reform legislation pending in Congress that would reform patent eligibility law in response to the ongoing unhappiness with the current state of the law.[iii] But given the current polarization and paralysis, it is not clear when Congress might act to reform patent eligibility law and whether it might do so in a way that is helpful to the patenting of quantum computing inventions. In the meantime, IP counsel and personnel at quantum computing companies during the patenting process should carefully consider both the evolving patent eligibility case law and aspects in their inventions that may help establish patent eligibility.<br>
+[i] U.S. Patent & Trademark Office, Subject Matter Eligibility Examples: Abstract Ideas, Example 41 (Jan. 7, 2019), available at https://www.uspto.gov/sites/default/files/documents/101_examples_37to42_20190107.pdf.<br>
+[ii] Id.<br>
+[iii] Patent Eligibility Restoration Act of 2025, S. 1546, 119th Cong. (2025) (introduced May 1, 2025; pending before the Senate Judiciary Committee).<br>
+Sinan Utku is a Special Counsel, Covington and Burling LLP; Instructor, Bilkent University Law School. Nothing in this article should be construed as reflecting the official views, opinions, or positions of any organisation or institution with which the author is affiliated. The author writes in a personal capacity only.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/patenting-quantum-computing-innovations-part-5-shors-algorithm-and-conclusions/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="deb6b872492692a6.html" class="prev-next">U.S. Department of Energy Unveils Quantum Genesis Priority Applications to Guide Fault-Tolerant Scientific Utility &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-10-08 22:48 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>

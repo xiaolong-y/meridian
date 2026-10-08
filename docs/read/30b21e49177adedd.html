@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming soon: Qiskit 1.0! — Meridian Reader</title>
+  <title>Quantum Source Introduces Memory-Assisted Photonic Interconnect to Unify Multi-Modal Quantum Computing — Meridian Reader</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -126,47 +126,53 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    <a href="70cb23508ea7f281.html" title="The Qiskit blog is moving!">&larr; prev</a>
-    <a href="2c9cd317131160fe.html" title="A Christmas Closed-Timelike-Curve: Could the story of Scrooge actually happen in a quantum universe?">next &rarr;</a>
+    <a href="7c5dee457effeb1c.html" title="India’s MeitY Sanctions ₹99.94 Crore ($10.3 Million USD) for IIT Madras and izmo Microsystems Silicon Photonics Program">&larr; prev</a>
+    <a href="e7143792dcf5f81e.html" title="Universal Quantum Closes $100 Million Series A to Accelerate Modular Trapped-Ion Architecture Scaling">next &rarr;</a>
   </div>
 </nav>
 
 <article>
   <div class="article-header">
-    <h1 class="article-title">Coming soon: Qiskit 1.0!</h1>
+    <h1 class="article-title">Quantum Source Introduces Memory-Assisted Photonic Interconnect to Unify Multi-Modal Quantum Computing</h1>
     <div class="article-meta">
-      <span class="article-source">Qiskit Blog</span>
-      <span>Qiskit</span>
-      <span>146w</span>
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>5h</span>
       <span class="article-category">quantum</span>
-      <span>77 words</span>
-      <span>1 min read</span>
+      <span>435 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>By Abby Mitchell, Jake Lishman, Luciano Bello, Matthew Treinish &amp;amp; Blake JohnsonQiskit 1.0 will be released in February 2024 🎉This is a huge milestone, the culmination of six years of open-source efforts, all made possible by the continued enthusiasm of thousands of users and the ongoing support of hundreds of contributors.In this article you’ll find the following:What this upcoming major version means for usersHow to test out 1.0 functionality before the stable releaseHow to upgrade to Qiski</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://medium.com/qiskit/coming-soon-qiskit-1-0-a8d59c3533a4?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Tel Aviv-based photonic hardware developer Quantum Source has published the technical details of its proprietary quantum interconnect, QS-LINK. Designed to address scaling limits in multi-processor quantum networks, the system utilizes a single cavity-trapped rubidium-87 atom as an asynchronous quantum memory buffer to establish remote entanglement between separate quantum processing units (QPUs). The architecture operates at room temperature over standard optical fiber and supports multi-vendor interconnectivity across distinct physical hardware modalities, including trapped-ion, neutral-atom, superconducting, and photonic platforms.<br>
+Conventional photonic Bell-state measurements (BSM) rely on linear-optics type-II fusion gates, which require photons from two independent QPUs to arrive simultaneously at a beam splitter in identical quantum states. Because per-attempt photon delivery probabilities (p) across fiber channels typically remain at or below 1%, simultaneous arrival succeeds probabilistically at an order of p2 (roughly once in 10,000 attempts). QS-LINK replaces the two-photon interference requirement with a single-atom cavity quantum electrodynamics (QED) interface. The trapped atom executes a near-deterministic controlled-Z (CZ) gate with an incoming photon from the first QPU, storing the resulting atom-QPU entanglement state while the second QPU continues execution attempts. Once a photon from the second QPU interacts with the atom, a local atomic state measurement projects the two remote QPUs into a shared Bell pair.<br>
+| [ Quantum Interconnect Architecture Comparison ] |  |  | <br>
+|---|---|---|<br>
+| Architectural Parameter | Linear-Optics Type-II Fusion | QS-LINK Cavity-QED Memory | <br>
+| • Entanglement Scaling | • Quadratic scaling (p2) • Requires simultaneous photon arrivals | • Linear scaling (p) • Asynchronous photon arrival & storage | <br>
+| • Attempts for 10k Pairs/sec | • ~190 million attempts/sec | • ~3.2 million attempts/sec | <br>
+| • Photon Indistinguishability | • Mandatory (Identical temporal envelopes & phase matching required) | • Not required (Photons interact sequentially with central atom) | <br>
+| • Cross-Modality Support | • Highly restricted (Requires identical QPU photon sources) | • Hardware-agnostic (Connects trapped-ion, neutral-atom, & superconducting) | <br>
+Because entanglement is mediated sequentially through the atomic memory rather than direct photon-photon interference, the interconnect eliminates the requirement for mutually indistinguishable photon envelopes or joint optical phase stabilization. Mathematical modeling and Monte Carlo simulations published by the company indicate that achieving a target threshold of 10,000 entangled pairs per second—a rate required by fault-tolerant distributed architectures—demands approximately 3.2 million attempt cycles per second using QS-LINK, compared to 190 million attempts per second under linear-optics fusion gates. The projected parameters assume a photon-atom CZ gate duration of approximately 20 nanoseconds at 98.4% photon-survival efficiency.<br>
+Review the technical paper on arXiv here and inspect product specs on the Quantum Source Portal here.</p>
   </div>
   
 </article>
 
 
 <div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
-  <a href="https://medium.com/qiskit/coming-soon-qiskit-1-0-a8d59c3533a4?source=rss----85f9df9eaa17---4" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+  <a href="https://quantumcomputingreport.com/quantum-source-introduces-memory-assisted-photonic-interconnect-to-unify-multi-modal-quantum-computing/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
 </div>
 
 
 <div class="bottom-nav">
   
-  <a href="70cb23508ea7f281.html" class="prev-next">&larr; The Qiskit blog is moving!</a>
+  <a href="7c5dee457effeb1c.html" class="prev-next">&larr; India’s MeitY Sanctions ₹99.94 Crore ($10.3 Million USD) for IIT Madras and izmo Microsystems Silicon Photonics Program</a>
   
   
-  <a href="2c9cd317131160fe.html" class="prev-next">A Christmas Closed-Timelike-Curve: Could the story of Scrooge actually happen in a quantum universe? &rarr;</a>
+  <a href="e7143792dcf5f81e.html" class="prev-next">Universal Quantum Closes $100 Million Series A to Accelerate Modular Trapped-Ion Architecture Scaling &rarr;</a>
   
 </div>
 

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In praise of questions — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="15db5c964aee1542.html" title="Neutral-Atom Developer Oratomic Secures $775 Million in Cumulative Funding for Fault-Tolerant System R&amp;D">&larr; prev</a>
+    <a href="7713246609ed3326.html" title="DARPA Selects Atom Computing, Diraq, IBM, and IonQ for Final Stage C Verification under Quantum Benchmarking Initiative">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">In praise of questions</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Frontiers (Caltech)</span>
+      <span>José Antonio Marín Guzmán</span>
+      <span>7h</span>
+      <span class="article-category">quantum</span>
+      <span>1329 words</span>
+      <span>7 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Prende y se apaga sola,<br>
+sale después de hora.<br>
+CHARLY GARCÍA<br>
+La máquina de ser feliz1<br>
+I’ve learned to tolerate them, and sometimes even like them, but Zoom meetings are weird. Even in familiar contexts: I have weekly check-ins with a close friend/collaborator based in Germany, and despite our familiarity, it still feels weird at times. I joined Nicole Yunger Halpern’s group almost when it was established, during Summer of 2021. The pandemic wasn’t exactly over, and most of us were geographically scattered, as well as complete strangers. To half-palliate this awkwardness, Nicole came up with what’s now sort of a group tradition: icebreaker questions. These are chosen by group members (in a secret order that I believe only Nicole fully knows), and can range from day-to-day stuff (“what’s the best type of pasta?”) to deeper matters.<br>
+A while back, a group member asked something along the lines of: “If you could give your younger self any scientific advice, what would it be?” My response then was: “ask the dumb questions you have as they come.” I had two reasons for this answer. First, dumb questions usually sound dumber in your head and are not as bad as you might think. Second, a dumb matter that doesn’t seem dumb at first, can turn into a really, really dumb question if it’s long unanswered. If I were to be asked this same icebreaker question today, I’d surely reply the same thing, but I believe the reasoning would be more nuanced.<br>
+Over my PhD, I’ve had the opportunity to interact, discuss physics, and even collaborate with truly amazing scientists. I still don’t have a foolproof handbook of criteria detailing what makes a great physicist great,2 but I have observed some patterns. An important one is that great physicists speak their mind: they’re usually relentless with their own confusion and ask whatever they have to ask to overcome it. Don’t get me wrong here; these people are giants, and I wouldn’t dare call their questions dumb, but asking good questions is a skill more than a gift. It’s like seeing Claudia Poll swim or hearing Hilary Hahn play a cadenza: yes, these people are objectively good, but there’s also a huge amount of practice that goes behind what one sees. And, in the case of asking great questions, practice comes from asking not-great (and sometimes even dumb) questions.<br>
+I got a crash course in asking questions during a recent project. A driving theme of my PhD research has been the study of autonomous quantum machines. These devices execute tasks without classical, time-dependent control, operating under a time-independent Hamiltonian. My first experience with these devices was during an experimental collaboration in which Simone Gasparinetti’s group built an autonomous quantum refrigerator from superconducting qubits. The refrigerator ran on a thermal gradient: as heat flowed from a hot bath to a cold one, a three-qubit interaction carried energy out of a target qubit, cooling it with no external control. The experiment was a success, and its potential usefulness in information-processing devices led us to ask about other contexts in which autonomous quantum machines could shine.<br>
+At the time, we came in close contact with folks at Marcus Huber’s group in Vienna, who were thinking in abstract terms about a fully autonomous quantum processing unit. We had the idea of designing autonomous protocols for logical gates in current-day quantum-technology platforms: Rydberg atoms, trapped ions and superconducting qubits.<br>
+To illustrate this autonomous-gate idea, I’ll briefly describe a gate protocol from our paper. As I mentioned before, an autonomous quantum fridge can be built by exploiting a thermal gradient. The same principle can help build a heat engine. Suppose one has three qubits, with energy gaps and . Let’s call these qubits the cold, hot and target qubits, respectively. The cold qubit couples to a bath at temperature and the hot qubit to a bath at a temperature , with . Under the resonance condition , the three qubits can swap energy all at once: the hot qubit loses an excitation while the cold and target qubits each gain one, or vice versa. The gradient makes the first direction more likely. The cold qubit can be engineered to quickly decay to its bath, so the exchange can’t run backward, and the target accumulates excitations. The cold qubit’s energy is lost to its bath, while the target could emit into a waveguide that delivers the photon to a chosen destination. The thermal gradient thus powers a device that emits useful photons with no external control.3<br>
+What can we do with this autonomously emitted photon? We can use it to trigger an entangling gate. Two superconducting qubits with matching energy gaps can exchange excitations. Suppose we have a tunable-frequency transmon qubit capacitively coupled to a cavity. An incoming photon from our autonomous emitter, entering the cavity, can shift the frequency of the transmon. If this effective, shifted frequency matches a nearby qubit’s frequency, the two transmons can interact. The effect of this interaction depends on the cavity’s decay time, rendering our entangling gate random and potentially useful for the implementation of Brownian circuits, for example. A charming instance of a quantum Rube Goldberg machine, if you ask me.<br>
+This example illustrates the spirit behind our autonomous-gate ideas. As mentioned before, we propose several more instances over different platforms. This all sounds nice and clean after looking at the end product. But the truth is that, when we started the project, I was a theory student with little knowledge about the inner workings of platforms, trying to pitch convincing arguments for novel gate protocols in these well-established technological fields. I had to go through decades of accumulated literature and famous experiments, trying to understand them and hopefully come up with ways to readapt them to the context of autonomy. Naturally, there were many old papers to read, many small details to understand that were obvious to a familiarized experimentalist but not to me, and, of course, many dumb questions to ask. Regarding this, I have to deeply thank Tom Manovitz, Norbert Linke and Simone Gasparinetti, our experimental collaborators, for their patience with these questions and their willingness to chat and clarify to a confused theorist what’s possible and interesting in experimental contexts.<br>
+A special mention, however, to postdoc Yuxin Wang. Earlier in the text I mentioned how being relentless with one’s confusion is helpful; she’s one of the clearest examples I can think of. She came into the project right as I was struggling to model one of our superconducting-qubit gates. I was knee-deep in a convoluted formalism, drowning in inefficient numerical simulations that were leading nowhere. She asked a bunch of questions about our system and my modeling attempts for which I had no good answers for, especially because her expertise in both AMO and open systems really made my explanations look weak. I mean this in the best way I can: polishing my arguments and deeply enquiring about modeling decisions forced us to zoom out and look at simpler, more-efficient ways in which we could model our physical setup. I can’t even begin to quantify Yuxin’s patience and helpfulness in the project, nor how much I learned from working closely with her.<br>
+Research, of course, is about asking questions. Trying to clarify confusion and asking in the most transparent way possible are discomforts I still struggle with (much like with Zoom calls), but I’ve learned to appreciate these convoluted scenarios and sometimes even thrive in them. Not being the smartest or most-experienced person in a room has lots of perks. You can learn a lot, although you might need to ask one or two dumb questions to get there.<br>
+- It turns on and off by itself,<br>
+it goes out after hours.<br>
+CHARLY GARCÍA<br>
+The happiness machine<br>
+↩︎<br>
+- I do have, however, a handbook of criteria detailing what makes a useful autonomous quantum machine useful, though. ↩︎<br>
+- Quantum thermodynamicists call these photon-emitting devices autonomous quantum clocks. ↩︎</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumfrontiers.com/2026/10/08/in-praise-of-questions/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="15db5c964aee1542.html" class="prev-next">&larr; Neutral-Atom Developer Oratomic Secures $775 Million in Cumulative Funding for Fault-Tolerant System R&amp;D</a>
+  
+  
+  <a href="7713246609ed3326.html" class="prev-next">DARPA Selects Atom Computing, Diraq, IBM, and IonQ for Final Stage C Verification under Quantum Benchmarking Initiative &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-10-08 22:48 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
