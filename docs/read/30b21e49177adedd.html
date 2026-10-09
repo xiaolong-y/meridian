@@ -137,20 +137,26 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>11h</span>
+      <span>19h</span>
       <span class="article-category">quantum</span>
-      <span>62 words</span>
-      <span>1 min read</span>
+      <span>435 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Quantum Source has introduced QS-LINK, a memory-assisted photonic interconnect that unifies multi-modal quantum computing. This technology overcomes scaling limitations in multi-processor quantum networks by using a single cavity-trapped rubidium-87 atom as an asynchronous quantum memory buffer to establish remote entanglement between separate quantum processing units (QPUs). QS-LINK significantly reduces the attempts needed to achieve entanglement compared to traditional methods, operating at r</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/quantum-source-introduces-memory-assisted-photonic-interconnect-to-unify-multi-modal-quantum-computing/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Tel Aviv-based photonic hardware developer Quantum Source has published the technical details of its proprietary quantum interconnect, QS-LINK. Designed to address scaling limits in multi-processor quantum networks, the system utilizes a single cavity-trapped rubidium-87 atom as an asynchronous quantum memory buffer to establish remote entanglement between separate quantum processing units (QPUs). The architecture operates at room temperature over standard optical fiber and supports multi-vendor interconnectivity across distinct physical hardware modalities, including trapped-ion, neutral-atom, superconducting, and photonic platforms.<br>
+Conventional photonic Bell-state measurements (BSM) rely on linear-optics type-II fusion gates, which require photons from two independent QPUs to arrive simultaneously at a beam splitter in identical quantum states. Because per-attempt photon delivery probabilities (p) across fiber channels typically remain at or below 1%, simultaneous arrival succeeds probabilistically at an order of p2 (roughly once in 10,000 attempts). QS-LINK replaces the two-photon interference requirement with a single-atom cavity quantum electrodynamics (QED) interface. The trapped atom executes a near-deterministic controlled-Z (CZ) gate with an incoming photon from the first QPU, storing the resulting atom-QPU entanglement state while the second QPU continues execution attempts. Once a photon from the second QPU interacts with the atom, a local atomic state measurement projects the two remote QPUs into a shared Bell pair.<br>
+| [ Quantum Interconnect Architecture Comparison ] |  |  | <br>
+|---|---|---|<br>
+| Architectural Parameter | Linear-Optics Type-II Fusion | QS-LINK Cavity-QED Memory | <br>
+| • Entanglement Scaling | • Quadratic scaling (p2) • Requires simultaneous photon arrivals | • Linear scaling (p) • Asynchronous photon arrival & storage | <br>
+| • Attempts for 10k Pairs/sec | • ~190 million attempts/sec | • ~3.2 million attempts/sec | <br>
+| • Photon Indistinguishability | • Mandatory (Identical temporal envelopes & phase matching required) | • Not required (Photons interact sequentially with central atom) | <br>
+| • Cross-Modality Support | • Highly restricted (Requires identical QPU photon sources) | • Hardware-agnostic (Connects trapped-ion, neutral-atom, & superconducting) | <br>
+Because entanglement is mediated sequentially through the atomic memory rather than direct photon-photon interference, the interconnect eliminates the requirement for mutually indistinguishable photon envelopes or joint optical phase stabilization. Mathematical modeling and Monte Carlo simulations published by the company indicate that achieving a target threshold of 10,000 entangled pairs per second—a rate required by fault-tolerant distributed architectures—demands approximately 3.2 million attempt cycles per second using QS-LINK, compared to 190 million attempts per second under linear-optics fusion gates. The projected parameters assume a photon-atom CZ gate duration of approximately 20 nanoseconds at 98.4% photon-survival efficiency.<br>
+Review the technical paper on arXiv here and inspect product specs on the Quantum Source Portal here.</p>
   </div>
   
 </article>
@@ -173,7 +179,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-10-09 04:18 UTC
+  Generated 2026-10-09 12:30 UTC
 </div>
 
 <script type="module">
