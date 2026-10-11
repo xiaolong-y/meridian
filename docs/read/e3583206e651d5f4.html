@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBM Launches Directed Execution Model and Executor Primitive to Give Researchers Client-Side Control Over QEC Workflows — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="3699a2251811121b.html" title="IBM Expands Qiskit Beyond Python with Native C API Bindings for Fortran, C++, and Julia">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">IBM Launches Directed Execution Model and Executor Primitive to Give Researchers Client-Side Control Over QEC Workflows</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>4h</span>
+      <span class="article-category">quantum</span>
+      <span>475 words</span>
+      <span>3 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>IBM Quantum has introduced a new, low-level execution framework known as the directed execution model, powered by a new Executor primitive in qiskit-ibm-runtime v0.50.0. The framework transitions error mitigation logic—previously executed as a server-side black box—onto the client side, granting researchers explicit, composable control over circuit transformations, twirling, and error-correction pipelines on utility-scale hardware.<br>
+The directed execution model is designed for algorithm developers, hardware characterization experts, and quantum error correction (QEC) researchers who require custom control over large families of circuit variants. Rather than manually generating thousands of randomized circuits on the client and transferring them across the network, directed execution allows developers to define execution blueprints locally using circuit annotations and template parameter tensors, which the Executor primitive processes in the near-time environment of the IBM Quantum Compute Service.<br>
+| [ Core Components of the Directed Execution Architecture ] |  |  | <br>
+|---|---|---|<br>
+| Component / Tool | Software Layer & Package | Functional Role & Execution Pipeline | <br>
+| • Boxes & Annotations | • Qiskit SDK v2.0+ ( BoxOp) | • Groups circuit instructions into boxes and attaches directives (e.g., Twirl, InjectNoise, ChangeBasis) for the transpiler stack. | <br>
+| • Samplomatic | • samplomatic open-source library | • Interprets annotated boxes to generate an inspectable template circuit and a structured randomization recipe ( samplex). | <br>
+| • Executor Primitive | • qiskit-ibm-runtime backend engine | • Low-level execution engine that consumes QuantumProgram objects and handles shot loops, tensor parameter sweeping, and broadcasting across 5,000+ circuit randomizations. | <br>
+| • NoiseLearnerV3 | • qiskit-ibm-runtime helper program | • Client-side noise characterization tool providing sparse Pauli-Lindblad and TREX measurement noise learning for unique circuit layers. | <br>
+| • Qiskit Mitigation | • qiskit-mitigation client package | • Open-source library delivering modular routines for Probabilistic Error Cancellation (PEC), Zero-Noise Extrapolation (ZNE), and Twirled Readout Error Extinction (TREX). | <br>
+For standard users of Qiskit’s high-level Sampler and Estimator primitives, the upgrade to version 0.50.0 is non-disruptive. Both primitives now run on top of the Executor primitive as a client-side wrapper. This transition allows users to inspect and customize resilience options (such as TREX readout error mitigation) directly in local simulation modes before committing jobs to physical QPUs.<br>
+The client-side transparency enabled by directed execution provides a unified platform spanning quantum error mitigation and full quantum error correction. Researchers are already using the framework to combine Probabilistic Error Cancellation with Shaded Lightcones (cutting PEC sampling overhead by 3.4-fold) and to run distance-5 surface codes on IBM Quantum Nighthawk processors, achieving up to a 2.8-fold reduction in logical error rates per round. This infrastructure directly supports recent milestone demonstrations, including IBM’s trusted quantum advantage results with ecosystem partners.<br>
+Review the technical announcement on the IBM Quantum Blog here and inspect the developer guidelines in the IBM Quantum Directed Execution Documentation here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/ibm-launches-directed-execution-model-and-executor-primitive-to-give-researchers-client-side-control-over-qec-workflows/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="3699a2251811121b.html" class="prev-next">IBM Expands Qiskit Beyond Python with Native C API Bindings for Fortran, C++, and Julia &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-10-11 03:38 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
