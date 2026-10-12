@@ -139,18 +139,31 @@
       <span>Mohamed Abdel-Kareem</span>
       <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>62 words</span>
-      <span>1 min read</span>
+      <span>577 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>The Quantum Resource Management Interface (QRMI) is expanding to standardize quantum-HPC integration across major workload managers like Slurm, PBS Professional, and Kubernetes. This open-source middleware layer addresses challenges of integrating heterogeneous QPU hardware by providing a unified interface for abstracting and scheduling QPUs alongside classical resources. QRMI is already deployed in major supercomputing environments, including CINECA, Rensselaer Polytechnic Institute, and the ST</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/multi-institutional-consortium-expands-qrmi-to-standardize-quantum-hpc-integration-across-major-workload-managers/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>A multi-institutional consortium comprising IBM Quantum, Pasqal, Alice & Bob, CINECA, Lawrence Livermore National Laboratory (LLNL), Oak Ridge National Laboratory (ORNL), and the STFC Hartree Centre has detailed the expansion of the open-source Quantum Resource Management Interface (QRMI).<br>
+Detailed in a research paper (arXiv:2607.19591), QRMI establishes a vendor-agnostic middleware layer that exposes quantum processing units (QPUs) as first-class schedulable resources alongside classical CPUs and GPUs. Building on IBM’s reference architecture for quantum-centric supercomputing, the updated framework extends QPU co-scheduling beyond Slurm to encompass six primary HPC workload managers and orchestrators: Slurm, PBS Professional, IBM Spectrum LSF, Open Cluster Scheduler (Grid Engine), Kubernetes, and the Flux Framework.<br>
+| [ Summary of QRMI Workload Manager Integrations ] |  |  | <br>
+|---|---|---|<br>
+| Workload Manager | Integration Mechanism | Resource Abstraction & Availability Handling | <br>
+| • Slurm | • SPANK Plugin framework | • Uses Generic Resources (GRES) and Dynamic Licenses to align QPU availability with node execution. | <br>
+| • PBS Professional | • Server & execution hooks | • Uses custom resources and server_dyn_res scripts to check QPU readiness during scheduling. | <br>
+| • IBM Spectrum LSF | • jobstarter and postexec hooks | • Maps QPUs via External Load Information Managers (ELIM) running periodic status checks. | <br>
+| • Open Cluster Scheduler | • Queue prolog/epilog & Load Sensors | • Employs custom string and numeric complexes with Load Sensors (e.g., Warden) for slot tracking. | <br>
+| • Kubernetes | • Custom Operator & CRDs | • Uses QuantumResource and QuantumResourceClaim CRDs with job suspension until claims bind. | <br>
+| • Flux Framework | • Fluxion graph-based scheduler | • Models QPUs as native nodes in the resource graph and uses Fluence sidecars to monitor queue depth. | <br>
+Integrating heterogeneous QPU hardware into classical HPC data centers presents abstraction and scheduling challenges due to vendor-specific APIs, dynamic calibration windows, and queue latency. QRMI decouples application logic and batch schedulers from hardware APIs through a unified middleware layer. The integration enforces a standardized three-step job lifecycle across all supported schedulers:<br>
+1. Acquire: The workload manager hook authenticates via QRMI and reserves access tokens for requested quantum devices during job initialization.<br>
+2. Execute: QRMI exposes QPU endpoint metadata and session tokens to the execution host environment.<br>
+3. Release: Upon job completion or failure, QRMI releases the hardware reservation back to the provider, preventing orphaned sessions and idle queue holds.<br>
+QRMI is actively deployed in several major supercomputing environments. CINECA in Italy integrates Pasqal’s Sol neutral-atom QPU into the EuroHPC Tier-0 Leonardo supercomputer via Slurm SPANK plugins, expanding on Pasqal’s full-stack HPC-QC integration across multi-vendor ecosystems and Pasqal’s inauguration of Italy’s first neutral-atom QPU at CINECA. In the United States, Rensselaer Polytechnic Institute (RPI) connects an on-premises IBM Quantum System One with the AiMOS supercomputer, following IBM’s installation of System One on RPI’s campus and IBM’s ongoing software progress in quantum-centric supercomputing. Meanwhile, BasQ in Spain integrates an IBM Quantum System Two, building on the inauguration of Europe’s first System Two in Donostia-San Sebastián. Additionally, the UK STFC Hartree Centre and National Quantum Computing Centre (NQCC) deploy QRMI on supercomputer testbeds to evaluate QPU orchestration, aligning with Qoro Quantum’s hybrid demonstrator at the Hartree Centre.<br>
+The open-source code and specification feed into community standardization efforts under the openQSE (open Quantum-HPC Software Ecosystem) project, establishing vendor-neutral interfaces between QPU runtimes, compilers, and batch schedulers.<br>
+Review the full research paper on arXiv here.</p>
   </div>
   
 </article>
@@ -173,7 +186,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-10-12 04:03 UTC
+  Generated 2026-10-12 14:17 UTC
 </div>
 
 <script type="module">

@@ -139,18 +139,26 @@
       <span>Mohamed Abdel-Kareem</span>
       <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>67 words</span>
-      <span>1 min read</span>
+      <span>475 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>IBM Quantum has launched a new directed execution model with the Executor primitive in qiskit-ibm-runtime v0.50.0. This framework shifts error mitigation to the client side, giving researchers greater control over quantum error correction (QEC) workflows. It allows for custom control over circuit transformations and error-correction pipelines, improving efficiency and transparency for quantum algorithm developers and QEC researchers. The post IBM Launches Directed Execution Model and Executor Pr</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/ibm-launches-directed-execution-model-and-executor-primitive-to-give-researchers-client-side-control-over-qec-workflows/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>IBM Quantum has introduced a new, low-level execution framework known as the directed execution model, powered by a new Executor primitive in qiskit-ibm-runtime v0.50.0. The framework transitions error mitigation logic—previously executed as a server-side black box—onto the client side, granting researchers explicit, composable control over circuit transformations, twirling, and error-correction pipelines on utility-scale hardware.<br>
+The directed execution model is designed for algorithm developers, hardware characterization experts, and quantum error correction (QEC) researchers who require custom control over large families of circuit variants. Rather than manually generating thousands of randomized circuits on the client and transferring them across the network, directed execution allows developers to define execution blueprints locally using circuit annotations and template parameter tensors, which the Executor primitive processes in the near-time environment of the IBM Quantum Compute Service.<br>
+| [ Core Components of the Directed Execution Architecture ] |  |  | <br>
+|---|---|---|<br>
+| Component / Tool | Software Layer & Package | Functional Role & Execution Pipeline | <br>
+| • Boxes & Annotations | • Qiskit SDK v2.0+ ( BoxOp) | • Groups circuit instructions into boxes and attaches directives (e.g., Twirl, InjectNoise, ChangeBasis) for the transpiler stack. | <br>
+| • Samplomatic | • samplomatic open-source library | • Interprets annotated boxes to generate an inspectable template circuit and a structured randomization recipe ( samplex). | <br>
+| • Executor Primitive | • qiskit-ibm-runtime backend engine | • Low-level execution engine that consumes QuantumProgram objects and handles shot loops, tensor parameter sweeping, and broadcasting across 5,000+ circuit randomizations. | <br>
+| • NoiseLearnerV3 | • qiskit-ibm-runtime helper program | • Client-side noise characterization tool providing sparse Pauli-Lindblad and TREX measurement noise learning for unique circuit layers. | <br>
+| • Qiskit Mitigation | • qiskit-mitigation client package | • Open-source library delivering modular routines for Probabilistic Error Cancellation (PEC), Zero-Noise Extrapolation (ZNE), and Twirled Readout Error Extinction (TREX). | <br>
+For standard users of Qiskit’s high-level Sampler and Estimator primitives, the upgrade to version 0.50.0 is non-disruptive. Both primitives now run on top of the Executor primitive as a client-side wrapper. This transition allows users to inspect and customize resilience options (such as TREX readout error mitigation) directly in local simulation modes before committing jobs to physical QPUs.<br>
+The client-side transparency enabled by directed execution provides a unified platform spanning quantum error mitigation and full quantum error correction. Researchers are already using the framework to combine Probabilistic Error Cancellation with Shaded Lightcones (cutting PEC sampling overhead by 3.4-fold) and to run distance-5 surface codes on IBM Quantum Nighthawk processors, achieving up to a 2.8-fold reduction in logical error rates per round. This infrastructure directly supports recent milestone demonstrations, including IBM’s trusted quantum advantage results with ecosystem partners.<br>
+Review the technical announcement on the IBM Quantum Blog here and inspect the developer guidelines in the IBM Quantum Directed Execution Documentation here.</p>
   </div>
   
 </article>
@@ -173,7 +181,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-10-12 04:03 UTC
+  Generated 2026-10-12 14:17 UTC
 </div>
 
 <script type="module">
