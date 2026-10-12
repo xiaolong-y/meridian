@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Quantum Omelette Problem: How Much Energy Belongs to the Yolk? — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="e3583206e651d5f4.html" title="IBM Launches Directed Execution Model and Executor Primitive to Give Researchers Client-Side Control Over QEC Workflows">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">The Quantum Omelette Problem: How Much Energy Belongs to the Yolk?</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Frontiers (Caltech)</span>
+      <span>greeshmaoruganti</span>
+      <span>5h</span>
+      <span class="article-category">quantum</span>
+      <span>1802 words</span>
+      <span>10 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>The National Egg Coordination Committee created one of India’s longest-running ad campaigns. Its jingle was impossibly catchy. Nearly everyone from my parents’ generation onward seems to remember it:<br>
+“Sunday or Monday, eat eggs every day.”<br>
+My mum took this advice rather seriously. On weekdays, we ate boiled eggs for breakfast. Sundays, however, were omelette days.<br>
+Our ritual was always the same. Each of us siblings announced how many eggs we wanted as we streamed into the kitchen. My mum cracked the eggs into a shiny steel bowl, added our chosen mix-ins, and whisked them together. The yolks, whites, salt, and chili powder quickly disappeared into one speckled mixture. She poured it into a hot, oiled pan, where it hissed and sizzled before sliding onto our plates.<br>
+The omelettes were soft, spicy, and gone within minutes.<br>
+My diet is now plant-based, but the nostalgia of those Sunday-morning breakfasts remains strong—the steel bowl, the sizzling pan, and all of us gathered around the table, waiting eagerly for the omelettes to arrive.<br>
+Our weekday boiled eggs and Sunday omelettes offer a useful contrast. In a boiled egg, the yolk and white remain distinguishable. In an omelette, they are mixed and transformed. Some properties—texture, flavor, and structure—belong to the finished mixture rather than to either component separately.<br>
+When two parts interact strongly, which properties still belong to the parts, and which belong only to the whole?<br>
+This question appears across science whenever interacting parts become difficult to describe independently. In quantum thermodynamics, it becomes a question of energy. Picture a small quantum system, an atom, say, surrounded by a much larger environment. The total energy of the setup comes from three sources: the atom, the environment, and their interaction.<br>
+When the atom barely interacts with its surroundings, separating the energy contributions is easy. The interaction energy is small enough to ignore, and we can speak cleanly of the atom’s energy and the environment’s. When the interaction is strong, however, that shared energy can no longer be brushed aside, making it difficult to decide how much belongs to the atom and how much to its surroundings.<br>
+For a large object, interactions with the environment typically occur at the surface, while most of its energy is associated with the much larger bulk. As an object grows, the surface becomes less important compared to its volume, so the interaction energy can often be ignored. But this reasoning breaks down for very small objects, where surface effects remain significant, or for systems whose interactions extend through the bulk, allowing interaction energy to scale with volume.<br>
+Such strong interactions are not limited to tiny systems; they also appear across condensed matter, nuclear, and high-energy physics. Lattice gauge theories provide one important example: their particles and fields are tied together by interactions and local constraints, making it especially difficult to draw a clean boundary around one part and declare, “This energy belongs here.”<br>
+In all these cases, the energy of the whole may be perfectly clear. The challenge, however, is deciding how to divide that energy among pieces that are no longer truly separate.<br>
+That brings us to a deceptively simple question: How should we define the internal energy of a strongly interacting system?<br>
+Definitions in physics do more than attach names to things. They tell us what counts as a system, which quantities can be measured, and how mathematical ideas connect to experiments. A useful definition must do more than sound reasonable: it should recover familiar results in familiar situations and remain consistent with the laws of physics. When two plausible definitions lead to different conclusions, the choice between them cannot be settled by language alone.<br>
+Consider the internal energy of a system. When a system is strongly coupled to its surroundings, some of the total energy is stored in the interaction, and several reasonable ways of assigning that shared energy become possible. But which definition of internal energy is consistent with thermodynamics? This is the question I explored with my collaborators Zohreh Davoudi, Christopher Jarzynski, Niklas Mueller, Connor Powers, and Nicole Yunger Halpern.<br>
+Physicists describe a system’s energy using a mathematical object called a Hamiltonian. In our recent paper, we consider three ways of defining the internal energy of a strongly coupled system.<br>
+Definition 1: Subtract the environment<br>
+Start with the total energy of the system-environment composite, then subtract the energy the environment would have on its own at the same temperature. Whatever remains, including the interaction energy, is assigned to the system.<br>
+Definition 2: Include the environment’s influence <br>
+Rather than separating the interaction energy by hand, describe the system’s energy using a modified Hamiltonian that captures how the interaction energy affects the system’s energy at equilibrium. Physicists call this the Hamiltonian of mean force.<br>
+Definition 3: Account for temperature as well<br>
+The Hamiltonian of mean force depends on temperature. The third definition takes this dependence into account when calculating the system’s internal energy.<br>
+All three definitions have appeared in the literature on strong-coupling thermodynamics, each offering a seemingly reasonable way to account for the environment’s influence on the system. We wanted to find out whether choosing one definition over another would change how we describe the same physical process.<br>
+To test the three definitions, my collaborators and I considered a sudden quench—the physicist’s term for changing something in the setup almost instantaneously. Imagine rapidly turning a knob that controls the system, perhaps by suddenly switching on a magnetic field. We can also suddenly change how strongly the system interacts with its surroundings, effectively turning the interaction between them on or off. Either change happens so quickly that the system and its environment have no time to respond: their states remain constant during that instant. Yet the system’s internal energy can change because the rules governing it have changed. Since this energy change results from deliberate external control, we call it work.<br>
+After the quench, the knob is left alone. The system then evolves under the new, fixed conditions and exchanges energy with its environment. This later change in the system’s internal energy is called heat.<br>
+Separating the process into two stages makes it easier to tell work and heat apart: work enters during the sudden, controlled change, while heat flows during the evolution that follows. It is a little like whisking an egg first and then placing it on a hot pan, rather than trying to whisk and cook it at the same time.<br>
+Once we have chosen a definition of a system’s internal energy, we can ask how that energy changes during any thermodynamic process. The first law of thermodynamics tells us that the change in internal energy must be accounted for by work and heat ,<br>
+The first law is essentially a statement of energy conservation. It tells us that any change in the system’s internal energy must be accounted for: the energy must have entered as work, as heat, or as some combination of the two.<br>
+But here is the catch. Each of the three definitions of internal energy comes with its own corresponding definitions of work and heat. If we change what we mean by $\latex U $, we also change how we split that energy change into and . For each of the three choices, however, the definitions are constructed so that work and heat add up to the total change in internal energy. All three therefore satisfy the first law.<br>
+At first, this seems reassuring. Perhaps any of the three definitions will do.<br>
+To decide whether all three internal energy definitions are truly acceptable, we need a stricter test: the second law. The first law tells us that energy must be conserved, but it does not tell us which direction a process will naturally take. The second law supplies that direction. An egg can be whisked and cooked into an omelette, but an omelette left on the plate will not spontaneously uncook itself, separate into a yolk and a white, and return to its shell. Energy conservation alone would not rule out such a reversal, yet nature overwhelmingly favors one direction. Cooking an omelette is therefore an irreversible process. A perfectly reversible process, by contrast, could be undone without leaving any lasting changes to the system or its surroundings.<br>
+For the sudden changes studied in the paper, we can quantify irreversibility by comparing the work actually performed with the minimum work required in an ideal, perfectly reversible process. Thermodynamics captures this minimum through a quantity called the free-energy change, . The difference between the actual work and this ideal minimum,<br>
+is called dissipated work. It measures the extra work associated with carrying out the process irreversibly, and the second law says that it cannot be negative.<br>
+This is where the three definitions part ways. All three satisfy the first law, but only two satisfy the second law for the processes considered in the paper. The third definition, which accounts for the temperature dependence of the Hamiltonian of mean force, can predict negative dissipated work.<br>
+Does this mean that our quantum system has somehow broken the second law? Not at all. Rather, the third definition assigns internal energy, work, and heat in a way that makes a valid process look thermodynamically inconsistent.<br>
+The next question is why the three definitions agree in classical physics but separate in the quantum case. The answer lies in one of quantum mechanics’ defining features: observables do not always commute. Roughly speaking, when noncommuting observables describe two quantum properties, they cannot both be measured simultaneously. This has no direct counterpart in classical physics, where two observables describing different properties can be measured simultaneously. When the system’s energy and interaction energy cannot be simultaneously measured, the three definitions of work can give three different values.<br>
+To explore this connection, we considered what happens when the system’s Hamiltonian commutes with the interaction Hamiltonian, both before and after the sudden quench. In this classical-like limit, all three expressions for work give the same value, which also obeys the second law. In hindsight, the result may seem obvious. Still, there is something oddly satisfying about pinpointing precisely when the three definitions agree: strong coupling alone does not force them to give different answers. Quantum noncommutativity is what allows them to part ways.<br>
+Over the years, our family’s egg repertoire expanded. MasterChef episodes, new cookbooks, and travel brought poached eggs, Scotch eggs, shakshuka, eggs-in-purgatory, Tamagoyaki, and plenty of experiments in between. In some dishes, the yolk and white remain almost perfectly distinct; in others, the boundary between them nearly disappears. A whole spectrum exists between separation and complete mixing.<br>
+The same is true of a system and its environment: their interaction can range from barely noticeable to overwhelmingly strong. Our results identify two definitions that remain consistent with the laws of thermodynamics for the processes we studied, even when those interactions become strong.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumfrontiers.com/2026/10/11/the-quantum-omelette-problem-how-much-energy-belongs-to-the-yolk/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="e3583206e651d5f4.html" class="prev-next">IBM Launches Directed Execution Model and Executor Primitive to Give Researchers Client-Side Control Over QEC Workflows &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-10-12 04:03 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
