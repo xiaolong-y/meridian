@@ -137,20 +137,39 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>1d</span>
+      <span>2d</span>
       <span class="article-category">quantum</span>
-      <span>67 words</span>
-      <span>1 min read</span>
+      <span>636 words</span>
+      <span>4 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>IonQ researchers have developed a new hybrid physical/logical execution strategy for quantum error correction, significantly accelerating fault-tolerant quantum computing. This approach, detailed in a recent arXiv paper, utilizes scheduled qLDPC error correction and an adapted Logical Clifford Noise Reduction (CliNR) scheme. The innovation has achieved speedups of up to 74-fold for logical Clifford operations and up to 5-fold for logical Toffoli gates, addressing the operational latency bottlene</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/ionq-demonstrates-scheduled-qldpc-error-correction-to-accelerate-fault-tolerant-gate-execution-by-up-to-74x/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>In a research paper published on arXiv, IonQ researchers Mark Webster and Nicolas Delfosse have demonstrated a hybrid physical/logical execution strategy that addresses the operational latency bottleneck inherent in quantum Low-Density Parity-Check (qLDPC) error-correcting codes.<br>
+By replacing sequential logical measurements with joint measurements governed by classical scheduler codes and pairing them with an adapted Logical Clifford Noise Reduction (CliNR) scheme, the team achieved speedups of up to 74-fold on logical Clifford operations and up to 5-fold on logical Toffoli gates.<br>
+While qLDPC codes offer significant hardware efficiency over 2D surface codes by encoding dozens of logical qubits into a single block, executing logical operations across densely packed non-local registers introduces severe round delays during error correction. Rather than creating complex, graph-based merged codes to perform logical operations, IonQ’s approach uses Shor-style cat states to execute L commuting logical measurements simultaneously. A linear scheduler code matrix (G) determines the exact measurement sequence, enabling joint error decoding across all outcomes.<br>
+| [ Performance Gains of Scheduled qLDPC & Logical CliNR ] |  |  |  | <br>
+|---|---|---|---|<br>
+| Scenario / Protocol | Code / Target | Cat Measurements per Gate | Speedup vs. Baseline | <br>
+| • Joint Measurement (L = 10) | • Generic qLDPC | • 2.1 cat states / operator | • ~2.4x vs. Viterbi | <br>
+| • Joint Measurement (L = 20) | • Generic qLDPC | • 1.7 cat states / operator | • ~3.0x vs. Viterbi | <br>
+| • Logical Toffoli Gate | • Q70 Code (6 logical qubits) | • 55.8 cat states | • 4.2x speedup | <br>
+| • Logical Toffoli Gate | • Q102 Code (22 logical qubits) | • 233.1 cat states | • 5.0x speedup | <br>
+| • Random Logical Clifford Circuit | • Q70 Code | • 22.2 cat states | • 18.5x speedup | <br>
+| • Random Logical Clifford Circuit | • Q102 Code | • 81.4 cat states | • 74.4x speedup | <br>
+Logical Toffoli gates represent the core non-Clifford primitives required to run fault-tolerant algorithms in quantum chemistry, materials science, and financial modeling. By executing CliNR state injection at the physical layer via transversal CNOTs while managing state preparation at the logical level, IonQ eliminates the temporal overhead that previously penalized partial error correction protocols.<br>
+The innovation shifts enterprise focus toward Logical Execution Rate (LER) and QEC scheduling efficiency, demonstrating that software-hardware co-design can maximize computational shot output per dollar without requiring higher physical qubit counts.<br>
+Furthermore, these fast Clifford protocols have already been integrated into IonQ’s broader fault-tolerant system designs, including their specialized Walking Cat architecture blueprint for breaking 256-bit elliptic curve cryptography.<br>
+| [ Key Quantum Error Correction Parameters ] |  |  | <br>
+|---|---|---|<br>
+| Parameter | Name | Definition & Operational Meaning | <br>
+| • qLDPC | • Quantum Low-Density Parity-Check | • High-efficiency error-correcting codes that bundle many logical qubits into a single block with far fewer physical qubits than standard 2D surface codes. | <br>
+| • Cat States | • Entangled Resource States | • Greenberger-Horne-Zeilinger state vectors used as ancillary probes during Shor-style error syndrome measurements. | <br>
+| • Scheduler Code | • Classical Measurement Matrix | • A classical error-correcting code matrix that determines the optimal sequence for measuring multiple overlapping logical operators simultaneously. | <br>
+| • CliNR | • Clifford Noise Reduction | • A low-overhead protocol that applies logical Clifford gates by preparing and verifying resource states offline, then injecting them via physical CNOT operations. | <br>
+| • LER | • Logical Execution Rate | • The operational speed at which error-corrected logical gates are executed on hardware, measuring real-world computational throughput. | <br>
+Review the full research paper on arXiv here and read technical commentary on the IonQ Blog here.</p>
   </div>
   
 </article>
@@ -173,7 +192,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-10-14 11:04 UTC
+  Generated 2026-10-14 16:25 UTC
 </div>
 
 <script type="module">
