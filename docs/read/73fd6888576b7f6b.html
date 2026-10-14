@@ -139,37 +139,18 @@
       <span>Mohamed Abdel-Kareem</span>
       <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>606 words</span>
-      <span>4 min read</span>
+      <span>66 words</span>
+      <span>1 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Google Quantum AI researchers have introduced Virtual Error Cancellation (VEC), a classical post-processing protocol that eliminates residual logical errors in fault-tolerant quantum circuits without modifying physical execution or running separate calibration routines.<br>
-By leveraging recorded syndrome data from stabilizer measurements and pairing a fast real-time hardware decoder with a high-accuracy offline reference decoder, VEC reweights experimental outcomes in software, suppressing logical error rates by over three orders of magnitude.<br>
-In fault-tolerant architectures using surface codes, real-time decoders (such as minimum-weight perfect matching) must evaluate syndromes within microsecond deadlines to perform Pauli frame feedforward. However, offline post-processing can run high-complexity decoders (such as tensor-network maximum likelihood) without hardware latency constraints. Rather than discarding disagreement shots via postselection, which introduces systematic bias and wastes quantum processor runtime, VEC assigns signed filter weights to experimental shots:<br>
-1. Consensus Shots: Shots where both decoders agree receive a positive weight greater than one.<br>
-2. Disagreement Shots: Shots where decoders disagree receive a negative weight corresponding to the directional fault (X, Y, or Z).<br>
-When averaged across all shots, the negative weights mathematically cancel out the residual logical Pauli error floor of the consensus sector across arbitrary observables simultaneously.<br>
-| [ Error Suppression & Sampling Overhead Benchmarks (d = 7 Surface Code) ] |  |  | <br>
-|---|---|---|<br>
-| Mitigation Approach | Residual Logical Error Rate (p = 0.005) | Sampling Overhead Factor (η) | <br>
-| • Unmitigated (MWPM Real-Time) | • ~1.32 × 10-6 (Baseline) | • Baseline (η = 1.0) | <br>
-| • Syndrome Postselection | • ~1.63 × 10-7 (~8x Reduction) | • Exponential Shot Loss | <br>
-| • Standard Logical PEC | • 0 (Unbiased) | • η ≈ 4.0 | <br>
-| • Google VEC (Dual-Decoder) | • < 7.95 × 10-10 (> 1,600x Suppression) | • η → 1.0 (Approaches 1.3 at d = 7) | <br>
-Numerical code-capacity simulations on a distance-7 rotated surface code at a physical error rate of p = 0.005 demonstrated that VEC reduced residual logical errors by more than 1,600-fold relative to unmitigated decoding and over 200-fold relative to agreement postselection. Furthermore, while standard logical Probabilistic Error Cancellation (PEC) incurs an overhead scaling exponent of η ≈ 4, VEC’s dual-decoder architecture achieves η ≈ 1.3 at distance-7, approaching η → 1 asymptotically as code distance increases.<br>
-Underlying noise parameters are extracted directly from recorded stabilizer syndromes via Walsh-Hadamard syndrome fidelity linear inversion, eliminating the need for dedicated noise-characterization circuits or physical gate interventions. This infrastructure complements recent fault-tolerant software breakthroughs, including Xanadu’s dense encoding reductions for QROM algorithm execution and University of Saskatchewan’s high-efficiency hyperbolic surface codes.<br>
-| [ Key Error Mitigation & Decoded Parameters ] |  |  | <br>
-|---|---|---|<br>
-| Parameter | Name | Definition & Operational Meaning | <br>
-| • d | • Code Distance | • The minimum number of physical errors required to scramble a logical qubit (e.g., d = 7 surface code). | <br>
-| • Real-Time Decoder | • Low-Latency Hardware Decoder | • Fast decoding software running within microsecond feedback loops during quantum circuit execution. | <br>
-| • Offline Decoder | • High-Accuracy Reference Decoder | • Complex, tensor-network or maximum-likelihood decoding software executed post-run on classical computers. | <br>
-| • VEC Filter Weights | • Syndrome-Based Shot Weights | • Signed multipliers applied to each measurement shot during classical post-processing to cancel logical error bias. | <br>
-| • η | • Sampling Overhead Factor | • Measures how rapidly the required shot count grows to cancel logical errors. Lower values represent higher efficiency. | <br>
-Review the full pre-print research paper on arXiv here.</p>
+    <p>Google Quantum AI has developed Virtual Error Cancellation (VEC), a classical post-processing technique that significantly reduces logical errors in fault-tolerant quantum circuits. VEC uses a dual-decoder approach, combining a fast real-time decoder with a high-accuracy offline decoder, to reweight experimental outcomes and suppress logical error rates by over 1,600-fold. This method offers a more efficient alternative to previous error mitigation techniques, with a significantly lower sampling</p>
+  </div>
+  <div class="fallback">
+    Full article extraction unavailable.
+    <a href="https://quantumcomputingreport.com/google-quantum-ai-introduces-virtual-error-cancellation-for-universal-logical-circuits/" target="_blank" rel="noopener">Read on original site &rarr;</a>
   </div>
   
 </article>
@@ -192,7 +173,7 @@ Review the full pre-print research paper on arXiv here.</p>
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-10-14 16:25 UTC
+  Generated 2026-10-14 21:16 UTC
 </div>
 
 <script type="module">
