@@ -137,20 +137,27 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>4h</span>
+      <span>12h</span>
       <span class="article-category">quantum</span>
-      <span>71 words</span>
-      <span>1 min read</span>
+      <span>406 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>IBM Research has developed an AI agent factory to automate the design of QEC decoder chips, achieving up to 204x hardware speedup and 11.5x lower AI inference costs. This system utilizes autonomous multi-agent search and open-weight models, making QEC chip design more economically practical for fault-tolerant quantum systems. The agent factory explores architectural transformations to optimize decoding algorithms for high-rate qLDPC codes. The post IBM Research Automates QEC Decoder Chip Design </p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/ibm-research-automates-qec-decoder-chip-design-using-open-ai-agent-factories-at-11-5x-lower-inference-cost/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>In a research paper and technical release, scientists at IBM Research have demonstrated the use of AI “agent factories” to automate the architectural design of specialized classical hardware for Quantum Error Correction (QEC) decoders, achieving up to a 204x hardware speedup while cutting AI inference costs by 11.5x using open-weight models.<br>
+Authored by Abhishek Bhandwaldar, Mihir Choudhury, Ruchir Puri, and collaborators (“Highly Cost-Efficient Agent Factories for High Level Synthesis: Design Space Exploration for Quantum Error Correction Chip with Open Frontier Models and Distributed Inference at Scale“), the study applied autonomous multi-agent search to High-Level Synthesis (HLS) C++ implementations of the Relay-BP decoding algorithm designed for the [[144,12,12]] bivariate bicycle (Gross) qLDPC code.<br>
+| [ IBM Agent Factory Benchmarks & Inference Economics ] |  |  |  | <br>
+|---|---|---|---|<br>
+| Model Configuration | HLS Latency & Speedup | Total Token Consumption | Inference Cost & Savings | <br>
+| • All-Proprietary (Claude Opus 5) | • 204x Speedup (139 μs) | • 215.9M tokens | • $299.45 (Baseline) | <br>
+| • Hybrid Configuration (Opus Coord. / GLM Workers) | • 126x Speedup (223 μs) | • 197.5M tokens | • $105.25 (2.8x Cheaper) | <br>
+| • All-Open Weight (GLM-5.3 + llm-d) | • 52x Speedup (545 μs) | • 240.9M tokens | • $25.95 (11.5x Cheaper) | <br>
+| • All-Open Extended (200-Hypothesis Budget) | • 60x Speedup (468 μs) | • ~480.0M tokens | • ~$52.00 (Diminishing Returns) | <br>
+High-rate quantum low-density parity-check (qLDPC) codes significantly reduce physical-to-logical qubit overhead compared to standard 2D surface codes, but their dense, non-local check matrices demand complex, parallel classical decoding hardware. IBM’s Agent Factory framework addresses this by pairing a coordinator model with four parallel worker agents that propose architectural transformations—such as restructuring memory into check-major layouts, unrolling loop reductions into compile-time recursive trees, and creating dual-layout message stores to achieve Initiation Interval II = 1 execution.<br>
+By serving open-weight models on-premises using the open-source llm-d distributed inference stack, IBM achieved a 98% prefix-cache hit rate and reduced blended serving costs to ~$0.11 per million tokens. This allowed the all-open agent factory to deliver a 52x hardware speedup for $26 in inference cost, establishing that open frontier models combined with efficient inference infrastructure can make autonomous QEC chip design economically practical for scalable fault-tolerant quantum systems.<br>
+Review the full technical preprint on IBM Downloads here and read the research summary on the IBM Research Portal here.</p>
   </div>
   
 </article>
@@ -173,7 +180,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-10-16 02:54 UTC
+  Generated 2026-10-16 10:35 UTC
 </div>
 
 <script type="module">
