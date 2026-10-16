@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Quantum AI &amp; DeepMind Demonstrate Modular Hyperbolic Codes for Over 30x QEC Overhead Reduction — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="83e8b0b8f3228df1.html" title="Google Quantum AI Demonstrates Magic State Cultivation on Willow Processor in Science Milestone">&larr; prev</a>
+    <a href="4153f2983a7c3093.html" title="Germany Issues Joint Federal PQC Migration Guidelines to Align with EU Post-Quantum Roadmap">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Google Quantum AI &amp; DeepMind Demonstrate Modular Hyperbolic Codes for Over 30x QEC Overhead Reduction</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>3h</span>
+      <span class="article-category">quantum</span>
+      <span>397 words</span>
+      <span>2 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>In a joint technical manuscript published on arXiv, researchers from Google Quantum AI, Google DeepMind, and MIT have introduced a modular quantum error correction (QEC) architecture that reduces physical qubit overhead by more than 30x compared to standard 2D surface codes.<br>
+The study (“Low-Overhead Quantum Error Correction with Boundary-Connected Planar Modules“) demonstrates that networking small, flat 2D Euclidean planar chips (~100 qubits) via sparse, static inter-module boundary couplers arranged in a hyperbolic tiling geometry (genus g ≥ 2) unlocks the high encoding rates of Quantum Low-Density Parity-Check (qLDPC) codes without requiring complex on-chip long-range wire crossings.<br>
+| [ Fault-Tolerant Memory Architecture Benchmark Comparison ] |  |  |  | <br>
+|---|---|---|---|<br>
+| QEC Memory Architecture | Code Parameters [[n, k, d]] | Physical Qubits / Logical Qubit | Hardware & Interconnect Complexity | <br>
+| • Euclidean Surface Code | • [[~20,000, 20, 22]] | • > 1,000 physical / logical | • Monolithic 2D nearest-neighbor planar grid. | <br>
+| • Two-Gross Bivariate Bicycle Code | • [[288, 12, 18]] | • 48 physical / logical (~20x savings) | • Monolithic chip requiring dense, crossing long-range couplers. | <br>
+| • Modular Hyperbolic Surface Code | • [[6000, 146, 20]] | • ~95 physical / logical (10x–15x savings) | • Modular 116-qubit planar modules; flexible inter-module edge links. | <br>
+| • Modular Hyperbolic Color Code | • [[6400, 104, 30]] | • 36 physical / logical (> 30x savings) | • Modular 72-qubit planar modules; rate k/n = 1/16 at distance d ≥ 22. | <br>
+By fine-graining closed hyperbolic surfaces with Euclidean lattice patches of side-length L, the architecture partitions the global QEC code into flat 72-qubit or 116-qubit modules. Stabilizers spanning adjacent modules are measured across boundary seams using cat-flagged syndrome extraction circuits. Circuit-level simulations under the SI1000 noise model (p = 0.1%) decoded via the AlphaQubit neural network and correlated minimum-weight perfect matching (MWPM) demonstrated high tolerance to elevated inter-module seam noise (p_seam = 1%), maintaining low logical error rates even when inter-chip cable error rates are 10x higher than on-chip gate errors.<br>
+To support universal fault-tolerant logic without space overhead, the team developed fault-tolerant walking circuits that execute logical gates via code automorphisms (global tiling permutations) alongside modular ribbon extractors—a closed ancilla loop attached along module boundaries that is ~4.5x smaller than the memory itself.<br>
+Review the technical manuscript on arXiv here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/google-quantum-ai-deepmind-demonstrate-modular-hyperbolic-codes-for-over-30x-qec-overhead-reduction/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="83e8b0b8f3228df1.html" class="prev-next">&larr; Google Quantum AI Demonstrates Magic State Cultivation on Willow Processor in Science Milestone</a>
+  
+  
+  <a href="4153f2983a7c3093.html" class="prev-next">Germany Issues Joint Federal PQC Migration Guidelines to Align with EU Post-Quantum Roadmap &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-10-16 02:54 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
