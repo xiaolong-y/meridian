@@ -137,34 +137,20 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>17h</span>
+      <span>22h</span>
       <span class="article-category">quantum</span>
-      <span>622 words</span>
-      <span>4 min read</span>
+      <span>68 words</span>
+      <span>1 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>In a study published in Nature Physics, researchers from RIKEN, National Taiwan University, ETH Zurich, and TU Delft have demonstrated simultaneous high-fidelity single-qubit operations across a five-qubit silicon (28Si/SiGe) quantum dot array using a single, shared microwave control line.<br>
-Detailed in the paper (“Simultaneous high-fidelity single-qubit gates in a spin qubit array“, the team identified AC-Stark shifts as the main source of parallel drive crosstalk and introduced an N(N-1) pairwise calibration protocol that preserves gate fidelities above 99.9% during simultaneous 5-qubit operation.<br>
-| [ Gate Fidelity Performance Under Parallel Driving Conditions ] |  |  |  | <br>
-|---|---|---|---|<br>
-| Driving Condition / Mode | Qubit Targets | Primitive Gate Fidelity (Fp) | Key Operational Features | <br>
-| • Individual 1-Qubit Drive (125 ns) | • Q1, Q2, Q3, Q4, Q5 | • 99.993% – 99.998% | • Kaiser-window pulse shaping. | <br>
-| • Simultaneous 2-Qubit Drive | • Q2-Q3 / Q3-Q4 / Q1-Q3 | • > 99.99% | • AC-Stark phase compensation. | <br>
-| • Simultaneous 3-Qubit Drive | • Q2-Q3-Q4 / Q1-Q3-Q5 | • > 99.99% (e.g., 99.9966% on Q4) | • 250 ns pulse duration. | <br>
-| • Simultaneous 5-Qubit Drive | • All 5 Qubits (Q1 to Q5) | • ≥ 99.90% (e.g., 99.977% on Q3) | • Sustained across 250 & 500 ns. | <br>
-Overcoming Parallel Drive Crosstalk in Silicon Spin Arrays<br>
-Because idle silicon spin qubits dephase significantly faster (T2* ≈ 10 μs) than driven qubits (T2,R ≈ 100 μs), running cyclic quantum error correction (QEC) protocols requires simultaneous multi-qubit operations. However, driving multiple spin qubits in parallel previously caused gate fidelities to degrade from >99.9% down to 99.5%.<br>
-The team identified off-resonant microwave-drive-induced AC-Stark shifts as the primary source of parallel gate errors. Because the resulting phase shifts (Δφij) sum linearly, the crosstalk can be compensated by measuring pairwise phase accumulation between individual qubit pairs, scaling as N(N-1) rather than 2N-N-1.<br>
-- Exceeding the 99.9% Fault-Tolerant Threshold: All five qubits maintained simultaneous single-qubit gate fidelities ≥99.9% during fully parallel five-qubit operation, satisfying the minimum requirements for 2D surface code QEC.<br>
-- Low Residual Exchange (Joff < 16.6 kHz): Decoupled CZ sequence measurements confirmed that residual exchange interactions between neighboring quantum dots remained below 16.6 kHz during single-qubit driving.<br>
-- Wiring Reduction for Scalable QPUs: Demonstrating high-fidelity parallel control using a single impedance-matched microwave transmission line reduces physical wiring density and thermal loads, supporting modular silicon spin-qubit unit cells of ~10 qubits per shared control line.<br>
-The researchers note that replacing the surface micromagnets with integrated back-end-of-line (BEOL) nanomagnets could double the local field gradient, enabling faster gate operations (2–3 MHz) at lower microwave power and opening a pathway toward 10-qubit parallel control modules in commercial silicon manufacturing.<br>
-What This Means (In Plain English)<br>
-To run quantum error correction on a silicon quantum computer, the processor must execute operations on many qubits at the exact same time. However, when qubits sit idle waiting for their turn, their delicate quantum states rapidly decay (dephase) within microseconds. Previously, turning on microwave signals to control multiple silicon spin qubits simultaneously caused severe interference (crosstalk), causing gate accuracy to drop sharply. Physicists at RIKEN discovered that this crosstalk is caused by “AC-Stark shifts”—a predictable shift in a qubit’s frequency caused by neighboring microwave pulses. By proving that these shifts add up linearly, the team developed a simple pairwise calibration trick to offset the frequency shifts. Using a single shared microwave control line, they operated up to three silicon qubits simultaneously at 99.99% accuracy, and all five qubits at ≥99.9% accuracy—crossing the fault-tolerant threshold needed for practical error-corrected quantum chips.<br>
-Review the research paper in Nature Physics here and examine the open data repository on Zenodo here.</p>
+    <p>Researchers at RIKEN and collaborators have achieved high-fidelity simultaneous control of five silicon spin qubits, maintaining over 99.9% accuracy. They overcame crosstalk caused by AC-Stark shifts through a new calibration protocol, enabling the use of a single microwave control line. This breakthrough meets the fault-tolerant threshold for quantum error correction and paves the way for more scalable quantum computers. The post RIKEN Demonstrates High-Fidelity Simultaneous Control of Silicon </p>
+  </div>
+  <div class="fallback">
+    Full article extraction unavailable.
+    <a href="https://quantumcomputingreport.com/riken-demonstrates-high-fidelity-simultaneous-control-of-silicon-spin-qubits-above-99-9-threshold/" target="_blank" rel="noopener">Read on original site &rarr;</a>
   </div>
   
 </article>
@@ -187,7 +173,7 @@ Review the research paper in Nature Physics here and examine the open data repos
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-10-18 10:18 UTC
+  Generated 2026-10-18 15:19 UTC
 </div>
 
 <script type="module">
