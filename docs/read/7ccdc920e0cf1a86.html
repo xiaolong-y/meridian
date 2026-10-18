@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letter to a prospective student — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="f784b21ec0c1a96a.html" title="Podcast with Johannes Pollanen, Co-founder of EeroQ and a Professor of Physics at Michigan State University">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Letter to a prospective student</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Frontiers (Caltech)</span>
+      <span>lauralcui</span>
+      <span>6h</span>
+      <span class="article-category">quantum</span>
+      <span>2229 words</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>It’s been a long summer here at Caltech, in part due to a super El Niño event which hit late but hard, with temperatures creeping up to the 100s in the first week of October. But in the history books (at least those on the history of science), the end of this summer might forever be marked by the events of last week. I’m referring here to OpenAI’s release of a whopping 722 manuscripts (announced as 372 major results, and further organized into a number of subfields or research areas) [1] which comes less than a month after the announcement of a Navier-Stokes breakthrough from the same group [2].<br>
+If you’re an undergrad and/or haven’t been closely following discussions within the theory community earlier in the summer, you could be forgiven for feeling like the LLM resolution of a Millennium Prize Problem, a feat which for any individual would be considered a crowning achievement of mathematics, came a bit out of left field. After all, if you go through trending news headlines over time discussing the concerning possibility of AI tools overshadowing and making obsolete human mathematical achievements, the graph looks something like this:<br>
+Have we dropped the ball with prospective students?<br>
+Aside from the popular news headlines, a lot has already been written by and for mathematicians and theorists at the PhD level and above. But the speed at which all of this has happened makes me worried about how effectively we’ve communicated with younger students, since the end of summer also marks the start of another PhD application season. While it’s normal for pre-PhD students to be missing some context on what the day-to-day of a full-time researcher looks like, this year that also means that they seem to have largely (perhaps inadvertently) been left out of the AI discourse. This isn’t just a hypothetical: based on my recent interactions with undergrads, most of them haven’t caught onto the recent jumps in capabilities, or the consequences for the research community.<br>
+The Navier-Stokes announcement dropped on a seemingly random Tuesday in early September, and immediately hit the forefront of conversation in my circles. Later that same week, I braced myself to face the group of around forty wide-eyed undergrads who would travel to Caltech to attend the FUTURE of Physics workshop, where they would learn all about PhD programs and careers in physics. FUTURE selects for students who are bright, often come from underserved communities or nontraditional backgrounds, and are active members of their communities. As the co-chair of the workshop and one of the student science talk presenters, I tried to preempt the questions I might get on current events, like funding or the state of theory research. But while many students were indeed interested in how to approach professors about whether they had funding for next cycle, I was taken aback to learn that few of them were thinking about AI at all. None of them expressed any concerns about the pace of AI development, nor did they even seem aware that nearly all researchers here would soon be using a (supposedly overhauled and better aligned) version of a model that had hacked several real-world entities [3].<br>
+(If you’re a more senior academic or researcher who’s surprised to hear about this disconnect, you wouldn’t be alone! And you don’t have to take my word for it either: instructors and recent graduates at other universities in the U.S. discussed similar experiences over the past summer.)<br>
+Research in the time of AI theorem provers<br>
+For context, all of my PhD work has been theoretical and leans heavily on theorem-proving to push the frontiers of what we understand about physics. However, I also applied specifically to do interdisciplinary research. I’ve always liked taking detours into a wide range of subjects, whether it’s random matrix theory, cryptography, or marine science, and finding the connections between them. My first solo-first-author paper, though unfortunately containing nothing directly relevant to marine biology, was shaped by a number of conversations with colleagues across the quantum, condensed matter, and high energy arXiv categories. To me, the most exciting part of learning about new mathematical frameworks has always been the ways in which they help us bridge and translate between different languages and ways of describing real-world phenomena.<br>
+With this in mind, I want to chronicle in broad strokes my own perspective on this past summer. I’m focusing on just this short window of time because my perception is that within the quantum information community, the tone of the discussion has shifted very quickly in the last few months, and for good reason. Prior to this spring, I used LLMs for literature searches and was aware of groups who were working on theorem-proving harnesses, but I didn’t find the output of the readily available consumer models to be very reliable. Around April, rumors started to float around about an internal Anthropic model and the possibility that it might push capabilities into the regime of practical cybersecurity risk; the public version of the model released on June 9 for just three days before Anthropic was forced to take it offline due to an export control directive. Over the next month, the rumors grew louder until finally Fable was rereleased on July 1, followed by GPT 5.6 just over a week later, and with it the scrutiny of the entire mathematical and theoretical research community over the first wave of one-shot papers.<br>
+And that could have been it, but last month saw yet another round of new releases. For the sake of telling a complete story, I have to report that as surprising as Fable 5 and GPT 5.6-Sol had been, Opus 5.5 is the first release that’s completely blown my mind, for reasons that seem to have missed the broader discourse but are important for my own learning process. Among my colleagues, the consensus has been that since July, GPT has been superior to Fable for theorem-proving tasks. But many of the challenges I’ve agonized most over have been in deciding how to come up with a well-defined question that formalizes some physical intuition in a reasonable way (e.g. what does it mean for random unitaries to be a good model for chaotic Hamiltonian dynamics?), rather than just the difficulty of finding a proof for one once it’s posed. This process of iterating over feasible and well-defined research questions admittedly seems a bit tricky to formulate as a set of verifiable tasks, despite being a large component of writing a physics paper, as acknowledged in this recent preprint for a new benchmark based on theoretical physics calculations [4]. From my own limited experience, though, Opus 5.5 has been significantly better than any other model I’ve tried at taking problems I’ve been stuck on, for which my initial conjecture and attempt at explaining some numerical phenomenon might be completely wrong, and combing through the many-body physics literature to suggest other relevant frameworks and theories.<br>
+Should you apply to do a (theory) PhD in 2026?<br>
+The pace of advances in AI capabilities over the past summer came as a surprise to many people in the theory community, to the point that by the time the preprint linked above was posted, their theoretical physics benchmark had already been saturated by models released within the last one-and-a-half months. Given this, it’s reasonable to wonder what kinds of changes will have to be made to PhD training. Although I’m not aware of any of the authors commenting publicly on this aspect, I imagine that the work associated with writing a peer-reviewed paper on any one of the calculations in their benchmark would be worthy of advancing to candidacy.<br>
+To be clear, this is a big deal: in undergrad, you may have spent most of your time on coursework that other people could authoritatively grade for correctness. But by the time you present your dissertation topic in your candidacy exam, you might be the only expert in the world on your own research area. The authors of the very same benchmark also acknowledge that they initially had difficulty grading the output of the model, since nine of the solutions originally provided for the fifty problems turned out to be wrong! In addition, while I have no idea how far the current language model paradigm can be pushed, as of writing I think it’s safe to say that there’s still some room for improvement, given their continual progress on seemingly every benchmark that’s been thrown at them.<br>
+So what is the value of PhD training, if the machines are now capable of reproducing the kinds of technical output that we’re supposedly evaluated on as grad students?<br>
+I don’t think I’m qualified to speak on behalf of all theorists, but in my view, the difference between pursuing a PhD in theoretical physics and accepting a corporate offer isn’t just that it’s hard to get paid to learn about fun math problems with no immediate applications in industry. A large part of PhD training (and probably post-PhD training as well!) is learning what to do with this kind of freedom.<br>
+I do want to acknowledge that it’s understandably hard to be in a position in which your job is rapidly changing, and where you might not have reliable access to mentorship, directed practice, and tight feedback loops to learn the relevant skills [5]. And all of this applies even when the field isn’t in crisis. But systems and institutions aren’t static, nor have they ever been. And it’s always been the case that the PhD experience is highly dependent on the quality of mentorship as well as the resourcefulness of the lab when it comes to finding opportunities in the explored and uncharted, or tackling high-risk, long-time-horizon problems with limited public funding. In many ways, then, the most important questions to ask when deciding whether to accept an offer remain the same [6].<br>
+Plus, despite how good language models have been for a while now at generating heaps upon heaps of words, rows upon rows of spreadsheets, the PIs and their grant managers who work tirelessly to fundraise, to project manage, and to set high level goals guiding all of this research have managed to hold on to their jobs, and are still being asked to direct the next generation of research proposals. And many of us at Caltech remain excited about budding developments in quantum science, as the next generation of experimental platforms promises to bring us past what theorists can hope to fully predict or simulate.<br>
+This post marks the conclusion of my initial voyage into theory research over the past three summers, and the first half of my PhD. Many people have asked me whether I regret my choice to pursue a PhD in theoretical physics in the first place, especially given that so many of my close friends and peers from undergrad decided to work in AI safety or adjacent areas following the original release of ChatGPT. There are two main reasons why, after surfacing to face the real world, I still feel that I made the right decision: first, if anything, AI safety might be one of the most compelling reasons for ensuring that humans remain capable of reviewing evidence and making informed decisions. As long as we value citizen participation in science and decision-making, education and STEM education will continue to have a role in society. Second, as a fresh college graduate, I simply didn’t feel ready to direct an original research program, or to shape an entire field of study. No matter how AI capabilities advance, I’d like to think that the PhD can continue to be a safe space for young people to develop “soft” skills like managing projects with a wide range of collaborators and uncertain timelines, and to grow into the scientific leaders of their generation. Plus, you never know when your random matrix tricks might come in handy for some underwater imaging problem.<br>
+Acknowledgements<br>
+I’m grateful to the many peers and colleagues, from both the theory and experimental sides of IQIM, who gave their candid opinions and feedback on this topic. In particular, I’d like to thank Dave Hsieh and Jessica Jiang for co-chairing the FUTURE program and for a number of very insightful discussions, Spiros Michalakis for helpful suggestions on a draft of this post, and everyone in the Caltech theory community who’s engaged with the topic during John’s group meetings. I’d also like to thank Jiahai Feng, Vincent Huang, and Alex Gu, some of the friends in question who have worked in AI safety-adjacent areas, for keeping me honest. Opus 5.5 was used for light copyediting of a draft of this article.<br>
+[1] See Github repository: https://github.com/openai/math<br>
+[2] Press release page: https://openai.com/index/navier-stokes-solution/<br>
+[3] See, for example, https://transluce.org/agent-activity<br>
+[4] The authors of the manuscript also voice additional thoughts on why AI agents have yet to result in similar breakthroughs on major outstanding problems in physics. The full set of benchmark problems and writeup is available at https://arxiv.org/abs/2610.16733.<br>
+[5] The trifecta of learning taken from the excellent https://web.stanford.edu/~aramdas/checklists.html<br>
+[6] Although this list was written for students in statistics and machine learning (and includes terms like “HCI”, i.e. human-computer interaction), I think it’s pretty broadly applicable for quantum information too, even if you’re not interested in quantum learning theory. And you might notice that very few points on this list are about learning purely technical skills!</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumfrontiers.com/2026/10/17/letter-to-a-prospective-student/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="f784b21ec0c1a96a.html" class="prev-next">Podcast with Johannes Pollanen, Co-founder of EeroQ and a Professor of Physics at Michigan State University &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-10-18 10:18 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
