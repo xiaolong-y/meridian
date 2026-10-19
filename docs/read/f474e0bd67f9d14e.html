@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantinuum Demonstrates 99.9995% Logical Memory Fidelity on Helios Trapped-Ion Processor — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="28c597e089a405ef.html" title="Even sampling from a quantum spin glass may not require a quantum computer (a video abstract, for a change)">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Quantinuum Demonstrates 99.9995% Logical Memory Fidelity on Helios Trapped-Ion Processor</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>3h</span>
+      <span class="article-category">quantum</span>
+      <span>492 words</span>
+      <span>3 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>In a technical release and research preprint, full-stack quantum computing provider Quantinuum (NASDAQ: QNT) reported quantum error correction (QEC) performance metrics on its commercial Helios trapped-ion quantum computer, measuring a logical memory fidelity of 99.9995%—equivalent to a logical error rate of 5 × 10-6 per syndrome-extraction round on a distance-7 code.<br>
+Detailed in the technical report (“Quantum error correction well below the color code threshold“), the results evaluate triangular color codes across code distances d = 3, d = 5, and d = 7 on the 137-barium (137Ba+) QCCD processor. The measured logical error rates demonstrate exponential error suppression as code distance increases, following an experimental suppression factor of Λ = 12.<br>
+| [ Quantinuum Helios QEC Distance Scaling Benchmarks ] |  |  |  | <br>
+|---|---|---|---|<br>
+| Code Distance / Setup | Physical Qubit Count | Logical Error / Cycle | Suppression Factor (Λ) | <br>
+| • Distance 3 Color Code | • 13 Qubits / Memory Block | • 5.5 × 10-4 | • Baseline (d = 3) | <br>
+| • Distance 5 Color Code | • 37 Qubits / Memory Block | • 3.8 × 10-5 | • Λ = 12 (12x Error Suppression) | <br>
+| • Distance 7 Color Code | • 73 Qubits / Memory Block | • 5.0 × 10-6 | • Λ = 12 (144x total suppression vs d = 3) | <br>
+| • Logical 2-Qubit Clifford (d = 5) | • 2-Block Transversal CNOT | • 7.0 × 10-5 / Gate | • ΛLog = 9 (9x Clifford suppression) | <br>
+Key Architectural & Hardware Observations<br>
+The study evaluates three core implementation factors within the full-stack architecture:<br>
+- Exponential Distance Scaling (Λ = 12): Each step increase in code distance suppressed logical memory errors by a factor of 12. Based on this measured scaling parameter, Quantinuum projects that target logical error rates of 10-12 across 100 logical qubits can be achieved with ~30,000 physical qubits under this architecture, compared to higher qubit counts required under lower Λ regimes.<br>
+- Dual-Layer Leakage Reduction: To mitigate state leakage out of the computational clock states into non-computational levels, Helios incorporates 3-cycle mid-circuit 1762 nm optical repumping at the hardware level (reducing leakage by 6.5x) alongside software-driven SWAP-superdense leakage reduction circuits that cycle data and ancilla qubits through QCCD ion transport.<br>
+- Sub-Millisecond Neural Network Decoders: In addition to the A*-search Tesseract decoder, Quantinuum trained 3D Convolutional Neural Networks (3D CNN) and Round-Token Transformers (RTT) on emulator data and evaluated them on physical hardware without fine-tuning. Both neural models achieved per-round latencies between 0.2 ms and 0.5 ms on NVIDIA H100 hardware, demonstrating compatibility with real-time streaming decoding.<br>
+The empirical results align with the performance targets established for Apollo, Quantinuum’s planned universal fault-tolerant quantum system targeted for 2029.<br>
+Review the corporate announcement on Quantinuum Press here, examine the technical blog breakdown on Quantinuum Blog here, and inspect the technical manuscript on Quantinuum Portal here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/quantinuum-demonstrates-99-9995-logical-memory-fidelity-on-helios-trapped-ion-processor/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="28c597e089a405ef.html" class="prev-next">Even sampling from a quantum spin glass may not require a quantum computer (a video abstract, for a change) &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-10-19 18:18 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
