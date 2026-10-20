@@ -137,20 +137,31 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>12h</span>
+      <span>20h</span>
       <span class="article-category">quantum</span>
-      <span>69 words</span>
-      <span>1 min read</span>
+      <span>492 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Quantinuum has demonstrated a 99.9995% logical memory fidelity on its Helios trapped-ion quantum computer, achieving a logical error rate of 5 × 10-6 per syndrome-extraction round on a distance-7 code. This performance shows exponential error suppression with increasing code distance, with a suppression factor of 12. These results align with the performance targets for Quantinuum&#39;s future universal fault-tolerant quantum system, Apollo. The post Quantinuum Demonstrates 99.9995% Logical Memory Fi</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/quantinuum-demonstrates-99-9995-logical-memory-fidelity-on-helios-trapped-ion-processor/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>In a technical release and research preprint, full-stack quantum computing provider Quantinuum (NASDAQ: QNT) reported quantum error correction (QEC) performance metrics on its commercial Helios trapped-ion quantum computer, measuring a logical memory fidelity of 99.9995%—equivalent to a logical error rate of 5 × 10-6 per syndrome-extraction round on a distance-7 code.<br>
+Detailed in the technical report (“Quantum error correction well below the color code threshold“), the results evaluate triangular color codes across code distances d = 3, d = 5, and d = 7 on the 137-barium (137Ba+) QCCD processor. The measured logical error rates demonstrate exponential error suppression as code distance increases, following an experimental suppression factor of Λ = 12.<br>
+| [ Quantinuum Helios QEC Distance Scaling Benchmarks ] |  |  |  | <br>
+|---|---|---|---|<br>
+| Code Distance / Setup | Physical Qubit Count | Logical Error / Cycle | Suppression Factor (Λ) | <br>
+| • Distance 3 Color Code | • 13 Qubits / Memory Block | • 5.5 × 10-4 | • Baseline (d = 3) | <br>
+| • Distance 5 Color Code | • 37 Qubits / Memory Block | • 3.8 × 10-5 | • Λ = 12 (12x Error Suppression) | <br>
+| • Distance 7 Color Code | • 73 Qubits / Memory Block | • 5.0 × 10-6 | • Λ = 12 (144x total suppression vs d = 3) | <br>
+| • Logical 2-Qubit Clifford (d = 5) | • 2-Block Transversal CNOT | • 7.0 × 10-5 / Gate | • ΛLog = 9 (9x Clifford suppression) | <br>
+Key Architectural & Hardware Observations<br>
+The study evaluates three core implementation factors within the full-stack architecture:<br>
+- Exponential Distance Scaling (Λ = 12): Each step increase in code distance suppressed logical memory errors by a factor of 12. Based on this measured scaling parameter, Quantinuum projects that target logical error rates of 10-12 across 100 logical qubits can be achieved with ~30,000 physical qubits under this architecture, compared to higher qubit counts required under lower Λ regimes.<br>
+- Dual-Layer Leakage Reduction: To mitigate state leakage out of the computational clock states into non-computational levels, Helios incorporates 3-cycle mid-circuit 1762 nm optical repumping at the hardware level (reducing leakage by 6.5x) alongside software-driven SWAP-superdense leakage reduction circuits that cycle data and ancilla qubits through QCCD ion transport.<br>
+- Sub-Millisecond Neural Network Decoders: In addition to the A*-search Tesseract decoder, Quantinuum trained 3D Convolutional Neural Networks (3D CNN) and Round-Token Transformers (RTT) on emulator data and evaluated them on physical hardware without fine-tuning. Both neural models achieved per-round latencies between 0.2 ms and 0.5 ms on NVIDIA H100 hardware, demonstrating compatibility with real-time streaming decoding.<br>
+The empirical results align with the performance targets established for Apollo, Quantinuum’s planned universal fault-tolerant quantum system targeted for 2029.<br>
+Review the corporate announcement on Quantinuum Press here, examine the technical blog breakdown on Quantinuum Blog here, and inspect the technical manuscript on Quantinuum Portal here.</p>
   </div>
   
 </article>
@@ -173,7 +184,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-10-20 03:10 UTC
+  Generated 2026-10-20 10:52 UTC
 </div>
 
 <script type="module">
