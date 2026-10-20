@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Alignment Theory Course: Readings and Rapporteur Reports! — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="f3278e217176c546.html" title="Xanadu Secures Up to $10 Million in Additional DARPA Funding Under QBI Program">&larr; prev</a>
+    <a href="f474e0bd67f9d14e.html" title="Quantinuum Demonstrates 99.9995% Logical Memory Fidelity on Helios Trapped-Ion Processor">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">AI Alignment Theory Course: Readings and Rapporteur Reports!</h1>
+    <div class="article-meta">
+      <span class="article-source">Shtetl-Optimized</span>
+      <span>Scott</span>
+      <span>6h</span>
+      <span class="article-category">quantum</span>
+      <span>860 words</span>
+      <span>5 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>AI Alignment Theory Course: Readings and Rapporteur Reports!<br>
+As I announced on this blog a couple weeks ago, I’m teaching a new course this semester at UT Austin, entitled AI Alignment Theory. To call such a course “timely” seems like an understatement; this is the first course I’ve ever taught for which multiple gargantuan developments relevant to the course have happened while I was teaching it.<br>
+Since AI alignment is still a field with no standard textbook (although that might be changing), no accepted body of mathematical theory, etc. etc., the way we’ve been running the course is like a humanities discussion seminar, albeit one that happens to be in a CS department and to include technical results from time to time. Basically, in each class session, a student “rapporteur” gives a talk on an AI alignment reading—which include “ancient” readings (from way back in 2016), “modern” readings (from, say, last week), and everything in between—and then we freely discuss and debate whatever was presented, with my own role mostly limited to that of gadfly (occasionally I’ll do a mini-lecture on some technical concept).<br>
+Anyway, two weeks ago, I promised a list of the papers and other writings that we’ve been discussing, as well as student “rapporteur reports” on those papers, which cover not only the papers themselves, but the students’ thoughts about the papers and (anonymized) summaries of points raised during our class discussion. People have been bugging me for that ever since.<br>
+Since I am to please, here you are, without further ado! I’ll continue to update the list as the semester progresses, so that this post can serve as a central public repository for the course.<br>
+- AGI Ruin: A List of Lethalities, by Eliezer Yudkowsky (2022). Rapporteur report by Tennyson Bardwell (this is the one that we posted previously).<br>
+- Concrete Problems in AI Safety, by Amodei, Olah, Steinhardt, Christiano, Schulman, and Mané (2016). Rapporteur report by Daniela Wiepert.<br>
+- The Alignment Problem from a Deep Learning Perspective, by Ngo, Chan, and Mindermann (many versions but latest is 2025), and Research Priorities for Robust and Beneficial Artificial Intelligence by Russell, Dewey, and Tegmark (2016). Rapporteur report by Oleg Pittman and Jack Holt.<br>
+- What Happened: OpenAI and HuggingFace, by Zvi Mowshowitz; The Rise and Fall of Agent Civilizations, by Dwarkesh Patel, and the METR report by on the HuggingFace incident, by Greenblatt, Cotra, and Wijk (all 2026). Rapporteur report by Shourjo Aditya Chaudhuri and John Robertson.<br>
+- We Must Pace the Frontier, by Dario Amodei (2026). Rapporteur report by Dhilan Shah.<br>
+- The Basic AI Drives, by Stephen Omohundro (2008), and Optimal Policies Tend to Seek Power, by Turner, Smith, Shah, Critch, and Tadepalli (2023). Rapporteur report by Bill Zheng.<br>
+- Corrigibility, by Soares, Fallenstein, Yudkowsky, and Armstrong (2015). Rapporteur report by Sukrut Chikodikar.<br>
+- The Off-Switch Game, by Hadfield-Menell, Dragan, Abbeel, and Russell (2017). Rapporteur report by Praneel Seth.<br>
+- Planting Undetectable Backdoors in Machine Learning Models, by Goldwasser, Kim, Vaikuntanathan, and Zamir (latest version 2024), and Oblivious Defense in ML Models: Backdoor Removal without Detection, by Goldwasser, Shafer, Vafa, and Vaikuntanathan (2025).  Rapporteur report by Agrim Jain and Indira Dutta.<br>
+- Backdoor Defense, Learnability, and Obfuscation by Christiano, Hilton, Lecomte, and Zhu (2024), and Unelicitable Backdoors in Language Models via Cryptographic Transformer Circuits, by Draguns et al. (2024). Rapporteur report by John Dunbar (coming).<br>
+- Functional Decision Theory: A New Theory of Instrumental Rationality, by Eliezer Yudkowsky and Nate Soares (2018).  Rapporteur report by Isaac Noel (coming).<br>
+- Robust Cooperation In the Prisoner’s Dilemma: Program Equilibrium via Provability Logic, by Barasz, Christiano, Fallenstein, Herreshoff, LaVictoire, and Yudkowsky (latest version 2021).  Rapporteur report by Shunan Zheng (coming).<br>
+- Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training, by Hubinger et al. (long list of authors) (2024).  Rapporteur report by Anthony Wang (coming).<br>
+- Social Choice Should Guide AI Alignment in Dealing with Diverse Human Feedback, by Conitzer et al. (long list of authors) (2024) and Toward a Theory of Value in AI Alignment, by Ahmed, Birhane, Smart, Kay, Shrishak, and Tobin (2026).  Rapporteur report by Priyanka Sadagopan (coming).<br>
+- Claude’s Constitution, by Amanda Askell, Joe Carlsmith, Chris Olah, Jared Kaplan, Holden Karnofsky, et al. (2026).  Rapporteur report by Alan Li (coming).<br>
+- AI Safety via Debate, by Geoffrey Irving, Paul Christiano, and Dario Amodei (2018).  Rapporteur report by Sampoorna Poria (coming).<br>
+- Scalable AI Safety via Doubly-Efficient Debate, by Jonah Brown-Cohen, Geoffrey Irving, and Georgios Piliouras (2023).  Rapporteur report by Aarushi Lakhi (coming).<br>
+- AI as Normal Technology, by Arvind Narayanan and Sayash Kapoor (2025).  Rapporteur report by Weixi Chen (coming).<br>
+- On the Dangers of Stochastic Parrots, by Emily Bender, Timnit Gebru, Angelina McMillan-Major and Shmargaret Shmitchell (2021). Rapporteur report by George Tsoukalas (coming).<br>
+(More readings TBD, until the semester ends!)<br>
+Thanks to my TA, Lin Lin Lee, for her help in getting all of this together.<br>
+Update: I welcome elevated discussion of these papers and rapporteur reports in the comment section; some of the students might chime in too! Because of the connection to an academic class, though, in this post I’ll be especially ruthless in keeping out nonconstructive or off-topic comments.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://scottaaronson.blog/?p=10204" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="f3278e217176c546.html" class="prev-next">&larr; Xanadu Secures Up to $10 Million in Additional DARPA Funding Under QBI Program</a>
+  
+  
+  <a href="f474e0bd67f9d14e.html" class="prev-next">Quantinuum Demonstrates 99.9995% Logical Memory Fidelity on Helios Trapped-Ion Processor &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-10-20 03:10 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
