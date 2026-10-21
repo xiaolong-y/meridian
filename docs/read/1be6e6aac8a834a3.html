@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vote! — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="8d143c33748f1056.html" title="Quminex Raises $1.5M CAD ($1.06M USD) Pre-Seed Round Led by Quantacet and QAI Ventures to Advance Mineral Discovery Platform">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Vote!</h1>
+    <div class="article-meta">
+      <span class="article-source">Shtetl-Optimized</span>
+      <span>Scott</span>
+      <span>5h</span>
+      <span class="article-category">quantum</span>
+      <span>615 words</span>
+      <span>4 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Vote!<br>
+Today, I take a break from your regularly-scheduled AI mathocalypse programming to urge my American readers to vote in the Congressional midterms, early if possible, if you haven’t already. Especially if your state faces one or more major contests, as does my adopted home state of Texas.<br>
+Me, I voted straight-ticket Democrat today, as I’ve done in every election since I became eligible over a quarter-century ago (except for when I vote-swapped with someone from another state).<br>
+So yes, I voted for the guy who studied theology a short walk from my house, and who seems to have really internalized the whole Jesus thing about kindness to everyone—<br>
+—over his sneering, thuggish, cartoonishly mafia-like opponent. Fingers crossed that Talarico pulls off a historic upset for our state (he’s currently a 2-to-1 favorite in the prediction markets).<br>
+The Texas Republicans did everything they possibly could to make this choice easy for me, by being corrupt, conspiratorial, racist, and Taliban-like even by the jaw-droppingly debased standards of MAGA in 2026. As I draw breath, I could never vote for a slate one of whose candidates attacked UT students for the crime of being visibly Southeast Asian while cheering their school’s football victory from the stands—and whose other candidates could barely bring themselves to condemn this knuckle-dragging racist, for fear of angering their base. (It’s like, didn’t you want immigrants to assimilate to American culture? What more could these kids possibly do, short of skin bleach?)<br>
+All the same, this was also the first US election in my lifetime where I felt like my vote was genuinely in play—especially when I listened to Talarico’s condemnations of Israel, for having the temerity to fight the same kind of war any random other nation would’ve fought had it been attacked as Israel was on October 7. When Hasan Piker came to speak to a cheering crowd here at UT Austin, I actually wrote to someone I know in the Talarico campaign, to ask whether Talarico would show enough balls to condemn Piker’s many antisemitic and anti-American statements, and renounce his support. My contact was nice enough to reply to me, saying: don’t worry, James is taking care to be far away from Austin during Piker’s visit, so he won’t need to engage at all!<br>
+So then, this is my candidate: the guy who’s strategically silent on the wildly-popular streamer who’d gladly see my Israeli family members raped and beheaded, rather than campaigning with that streamer like Abdul El-Sayed did in Michigan. I unironically believe that, for Talarico, it took genuine moral courage to resist the whole momentum of his party’s youth even to this extent.<br>
+To earn my vote in the near future under these circumstances, all a Texas Republican would need to do is be somewhat sane or reasonable.  He or she might affirm, for example, that racism is bad, that abortion is a woman’s choice, that Christianity is not the state religion of the US, that Covid vaccines work, and/or that Joe Biden won in 2020, while still being arbitrarily right-wing on taxes and other stuff.  He or she could then simply wait for the Democrats to descend fully into the worldview of the masked hooligans who are currently setting France’s beautiful cities aflame, terrorizing its shopkeepers, and looting as many Louis Vuitton handbags as they can carry … all for Palestine, of course, and for the death of global capitalism, and for the violent overthrow of the scheming, money-grubbing, hook-nosed, international Talmudic … err, I mean “Zionists.”<br>
+What I’m trying to say is, it was a genuine achievement on the part of the Texas Republicans to fail to earn a single vote from me this cycle.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://scottaaronson.blog/?p=10222" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="8d143c33748f1056.html" class="prev-next">Quminex Raises $1.5M CAD ($1.06M USD) Pre-Seed Round Led by Quantacet and QAI Ventures to Advance Mineral Discovery Platform &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-10-21 11:05 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
