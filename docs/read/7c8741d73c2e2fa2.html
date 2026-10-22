@@ -137,20 +137,28 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>22h</span>
+      <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>66 words</span>
-      <span>1 min read</span>
+      <span>485 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Postquant Labs has launched the Quip Virtual Machine (QVM) to standardize quantum execution across diverse hardware. The QVM features a gas-based cost model for quantum operations and has shown promising performance in benchmarking, outperforming classical solvers in portfolio optimization. The platform also incorporates a three-tier verification architecture to ensure execution accuracy. The post Postquant Labs Launches Quip Virtual Machine to Unify Quantum Execution Across Hardware Architectur</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/postquant-labs-launches-quip-virtual-machine-to-unify-quantum-execution-across-hardware-architectures/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Quantum computing marketplace developer Postquant Labs has launched its Quip Virtual Machine (QVM) alongside its first quantum smart contracts on the Aglais testnet. Modeled conceptually after the Ethereum Virtual Machine (EVM), the QVM provides a constraint-based programming language and runtime designed to unify execution across annealers, gate-based quantum systems, and classical hardware.<br>
+The platform introduces a gas-based cost model for quantum operations—calculating execution costs based on qubit space, run duration, and entanglement metrics—to quote maximum compute costs in shared credits prior to execution. Academic researchers from Monash University, the University of Notre Dame, and Purdue University are evaluating the runtime to streamline quantum algorithm development, while industrial optimization firm SiC Systems is testing the stack for AI-driven chemical and biological process modeling.<br>
+| [ Quip Virtual Machine (QVM) Technical & Operational Architecture ] |  |  | <br>
+|---|---|---|<br>
+| Architecture Pillar | Core Technical Mechanism | Target Operational Function | <br>
+| • Cross-Hardware Language | • High-level constraint-based programming abstraction | • Compiles across annealers, gate-based QPUs, and classical solvers without manual circuit layout. | <br>
+| • Gas-Based Cost Model | • Dynamic pricing derived from qubit footprint, runtime, & entanglement | • Quotes deterministic maximum compute costs upfront in network credits prior to job execution. | <br>
+| • Live Portfolio Benchmark | • 1,930 head-to-head races on Quip Network (D-Wave vs. CPU simulated annealing) | • Quantum solver matched or beat classical across all trials; median win improved objective quality by 2.56%. | <br>
+| • 3-Tier Verification | • Classical simulation cross-checks & cryptographic attestations | • Validates hardware execution accuracy and resolves output disputes against recorded benchmarks. | <br>
+| • Settlement Layer | • QuipSwap quantum-resistant payment framework | • Handles decentralized program deployment, operator compensation, and transaction settlement. | <br>
+To evaluate performance on live workloads, Postquant Labs conducted a 1,930-trial head-to-head portfolio optimization benchmark during Quantum.Tech World, pitting a D-Wave Advantage quantum annealer against classical simulated annealing on user-configured 28-asset portfolios. Over 500-read sampling budgets, the quantum annealer matched or outperformed the classical CPU solver in every trial (winning 970 races outright and tying 960), yielding a median portfolio objective quality improvement of 2.56% when selecting asset subsets. Controlled lab comparisons against exact solver Gurobi confirmed that the QPU consistently recovered certified-optimal selections on 20- and 28-name portfolios, whereas simulated annealing lagged 1.2% to 4.4% behind the theoretical optimum.<br>
+Every computation executed through the QVM passes through a three-tier verification architecture that cross-checks quantum outputs against classical simulations, benchmarks results independently, and binds execution records to specific physical hardware using cryptographic attestations. Postquant Labs plans to transition the QVM from the Aglais testnet to its mainnet environment, where workloads will settle in native tokens via its QuipSwap protocol.<br>
+Review the official press release via PR Newswire here, explore the developer portal on Quip Network Testnet here, and read the technical report on Quip Network Insights here.</p>
   </div>
   
 </article>
@@ -173,7 +181,7 @@
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-10-22 11:03 UTC
+  Generated 2026-10-22 16:31 UTC
 </div>
 
 <script type="module">
