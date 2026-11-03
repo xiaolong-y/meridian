@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahead of EU Quantum Act, IQM Calls for Dedicated Qubit Foundries and DARPA-Style Procurement — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="fdf610e0da0890b3.html" title="Universal Quantum Unveils the iQPU: Foundry-Fabricated Trapped-Ion Processor Engineered for Modular Scaling">&larr; prev</a>
+    <a href="f4c85ff918032cc3.html" title="FirstQFM Demonstrates Quantum Reservoir Computing on Rigetti’s 108-Qubit Processor to Outperform Classical Financial Benchmarks">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Ahead of EU Quantum Act, IQM Calls for Dedicated Qubit Foundries and DARPA-Style Procurement</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>7h</span>
+      <span class="article-category">quantum</span>
+      <span>442 words</span>
+      <span>3 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Ahead of the European Commission’s expected presentation of the European Union Quantum Act, Finnish-German hardware developer IQM Quantum Computers (Nasdaq: IQMX) has released an industrial policy manifesto titled Quantum Is Europe’s Second Chance. The position piece argues that while Europe ceded commercial leadership in artificial intelligence to foreign hyperscalers, the continent enters the commercialization phase of quantum computing with structural advantages that risk eroding without coordinated manufacturing capacity, late-stage growth capital, and milestone-driven procurement.<br>
+| Europe’s Quantum Ecosystem: Current Footprint vs. Policy Asks |  |  | <br>
+|---|---|---|<br>
+| Ecosystem Pillar | Reported Metric / Current Baseline | Proposed Quantum Act Mechanism | <br>
+| Public Investment | ~$10B across EU Member States | Ranks second globally behind China; leads the U.S. in gross public commitments. | <br>
+| HPC Deployments | 21 on-premises QPU sites (~66% globally) | Embeds QPUs directly into national supercomputing hubs (versus two in the U.S.). | <br>
+| Growth Capital | EU captured 12% of venture capital (vs. 44% in U.S.) | Establishes a Scale-up Europe Fund for mixed primary/secondary late-stage financing. | <br>
+| Chip Manufacturing | Academic cleanrooms and R&D pilot lines | Funds shared packaging foundries and dedicated commercial qubit fabs by the 2030s. | <br>
+| Public Procurement | Traditional grant subsidies | Transitions to milestone-based co-development contracts modeled on DARPA’s QBI. | <br>
+| Regulatory Speed | State aid approval cycles exceeding 12 months | Imposes a single-window review capped at four to six months (matching Singapore). | <br>
+A central vulnerability highlighted in the manifesto is geographic fragmentation: European Centre for International Political Economy (ECIPE) data indicates that 23% of EU quantum funding is dispersed across 34 sub-scale regional clusters, compared to 2% in the U.S. and 1% in China. While EuroHPC initiatives have established European leadership in hybrid quantum-supercomputing installations, hardware developers face persistent barriers scaling beyond the laboratory. When early-stage investors seek liquidity, the absence of deep European institutional growth capital frequently transfers ownership, decision-making, and intellectual property overseas.<br>
+To establish domestic commercial resilience, IQM outlines five legislative priorities for the Quantum Act and the companion European Chips Act 2.0. The strategy centers on creating dedicated industrial-grade quantum foundries and packaging facilities by the 2030s to match U.S. CHIPS Act infrastructure programs underway with IBM and GlobalFoundries. To finance large-scale systems, the manifesto urges the EU to model its Quantum Grand Challenges on the U.S. Defense Advanced Research Projects Agency (DARPA) Quantum Benchmarking Initiative (QBI)—replacing basic research grants with multi-hundred-million-dollar milestone contracts—while designating quantum cleanrooms and supply-chain infrastructure as “first-of-a-kind” facilities eligible for fast-tracked European state aid.<br>
+The policy document is accessible on the IQM Perspective Portal here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/ahead-of-eu-quantum-act-iqm-calls-for-dedicated-qubit-foundries-and-darpa-style-procurement/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="fdf610e0da0890b3.html" class="prev-next">&larr; Universal Quantum Unveils the iQPU: Foundry-Fabricated Trapped-Ion Processor Engineered for Modular Scaling</a>
+  
+  
+  <a href="f4c85ff918032cc3.html" class="prev-next">FirstQFM Demonstrates Quantum Reservoir Computing on Rigetti’s 108-Qubit Processor to Outperform Classical Financial Benchmarks &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-03 22:48 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
