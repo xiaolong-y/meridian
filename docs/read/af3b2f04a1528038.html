@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alice &amp; Bob Demonstrates Multi-Hour Physical Bit-Flip Suppression on Single-Cat and Helium 2 Processors — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="d96a14c03a92c48b.html" title="Podcast about the Topic: Part III, with Brian Greene">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Alice &amp; Bob Demonstrates Multi-Hour Physical Bit-Flip Suppression on Single-Cat and Helium 2 Processors</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>21h</span>
+      <span class="article-category">quantum</span>
+      <span>461 words</span>
+      <span>3 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Superconducting hardware developer Alice & Bob has reported experimental results measuring macroscopic bit-flip lifetimes exceeding one hour on its bosonic cat-qubit hardware. Detailed in an experimental technical update titled A Cat Qubit That Jumps Every Hour, the measurements show an average idle bit-flip lifetime of 44 minutes on a single-qubit device, alongside multi-qubit runs on its 12-qubit Helium 2 processor exceeding three to four hours. The physical milestone provides empirical backing for the error-model assumptions outlined in QCR’s previous coverage of Alice & Bob’s 23,000-qubit Shor’s algorithm compilation, which evaluated fault tolerance under a one-hour bit-flip baseline.<br>
+| Alice & Bob Experimental Cat-Qubit Hardware Benchmarks |  |  | <br>
+|---|---|---|<br>
+| Hardware Platform | Operating Parameters | Demonstrated Coherence & Gate Metrics | <br>
+| Single-Qubit Test Device | Galvanic Cat design; average photon number ⟨n⟩ = 11 | Mean bit-flip lifetime: 44 minutes (95% CI: 33–60 min) over 61 hours (41 quantum jumps). | <br>
+| Helium 2 (12-Qubit Processor) | Multi-qubit array (⟨n⟩ = 11 to 16 photons) | Cat 1: 189 min \| Cat 8: 252 min \| Cat 12: 189 min bit-flip lifetimes. | <br>
+| Phase Coherence (Single Qubit) | Parity decay measurement (even cat state) | Phase-flip lifetime of 420 ns (equivalent to single-photon T1 = 9.2 μs). | <br>
+| Single-Qubit Control | Resonant drive Z-rotation (π-pulse) | Z-gate fidelity of 94.2% executed in 26.5 ns. | <br>
+Cat qubits stabilize quantum information in superpositions of coherent states within superconducting microwave cavities, using two-photon dissipation to exponentially suppress bit-flip errors at the cost of linearly increasing phase-flip noise. In a 61-hour continuous monitoring run on a single-cavity test device pumped to an average occupation of 11 photons, the team recorded 41 discrete quantum jump events. Autocorrelation and Bayesian analysis confirmed single-exponential, memoryless Poisson statistics consistent with Markovian switching. To verify that macroscopic bit-flip stability did not compromise quantum coherence, the researchers tracked state parity decay and demonstrated continuous Bloch-sphere Z rotations, achieving a 94.2% gate fidelity in 26.5 ns.<br>
+The multi-hour stability observed on Helium 2 directly addresses a primary bottleneck in bosonic quantum error correction. While Alice & Bob’s idealized Shor compilation assumed an unmitigated 100-year bit-flip lifetime to factor RSA-2048 on 22,593 qubits, their fault-tolerant model showed that a physical bit-flip rate of once per hour could be corrected by concatenating cat qubits into an outer distance-3 bit-flip code, expanding the required processor size to roughly 45,000 qubits. The demonstration confirms that physical devices can operate within this concatenation threshold during idle periods, though sustaining these lifetimes during two-qubit entangling operations (such as bias-preserving CNOT gates) remains the next milestone before active logical error correction can be realized.<br>
+Experimental datasets and analysis are available via Alice & Bob’s Technical Lab Blog here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/alice-bob-demonstrates-multi-hour-physical-bit-flip-suppression-on-single-cat-and-helium-2-processors/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="d96a14c03a92c48b.html" class="prev-next">Podcast about the Topic: Part III, with Brian Greene &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-03 13:30 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
