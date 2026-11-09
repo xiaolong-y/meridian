@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aaronson-Ambainis Conjecture proved!  (By AI, of course) — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="8e3be11b1cfad68a.html" title="Riverlane Demonstrates Data-Driven DEM Augmentation to Reduce Surface-Code Logical Errors">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Aaronson-Ambainis Conjecture proved!  (By AI, of course)</h1>
+    <div class="article-meta">
+      <span class="article-source">Shtetl-Optimized</span>
+      <span>Scott</span>
+      <span>6h</span>
+      <span class="article-category">quantum</span>
+      <span>1032 words</span>
+      <span>6 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Aaronson-Ambainis Conjecture proved! (By AI, of course)<br>
+We now, of course, live in age where longstanding open problems in quantum computing theory (and all theoretical computer science, and all math) are dropping like flies, to the extent that there’s no way I could possibly do a post on each and every bombshell. But I can’t exactly avoid the Aaronson-Ambainis Conjecture, given that my name is on it, and that I cared about the answer to this one (back in 2019, I even blogged about an attempted solution that ultimately turned out to be fallacious).<br>
+For those tuning in from home, the AA Conjecture, which Andris and I posed back in 2009, says that every bounded degree-d polynomial p:{0,1}n→[0,1] in n Boolean variables, with constant variance, has some variable whose influence is at least 1/poly(d). The reason Andris and I cared about this conjecture is that, as we proved, it implies that there’s no superpolynomial advantage of quantum query complexity over classical query complexity for decision problems that works on most Boolean inputs. Or, in terms of complexity classes, that there’s no hope of separating P from BQP relative to a random oracle, without proving P≠BQP or something of the kind in the unrelativized world. This would finally answer a question of Fortnow and Rogers from 1998.<br>
+The connection between quantum algorithms and polynomials came from the famous 1998 paper of Beals et al., which showed that, if Q is a quantum algorithm that makes T queries to an oracle X, then Pr[Q(X) accepts] can be written as a multivariate real polynomial p(X) in the bits of X, of degree at most 2T. The proof of my and Andris’s result is then simply this: take the polynomial p, find in it a variable of influence at least 1/poly(T), and query that variable, and keep repeating until there’s no longer such an influential variable—at which point, by assumption, p is nearly a constant polynomial, which means you’ve learned whether Q accepts with high probability over X. This provides a classical simulation of the quantum algorithm Q, which makes poly(T) queries to the oracle X and which works for most X’s.<br>
+The AA Conjecture caught on to an extent Andris and I couldn’t have predicted. Some who worked on it barely even cared about the implication for quantum computing, and just wanted to solve the problem about polynomials! There were, I’m both proud and sorry to report, Fourier analysis experts and grad students who oriented their whole research programs around trying to prove AA, with lots of proofs of special cases, some of them very recent. A proof of full AA was one of the last remaining open problems in quantum query complexity that everyone seemed to agree was centrally important. I was surprised, honestly, to see it missing from OpenAI’s Mathocalypse dump a few weeks ago. Surely they tried it, so was it really so much harder than all the problems that were solved?<br>
+Now a startup called Physical Superintelligence has announced a proof of the AA Conjecture, specifically showing that there’s a variable of influence at least ~1/d6, which they say they obtained using their proprietary research harness on an internal Claude model. (What role the harness played, compared to the internal model, is something I don’t know.) The effort was led by David Turturean and Jim Halverson at PSI. They actually let me know about this several weeks ago, but I had to keep it secret until the announcement late last week.<br>
+I haven’t yet understood the proof, although I hope to. In the meantime, though, I believe the proof is correct for two reasons. Firstly, there’s a Lean certificate, and secondly, human experts (I’m no longer an expert on my own conjecture!) have already gone over it and understood it. In fact, there’s already a beautiful-looking exposition written by Guy Blanc of MIT and Jordan Docter, Carmen Strassle, and Li-Yang Tan of Stanford, which looks like a perfect starting point for those seeking to go much deeper. Or, for those seeking to go only slightly deeper, PSI’s blog post on the advance is sufficiently well-written that it saves me from the need to write too much here.<br>
+Alas, as reported by Ashley Montanaro, there were the usual forehead-banging misconceptions about what this result means for quantum computing. So for example, Pedro Domingos of U. of Washington blasted out to his 137,000 X followers that the proof means that “the dream of quantum supremacy is dead.” The truth, as Pedro knows perfectly well (or easily could know), is that it rules out one particular type of quantum supremacy (namely, for yes-or-no problems relative to random oracles) that we’d already conjectured didn’t exist anyway. It doesn’t undermine any form of quantum supremacy that we did conjecture to exist! It has zero effect, for example, on Shor’s factoring algorithm, which uses a highly non-random (periodic) oracle for the key internal step. It has zero effect on the simulation of quantum physics and chemistry, which generally doesn’t depend on oracle algorithms at all. Even just relative to random oracles, the Yamakawa-Zhandry breakthrough from 2022 dramatically underscored that, if we switch our attention from decision problems to other kind of problems (in Yamakawa and Zhandry’s case, to NP search problems), then exponential quantum speedups do become possible. Anyway, this was sufficiently intellectually dishonest on Pedro’s part that it makes me disinclined to take him seriously about anything ever again.<br>
+If you’re wondering how I feel about the proof of AA—well, much like my wife Dana with the Unique Games Conjecture, it’s many different emotions at once.<br>
+- Satisfied that our conjecture turned out to be true after all (it’s nice to be 100% correct about something from time to time!)<br>
+- Disappointed that humans didn’t get to snag this conjecture before the robots did (with some more years, I think it’s exceedingly likely that they would have)<br>
+- Fatigued by the endless wonders from Aladdin’s Cave, the neverending buffet of solutions to longstanding open problems, wondering when if ever we’ll have time to digest it all<br>
+Anyway, huge congratulations to David Turturean and Jim Halverson, to Physical Superintelligence, and of course to Claude on this achievement!</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://scottaaronson.blog/?p=10295" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="8e3be11b1cfad68a.html" class="prev-next">Riverlane Demonstrates Data-Driven DEM Augmentation to Reduce Surface-Code Logical Errors &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-09 04:19 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
