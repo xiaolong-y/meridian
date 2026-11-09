@@ -137,9 +137,9 @@
     <div class="article-meta">
       <span class="article-source">Shtetl-Optimized</span>
       <span>Scott</span>
-      <span>6h</span>
+      <span>17h</span>
       <span class="article-category">quantum</span>
-      <span>1032 words</span>
+      <span>1115 words</span>
       <span>6 min read</span>
     </div>
   </div>
@@ -147,6 +147,11 @@
   
   <div class="article-content" id="article-body">
     <p>Aaronson-Ambainis Conjecture proved! (By AI, of course)<br>
+The “For Dummies” Version (apologies for not including this earlier):<br>
+- Yes, an AI solved a big open problem about quantum computing<br>
+- No, this doesn’t kill quantum supremacy, or change how we build quantum computers, or whatever else you read on Twitter<br>
+- What it does, is to rule out a potential class of quantum speedups that most of us didn’t believe would exist anyway<br>
+- It means my prediction was right, so you should listen to me more in the future!<br>
 We now, of course, live in age where longstanding open problems in quantum computing theory (and all theoretical computer science, and all math) are dropping like flies, to the extent that there’s no way I could possibly do a post on each and every bombshell. But I can’t exactly avoid the Aaronson-Ambainis Conjecture, given that my name is on it, and that I cared about the answer to this one (back in 2019, I even blogged about an attempted solution that ultimately turned out to be fallacious).<br>
 For those tuning in from home, the AA Conjecture, which Andris and I posed back in 2009, says that every bounded degree-d polynomial p:{0,1}n→[0,1] in n Boolean variables, with constant variance, has some variable whose influence is at least 1/poly(d). The reason Andris and I cared about this conjecture is that, as we proved, it implies that there’s no superpolynomial advantage of quantum query complexity over classical query complexity for decision problems that works on most Boolean inputs. Or, in terms of complexity classes, that there’s no hope of separating P from BQP relative to a random oracle, without proving P≠BQP or something of the kind in the unrelativized world. This would finally answer a question of Fortnow and Rogers from 1998.<br>
 The connection between quantum algorithms and polynomials came from the famous 1998 paper of Beals et al., which showed that, if Q is a quantum algorithm that makes T queries to an oracle X, then Pr[Q(X) accepts] can be written as a multivariate real polynomial p(X) in the bits of X, of degree at most 2T. The proof of my and Andris’s result is then simply this: take the polynomial p, find in it a variable of influence at least 1/poly(T), and query that variable, and keep repeating until there’s no longer such an influential variable—at which point, by assumption, p is nearly a constant polynomial, which means you’ve learned whether Q accepts with high probability over X. This provides a classical simulation of the quantum algorithm Q, which makes poly(T) queries to the oracle X and which works for most X’s.<br>
@@ -179,7 +184,7 @@ Anyway, huge congratulations to David Turturean and Jim Halverson, to Physical S
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-11-09 04:19 UTC
+  Generated 2026-11-09 14:59 UTC
 </div>
 
 <script type="module">
