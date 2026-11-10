@@ -126,7 +126,7 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    
+    <a href="c55cc73d3398cd44.html" title="Q-Block Computing Establishes Ottawa Headquarters to Expand Quantum Hardware R&amp;D">&larr; prev</a>
     <a href="8e3be11b1cfad68a.html" title="Riverlane Demonstrates Data-Driven DEM Augmentation to Reduce Surface-Code Logical Errors">next &rarr;</a>
   </div>
 </nav>
@@ -137,9 +137,9 @@
     <div class="article-meta">
       <span class="article-source">Shtetl-Optimized</span>
       <span>Scott</span>
-      <span>17h</span>
+      <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>1115 words</span>
+      <span>1189 words</span>
       <span>6 min read</span>
     </div>
   </div>
@@ -150,18 +150,20 @@
 The “For Dummies” Version (apologies for not including this earlier):<br>
 - Yes, an AI solved a big open problem about quantum computing<br>
 - No, this doesn’t kill quantum supremacy, or change how we build quantum computers, or whatever else you read on Twitter<br>
-- What it does, is to rule out a potential class of quantum speedups that most of us didn’t believe would exist anyway<br>
+- What it does, is to rule out a potential class of quantum speedups that most of us didn’t believe would exist anyway (namely, those that would compute a yes-or-no property of exponentially many random bits, superpolynomially faster than any classical algorithm)<br>
 - It means my prediction was right, so you should listen to me more in the future!<br>
 We now, of course, live in age where longstanding open problems in quantum computing theory (and all theoretical computer science, and all math) are dropping like flies, to the extent that there’s no way I could possibly do a post on each and every bombshell. But I can’t exactly avoid the Aaronson-Ambainis Conjecture, given that my name is on it, and that I cared about the answer to this one (back in 2019, I even blogged about an attempted solution that ultimately turned out to be fallacious).<br>
-For those tuning in from home, the AA Conjecture, which Andris and I posed back in 2009, says that every bounded degree-d polynomial p:{0,1}n→[0,1] in n Boolean variables, with constant variance, has some variable whose influence is at least 1/poly(d). The reason Andris and I cared about this conjecture is that, as we proved, it implies that there’s no superpolynomial advantage of quantum query complexity over classical query complexity for decision problems that works on most Boolean inputs. Or, in terms of complexity classes, that there’s no hope of separating P from BQP relative to a random oracle, without proving P≠BQP or something of the kind in the unrelativized world. This would finally answer a question of Fortnow and Rogers from 1998.<br>
-The connection between quantum algorithms and polynomials came from the famous 1998 paper of Beals et al., which showed that, if Q is a quantum algorithm that makes T queries to an oracle X, then Pr[Q(X) accepts] can be written as a multivariate real polynomial p(X) in the bits of X, of degree at most 2T. The proof of my and Andris’s result is then simply this: take the polynomial p, find in it a variable of influence at least 1/poly(T), and query that variable, and keep repeating until there’s no longer such an influential variable—at which point, by assumption, p is nearly a constant polynomial, which means you’ve learned whether Q accepts with high probability over X. This provides a classical simulation of the quantum algorithm Q, which makes poly(T) queries to the oracle X and which works for most X’s.<br>
+For those tuning in from home, the AA Conjecture, which Andris and I posed back in 2009, says that every degree-d polynomial p:{0,1}n→[0,1] in n Boolean variables, with constant variance, has some variable whose influence is at least 1/poly(d). The reason Andris and I cared about this conjecture is that, as we proved, it implies that there’s no superpolynomial advantage of quantum query complexity over classical query complexity for decision problems that works on most Boolean inputs. Or, in terms of complexity classes, that there’s no hope of separating P from BQP relative to a random oracle, without proving P≠BQP or something of the kind in the unrelativized world. This would finally answer a question of Fortnow and Rogers from 1998.<br>
+The connection between quantum algorithms and polynomials came from the famous 1998 paper of Beals et al., which showed that, if Q is a quantum algorithm that makes T queries to an oracle X, then Pr[Q(X) accepts] can be written as a multivariate real polynomial p(X) in the bits of X, of degree at most 2T. The proof of my and Andris’s result is then simply this: take the polynomial p, find in it a variable of influence at least 1/poly(T), and query that variable, and keep repeating until there’s no longer such an influential variable—at which point, by assumption, p is nearly a constant polynomial, which means you’ve learned whether Q accepts with high probability over X. This provides a classical simulation of the quantum algorithm Q—a simulation that makes poly(T) queries to the oracle X and that works for most X’s.<br>
 The AA Conjecture caught on to an extent Andris and I couldn’t have predicted. Some who worked on it barely even cared about the implication for quantum computing, and just wanted to solve the problem about polynomials! There were, I’m both proud and sorry to report, Fourier analysis experts and grad students who oriented their whole research programs around trying to prove AA, with lots of proofs of special cases, some of them very recent. A proof of full AA was one of the last remaining open problems in quantum query complexity that everyone seemed to agree was centrally important. I was surprised, honestly, to see it missing from OpenAI’s Mathocalypse dump a few weeks ago. Surely they tried it, so was it really so much harder than all the problems that were solved?<br>
 Now a startup called Physical Superintelligence has announced a proof of the AA Conjecture, specifically showing that there’s a variable of influence at least ~1/d6, which they say they obtained using their proprietary research harness on an internal Claude model. (What role the harness played, compared to the internal model, is something I don’t know.) The effort was led by David Turturean and Jim Halverson at PSI. They actually let me know about this several weeks ago, but I had to keep it secret until the announcement late last week.<br>
-I haven’t yet understood the proof, although I hope to. In the meantime, though, I believe the proof is correct for two reasons. Firstly, there’s a Lean certificate, and secondly, human experts (I’m no longer an expert on my own conjecture!) have already gone over it and understood it. In fact, there’s already a beautiful-looking exposition written by Guy Blanc of MIT and Jordan Docter, Carmen Strassle, and Li-Yang Tan of Stanford, which looks like a perfect starting point for those seeking to go much deeper. Or, for those seeking to go only slightly deeper, PSI’s blog post on the advance is sufficiently well-written that it saves me from the need to write too much here.<br>
+I haven’t yet understood the proof, although I hope to. In the meantime, though, I believe the proof is correct for two reasons. Firstly, there’s a Lean certificate, and secondly, human experts (I’m no longer an expert on my own conjecture!) have already gone over it and understood it. In fact, there’s already a beautiful-looking exposition written by Guy Blanc of MIT and Jordan Docter, Carmen Strassle, and Li-Yang Tan of Stanford, which looks like a perfect starting point for those seeking to go much deeper. Or, for those seeking to go only slightly deeper, PSI’s blog post on the advance is sufficiently well-written that it saves me from the need to write too much more here.<br>
 Alas, as reported by Ashley Montanaro, there were the usual forehead-banging misconceptions about what this result means for quantum computing. So for example, Pedro Domingos of U. of Washington blasted out to his 137,000 X followers that the proof means that “the dream of quantum supremacy is dead.” The truth, as Pedro knows perfectly well (or easily could know), is that it rules out one particular type of quantum supremacy (namely, for yes-or-no problems relative to random oracles) that we’d already conjectured didn’t exist anyway. It doesn’t undermine any form of quantum supremacy that we did conjecture to exist! It has zero effect, for example, on Shor’s factoring algorithm, which uses a highly non-random (periodic) oracle for the key internal step. It has zero effect on the simulation of quantum physics and chemistry, which generally doesn’t depend on oracle algorithms at all. Even just relative to random oracles, the Yamakawa-Zhandry breakthrough from 2022 dramatically underscored that, if we switch our attention from decision problems to other kind of problems (in Yamakawa and Zhandry’s case, to NP search problems), then exponential quantum speedups do become possible. Anyway, this was sufficiently intellectually dishonest on Pedro’s part that it makes me disinclined to take him seriously about anything ever again.<br>
+But, OK, given how radically new it is to have an AI solve so many of our longstanding open problems, I suppose “people are wildly misinterpreting a QC advance on social media” is an almost comfortingly familiar problem to have!<br>
 If you’re wondering how I feel about the proof of AA—well, much like my wife Dana with the Unique Games Conjecture, it’s many different emotions at once.<br>
-- Satisfied that our conjecture turned out to be true after all (it’s nice to be 100% correct about something from time to time!)<br>
-- Disappointed that humans didn’t get to snag this conjecture before the robots did (with some more years, I think it’s exceedingly likely that they would have)<br>
+- Satisfied that our conjecture turned out to be true after all (it’s nice to be 100% right about something from time to time!)<br>
+- Awestruck by the new reality of the world in which we live in<br>
+- Disappointed that humans didn’t get to snag this conjecture before the robots did (with some more years, I think it’s very likely that they would have)<br>
 - Fatigued by the endless wonders from Aladdin’s Cave, the neverending buffet of solutions to longstanding open problems, wondering when if ever we’ll have time to digest it all<br>
 Anyway, huge congratulations to David Turturean and Jim Halverson, to Physical Superintelligence, and of course to Claude on this achievement!</p>
   </div>
@@ -175,7 +177,9 @@ Anyway, huge congratulations to David Turturean and Jim Halverson, to Physical S
 
 
 <div class="bottom-nav">
-  <span></span>
+  
+  <a href="c55cc73d3398cd44.html" class="prev-next">&larr; Q-Block Computing Establishes Ottawa Headquarters to Expand Quantum Hardware R&amp;D</a>
+  
   
   <a href="8e3be11b1cfad68a.html" class="prev-next">Riverlane Demonstrates Data-Driven DEM Augmentation to Reduce Surface-Code Logical Errors &rarr;</a>
   
@@ -184,7 +188,7 @@ Anyway, huge congratulations to David Turturean and Jim Halverson, to Physical S
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-11-09 14:59 UTC
+  Generated 2026-11-10 01:06 UTC
 </div>
 
 <script type="module">
