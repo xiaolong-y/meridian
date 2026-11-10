@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPFL Demonstrates Millimeter-Wave-to-Optical Transducer with 67% Internal Efficiency — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="803bbe605a68ed2c.html" title="UK Unveils £189 Million Quantum Deployment Package Spanning Networking Testbeds, Commercialization, and Procurement">&larr; prev</a>
+    <a href="77a1e718c60c9a16.html" title="Why Quantum Hardware Needs Its Own Threat Model">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">EPFL Demonstrates Millimeter-Wave-to-Optical Transducer with 67% Internal Efficiency</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>9h</span>
+      <span class="article-category">quantum</span>
+      <span>569 words</span>
+      <span>3 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Researchers at the École Polytechnique Fédérale de Lausanne (EPFL) Hybrid Photonics Laboratory and Center for Quantum Science and Engineering have demonstrated an integrated electro-optic transducer bridging the millimeter-wave (mm-wave) and telecom optical domains. Detailed in the paper “Coherent transduction and dynamical back-action between light and millimeter waves,” the architecture couples a thin-film lithium niobate (TFLN) photonic molecule to a sub-millimeter metallic resonator, achieving a vacuum electro-optic coupling rate of approximately 60 kHz and an internal conversion efficiency of 67%.<br>
+| EPFL Integrated Millimeter-Wave-to-Optical Transducer Specifications |  |  | <br>
+|---|---|---|<br>
+| Parameter | Measured Value | Architectural Significance | <br>
+| Operating Frequencies | 263 GHz (mm-wave) / 192 THz (1,561 nm telecom optical) | Interfaces high-frequency cryogenic modes and atomic Rydberg transitions directly with telecom C-band optical infrastructure. | <br>
+| Optical Resonators | Coupled Fabry–Pérot cavities in TFLN (lengths 110 μm and 119 μm) | Achieves free spectral ranges exceeding 650 GHz with optical quality factors up to 106 (κ± / 2π ≈ 186–230 MHz). | <br>
+| Electromagnetic Resonator | Quarter-wave gold resonator (length ≈ 165 μm) | Replaces macroscopic lines to equalize optical and mm-wave mode volumes, eliminating spatial overlap penalties. | <br>
+| Vacuum Coupling Rate (g0 / 2π) | 60 ± 8 kHz | Scales g0 linearly with frequency, exceeding microwave-domain electro-optic coupling rates by a factor of 60. | <br>
+| Electro-Optic Cooperativity (C) | Up to 0.27 ± 0.03 | Yields 67% internal photon conversion efficiency and drives observable dynamical back-action linewidth modulation. | <br>
+| Effective Thermal Detection | 0.21 ± 0.08 photons | Resolves thermal background occupancies below the single-quantum limit directly via optical sideband detection. | <br>
+Coherent frequency conversion between high-frequency electric fields and optical carriers serves as a critical interface for distributed quantum architectures, linking cryogenic processors and neutral-atom registers over optical fiber without introducing thermal load. While vacuum electro-optic coupling scales with operating frequency according to g0 ∝ (ωmmw / Vmmw)1/2, conventional implementations suffered from mode-volume mismatch: sub-millimeter electromagnetic fields were paired with millimeter-scale optical racetrack resonators, degrading field overlap and reducing net cooperativity.<br>
+The EPFL design resolves this spatial discrepancy by defining two compact Fabry–Pérot microcavities via photonic crystal mirrors etched into a suspended 400 nm TFLN membrane. Integrated DC tuning electrodes adjust the residual detuning between the resulting symmetric and anti-symmetric modes to align the doublet splitting with the adjacent quarter-wavelength resonator. Complete polarization alignment along the crystalline Z-axis maximizes interaction with lithium niobate’s primary Pockels tensor component (r33).<br>
+Because the optical linewidth is roughly two orders of magnitude narrower than the dissipative mm-wave resonance (γmmw / 2π ≈ 15 GHz), the transducer operates in the reversed dissipation regime (κ± ≪ γmmw). The optical filter isolates the narrow spectral slice of room-temperature thermal mm-wave photons falling within its bandwidth, enabling the thermal sideband to function as an uncalibrated internal standard for measuring device cooperativity.<br>
+Under coherent drive, electro-optic dynamical back-action modulates the optical response: the beam-splitter up-conversion interaction introduces an additional dissipation path that broadens the optical linewidth, while parametric down-conversion anti-damps and narrows the mode. Although total off-chip wireless efficiency remains constrained by free-space beam coupling into the integrated antenna (1.6 × 10−4), transitioning from a normal-metal gold resonator to high-gap superconductors such as niobium titanium nitride (NbTiN) is projected to suppress internal ohmic damping and increase total transduction efficiency at liquid-helium temperatures.<br>
+The research is detailed in the technical preprint here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/epfl-demonstrates-millimeter-wave-to-optical-transducer-with-67-internal-efficiency/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="803bbe605a68ed2c.html" class="prev-next">&larr; UK Unveils £189 Million Quantum Deployment Package Spanning Networking Testbeds, Commercialization, and Procurement</a>
+  
+  
+  <a href="77a1e718c60c9a16.html" class="prev-next">Why Quantum Hardware Needs Its Own Threat Model &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-10 22:46 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
