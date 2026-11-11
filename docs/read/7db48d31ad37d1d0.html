@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RIKEN and Quantinuum Demonstrate Heterogeneous Multi-QPU Workflows on Fugaku — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="b09bc355244acf47.html" title="Google DeepMind and Google Quantum AI Use Lean 4 to Discover Formally Verified Quantum Algorithms">&larr; prev</a>
+    <a href="f98a357a67e50529.html" title="Dana’s talk on OpenAI’s proof of the Unique Games Conjecture, now on YouTube!">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">RIKEN and Quantinuum Demonstrate Heterogeneous Multi-QPU Workflows on Fugaku</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>5h</span>
+      <span class="article-category">quantum</span>
+      <span>665 words</span>
+      <span>4 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Researchers from Quantinuum, the University of Tsukuba, and the RIKEN Center for Computational Science (R-CCS) have demonstrated a hybrid computing architecture linking the supercomputer Fugaku simultaneously with two distinct physical quantum processors: the Quantinuum Reimei trapped-ion system and the ibm_kobe superconducting system. Detailed in an IEEE conference paper for SC26 titled “Quantum-HPC Workflows Across Multiple Quantum Computing Platforms: Two Case Studies,” the team adapted Quantinuum’s open-source Tierkreis workflow management system to native supercomputing batch environments, executing the first demonstrated multi-modality quantum-classical workflow across geographically separated QPUs.<br>
+| Fugaku Multi-QPU Hybrid Architecture & Benchmark Profile |  |  | <br>
+|---|---|---|<br>
+| Architecture Layer | Hardware & System Platform | Technical Specification & Operational Function | <br>
+| Host Supercomputer | Supercomputer Fugaku (RIKEN R-CCS, Kobe) | Orchestrates distributed job execution via Fujitsu TCS (pjsub) schedulers and direct sqcsub APIs over dedicated virtual LANs. | <br>
+| Superconducting Coprocessor | ibm_kobe (IBM Heron R2, 156 qubits) | Located on-site at Kobe; executes high-repetition, low-latency variational parameter optimization. | <br>
+| Trapped-Ion Coprocessor | Quantinuum Reimei (H1-series, 20 qubits) | Located at Wako (~500 km away); executes deep, high-fidelity Trotterized circuits using all-to-all connectivity. | <br>
+| Workflow Middleware | Tierkreis (HPC-Extended Dataflow Framework) | Directs asynchronous Directed Acyclic Graphs (DAGs), task-level state persistence, and typed executor interfaces across CPU and QPU nodes. | <br>
+| Benchmark Workload | 16-site 2D Transverse-Field Ising Model (TFIM) | 4 × 4 lattice with periodic boundary conditions evaluating ground-state energy convergence. | <br>
+| Hybrid Precision Scaling | VQE Warm-Start → Single-Ancilla QPE | Reduces ground-state energy error from (E − Eexact)/J = 2.47 ± 0.10 (pure VQE) down to 0.61 ± 0.36 on physical hardware. | <br>
+Hybrid quantum-classical algorithms often depend on fragmented glue code, bash scripts, and manual job handling that fail to scale within production supercomputing environments. To formalize multi-system orchestration, the authors extended Tierkreis—a dataflow framework that models computational graphs as directed acyclic structures—by introducing specialized executors for Fugaku’s native job scheduler (pjsub) and direct quantum submission channels (sqcsub). These interfaces bypass commercial cloud queues, enabling Fugaku compute and login nodes to dispatch tasks to quantum coprocessors via low-latency gRPC services.<br>
+The primary demonstration evaluated a modality-aware algorithm combining the distinct strengths of superconducting and trapped-ion hardware to compute the ground-state energy of a 16-site transverse-field Ising model. Rather than forcing a single architecture to execute the entire routine, the workflow separated the task across platforms:<br>
+- Iterative State Optimization on ibm_kobe: The Variational Quantum Eigensolver (VQE) requires rapid iteration over thousands of circuit evaluations. The workflow executed 500 iterations of a parameterized Hamiltonian variational ansatz using the SPSA optimizer on the 156-qubit ibm_kobe processor, collecting 20,000 shots per circuit to find an approximate ground-state representation.<br>
+- High-Fidelity Phase Estimation on Reimei: Because Quantum Phase Estimation (QPE) requires deep coherent circuits that challenge noisy systems, the parameters derived from ibm_kobe were transferred classically to seed the initial state for an Information Theory QPE algorithm on Reimei. Executed across 16 system qubits, 1 ancilla, and 3 scratch qubits dedicated to hardware leakage-detection gadgets, Reimei performed Trotterized time-evolution using 300 shots.<br>
+On physical hardware, using the fast superconducting processor to “warm-start” the trapped-ion phase estimation routine reduced the energy error to (E − Eexact)/J = 0.61 ± 0.36, substantially outperforming standalone VQE on ibm_kobe (2.47 ± 0.10) and a classically optimized product-state baseline (3.45). A secondary case study re-executed Fugaku-driven biomolecular excited-state workflows (subtractive ONIOM and TE-QSCI), validating that Tierkreis automated 80% of runtime coordination across classical chemistry packages (NTChem) and quantum circuit generation with line-level backend reconfigurability.<br>
+The work demonstrates that complex quantum chemistry and condensed-matter workflows can operate across heterogeneous quantum hardware architectures without physical quantum interconnects, using classical supercomputers as central orchestrators.<br>
+Full implementation details and algorithmic derivations are accessible in the technical preprint here and the open-source Tierkreis repository here. Related QCR coverage includes Fugaku–Reimei hybrid chemistry benchmarks here, the Reimei H2 hardware upgrade here, and the Quantinuum, RIKEN, and SoftBank quantum-AI partnership here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/riken-and-quantinuum-demonstrate-heterogeneous-multi-qpu-workflows-on-fugaku/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="b09bc355244acf47.html" class="prev-next">&larr; Google DeepMind and Google Quantum AI Use Lean 4 to Discover Formally Verified Quantum Algorithms</a>
+  
+  
+  <a href="f98a357a67e50529.html" class="prev-next">Dana’s talk on OpenAI’s proof of the Unique Games Conjecture, now on YouTube! &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-11 04:23 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
