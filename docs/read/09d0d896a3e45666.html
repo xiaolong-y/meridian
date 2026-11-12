@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q-CTRL Demonstrates Push-Button Cold-Start Calibration on QuantWare Superconducting QPUs — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="e9780d70bffcc90b.html" title="Q-CTRL Expands Fire Opal Suite with Constrained Optimization, Estimator Twirling, and Monte Carlo Solver">&larr; prev</a>
+    <a href="39a0691f00b17b6d.html" title="Q-CTRL Achieves RTCA DO-160 Airworthiness Qualification for Ironstone Opal Quantum Navigation">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Q-CTRL Demonstrates Push-Button Cold-Start Calibration on QuantWare Superconducting QPUs</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>4h</span>
+      <span class="article-category">quantum</span>
+      <span>344 words</span>
+      <span>2 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Quantum infrastructure software provider Q-CTRL has released hardware benchmarking data demonstrating fully autonomous, cold-start bring-up and gate calibration on QuantWare D-Line superconducting processors using its Boulder Opal control platform. Validated on a 21-qubit QuantWare Contralto-D21 device, the physics-informed AI state machine tuned five-qubit feedline blocks from an uncalibrated state to operational gate fidelities in under three hours without manual specialist intervention.<br>
+Replaces multi-day manual tuning cycles across resonator mapping and qubit discovery.<br>
+Single-Qubit Gate Fidelity<br>
+99.95% median (SX gates)<br>
+Automated Rabi, Ramsey, and readout optimization across stable transmon registers.<br>
+Two-Qubit Gate Fidelity<br>
+>98% peak / 96% device median (CZ gates)<br>
+Flux spectroscopy and closed-loop pulse optimization across coupled qubit pairs.<br>
+Upcoming Roadmap<br>
+QuantWare A-Line & runtime recalibration<br>
+Adds tunable-coupler support, task parallelization, and continuous drift tracking in late 2026.<br>
+Scaling superconducting quantum computers presents a severe operational bottleneck because dozens of interdependent control parameters—ranging from traveling-wave parametric amplifier (TWPA) biases to qubit drive frequencies and flux pulses—must be iteratively tuned and stabilized against environmental drift. Conventional scripted calibration routines frequently fail when hardware frequencies drift outside narrow scan windows, requiring experimental physicists to intervene manually.<br>
+Boulder Opal encodes architecture-specific characterization and calibration routines into an automated state machine capable of detecting out-of-range anomalies, filtering false-positive resonances, and recovering underperforming qubits autonomously. Every calibration pass logs parameter histories, diagnostic plots, and optimized control waveforms into a web-based visualization dashboard for hardware inspection.<br>
+Technical details and calibration metrics are available on the Q-CTRL blog here. Related QCR coverage of Q-CTRL’s autonomous calibration integration with Anyon Technologies for enterprise data centers is available here.<br>
+In GQI Portal<br>
+The players behind the news<br>
+The team that writes QCR tracks every company, deal and technology in the GQI Factory, GQI's verified database of the quantum industry. Next up: every story linked to its players, coming to QCR's paid plans.<br>
+Players →Companies and institutions across the quantum industry, by segment.<br>
+Scorecards →How the players compare on hardware, software, funding and more.<br>
+Newsletter<br>
+QCR Alerts in your inbox<br>
+The latest reporting and analysis from Quantum Computing Report. Free, unsubscribe any time.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/q-ctrl-demonstrates-push-button-cold-start-calibration-on-quantware-superconducting-qpus/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="e9780d70bffcc90b.html" class="prev-next">&larr; Q-CTRL Expands Fire Opal Suite with Constrained Optimization, Estimator Twirling, and Monte Carlo Solver</a>
+  
+  
+  <a href="39a0691f00b17b6d.html" class="prev-next">Q-CTRL Achieves RTCA DO-160 Airworthiness Qualification for Ironstone Opal Quantum Navigation &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-12 06:22 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
