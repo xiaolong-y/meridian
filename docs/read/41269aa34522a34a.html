@@ -126,7 +126,7 @@
 <nav>
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
-    
+    <a href="b01f55b705abe41b.html" title="PsiQuantum and AMD Expand Partnership with Equity Investment to Co-Design Utility-Scale Quantum Infrastructure">&larr; prev</a>
     <a href="113185c57594a547.html" title="Q-CTRL Deploys Fire Opal Dynamics Simulator on IBM Quantum Functions, Achieving 12× Speedup on Nighthawk">next &rarr;</a>
   </div>
 </nav>
@@ -137,10 +137,10 @@
     <div class="article-meta">
       <span class="article-source">Quantum Computing Report</span>
       <span>Mohamed Abdel-Kareem</span>
-      <span>13h</span>
+      <span>23h</span>
       <span class="article-category">quantum</span>
-      <span>684 words</span>
-      <span>4 min read</span>
+      <span>858 words</span>
+      <span>5 min read</span>
     </div>
   </div>
 
@@ -155,11 +155,11 @@
 | Sampling & Reset Speed | Up to 100,000 samples/sec (100 kHz reset; 25× faster than Heron) | High-speed square-lattice architecture with rapid on-chip qubit reset | <br>
 | Modular Interconnects | Single-chip deployment (4 l-couplers tested at 99.3% fidelity on r1) | 10 chip-to-chip l-couplers enabling multi-processor entanglement | <br>
 | Production Throughput | >34 billion circuits executed across enterprise and research partners | Transitional stepping stone toward 2029 fault-tolerant IBM Quantum Starling | <br>
-Utility-scale applications in chemistry, materials science, and optimization increasingly require millions to billions of circuit samples. Since deploying in September 2026, Nighthawk r2 processors have executed more than 34 billion circuits for partners including E.ON, Algorithmiq, and Q-CTRL, delivering speedups of up to 19× over previous IBM Heron systems. In materials simulation benchmarks with Algorithmiq, Nighthawk r2’s square-lattice connectivity executed circuits 8× faster than Heron while requiring an estimated 240× more classical memory for competing tensor-network approximations.<br>
+Utility-scale applications in chemistry, materials science, and optimization increasingly require millions to billions of circuit samples. Since deploying in September 2026, Nighthawk r2 processors have executed more than 34 billion circuits for partners including E.ON, Algorithmiq, and Q-CTRL, delivering speedups of up to 19× over previous IBM Heron systems. In materials simulation benchmarks with Algorithmiq, Nighthawk r2’s square-lattice connectivity executed circuits 8× faster than Heron while requiring an estimated 240× more classical memory for competing tensor-network approximations. Alongside these hardware runs, Algorithmiq updated its Tensor-Network Error Mitigation (TEM) function on IBM Cloud GPUs, reporting a 7.5× reduction in QPU time on Nighthawk r2, a 10× speedup in classical post-processing, and a 2× increase in supported circuit depth.<br>
 To support its modular scaling path toward the fault-tolerant IBM Quantum Starling system targeted for 2029, IBM detailed parallel hardware breakthroughs across chiplet interconnects and cryogenics. The company demonstrated four chip-to-chip l-couplers linking Nighthawk processors with up to 99.3% quantum state transfer fidelity, alongside a dual-module cryogenic system cooled below 15 millikelvin in under five days. On the qLDPC memory side, design refinements to its Loon architecture using denser c-couplers reduced required Josephson junctions per module from roughly 5,000 to 2,000.<br>
-On the software front, IBM introduced Managed Workflows within the IBM Quantum Functions stack (formerly Qiskit Functions) under a unified Resource Units (RUs) billing model, providing persistent storage, GPU-accelerated classical compute, and parallel orchestration for multi-billion-sample hybrid jobs. Using automated sample-based quantum diagonalization (SQD) pipelines, IBM and RIKEN accelerated large-scale electronic structure calculations 5× while running 100× more computations than their foundational 77-qubit study, while Cleveland Clinic and RIKEN automatically processed 608 million samples for 12,000-atom biomolecular complexes 33× faster than unautomated workflows.<br>
-For low-level control and developer enablement, IBM unveiled the directed execution model (powered by Samplomatic, Executor, and client-side primitives), modular qiskit-mitigation and qiskit-noise-learning libraries, and pulse-level dynamic circuit tools capable of executing 1,000,000-round repetition codes end to end alongside Qiskit Paulice spacetime codes. The release also includes the Rust-based Quantum Resource Management Interface (QRMI) for HPC schedulers, Qiskit Fermions and alpha Qiskit Bosons utility mappers, the ffsim fermionic simulator, circuit usage profilers, and open-source Qiskit Agent Skills for AI coding assistants.<br>
-Official release details are available via the IBM Newsroom here, the main QDC 2026 overview blog here, and the QDC 2026 developer guide here. Open-source benchmarking suites on GitHub cover IBM’s device metrics (MCPS, CLOPS, EPLG) here and the utility-scale mirror test here. Supporting scientific preprints on arXiv detail the 12,635-atom Cleveland Clinic and RIKEN protein-ligand study here, the full-scale Fugaku closed-loop SQD study here, and IBM and RIKEN’s foundational SQD chemistry paper here.<br>
+On the software front, IBM introduced Managed Workflows within the IBM Quantum Functions stack (formerly Qiskit Functions) under a unified Resource Units (RUs) billing model, providing persistent storage, GPU-accelerated classical compute, and parallel orchestration for multi-billion-sample hybrid jobs. This consumption model allows Premium and Flex Plan enterprises to spend existing IBM Resource Units directly on third-party ecosystem functions and cloud HPC capacity without separate vendor procurement cycles, supporting IBM’s target of demonstrating initial industry impact by 2028. Using automated sample-based quantum diagonalization (SQD) pipelines, IBM and RIKEN accelerated large-scale electronic structure calculations 5× while running 100× more computations than their foundational 77-qubit study, while Cleveland Clinic and RIKEN automatically processed 608 million samples for 12,000-atom biomolecular complexes 33× faster than unautomated workflows. Enterprise users, including E.ON Chief Quantum Scientist Corey O’Meara, highlighted the updated 1,040-qubit modular roadmap as a pragmatic three-year benchmark for hybrid workflows ahead of the 2029 Starling system.<br>
+For low-level control and developer enablement, IBM unveiled the directed execution model (powered by Samplomatic, Executor, and client-side primitives), modular qiskit-mitigation and qiskit-noise-learning libraries, and pulse-level dynamic circuit tools capable of executing 1,000,000-round repetition codes end to end alongside Qiskit Paulice spacetime codes. The release also includes the Rust-based Quantum Resource Management Interface (QRMI) for HPC schedulers, Qiskit Fermions and alpha Qiskit Bosons utility mappers, the ffsim fermionic simulator, circuit usage profilers, and open-source Qiskit Agent Skills for AI coding assistants. To accelerate classical post-processing bottlenecks in SQD workflows, IBM also released a GPU-accelerated, MPI-compatible version of its matrix-free sparse linear algebra solver, qiskit-fulqrum (v1.0.0rc1), capable of diagonalizing a 150-billion-determinant subspace for a 54-electron [4Fe-4S] cluster across 16 GPU nodes.<br>
+Official release details are available via the IBM Newsroom here, the main QDC 2026 overview blog here, and the QDC 2026 developer guide here. Open-source benchmarking suites on GitHub cover IBM’s device metrics (MCPS, CLOPS, EPLG) here and the utility-scale mirror test here. Supporting scientific preprints on arXiv detail the 12,635-atom Cleveland Clinic and RIKEN protein-ligand study here, the full-scale Fugaku closed-loop SQD study here, IBM and RIKEN’s foundational SQD chemistry paper here, Algorithmiq’s Tensor-Network Error Mitigation (TEM) documentation on IBM Quantum is accessible here, and the qiskit-fulqrum subspace diagonalization framework is accessible on GitHub here, PyPI here, and arXiv here.<br>
 Related QCR coverage includes the Nighthawk r2 launch here, Qiskit Paulice spacetime error detection here, IBM’s 99.3% fidelity l-couplers here, modular cryogenic cells for Starling here, trusted quantum advantage benchmarks here, the co-located ORNL and AMD quantum error-correction platform here, the Quantum System Two deployment at Hyde Park Labs here, and the 70-qubit generative quantum eigensolver study with Mitsubishi Chemical and Keio University here.</p>
   </div>
   
@@ -172,7 +172,9 @@ Related QCR coverage includes the Nighthawk r2 launch here, Qiskit Paulice space
 
 
 <div class="bottom-nav">
-  <span></span>
+  
+  <a href="b01f55b705abe41b.html" class="prev-next">&larr; PsiQuantum and AMD Expand Partnership with Equity Investment to Co-Design Utility-Scale Quantum Infrastructure</a>
+  
   
   <a href="113185c57594a547.html" class="prev-next">Q-CTRL Deploys Fire Opal Dynamics Simulator on IBM Quantum Functions, Achieving 12× Speedup on Nighthawk &rarr;</a>
   
@@ -181,7 +183,7 @@ Related QCR coverage includes the Nighthawk r2 launch here, Qiskit Paulice space
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-11-12 19:28 UTC
+  Generated 2026-11-13 04:47 UTC
 </div>
 
 <script type="module">
