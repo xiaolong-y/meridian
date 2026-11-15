@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Making Quantum SDKs More Accessible: Lessons from Contributing to Qiskit — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="e20b092b87fbbaa4.html" title="Who’s News: Strategic Appointments at SemiQon, OrangeQS, IonQ, Haiqu, and Jij">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Making Quantum SDKs More Accessible: Lessons from Contributing to Qiskit</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Doug Finke</span>
+      <span>5h</span>
+      <span class="article-category">quantum</span>
+      <span>829 words</span>
+      <span>5 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>By Gloria Amos<br>
+When the Code Works but the Documentation Falls Short<br>
+Quantum Software Development Kits (SDKs), such as IBM’s Qiskit, Google Cirq, and PennyLane, provide developers with the tools to build, simulate, and execute quantum programs. However, having functional software does not guarantee that its capabilities are clearly communicated. Well-written documentation is an integral part of making quantum technology accessible to both developers and researchers. A 2025 exploratory study involving 251 quantum programming practitioners found that 60.6% learn quantum languages from official documentation, citing inadequate or incorrect documentation and usage examples as significant challenges. Furthermore, the Unitary Foundation’s 2025 Quantum Open Source Software Survey revealed that project documentation and source code ranked above chatbots as primary information sources for developers. This highlights the critical importance of clear documentation and understandable code in quantum software development.<br>
+As efforts to lower the barriers to entry for quantum computing increase, providing simplified, easily understandable documentation is essential. While quantum programming cannot eliminate the need to understand complex quantum concepts, SDK maintainers can reduce unnecessary ambiguity in how these concepts are exposed through software. My experience contributing to Qiskit offers a practical example of how improving documentation accuracy and implementing appropriate testing can make existing quantum functionalities more accessible.<br>
+A Quantum SDK provides an integrated collection of APIs, compilers, transpilers, simulators, libraries, and interfaces that help developers optimize, execute, and debug quantum algorithms. IBM Quantum defines the Qiskit SDK as an open-source tool for working with quantum computers at the level of extended (static, dynamic, and scheduled) quantum circuits, operators, and primitives. Consequently, making quantum SDKs more accessible involves various efforts to make these powerful tools more readily available to the community.<br>
+Where Quantum SDKs Create Developer Friction<br>
+A recent paper, A Taxonomy of Real Faults for Hybrid Quantum-Classical Software Architectures by Avner Bensoussan et al., notes that online quantum documentation does not always reflect the latest API versions. As a result, programs have a short life expectancy, forcing developers to constantly adapt their code to newer versions.<br>
+Because quantum computing is often seen as abstract and confusing, ambiguous or outdated documentation creates significant friction in the developer experience. Quantum operations, qubit ordering, measurements, and mathematical representations require specialized knowledge that conventional software developers may lack. Incomplete API descriptions, omitted edge cases in examples, and discrepancies between documented parameters and actual functionalities introduce avoidable confusion. Therefore, well-written documentation must explain concepts clearly using foundational terms. Accurate explanations, practical examples, and understandable APIs effectively reduce the barriers to entry.<br>
+What a Qiskit Contribution Revealed<br>
+As a junior developer without a STEM background or a physics undergraduate degree, I became curious about quantum computing and its potential to solve problems beyond the reach of classical computers. I began exploring quantum information and looked for beginner-friendly issues in the Qiskit SDK to contribute to. Contributing to open-source projects is widely recognized as an excellent way to connect with industry experts, gain experience, and strengthen technical skills. During this process, I found a reopened issue regarding confusing API References documentation, which had originally been opened by a quantum software engineering researcher.<br>
+The Issue<br>
+Upon investigating the issue, I confirmed inconsistencies between the implemented functionalities and the explanations provided to developers. For example, the PolynomialPauliRotationsGate covers “X”, “Y”, and “Z” bases, but the documentation only mentioned the default “Y” basis. Additionally, the most and least significant qubits were not clearly defined. There was also a typo in the mapping for the HalfAdderGate. Together, these inconsistencies caused avoidable misunderstandings for both developers and researchers. After investigating these issues, I used the official Qiskit documentation as a guide to make several changes to add concise mappings, correct wording, and added “X” and “Z” basis test coverage.<br>
+The Role of Testing<br>
+After a careful review of my initial pull request, repository maintainers notified me that there was no test coverage for the newly added bases. I subsequently added test coverage for the “X” and “Z” basis cases in test_functional_pauli_rotations.py. Because I was working through a browser editor and could not run the test suite locally, the maintainers manually checked and confirmed the tests were correct. This experience taught me that testing is crucial for software reliability, as it verifies that the implementation behaves as expected and aligns with the documentation. Ultimately, my pull request passed 27 checks, was backported, and merged successfully.<br>
+Conclusion<br>
+Contributing to Qiskit demonstrated that improving quantum software goes beyond introducing new features and tools. It also involves making existing tools easier to understand and ensuring that functionalities, tests, and documentation are perfectly aligned. My contribution highlighted how clearly written documentation, thorough testing, and open-source collaboration work together to elevate software quality. While these practices cannot remove the inherent complexities of quantum computing, they successfully eliminate avoidable confusion from the developer experience. Ultimately, the usefulness of a Quantum SDK depends not only on its technical capabilities but also on how easily developers can understand and apply it for the greater good.<br>
+Gloria Amos is a software developer.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/making-quantum-sdks-more-accessiblelessons-from-contributing-to-qiskit/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="e20b092b87fbbaa4.html" class="prev-next">Who’s News: Strategic Appointments at SemiQon, OrangeQS, IonQ, Haiqu, and Jij &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-15 04:31 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
