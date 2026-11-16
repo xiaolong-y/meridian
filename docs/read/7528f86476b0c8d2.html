@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cross-Platform Cloud Benchmark Reveals Wide Gap Between Physical Qubit Counts and Entangled GHZ State Sizes — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="15ed5140f2487e8c.html" title="Qatar Ministry of Communications and Information Technology Signs Post-Quantum Readiness Agreement with SignQuantum and QANplatform">&larr; prev</a>
+    <a href="a0e4bf6201213896.html" title="More podcasts, conversations, talks">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Cross-Platform Cloud Benchmark Reveals Wide Gap Between Physical Qubit Counts and Entangled GHZ State Sizes</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>3h</span>
+      <span class="article-category">quantum</span>
+      <span>523 words</span>
+      <span>3 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>A Spanish research consortium led by Gradiant, the University of the Basque Country (UPV/EHU), and the Basque Center for Applied Mathematics (BCAM), alongside partners from the University of Deusto, Mondragon Unibertsitatea, Ikerlan, Vicomtech, and Quantum Mads, has benchmarked nine cloud-accessible quantum processors across five hardware vendors using Greenberger-Horne-Zeilinger (GHZ) state generation. Executed through standard remote cloud workflows without error mitigation, the study shows that large superconducting processors maintain multipartite entanglement across less than a quarter of their physical registers.<br>
+| Cross-Platform Cloud GHZ Benchmark Results (Default Compilation, No Error Mitigation) |  |  |  |  | <br>
+|---|---|---|---|---|<br>
+| Backend (Architecture) | Physical Qubits | Max Passing GHZ Size (N*) | Register Utilization | Per-Qubit GHZ Error (εq) | <br>
+| IBM Phoenix (Nighthawk r2, Square) | 120 | 27 (Y = 0.438) | 23% | 3.0% | <br>
+| IBM Basquecountry (Heron r2, Heavy-Hex) | 156 | 24 (Y = 0.430) | 15% | 3.5% | <br>
+| IBM Pittsburgh (Heron r3, Heavy-Hex) | 156 | 21 (Y = 0.510) | 13% | 3.2% | <br>
+| IQM Emerald (Crystal 54, Square) | 54 | 20 (Y = 0.421) | 37% | 4.2% | <br>
+| IBM Miami (Nighthawk r1, Square) | 120 | 18 (Y = 0.423) | 15% | 4.7% | <br>
+| IQM Garnet (Crystal 20, Square) | 20 | 13 (Y = 0.437) | 65% | 6.2% | <br>
+| AQT IBEX Q1 (Trapped-Ion, All-to-All) | 12 | 12 (Y = 0.711) | 100% | 2.8% | <br>
+| Rigetti Cepheus-1 (Chiplet Square) | 107 | 4 (Y = 0.491) | 4% | 16.3% | <br>
+| CESGA Qmio / OQC (Coaxmon, Sparse) | 32 | 3 (Y = 0.513) | 9% | 20.0% | <br>
+Implementing the multipartite entanglement protocol from the QuSquare benchmark suite, the researchers used Direct Fidelity Estimation (DFE) across 2,952 randomly sampled stabilizers per circuit size to evaluate processors accessed via the IBM Quantum Platform, Amazon Braket, and the Galicia Supercomputing Center (CESGA). While previous single-vendor demonstrations have reported larger entangled states using custom pulse compilation, post-selection, and readout mitigation, this evaluation isolated out-of-the-box performance experienced by typical cloud users.<br>
+The authors note that benchmark outcomes depend heavily on the statistical decision rule applied to the genuine multipartite entanglement (GME) threshold (F = 0.5). While all nine devices passed the non-exclusion boundary (Y + ε ≥ 0.5) at some register size, tightening the criterion to strictly certify GME (Y − ε ≥ 0.5) reduced the passing cohort to four systems: IBM Phoenix (up to 16 to 22 qubits), IBM Basquecountry (16 to 22 qubits), AQT IBEX Q1 (12 qubits), and IQM Garnet (8 to 11 qubits).<br>
+Comparing hardware specifications against observed fidelities also demonstrated that median calibration metrics are unreliable predictors of multi-qubit performance. On superconducting backends, effective per-qubit GHZ error rates exceeded median two-qubit gate errors by roughly one order of magnitude, highlighting the impact of unmitigated readout errors, idling decoherence, crosstalk, and compiler qubit-chain selection.<br>
+Read the full preprint on arXiv here, access the normalized experimental dataset and calibration snapshots on Zenodo here, and explore the open-source benchmarking codebase on GitHub here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/cross-platform-cloud-benchmark-reveals-wide-gap-between-physical-qubit-counts-and-entangled-ghz-state-sizes/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="15ed5140f2487e8c.html" class="prev-next">&larr; Qatar Ministry of Communications and Information Technology Signs Post-Quantum Readiness Agreement with SignQuantum and QANplatform</a>
+  
+  
+  <a href="a0e4bf6201213896.html" class="prev-next">More podcasts, conversations, talks &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-16 04:28 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
