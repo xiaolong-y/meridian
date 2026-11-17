@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBM, RIKEN, and NVIDIA Achieve 79x Accuracy Gain in Quantum-Classical Simulations of Iron-Sulfur Clusters — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="a0e5f6f63b04a137.html" title="IBM, Fermilab, and NVIDIA Unveil Modular Quantum Co-Design Platform, Slurm HRES Integration, and GPU QEC Tools at SC26">&larr; prev</a>
+    <a href="d41e147f6b13337a.html" title="IBM and AMD Open-Source Pelagos GPU Decoder Framework for Large-Scale qLDPC Error Correction Simulations">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">IBM, RIKEN, and NVIDIA Achieve 79x Accuracy Gain in Quantum-Classical Simulations of Iron-Sulfur Clusters</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>6h</span>
+      <span class="article-category">quantum</span>
+      <span>453 words</span>
+      <span>3 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Researchers from IBM Quantum, RIKEN, and NVIDIA have demonstrated a 79-fold improvement in energy accuracy for quantum-classical simulations of strongly correlated iron-sulfur clusters by initializing Sample-Based Quantum Diagonalization (SQD) with broken-symmetry unrestricted Hartree-Fock (BS-UHF) reference states. Executed on the ibm_kingston quantum processor alongside RIKEN’s NVIDIA GB200-powered ROQUO supercomputer, the calculation brought ground-state energy estimates for a 72-qubit [Fe4S4(SCH3)4]2− active space within 4.3 millihartree of high-precision classical density-matrix renormalization group (DMRG) benchmarks.<br>
+| Broken-Symmetry SQD Benchmark Profile on [Fe4S4(SCH3)4]2− |  |  | <br>
+|---|---|---|<br>
+| Workflow Dimension | Experimental & Algorithmic Configuration | Measured Outcome & Reference Comparison | <br>
+| Molecular System & Circuit | CAS(54e, 36o) active space; 88 active qubits on ibm_kingston | Executed 1-layer LUCJ circuit (3,944 CZ gates, 2Q depth 276) across 5 million hardware shots (~25 min QPU). | <br>
+| Reference Preparation | Atom-localized Noodleman BS-UHF initial density | Lowered starting mean-field energy by ~534 mHa vs. closed-shell RHF (−327.0809 Ha vs. −326.5474 Ha). | <br>
+| Subspace Diagonalization | qcsc-prefect workflow across ROQUO, Miyabi-G, and Fugaku | Reached −327.235076 Ha at subspace dimension d = 3 × 1010 (512 to 517 mHa deeper than RHF-seeded SQD). | <br>
+| Asymptotic Extrapolation | Gaussian-in-log d extrapolation (d → ∞) | Yielded −327.244468 ± 1.05 mHa, matching extrapolated DMRG (−327.244797 ± 0.46 mHa) within 0.33 mHa. | <br>
+Iron-sulfur cubane clusters play central roles in biological electron transfer and catalysis, but their antiferromagnetically coupled iron centers create dense multireference electronic correlations that challenge closed-shell quantum chemistry approximations. Previous SQD studies initialized from restricted Hartree-Fock (RHF) determinants stalled more than 500 millihartree above exact ground-state benchmarks even at large subspace dimensions.<br>
+By extending the open-source qcsc-prefect workflow to construct spin-polarized, fragment-localized Noodleman initial guesses verified via internal and external stability analysis, the team steered quantum sampling directly toward chemically relevant magnetic configurations. After validating the method on a 40-qubit [2Fe-2S] dimer using ibm_fez, the researchers scaled configuration recovery to 36 nodes (144 NVIDIA GB200 GPUs) of ROQUO and demonstrated cross-architecture checkpoint portability across JCAHPC’s Miyabi-G GPU cluster and RIKEN’s CPU-based Fugaku supercomputer.<br>
+Supported by Japan’s New Energy and Industrial Technology Development Organization (NEDO) under its quantum-supercomputer hybrid platform initiative, the study highlights reference-state preparation as a primary driver of SQD accuracy alongside subspace size and GPU-accelerated Davidson diagonalization.<br>
+Read the full technical preprint on arXiv here, review the accompanying OpenMP GPU offload study for SQD diagonalization here, and see IBM’s SC26 technical overview here.<br>
+Related QCR coverage includes the IBM, Fermilab, and NVIDIA modular co-design platform and Slurm 26.11 integration here, IBM and AMD’s open-source Pelagos GPU decoder framework here, the Cleveland Clinic, RIKEN, and IBM 12,635-atom Gordon Bell finalist simulation here, and IBM’s quantum-centric supercomputing reference architecture here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/ibm-riken-and-nvidia-achieve-79x-accuracy-gain-in-quantum-classical-simulations-of-iron-sulfur-clusters/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="a0e5f6f63b04a137.html" class="prev-next">&larr; IBM, Fermilab, and NVIDIA Unveil Modular Quantum Co-Design Platform, Slurm HRES Integration, and GPU QEC Tools at SC26</a>
+  
+  
+  <a href="d41e147f6b13337a.html" class="prev-next">IBM and AMD Open-Source Pelagos GPU Decoder Framework for Large-Scale qLDPC Error Correction Simulations &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-17 01:29 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>

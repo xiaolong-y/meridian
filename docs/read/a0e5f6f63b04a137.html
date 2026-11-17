@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBM, Fermilab, and NVIDIA Unveil Modular Quantum Co-Design Platform, Slurm HRES Integration, and GPU QEC Tools at SC26 — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="836a628ccac3d65a.html" title="IBM, RIKEN, and NVIDIA Achieve 79x Accuracy Gain in Quantum-Classical Simulations of Iron-Sulfur Clusters">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">IBM, Fermilab, and NVIDIA Unveil Modular Quantum Co-Design Platform, Slurm HRES Integration, and GPU QEC Tools at SC26</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>6h</span>
+      <span class="article-category">quantum</span>
+      <span>636 words</span>
+      <span>4 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>At the SC26 supercomputing conference in Chicago, IBM, NVIDIA, and the U.S. Department of Energy’s Fermi National Accelerator Laboratory (Fermilab) announced plans for a modular quantum-classical co-design platform, accompanied by native quantum resource scheduling in Slurm 26.11 and new GPU-accelerated quantum error-correction (QEC) software releases.<br>
+| SC26 Quantum-HPC Co-Design, Scheduling & QEC Stack |  |  | <br>
+|---|---|---|<br>
+| Platform Layer | Key Partners & Software | Technical Scope & Measured Benchmarks | <br>
+| Modular Co-Design Platform | Fermilab SQMS Center, IBM, NVIDIA (DGX B200 + Nighthawk) | Co-locates GPUs with 120-qubit Nighthawk QPUs (7,500 2Q ops, 100k samples/s) and future SQMS SRF cavities. | <br>
+| TCBP-JOBS & CUDA-Q QEC 0.9.0 | NVIDIA CUDA-Q QEC 0.9.0, Decoding Server, task graphs | Delivers up to 4.5x lower LER and 10x to 13,000x faster decoding than Tesseract (24.2M shots in 45 min). | <br>
+| HPC Workload Scheduling | Slurm 26.11 Hierarchical Resources (HRES) + QRMI & QDMI | Adopted by IBM, Quantinuum, Pasqal, IQM, Alice & Bob, and MQSC to schedule shared QPUs across HPC nodes. | <br>
+Fermilab, IBM, and NVIDIA Plan Modular Co-Design Platform<br>
+Building on the long-running collaboration between IBM and Fermilab’s Superconducting Quantum Materials and Systems (SQMS) Center, the three organizations will physically co-locate NVIDIA DGX B200 systems with IBM Quantum Nighthawk processors. Fermilab will coordinate researcher access and hybrid workflows through its HEPCloud infrastructure to study lattice gauge theories, neutrino interactions, and nuclear physics simulations.<br>
+In its initial phase, the testbed will emulate inter-module communication links to quantify how routing errors, latency, and classical feedback affect multi-QPU execution. A subsequent phase plans to integrate Fermilab’s ultracoherent superconducting radio-frequency (SRF) cavity hardware as quantum memories, entanglement buffers, and bosonic error-correction resources, complementing the IBM-ORNL-AMD co-design platform deployed earlier this month in Poughkeepsie.<br>
+GPU-Accelerated QEC Decoders and Runtime Frameworks<br>
+Detailed in a technical study by NVIDIA researchers, the new TCBP-JOBS algorithm pairs Trajectory-Calibrated Belief Propagation (TCBP) with GPU-parallel Jittered Ordered Statistics Decoding Beam Search (JOBS) across surface, color, and bivariate-bicycle quantum low-density parity-check (qLDPC) codes. At physical error rates between 0.1% and 0.4%, TCBP-JOBS maintains millisecond-scale serial latencies (4.08 ms for 12-round gross-code memory and 13.5 ms for logical lattice surgery at 0.2% error) suitable for neutral-atom and trapped-ion feed-forward operations, while exact search decoders such as Tesseract remain more accurate in ultra-low-noise regimes (0.01% to 0.05%).<br>
+Released inside CUDA-Q QEC 0.9.0 alongside a containerized Decoding Server, composable parallel-window task graphs, and 1.3x to 3.2x faster Relay-BP kernels, TCBP-JOBS joins broader SC26 QEC tooling including IBM and AMD’s open-source Pelagos GPU simulation suite, a multi-institutional hierarchical decoding taxonomy co-authored by AMD, HPE, Riverlane, Xanadu, IQM, and IBM, and an NVQLink FPGA control bridge demonstrated by Altera and Oxford Quantum Circuits.<br>
+Native Multi-Node QPU Scheduling in Slurm 26.11<br>
+To eliminate custom middleware at the roughly 30 supercomputing centers deploying more than 50 quantum processors worldwide, NVIDIA, IBM, and Pasqal integrated the open-source Quantum Resource Management Interface (QRMI) and Quantum Device Management Interface (QDMI) directly into Slurm 26.11’s Hierarchical Resources (HRES) scheduler. Because QPUs operate as shared multi-node resources rather than node-local accelerators, HRES allows administrators to allocate, reserve, and account for quantum hardware alongside CPUs and GPUs under standard cluster policies.<br>
+Review the official announcements from IBM here, Fermilab here, and NVIDIA here, along with technical blogs from IBM Quantum here and NVIDIA here. Access the TCBP-JOBS technical paper here, the CUDA-Q QEC 0.9.0 release notes here, and the multi-institutional hierarchical decoding review on arXiv here.<br>
+Related QCR coverage includes our reports on IBM and AMD’s open-source Pelagos GPU decoder framework here, the IBM, RIKEN, and NVIDIA 79x accuracy gain on iron-sulfur cluster simulations here, the U.S. Department of Energy’s Quantum Genesis initiative here, the multi-institutional QRMI consortium expansion here, IBM’s 520-qubit Nighthawk r3 roadmap here, and the IBM-ORNL-AMD co-located error-correction platform here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/ibm-fermilab-and-nvidia-unveil-modular-quantum-co-design-platform-slurm-hres-integration-and-gpu-qec-tools-at-sc26/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="836a628ccac3d65a.html" class="prev-next">IBM, RIKEN, and NVIDIA Achieve 79x Accuracy Gain in Quantum-Classical Simulations of Iron-Sulfur Clusters &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-17 01:29 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBM and AMD Open-Source Pelagos GPU Decoder Framework for Large-Scale qLDPC Error Correction Simulations — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="836a628ccac3d65a.html" title="IBM, RIKEN, and NVIDIA Achieve 79x Accuracy Gain in Quantum-Classical Simulations of Iron-Sulfur Clusters">&larr; prev</a>
+    <a href="0da679643a8d430e.html" title="For azure views">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">IBM and AMD Open-Source Pelagos GPU Decoder Framework for Large-Scale qLDPC Error Correction Simulations</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>6h</span>
+      <span class="article-category">quantum</span>
+      <span>478 words</span>
+      <span>3 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>IBM Research and AMD have open-sourced Pelagos (distributed on PyPI as pelagos-decoder), a vendor-neutral, GPU-accelerated quantum error-correction (QEC) decoding framework designed to evaluate quantum low-density parity-check (qLDPC) codes at supercomputing scale. Announced at SC26 alongside a multi-GPU scaling study and a six-organization hierarchical decoding survey co-authored by AMD, HPE, IBM, IQM, Riverlane, and Xanadu, the release advances the joint QEC co-design platform established earlier this month by IBM, AMD, and Oak Ridge National Laboratory (ORNL).<br>
+| IBM & AMD Pelagos Open-Source Decoder Architecture & Benchmarks |  |  | <br>
+|---|---|---|<br>
+| Technical Dimension | Implementation Specification | Measured Scaling & Performance | <br>
+| Algorithm & Kernel Stack | Disordered-memory Relay-BP (Relay-BP-S) in fused Triton kernels | Targets AMD ROCm/HIP, NVIDIA CUDA, and Intel SPIR-V GPUs with up to 97x single-GPU speedup vs. 1 CPU core. | <br>
+| Multi-GPU Orchestration | Process-isolated HIP workers, parallel host prep, shared memory | Eliminates single-process runtime contention and pipe serialization across 8-GPU nodes. | <br>
+| One-Gross [[144, 12, 12]] | 12 noisy rounds + 1 noiseless round (p = 0.003, R = 50) | Reached 3,845 decodes/s on 8x AMD Instinct MI355X (6.23x E2E scaling) and 2,686 decodes/s on 8x MI300X. | <br>
+| Two-Gross [[288, 12, 18]] | 18 noisy rounds + 1 noiseless round (p = 0.003, R = 50) | Achieved 7.58x GPU decode scaling on MI300X and 7.45x GPU decode scaling (1,265 decodes/s) on ORNL’s Lux MI355X. | <br>
+Evaluating fault-tolerant qLDPC codes such as bivariate-bicycle memories requires simulating billions of circuit-level error syndromes to resolve logical error rates down to 10−12. Written in the open-source Triton GPU programming language under an Apache 2.0 license, Pelagos keeps belief-propagation message arrays, convergence flags, and candidate selection resident in GPU high-bandwidth memory while autotuning between syndrome-major and edge-major layouts.<br>
+In an accompanying technical study deployed on ORNL’s AMD Instinct MI355X-powered Lux supercomputer, researchers from AMD and IBM replaced single-process threaded dispatch with persistent per-GPU worker processes and shared-memory output buffers, cutting eight-GPU host preprocessing overhead on two-gross circuits from 3.21 seconds to 0.73 seconds. Alongside the software release, authors from AMD, HPE, Riverlane, Xanadu, IQM, and IBM published a comprehensive taxonomy mapping single-code predecoding cascades, sliding-window streaming pipelines, and concatenated-code interfaces across CPUs, GPUs, FPGAs, ASICs, and cryogenic hardware, noting that real-time reaction targets span three orders of magnitude from microsecond superconducting cycles to millisecond-scale trapped-ion and neutral-atom schedules.<br>
+Read technical blogs from IBM Quantum here and AMD Developer Central here, explore the Pelagos source code and tutorials on GitHub here, review the multi-GPU scaling preprint on arXiv here, and access the multi-institutional hierarchical decoding survey here.<br>
+Related QCR SC26 coverage includes the IBM, Fermilab, and NVIDIA modular co-design platform and Slurm 26.11 integration here, the IBM, RIKEN, and NVIDIA 79x accuracy gain on iron-sulfur cluster simulations here, and the ORNL-IBM-AMD co-located error-correction platform in Poughkeepsie here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/ibm-and-amd-open-source-pelagos-gpu-decoder-framework-for-large-scale-qldpc-error-correction-simulations/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="836a628ccac3d65a.html" class="prev-next">&larr; IBM, RIKEN, and NVIDIA Achieve 79x Accuracy Gain in Quantum-Classical Simulations of Iron-Sulfur Clusters</a>
+  
+  
+  <a href="0da679643a8d430e.html" class="prev-next">For azure views &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-17 01:29 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
