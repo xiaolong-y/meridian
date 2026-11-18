@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unitary Foundation Releases 2026 Quantum Open Source Survey Covering SDK Adoption, Hybrid HPC Workflows, and AI Tooling — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="4752b8bd48d917e3.html" title="IQM Announces Zero-Downtime Upgrade Program for Halocene Product Line Scaling Past 1,000 Qubits">&larr; prev</a>
+    <a href="92b7392de91a5722.html" title="Classiq Collaborations with Shionogi, KDDI Research, and SoftBank Earn Awards in Japan’s NEDO Quantum Challenge">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Unitary Foundation Releases 2026 Quantum Open Source Survey Covering SDK Adoption, Hybrid HPC Workflows, and AI Tooling</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>13h</span>
+      <span class="article-category">quantum</span>
+      <span>660 words</span>
+      <span>4 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Unitary Foundation has published the results of its fifth annual 2026 Quantum Open Source Survey, synthesizing responses from more than 1,800 developers, researchers, and enterprise practitioners worldwide collected between September 10 and October 29, 2026. Developed by Verdiana Pasqualini and Otho Mantegazza and released under an Open Database License, the dataset tracks multi-year shifts in software adoption while introducing new benchmarks on hybrid quantum-classical pipelines, quantum error correction (QEC), resource estimation, and generative AI usage.<br>
+| 2026 Quantum Open Source Survey: Top Software & Platform Adoption Benchmarks |  |  | <br>
+|---|---|---|<br>
+| Stack Category (Respondent Base) | Leading Platforms (Active Usage) | Notable Year-over-Year & Forward-Looking Trends | <br>
+| Full-Stack SDKs & Simulators (n = 1,216) | Qiskit (56.8%), Qiskit Aer (35.9%), PennyLane (34.3%), Qiskit IBM Transpiler (26.2%), Classiq Library (21.4%) | PennyLane rose from 30.8% (2025) to 34.3%, while Qiskit moderated from 69.1% to 56.8%; 23.4% plan to adopt Classiq next year. | <br>
+| Quantum Cloud Services (n = 964) | IBM Quantum Platform (54.9%), Classiq (22.8%), Amazon Braket (17.9%), qBraid (17.0%), Azure Quantum (9.6%) | IBM Quantum leads active access (54.9%) and next-year intent (33.4%), followed by Classiq (25.7% intent) and Braket (22.5% intent). | <br>
+| Applications & Tools (n = 956) | Classiq Library (23.2%), Qiskit Machine Learning (23.2%), OpenQASM (17.7%), PennyLane Demos (15.1%), CUDA-Q Algorithms (10.5%) | Classiq Library (24.9%) and NVIDIA CUDA-Q Algorithms (21.2%) recorded the highest planned adoption rates for 2027. | <br>
+| Quantum Error Correction (n = 400 active / 1,187 total) | Qiskit (51.7%), PennyLane (30.0%), Stim (29.8%), NVIDIA CUDA-Q QEC (20.8%), PyMatching (15.8%), Riverlane Deltakit (13.5%) | 35.2% of respondents use QEC tools; among non-users (n = 1,043), 22.8% cite cost and 19.0% cite missing tool implementations. | <br>
+| AI Coding Assistants (n = 742 active / 1,010 total) | Anthropic Claude Code (71.6%), OpenAI Codex (41.8%), Google Gemini (39.4%), Microsoft Copilot (16.6%), Cursor (11.3%) | 77.8% use AI tools for quantum workflows, led by debugging/optimization (77.0%) and learning SDKs (76.4%). | <br>
+Beyond individual software package rankings, the 2026 dataset highlights several structural shifts across the global quantum developer base:<br>
+- Workforce Composition & Languages: Researchers (49.4%) and software developers (34.2%) form the largest role cohorts, with 46.6% working in quantum technology as a primary paid job and 56.2% reporting two or fewer years of professional quantum experience. Geographically, the United States (17.7%), India (15.7%), Israel (15.5%), Canada (7.7%), the United Kingdom (5.1%), and Germany (5.0%) lead participation. Python dominates active development at 92.5%, followed by C/C++ (up from 27.8% in 2025 to 33.9% in 2026) and Rust (14.0% active, and ranked first at 45.3% among languages respondents plan to learn).<br>
+- Hybrid Quantum-Classical & HPC Execution: Over half of respondents (52.9%) ran hybrid workflows during the past year, spanning CPU simulators (80.2%), GPU-accelerated simulators (56.4%), QPU execution with classical pre- and post-processing (46.8%), iterative loops (36.7%), and real-time feedback pipelines (21.3%). Among the 36.8% utilizing high-performance computing (HPC) tools, NVIDIA CUDA (24.1%) and Slurm (17.0%) are the most common frameworks, though limited QPU access (54.4%), compute cost (41.8%), constrained GPU/HPC availability (37.0%), and quantum-classical integration friction (25.4%) remain top scaling bottlenecks.<br>
+- AI Verification & Research Priorities: While practitioners rated AI productivity gains at 3.1 out of 4.0, confidence in code accuracy (2.5) and conceptual explanations (2.6) remains cautious. As a result, 42.9% always verify AI-generated quantum outputs and 38.7% verify most of the time, relying on manual review (78.3%) and automated tests (54.2%) rather than formal verification (17.5%). Looking forward, respondents identified algorithm development (54.3%), quantum error correction (44.4%), and application development (42.6%) as top research priorities alongside calls for open-source hardware characterization, domain libraries, and standardized benchmarks.<br>
+Explore the full 2026 Quantum Open Source Survey report here, access the open-source survey dataset and analysis code on GitHub here, and read Classiq’s commentary on its category rankings here. Related QCR coverage of Unitary Foundation’s initial 2026 survey launch announcement is available here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/unitary-foundation-releases-2026-quantum-open-source-survey-covering-sdk-adoption-hybrid-hpc-workflows-and-ai-tooling/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="4752b8bd48d917e3.html" class="prev-next">&larr; IQM Announces Zero-Downtime Upgrade Program for Halocene Product Line Scaling Past 1,000 Qubits</a>
+  
+  
+  <a href="92b7392de91a5722.html" class="prev-next">Classiq Collaborations with Shionogi, KDDI Research, and SoftBank Earn Awards in Japan’s NEDO Quantum Challenge &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-18 15:00 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
