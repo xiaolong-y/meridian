@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUDORA Integrates NVIDIA CUDA-Q into Qamelion Emulator and Launches German-Funded QUANDA HPC Energy Consortium — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="bb64593d72c1b31f.html" title="Planckian Selected for €10 Million ($11 Million USD) EIC Accelerator Blended Finance Package to Scale Shared-Control Superconducting Processors">&larr; prev</a>
+    <a href="731c38ccaf1e29fb.html" title="Quantum Machines Demonstrates Sub-Microsecond Surface-Code Decoding on OPX1000 Using NVIDIA CUDA-Q QEC and NVQLink">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">QUDORA Integrates NVIDIA CUDA-Q into Qamelion Emulator and Launches German-Funded QUANDA HPC Energy Consortium</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>4h</span>
+      <span class="article-category">quantum</span>
+      <span>352 words</span>
+      <span>2 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Braunschweig-based trapped-ion developer QUDORA Technologies has expanded its hybrid quantum-classical software stack through an integration with NVIDIA CUDA-Q alongside the launch of the three-year QUANDA (Quantum Anomaly Detection & Analysis) consortium. Together, the initiatives connect QUDORA’s Near Field Quantum Control (NFQC) microwave-addressed trapped-ion architecture with standard hybrid programming frameworks and supercomputing job pipelines ahead of physical processor deployment.<br>
+Through the CUDA-Q release, available via the qudora-sdk[cudaq] Python package and QUDORA Cloud, developers can execute hybrid quantum-classical workflows against Qamelion, QUDORA’s quantum emulator incorporating adaptive noise modeling. The environment enables researchers to benchmark measurement sensitivity and circuit behavior under realistic trapped-ion noise profiles before migrating identical CUDA-Q source code to physical hardware targets.<br>
+In parallel, QUDORA initiated the QUANDA project under the German Federal Ministry of Research, Technology and Space (BMFTR) Development of Digital Technologies program to automate trapped-ion access inside high-performance computing (HPC) centers. Working with GWDG, the joint computing center of the University of Göttingen and the Max Planck Society, alongside Leibniz University Hannover, Deggendorf Institute of Technology, UBT Future Energy Lab Wunsiedel, and ZukunftsEnergie Nordostbayern (ZENOB), the consortium will build an automated submission, transpilation, and execution pipeline evaluated across three energy-sector quantum machine learning anomaly detection workloads.<br>
+In parallel, QUDORA initiated the QUANDA project under the German Federal Ministry of Research, Technology and Space (BMFTR) Development of Digital Technologies program to provide standardized trapped-ion access within high-performance computing (HPC) centers without requiring users to manage underlying quantum hardware. Working with Gesellschaft für wissenschaftliche Datenverarbeitung mbH Göttingen (GWDG), the joint IT and computing center of the University of Göttingen and the Max Planck Society, alongside Leibniz Universität Hannover’s Institute of Information Processing and Institute for Theoretical Physics, Deggendorf Institute of Technology, UBT Future Energy Lab Wunsiedel GmbH, and ZukunftsEnergie Nordostbayern GmbH (ZENOB), the consortium is building an automated submission, compilation, and execution pipeline to test quantum machine learning across three energy-sector anomaly detection workloads spanning electricity consumption patterns, equipment sensor readings, and generation and distribution behavior.<br>
+Read QUDORA’s NVIDIA CUDA-Q announcement here, access the qudora-sdk package on PyPI here and QUDORA Cloud here, and read the QUANDA HPC project announcement here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/qudora-integrates-nvidia-cuda-q-into-qamelion-emulator-and-launches-german-funded-quanda-hpc-energy-consortium/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="bb64593d72c1b31f.html" class="prev-next">&larr; Planckian Selected for €10 Million ($11 Million USD) EIC Accelerator Blended Finance Package to Scale Shared-Control Superconducting Processors</a>
+  
+  
+  <a href="731c38ccaf1e29fb.html" class="prev-next">Quantum Machines Demonstrates Sub-Microsecond Surface-Code Decoding on OPX1000 Using NVIDIA CUDA-Q QEC and NVQLink &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-18 00:26 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>

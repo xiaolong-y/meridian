@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moth Demonstrates Topology-Aware Quantum Data Encoding Across 120 Qubits Without SWAP Overhead — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="1aface7805433a7f.html" title="Qluster Raises €4.7 Million Pre-Seed Round Led by Quantonation to Build Continuous-Variable Photonic Quantum Computers">&larr; prev</a>
+    <a href="acfaf31d1ce69f03.html" title="Liquid C2 and Graphiant Launch Managed Post-Quantum Network-as-a-Service Across Africa">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Moth Demonstrates Topology-Aware Quantum Data Encoding Across 120 Qubits Without SWAP Overhead</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>8h</span>
+      <span class="article-category">quantum</span>
+      <span>503 words</span>
+      <span>3 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Moth Quantum has introduced Tessa (Tessellated QPIXL), a hardware-native state-preparation scheme that encodes and retrieves up to 1,568 real-valued parameters across every qubit of an IBM Quantum processor without SWAP routing gates or ancilla qubits. Detailed in a technical preprint by Moth researcher Daniel Bultrini, the method partitions bipartite processor coupling graphs into interleaved address and data registers, overcoming the star-connectivity bottlenecks that have constrained prior angle-encoding protocols in quantum machine learning (QML).<br>
+| Tessa Hardware-Native Quantum Data Encoding Benchmarks |  |  | <br>
+|---|---|---|<br>
+| Benchmark Dimension | Processor & Encoding Mode | Circuit Cost & Measured Recovery | <br>
+| Square-Lattice (Single-Basis) | 120-qubit IBM Nighthawk r2 (ibm_phoenix, Z basis) | 784 values in 728 CZ gates (depth 23); 0.075 MAE and 0.96 correlation after contrast recovery. | <br>
+| Square-Lattice (Phase-Pair) | 120-qubit IBM Nighthawk r2 (ibm_phoenix, Z & X bases) | 1,568 values in 1,456 CZ gates (depth 43); 0.154 value MAE and 0.092 hue MAE at 8,192 shots/basis. | <br>
+| Heavy-Hex Architecture | 156-qubit IBM Heron r2 (ibm_fez, Z / Z & X bases) | 441 values (428 CZ gates, 0.95 correlation) in Z mode; 882 values (852 CZ gates) in pair mode. | <br>
+| Biological Sequences | Bloch-sphere constellation encoding (32,768 shots) | Recovered 92.3% of 784-nt MT-CO3 DNA sequence and 71.5% of 393-aa p53 protein sequence. | <br>
+Conventional amplitude and angle-encoding algorithms such as QPIXL and QCrank rely on uniformly controlled rotations that require all-to-all star connectivity between shared address qubits and target data qubits, forcing deep SWAP chains on nearest-neighbor superconducting chips. Tessa eliminates routing overhead by 2-coloring the physical device graph so each data qubit executes a multiplexer controlled strictly by its adjacent address neighbors, yielding a circuit depth governed by local vertex degree rather than total chip size.<br>
+Evaluated without quantum error mitigation on both heavy-hex and square-lattice topologies, the scheme surpassed the 128-value hardware record previously set by QCrank for arbitrary real-valued vectors, demonstrating image, audio wavetable, MIDI, and genetic sequence reconstruction using lightweight statistical dynamic-range recovery. The author notes that because readout shots divide across the 2m local address states of a degree-m data qubit, sampling overhead scales exponentially with local connectivity, positioning Tessa for low-degree QML feature ingestion rather than general-purpose classical memory.<br>
+Alongside the research release, Moth has made Tessa available inside Atlas, its alpha-stage creative and developer platform serving thousands of early users across music, gaming, and visual media. Accessible through both no-code web engines and programmatic APIs targeting quantum hardware backends and emulators, Atlas pairs Tessa Image processing with a suite of quantum-driven creative utilities including a quantum audio re-encoder, MIDI variation generator, Quantum Blur, Entanglement Shader, Telablur image morphing, and hardware-seeded labyrinth maze generation.<br>
+Read the technical paper on arXiv here, view Moth’s technical blog here and press release here, access the open-source Tessa repository on GitHub here, and explore the Atlas alpha platform here. Related QCR coverage includes our podcast interview with Moth Quantum co-founder and Chief Commercial Officer Harry Kumar here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/moth-demonstrates-topology-aware-quantum-data-encoding-across-120-qubits-without-swap-overhead/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="1aface7805433a7f.html" class="prev-next">&larr; Qluster Raises €4.7 Million Pre-Seed Round Led by Quantonation to Build Continuous-Variable Photonic Quantum Computers</a>
+  
+  
+  <a href="acfaf31d1ce69f03.html" class="prev-next">Liquid C2 and Graphiant Launch Managed Post-Quantum Network-as-a-Service Across Africa &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-18 00:26 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>

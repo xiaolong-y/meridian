@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aqarios Launches Constraint-Native Quantum Optimizer in the IBM Qiskit Functions Catalog — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    <a href="731c38ccaf1e29fb.html" title="Quantum Machines Demonstrates Sub-Microsecond Surface-Code Decoding on OPX1000 Using NVIDIA CUDA-Q QEC and NVQLink">&larr; prev</a>
+    <a href="764370112dd46d93.html" title="Altera, OQC, and NVIDIA Demonstrate Direct-RF FPGA Quantum System Controller Reference Design at SC26">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Aqarios Launches Constraint-Native Quantum Optimizer in the IBM Qiskit Functions Catalog</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Computing Report</span>
+      <span>Mohamed Abdel-Kareem</span>
+      <span>5h</span>
+      <span class="article-category">quantum</span>
+      <span>408 words</span>
+      <span>3 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>Aqarios GmbH, a Munich-based quantum software spin-off of LMU Munich, has released its Constrained Quantum Optimizer in the IBM Qiskit Functions Catalog, giving IBM Quantum Premium, Flex, and on-premises users a managed solver for discrete combinatorial optimization. Built on the company’s FlexQAOA engine and validated in New Journal of Physics, the function ingests standard LP, MPS, or Luna Model files and enforces hard one-hot and set-packing constraints natively at the circuit level rather than relying solely on quadratic penalty terms.<br>
+| Aqarios Constrained Quantum Optimizer Hardware Benchmarks (IBM Heron Processors) |  |  | <br>
+|---|---|---|<br>
+| Benchmark Workload | Hardware & Problem Scale | Measured Solution Quality & Runtime | <br>
+| Hardware-Tailored Spin Glass | 144-qubit ibm_boston (Heron r3); 48 one-hot constraints | Found exact optima in 3 of 5 instances and >99% approximation ratio in the remaining 2. | <br>
+| QOBLIB MIS ( es60fst02) | 156-qubit ibm_marrakesh (Heron r2); 186 vars (124 qubits) | 100.0% feasible optimum in 147.0 s QPU time (940.2 s total runtime; 25,000 shots). | <br>
+| QOBLIB MIS ( sloane_2dc_128) | 156-qubit ibm_marrakesh (Heron r2); 128 vars (74 qubits) | 100.0% feasible optimum in 106.0 s QPU time (347.6 s total runtime; 12,500 shots). | <br>
+| Karate Club Max-4-Cut | 156-qubit ibm_marrakesh (Heron r2); 132 vars (132 qubits) | 100.0% feasible optimum in 200.0 s QPU time (258.3 s total runtime; 25,000 shots). | <br>
+Conventional quantum optimization workflows translate constrained problems into unconstrained binary models by adding penalty weights that expand the effective search space and require manual tuning. Aqarios’ solver instead implements Iterative Warm-Start XY-Mixer QAOA (IWS-QAOA), which aligns a biased initial state with a warm-started XY-mixer Hamiltonian to confine state evolution to the feasible Hamming-weight-1 subspace while using fixed linear-ramp schedules to eliminate variational parameter training loops on quantum hardware.<br>
+Prior to circuit synthesis, an automated preprocessor performs graph clique merging and pendant-node variable fixing to compress qubit counts, converts remaining constraints using structure-derived penalty weights, and applies greedy steepest-descent post-processing to repair noise-induced constraint violations. In Qiskit Functions Catalog evaluations on IBM Heron hardware, replacing variational training with iterative warm-starting reduced QPU compute times from 130 to 200 seconds down to roughly 30 seconds on medium and large problem tiers.<br>
+Read Aqarios’ release announcement here, view the IBM Qiskit Functions Catalog entry here, review the technical documentation here and Maximum Independent Set tutorial here, and access the peer-reviewed study in New Journal of Physics here.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumcomputingreport.com/aqarios-launches-constraint-native-quantum-optimizer-in-the-ibm-qiskit-functions-catalog/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  
+  <a href="731c38ccaf1e29fb.html" class="prev-next">&larr; Quantum Machines Demonstrates Sub-Microsecond Surface-Code Decoding on OPX1000 Using NVIDIA CUDA-Q QEC and NVQLink</a>
+  
+  
+  <a href="764370112dd46d93.html" class="prev-next">Altera, OQC, and NVIDIA Demonstrate Direct-RF FPGA Quantum System Controller Reference Design at SC26 &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-18 00:26 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
