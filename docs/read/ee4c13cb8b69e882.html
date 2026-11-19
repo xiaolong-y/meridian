@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love, Logical Gates, and Unrealistic Expectations — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="d4e22bd05385ea14.html" title="Qatar and France Sign Bilateral Letter of Intent on Digital Cooperation Highlighting Shared Quantum Ambitions">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">Love, Logical Gates, and Unrealistic Expectations</h1>
+    <div class="article-meta">
+      <span class="article-source">Quantum Frontiers (Caltech)</span>
+      <span>Shayan Majidy</span>
+      <span>9h</span>
+      <span class="article-category">quantum</span>
+      <span>1996 words</span>
+      <span>10 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>I have a confession. I watch YouTube recaps of movies and TV shows (at double speed) and then discuss them as if I had actually watched them. My wife hates it.<br>
+We were at a party, and she overheard me discussing Game of Thrones.<br>
+“He’s a phony! He hasn’t watched a single episode!”<br>
+“I’m not sure what she’s talking about. Anyways, can you believe Arya killed the Night King?”<br>
+I recently “watched” Materialists. It’s about Lucy Mason, a matchmaker whose clients shop for partners by spec sheet: height, age, income, even star sign. One wants a 6′4″ man in his forties who earns over $500,000 and has a good hairline. She calls such guys “unicorns.”<br>
+This is a lot like my job.<br>
+I’m looking for quantum error-correcting code unicorns. The main difference is my boxes are different: large code distance, high encoding rate, low-weight checks, low qubit degree, and cheap logical gates.<br>
+Of these, that last box has been on my mind a lot lately, and it’s the focus of our recent paper. What expectations should I have when searching for a code in this respect? Am I’m being as unrealistic as Lucy’s clients?<br>
+What are we looking for?<br>
+We know of codes that make for excellent quantum memories. They pack many logical qubits into relatively few physical ones, protect them with a large code distance, and allow for errors to be checked in an efficient way: each check involves only a few physical qubits, and each physical qubit participates in only a few checks. Several boxes checked already. Not quite a unicorn, but close.<br>
+The problem is that computation is another story. Intuitively, the more logical qubits we pack into a shared physical system, the harder it can become to operate on one without disturbing the others. This can make it difficult to implement addressable logical gates.<br>
+There are several ways to implement such gates, and I won’t survey them here. But, among the cheapest are those implemented using only physical single-qubit gates and qubit permutations. The latter means rearranging the physical qubits, or sometimes just relabelling them in software. Note that, whether or not permutations are cheap is hardware dependent, but for neutral atom platforms they can be. Because the information is encoded collectively, these simple physical operations can produce various gates, including entangling logical gates.<br>
+These gates have a lot going for them. The single-qubit operations fit into one parallel layer. They require no extra qubits or measurements. And when permutations are performed by physical rearrangement or software relabelling, they don’t spread errors between physical qubits. Single-qubit gates are also typically among the lowest error operations available on hardware.<br>
+If you add one restriction—that the physical single-qubit gates must be Cliffords—these cheap gates become automorphism gates. The restriction is useful because we have tools for finding codes that support them. We can construct such codes analytically or search for them numerically. We’re much less good at doing the same for arbitrary single-qubit rotations. That combination of cheap implementation and tractable code design has made automorphism gates increasingly popular. They play a key role in most modern quantum computing architectures, for example, Mitten codes, IBM’s tour de Gross, and the Pinnacle architecture.<br>
+These architectures use them both directly to perform logical gates and alongside the more resource-intensive method of code surgery to reduce its overhead. Surgery involves joint measurements between encoded systems, often with additional resource states and repeated measurement rounds. The aim is to let automorphism gates handle as much of the computation as possible, reducing how much surgery is needed.<br>
+Naturally, when searching for a code, we’d like a large automorphism group: a large collection of distinct logical operations available through these cheap physical ingredients.<br>
+High rate, large distance, simple checks, and now a large automorphism group. Add it to the list.<br>
+Four things I learned<br>
+In our work we set out to understand how much automorphism gates can offer, and what a code has to give up to support them. Below are some things I learned (for a complete story you’ll need to read the paper).<br>
+(1) How much can you ask of one code?<br>
+Suppose I temporarily relax the other items on my checklist. I’ll allow as many physical qubits as needed and put aside concerns about encoding rate and check weight. Fix only the number of logical qubits, k. How large an automorphism group could a code possibly have?<br>
+For stabilizer codes encoding k > 2 logical qubits, we determine the largest attainable automorphism group. In a suitable logical basis, it consists of all operations built from addressable logical phase gates (S) and controlled-NOT gates (CNOT). We also construct codes that attain this maximum. So this is a ceiling we can actually reach. (The cases k = 1 and k = 2 are special; we discuss them in the paper.)<br>
+CSS codes are an important family of quantum error-correcting codes. They allow bit-flip and phase-flip errors to be checked separately, and include most widely studied codes. CSS codes can also attain this maximum.<br>
+The S gate changes the relative phase between a qubit’s two basis states by a quarter turn. CNOT flips a target qubit conditional on the state of the control qubit, and can generate entanglement. Addressability means we can apply S to any chosen logical qubit and CNOT to any chosen control–target pair. All combinations of these gates make up the group.<br>
+So, is that a lot?<br>
+It depends what you mean by “a lot.” Compared with the full logical Clifford group, this group contains exponentially fewer gates. But it shares a useful feature with the full Clifford group: adding just one suitable non-Clifford gate type makes it universal. Together, these gates let us approximate any quantum computation as accurately as we like.<br>
+Clients could always ask Lucy for someone a little taller or a little wealthier. But with automorphism gates, there’s a clear limit to what you can ask for.<br>
+(2) The anatomy of a good match<br>
+The automorphism gates of CSS codes have a useful structure. Every automorphism combines physical single-qubit Cliffords and permutations to produce a logical gate. For a CSS code, we find that—apart from a special case discussed in the paper—the Clifford layer and the permutation are each on their own valid logical gates. We can apply either part independently while preserving the encoding.<br>
+This makes studying CSS automorphisms much simpler. We can study which logical gates come from physical single-qubit Cliffords, study which come from permutations, and then combine the answers.<br>
+The two ingredients also have complementary capabilities. Physical single-qubit Cliffords cannot implement logical CNOT or SWAP gates. In the generic CSS setting, their largest attainable logical group is generated by addressable S and CZ gates, where CZ is a two-qubit entangling phase gate.<br>
+Permutations fill the other role. Their largest attainable logical group is generated by all addressable CNOTs, but they cannot implement logical S or CZ gates. Together, the two ingredients can attain the maximum automorphism group from the previous section.<br>
+Like good partners, they can each stand on their own—and together, they complete each other.<br>
+(3) High standards, higher qubit counts<br>
+In the first result, I gave my ideal code an unlimited physical-qubit budget. Now it’s time to put that budget back into the picture.<br>
+For a stabilizer code encoding k > 2 logical qubits, supporting all addressable logical CNOTs through automorphisms requires at least<br>
+physical qubits. That’s exponential growth. Since the maximum automorphism group contains all these CNOTs, reaching that maximum inherits the same cost. This extends earlier bounds on phantom codes.<br>
+This bound is tight: a certain type of phantom code attains it.<br>
+The other ingredient from the previous section is considerably cheaper. Supporting all addressable logical S and CZ gates through physical single-qubit Cliffords requires only<br>
+We also attain this quadratic bound with complete-graph codes. Their construction uses one physical qubit to store each logical qubits parity and one physical qubit for each pair of qubits to store the pairwise parities—whether the corresponding bits agree or differ. This information allows physical single-qubit phase gates to implement logical CZs.<br>
+There is an important qualification. The bounds hold at every code distance, but our constructions attain these exact minima at distance one, where some single-qubit errors can go undetected. We can increase the distance through concatenation: encoding each physical qubit in a suitable additional code. This preserves the gate capabilities and adds physical qubits. Finding the optimal cost at a specified higher distance remains open.<br>
+So a gate can be cheap to apply while demanding an expensive code.<br>
+As with finding a partner, the details of the wish list matter. For quantum codes, the full set of addressable CNOTs is a much more expensive request than all addressable S and CZ gates.<br>
+(4) Looking for love in the wrong metrics<br>
+S and CZ have something important in common: they are diagonal gates. They change the relative phases between basis states without mixing those states. We wondered whether their relatively low qubit cost extends to diagonal non-Clifford gates.<br>
+It does. Here we expand the physical toolbox beyond automorphisms, allowing diagonal single-qubit rotations that needn’t be Cliffords.<br>
+For example, we construct codes supporting all addressable logical T, controlled-S, and controlled-controlled-Z (CCZ) gates using only physical single-qubit phase rotations. T applies an eighth-turn phase, while the controlled gates make phase changes depend on additional qubits. Supporting this whole collection requires only cubically many physical qubits.<br>
+More generally, the polynomial scaling persists at every fixed level t of the Clifford hierarchy, a sequence of gate classes extending beyond Cliffords. We can support all addressable diagonal logical gates at that level using<br>
+\(n = O(k^t)\)<br>
+physical qubits. Our complete-hypergraph codes attain the corresponding bounds by extending the pairwise-parity construction to larger subsets of logical qubits. As before, the exact minima occur at distance one, and suitable concatenation increases the distance while preserving the gates.<br>
+So being non-Clifford doesn’t automatically make a gate set expensive in physical qubits. In this setting, the sharp cost separation lies between diagonal gates and CNOT-type gates.<br>
+There’s another misleading metric: group size. These diagonal non-Clifford groups can contain many more logical operations than the entire CNOT group, yet require polynomially many physical qubits where the CNOT group requires exponentially many.<br>
+Neither the Clifford label nor the group’s size tells me what the relationship will cost.<br>
+Happily ever after, subject to constraints<br>
+So how did this project change my approach to matchmaking code construction?<br>
+Automorphism gates are not something to blindly maximize. Achieving the maximum comes at the price of an encoding rate that falls rapidly as k grows. Maximum gate sets may still be worthwhile for moderate k, especially as hardware scales. But, when high rate is a priority, I should choose automorphisms selectively, targeting the expensive operations I want them to replace.<br>
+I also need to look at the structure of the logical action. Neither Cliffordness nor logical-group size reliably predicts physical-qubit cost.<br>
+There are plenty of questions left. Here are a few I’m particularly keen to answer:<br>
+- How does the minimum qubit cost depend on distance?<br>
+- How much can we save by asking for a smaller gate set—for example, CNOTs between only selected logical pairs?<br>
+- Can we extend the theory to arbitrary physical single-qubit gates? These retain the appeal of simple, depth-one circuits. We need better methods for finding and analyzing codes that support them.<br>
+- How should we uses automorphisms? They can perform logical gates directly or help make code surgery cheaper. What combination gives the greatest benefit for a particular workload and hardware platform?<br>
+- What changes if we allow more general physical two-qubit gates? These could act within a codeblock or between blocks. Which new logical operations become possible, and what do they cost in connectivity, circuit depth, and error spreading?<br>
+If you’ve only skimmed this post, feel free to discuss it at your next party as though you read every word. Just make sure my wife isn’t there.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://quantumfrontiers.com/2026/11/18/love-logical-gates-and-unrealistic-expectations/" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="d4e22bd05385ea14.html" class="prev-next">Qatar and France Sign Bilateral Letter of Intent on Digital Cooperation Highlighting Shared Quantum Ambitions &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-19 15:08 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
