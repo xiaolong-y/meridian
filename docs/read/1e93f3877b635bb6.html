@@ -127,7 +127,7 @@
   <a href="reader.html">&larr; Reader</a>
   <div class="nav-arrows">
     <a href="d4e22bd05385ea14.html" title="Qatar and France Sign Bilateral Letter of Intent on Digital Cooperation Highlighting Shared Quantum Ambitions">&larr; prev</a>
-    <a href="f60c75d962d18aec.html" title="Quandela Expands International Photonic Footprint with Deployment Alliance in Qatar and Foundry MoU in Taiwan">next &rarr;</a>
+    <a href="0da679643a8d430e.html" title="For azure views">next &rarr;</a>
   </div>
 </nav>
 
@@ -139,18 +139,25 @@
       <span>Mohamed Abdel-Kareem</span>
       <span>1d</span>
       <span class="article-category">quantum</span>
-      <span>66 words</span>
-      <span>1 min read</span>
+      <span>492 words</span>
+      <span>3 min read</span>
     </div>
   </div>
 
   
   <div class="article-content" id="article-body">
-    <p>Quandela, CNRS, and NVIDIA have established a &#34;simulability frontier&#34; for photonic quantum processors using NVIDIA H100 GPUs. Their research defines a unified metric for when quantum processors outperform classical simulations, moving beyond varying photon count thresholds. They&#39;ve also released an open-source library, photonic-engines, to support this work. The post Quandela and NVIDIA Benchmark Photonic Quantum Simulability Frontiers on H100 GPUs appeared first on Quantum Computing Report.</p>
-  </div>
-  <div class="fallback">
-    Full article extraction unavailable.
-    <a href="https://quantumcomputingreport.com/quandela-and-nvidia-benchmark-photonic-quantum-simulability-frontiers-on-h100-gpus/" target="_blank" rel="noopener">Read on original site &rarr;</a>
+    <p>Researchers from Quandela, CNRS, and NVIDIA have published a benchmarking study defining a standardized “simulability frontier” to measure when photonic quantum processors outpace exact classical simulation on a single NVIDIA H100 PCIe GPU. Detailed in a technical preprint and backed by the open-source photonic-engines GPU library, the work replaces disparate literature thresholds ranging from 50 to 98 photons with a unified throughput metric: the number of photonic inputs at which the fastest exact classical sampler sustains one sample per second across universal interferometers with twice as many optical modes as inputs (m = 2n).<br>
+| Exact Photonic Sampling & Resource Frontiers on One NVIDIA H100 GPU (m = 2n) |  |  | <br>
+|---|---|---|<br>
+| Photonic Modality / Resource Constraint | 1 Hz Exact Sampling Frontier (n*) | Key Scaling & Architectural Findings | <br>
+| Entangled Quantum Emitters | 31.0 photonic inputs (measured) | Matrix-product-state entanglement adds ~n/2 overhead; tick-by-tick trains hit 1 Hz at ~21–22 emitters. | <br>
+| Single Photons (Fock Inputs) | 38.3 photonic inputs (measured) | Exponential base β = 1.82; 8 H100 GPUs add +3.5 inputs, while 16,384 GPUs add +16.2 inputs. | <br>
+| Squeezed Light (0.5 photons/squeezer) | 41.5 photonic inputs (modelled, S = 104) | Loop-hafnian pair sieve scales as 2N/2 in detected photons; drops to 9.7 inputs at 1.5 photons/squeezer. | <br>
+| Coherent Superpositions (α = π/4) | 50.0 photonic inputs (measured) | Quantum coherence lowers the frontier by 14.2 inputs compared to incoherent lossy photons (64.2). | <br>
+| Memory & Floating-Point Precision | 13 photons (RAM) / ~55–62 (fp64) | Strong simulation hits the 80 GiB HBM2e cap at 13 photons; double precision fails near 55 single / 62 squeezed photons. | <br>
+Because exact sampling complexity grows exponentially with detected photon counts, hardware parallelism yields only logarithmic gains, requiring roughly 1016 GPUs to reach 100 single-photon inputs without algorithmic breakthroughs. Conversely, replacing Clifford and Clifford’s 2018 boson-sampling algorithm with their 2020 output-collapsed formulation and custom CUDA kernels raised the single-photon frontier from 32.5 to 38.3 inputs on identical hardware, while adding one non-linear phase site (φ = π/2) reduced the frontier by 2.2 inputs and mid-circuit feed-forward across up to three modes shifted it by at most 0.2 inputs.<br>
+The authors also highlight a practical operational distinction between single-shot hardness and real-time stream reproduction: a three-source entangled photonic processor operating at 1 GHz with 48 photons across 96 modes and 20% end-to-end transmission produces typical 10-photon samples that are individually easy to simulate, yet reproducing its continuous output stream in real time would require approximately 30 H100 GPUs. On energy metrics, direct board power measurements (270 to 344 W) showed an exact 38-photon sample consumes 7.3 × 10−2 Wh on an H100, placing potential energetic advantage thresholds below 12 photons relative to low-power photonic hardware.<br>
+Read Quandela’s technical blog post here, access the full research preprint on arXiv here, and explore the open-source photonic-engines repository on GitHub here.</p>
   </div>
   
 </article>
@@ -166,14 +173,14 @@
   <a href="d4e22bd05385ea14.html" class="prev-next">&larr; Qatar and France Sign Bilateral Letter of Intent on Digital Cooperation Highlighting Shared Quantum Ambitions</a>
   
   
-  <a href="f60c75d962d18aec.html" class="prev-next">Quandela Expands International Photonic Footprint with Deployment Alliance in Qatar and Foundry MoU in Taiwan &rarr;</a>
+  <a href="0da679643a8d430e.html" class="prev-next">For azure views &rarr;</a>
   
 </div>
 
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-11-20 00:13 UTC
+  Generated 2026-11-20 14:48 UTC
 </div>
 
 <script type="module">
