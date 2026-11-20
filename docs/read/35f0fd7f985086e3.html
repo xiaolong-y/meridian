@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The stochastic parrots have apparently proved the Riemann Hypothesis — Meridian Reader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFCF0; --card: #F2F0E5; --text: #2D2B28;
+      --dim: #6F6E69; --muted: #DAD8CE;
+      --accent: #205EA6; --link: #24837B; --purple: #5E409D;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #100F0F; --card: #1C1B1A; --text: #CECDC3;
+        --dim: #878580; --muted: #403E3C;
+        --accent: #4385BE; --link: #3AA99F; --purple: #8B7EC8;
+      }
+    }
+
+    body {
+      background: var(--bg); color: var(--text);
+      max-width: 680px; margin: 0 auto; padding: 12px 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    nav {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 6px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--muted);
+      color: var(--dim);
+    }
+    nav a { color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .nav-arrows a { color: var(--dim); }
+    .nav-arrows a:hover { color: var(--accent); }
+
+    /* Article header */
+    .article-header { margin-bottom: 16px; }
+    .article-title {
+      font: 500 16px/1.3 'IBM Plex Mono', monospace;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .article-meta {
+      font: 400 9px 'IBM Plex Mono', monospace;
+      color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .article-source { color: var(--link); font-weight: 500; }
+    .article-category {
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 0.5px; font-size: 8px;
+    }
+
+    /* Article content */
+    .article-content {
+      font: 300 14px/1.7 'IBM Plex Serif', Georgia, serif;
+      color: var(--text);
+    }
+    .article-content p { margin-bottom: 12px; }
+    .article-content h1, .article-content h2, .article-content h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; margin: 20px 0 8px;
+    }
+    .article-content h1 { font-size: 15px; }
+    .article-content h2 { font-size: 13px; }
+    .article-content h3 { font-size: 12px; color: var(--dim); }
+    .article-content a { color: var(--link); }
+    .article-content img {
+      max-width: 100%; height: auto;
+      border: 1px solid var(--muted); border-radius: 2px;
+      margin: 8px 0;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--accent); padding-left: 12px;
+      margin: 12px 0; color: var(--dim); font-style: italic;
+    }
+    .article-content pre, .article-content code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; background: var(--card);
+      border: 1px solid var(--muted); border-radius: 2px;
+    }
+    .article-content pre { padding: 8px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; }
+    .article-content code { padding: 1px 3px; }
+    .article-content pre code { background: none; border: none; padding: 0; }
+    .article-content ul, .article-content ol { margin: 8px 0 8px 20px; }
+    .article-content li { margin: 4px 0; }
+
+    /* Fallback message */
+    .fallback {
+      font: 400 10px 'IBM Plex Mono', monospace;
+      background: var(--card); border: 1px solid var(--muted);
+      border-radius: 2px; padding: 12px; margin: 8px 0;
+      color: var(--dim);
+    }
+    .fallback a { color: var(--link); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 24px; padding-top: 8px;
+      border-top: 1px solid var(--muted);
+      font: 400 8px 'IBM Plex Mono', monospace;
+      color: var(--dim); text-align: center;
+    }
+    .article-footer a { color: var(--link); text-decoration: none; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;
+    }
+    .bottom-nav a { color: var(--link); text-decoration: none; }
+    .bottom-nav a:hover { text-decoration: underline; }
+    .bottom-nav .prev-next { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="reader.html">&larr; Reader</a>
+  <div class="nav-arrows">
+    
+    <a href="add4efe8767ef3b9.html" title="Plurilock Shareholders Approve Plan of Arrangement for Acquisition by Quantum eMotion">next &rarr;</a>
+  </div>
+</nav>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">The stochastic parrots have apparently proved the Riemann Hypothesis</h1>
+    <div class="article-meta">
+      <span class="article-source">Shtetl-Optimized</span>
+      <span>Scott</span>
+      <span>5h</span>
+      <span class="article-category">quantum</span>
+      <span>774 words</span>
+      <span>4 min read</span>
+    </div>
+  </div>
+
+  
+  <div class="article-content" id="article-body">
+    <p>The stochastic parrots have apparently proved the Riemann Hypothesis<br>
+“… it is very probable that all roots are real. Of course one would wish for a rigorous proof here; I have for the time being, after some fleeting vain attempts, provisionally put aside the search for this, as it appears dispensable for the immediate objective of my investigation.” –Bernhard Riemann, 1859<br>
+[Update: According to “Poe’s Law,” there is no irony or sarcasm on the Internet so obvious that it won’t fly over countless people’s heads. In line with that, lots of people on social media are now saying variants of “how dare Scott Aaronson call LLMs ‘stochastic parrots,’ that demeaning and trivializing term from 2021? Doesn’t he understand that these so-called ‘stochastic parrots’ just proved the Riemann Hypothesis?” ROFL.]<br>
+I’m in California to visit Oratomic and then Inkhaven. I woke up this morning to the news that Levent Alpöge says that he’s gotten Anthropic models to prove the Generalized Riemann Hypothesis, producing 17.4 million (!!) lines of Lean code.<br>
+At a dinner last night, someone asked me “so, how much longer until an AI proves the Riemann Hypothesis? Still several more years?” I replied, don’t be sure of such things anymore. After all, AI has already proved that the nontrivial zeros of the Riemann zeta function are at most 3/8 away from the critical line (Quanta just published its article on that breakthrough yesterday!), and that already carries most of the implications for number theory that a full proof of RH would have. So who the hell knows what else is possible, and how quickly?<br>
+For those tuning in from home, the Riemann Hypothesis says (in its easiest-to-understand version) that the number of prime numbers from 1 to n is very close to what it would be if each integer x>1 had an independent 1/ln(x) probability of being prime, up to a standard statistical error term that never exceeds Õ(√n). While we’ve known since 1896 that the number of primes from 1 to n is asymptotic to n/ln(n) (that’s the famous Prime Number Theorem), you could’ve imagined the deviations being much larger.<br>
+David Hilbert famously said, “If I were to awaken after having slept for a thousand years, my first question would be: Has the Riemann Hypothesis been proven?” Meanwhile G. H. Hardy, on a ship that he feared might sink, sent his colleagues a telegram claiming to have proven RH, so that if the worst came to pass, at least the world might believe that a proof sank with him.<br>
+Many will of course question whether the proof announced today will stand. They’ll point out that, despite how heavily the world is now “lean-ing” on it, the Lean formal verification system still has issues, from kernel bugs (which have, in the past, allowed proofs of 0=1) to uncertain soundness of the underlying type theory. In my view, these issues can and should urgently be fixed! Until they are, a sufficiently motivated AI could almost certainly exploit them to prove a false statement!<br>
+All the same, I see zero indications that that’s happening right now. I note that, so far, not one of the AI results with Lean certificates has needed to be retracted (while several without Lean certificates have needed to be). So I’m not 100% sure, but my bet is that the proof will stand.<br>
+Mathematicians of course won’t be satisfied with 17 million lines of Lean. They’ll be satisfied when, and only when, they’re able to explain and distill and reconstruct the ideas for themselves. And that will probably take years, since human mathematicians move only at biological speeds. And while they’re working on it, how many more such wonders will there be, in this age of wonders and terrors?<br>
+My 9-year-old son, informed that RH was proved, replied that he’s not even surprised at this point. Maybe you need to have come of age in the human math era to be surprised by such things.<br>
+The P=?NP problem now moves firmly into place as the Final Boss of the Math We’ve Cared About, the position I always thought it should occupy. But for how much longer? For how much longer will anything last that we currently take for granted?<br>
+It was only a couple days ago that my wife and I had the following conversation:<br>
+Dana: I turned off the irrigation, yet somehow water in our house is still leaking. We need to…<br>
+Me: Look, a lot of the smartest people I know now think that recursive self-improvement and the end of the entire known world are coming in 12-18 months. This leak…<br>
+Dana: We should still fix the leak.</p>
+  </div>
+  
+</article>
+
+
+<div style="margin-top: 12px; font: 400 9px 'IBM Plex Mono', monospace;">
+  <a href="https://scottaaronson.blog/?p=10344" target="_blank" rel="noopener" style="color: var(--link);">Open original &rarr;</a>
+</div>
+
+
+<div class="bottom-nav">
+  <span></span>
+  
+  <a href="add4efe8767ef3b9.html" class="prev-next">Plurilock Shareholders Approve Plan of Arrangement for Acquisition by Quantum eMotion &rarr;</a>
+  
+</div>
+
+<div class="article-footer">
+  <a href="reader.html">Reader</a> |
+  <a href="../index.html">Dashboard</a> |
+  Generated 2026-11-20 23:36 UTC
+</div>
+
+<script type="module">
+  // Pretext integration for article body text layout
+  var _pretext = null;
+  try {
+    var mod = await import('https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js');
+    _pretext = { prepare: mod.prepare, layout: mod.layout };
+  } catch (e) {
+    // CDN unreachable — plain rendering is fine
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape' || e.key === 'q') {
+      window.location.href = 'reader.html';
+    }
+  });
+</script>
+
+</body>
+</html>
