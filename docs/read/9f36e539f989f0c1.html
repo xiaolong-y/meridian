@@ -137,7 +137,7 @@
     <div class="article-meta">
       <span class="article-source">Shtetl-Optimized</span>
       <span>Scott</span>
-      <span>2h</span>
+      <span>17h</span>
       <span class="article-category">quantum</span>
       <span>873 words</span>
       <span>5 min read</span>
@@ -152,7 +152,7 @@ Yesterday, as you all probably saw, hot on the heels of its proof of the General
 You can read all about the VP vs. VNP problem in Section 6.5 of my P vs. NP survey. But briefly, for those tuning in from home, Valiant’s conjecture says that the permanent of an n×n matrix has no algebraic circuits (that is, circuits built out of addition and multiplication gates and constants) of size polynomial in n, unlike the determinant, which does. Anthropic’s result says that a circuit of size exp(Ω(log4/3 n)) is needed, whereas OpenAI gets exp(Ω(log5/4 n)): so, more than polynomial albeit less than exponential. As is often the case, the best known upper bound here is ~2n. The lower bounds are said to work over all fields of characteristic other than 2. (What’s special about 2? Over a field of characteristic 2, addition and subtraction are the same, so the permanent just is the determinant, and is easy to compute!)<br>
 From what little I understand so far, the proof techniques in the Anthropic and OpenAI papers look similar. They both do some sort of highly nontrivial “compression” or “shortening,” followed in the end by a diagonalization—the oldest trick in the book! Diagonalization is what should let these arguments evade the infamous natural proofs barrier. There’s probably also a story to tell about how the arguments evade an algebraic-circuit version of the relativization barrier, but I don’t know how to tell it yet.<br>
 One immediate implication of these results is that, if you want to map an n×n matrix A to an m×m matrix B whose entries are affine functions of the entries of A, and have the permanent of A be equal to the determinant of B, then m must be exp(Ω(log4/3 n)). This was the question directly targeted by Ketan Mulmuley’s Geometric Complexity Theory program—which, however, these papers don’t use, taking a more direct route to the desired lower bound.<br>
-As is de rigeur these days, the proofs come with Lean, formally certifying their correctness to a level considerably beyond what we’d normally demand for a math paper published in a journal. If recent experience is any guide, this will not prevent boatloads of morons from denying that AI could possibly have solved these problems, and latching onto anything whatsoever (e.g., unused Lean code or Lean that deviates slightly from the natural-language version) to declare the proofs to be fallacious … and such claims will then go viral, lapped up by an eager audience on Bluesky and other places hungry for AI denial. If there’s any real technical issue with the proofs, I’ll be happy to hear about it from experts, but my patience for arguing with the flat-earthers is at an end.<br>
+As is de rigueur these days, the proofs come with Lean, formally certifying their correctness to a level considerably beyond what we’d normally demand for a math paper published in a journal. If recent experience is any guide, this will not prevent boatloads of morons from denying that AI could possibly have solved these problems, and latching onto anything whatsoever (e.g., unused Lean code or Lean that deviates slightly from the natural-language version) to declare the proofs to be fallacious … and such claims will then go viral, lapped up by an eager audience on Bluesky and other places hungry for AI denial. If there’s any real technical issue with the proofs, I’ll be happy to hear about it from experts, but my patience for arguing with the flat-earthers is at an end.<br>
 Daniel Harlow asked me whether the proof of VP≠VNP raises my confidence in P≠NP itself, which I’d lowered from 97% to 95% in light of OpenAI’s and Anthropic’s recent refutation of the Exponential Time Hypothesis. I said sure, I’m now back up to 96%.<br>
 The possibility that this will be followed up soon by a proof of P≠NP itself has not escaped my notice, or anyone else’s, certainly not at the AI companies. Will the big one come tomorrow? Next week? Next month? In a year? Who the hell knows? Hence the wine drinking, which I wouldn’t call sad, but just … thirsty.<br>
 If that wasn’t enough for you—if you still want more—yesterday Sanjeev Khanna, Aaron Putterman, and Junkai Song posted an ECCC preprint with a deterministic linear-time algorithm for finding minimum spanning trees in graphs. (The best previously-known algorithm was ridiculously close to linear time—n α(n) where α is the inverse of the Ackermann function—but not quite. A randomized linear-time algorithm was known.) This was a huge open problem for decades, and one that my wife Dana spent roughly two years working on.<br>
@@ -189,7 +189,7 @@ Update: See Lance’s post for more.</p>
 <div class="article-footer">
   <a href="reader.html">Reader</a> |
   <a href="../index.html">Dashboard</a> |
-  Generated 2026-11-25 01:51 UTC
+  Generated 2026-11-25 16:42 UTC
 </div>
 
 <script type="module">
